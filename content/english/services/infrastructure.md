@@ -7,8 +7,8 @@ draft: false
 
 icon: "server"
 hero_subtitle: "Reliable, scalable IT infrastructure — fully managed so you can focus on growing your business, not fixing technology."
-hero_image: "/images/services/infrastructure-hero.jpg"
-overview_image: "/images/services/infrastructure-overview.jpg"
+hero_image: "/images/services/infrastructure-hero.webp"
+overview_image: "/images/services/infrastructure-overview.webp"
 overview_title: "Your IT Foundation, Perfected"
 overview: "Most small and mid-size businesses can't afford a full in-house IT team — but they still need enterprise-grade infrastructure to compete. Secure Techies bridges that gap. We take complete ownership of your servers, workstations, cloud environments, and vendor relationships so your technology just works. No more juggling vendors, no more surprise outages, no more wondering if your systems are up to date."
 

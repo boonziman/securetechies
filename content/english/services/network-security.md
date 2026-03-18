@@ -7,8 +7,8 @@ draft: false
 
 icon: "shield-lock"
 hero_subtitle: "Enterprise-grade network protection designed for growing businesses. We architect, deploy, and secure the networks that power your operations."
-hero_image: "/images/services/network-hero.jpg"
-overview_image: "/images/services/network-overview.jpg"
+hero_image: "/images/services/network-hero.webp"
+overview_image: "/images/services/network-overview.webp"
 overview_title: "Your Network Is Your Lifeline"
 overview: "Every device, connection, and access point in your organization is a potential attack surface. A single misconfigured firewall rule or unpatched vulnerability can expose your entire business to data breaches, ransomware, and costly downtime. Secure Techies designs and manages layered network defenses that give you Fortune 500-level protection — without the Fortune 500 price tag."
 

@@ -7,8 +7,8 @@ draft: false
 
 icon: "clipboard-check"
 hero_subtitle: "Meet regulatory requirements with confidence. We make compliance manageable, audits predictable, and your business protected."
-hero_image: "/images/services/compliance-hero.jpg"
-overview_image: "/images/services/compliance-overview.jpg"
+hero_image: "/images/services/compliance-hero.webp"
+overview_image: "/images/services/compliance-overview.webp"
 overview_title: "Compliance Is Not Optional"
 overview: "Regulatory compliance isn't just a box to check — it's a competitive advantage and a legal requirement. Whether you handle patient health records, serve European customers, work with federal contracts, or process financial data, the regulatory landscape is complex and the penalties for non-compliance are severe. Secure Techies takes the confusion out of compliance with expert guidance, audit preparation, and ongoing management."
 

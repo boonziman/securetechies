@@ -7,8 +7,8 @@ draft: false
 
 icon: "cloud-backup"
 hero_subtitle: "Your data is your business — we make sure it's always protected, always recoverable, and always ready for the worst-case scenario."
-hero_image: "/images/services/backup-hero.jpg"
-overview_image: "/images/services/backup-overview.jpg"
+hero_image: "/images/services/backup-hero.webp"
+overview_image: "/images/services/backup-overview.webp"
 overview_title: "Because 'It Won't Happen to Us' Isn't a Strategy"
 overview: "Every business faces the same uncomfortable question: what happens if we lose our data? Whether it's ransomware, hardware failure, a natural disaster, or human error — data loss can cripple operations, destroy customer trust, and cost thousands in recovery. Secure Techies ensures you never have to find out the hard way with automated, verified, and tested backup and disaster recovery solutions."
 

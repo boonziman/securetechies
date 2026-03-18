@@ -7,8 +7,8 @@ draft: false
 
 icon: "headset"
 hero_subtitle: "Fast, friendly IT support your team can count on — 24/7/365. Real experts, real solutions, no runaround."
-hero_image: "/images/services/helpdesk-hero.jpg"
-overview_image: "/images/services/helpdesk-overview.jpg"
+hero_image: "/images/services/helpdesk-hero.webp"
+overview_image: "/images/services/helpdesk-overview.webp"
 overview_title: "IT Support That Actually Supports"
 overview: "Nothing kills productivity faster than IT problems your team can't solve. A frozen laptop during a client presentation, a locked account on Monday morning, a printer refusing to cooperate before a deadline — these aren't just annoyances, they're lost revenue. Secure Techies gives your employees a direct line to real IT professionals who resolve issues quickly and keep your business moving forward."
 

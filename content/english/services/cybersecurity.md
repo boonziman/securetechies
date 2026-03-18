@@ -7,8 +7,8 @@ draft: false
 
 icon: "lock-closed"
 hero_subtitle: "Proactive, layered cybersecurity that keeps threats out and your business running. Enterprise-class protection built for growing companies."
-hero_image: "/images/services/cybersecurity-hero.jpg"
-overview_image: "/images/services/cybersecurity-overview.jpg"
+hero_image: "/images/services/cybersecurity-hero.webp"
+overview_image: "/images/services/cybersecurity-overview.webp"
 overview_title: "Cybersecurity Is Not Just for Big Companies"
 overview: "Cyber threats don't discriminate by company size — in fact, small and mid-size businesses are increasingly targeted because attackers know they often lack dedicated security resources. Secure Techies levels the playing field with enterprise-class cybersecurity solutions designed specifically for growing businesses. We layer defenses, monitor threats 24/7, and respond to incidents so you can focus on your business, not your threat landscape."
 
