@@ -24,7 +24,7 @@
       <div style="width:32px;height:32px;background:linear-gradient(135deg,#0066CC,#3b82f6);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg style="width:16px;height:16px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       </div>
-      <span style="font-size:0.9rem;color:#334155;line-height:1.5">Can't find what you're looking for? <a href="/contact" style="color:#0066CC;font-weight:700;text-decoration:none;border-bottom:1px dashed rgba(0,102,204,0.3)">Contact us</a> — we're happy to help.</span>
+      <span style="font-size:0.9rem;color:#334155;line-height:1.5">Can't find what you're looking for? <a href="{{ "/contact" | relURL }}" style="color:#0066CC;font-weight:700;text-decoration:none;border-bottom:1px dashed rgba(0,102,204,0.3)">Contact us</a> — we're happy to help.</span>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:14px" id="st-faq-list">
@@ -69,7 +69,7 @@
     <h2 style="font-size:1.75rem;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em">Still Have Questions?</h2>
     <p style="font-size:1rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:28px">Our team is ready to help. Reach out for a free consultation and we'll answer everything about our managed IT services.</p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-      <a href="/contact" class="st-btn-white">
+      <a href="{{ "/contact" | relURL }}" class="st-btn-white">
         Contact Us
         <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>

@@ -34,12 +34,12 @@
       <div class="lg:col-2 md:col-4 mb-10 md:mb-0">
         <h4 class="mb-6 text-lg font-semibold text-white">Navigation</h4>
         <ul class="space-y-3">
-          <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-          <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-          <li><a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-          <li><a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-          <li><a href="/faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-          <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          <li><a href="{{ "/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="{{ "/about" | relURL }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+          <li><a href="{{ "/services" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+          <li><a href="{{ "/blog" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+          <li><a href="{{ "/faq" | relURL }}" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="{{ "/contact" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
         </ul>
       </div>
 
@@ -47,11 +47,11 @@
       <div class="lg:col-3 md:col-4 mb-10 md:mb-0">
         <h4 class="mb-6 text-lg font-semibold text-white">Our Services</h4>
         <ul class="space-y-3">
-          <li><a href="/services#infrastructure" class="text-gray-400 hover:text-white transition-colors">Infrastructure Services</a></li>
-          <li><a href="/services#network" class="text-gray-400 hover:text-white transition-colors">Network Security</a></li>
-          <li><a href="/services#helpdesk" class="text-gray-400 hover:text-white transition-colors">Managed Help Desk</a></li>
-          <li><a href="/services#backup" class="text-gray-400 hover:text-white transition-colors">Backup & Recovery</a></li>
-          <li><a href="/services#compliance" class="text-gray-400 hover:text-white transition-colors">Compliance & Audits</a></li>
+          <li><a href="{{ "/services" | relURL }}#infrastructure" class="text-gray-400 hover:text-white transition-colors">Infrastructure Services</a></li>
+          <li><a href="{{ "/services" | relURL }}#network" class="text-gray-400 hover:text-white transition-colors">Network Security</a></li>
+          <li><a href="{{ "/services" | relURL }}#helpdesk" class="text-gray-400 hover:text-white transition-colors">Managed Help Desk</a></li>
+          <li><a href="{{ "/services" | relURL }}#backup" class="text-gray-400 hover:text-white transition-colors">Backup & Recovery</a></li>
+          <li><a href="{{ "/services" | relURL }}#compliance" class="text-gray-400 hover:text-white transition-colors">Compliance & Audits</a></li>
         </ul>
       </div>
 
@@ -88,9 +88,9 @@
           &copy; {{ now.Year }} Secure Techies, LLC. All rights reserved.
         </p>
         <div class="flex gap-6 text-sm">
-          <a href="/privacy-policy" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-          <a href="/faq" class="text-gray-500 hover:text-white transition-colors">FAQ</a>
-          <a href="/contact" class="text-gray-500 hover:text-white transition-colors">Contact</a>
+          <a href="{{ "/privacy-policy" | relURL }}" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="{{ "/faq" | relURL }}" class="text-gray-500 hover:text-white transition-colors">FAQ</a>
+          <a href="{{ "/contact" | relURL }}" class="text-gray-500 hover:text-white transition-colors">Contact</a>
         </div>
       </div>
     </div>
