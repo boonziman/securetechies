@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.147.6
+      HUGO_VERSION: 0.157.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -41,8 +41,14 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: npm install
+      - name: Generate theme
+        run: node scripts/themeGenerator.js
       - name: Setup Hugo modules
         run: hugo mod get
       - name: Build with Hugo
