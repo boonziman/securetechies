@@ -1,0 +1,265 @@
+{{ define "main" }}
+
+<!-- HERO — full-width background image with centered text -->
+<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:120px 0 88px">
+  {{ with .Params.hero_image }}
+  <img src="{{ . }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;pointer-events:none" loading="eager" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.4) 0%,rgba(10,22,40,0.7) 100%);pointer-events:none"></div>
+  {{ end }}
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
+  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.2);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:24px;backdrop-filter:blur(4px)">
+          <div style="width:28px;height:28px;background:rgba(0,102,204,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
+            {{ if eq .Params.icon "server" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+            {{ else if eq .Params.icon "shield-lock" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            {{ else if eq .Params.icon "headset" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            {{ else if eq .Params.icon "cloud-backup" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            {{ else if eq .Params.icon "clipboard-check" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            {{ else if eq .Params.icon "lock-closed" }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            {{ else }}
+            <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            {{ end }}
+          </div>
+          <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">{{ .Title }}</span>
+        </div>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;color:#f1f5f9;line-height:1.12;letter-spacing:-0.03em;margin-bottom:20px">{{ .Title }}</h1>
+        {{ with .Params.hero_subtitle }}
+        <p style="font-size:1.15rem;color:#94a3b8;line-height:1.7;max-width:580px;margin:0 auto 36px">{{ . }}</p>
+        {{ end }}
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+          <a href="/contact" class="st-btn-primary">
+            Get a Free Assessment
+            <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="tel:+18184315607" class="st-phone-link" style="display:inline-flex;align-items:center;gap:8px;color:#cbd5e1;font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.15);transition:border-color 0.2s">
+            <svg style="width:15px;height:15px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (818) 431-5607
+          </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW — text left, image flush to right edge -->
+<section style="background:#fff;overflow:hidden">
+  <div class="st-overview-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:480px">
+    <div style="display:flex;align-items:center;padding:72px clamp(1.5rem,5vw,5rem) 72px clamp(1.5rem,8vw,10rem)">
+      <div style="max-width:500px">
+        {{ with .Params.overview_title }}
+        <h2 style="font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:20px;letter-spacing:-0.02em;line-height:1.25">{{ . }}</h2>
+        {{ end }}
+        {{ with .Params.overview }}
+        <p style="font-size:1.05rem;color:#475569;line-height:1.85;margin-bottom:24px">{{ . }}</p>
+        {{ end }}
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          {{ range .Params.overview_stats }}
+          <div style="display:flex;align-items:center;gap:10px;background:#f0f6ff;border:1px solid #dbeafe;border-radius:10px;padding:8px 14px">
+            <span style="font-size:1.1rem;font-weight:800;color:#0066CC;line-height:1;letter-spacing:-0.02em">{{ .value }}</span>
+            <span style="font-size:0.8rem;font-weight:600;color:#475569;line-height:1.2">{{ .label }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ with .Params.overview_image }}
+    <div style="position:relative;overflow:hidden;min-height:360px">
+      <img src="{{ . }}" alt="{{ $.Title }} - Managed IT Services by Secure Techies" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+{{ with .Params.features }}
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:40px">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">What's Included</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Everything you need, nothing you don't</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      {{ range $i, $f := . }}
+      <div class="st-feature-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:30px 26px;transition:all 0.3s">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#0066CC,#3b82f6);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <span style="font-size:0.8rem;font-weight:800;color:#fff">0{{ add $i 1 }}</span>
+          </div>
+          <h3 style="font-size:1.02rem;font-weight:700;color:#0f172a;margin:0">{{ .title }}</h3>
+        </div>
+        <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0;padding-left:48px">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- PHOTO BREAK — full-width image band with overlay -->
+{{ with .Params.hero_image }}
+<section style="position:relative;height:280px;overflow:hidden">
+  <img src="{{ . }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85" loading="lazy" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,13,26,0.82) 0%,rgba(0,102,204,0.65) 100%)"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center">
+    <div style="text-align:center;max-width:560px;padding:0 1.5rem">
+      <p style="font-size:1.35rem;font-weight:700;color:#fff;line-height:1.5;margin-bottom:12px;letter-spacing:-0.01em">Your IT should work for you — not the other way around.</p>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.7)">We handle the complexity so your team can focus on what matters.</p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- BODY CONTENT -->
+{{ if .Content }}
+<section style="background:#fff;padding:64px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
+    <div class="st-svc-content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- HOW IT WORKS -->
+{{ with .Params.process }}
+<section class="st-subpage-section" style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:40px">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Our Process</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">How It Works</h2>
+    </div>
+    <div style="position:relative;padding-left:28px">
+      <div style="position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#0066CC,#93c5fd,#e2e8f0);border-radius:2px"></div>
+      <div style="display:flex;flex-direction:column;gap:36px">
+        {{ range . }}
+        <div style="position:relative;display:flex;gap:24px;align-items:flex-start">
+          <div style="position:relative;z-index:2;width:40px;height:40px;background:#fff;border:2.5px solid #0066CC;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:-28px;box-shadow:0 2px 8px rgba(0,102,204,0.15)">
+            <span style="font-size:0.85rem;font-weight:800;color:#0066CC">{{ .step }}</span>
+          </div>
+          <div style="padding-top:6px">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin-bottom:6px">{{ .title }}</h3>
+            <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0">{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- WHY SECURE TECHIES -->
+{{ with .Params.benefits }}
+<section class="st-subpage-section" style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:72px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:36px">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">The Advantage</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#f1f5f9;letter-spacing:-0.02em">Why Secure Techies</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      {{ range . }}
+      <div class="st-benefit-card" style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;transition:background 0.2s">
+        <svg style="width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:1px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        <span style="font-size:0.9rem;color:#cbd5e1;line-height:1.5">{{ . }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- OTHER SERVICES -->
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:56px 0">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em">Explore Our Other Services</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+      {{ range where (where .Site.RegularPages "Section" "services") "RelPermalink" "ne" .RelPermalink }}
+      <a href="{{ .RelPermalink }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
+        <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+        <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="st-subpage-section" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#0066CC 0%,#0052a3 100%);padding:72px 0">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:600px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <h2 style="font-size:1.85rem;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em">Ready to Get Started?</h2>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:32px">Get a free IT risk assessment from our team. No obligation, no pressure — just a clear picture of where your IT stands.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+      <a href="/contact" class="st-btn-white">
+        Contact Us
+        <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:+18184315607" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3)">
+        (818) 431-5607
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STYLES -->
+<style>
+  .st-btn-primary { display:inline-flex;align-items:center;gap:8px;background:#0066CC;color:#fff;font-weight:700;font-size:15px;padding:13px 30px;border-radius:10px;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(0,102,204,0.3); }
+  .st-btn-primary:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,102,204,0.4); }
+  .st-btn-white { display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0f172a;font-weight:700;font-size:15px;padding:14px 30px;border-radius:10px;text-decoration:none;transition:all 0.2s; }
+  .st-btn-white:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+  .st-feature-card:hover { box-shadow:0 8px 28px rgba(0,102,204,0.08);border-color:#bfdbfe;transform:translateY(-2px); }
+  .st-service-link:hover { border-color:#93c5fd;box-shadow:0 4px 12px rgba(0,102,204,0.06); }
+  .st-phone-link:hover { border-color:rgba(255,255,255,0.35) !important; }
+  .st-benefit-card:hover { background:rgba(255,255,255,0.07) !important; }
+  @media (max-width: 768px) {
+    .st-overview-grid { grid-template-columns:1fr !important; }
+    .st-overview-grid > div:last-child { min-height:300px; }
+  }
+  @media (max-width: 640px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+  }
+  .st-svc-content { font-size:1.02rem;color:#374151;line-height:1.85; }
+  .st-svc-content h2 { font-size:1.45rem;font-weight:800;color:#0f172a;margin:40px 0 14px;letter-spacing:-0.02em; }
+  .st-svc-content h3 { font-size:1.15rem;font-weight:700;color:#0f172a;margin:32px 0 10px; }
+  .st-svc-content p { margin-bottom:18px; }
+  .st-svc-content ul { padding-left:0;list-style:none;margin-bottom:24px; }
+  .st-svc-content ul li { position:relative;padding:6px 0 6px 28px;margin-bottom:4px;color:#475569;font-size:0.95rem; }
+  .st-svc-content ul li::before { content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:#0066CC;border-radius:50%; }
+  .st-svc-content a { color:#0066CC;font-weight:600;text-decoration:none; }
+  .st-svc-content a:hover { text-decoration:underline; }
+  .st-svc-content strong { color:#0f172a; }
+  .st-svc-content hr { border:none;border-top:1px solid #e2e8f0;margin:32px 0; }
+</style>
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Secure Techies",
+    "telephone": "+1-818-431-5607",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22647 Ventura Blvd, Ste 501",
+      "addressLocality": "Woodland Hills",
+      "addressRegion": "CA",
+      "postalCode": "91364"
+    }
+  }
+}
+</script>
+
+{{ end }}

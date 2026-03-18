@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "facebook",
+      "icon": "fab fa-facebook",
+      "link": "https://www.facebook.com/Securetechie/"
+    },
+    {
+      "name": "linkedin",
+      "icon": "fab fa-linkedin",
+      "link": "https://www.linkedin.com/company/secure-techies"
+    },
+    {
+      "name": "instagram",
+      "icon": "fab fa-instagram",
+      "link": "https://www.instagram.com/securetechies/"
+    },
+    {
+      "name": "yelp",
+      "icon": "fab fa-yelp",
+      "link": "https://www.yelp.com/biz/secure-techie-winnetka"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+weight = 2
+name = "Services"
+
+[[main]]
+parent = "Services"
+name = "Managed Infrastructure"
+url = "/services/infrastructure/"
+weight = 1
+
+[[main]]
+parent = "Services"
+name = "Network Security"
+url = "/services/network-security/"
+weight = 2
+
+[[main]]
+parent = "Services"
+name = "Managed Help Desk"
+url = "/services/managed-help-desk/"
+weight = 3
+
+[[main]]
+parent = "Services"
+name = "Backup & Disaster Recovery"
+url = "/services/backup-disaster-recovery/"
+weight = 4
+
+[[main]]
+parent = "Services"
+name = "Compliance & Security Audits"
+url = "/services/compliance-security-audits/"
+weight = 5
+
+[[main]]
+parent = "Services"
+name = "Cybersecurity Solutions"
+url = "/services/cybersecurity/"
+weight = 6
+
+[[main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[main]]
+name = "Government"
+url = "/government"
+weight = 4
+
+[[main]]
+name = "FAQ"
+url = "/faq"
+weight = 5
+
+[[main]]
+name = "Contact"
+url = "/contact"
+weight = 6
+
+
+# footer menu
+[[footer]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[footer]]
+name = "Services"
+url = "/services/infrastructure/"
+weight = 2
+
+[[footer]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[footer]]
+name = "Government"
+url = "/government"
+weight = 4
+
+[[footer]]
+name = "Contact"
+url = "/contact"
+weight = 5
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 6

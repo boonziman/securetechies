@@ -1,81 +1,77 @@
-<header
-  class="header {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30">
-  <nav class="navbar container">
-    <!-- logo -->
-    <div class="order-0">
-      <!-- navbar brand/logo -->
-      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}">
-        {{/* https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-        {{ partial "logo" }}
+{{/* ================================================
+     Secure Techies — Custom Header
+     Top utility bar + premium sticky navbar
+     ================================================ */}}
+
+<!-- MAIN STICKY HEADER -->
+<header id="st-main-header" class="header {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30 st-header">
+  <nav class="navbar container st-navbar">
+
+    <!-- Logo -->
+    <div class="order-0 flex-shrink-0">
+      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}" aria-label="Secure Techies — Managed IT Services">
+        {{ $logo := resources.Get "images/logo.png" }}
+        {{ with $logo }}
+          {{ $img := .Resize "430x webp q90" }}
+          <img
+            src="{{ $img.RelPermalink }}"
+            width="240"
+            height="63"
+            alt="Secure Techies LLC"
+            loading="eager"
+            class="st-logo-img"
+          />
+        {{ else }}
+          <span class="st-logo-fallback">Secure Techies</span>
+        {{ end }}
       </a>
     </div>
-    <!-- navbar toggler -->
+
+    <!-- Mobile hamburger -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
       class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1">
       <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
-        <title>Menu Open</title>
-        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V15z"></path>
       </svg>
       <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
-        <title>Menu Close</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"></polygon>
+        <title>Close Menu</title>
+        <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"></polygon>
       </svg>
     </label>
-    <!-- /navbar toggler -->
 
-    <!-- main navbar -->
+    <!-- Nav links -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:pb-0"
+      style="gap:0.25rem">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
         {{ $menuURL := .URL | absLangURL }}
-        {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+        {{ $pageURL := $currentPage.Permalink | absLangURL }}
         {{ $active := eq $menuURL $pageURL }}
         {{ if .HasChildren }}
           <li class="nav-item nav-dropdown group relative">
-            <input
-              type="checkbox"
-              id="submenu-{{ .Name | urlize }}"
-              class="peer hidden lg:hidden" />
+            <input type="checkbox" id="submenu-{{ .Name | urlize }}" class="peer hidden lg:hidden" />
             <label
               for="submenu-{{ .Name | urlize }}"
-              class="nav-link {{ range .Children }}
-                {{ $childURL := .URL | absLangURL }}
-                {{ $active := eq $childURL $pageURL }}
-                {{ if $active }}active{{ end }}
-              {{ end }} inline-flex items-center">
+              class="nav-link {{ range .Children }}{{ $childURL := .URL | absLangURL }}{{ $active := eq $childURL $pageURL }}{{ if $active }}active{{ end }}{{ end }} inline-flex items-center gap-1 cursor-pointer">
               {{ .Name }}
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              <svg class="w-3.5 h-3.5 opacity-50 mt-0.5 transition-transform group-hover:rotate-180 duration-200" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
               </svg>
             </label>
-            <ul
-              class="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
+            <ul class="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
               {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
-                {{ $active := eq $childURL $pageURL }}
+                {{ $childActive := eq $childURL $pageURL }}
                 <li class="nav-dropdown-item">
                   <a
-                    class="nav-dropdown-link {{ if $active }}
-                      active
-                    {{- end -}}"
-                    {{ if findRE `^http` .URL }}
-                      target="_blank" rel="noopener"
-                    {{ end }}
-                    href="{{- if findRE `^#` .URL -}}
-                      {{- if not $.IsHome -}}
-                        {{- site.Home.RelPermalink -}}
-                      {{- end }}
-                      {{- .URL -}}
-                    {{- else -}}
-                      {{- .URL | relLangURL -}}
-                    {{- end -}}">
+                    class="nav-dropdown-link {{ if $childActive }}active{{ end }}"
+                    {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
+                    href="{{ if findRE `^#` .URL }}{{ if not $.IsHome }}{{ site.Home.RelPermalink }}{{ end }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">
                     {{ .Name }}
                   </a>
                 </li>
@@ -85,66 +81,47 @@
         {{ else }}
           <li class="nav-item">
             <a
-              class="nav-link {{ if $active }}active{{- end -}}"
-              {{ if findRE `^http` .URL }}
-                target="_blank" rel="noopener"
-              {{ end }}
-              href="{{- if findRE `^#` .URL -}}
-                {{- if not $.IsHome -}}
-                  {{- site.Home.RelPermalink -}}
-                {{- end }}{{- .URL -}}
-              {{- else -}}
-                {{- .URL | relLangURL -}}
-              {{- end -}}"
-              >{{ .Name }}</a
-            >
+              class="nav-link {{ if $active }}active{{ end }}"
+              {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
+              href="{{ if findRE `^#` .URL }}{{ if not $.IsHome }}{{ site.Home.RelPermalink }}{{ end }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">
+              {{ .Name }}
+            </a>
           </li>
         {{ end }}
       {{ end }}
-      {{ if site.Params.navigation_button.enable }}
-        <li class="mt-4 inline-block lg:hidden">
-          <a
-            class="btn btn-outline-primary btn-sm"
-            href="{{ site.Params.navigation_button.link | relLangURL }}"
-            {{ if (hasPrefix site.Params.navigation_button.link `http`) }}
-              target="_blank" rel="noopener"
-            {{ end }}>
-            {{ site.Params.navigation_button.label }}
-          </a>
-        </li>
-      {{ end }}
+
+      <!-- Mobile CTA (inside menu) -->
+      <li class="mt-4 pt-4 border-t border-border lg:hidden">
+        <a href="/contact" class="st-btn-primary w-full text-center block">Get Free Assessment</a>
+      </li>
     </ul>
 
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-      {{ with site.Params.search }}
-        {{ if .enable }}
-          <button
-            aria-label="search"
-            class="border-border text-text-dark hover:text-primary
-            dark:border-darkmode-border mr-5 inline-block border-r pr-5
-            text-xl dark:text-white cursor-pointer dark:hover:text-darkmode-primary
-            {{ if not (or site.Params.navigation_button.enable site.Params.theme_switcher) }}
-              lg:border-r-0 lg:pr-0
-            {{ end }}"
-            data-target="search-modal">
-            <i class="fa-solid fa-search"></i>
-          </button>
-        {{ end }}
-      {{ end }}
-
-      {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 dark:bg-darkmode-light rounded") }}
-      {{ partial "components/theme-switcher" (dict "Class" "mr-5") }}
-
-
-      <!-- navigation btn -->
-      {{ if site.Params.navigation_button.enable }}
-        <a
-          href="{{ site.Params.navigation_button.link | relLangURL }}"
-          class="btn btn-outline-primary btn-sm hidden lg:inline-block"
-          {{ if (hasPrefix site.Params.navigation_button.link `http`) }}target="_blank" rel="noopener"{{ end }}>
-          {{ site.Params.navigation_button.label }}
-        </a>
-      {{ end }}
+    <!-- Right side controls -->
+    <div class="order-1 ml-auto flex items-center gap-3 md:order-2 lg:ml-0">
+      <!-- Phone — desktop only -->
+      <a href="tel:+18184315607" class="st-nav-phone hidden lg:inline-flex">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        (818) 431-5607
+      </a>
+      <!-- CTA — desktop only -->
+      <a href="/contact" class="st-nav-cta hidden lg:inline-flex">
+        Get Free Assessment
+      </a>
     </div>
+
   </nav>
 </header>
+
+<!-- Scroll shadow script -->
+<script>
+(function(){
+  var h = document.getElementById('st-main-header');
+  if(!h) return;
+  function onScroll(){
+    if(window.scrollY > 10){ h.classList.add('st-header-scrolled'); }
+    else { h.classList.remove('st-header-scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>

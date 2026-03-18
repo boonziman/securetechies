@@ -28,10 +28,6 @@
 {{ partial "basic-seo.html" . }}
 
 
-<!-- canonical URL -->
-<link rel="canonical" href="{{ .Permalink }}" />
-
-
 <!-- custom script -->
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/components/custom-script */}}
 {{ partialCached "custom-script.html" . }}
@@ -54,10 +50,22 @@
 {{ partial "search-index.html" . }}
 
 
-<!-- JSON-LD: WebSite schema (homepage only) -->
-{{ if .IsHome }}
-  {{ partial "schema-website.html" . }}
-{{ end }}
+<!-- matomo analytics -->
+{{/* https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/matomo-analytics */}}
+{{/* {{ partialCached "matomo-analytics.html" . }} */}}
 
-<!-- JSON-LD: BreadcrumbList (all pages except homepage) -->
-{{ partial "schema-breadcrumb.html" . }}
+<!--  Baidu analytics -->
+{{/* https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/baidu-analytics */}}
+{{/* {{ partialCached "baidu-analytics.html" . }} */}}
+
+<!-- Plausible Analytics -->
+{{/* https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/plausible-analytics */}}
+{{/* {{ partialCached "plausible-analytics.html" . }} */}}
+
+<!-- Counter Analytics -->
+{{/* https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/counter-analytics */}}
+{{/* {{ partialCached "counter-analytics.html" . }} */}}
+
+<!-- Crisp Chat -->
+{{/* https://github.com/gethugothemes/hugo-modules/tree/master/components/crisp-chat */}}
+{{/* {{ partialCached "crisp-chat.html" . }} */}}
