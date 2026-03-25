@@ -9,7 +9,7 @@
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
   <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
   <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 1.5rem;text-align:center">
-    <div>
+    <div class="st-reveal">
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.2);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:24px;backdrop-filter:blur(4px)">
           <div style="width:28px;height:28px;background:rgba(0,102,204,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
             {{ if eq .Params.icon "server" }}
@@ -52,7 +52,7 @@
 <section style="background:#fff;overflow:hidden">
   <div class="st-overview-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:480px">
     <div style="display:flex;align-items:center;padding:72px clamp(1.5rem,5vw,5rem) 72px clamp(1.5rem,8vw,10rem)">
-      <div style="max-width:500px">
+      <div style="max-width:500px" class="st-reveal">
         {{ with .Params.overview_title }}
         <h2 style="font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:20px;letter-spacing:-0.02em;line-height:1.25">{{ . }}</h2>
         {{ end }}
@@ -81,11 +81,11 @@
 {{ with .Params.features }}
 <section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
   <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
-    <div style="text-align:center;margin-bottom:40px">
+    <div style="text-align:center;margin-bottom:40px" class="st-reveal">
       <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">What's Included</span>
       <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Everything you need, nothing you don't</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;transition-delay:.1s" class="st-reveal">
       {{ range $i, $f := . }}
       <div class="st-feature-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:30px 26px;transition:all 0.3s">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
@@ -131,11 +131,11 @@
 {{ with .Params.process }}
 <section class="st-subpage-section" style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
   <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
-    <div style="text-align:center;margin-bottom:40px">
+    <div style="text-align:center;margin-bottom:40px" class="st-reveal">
       <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Our Process</span>
       <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">How It Works</h2>
     </div>
-    <div style="position:relative;padding-left:28px">
+    <div style="position:relative;padding-left:28px" class="st-reveal">
       <div style="position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#0066CC,#93c5fd,#e2e8f0);border-radius:2px"></div>
       <div style="display:flex;flex-direction:column;gap:36px">
         {{ range . }}
@@ -159,11 +159,11 @@
 {{ with .Params.benefits }}
 <section class="st-subpage-section" style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:72px 0">
   <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
-    <div style="text-align:center;margin-bottom:36px">
+    <div style="text-align:center;margin-bottom:36px" class="st-reveal">
       <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">The Advantage</span>
       <h2 style="font-size:1.65rem;font-weight:800;color:#f1f5f9;letter-spacing:-0.02em">Why Secure Techies</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="st-reveal">
       {{ range . }}
       <div class="st-benefit-card" style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;transition:background 0.2s">
         <svg style="width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:1px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -178,8 +178,8 @@
 <!-- OTHER SERVICES -->
 <section style="background:#fff;border-top:1px solid #eef2f7;padding:56px 0">
   <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
-    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em">Explore Our Other Services</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">Explore Our Other Services</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px" class="st-reveal">
       {{ range where (where .Site.RegularPages "Section" "services") "RelPermalink" "ne" .RelPermalink }}
       <a href="{{ .RelPermalink }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
         <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
@@ -195,7 +195,7 @@
 <!-- CTA -->
 <section class="st-subpage-section" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#0066CC 0%,#0052a3 100%);padding:72px 0">
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none"></div>
-  <div style="position:relative;z-index:2;max-width:600px;margin:0 auto;padding:0 1.5rem;text-align:center">
+  <div style="position:relative;z-index:2;max-width:600px;margin:0 auto;padding:0 1.5rem;text-align:center" class="st-reveal">
     <h2 style="font-size:1.85rem;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em">Ready to Get Started?</h2>
     <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:32px">Get a free IT risk assessment from our team. No obligation, no pressure — just a clear picture of where your IT stands.</p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
@@ -260,6 +260,23 @@
     }
   }
 }
+</script>
+
+<!-- SCROLL ANIMATIONS -->
+<script>
+(function(){
+  var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('st-visible'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('st-visible'); });
+  }
+})();
 </script>
 
 {{ end }}

@@ -243,7 +243,7 @@
           vx: (Math.random()-0.5)*0.38,
           vy: (Math.random()-0.5)*0.38,
           r:  Math.random()*1.8+0.7,
-          o:  Math.random()*0.55+0.25
+          o:  Math.random()*0.70+0.25
         });
       }
     }
@@ -275,7 +275,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x,p.y);
             ctx.lineTo(q.x,q.y);
-            ctx.strokeStyle='rgba(96,165,250,'+(0.18*(1-d/140))+')';
+            ctx.strokeStyle='rgba(96,165,250,'+(0.25*(1-d/140))+')';
             ctx.lineWidth=0.9;
             ctx.stroke();
           }
@@ -731,21 +731,41 @@
         <h2 class="st-section-heading mt-3 mb-4" style="color:#fff">What Our Clients Say</h2>
         <p style="font-size:1.05rem;color:#94a3b8;line-height:1.7;max-width:32rem;margin:0">Real feedback from real businesses across Southern California who trust us with their IT.</p>
       </div>
-      <div class="st-rev-google-badge">
-        <svg viewBox="0 0 24 24" width="36" height="36" style="flex-shrink:0"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        <div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-            <span style="font-size:1.8rem;font-weight:800;color:#fff;line-height:1">5.0</span>
-            <div style="display:flex;gap:2px">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <!-- Google Badge -->
+        <a href="https://www.google.com/maps/place/Secure+Techies,+LLC/@34.1682,-118.6058,17z/" target="_blank" rel="noopener noreferrer" class="st-rev-google-badge" style="text-decoration:none">
+          <svg viewBox="0 0 24 24" width="36" height="36" style="flex-shrink:0"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+              <span style="font-size:1.8rem;font-weight:800;color:#fff;line-height:1">5.0</span>
+              <div style="display:flex;gap:2px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
             </div>
+            <div style="font-size:0.82rem;color:#94a3b8">Based on <strong style="color:#e2e8f0">Google Reviews</strong></div>
           </div>
-          <div style="font-size:0.82rem;color:#94a3b8">Based on <strong style="color:#e2e8f0">Google Reviews</strong></div>
-        </div>
+        </a>
+        <!-- Yelp Badge -->
+        <a href="https://www.yelp.com/biz/secure-techie-winnetka" target="_blank" rel="noopener noreferrer" class="st-rev-yelp-badge" style="text-decoration:none;display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:14px 22px;transition:border-color 0.3s,background 0.3s">
+          <svg viewBox="0 0 24 24" width="32" height="32" style="flex-shrink:0"><path d="M12.271 5.307c-.449-.649-1.036-.988-1.741-1.008-.519-.015-1.105.181-1.758.588a4.56 4.56 0 00-.647.469c-.178.156-.318.292-.42.41l-.105.131c-.064.084-.12.174-.164.269a.85.85 0 00-.078.357c0 .23.109.416.327.558.073.048.327.192.765.432l1.102.604c.516.28.889.483 1.119.607.23.124.432.218.606.282.173.064.328.096.462.096.223 0 .405-.09.546-.27.141-.18.212-.405.212-.676 0-.141-.009-.306-.028-.496a23.145 23.145 0 00-.1-.786 38.95 38.95 0 00-.16-1.044l-.09-.489c-.033-.164-.064-.282-.09-.352l-.033-.08-.022-.036zm-5.92 7.207c-.095-.056-.26-.126-.498-.21a3.27 3.27 0 00-.605-.164c-.22-.038-.439-.056-.654-.056-.217 0-.413.024-.588.072-.175.048-.33.116-.464.204-.134.088-.24.198-.318.33-.078.131-.117.282-.117.45 0 .332.148.602.444.811.296.21.766.411 1.41.604.22.067.377.118.472.155.096.036.237.098.423.187.187.088.327.164.42.227.094.064.193.15.296.259.104.11.182.222.234.338.053.116.079.244.079.384 0 .175-.043.328-.128.461-.086.134-.21.241-.375.323a2.285 2.285 0 01-.49.198 3.166 3.166 0 01-.56.103c-.196.021-.371.031-.526.031-.175 0-.342-.012-.502-.036a4.098 4.098 0 01-.487-.103c-.237-.066-.384-.116-.44-.15l-.11-.06c-.095-.055-.18-.148-.255-.279-.075-.131-.112-.282-.112-.453 0-.123.021-.29.063-.5.042-.21.065-.34.069-.387.004-.047.006-.102.006-.164a.582.582 0 00-.12-.373.416.416 0 00-.344-.15c-.164 0-.305.079-.423.237-.117.159-.206.366-.266.62-.053.225-.079.42-.079.584 0 .472.113.886.338 1.242.226.357.558.634.998.832.44.198.956.296 1.55.296.586 0 1.097-.092 1.533-.277.437-.185.778-.444 1.025-.777.246-.332.37-.708.37-1.127 0-.341-.084-.638-.25-.89a2.177 2.177 0 00-.624-.611c-.245-.16-.586-.331-1.022-.512-.437-.18-.73-.308-.881-.384z" fill="#D32323"/><path d="M11.794 12.283c-.093-.177-.245-.265-.458-.265-.106 0-.22.033-.343.098a3.006 3.006 0 00-.393.246c-.091.068-.218.175-.381.321-.163.147-.276.254-.341.321l-.8.82c-.4.41-.671.716-.817.917-.147.201-.22.394-.22.578 0 .184.062.34.186.468.124.129.283.219.478.271.195.053.432.079.712.079.28 0 .558-.027.835-.08.276-.053.489-.109.637-.168l.158-.068c.092-.043.178-.1.259-.171.081-.071.144-.155.19-.253a.73.73 0 00.068-.321c0-.082-.011-.196-.033-.343a12.96 12.96 0 00-.098-.57l-.195-.893-.115-.507c-.022-.089-.049-.2-.082-.332l-.046-.147zm2.038-.28c.04.189.113.413.22.671.107.259.21.453.307.584l2.079 2.778c.205.274.414.477.627.608.213.131.437.197.672.197.235 0 .453-.068.656-.204.202-.136.363-.324.481-.563.12-.24.178-.502.178-.787 0-.284-.037-.532-.112-.742-.075-.21-.192-.415-.352-.615-.16-.2-.414-.45-.763-.748a44.73 44.73 0 00-.825-.664l-.75-.577c-.253-.19-.47-.344-.651-.463-.182-.12-.355-.206-.52-.26a.96.96 0 00-.318-.056c-.228 0-.398.072-.509.215-.112.143-.167.328-.167.554 0 .09.018.25.054.476l.068.396zm.036-5.58c-.12.125-.207.264-.262.418-.054.154-.082.349-.082.584l-.047 3.476c-.003.328.018.57.063.724.045.154.14.275.286.362.145.088.345.131.6.131.254 0 .451-.054.59-.163.14-.108.237-.275.292-.5.056-.226.098-.563.126-1.012l.195-3.128c.018-.285.026-.497.026-.637 0-.297-.056-.543-.168-.737-.112-.194-.276-.34-.491-.44a1.62 1.62 0 00-.722-.149c-.253 0-.44.09-.564.27l-.042.063z" fill="#D32323"/></svg>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+              <span style="font-size:1.8rem;font-weight:800;color:#fff;line-height:1">5.0</span>
+              <div style="display:flex;gap:2px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF1A1A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF1A1A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF1A1A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF1A1A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF1A1A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+            <div style="font-size:0.82rem;color:#94a3b8">Based on <strong style="color:#e2e8f0">Yelp Reviews</strong></div>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -926,6 +946,13 @@
     background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
     border-radius:16px; padding:18px 24px;
     backdrop-filter:blur(6px);
+    transition:border-color 0.3s, background 0.3s;
+  }
+  .st-rev-google-badge:hover {
+    border-color:rgba(66,133,244,0.4); background:rgba(66,133,244,0.08);
+  }
+  .st-rev-yelp-badge:hover {
+    border-color:rgba(211,35,35,0.4) !important; background:rgba(211,35,35,0.08) !important;
   }
   .st-reviews-viewport { overflow:hidden; border-radius:16px; padding:4px 0; }
   .st-reviews-track { display:flex; gap:24px; transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94); }
@@ -1012,7 +1039,7 @@
   }
   @media (max-width:640px) {
     .st-review-card { flex:0 0 100%; }
-    .st-rev-google-badge { width:100%; }
+    .st-rev-google-badge, .st-rev-yelp-badge { width:100%; }
   }
 </style>
 
@@ -1581,16 +1608,16 @@
   function boot(){
     var mob = window.innerWidth < 768;
     initSectionParticles('st-particles-svc', {
-      count: mob ? 20 : 55, color: '96,165,250', maxAlpha: 0.55,
-      linkDist: mob ? 100 : 160, linkAlpha: 0.18, speed: 0.28
+      count: mob ? 20 : 55, color: '96,165,250', maxAlpha: 0.70,
+      linkDist: mob ? 100 : 160, linkAlpha: 0.25, speed: 0.28
     });
     initSectionParticles('st-particles-process', {
-      count: mob ? 12 : 35, color: '0,102,204', maxAlpha: 0.2,
-      linkDist: mob ? 90 : 130, linkAlpha: 0.1, speed: 0.2
+      count: mob ? 12 : 35, color: '0,102,204', maxAlpha: 0.3,
+      linkDist: mob ? 90 : 130, linkAlpha: 0.15, speed: 0.2
     });
     initSectionParticles('st-particles-cta', {
-      count: mob ? 15 : 45, color: '96,165,250', maxAlpha: 0.5,
-      linkDist: mob ? 100 : 150, linkAlpha: 0.15, speed: 0.25
+      count: mob ? 15 : 45, color: '96,165,250', maxAlpha: 0.65,
+      linkDist: mob ? 100 : 150, linkAlpha: 0.22, speed: 0.25
     });
   }
 

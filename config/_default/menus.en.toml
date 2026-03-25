@@ -51,10 +51,11 @@ name = "About"
 url = "/about"
 weight = 3
 
-[[main]]
-name = "Government"
-url = "/government"
-weight = 4
+# Government tab temporarily hidden — page still exists at /government
+# [[main]]
+# name = "Government"
+# url = "/government"
+# weight = 4
 
 [[main]]
 name = "FAQ"
@@ -83,10 +84,11 @@ name = "About"
 url = "/about"
 weight = 3
 
-[[footer]]
-name = "Government"
-url = "/government"
-weight = 4
+# Government tab temporarily hidden — page still exists at /government
+# [[footer]]
+# name = "Government"
+# url = "/government"
+# weight = 4
 
 [[footer]]
 name = "Contact"
