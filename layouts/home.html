@@ -223,9 +223,10 @@
   </div>
 </section>
 
-<!-- Particles script -->
+<!-- Particles script — desktop only for performance -->
 <script>
 (function(){
+  if(window.innerWidth < 768) return; /* skip particles entirely on mobile */
   function initParticles(){
     var c = document.getElementById('st-particles');
     if(!c) return;
@@ -1562,9 +1563,10 @@
   </div>
 </section>
 
-<!-- Section particle animations (shared) -->
+<!-- Section particle animations (desktop only for performance) -->
 <script>
 (function(){
+  if(window.innerWidth < 768) return; /* skip particles entirely on mobile */
   function initSectionParticles(id, opts){
     var c = document.getElementById(id);
     if(!c) return;

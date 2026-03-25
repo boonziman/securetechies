@@ -245,10 +245,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "serviceType": {{ .Title | jsonify }},
+  "name": "{{ .Title }}",
+  "description": "{{ .Params.description }}",
+  "url": "{{ .Permalink }}",
+  "serviceType": "{{ .Title }}",
   "category": "Information Technology",
   "areaServed": [
     { "@type": "State", "name": "California" },
