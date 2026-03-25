@@ -22,7 +22,8 @@ mainSections = ["blog", "services"]
 # contact form action
 contact_form_action = "#" # contact form works with [https://airform.io/] or [https://formspree.io]
 # google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "" # example: GTM-XXXXXXX (set your GTM container ID here)
+# TODO: Get your GTM Container ID from https://tagmanager.google.com/ and paste it here
+google_tag_manager = "" # example: GTM-XXXXXXX
 google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
@@ -65,15 +66,20 @@ content = ""
 keywords = ["managed IT services", "cybersecurity", "IT support Los Angeles", "managed IT Southern California", "cybersecurity services", "cloud solutions", "IT consulting", "network security", "backup disaster recovery", "Woodland Hills IT"]
 description = "Expert managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Southern California. Free risk assessment from Secure Techies."
 author = "Secure Techies, LLC"
+# TODO: If Secure Techies has a Twitter/X account, enter the handle (e.g. "securetechies")
+# Leave empty to omit the twitter:creator tag
 twitter = ""
 image = "images/og-image.png"
 
 
-# site verifications
+# site verifications — IMPORTANT for Google Search Console & Bing Webmaster Tools
 # verification module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/site-verifications
+# TODO: Get verification codes from:
+#   Google Search Console: https://search.google.com/search-console → Add Property → HTML tag method → copy the content value
+#   Bing Webmaster Tools:  https://www.bing.com/webmasters → Add Site → HTML meta tag → copy the content value
 [site_verification]
-google = ""   # Your verification code
-bing = ""     # Your verification code
+google = ""   # TODO: Paste Google Search Console verification code here
+bing = ""     # TODO: Paste Bing Webmaster Tools verification code here
 baidu = ""    # Your verification code
 facebook = "" # Your verification code
 mastodon = "" # Your verification code

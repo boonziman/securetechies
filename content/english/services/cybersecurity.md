@@ -2,7 +2,7 @@
 title: "Cybersecurity Solutions"
 meta_title: "Cybersecurity Solutions | Secure Techies - Advanced Threat Protection"
 description: "Advanced cybersecurity from Secure Techies — EDR/XDR, email security, dark web monitoring, zero trust, penetration testing, and 24/7 SIEM/SOC for Los Angeles businesses."
-image: ""
+image: "images/og-image.png"
 draft: false
 
 icon: "lock-closed"

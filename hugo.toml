@@ -21,7 +21,12 @@ defaultContentLanguageInSubdir = false
 ########################### Services #############################
 [services]
 [services.googleAnalytics]
-ID = 'G-MEASUREMENT_ID' # Replace with your real Google Analytics 4 Measurement ID
+# TODO: Replace with your real Google Analytics 4 Measurement ID
+# Steps: 1) Go to https://analytics.google.com/
+#         2) Admin → Create Property → Set up data stream (Web)
+#         3) Copy the Measurement ID (starts with G-)
+#         4) Paste it below replacing G-MEASUREMENT_ID
+ID = 'G-MEASUREMENT_ID'
 
 [services.disqus]
 shortname = '' # Disabled — set your Disqus shortname here if needed

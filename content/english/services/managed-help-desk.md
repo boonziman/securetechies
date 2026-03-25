@@ -2,7 +2,7 @@
 title: "Managed Help Desk Support"
 meta_title: "Managed Help Desk & IT Support | Secure Techies - 24/7 Live Support"
 description: "Get responsive 24/7 IT help desk support from Secure Techies. Remote and on-site support across Southern California with fast ticket resolution and dedicated account management."
-image: ""
+image: "images/og-image.png"
 draft: false
 
 icon: "headset"

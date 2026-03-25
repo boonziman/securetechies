@@ -247,17 +247,35 @@
   "@type": "Service",
   "name": {{ .Title | jsonify }},
   "description": {{ .Params.description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "serviceType": {{ .Title | jsonify }},
+  "category": "Information Technology",
+  "areaServed": [
+    { "@type": "State", "name": "California" },
+    { "@type": "City", "name": "Los Angeles" },
+    { "@type": "City", "name": "Woodland Hills" },
+    { "@type": "City", "name": "Thousand Oaks" },
+    { "@type": "City", "name": "Calabasas" },
+    { "@type": "City", "name": "Chatsworth" },
+    { "@type": "City", "name": "Encino" },
+    { "@type": "City", "name": "Sherman Oaks" }
+  ],
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Secure Techies",
+    "@id": "https://securetechie.com/#organization",
+    "name": "Secure Techies, LLC",
     "telephone": "+1-818-431-5607",
+    "url": "https://securetechie.com/",
+    "image": "https://securetechie.com/images/logo.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "22647 Ventura Blvd, Ste 501",
+      "streetAddress": "22647 Ventura Blvd, Suite 501",
       "addressLocality": "Woodland Hills",
       "addressRegion": "CA",
-      "postalCode": "91364"
-    }
+      "postalCode": "91364",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$"
   }
 }
 </script>
