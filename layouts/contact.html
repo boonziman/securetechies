@@ -88,12 +88,9 @@
           </div>
         </div>
 
-        <form name="contact" method="POST" action="https://formsubmit.co/info@securetechie.com">
-          <!-- Formsubmit.co config -->
-          <input type="hidden" name="_subject" value="New Contact Form Submission — Secure Techies" />
-          <input type="hidden" name="_next" value="{{ "contact/" | absURL }}?submitted=true" />
-          <input type="hidden" name="_captcha" value="true" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "contact" | relURL }}">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
             <div>
