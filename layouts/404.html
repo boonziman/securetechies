@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="section-sm text-center">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="sm:col-10 md:col-8 lg:col-6">
+        <span class="text-[8rem] block font-bold text-primary">
+          404
+        </span>
+        <h1 class="h2 mb-4">Page Not Found</h1>
+        <div class="content">
+          <p>
+            Sorry, the page you're looking for doesn't exist or has been moved.
+            Let us help you find what you need.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="{{ site.BaseURL | relLangURL }}" class="btn btn-primary">
+            <i class="fa-solid fa-house mr-2"></i>Back to Home
+          </a>
+          <a href="{{ "services/" | relURL }}" class="btn btn-outline-primary">
+            <i class="fa-solid fa-shield-halved mr-2"></i>Our Services
+          </a>
+          <a href="{{ "contact/" | relURL }}" class="btn btn-outline-primary">
+            <i class="fa-solid fa-phone mr-2"></i>Contact Us
+          </a>
+        </div>
+        <div class="mt-12 text-text-light dark:text-darkmode-text-light">
+          <p class="text-sm">
+            Need immediate IT help? Call us at
+            <a href="tel:+18184315607" class="text-primary font-semibold hover:underline">(818) 431-5607</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

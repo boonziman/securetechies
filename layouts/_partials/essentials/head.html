@@ -12,6 +12,10 @@
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
 {{ partialCached "favicon" . }}
 
+<!-- apple touch icon & fallback favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
+<link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
 
 <!-- manifest -->
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/pwa */}}
@@ -30,6 +34,9 @@
 
 <!-- canonical URL -->
 <link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- search engine indexing directive -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
 <!-- geo meta tags for local SEO -->
 <meta name="geo.region" content="US-CA" />
