@@ -223,10 +223,9 @@
   </div>
 </section>
 
-<!-- Particles script — desktop only for performance -->
+<!-- Particles script -->
 <script>
 (function(){
-  if(window.innerWidth < 768) return; /* skip particles entirely on mobile */
   function initParticles(){
     var c = document.getElementById('st-particles');
     if(!c) return;
@@ -1544,17 +1543,17 @@
   </div>
 </section>
 
-<!-- Section particle animations (desktop only for performance) -->
+<!-- Section particle animations -->
 <script>
 (function(){
-  if(window.innerWidth < 768) return; /* skip particles entirely on mobile */
   function initSectionParticles(id, opts){
     var c = document.getElementById(id);
     if(!c) return;
     var ctx = c.getContext('2d');
     var section = c.closest('section') || c.parentElement;
     var pts = [];
-    var N = opts.count || 35;
+    var isMobile = window.innerWidth < 768;
+    var N = isMobile ? Math.round((opts.count || 35) * 0.4) : (opts.count || 35);
     var color = opts.color || '96,165,250';
     var maxAlpha = opts.maxAlpha || 0.4;
     var linkDist = opts.linkDist || 120;

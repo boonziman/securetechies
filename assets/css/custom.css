@@ -1797,6 +1797,11 @@ html, body {
     animation-duration: 20s;      /* slower = fewer repaints */
   }
 
+  /* Hide stats glow blob on mobile — causes visible blur artifact under counters */
+  .st-stats-glow {
+    display: none;
+  }
+
   /* Skip scan-line animation on mobile — pure decoration, expensive repaint */
   .st-scan-line::after {
     animation: none;
