@@ -284,9 +284,27 @@
           }
         }
       }
-      requestAnimationFrame(draw);
+      raf = requestAnimationFrame(draw);
     }
-    draw();
+
+    /* Visibility-gated: pause when hero section is offscreen or tab is hidden */
+    var raf;
+    if('IntersectionObserver' in window){
+      var heroObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ if(!raf) draw(); }
+          else { if(raf){ cancelAnimationFrame(raf); raf=null; } }
+        });
+      },{threshold:0});
+      heroObs.observe(hero);
+    } else {
+      draw();
+    }
+    /* Also pause when tab is hidden */
+    document.addEventListener('visibilitychange', function(){
+      if(document.hidden){ if(raf){ cancelAnimationFrame(raf); raf=null; } }
+      else { if(!raf) draw(); }
+    });
   }
 
   /* Delay until after the browser has painted the layout so
@@ -1112,6 +1130,16 @@
   buildDots();
   resetAuto();
   window.addEventListener('resize', function(){ buildDots(); slideTo(Math.min(currentIndex, getMaxIndex())); });
+  /* Pause auto-advance when reviews section is offscreen */
+  if('IntersectionObserver' in window){
+    var revSection = viewport.closest('section') || viewport;
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) resetAuto();
+        else clearInterval(autoTimer);
+      });
+    },{threshold:0}).observe(revSection);
+  }
 })();
 </script>
 

@@ -1,5 +1,8 @@
+# OS files
 Thumbs.db
 .DS_Store
+
+# Build artifacts
 .dist
 .tmp
 .lock
@@ -7,12 +10,19 @@ Thumbs.db
 npm-debug.log
 node_modules
 builds
-package-lock.json
 public
 resources
 .hugo_build.lock
-jsconfig.json
 hugo_stats.json
+
+# Package manager locks (generated automatically)
+package-lock.json
 go.sum
 yarn.lock
-*.txt
+
+# IDE/Editor
+jsconfig.json
+
+# Python (not needed for this project)
+.venv
+__pycache__

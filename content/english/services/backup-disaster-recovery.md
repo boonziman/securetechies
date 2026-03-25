@@ -2,7 +2,7 @@
 title: "Backup & Disaster Recovery"
 meta_title: "Backup & Disaster Recovery Solutions | Secure Techies - Data Protection"
 description: "Protect your business data with automated backup and tested disaster recovery solutions from Secure Techies. Ransomware recovery, cloud replication, and DR planning for Los Angeles businesses."
-image: "images/og-image.png"
+image: "/images/services/backup-overview.webp"
 draft: false
 
 icon: "cloud-backup"
