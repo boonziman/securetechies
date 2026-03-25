@@ -84,6 +84,15 @@ html { scroll-behavior: smooth; }
    MOBILE NAV MENU — slide-down overlay with proper styling
    ============================================================ */
 @media (max-width: 1023px) {
+  /* Hide phone number and CTA on mobile — CSS display:inline-flex overrides Tailwind hidden */
+  .st-nav-phone,
+  .st-nav-cta {
+    display: none !important;
+  }
+  /* Shrink logo on mobile */
+  .st-logo-img {
+    height: 42px;
+  }
   /* Let navbar grow when menu is open */
   .st-navbar {
     flex-wrap: wrap;
@@ -163,6 +172,10 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid rgba(0,0,0,0.08);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   animation: st-header-drop 0.5s cubic-bezier(0.16,1,0.3,1) both;
+  /* Always sticky — never disappear on scroll */
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
 }
 @keyframes st-header-drop {
   from { opacity: 0; transform: translateY(-100%); }
@@ -1571,8 +1584,13 @@ html, body {
   /* Hero section: reduce padding, tighten spacing */
   .st-hero {
     min-height: auto;
-    padding-top: 4rem;
+    padding-top: 0;
     padding-bottom: 2rem;
+  }
+  /* Override Tailwind py-28 on hero container — reduce top gap below navbar */
+  .st-hero > .container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
   }
   .st-hero-heading {
     font-size: clamp(1.65rem, 6.5vw, 2.5rem);
@@ -1814,6 +1832,30 @@ html, body {
     min-width: 0;
   }
 
+  /* Industry cards — center content on mobile */
+  .st-ind-card {
+    text-align: center;
+    align-items: center;
+    border-radius: 1.5rem;
+  }
+  .st-ind-hex {
+    margin: 0 auto 0.5rem;
+  }
+  .st-ind-tag {
+    align-self: center;
+  }
+  .st-ind-desc {
+    text-align: center;
+  }
+
+  /* Why section buttons — both full-width */
+  .st-why-section .st-btn-primary,
+  .st-why-section .st-btn-ghost {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   /* Service area section — reduce excessive padding on mobile */
   [style*="padding:100px"] {
     padding-top: 60px !important;
@@ -1835,7 +1877,7 @@ html, body {
   .st-hero .flex-wrap {
     flex-direction: column;
   }
-  .st-btn-primary, .st-btn-outline {
+  .st-btn-primary, .st-btn-outline, .st-btn-ghost {
     width: 100%;
     justify-content: center;
   }
@@ -1861,13 +1903,25 @@ html, body {
     padding: 1rem 0.75rem;
   }
 
-  /* Why section floating cards — hide to prevent overflow */
+  /* Why section floating cards — show but smaller */
   .st-why-card-new {
-    display: none;
+    display: flex;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.68rem;
+    transform: scale(0.85);
+  }
+  .st-why-card-icon {
+    width: 22px;
+    height: 22px;
   }
   .st-why-visual-new {
-    min-height: 180px;
+    min-height: 200px;
+    padding: 0.75rem;
   }
+  /* Tighter floating card positions for small screens */
+  .st-why-card-new-1 { top: 2px; left: -2px; }
+  .st-why-card-new-2 { top: 30%; right: -2px; }
+  .st-why-card-new-3 { bottom: 2px; left: 8%; }
 
   /* Process bullet list */
   .st-process-bullets li {
