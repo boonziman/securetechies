@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "npm run project-setup && npm run build"
+command = "npm run project-setup && node scripts/themeGenerator.js && hugo mod get && hugo --gc --minify --baseURL ${URL}/"
 
 [build.environment]
 HUGO_VERSION = "0.157.0"
@@ -11,7 +11,7 @@ NODE_VERSION = "20"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "npm run project-setup && npm run build"
+command = "npm run project-setup && node scripts/themeGenerator.js && hugo mod get && hugo --gc --minify --baseURL ${DEPLOY_PRIME_URL}/"
 
 # Security & caching headers
 [[headers]]
