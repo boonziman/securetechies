@@ -762,14 +762,6 @@ html { scroll-behavior: smooth; }
   overflow: hidden;
   padding: 4rem 0;
 }
-.st-stats-glow {
-  position: absolute;
-  width: 600px; height: 400px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse, rgba(0,102,204,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
 .st-stats-grid {
   display: flex;
   align-items: center;
@@ -1795,11 +1787,6 @@ html, body {
     opacity: 0.5;
     filter: blur(50px);           /* lighter blur than desktop's 80px */
     animation-duration: 20s;      /* slower = fewer repaints */
-  }
-
-  /* Hide stats glow blob on mobile — causes visible blur artifact under counters */
-  .st-stats-glow {
-    display: none;
   }
 
   /* Skip scan-line animation on mobile — pure decoration, expensive repaint */

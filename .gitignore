@@ -25,4 +25,5 @@ jsconfig.json
 
 # Python (not needed for this project)
 .venv
-__pycache__*.jpeg
+__pycache__
+*.jpeg
