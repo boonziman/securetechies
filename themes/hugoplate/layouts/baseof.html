@@ -9,7 +9,14 @@
   <head>
     <!-- head (don't cache it) -->
     {{ partial "essentials/head.html" . }}
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-441E3KPEEL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-441E3KPEEL');
+</script>
 
     <!-- style (always cache it) -->
     {{ partialCached "essentials/style.html" . }}
