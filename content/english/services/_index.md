@@ -123,4 +123,4 @@ Every business is different, and your IT solutions should be too. Contact us tod
 
 **Call us:** [(818) 431-5607](tel:+18184315607)  
 **Email us:** [info@SecureTechie.com](mailto:info@SecureTechie.com)  
-**Visit us:** 22647 Ventura Blvd, Ste 501, Woodland Hills, CA 91364
+**Visit us:** 21515 Vanowen St Suite 1110, Canoga Park, CA 91303
