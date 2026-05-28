@@ -55,8 +55,8 @@ You have the right to:
 If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:
 
 **Secure Techies, LLC**  
-22647 Ventura Blvd, Ste 501  
-Woodland Hills, CA 91364  
+21515 Vanowen St Suite 1110, 
+Canoga Park, CA 91303  
 Phone: [(818) 431-5607](tel:+18184315607)  
 Email: [info@SecureTechie.com](mailto:info@SecureTechie.com)
 
