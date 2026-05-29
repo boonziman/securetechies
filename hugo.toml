@@ -21,7 +21,7 @@ defaultContentLanguageInSubdir = false
 ########################### Services #############################
 [services]
 [services.googleAnalytics]
-ID = 'G-QY3FNV2NH3'
+ID = 'G-441E3KPEEL'
 
 [services.disqus]
 shortname = '' # Disabled — set your Disqus shortname here if needed

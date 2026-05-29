@@ -22,7 +22,7 @@ faq:
     answer: "We offer comprehensive 24/7 support through various channels, including phone, email, and live chat. Our dedicated support team is always ready to help with any queries, provide assistance with technical issues, and ensure your IT solutions are running smoothly."
 
   - question: "What Areas Does Secure Techies Serve?"
-    answer: "Secure Techies is headquartered in Woodland Hills, California and primarily serves businesses throughout Southern California, including Los Angeles, the San Fernando Valley, Ventura County, and surrounding areas. We also provide managed IT services and cybersecurity solutions to businesses nationwide through our remote support capabilities."
+    answer: "Secure Techies is headquartered in Canoga Park, California and primarily serves businesses throughout Southern California, including Los Angeles, the San Fernando Valley, Ventura County, and surrounding areas. We also provide managed IT services and cybersecurity solutions to businesses nationwide through our remote support capabilities."
 
   - question: "How Much Do Managed IT Services Cost?"
     answer: "Our managed IT service packages are customized based on your business size, needs, and complexity. We offer flexible pricing models including per-user, per-device, and all-inclusive plans. Contact us for a free consultation and we'll provide a transparent quote tailored to your organization."

@@ -2,7 +2,7 @@
 
 **Live site:** [https://securetechie.com](https://securetechie.com)
 
-A professional business website for **Secure Techies, LLC** — a managed IT services and cybersecurity company based in Woodland Hills, California, serving businesses across Southern California and nationwide.
+A professional business website for **Secure Techies, LLC** — a managed IT services and cybersecurity company based in Canoga Park, California, serving businesses across Southern California and nationwide.
 
 Built with [Hugo](https://gohugo.io/) (static site generator) + [TailwindCSS](https://tailwindcss.com/) and deployed automatically via [Netlify](https://www.netlify.com/).
 

@@ -33,9 +33,9 @@
 
 <!-- geo meta tags for local SEO -->
 <meta name="geo.region" content="US-CA" />
-<meta name="geo.placename" content="Woodland Hills, California" />
-<meta name="geo.position" content="34.1682;-118.6058" />
-<meta name="ICBM" content="34.1682, -118.6058" />
+<meta name="geo.placename" content="Canoga Park, California" />
+<meta name="geo.position" content="34.1940039;-118.599754" />
+<meta name="ICBM" content="34.1940039, -118.599754" />
 
 
 <!-- custom script -->
@@ -43,10 +43,17 @@
 {{ partialCached "custom-script.html" . }}
 
 
-<!-- google analytics -->
-{{/* https://gohugo.io/templates/embedded/#configuration-google-analytics */}}
-{{ if and site.Config.Services.GoogleAnalytics.ID (ne site.Config.Services.GoogleAnalytics.ID "G-MEASUREMENT_ID") }}
-  {{ partial "google_analytics.html" . }}
+<!-- google analytics (GA4) — robust inline gtag, single source of truth from hugo.toml -->
+{{ with site.Config.Services.GoogleAnalytics.ID }}
+  {{ if ne . "G-MEASUREMENT_ID" }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
 {{ end }}
 
 

@@ -37,6 +37,7 @@
           <li><a href="{{ site.Home.RelPermalink }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
           <li><a href="{{ "about" | relURL }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
           <li><a href="{{ "services" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+          <li><a href="{{ "locations" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Areas We Serve</a></li>
           <li><a href="{{ "blog" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
           <li><a href="{{ "faq" | relURL }}" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
           <li><a href="{{ "contact" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
@@ -47,11 +48,12 @@
       <div class="lg:col-3 md:col-4 mb-10 md:mb-0">
         <h3 class="mb-6 text-lg font-semibold text-white">Our Services</h3>
         <ul class="space-y-3">
-          <li><a href="{{ "services" | relURL }}#infrastructure" class="text-gray-400 hover:text-white transition-colors">Infrastructure Services</a></li>
-          <li><a href="{{ "services" | relURL }}#network" class="text-gray-400 hover:text-white transition-colors">Network Security</a></li>
-          <li><a href="{{ "services" | relURL }}#helpdesk" class="text-gray-400 hover:text-white transition-colors">Managed Help Desk</a></li>
-          <li><a href="{{ "services" | relURL }}#backup" class="text-gray-400 hover:text-white transition-colors">Backup & Recovery</a></li>
-          <li><a href="{{ "services" | relURL }}#compliance" class="text-gray-400 hover:text-white transition-colors">Compliance & Audits</a></li>
+          <li><a href="{{ "services/infrastructure/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Managed Infrastructure</a></li>
+          <li><a href="{{ "services/network-security/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Network Security</a></li>
+          <li><a href="{{ "services/managed-help-desk/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Managed Help Desk</a></li>
+          <li><a href="{{ "services/backup-disaster-recovery/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Backup & Disaster Recovery</a></li>
+          <li><a href="{{ "services/compliance-security-audits/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Compliance & Security Audits</a></li>
+          <li><a href="{{ "services/cybersecurity/" | relURL }}" class="text-gray-400 hover:text-white transition-colors">Cybersecurity Solutions</a></li>
         </ul>
       </div>
 
@@ -61,7 +63,7 @@
         <ul class="space-y-4">
           <li class="flex items-start gap-3">
             <i class="fa-solid fa-location-dot mt-1 text-[#0066CC]"></i>
-            <span class="text-gray-400">22647 Ventura Blvd, Ste 501<br>Woodland Hills, CA 91364</span>
+            <a href="https://www.google.com/maps/place/Secure+Techies/@34.1940039,-118.599754,17z/data=!3m1!4b1!4m6!3m5!1s0x80c29e88aa610001:0x2e777e54d8cfc7e7!8m2!3d34.1940039!4d-118.599754!16s%2Fg%2F11r274r33w" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">21515 Vanowen St Suite 1110<br>Canoga Park, CA 91303</a>
           </li>
           <li class="flex items-center gap-3">
             <i class="fa-solid fa-phone text-[#0066CC]"></i>
@@ -71,9 +73,15 @@
             <i class="fa-solid fa-envelope text-[#0066CC]"></i>
             <a href="mailto:info@SecureTechie.com" class="text-gray-400 hover:text-white transition-colors">info@SecureTechie.com</a>
           </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-clock text-[#0066CC]"></i>
-            <span class="text-gray-400">24/7 Support Available</span>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-clock mt-1 text-[#0066CC]"></i>
+            <div class="text-gray-400 w-full">
+              <div class="font-semibold text-gray-200 mb-1.5">Business Hours</div>
+              <div class="flex justify-between gap-4"><span>Mon – Fri</span><span>9:00 AM – 6:00 PM</span></div>
+              <div class="flex justify-between gap-4"><span>Saturday</span><span>9:00 AM – 3:00 PM</span></div>
+              <div class="flex justify-between gap-4"><span>Sunday</span><span class="text-gray-500">Closed</span></div>
+              <div class="mt-2 text-xs text-[#4ade80]"><i class="fa-solid fa-headset mr-1"></i>24/7 emergency support available</div>
+            </div>
           </li>
         </ul>
       </div>
