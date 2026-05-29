@@ -48,7 +48,7 @@ jobs:
       - name: Generate theme
         run: node scripts/themeGenerator.js
       - name: Setup Hugo modules
-        run: hugo mod get
+        run: hugo mod download
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
