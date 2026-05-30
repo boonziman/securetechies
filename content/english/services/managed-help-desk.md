@@ -53,6 +53,18 @@ benefits:
   - "Expert Microsoft 365 and Google Workspace administration"
   - "Dedicated account manager who knows your business"
   - "Transparent reporting with monthly service reviews"
+
+faqs:
+  - question: "How fast will someone respond when we submit a ticket?"
+    answer: "Our average response time is under 8 minutes, and most issues are resolved on the first contact. Every ticket is prioritized by business impact, so urgent problems jump to the front of the line."
+  - question: "Is support really available 24/7?"
+    answer: "Yes — your team can reach experienced technicians by phone, email, or our support portal around the clock, 365 days a year. IT problems don't keep business hours, and neither do we."
+  - question: "Do you offer on-site support or only remote?"
+    answer: "Both. Most issues are solved remotely in minutes, but when a problem needs hands-on attention, our local technicians provide fast on-site support across the greater Los Angeles area."
+  - question: "Can you handle employee onboarding and offboarding?"
+    answer: "Absolutely. We manage the full IT lifecycle — setting up accounts, devices, and access on day one, and securely revoking everything on an employee's last day. It's seamless for HR and secure for your business."
+  - question: "What systems and platforms do you support?"
+    answer: "We support Windows and macOS, Microsoft 365 and Google Workspace, mobile devices, printers, and the everyday business applications your team relies on. If your employees use it to get work done, we help keep it running."
 ---
 
 ## What Our Help Desk Covers

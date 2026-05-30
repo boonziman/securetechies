@@ -1,0 +1,77 @@
+{{ define "main" }}
+
+<!-- AUTHOR HERO -->
+<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:110px 0 72px">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
+  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    {{ with .Params.image }}
+    <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" class="st-reveal" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid rgba(96,165,250,0.35);box-shadow:0 8px 28px rgba(0,0,0,0.35);margin-bottom:22px" width="96" height="96" />
+    {{ end }}
+    <div class="st-reveal" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.2);border-radius:100px;padding:5px 14px;margin-bottom:18px;backdrop-filter:blur(4px)">
+      <span style="width:7px;height:7px;border-radius:50%;background:#4ade80"></span>
+      <span style="font-size:0.74rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">Author</span>
+    </div>
+    <h1 class="st-reveal" style="font-size:clamp(2rem,4.5vw,2.8rem);font-weight:800;color:#f1f5f9;line-height:1.12;letter-spacing:-0.03em;margin-bottom:16px;transition-delay:.05s">{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="st-reveal" style="font-size:1.08rem;color:#94a3b8;line-height:1.75;max-width:560px;margin:0 auto;transition-delay:.1s">{{ . }}</div>
+    {{ end }}
+    {{ with .Params.social }}
+    <div class="st-reveal" style="display:flex;justify-content:center;gap:12px;margin-top:24px;transition-delay:.15s">
+      {{ range . }}
+      <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow" aria-label="{{ .title }}" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#cbd5e1;transition:all 0.2s" onmouseover="this.style.background='rgba(0,102,204,0.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.color='#cbd5e1'">
+        <i class="{{ .icon }}"></i>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- AUTHOR POSTS -->
+{{ $posts := where site.RegularPages "Params.author" "==" .Title }}
+<section class="st-blog-body" style="background:#fff">
+  <div class="st-blog-container">
+    <div class="st-blog-section-head st-reveal">
+      <h2>{{ if $posts }}Articles by {{ .Title }}{{ else }}Latest Articles{{ end }}</h2>
+      <p>{{ len $posts }} published {{ cond (eq (len $posts) 1) "article" "articles" }} on managed IT, cybersecurity, and compliance.</p>
+    </div>
+    <div class="st-blog-grid">
+      {{ range $posts }}
+      <a href="{{ .RelPermalink }}" class="st-blog-card st-reveal" aria-label="{{ .Title }}">
+        <div class="st-blog-card-media">
+          {{ with .Params.image }}
+          <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="lazy" width="600" height="380">
+          {{ else }}
+          <div class="st-blog-card-media-fallback"></div>
+          {{ end }}
+          {{ with index .Params.categories 0 }}<span class="st-blog-card-cat">{{ . | humanize }}</span>{{ end }}
+        </div>
+        <div class="st-blog-card-body">
+          <h3 class="st-blog-card-title">{{ .Title }}</h3>
+          <p class="st-blog-card-desc">{{ with .Params.description }}{{ . | truncate 110 }}{{ else }}{{ .Summary | plainify | truncate 110 }}{{ end }}</p>
+          <div class="st-blog-card-foot">
+            <span>{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+            <span class="st-blog-meta-dot">•</span>
+            <span>{{ .ReadingTime }} min read</span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); io.unobserve(e.target); } });
+    },{threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('st-visible'); }); }
+})();
+</script>
+
+{{ end }}

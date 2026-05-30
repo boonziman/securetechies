@@ -2,7 +2,7 @@
 
 <!-- CONTACT HERO — with photo background -->
 <section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:120px 0 88px">
-  <img src="{{ "images/pages/contact-hero.webp" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.22;pointer-events:none" width="800" height="533" />
+  <img src="{{ "images/pages/contact-hero.webp" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3;pointer-events:none" width="800" height="533" />
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.3) 0%,rgba(10,22,40,0.6) 100%);pointer-events:none"></div>
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
   <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
@@ -21,7 +21,7 @@
 <!-- TRUST STRIP -->
 <section style="background:#fff;padding:0;position:relative;z-index:5">
   <div style="max-width:840px;margin:-36px auto 0;padding:0 1.5rem">
-    <div class="st-trust-grid" style="display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04);overflow:hidden;border:1px solid rgba(0,0,0,0.04)">
+    <div class="st-trust-grid st-reveal" style="display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04);overflow:hidden;border:1px solid rgba(0,0,0,0.04)">
       <div style="padding:24px 18px;text-align:center;border-right:1px solid #f1f5f9;display:flex;flex-direction:column;align-items:center;gap:10px;transition:background 0.2s" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
         <div style="width:38px;height:38px;background:linear-gradient(135deg,rgba(0,102,204,0.12),rgba(59,130,246,0.08));border-radius:10px;display:flex;align-items:center;justify-content:center">
           <svg style="width:18px;height:18px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -287,6 +287,23 @@
     border-color:#0066CC;box-shadow:0 0 0 3px rgba(0,102,204,0.1);background:#fff;
   }
   .st-input::placeholder { color:#94a3b8; }
+  /* Softer, more human field labels (override inline all-caps) */
+  .st-contact-form-card label[for] {
+    text-transform:none !important;
+    letter-spacing:0 !important;
+    font-size:0.9rem !important;
+    color:#1e293b !important;
+  }
+  /* Inline validation states — only after the user has interacted */
+  .st-input:user-invalid {
+    border-color:#ef4444;
+    background:#fff5f5;
+    box-shadow:0 0 0 3px rgba(239,68,68,0.08);
+  }
+  input.st-input:user-valid:not(:placeholder-shown),
+  textarea.st-input:user-valid:not(:placeholder-shown) {
+    border-color:#4ade80;
+  }
   .st-submit-btn:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,102,204,0.3); }
   .st-contact-link:hover { background:#f0f7ff !important; }
   @media (max-width: 860px) {
@@ -489,6 +506,19 @@
         done(); form.submit();
       });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
+  if(!reveals.length) return;
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); io.unobserve(e.target); } });
+    },{threshold:0.15});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('st-visible'); }); }
 })();
 </script>
 

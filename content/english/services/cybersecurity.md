@@ -53,6 +53,18 @@ benefits:
   - "24/7 SIEM/SOC monitoring and rapid incident response"
   - "Security awareness training for your entire workforce"
   - "Quarterly security reviews with executive reporting"
+
+faqs:
+  - question: "What does managed cybersecurity actually include?"
+    answer: "It's a layered program: endpoint protection, 24/7 threat monitoring (SIEM/SOC), email and phishing defense, firewall and network security, employee security awareness training, and incident response. We manage all of it as one coordinated defense rather than a patchwork of disconnected tools."
+  - question: "How do you protect against ransomware and phishing?"
+    answer: "We combine technical controls — advanced email filtering, endpoint detection and response, and least-privilege access — with ongoing employee training, since most attacks start with a single click. Immutable backups and a tested incident response plan ensure you can recover fast if something does get through."
+  - question: "Do you monitor our systems around the clock?"
+    answer: "Yes. Our security operations provide 24/7/365 monitoring so threats are detected and contained quickly, including nights, weekends, and holidays when many attacks are launched. Fast detection dramatically limits the damage of a breach."
+  - question: "We're a small business — are we really a target?"
+    answer: "Absolutely. Attackers increasingly target small and mid-sized businesses precisely because they tend to have weaker defenses. Enterprise-grade protection is no longer optional, and we make it affordable and manageable for businesses of your size."
+  - question: "What happens if we get breached?"
+    answer: "We have a defined incident response process: contain the threat, eradicate it, recover your systems from clean backups, and document what happened to prevent a repeat. Having a plan in place before an incident is what separates a minor disruption from a business-ending event."
 ---
 
 ## Comprehensive Cybersecurity Services

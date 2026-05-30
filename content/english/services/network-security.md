@@ -53,6 +53,18 @@ benefits:
   - "Compliance-ready network configurations (HIPAA, PCI, CMMC)"
   - "Trusted partners: Cisco, Fortinet, Palo Alto Networks"
   - "Local expertise across the greater Los Angeles area"
+
+faqs:
+  - question: "What does network security include?"
+    answer: "It covers the design, deployment, and ongoing management of your firewalls, switches, Wi-Fi, VPNs, and SD-WAN — plus continuous monitoring to detect and block threats. The goal is a network that's fast, reliable, and hardened against attack."
+  - question: "Can you secure remote and hybrid workers?"
+    answer: "Yes. We set up secure VPNs and zero-trust access so your remote and hybrid employees connect safely from anywhere, without exposing your network. Remote work shouldn't mean weaker security."
+  - question: "Which network equipment do you work with?"
+    answer: "We partner with industry leaders including Cisco, Fortinet, and Palo Alto Networks, and we select the right gear for your size, budget, and compliance needs — rather than forcing a one-size-fits-all solution."
+  - question: "Can you help us meet compliance requirements?"
+    answer: "Yes. We configure networks to meet HIPAA, PCI DSS, and CMMC requirements, including segmentation, access controls, and logging. Proper network configuration is often a key piece of passing an audit."
+  - question: "How do you monitor the network for threats?"
+    answer: "We continuously monitor traffic and device health for suspicious activity, intrusions, and performance issues, and respond before they disrupt your business. Combined with regular updates and patching, this keeps your network resilient."
 ---
 
 ## Comprehensive Network Security Services

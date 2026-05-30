@@ -53,6 +53,18 @@ benefits:
   - "Single point of contact for all technology vendors"
   - "Enterprise-grade tools at SMB-friendly pricing"
   - "Dedicated account manager who knows your environment"
+
+faqs:
+  - question: "What does managed IT infrastructure cover?"
+    answer: "Everything that keeps your technology running: servers, workstations, cloud environments, networking, software, and hardware procurement. We design, deploy, monitor, and maintain it all so you have one accountable partner instead of juggling multiple vendors."
+  - question: "Can you help us move to the cloud?"
+    answer: "Yes. We plan and execute migrations to Microsoft Azure, AWS, and hybrid environments with minimal disruption to your team. We assess what should move, what should stay, and design the most cost-effective and secure setup for your business."
+  - question: "Do you handle hardware purchasing too?"
+    answer: "We do. We source, configure, and deploy servers, workstations, and networking gear at competitive pricing — and because we manage the full lifecycle, your equipment stays standardized, secure, and easy to support."
+  - question: "How do you keep our systems from going down?"
+    answer: "We monitor your infrastructure proactively and apply updates, patches, and maintenance before small issues become outages. This proactive approach prevents the majority of problems that reactive, break-fix IT only addresses after they've already cost you downtime."
+  - question: "Will we have a consistent point of contact?"
+    answer: "Yes. You get a dedicated account manager who learns your environment, your priorities, and your team — so you're never re-explaining your setup to a random technician. It's the continuity of an in-house IT department without the in-house cost."
 ---
 
 ## What's Included in Managed Infrastructure

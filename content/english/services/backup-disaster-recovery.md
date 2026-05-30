@@ -53,6 +53,18 @@ benefits:
   - "Rapid restoration that minimizes downtime and data loss"
   - "Immutable backup copies that attackers can't encrypt or delete"
   - "Compliance-ready data retention and archival policies"
+
+faqs:
+  - question: "What's the difference between backup and disaster recovery?"
+    answer: "Backup is a copy of your data; disaster recovery is the full plan and infrastructure that gets your business running again after an outage, ransomware attack, or hardware failure. We provide both — automated backups plus a tested recovery process with defined recovery time (RTO) and recovery point (RPO) targets."
+  - question: "How quickly can you restore our data after an incident?"
+    answer: "It depends on the volume of data and the recovery target we set together, but most file-level restores happen within minutes and full system recovery is typically measured in hours, not days. We define and test these timelines in advance so there are no surprises during a real emergency."
+  - question: "Are your backups protected against ransomware?"
+    answer: "Yes. We use immutable backup copies that cannot be altered, encrypted, or deleted by attackers, along with off-site and air-gapped retention. This ensures you always have a clean copy to restore from, even if ransomware compromises your live environment."
+  - question: "How often is our data backed up?"
+    answer: "Backup frequency is set to match how often your data changes and how much you can afford to lose. Many clients run continuous or hourly backups for critical systems and daily backups for everything else. We tailor the schedule to your recovery point objectives."
+  - question: "Do you test the backups, or just set them and forget them?"
+    answer: "We routinely test restores to confirm your backups actually work when you need them — a step many providers skip. Untested backups are one of the most common reasons recovery fails, so verification is built into our service."
 ---
 
 ## Complete Data Protection Strategy

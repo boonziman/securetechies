@@ -53,6 +53,18 @@ benefits:
   - "Streamlined audit preparation that saves weeks of stress"
   - "Continuous compliance monitoring with automated alerts"
   - "Third-party vendor risk assessment and management"
+
+faqs:
+  - question: "Which compliance frameworks do you support?"
+    answer: "We help businesses meet HIPAA, PCI DSS, CMMC, SOC 2, NIST, and California privacy requirements (CCPA/CPRA), among others. We start by identifying which frameworks actually apply to your industry and contracts, then build a roadmap to meet them."
+  - question: "What happens during a security audit?"
+    answer: "We assess your systems, policies, access controls, and data handling against the relevant framework, then deliver a clear report of gaps with prioritized, plain-English recommendations. The goal is a practical action plan — not a stack of jargon you can't use."
+  - question: "How long does it take to become compliant?"
+    answer: "Timelines vary by framework and your current state, but most businesses see a clear path within the first assessment and reach a defensible compliance posture over the following weeks to a few months. We prioritize the highest-risk gaps first so you reduce exposure quickly."
+  - question: "Do you help during an actual audit or assessment?"
+    answer: "Yes. We prepare the documentation, evidence, and controls auditors look for, and we can work directly with your auditor or assessor to streamline the process — saving you weeks of stress and back-and-forth."
+  - question: "We're a small business — do compliance rules really apply to us?"
+    answer: "Often, yes. If you handle health data, process card payments, work with government contracts, or store customer personal information, compliance obligations apply regardless of size. We help you understand exactly what's required so you avoid fines and lost contracts."
 ---
 
 ## Regulatory Frameworks We Support

@@ -2,7 +2,8 @@
 
 <!-- HERO -->
 <section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:120px 0 88px">
-  <img src="{{ "images/pages/about-office.webp" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.1;pointer-events:none" width="800" height="533" />
+  <img src="{{ "images/pages/about-office.webp" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;pointer-events:none" width="800" height="533" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.55) 0%,rgba(10,22,40,0.72) 100%);pointer-events:none"></div>
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
   <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
   <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 1.5rem;text-align:center">
@@ -51,12 +52,20 @@
         <p style="font-size:1.02rem;color:#475569;line-height:1.85;margin-bottom:16px">Secure Techies is a managed IT services provider based in Canoga Park, CA. We deliver fast, reliable technology solutions for businesses of all sizes — from 10-person startups to 200+ employee companies with multiple locations.</p>
         <p style="font-size:1.02rem;color:#475569;line-height:1.85;margin-bottom:0">We function as your full in-house IT department. We proactively manage your infrastructure, harden your security, and respond the moment something needs attention — all at a fraction of the cost of hiring internally.</p>
       </div>
-      <div class="st-about-team-wrap st-reveal-right" style="position:relative;overflow:hidden;transition-delay:.15s">
-        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12)">
+      <div class="st-about-team-wrap st-reveal-right" style="position:relative;transition-delay:.15s">
+        <div class="st-about-corner-decor" style="position:absolute;bottom:-14px;right:-14px;width:100%;height:100%;border:2px solid rgba(0,102,204,0.18);border-radius:20px;z-index:0"></div>
+        <div style="position:relative;z-index:1;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12)">
           <img src="{{ "images/pages/about-team.webp" | relURL }}" alt="Secure Techies managed IT team in Canoga Park, California" class="st-about-team-photo" style="width:100%;height:380px;object-fit:cover;display:block" loading="lazy" width="800" height="533" />
         </div>
-        <div class="st-about-corner-decor" style="position:absolute;top:-12px;right:-12px;width:80px;height:80px;background:linear-gradient(135deg,rgba(0,102,204,0.15),rgba(0,102,204,0.05));border-radius:20px;z-index:-1"></div>
-        <div class="st-about-corner-decor" style="position:absolute;bottom:-12px;left:-12px;width:60px;height:60px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.03));border-radius:16px;z-index:-1"></div>
+        <div class="st-about-team-chip" style="position:absolute;z-index:2;bottom:18px;left:18px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.96);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,0.05);border-radius:12px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,0.14)">
+          <div style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:linear-gradient(135deg,#0066CC,#0a4fa0);border-radius:9px">
+            <svg style="width:18px;height:18px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div style="line-height:1.15">
+            <div style="font-size:0.95rem;font-weight:800;color:#0f172a;letter-spacing:-0.01em">Since 2009</div>
+            <div style="font-size:0.72rem;font-weight:600;color:#64748b">Trusted across SoCal</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
