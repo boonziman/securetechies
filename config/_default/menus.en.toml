@@ -58,6 +58,11 @@ weight = 3
 # weight = 4
 
 [[main]]
+name = "Blog"
+url = "/blog/"
+weight = 4
+
+[[main]]
 name = "FAQ"
 url = "/faq"
 weight = 5
@@ -89,6 +94,11 @@ weight = 3
 # name = "Government"
 # url = "/government"
 # weight = 4
+
+[[footer]]
+name = "Blog"
+url = "/blog/"
+weight = 4
 
 [[footer]]
 name = "Contact"
