@@ -1,0 +1,22 @@
+{{- /* Custom link render hook.
+       - Internal links use relURL so they respect the baseURL subpath (fixes /st-website/ 404s).
+       - External links (http) open in a new tab with rel="noopener" for security + SEO.
+       - Anchors (#), mailto:, and tel: links are passed through untouched.
+       - Preserves the theme's ?class= helper. */ -}}
+{{- $dest := .Destination -}}
+{{- $isExternal := strings.HasPrefix $dest "http" -}}
+{{- $isSpecial := or (hasPrefix $dest "#") (hasPrefix $dest "mailto:") (hasPrefix $dest "tel:") (hasPrefix $dest "//") -}}
+{{- if and (not $isExternal) (not $isSpecial) -}}
+  {{- /* Trim the leading slash so relURL prepends the baseURL subpath (e.g. /st-website/). */ -}}
+  {{- $dest = strings.TrimPrefix "/" $dest | relURL -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"
+{{- with .Title }} title="{{ . }}"{{ end }}
+{{- if $isExternal }} target="_blank" rel="noopener"{{ end }}
+{{- if in .Destination "?class=" }}
+{{- $getClass := string (index (findRE "class=([^&#]*)" .Destination) 0) }}
+{{- $allClass := replace $getClass `class=` `` }}
+{{- $class := replace $allClass `+` ` ` }}
+ class="{{ $class }}"
+{{- end }}>{{ .Text | safeHTML }}</a>
+{{- /* This comment removes trailing newlines. */ -}}

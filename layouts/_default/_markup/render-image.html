@@ -1,6 +1,15 @@
-{{- /* Custom image render hook: lazy-load inline content images for better Core Web Vitals. */ -}}
+{{- /* Custom image render hook.
+       - Uses relURL so paths respect the site's baseURL subpath (fixes 404s on GitHub Pages /st-website/).
+       - External URLs (http/https/protocol-relative) are passed through untouched.
+       - Adds width/height (our image pipeline outputs 1200x630) to prevent layout shift (CLS).
+       - Lazy-loads below-the-fold content images for better Core Web Vitals. */ -}}
 {{- $alt := .PlainText | default .Text -}}
-<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"
+{{- $dest := .Destination -}}
+{{- if not (or (hasPrefix $dest "http://") (hasPrefix $dest "https://") (hasPrefix $dest "//")) -}}
+  {{- /* Trim the leading slash so relURL prepends the baseURL subpath (e.g. /st-website/). */ -}}
+  {{- $dest = strings.TrimPrefix "/" $dest | relURL -}}
+{{- end -}}
+<img src="{{ $dest | safeURL }}" alt="{{ $alt }}"
   {{- with .Title }} title="{{ . }}"{{ end }}
-  loading="lazy" decoding="async">
+  width="1200" height="630" loading="lazy" decoding="async">
 {{- /* Trailing newline */ -}}

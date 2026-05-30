@@ -60,6 +60,8 @@ VoIP is only as good as the network it runs on. Poor call quality almost always 
 
 Done right, VoIP is as dependable as old phone lines and more resilient, because your numbers aren't tied to a single physical location. This is part of why proper [network and infrastructure setup](/services/infrastructure/) matters so much.
 
+![Modern office using a VoIP business phone system](/images/blog/voip-phone-systems-business-3.webp "VoIP gives businesses flexible, feature-rich communication")
+
 ## Don't overlook VoIP security
 
 Because VoIP runs over the internet, it needs the same protection as the rest of your systems. Without it, businesses risk toll fraud and eavesdropping. Essential measures include:

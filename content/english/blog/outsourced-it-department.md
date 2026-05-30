@@ -79,6 +79,8 @@ Saving money is the headline, but it's not the only reason businesses outsource.
 
 **Your team stays focused.** Your people get to do the work that makes you money instead of fighting with the printer.
 
+![Remote IT team supporting a business as an outsourced department](/images/blog/outsourced-it-department-3.webp "An outsourced IT department gives you a full team for less")
+
 ## When in-house actually wins
 
 I won't pretend outsourcing is always right. In-house IT genuinely makes more sense when:

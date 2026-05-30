@@ -2472,3 +2472,54 @@ html, body {
   .st-scan-line::after { animation: none; display: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ===== Accessibility: skip link + back-to-top (added round 3) ===== */
+.st-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: #0066CC;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+}
+.st-skip-link:focus {
+  left: 0;
+  outline: 3px solid #4ade80;
+  outline-offset: 2px;
+}
+.st-back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #0066CC;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease, background .2s ease;
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+}
+.st-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.st-back-to-top:hover { background: #0a1628; }
+.st-back-to-top:focus-visible { outline: 3px solid #4ade80; outline-offset: 3px; }
+.st-back-to-top svg { width: 22px; height: 22px; }
+@media (prefers-reduced-motion: reduce) {
+  .st-back-to-top { transition: opacity .25s ease, visibility .25s ease; transform: none; }
+}

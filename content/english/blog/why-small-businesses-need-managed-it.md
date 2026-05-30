@@ -72,6 +72,8 @@ Beyond daily support, a good MSP helps you plan ahead with a technology roadmap 
 
 For a full breakdown of the two models, read [managed IT vs. break-fix](/blog/managed-it-vs-break-fix/).
 
+![Small business team supported by a managed IT provider](/images/blog/managed-it-services-3.webp "Managed IT levels the playing field for small businesses")
+
 ## How to know it's time to switch
 
 You're likely ready for managed IT if any of these sound familiar:

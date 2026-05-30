@@ -64,6 +64,8 @@ You might benefit from a vCIO if any of these sound familiar:
 
 None of these require you to be a big company. They just require you to be a company that wants its technology working *for* it rather than against it.
 
+![Business leader and vCIO reviewing technology strategy](/images/blog/what-is-vcio-3.webp "A vCIO brings executive-level IT strategy without the full-time cost")
+
 ## The real value of strategic IT planning
 
 Here's what a vCIO actually changes in practice.

@@ -59,6 +59,8 @@ Most IT problems are solved remotely in minutes. But some — a failed server, n
 
 A local team can put a technician in front of your hardware the same day, anywhere from Canoga Park to Downtown to the South Bay. National providers often route everything through remote call centers and bill extra for the on-site visits LA businesses regularly need. Secure Techies is based in Canoga Park and serves businesses across Los Angeles and Southern California.
 
+![Office workers in Los Angeles using fully supported technology](/images/blog/it-support-los-angeles-3.webp "Responsive local IT support keeps LA teams working")
+
 ## How IT support is priced
 
 | Model | Typical cost | Best for |

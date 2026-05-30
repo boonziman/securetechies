@@ -29,7 +29,7 @@ You can buy the best security tools in the world, and a single employee clicking
 
 ![Employees in a security awareness training session](/images/blog/employee-security-awareness-training-2.webp "Security awareness training turns employees into a strong line of defense")
 
-The large majority of breaches involve human error. Attackers know this, so they design [phishing emails](/blog/phishing-email-security/) and social engineering schemes to beat your filters and reach a person. The good news is that the same people can become a powerful defense when they're trained to spot the tricks.
+The large majority of breaches involve human error. Attackers know this, so they design [phishing emails](/blog/phishing-email-security/) and social engineering schemes to beat your filters and reach a person. Industry research such as the [Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/) consistently finds the human element behind a large share of breaches. The good news is that the same people can become a powerful defense when they're trained to spot the tricks.
 
 | Threat employees face | What training teaches |
 | --- | --- |
@@ -61,6 +61,8 @@ Simulations are the engine of improvement. They reveal who needs help, and run r
 | A single successful breach | Often six figures for a small business |
 
 The math is overwhelming. Training is a rounding error next to the cost of one breach, and it addresses the vulnerability — human judgment — that no software can fully patch. For Los Angeles businesses, it's a core part of [cybersecurity services](/blog/cybersecurity-services-los-angeles/).
+
+![Employee using a laptop after security awareness training](/images/blog/employee-security-awareness-training-3.webp "Trained employees are your strongest line of defense")
 
 ## Measuring results
 

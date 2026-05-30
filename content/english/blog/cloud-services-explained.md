@@ -27,7 +27,7 @@ Picture the old way: a business buys physical servers, installs them on-site, an
 
 The cloud flips that. The hardware lives in a provider's professional data center, and you access what you need over the internet, paying for what you use. No closet full of humming machines, no surprise hardware death, no replacing servers every few years. You're renting capability instead of owning equipment.
 
-You're almost certainly already using it. Microsoft 365, Google Workspace, cloud file storage, hosted phone systems, online accounting software, all of it is cloud services. The question for most businesses isn't *whether* to use the cloud, it's how much, and how to do it well.
+You're almost certainly already using it. Microsoft 365, Google Workspace, cloud file storage, hosted phone systems, online accounting software, all of it is cloud services. The [NIST definition of cloud computing](https://www.nist.gov/publications/nist-definition-cloud-computing) is the standard reference for the models we cover below. The question for most businesses isn't *whether* to use the cloud, it's how much, and how to do it well.
 
 ![Employee working from the cloud on a laptop](/images/blog/cloud-services-explained-2.webp "Employee working from the cloud on a laptop")
 
@@ -66,6 +66,8 @@ But here's the part that trips people up, the **shared responsibility model**:
 This matters because the overwhelming majority of cloud security incidents aren't the provider getting hacked. They're misconfigurations and weak access controls on the customer's side, a storage bucket left open, multi-factor authentication never turned on, sharing settings left wide. As we covered in our [Microsoft 365 guide](/blog/microsoft-365-business/), the cloud gives you powerful security tools, but you have to actually switch them on and use them.
 
 That's why [cloud security](/services/cybersecurity/) is less about trusting the provider and more about configuring your side properly, exactly the kind of thing that's easy to get wrong and worth getting expert help with.
+
+![Modern server racks powering cloud services for business](/images/blog/cloud-services-explained-3.webp "Cloud services run on secure, professionally managed infrastructure")
 
 ## How to migrate without the chaos
 

@@ -64,6 +64,8 @@ National help desks have their place, but Los Angeles businesses get real advant
 
 Secure Techies is headquartered in Canoga Park and supports businesses across Los Angeles and the broader Southern California region.
 
+![Business meeting about managed IT strategy in Los Angeles](/images/blog/managed-it-services-los-angeles-3.webp "A managed IT partner plans technology around your growth")
+
 ## How to choose the right managed IT provider
 
 Use these questions to separate a strong partner from a risky one.

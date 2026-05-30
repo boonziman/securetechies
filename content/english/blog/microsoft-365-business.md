@@ -37,7 +37,7 @@ Microsoft 365 comes in a few business tiers, and the differences matter. Here's 
 | Business Standard | ~$12.50 | Most small businesses — full desktop Office apps, email, Teams, storage |
 | Business Premium | ~$22 | Businesses needing advanced security and device management |
 
-**Business Standard** is the default recommendation for most teams. You get the real desktop versions of Word, Excel, Outlook, and the rest, plus business email, Teams, and cloud storage.
+**Business Standard** is the default recommendation for most teams. You get the real desktop versions of Word, Excel, Outlook, and the rest, plus business email, Teams, and cloud storage. Microsoft publishes a full plan comparison in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/business-premium/) if you want the official feature-by-feature breakdown.
 
 **Business Premium** is the one to choose if you handle sensitive data, worry about security, or need to manage company devices. It adds advanced threat protection and the tools to secure and control the laptops and phones connecting to your data. For a [law firm, medical practice](/blog/law-firm-it-support/), or any business with compliance concerns, the upgrade pays for itself the first time it stops a threat.
 
@@ -82,6 +82,8 @@ Conditional Access is the biggest single gap in most environments, and it's wher
 Plenty of businesses have logging switched on, but no one ever reviews it. Microsoft's Unified Audit Log captures sign-ins, admin changes, file access, and inbox rule changes, but it only helps if someone is actually looking. Left unwatched, classic attacker moves slip by unnoticed: inbox rules quietly forwarding email to an outside address (a hallmark of business email compromise), new app consent grants reading your mail and files, mass file downloads before someone's account is shut off, and sudden MFA method changes during an account takeover. For businesses with real risk, exporting these logs into a monitoring platform so they can be correlated with other signals is what turns logging from a checkbox into actual protection.
 
 To keep all of this from drifting over time, treat Microsoft 365 security as an ongoing routine: review your **Microsoft Secure Score** monthly to benchmark your configuration, run **quarterly access reviews** to remove stale accounts and unused external shares, and keep **phishing simulation and training** going because the human layer always needs testing.
+
+![Team collaborating with Microsoft 365 on laptops](/images/blog/microsoft-365-business-3.webp "Microsoft 365 connects your team across devices and locations")
 
 ## The backup mistake almost everyone makes
 

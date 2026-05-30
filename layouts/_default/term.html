@@ -1,0 +1,100 @@
+{{ define "main" }}
+{{ $term := .Title }}
+{{ $kind := .Data.Singular | humanize }}
+
+<!-- ============================ TERM HERO ============================ -->
+<section class="st-blog-hero">
+  <div class="st-blog-hero-grid"></div>
+  <div class="st-blog-hero-glow"></div>
+  <div class="st-blog-hero-inner">
+    <nav class="st-post-breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "" | relURL }}">Home</a>
+      <span>/</span>
+      <a href="{{ "blog/" | relURL }}">Blog</a>
+      <span>/</span>
+      <span class="st-post-breadcrumb-current">{{ $term | humanize }}</span>
+    </nav>
+    <div class="st-blog-badge st-reveal">
+      <span class="st-blog-badge-dot"></span>
+      {{ $kind }}
+    </div>
+    <h1 class="st-blog-hero-title st-reveal">{{ $term | humanize }}<br><span class="st-blog-hero-accent">Articles &amp; Guides</span></h1>
+    <p class="st-blog-hero-sub st-reveal">{{ len .Pages }} article{{ if ne (len .Pages) 1 }}s{{ end }} on {{ $term | humanize | lower }} from the Secure Techies team — practical guidance for businesses across Los Angeles and Southern California.</p>
+  </div>
+</section>
+
+<!-- ============================ TERM BODY ============================ -->
+<section class="st-blog-body">
+  <div class="st-blog-container">
+
+    <!-- Category filter -->
+    {{ $cats := site.Taxonomies.categories }}
+    {{ if $cats }}
+    <div class="st-blog-filters st-reveal">
+      <a href="{{ "blog/" | relURL }}" class="st-blog-pill">All Posts</a>
+      {{ range $name, $taxonomy := $cats }}
+      <a href="{{ (site.GetPage (printf "/categories/%s" $name)).RelPermalink }}" class="st-blog-pill{{ if and (eq $.Data.Singular "category") (eq ($name | humanize) ($term | humanize)) }} st-blog-pill-active{{ end }}">{{ $name | humanize }} <span>{{ len $taxonomy }}</span></a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Section heading -->
+    <div class="st-blog-section-head st-reveal">
+      <h2>{{ $term | humanize }}</h2>
+      <p>Browse every article filed under {{ $term | humanize | lower }}.</p>
+    </div>
+
+    <!-- Post grid -->
+    <div class="st-blog-grid">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="st-blog-card st-reveal" aria-label="{{ .Title }}">
+        <div class="st-blog-card-media">
+          {{ with .Params.image }}
+          <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="lazy" width="600" height="380">
+          {{ else }}
+          <div class="st-blog-card-media-fallback"></div>
+          {{ end }}
+          {{ with index .Params.categories 0 }}<span class="st-blog-card-cat">{{ . | humanize }}</span>{{ end }}
+        </div>
+        <div class="st-blog-card-body">
+          <h3 class="st-blog-card-title">{{ .Title }}</h3>
+          <p class="st-blog-card-desc">{{ with .Params.description }}{{ . | truncate 110 }}{{ else }}{{ .Summary | plainify | truncate 110 }}{{ end }}</p>
+          <div class="st-blog-card-foot">
+            <span>{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+            <span class="st-blog-meta-dot">•</span>
+            <span>{{ .ReadingTime }} min read</span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="st-blog-cta">
+  <div class="st-blog-cta-grid"></div>
+  <div class="st-blog-cta-inner">
+    <h2>Ready to stop worrying about your IT?</h2>
+    <p>Get a free, no-pressure assessment of your network, security, and backups from a local team that picks up the phone.</p>
+    <div class="st-blog-cta-btns">
+      <a href="{{ "contact" | relURL }}" class="st-btn-white">Get a Free Consultation
+        <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:+18184315607" class="st-btn-outline-white">(818) 431-5607</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.st-reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('st-visible');}); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(e){ obs.observe(e); });
+})();
+</script>
+{{ end }}

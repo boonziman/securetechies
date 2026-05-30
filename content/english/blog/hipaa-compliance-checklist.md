@@ -29,7 +29,7 @@ Healthcare organizations face some of the strictest data protection requirements
 
 ![Healthcare facility where protected health information must be safeguarded](/images/blog/hipaa-compliance-2.webp "HIPAA applies to covered entities and their business associates")
 
-Before the checklist, know whether HIPAA applies to you. Two groups are on the hook:
+Before the checklist, know whether HIPAA applies to you. The [U.S. Department of Health and Human Services (HHS)](https://www.hhs.gov/hipaa/index.html) enforces HIPAA, and two groups are on the hook:
 
 | Group | Examples | Obligation |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ If a vendor touches protected health information (PHI) on your behalf, they're a
 
 ## Understanding the three HIPAA rules
 
-HIPAA is built on three core rules every healthcare organization must follow.
+HIPAA is built on three core rules every healthcare organization must follow. The full text and official guidance are published by [HHS in the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html).
 
 ### The Privacy Rule
 
@@ -92,6 +92,8 @@ Penalties scale with how the violation happened and how fast it was fixed.
 | 4 | Willful neglect, not corrected | ~$50,000 |
 
 Annual maximums reach roughly $1.5 million per violation category, and that's before breach-notification costs and reputational damage.
+
+![Doctor using a laptop while protecting patient health information](/images/blog/hipaa-compliance-3.webp "HIPAA compliance protects patient data at every access point")
 
 ## Your HIPAA compliance checklist
 

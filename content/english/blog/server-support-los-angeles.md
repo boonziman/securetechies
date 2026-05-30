@@ -65,6 +65,8 @@ Many Los Angeles businesses run a hybrid setup, keeping some workloads on-premis
 
 Most businesses find managed server support far cheaper than emergency repairs, which can mean days of downtime and, without good backups, permanent data loss.
 
+![IT engineer maintaining servers for a Los Angeles business](/images/blog/server-support-los-angeles-3.webp "Proactive server support prevents costly downtime")
+
 ## The real cost of a server failure
 
 A server that fails without proper support can take your business offline for hours or days. Without tested backups, the data may be gone for good. Professional server support reduces that risk on three fronts: monitoring catches problems early, maintenance prevents many failures outright, and [disaster recovery planning](/blog/backup-disaster-recovery/) gets you back online fast when the worst happens. For businesses that can't afford downtime, [24/7 support](/blog/247-it-support/) makes all the difference.

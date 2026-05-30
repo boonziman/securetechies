@@ -23,7 +23,7 @@ faq:
 
 Here's the short version: **cybersecurity services protect your Los Angeles business through layered defenses — endpoint protection, email filtering, firewalls, multi-factor authentication, tested backups, and staff training — so that if one control is bypassed, others still stop the attack.** No single tool is enough, and for most LA businesses managed security costs far less than a single breach.
 
-Cyberattacks are no longer a big-company problem. Automated threats hit any vulnerable system, and roughly 43 percent of attacks target businesses with fewer than 250 employees. This guide explains the protections every Los Angeles business needs, what they cost, and how to choose a provider that keeps you safe and compliant.
+Cyberattacks are no longer a big-company problem. Automated threats hit any vulnerable system, and roughly 43 percent of attacks target businesses with fewer than 250 employees. California businesses also have legal obligations under the [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa), enforced by the state Attorney General. This guide explains the protections every Los Angeles business needs, what they cost, and how to choose a provider that keeps you safe and compliant.
 
 ## The layers of business cybersecurity
 
@@ -55,6 +55,8 @@ The most common way attackers get in isn't a sophisticated hack — it's a convi
 | Compliance | $120 to $150+ | Regulated firms needing audit-ready documentation |
 
 Set that against the cost of a breach — six figures for many small businesses once you count downtime, recovery, lost clients, and potential penalties — and managed cybersecurity is inexpensive insurance.
+
+![Network security protecting a Los Angeles business from cyber threats](/images/blog/cybersecurity-services-los-angeles-3.webp "Layered security defends LA businesses against modern attacks")
 
 ## California compliance you can't ignore
 

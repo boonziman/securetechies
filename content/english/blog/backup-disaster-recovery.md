@@ -31,7 +31,7 @@ When something goes wrong, ransomware, a dead server, a flood, a backup answers 
 - Who is in charge, and who do we call?
 - How much recent work did we lose?
 
-A backup answers none of those. A disaster recovery plan answers all of them. The difference between a business that's down for two hours and one that's down for two weeks usually isn't whether they had backups. It's whether they had a plan around those backups.
+A backup answers none of those. A disaster recovery plan answers all of them. The federal [Ready.gov business continuity](https://www.ready.gov/business) program offers free templates for building one. The difference between a business that's down for two hours and one that's down for two weeks usually isn't whether they had backups. It's whether they had a plan around those backups.
 
 ![Team reviewing backup and disaster recovery plans on a laptop](/images/blog/backup-disaster-recovery-2.webp "Team reviewing backup and disaster recovery plans on a laptop")
 
@@ -67,6 +67,8 @@ A complete plan goes well beyond "restore the files." It spells out:
 6. **Testing schedule.** When and how you'll prove the plan actually works.
 
 That last point is where most plans quietly fail.
+
+![Team reviewing a business continuity and disaster recovery plan](/images/blog/backup-disaster-recovery-3.webp "A tested recovery plan is what turns a disaster into a non-event")
 
 ## Test it, or you don't really have it
 

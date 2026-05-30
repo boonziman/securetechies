@@ -8,9 +8,9 @@
   <div class="st-post-hero-glow"></div>
   <div class="st-post-hero-inner">
     <nav class="st-post-breadcrumb" aria-label="Breadcrumb">
-      <a href="{{ "/" | relURL }}">Home</a>
+      <a href="{{ "" | relURL }}">Home</a>
       <span>/</span>
-      <a href="{{ "/blog/" | relURL }}">Blog</a>
+      <a href="{{ "blog/" | relURL }}">Blog</a>
       <span>/</span>
       <span class="st-post-breadcrumb-current">{{ .Title | truncate 40 }}</span>
     </nav>
@@ -32,7 +32,7 @@
 <!-- ============================ FEATURED IMAGE ============================ -->
 {{ with .Params.image }}
 <div class="st-post-featured-img">
-  <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager" width="1200" height="630">
+  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="eager" width="1200" height="630">
 </div>
 {{ end }}
 
@@ -76,7 +76,7 @@
       <div class="st-post-foot">
         {{ with .Params.tags }}
         <div class="st-post-tags">
-          {{ range . }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="st-post-tag">#{{ . | humanize }}</a>{{ end }}
+          {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="st-post-tag">#{{ . | humanize }}</a>{{ end }}
         </div>
         {{ end }}
         <div class="st-post-share">
@@ -96,7 +96,7 @@
       <!-- Author box -->
       <div class="st-post-author">
         <div class="st-post-author-avatar">
-          {{ if and $author $author.Params.image }}<img src="{{ $author.Params.image | relURL }}" alt="{{ .Params.author }}" width="64" height="64">{{ else }}<span>ST</span>{{ end }}
+          {{ if and $author $author.Params.image }}<img src="{{ $author.Params.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Params.author }}" width="64" height="64">{{ else }}<span>ST</span>{{ end }}
         </div>
         <div class="st-post-author-info">
           <p class="st-post-author-name">{{ .Params.author }}</p>
@@ -117,7 +117,7 @@
       {{ range . }}
       <a href="{{ .RelPermalink }}" class="st-blog-card" aria-label="{{ .Title }}">
         <div class="st-blog-card-media">
-          {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" width="600" height="380">{{ else }}<div class="st-blog-card-media-fallback"></div>{{ end }}
+          {{ with .Params.image }}<img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="lazy" width="600" height="380">{{ else }}<div class="st-blog-card-media-fallback"></div>{{ end }}
           {{ with index .Params.categories 0 }}<span class="st-blog-card-cat">{{ . | humanize }}</span>{{ end }}
         </div>
         <div class="st-blog-card-body">
@@ -186,6 +186,17 @@
 }
 </script>
 {{ end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ "/" | absURL }}" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ "/blog/" | absURL }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": "{{ .Permalink }}" }
+  ]
+}
+</script>
 
 <script>
 (function(){

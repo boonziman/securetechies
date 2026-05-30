@@ -27,7 +27,7 @@ faq:
 
 If you run or manage a law firm, here's the core of it: **your IT support needs to treat client confidentiality, compliance, and uptime as non-negotiable professional obligations, not optional upgrades.** A law firm isn't a typical small business. You hold privileged information, you're bound by ethical duties to protect it, and a single day of downtime can mean a missed deadline. Your technology has to reflect that reality.
 
-This guide covers what law firms actually need from IT support, why generic support falls short, and how to tell whether your current setup is protecting your firm or quietly exposing it.
+This guide covers what law firms actually need from IT support, why generic support falls short, and how to tell whether your current setup is protecting your firm or quietly exposing it. The [American Bar Association](https://www.americanbar.org/groups/cybersecurity/) maintains ongoing guidance on a firm's ethical duty to safeguard client data.
 
 ## Why law firms are different (and bigger targets)
 
@@ -130,6 +130,8 @@ Strong providers answer with specifics and evidence. Vague reassurances are a wa
 ### One thing to watch: server proliferation
 
 Be wary of a provider whose answer to every problem is another server. A practice management server, then a document server, then a remote-access server, then something for backups. Before long you're not running a clean environment, you're running a pile of dependencies that multiply cost, complexity, and points of failure, often because adding infrastructure is more billable than simplifying it. The better question is always: what's the cleanest setup that supports how this firm actually works?
+
+![Attorney working securely on a laptop in a law office](/images/blog/law-firm-it-support-3.webp "Law firms need IT support built around confidentiality and uptime")
 
 ## A practical 60 to 90 day roadmap
 

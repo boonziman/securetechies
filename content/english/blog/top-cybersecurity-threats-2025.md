@@ -29,7 +29,7 @@ The threat landscape evolves fast, and 2025 has raised the stakes. Below are the
 
 ![Laptop displaying code in a dark room, illustrating modern cyber threats](/images/blog/cybersecurity-threats-2.webp "Most cyberattacks start with a stolen password or a single click")
 
-Before the list, it helps to know the pattern. The overwhelming majority of breaches don't start with some Hollywood-style hack. They start with a stolen password or a single click on a convincing email. That's why the defenses repeated throughout this article — multi-factor authentication, monitoring, backups, and training — show up again and again. They block the doorways attackers actually use.
+Before the list, it helps to know the pattern. The overwhelming majority of breaches don't start with some Hollywood-style hack. They start with a stolen password or a single click on a convincing email. According to [IBM's Cost of a Data Breach report](https://www.ibm.com/reports/data-breach), the global average breach now costs millions, and stolen or compromised credentials remain one of the most common entry points. That's why the defenses repeated throughout this article — multi-factor authentication, monitoring, backups, and training — show up again and again. They block the doorways attackers actually use.
 
 ## 1. AI-powered phishing attacks
 
@@ -39,7 +39,7 @@ Gone are the days of obvious phishing emails with broken English and suspicious 
 
 - Deploy advanced email filtering with AI-based detection.
 - Run regular [phishing simulation training](/services/cybersecurity/) so employees stay sharp.
-- Require multi-factor authentication (MFA) on every account, so a stolen password alone isn't enough.
+- Require multi-factor authentication (MFA) on every account, so a stolen password alone isn't enough. The federal [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/secure-our-world) rates MFA as one of the single most effective steps a business can take.
 
 ## 2. Ransomware-as-a-service (RaaS)
 
@@ -62,6 +62,8 @@ Attackers increasingly compromise software vendors and service providers to reac
 - Vet third-party vendors for their security practices before you connect them.
 - Move toward a zero-trust architecture, where no connection is automatically trusted.
 - Monitor for unusual network activity coming from vendor integrations.
+
+![Security operations team monitoring for emerging cyber threats](/images/blog/cybersecurity-threats-3.webp "Staying ahead of evolving threats takes constant vigilance")
 
 ## 4. Cloud misconfiguration
 

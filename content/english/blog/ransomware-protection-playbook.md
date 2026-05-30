@@ -21,7 +21,7 @@ faq:
 
 If you take one thing from this guide, take this: **the single most effective ransomware protection for a small business is a tested, offline backup.** Everything else, the firewalls, the filters, the training, reduces your chance of getting hit. Backups are what let you say "no" to the ransom and recover anyway. Build everything else around that foundation.
 
-Now let's walk through the whole playbook, from how these attacks actually start to exactly what to do if your screen ever lights up with a ransom note.
+Now let's walk through the whole playbook, from how these attacks actually start to exactly what to do if your screen ever lights up with a ransom note. For the federal government's official guidance, the [CISA StopRansomware](https://www.cisa.gov/stopransomware) program is the authoritative resource.
 
 ## What ransomware actually is (in plain English)
 
@@ -68,6 +68,8 @@ Since most attacks arrive by email, good filtering stops a huge share of them be
 ### Layer 5: Your people
 
 Your employees are simultaneously your biggest risk and your best sensor. A staff member trained to pause at a suspicious email is a defense no software can replicate. Short, regular [security awareness training](/services/cybersecurity/), plus the occasional simulated phishing test, turns your team from the weakest link into a genuine layer of protection.
+
+![Security technology defending business data against ransomware](/images/blog/ransomware-protection-playbook-3.webp "Layered defenses and tested backups beat ransomware")
 
 ## A simple ransomware readiness checklist
 

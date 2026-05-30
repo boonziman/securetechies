@@ -62,6 +62,8 @@ In each case, you fill the gap without committing to a new salary and benefits p
 
 Because you pay only for the gaps you need filled, co-managed arrangements are often more cost-effective than either hiring more staff or [outsourcing your entire IT department](/blog/outsourced-it-department/).
 
+![Internal IT staff collaborating with a managed services team](/images/blog/co-managed-it-services-3.webp "Co-managed IT pairs your in-house staff with outside expertise")
+
 ## Common ways businesses use co-managed IT
 
 - **Help desk overflow.** The provider handles routine tickets so internal staff focus on projects.

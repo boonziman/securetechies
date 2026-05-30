@@ -55,6 +55,8 @@ Most Los Angeles businesses get the best results when both come from the same pa
 
 A full-time Chief Information Officer can cost well over $200,000 a year — out of reach for most small and mid-size businesses. A [virtual CIO (vCIO)](/blog/what-is-vcio/) delivers the same strategic guidance for a fraction of that cost, usually bundled into a managed IT plan. Your vCIO builds the roadmap, manages the budget, oversees [security and compliance](/services/compliance-security-audits/), and guides big decisions, giving you executive-level IT leadership without the executive-level payroll.
 
+![IT consultants planning a technology roadmap on a whiteboard](/images/blog/it-consulting-los-angeles-3.webp "Strategic IT consulting aligns technology with business goals")
+
 ## What IT consulting costs in Los Angeles
 
 | Model | Typical cost | Best for |

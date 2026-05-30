@@ -23,7 +23,7 @@ faq:
 
 Here's the short version: **phishing is the most common entry point for cyberattacks because it targets human trust, and the only effective defense is layered — email filtering, multi-factor authentication, email authentication (SPF, DKIM, DMARC), and ongoing employee training working together.** No single tool stops phishing, but the combination blocks the overwhelming majority of attacks.
 
-The vast majority of business breaches start with a single email. A convincing message tricks an employee into clicking a link, entering a password, or wiring money, and the attacker is in. This guide explains how phishing works and exactly how to defend against it.
+The vast majority of business breaches start with a single email. A convincing message tricks an employee into clicking a link, entering a password, or wiring money, and the attacker is in. The [Federal Trade Commission (FTC)](https://consumer.ftc.gov/articles/how-to-recognize-and-avoid-phishing-scams) publishes ongoing guidance on recognizing these scams. This guide explains how phishing works and exactly how to defend against it.
 
 ## How phishing attacks work
 
@@ -55,6 +55,8 @@ This layered approach is the heart of effective [email and cybersecurity protect
 ## Why training is the highest-return layer
 
 Technology blocks most attacks, but the cleverest phishing emails are designed to beat filters and reach a human. Your employees are the last line of defense. A team trained to pause, check the sender, and verify unusual requests stops the attacks that technology misses. That's why [employee security awareness training](/blog/employee-security-awareness-training/) delivers some of the best return of any security spending. The combination of good filtering and trained people is far stronger than either alone.
+
+![Employee carefully reviewing an email for phishing signs](/images/blog/phishing-email-security-3.webp "Email security and awareness stop phishing before it lands")
 
 ## What email security costs
 

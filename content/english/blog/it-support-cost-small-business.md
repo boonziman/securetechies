@@ -109,12 +109,14 @@ None of these are red flags by themselves. The red flag is a provider who hides 
 
 When businesses compare IT support quotes, they stare at the monthly fee and ignore the number that actually matters: what poor IT costs them when it fails. These are the hidden costs that make "cheap" support expensive.
 
-- **Downtime.** Gartner has pegged the average cost of IT downtime at around $5,600 per minute, and surveys of small and mid-sized businesses routinely put a serious outage in the hundreds of thousands of dollars per hour once you count lost revenue, idle staff, and recovery. Even a modest business loses real money every hour systems are dark.
+- **Downtime.** [Gartner](https://www.gartner.com/en/information-technology) has pegged the average cost of IT downtime at around $5,600 per minute, and surveys of small and mid-sized businesses routinely put a serious outage in the hundreds of thousands of dollars per hour once you count lost revenue, idle staff, and recovery. Even a modest business loses real money every hour systems are dark.
 - **Lost productivity.** Studies consistently find employees lose around 20 minutes a day to technology friction — slow machines, password lockouts, printer fights. Across a 25-person team that's hundreds of hours a year quietly evaporating.
 - **Security incidents.** A single ransomware event can cost a small business anywhere from $10,000 to well over $500,000 once you add ransom, recovery, downtime, and lost trust. The whole point of paying for prevention is to never find out your number.
 - **Wasted software licenses.** Unmanaged environments routinely pay for licenses nobody uses, often $50 to $200 per user per year in quiet waste. A good provider trims that.
 
 This is why the cheapest quote is so often the most expensive choice. You're not really buying support, you're buying the absence of these costs.
+
+![Small business team working productively on supported computers](/images/blog/it-support-cost-small-business-3.webp "Reliable IT support pays for itself in recovered productivity")
 
 ## Why two identical companies get different quotes
 

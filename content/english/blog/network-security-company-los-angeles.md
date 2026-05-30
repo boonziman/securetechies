@@ -29,7 +29,7 @@ Your network is the front door to everything your business runs on. If it's poor
 
 ![Network security protecting a Los Angeles business](/images/blog/network-security-company-los-angeles-2.webp "Network security guards the infrastructure Los Angeles businesses rely on")
 
-Network security focuses on the infrastructure that connects your devices and carries your data. A strong provider manages all of the following.
+Network security focuses on the infrastructure that connects your devices and carries your data. Many providers map their controls to the [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework), the federal standard for managing security risk. A strong provider manages all of the following.
 
 | Control | What it does |
 | --- | --- |
@@ -58,6 +58,8 @@ Two controls separate strong network security from a basic firewall: segmentatio
 | Firewall hardware | One-time + annual licensing | Scales with sites and bandwidth |
 
 Pricing scales with the number of locations, users, and the level of monitoring and compliance you need. For regulated firms, expect additional logging and documentation costs to stay audit-ready.
+
+![Network monitoring protecting a Los Angeles company's data](/images/blog/network-security-company-los-angeles-3.webp "Continuous network monitoring catches threats early")
 
 ## Questions that reveal a strong provider
 
