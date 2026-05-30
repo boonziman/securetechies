@@ -119,8 +119,8 @@
 <!-- BODY CONTENT -->
 {{ if .Content }}
 <section style="background:#fff;padding:64px 0">
-  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem">
-    <div class="st-svc-content">
+  <div style="max-width:1080px;margin:0 auto;padding:0 1.5rem">
+    <div class="st-svc-content st-svc-content--cols">
       {{ .Content }}
     </div>
   </div>
@@ -255,8 +255,9 @@
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   }
   .st-svc-content { font-size:1.02rem;color:#374151;line-height:1.85; }
-  .st-svc-content h2 { font-size:1.45rem;font-weight:800;color:#0f172a;margin:40px 0 14px;letter-spacing:-0.02em; }
-  .st-svc-content h3 { font-size:1.15rem;font-weight:700;color:#0f172a;margin:32px 0 10px; }
+  .st-svc-content h2 { font-size:1.55rem;font-weight:800;color:#0f172a;margin:0 0 18px;letter-spacing:-0.02em;line-height:1.25; }
+  .st-svc-content h3 { font-size:1.15rem;font-weight:800;color:#0f172a;margin:26px 0 10px;padding-left:14px;position:relative;letter-spacing:-0.01em; }
+  .st-svc-content h3::before { content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:3px;background:linear-gradient(180deg,#0066CC,#60a5fa); }
   .st-svc-content p { margin-bottom:18px; }
   .st-svc-content ul { padding-left:0;list-style:none;margin-bottom:24px; }
   .st-svc-content ul li { position:relative;padding:6px 0 6px 28px;margin-bottom:4px;color:#475569;font-size:0.95rem; }
@@ -264,7 +265,18 @@
   .st-svc-content a { color:#0066CC;font-weight:600;text-decoration:none; }
   .st-svc-content a:hover { text-decoration:underline; }
   .st-svc-content strong { color:#0f172a; }
-  .st-svc-content hr { border:none;border-top:1px solid #e2e8f0;margin:32px 0; }
+  .st-svc-content hr { border:none;border-top:1px solid #e2e8f0;margin:8px 0 28px; }
+  /* Two-column condensed body — section titles span full width, dense bullets flow into balanced columns */
+  @media (min-width:880px) {
+    .st-svc-content--cols { column-count:2; column-gap:60px; }
+    .st-svc-content--cols > h2,
+    .st-svc-content--cols > hr { column-span:all; }
+    .st-svc-content--cols > h2 { text-align:center;font-size:1.7rem;margin-bottom:24px; }
+    .st-svc-content--cols > h2 ~ hr + h2 { margin-top:8px; }
+    .st-svc-content--cols > p,
+    .st-svc-content--cols > ul { break-inside:avoid; }
+    .st-svc-content--cols > h3 { break-inside:avoid;break-after:avoid; }
+  }
 </style>
 
 <!-- SCHEMA -->

@@ -47,6 +47,12 @@ url = "/services/cybersecurity/"
 weight = 6
 
 [[main]]
+parent = "Services"
+name = "Web Development & Digital"
+url = "/services/web-development/"
+weight = 7
+
+[[main]]
 name = "About"
 url = "/about"
 weight = 3

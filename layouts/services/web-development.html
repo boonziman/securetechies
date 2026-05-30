@@ -1,0 +1,421 @@
+{{ define "main" }}
+
+<!-- ============ HERO ============ -->
+<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:120px 0 88px">
+  {{ with .Params.hero_image }}
+  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.28;pointer-events:none" loading="eager" width="1600" height="1066" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.55) 0%,rgba(10,22,40,0.78) 100%);pointer-events:none"></div>
+  {{ end }}
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
+  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:640px;height:360px;background:radial-gradient(ellipse,rgba(0,102,204,0.14) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:820px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <div class="st-reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.2);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:24px;backdrop-filter:blur(4px)">
+        <div style="width:28px;height:28px;background:rgba(0,102,204,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        </div>
+        <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">Web Development &amp; Digital</span>
+      </div>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.3rem);font-weight:800;color:#f1f5f9;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px">Web Development &amp;<br><span style="background:linear-gradient(120deg,#60a5fa,#4ade80);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#60a5fa">Digital Solutions</span></h1>
+      {{ with .Params.hero_subtitle }}
+      <p style="font-size:1.15rem;color:#94a3b8;line-height:1.7;max-width:620px;margin:0 auto 36px">{{ . }}</p>
+      {{ end }}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="{{ "contact" | relURL }}" class="st-btn-primary">
+          Start Your Project
+          <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="tel:+18184315607" class="st-wd-phone" style="display:inline-flex;align-items:center;gap:8px;color:#cbd5e1;font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.15);transition:border-color 0.2s">
+          <svg style="width:15px;height:15px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          (818) 431-5607
+        </a>
+      </div>
+      <!-- hero trust row -->
+      <div style="display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:34px">
+        {{ range slice "Secure by design" "AI-accelerated delivery" "Backed by managed IT" }}
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:0.85rem;color:#9fb3c8;font-weight:600">
+          <svg style="width:15px;height:15px;color:#4ade80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          {{ . }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section style="background:#fff;overflow:hidden">
+  <div class="st-overview-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:500px">
+    <div style="display:flex;align-items:center;padding:72px clamp(1.5rem,5vw,5rem) 72px clamp(1.5rem,8vw,10rem)">
+      <div style="max-width:520px" class="st-reveal">
+        {{ with .Params.overview_title }}
+        <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">Why Us</span>
+        <h2 style="font-size:1.75rem;font-weight:800;color:#0f172a;margin-bottom:20px;letter-spacing:-0.02em;line-height:1.25">{{ . }}</h2>
+        {{ end }}
+        {{ with .Params.overview }}
+        <p style="font-size:1.05rem;color:#475569;line-height:1.85;margin-bottom:24px">{{ . }}</p>
+        {{ end }}
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          {{ range .Params.overview_stats }}
+          <div style="display:flex;align-items:center;gap:10px;background:#f0f6ff;border:1px solid #dbeafe;border-radius:10px;padding:8px 14px">
+            <span style="font-size:1.05rem;font-weight:800;color:#0066CC;line-height:1;letter-spacing:-0.02em">{{ .value }}</span>
+            <span style="font-size:0.8rem;font-weight:600;color:#475569;line-height:1.2">{{ .label }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ with .Params.overview_image }}
+    <div style="position:relative;overflow:hidden;min-height:380px">
+      <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }} by Secure Techies — secure web development in Los Angeles" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" loading="lazy" width="1200" height="800" />
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ============ VALUE PROPS ============ -->
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
+  <div style="max-width:1040px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:42px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">The Difference</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Not just a website — a secure digital asset</h2>
+    </div>
+    <div class="st-wd-3grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="st-wd-vcard st-reveal" style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:30px 26px;transition:all .3s">
+        <div class="st-wd-ictile"><svg style="width:22px;height:22px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3 style="font-size:1.08rem;font-weight:700;color:#0f172a;margin:18px 0 8px">Secure by Design</h3>
+        <p style="font-size:0.92rem;color:#64748b;line-height:1.7;margin:0">Every build is hardened with HTTPS, secure forms, malware monitoring, and backups — the same enterprise practices that protect our managed IT clients.</p>
+      </div>
+      <div class="st-wd-vcard st-reveal" style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:30px 26px;transition:all .3s;transition-delay:.1s">
+        <div class="st-wd-ictile"><svg style="width:22px;height:22px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3 style="font-size:1.08rem;font-weight:700;color:#0f172a;margin:18px 0 8px">AI-Accelerated Delivery</h3>
+        <p style="font-size:0.92rem;color:#64748b;line-height:1.7;margin:0">Modern AI tooling lets us design, build, and launch in a fraction of the usual time — premium quality and faster turnarounds, without cutting corners.</p>
+      </div>
+      <div class="st-wd-vcard st-reveal" style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:30px 26px;transition:all .3s;transition-delay:.2s">
+        <div class="st-wd-ictile"><svg style="width:22px;height:22px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M18.364 5.636a9 9 0 010 12.728m-3.536-3.536a4 4 0 010-5.656M12 12h.01"/></svg></div>
+        <h3 style="font-size:1.08rem;font-weight:700;color:#0f172a;margin:18px 0 8px">Backed by Managed IT</h3>
+        <p style="font-size:0.92rem;color:#64748b;line-height:1.7;margin:0">One team for your website, hosting, security, and IT. We don't disappear after launch — we monitor, maintain, and grow your digital presence for the long run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE GROUPS ============ -->
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:80px 0">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:48px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">What We Build</span>
+      <h2 style="font-size:1.75rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em;margin-bottom:12px">A complete digital toolkit</h2>
+      <p style="font-size:1rem;color:#64748b;line-height:1.7;max-width:600px;margin:0 auto">From a single landing page to a full custom web application, we deliver every piece of your online presence — designed, developed, secured, and supported.</p>
+    </div>
+
+    <div class="st-wd-groups" style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+
+      <!-- Group 1 -->
+      <div class="st-wd-group st-reveal" style="background:#f8fafc;border:1px solid #e8eef6;border-radius:18px;padding:30px 28px;transition:all .3s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="st-wd-gtile"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3 style="font-size:1.12rem;font-weight:800;color:#0f172a;margin:0;letter-spacing:-0.01em">Core Web Development</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0">
+          {{ range slice "Custom Website Design &amp; Development" "High-Converting Landing Pages &amp; Sales Funnels" "Full Website Redesigns &amp; Modernization" "E-commerce Website Development" }}
+          <li style="position:relative;padding:7px 0 7px 28px;font-size:0.95rem;color:#475569;line-height:1.55"><svg style="position:absolute;left:0;top:9px;width:16px;height:16px;color:#0066CC" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{{ . | safeHTML }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Group 2 -->
+      <div class="st-wd-group st-reveal" style="background:#f8fafc;border:1px solid #e8eef6;border-radius:18px;padding:30px 28px;transition:all .3s;transition-delay:.08s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="st-wd-gtile"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+          <h3 style="font-size:1.12rem;font-weight:800;color:#0f172a;margin:0;letter-spacing:-0.01em">AI-Powered &amp; Interactive</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0">
+          {{ range slice "AI Chatbots, Virtual Assistants &amp; Lead Qualification" "Custom Interactive Widgets, Calculators &amp; Embeds" "AI Integrations, Automations &amp; Smart Features" }}
+          <li style="position:relative;padding:7px 0 7px 28px;font-size:0.95rem;color:#475569;line-height:1.55"><svg style="position:absolute;left:0;top:9px;width:16px;height:16px;color:#0066CC" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{{ . | safeHTML }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Group 3 -->
+      <div class="st-wd-group st-reveal" style="background:#f8fafc;border:1px solid #e8eef6;border-radius:18px;padding:30px 28px;transition:all .3s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="st-wd-gtile"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5"/></svg></div>
+          <h3 style="font-size:1.12rem;font-weight:800;color:#0f172a;margin:0;letter-spacing:-0.01em">Content &amp; Growth</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0">
+          {{ range slice "SEO Blog Content Creation &amp; Management" "Technical SEO, Performance &amp; Core Web Vitals" "UI/UX Design Systems &amp; Digital Branding" }}
+          <li style="position:relative;padding:7px 0 7px 28px;font-size:0.95rem;color:#475569;line-height:1.55"><svg style="position:absolute;left:0;top:9px;width:16px;height:16px;color:#0066CC" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{{ . | safeHTML }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Group 4 -->
+      <div class="st-wd-group st-reveal" style="background:#f8fafc;border:1px solid #e8eef6;border-radius:18px;padding:30px 28px;transition:all .3s;transition-delay:.08s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="st-wd-gtile"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg></div>
+          <h3 style="font-size:1.12rem;font-weight:800;color:#0f172a;margin:0;letter-spacing:-0.01em">Applications &amp; Experiences</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0">
+          {{ range slice "Web Apps — Dashboards, Portals &amp; Client Tools" "Progressive Web Apps (PWAs) &amp; Mobile-First UX" "Campaign Microsites &amp; Video/UGC-Integrated Sites" }}
+          <li style="position:relative;padding:7px 0 7px 28px;font-size:0.95rem;color:#475569;line-height:1.55"><svg style="position:absolute;left:0;top:9px;width:16px;height:16px;color:#0066CC" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{{ . | safeHTML }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Group 5 — full width, ties into managed IT -->
+      <div class="st-wd-group st-wd-group--wide st-reveal" style="grid-column:1 / -1;background:linear-gradient(135deg,#0a1628,#0d1f3c);border:1px solid rgba(0,102,204,0.25);border-radius:18px;padding:32px 30px;transition:all .3s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+          <div class="st-wd-gtile"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+          <h3 style="font-size:1.15rem;font-weight:800;color:#f1f5f9;margin:0;letter-spacing:-0.01em">Optimization &amp; Long-Term Value</h3>
+        </div>
+        <p style="font-size:0.95rem;color:#9fb3c8;line-height:1.7;margin:0 0 16px;max-width:680px">Your website is never "done." We keep it fast, secure, and converting — folded directly into <a href="{{ "services" | relURL }}" style="color:#60a5fa;font-weight:600;text-decoration:none">Secure Techies' managed IT services</a> so one accountable team owns your entire digital operation.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 28px">
+          {{ range slice "Website Maintenance, Security Hardening &amp; Ongoing Support" "Analytics Setup, Conversion Tracking &amp; Optimization" }}
+          <div style="position:relative;padding:6px 0 6px 28px;font-size:0.95rem;color:#cbd5e1;line-height:1.55"><svg style="position:absolute;left:0;top:8px;width:16px;height:16px;color:#4ade80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>{{ . | safeHTML }}</div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO BAND ============ -->
+{{ with .Params.band_image }}
+<section style="position:relative;height:300px;overflow:hidden">
+  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9" loading="lazy" width="1600" height="900" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,13,26,0.86) 0%,rgba(0,102,204,0.62) 100%)"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center">
+    <div style="text-align:center;max-width:600px;padding:0 1.5rem">
+      <p style="font-size:1.4rem;font-weight:700;color:#fff;line-height:1.5;margin-bottom:12px;letter-spacing:-0.01em">Built fast. Built beautiful. Built to be secure.</p>
+      <p style="font-size:0.95rem;color:rgba(255,255,255,0.72)">Premium digital experiences from a team that understands security from the inside out.</p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ BODY CONTENT ============ -->
+{{ if .Content }}
+<section style="background:#fff;padding:64px 0">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <div class="st-wd-content">{{ .Content }}</div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ PROCESS ============ -->
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:76px 0">
+  <div style="max-width:820px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:44px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Our Process</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">How we bring your project to life</h2>
+    </div>
+    <div style="position:relative;padding-left:28px" class="st-reveal">
+      <div style="position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#0066CC,#93c5fd,#e2e8f0);border-radius:2px"></div>
+      <div style="display:flex;flex-direction:column;gap:34px">
+        {{ range slice
+          (dict "n" "1" "t" "Discovery &amp; Strategy" "d" "We learn your goals, audience, and competitors — then map the pages, features, and conversions your site needs to succeed.")
+          (dict "n" "2" "t" "Design &amp; Prototype" "d" "We craft a modern, on-brand UI/UX and share interactive mockups, so you see and shape the look and feel before a single line of code ships.")
+          (dict "n" "3" "t" "AI-Accelerated Build" "d" "Our engineers build your site fast using AI-assisted tooling — responsive, accessible, lightning-quick, and reviewed by a human at every step.")
+          (dict "n" "4" "t" "Security &amp; QA" "d" "We harden the site, secure every form, optimize Core Web Vitals, and test across devices and browsers before anything goes live.")
+          (dict "n" "5" "t" "Launch &amp; Ongoing Support" "d" "We deploy, monitor, and maintain — with optional managed support that keeps your site secure, updated, and converting long after launch.")
+        }}
+        <div style="position:relative;display:flex;gap:24px;align-items:flex-start">
+          <div style="position:relative;z-index:2;width:40px;height:40px;background:#fff;border:2.5px solid #0066CC;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:-28px;box-shadow:0 2px 8px rgba(0,102,204,0.15)">
+            <span style="font-size:0.85rem;font-weight:800;color:#0066CC">{{ .n }}</span>
+          </div>
+          <div style="padding-top:6px">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin-bottom:6px">{{ .t | safeHTML }}</h3>
+            <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0">{{ .d | safeHTML }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SECURE TECHIES ============ -->
+<section style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:76px 0">
+  <div style="max-width:820px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:38px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">The Advantage</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#f1f5f9;letter-spacing:-0.02em">Why build with Secure Techies</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="st-reveal">
+      {{ range slice
+        "Security-first development from a real cybersecurity team"
+        "AI-accelerated delivery — premium quality, faster timelines"
+        "One partner for your website, hosting, IT, and security"
+        "Mobile-first, lightning-fast, SEO-ready builds"
+        "Conversion-focused design that turns visitors into leads"
+        "Ongoing maintenance, monitoring, and hardening"
+        "Local Southern California team — responsive and accountable"
+        "Transparent communication from kickoff to launch and beyond"
+      }}
+      <div class="st-wd-benefit" style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;transition:background .2s">
+        <svg style="width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:1px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        <span style="font-size:0.9rem;color:#cbd5e1;line-height:1.5">{{ . }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+{{ with .Params.faqs }}
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:76px 0">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:40px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Common Questions</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Frequently Asked Questions</h2>
+    </div>
+    <div class="st-reveal">
+      {{ range . }}
+      <details class="st-faq-item" style="border:1px solid #e2e8f0;border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden">
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;padding:18px 22px;font-size:1rem;font-weight:700;color:#0f172a;list-style:none">
+          <span>{{ .question }}</span>
+          <svg class="st-faq-chev" style="width:18px;height:18px;color:#0066CC;flex-shrink:0;transition:transform 0.25s" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div style="padding:0 22px 20px;font-size:0.95rem;color:#475569;line-height:1.8">{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ OTHER SERVICES ============ -->
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:56px 0">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">Explore Our Other Services</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px" class="st-reveal">
+      {{ range where (where .Site.RegularPages "Section" "services") "RelPermalink" "ne" .RelPermalink }}
+      <a href="{{ .RelPermalink }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
+        <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+        <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="position:relative;overflow:hidden;background:linear-gradient(135deg,#0066CC 0%,#0052a3 100%);padding:76px 0">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:620px;margin:0 auto;padding:0 1.5rem;text-align:center" class="st-reveal">
+    <h2 style="font-size:1.85rem;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em">Let's build something great</h2>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:32px">Tell us about your project and we'll show you what a fast, secure, results-driven digital presence looks like — with a free, no-pressure consultation.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+      <a href="{{ "contact" | relURL }}" class="st-wd-btn-white" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0f172a;font-weight:700;font-size:15px;padding:14px 30px;border-radius:10px;text-decoration:none;transition:all 0.2s">
+        Start Your Project
+        <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:+18184315607" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3)">
+        (818) 431-5607
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STYLES ============ -->
+<style>
+  .st-wd-ictile { width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#0066CC,#3b82f6);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,102,204,0.25); }
+  .st-wd-gtile { width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0066CC,#3b82f6);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(0,102,204,0.22); }
+  .st-wd-vcard:hover { box-shadow:0 12px 32px rgba(0,102,204,0.10);border-color:#bfdbfe;transform:translateY(-3px); }
+  .st-wd-group:hover { box-shadow:0 10px 30px rgba(0,102,204,0.08);border-color:#bfdbfe;transform:translateY(-2px); }
+  .st-wd-group--wide:hover { box-shadow:0 14px 38px rgba(0,102,204,0.28);border-color:rgba(0,102,204,0.45);transform:translateY(-2px); }
+  .st-wd-benefit:hover { background:rgba(255,255,255,0.07) !important; }
+  .st-wd-phone:hover { border-color:rgba(255,255,255,0.35) !important; }
+  .st-wd-btn-white:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.18); }
+  .st-faq-item summary::-webkit-details-marker { display:none; }
+  .st-faq-item summary:hover { color:#0066CC; }
+  .st-faq-item[open] { border-color:#bfdbfe; box-shadow:0 4px 16px rgba(0,102,204,0.06); }
+  .st-faq-item[open] .st-faq-chev { transform:rotate(180deg); }
+  .st-service-link:hover { border-color:#93c5fd;box-shadow:0 4px 12px rgba(0,102,204,0.06); }
+  .st-wd-content { font-size:1.05rem;color:#374151;line-height:1.9; }
+  .st-wd-content p { margin-bottom:18px; }
+  .st-wd-content strong { color:#0f172a; }
+  .st-wd-content a { color:#0066CC;font-weight:600;text-decoration:none; }
+  .st-wd-content a:hover { text-decoration:underline; }
+  @media (max-width:880px){
+    .st-wd-3grid { grid-template-columns:1fr !important; }
+    .st-wd-groups { grid-template-columns:1fr !important; }
+  }
+  @media (max-width:768px){
+    .st-overview-grid { grid-template-columns:1fr !important; }
+    .st-overview-grid > div:last-child { min-height:300px; }
+    .st-wd-group--wide div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+  }
+</style>
+
+<!-- ============ SCROLL ANIMATIONS ============ -->
+<script>
+(function(){
+  var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); io.unobserve(e.target); } });
+    },{threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('st-visible'); }); }
+})();
+</script>
+
+<!-- ============ SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Web Development & Digital Solutions",
+  "description": {{ .Params.description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "serviceType": "Web Development & Digital Solutions",
+  "category": "Web Development",
+  "areaServed": [
+    { "@type": "State", "name": "California" },
+    { "@type": "City", "name": "Los Angeles" },
+    { "@type": "City", "name": "Woodland Hills" },
+    { "@type": "City", "name": "Calabasas" },
+    { "@type": "City", "name": "Sherman Oaks" },
+    { "@type": "City", "name": "Encino" }
+  ],
+  "provider": {
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://securetechie.com/#organization",
+    "name": "Secure Techies, LLC",
+    "telephone": "+1-818-431-5607",
+    "url": "https://securetechie.com/",
+    "image": "https://securetechie.com/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "21515 Vanowen St Suite 1110",
+      "addressLocality": "Canoga Park",
+      "addressRegion": "CA",
+      "postalCode": "91303",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$"
+  }
+}
+</script>
+{{ with .Params.faqs }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := . }}{{ if $i }},{{ end }}{
+      "@type": "Question",
+      "name": {{ $f.question | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ end }}
