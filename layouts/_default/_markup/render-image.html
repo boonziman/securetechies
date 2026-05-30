@@ -9,7 +9,15 @@
   {{- /* Trim the leading slash so relURL prepends the baseURL subpath (e.g. /st-website/). */ -}}
   {{- $dest = strings.TrimPrefix "/" $dest | relURL -}}
 {{- end -}}
+{{- $isBlog := eq .Page.Section "blog" -}}
+{{- if and $isBlog .Title -}}
+<figure class="st-post-figure">
+  <img src="{{ $dest | safeURL }}" alt="{{ $alt }}" title="{{ .Title }}" width="1200" height="630" loading="lazy" decoding="async">
+  <figcaption>{{ .Title }}</figcaption>
+</figure>
+{{- else -}}
 <img src="{{ $dest | safeURL }}" alt="{{ $alt }}"
   {{- with .Title }} title="{{ . }}"{{ end }}
   width="1200" height="630" loading="lazy" decoding="async">
+{{- end -}}
 {{- /* Trailing newline */ -}}

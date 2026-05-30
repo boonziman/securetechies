@@ -10,6 +10,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
 
+{{/* Editorial display serif (Fraunces) — loaded only on blog pages for the premium post typography. Scoped so the rest of the site is unaffected. */}}
+{{ $isBlog := or (eq .Section "blog") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
+{{ if $isBlog }}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
+{{ end }}
+
 <!-- manifest -->
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/pwa */}}
 {{ partialCached "manifest" . }}

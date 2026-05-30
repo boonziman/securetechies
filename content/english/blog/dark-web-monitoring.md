@@ -1,7 +1,7 @@
 ---
 title: "Dark Web Monitoring: How to Know When Your Business Data Has Leaked"
 meta_title: "Dark Web Monitoring for Business Explained | Secure Techies"
-description: "What the dark web is, how stolen business credentials end up for sale there, and how dark web monitoring gives you an early warning before leaked data is used against you."
+description: "What the dark web is, how stolen business credentials end up for sale there, and how dark web monitoring warns you before leaked data is used against you."
 date: 2025-05-28
 image: "/images/blog/dark-web-monitoring.webp"
 categories: ["Cybersecurity"]

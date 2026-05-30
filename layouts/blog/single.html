@@ -3,6 +3,7 @@
 
 <!-- ============================ POST HERO ============================ -->
 <article class="st-post">
+<div class="st-read-progress" aria-hidden="true"><span></span></div>
 <header class="st-post-hero">
   <div class="st-post-hero-grid"></div>
   <div class="st-post-hero-glow"></div>
@@ -146,6 +147,40 @@
   </div>
 </section>
 </article>
+
+<!-- Reading progress + TOC scroll-spy -->
+<script>
+(function(){
+  var bar = document.querySelector('.st-read-progress span');
+  var article = document.querySelector('.st-post-content');
+  function onScroll(){
+    if(bar && article){
+      var start = article.offsetTop;
+      var total = article.offsetHeight - window.innerHeight + 200;
+      var p = (window.scrollY - start + 200) / total;
+      p = Math.max(0, Math.min(1, p));
+      bar.style.width = (p * 100) + '%';
+    }
+  }
+  // TOC scroll-spy
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.st-post-toc a'));
+  var headings = tocLinks.map(function(a){
+    var id = decodeURIComponent((a.getAttribute('href')||'').replace(/^#/, ''));
+    return id ? document.getElementById(id) : null;
+  });
+  function onSpy(){
+    var pos = window.scrollY + 120;
+    var activeIndex = -1;
+    for(var i=0;i<headings.length;i++){ if(headings[i] && headings[i].offsetTop <= pos){ activeIndex = i; } }
+    tocLinks.forEach(function(a,i){ a.classList.toggle('st-toc-active', i === activeIndex); });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){ window.requestAnimationFrame(function(){ onScroll(); onSpy(); ticking = false; }); ticking = true; }
+  }, { passive: true });
+  onScroll(); onSpy();
+})();
+</script>
 
 <!-- ============================ JSON-LD ============================ -->
 {{ $img := "" }}

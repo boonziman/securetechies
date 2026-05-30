@@ -2523,3 +2523,158 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   .st-back-to-top { transition: opacity .25s ease, visibility .25s ease; transform: none; }
 }
+
+/* ============================================================
+   BLOG PREMIUM TYPOGRAPHY & DESIGN UPGRADE (Round 6)
+   Scoped entirely to .st-blog-* / .st-post-* selectors so the
+   homepage and the rest of the site are completely unaffected.
+   Fraunces (an editorial variable serif) is loaded only on blog
+   pages via layouts/_partials/essentials/head.html.
+   ============================================================ */
+:root {
+  --st-serif: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+/* ---- Editorial serif for display headings (blog only) ---- */
+.st-blog-hero-title,
+.st-post-title,
+.st-blog-featured-title,
+.st-post-content h2,
+.st-post-content h3,
+.st-post-faq > h2,
+.st-blog-section-head h2,
+.st-post-related .st-blog-section-head h2 {
+  font-family: var(--st-serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+/* Fraunces runs visually heavier than Inter — dial weights back a touch */
+.st-post-title { font-weight: 600; line-height: 1.12; }
+.st-blog-hero-title { font-weight: 600; }
+.st-post-content h2 { font-weight: 600; font-size: 1.82rem; }
+.st-post-content h3 { font-weight: 600; }
+.st-blog-featured-title { font-weight: 600; }
+
+/* ---- Reading progress bar ---- */
+.st-read-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: transparent; z-index: 1100; pointer-events: none;
+}
+.st-read-progress span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, #0066CC, #3b82f6 60%, #60a5fa);
+  box-shadow: 0 0 10px rgba(0,102,204,0.55);
+  transition: width 0.1s linear;
+}
+
+/* ---- Lead paragraph: turn the bold takeaway into a refined callout ---- */
+.st-post-content > p:first-of-type {
+  font-size: 1.26rem; line-height: 1.66; color: #1e293b; font-weight: 400;
+  margin: 0 0 2.2rem; padding: 1.45rem 1.7rem;
+  background: linear-gradient(180deg, #eff6ff 0%, #f7fbff 100%);
+  border-left: 4px solid #0066CC; border-radius: 0 16px 16px 0;
+}
+.st-post-content > p:first-of-type strong { color: #0a2a5e; font-weight: 700; }
+
+/* ---- Heading hierarchy with subtle accent marker ---- */
+.st-post-content h2 {
+  position: relative; padding-top: 1.5rem; margin-top: 3rem;
+  border-top: 1px solid #eef2f7;
+}
+.st-post-content h2::before {
+  content: ""; position: absolute; top: -2px; left: 0;
+  width: 48px; height: 3px; border-radius: 4px;
+  background: linear-gradient(90deg, #0066CC, #60a5fa);
+}
+.st-post-content h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.st-post-content h2:first-child::before { position: static; display: block; margin-bottom: 0.7rem; }
+
+/* ---- Refined blockquote / pull-quote ---- */
+.st-post-content blockquote {
+  position: relative; margin: 2.2rem 0; padding: 1.6rem 1.6rem 1.4rem 3.4rem;
+  background: linear-gradient(180deg, #f0f7ff, #f8fbff);
+  border-left: 4px solid #0066CC; border-radius: 0 16px 16px 0;
+}
+.st-post-content blockquote::before {
+  content: "\201C"; position: absolute; left: 14px; top: 2px;
+  font-family: var(--st-serif); font-size: 3.2rem; line-height: 1; color: #93c5fd;
+}
+.st-post-content blockquote p { font-size: 1.12rem; color: #1e3a5f; }
+
+/* ---- Image figures with captions ---- */
+.st-post-figure { margin: 2.2rem 0; }
+.st-post-figure img {
+  margin: 0; width: 100%; border-radius: 16px; display: block;
+  box-shadow: 0 12px 34px rgba(15,23,42,0.13);
+}
+.st-post-figure figcaption {
+  margin-top: 0.85rem; font-size: 0.86rem; line-height: 1.5; color: #94a3b8;
+  text-align: center; font-style: italic;
+}
+
+/* ---- Tables: rounded, elevated ---- */
+.st-post-content table {
+  border-collapse: separate; border-spacing: 0; overflow: hidden;
+  border-radius: 14px; border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 22px rgba(15,23,42,0.06);
+}
+.st-post-content th { border-bottom: none; }
+.st-post-content td { border-bottom: 1px solid #eef2f7; }
+.st-post-content tr:last-child td { border-bottom: none; }
+
+/* ---- TOC: active section highlight ---- */
+.st-post-toc-label { color: #0066CC; }
+.st-post-toc nav a.st-toc-active {
+  color: #0066CC; border-left-color: #0066CC; font-weight: 600;
+}
+
+/* ============================================================
+   BLOG HERO UPGRADE (list / category / tag / post heroes)
+   Richer depth, layered glow, editorial type, bottom fade.
+   ============================================================ */
+.st-blog-hero {
+  padding: 134px 0 104px;
+  background:
+    radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%);
+}
+.st-blog-hero::before {
+  content: ""; position: absolute; top: -80px; right: -60px;
+  width: 460px; height: 460px; pointer-events: none;
+  background: radial-gradient(circle, rgba(59,130,246,0.16) 0%, transparent 68%);
+}
+.st-blog-hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+  background: linear-gradient(180deg, transparent, rgba(248,250,252,0.04));
+  pointer-events: none;
+}
+.st-blog-hero-glow { width: 760px; height: 460px; background: radial-gradient(ellipse, rgba(0,102,204,0.18) 0%, transparent 70%); }
+.st-blog-hero-title { font-size: clamp(2.3rem, 5.2vw, 3.6rem); line-height: 1.08; }
+.st-blog-hero-accent { background: linear-gradient(120deg, #60a5fa, #93c5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.st-blog-hero-sub { font-size: 1.16rem; color: #aab8cc; }
+.st-blog-badge {
+  background: rgba(96,165,250,0.10); border-color: rgba(96,165,250,0.28);
+  color: #bfdbff; backdrop-filter: blur(4px);
+}
+
+/* Hero meta/credibility row (rendered on the blog list hero) */
+.st-blog-hero-meta {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 10px 18px; margin-top: 30px;
+  font-size: 0.86rem; font-weight: 600; color: #94a3b8;
+}
+.st-blog-hero-meta .st-blog-meta-dot { color: #475569; }
+.st-blog-hero-meta strong { color: #cbd5e1; font-weight: 700; }
+
+/* ---- Post hero: serif title, slightly more air ---- */
+.st-post-hero { padding: 120px 0 78px; background: radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%); }
+.st-post-cat { background: rgba(96,165,250,0.14); color: #bfdbff; }
+
+/* ---- Responsive niceties for the upgrade ---- */
+@media (max-width: 600px) {
+  .st-post-content > p:first-of-type { font-size: 1.12rem; padding: 1.15rem 1.2rem; }
+  .st-post-content h2 { font-size: 1.5rem; }
+  .st-blog-hero { padding: 104px 0 76px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-read-progress span { transition: none; }
+}

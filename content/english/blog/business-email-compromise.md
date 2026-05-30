@@ -1,7 +1,7 @@
 ---
 title: "Business Email Compromise: The Scam That Costs Companies Billions"
 meta_title: "Business Email Compromise (BEC): How to Stop It | Secure Techies"
-description: "Business email compromise is the costliest cybercrime hitting businesses today. Learn how the scam works, why it's so effective, and the controls that actually stop it."
+description: "Business email compromise is the costliest cybercrime today. Learn how the scam works, why it's so effective, and the controls that actually stop it."
 date: 2025-05-24
 image: "/images/blog/business-email-compromise.webp"
 categories: ["Cybersecurity"]

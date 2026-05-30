@@ -1,7 +1,7 @@
 ---
 title: "Zero Trust Security Explained: What It Means for a Small Business"
 meta_title: "Zero Trust Security Explained for Small Business | Secure Techies"
-description: "Zero trust security in plain English — what 'never trust, always verify' actually means, why the old castle-and-moat model failed, and how small businesses can adopt it."
+description: "Zero trust security in plain English — what 'never trust, always verify' means, why the old castle-and-moat model failed, and how small businesses adopt it."
 date: 2025-05-12
 image: "/images/blog/zero-trust-security.webp"
 categories: ["Cybersecurity"]
@@ -52,7 +52,15 @@ Only when the answers check out does access get granted — and only to the spec
 
 ## The pillars of a zero trust approach
 
-Zero trust isn't a single switch; it's several capabilities working together. Here are the pillars, and the good news is that small businesses can build them incrementally.
+Zero trust isn't a single switch; it's several capabilities working together. The concept is formalized by the U.S. National Institute of Standards and Technology in [NIST SP 800-207](https://csrc.nist.gov/pubs/sp/800/207/final), the definitive zero trust architecture standard — but you don't need to read a government document to benefit from it. Here are the pillars in plain English, and the good news is that small businesses can build them incrementally.
+
+| Pillar | What it does | Where to start |
+| --- | --- | --- |
+| Identity | Verifies who is really making each request | Turn on MFA everywhere |
+| Least privilege | Limits each account to only what it needs | Trim over-broad access |
+| Device health | Checks the device is managed and safe | Enroll company devices |
+| Segmentation | Stops a breach from spreading | Separate guest and sensitive systems |
+| Monitoring | Watches for unusual activity continuously | Log and review sign-ins |
 
 ### Identity is the new perimeter
 
