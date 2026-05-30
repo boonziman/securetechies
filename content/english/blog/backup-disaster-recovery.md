@@ -33,6 +33,10 @@ When something goes wrong, ransomware, a dead server, a flood, a backup answers 
 
 A backup answers none of those. A disaster recovery plan answers all of them. The federal [Ready.gov business continuity](https://www.ready.gov/business) program offers free templates for building one. The difference between a business that's down for two hours and one that's down for two weeks usually isn't whether they had backups. It's whether they had a plan around those backups.
 
+### Two businesses, one disaster, very different mornings
+
+To see why the plan matters as much as the copy, imagine the same ransomware attack hitting two similar companies on the same night. Both have backups. Company A has only backups: their data is technically safe, but when they arrive Monday to locked systems, nobody knows which systems to restore first, where the recovery procedures are written down, who's in charge, or where people should work while the office systems are rebuilt. They improvise for days. The restore order is wrong, so the team sits idle waiting on a system that wasn't actually urgent. A week later they're limping back, having lost real revenue and a few customers along the way. Company B has a plan: within an hour they've declared the incident, the designated lead is running a documented playbook, the customer database and email come back first because they were ranked first months ago, staff are working from a predetermined backup arrangement, and clear updates are going out to customers. By the next morning they're substantially operational. Same attack, same backups, same data — wildly different outcomes, decided entirely by whether a plan existed before the crisis. That gap is the whole reason this guide exists.
+
 ![Team reviewing backup and disaster recovery plans on a laptop](/images/blog/backup-disaster-recovery-2.webp "Team reviewing backup and disaster recovery plans on a laptop")
 
 ## The 3-2-1 rule: the foundation of good backups
@@ -54,6 +58,10 @@ Every disaster recovery plan rests on two numbers. Set them honestly and everyth
 **RPO, Recovery Point Objective:** how much data you can afford to lose, measured in time. If your backups run nightly and disaster strikes at 4pm, you've lost a full day of work. If that's unacceptable, you need more frequent backups, hourly or continuous.
 
 Here's the practical part: not everything needs the same numbers. Your customer database might need an RTO of minutes and near-zero data loss. The folder of old marketing files can probably tolerate a day. Setting these per system keeps you from overpaying to protect things that don't need it.
+
+### A worked example of RTO and RPO
+
+Let's make these two abstractions concrete with a small e-commerce business. Their online store is the lifeblood — every minute it's down is lost sales — so it gets an aggressive RTO of, say, fifteen minutes and an RPO measured in minutes, which means continuous replication and fast failover. Their order database is nearly as critical, so it gets a similar tier. Their internal email matters but the business survives an hour without it, so a one-hour RTO and hourly backups are fine. The shared drive of design files and old documents? A day of downtime would be annoying but not damaging, so a 24-hour RTO and nightly backups are perfectly adequate. Notice what this exercise does: it stops you from the two classic mistakes — spending a fortune giving everything minute-by-minute protection it doesn't need, or worse, discovering during a disaster that the system you most depend on was only backed up once a night. The single most useful planning conversation a business can have is walking through each critical system and honestly asking, "How fast must this come back, and how much of it can we afford to lose?" Those answers, not the technology, drive the whole plan.
 
 ## What a real disaster recovery plan includes
 
@@ -87,6 +95,10 @@ The patterns that catch businesses off guard, over and over:
 - **No documented plan.** Recovery knowledge living in one person's memory is a disaster of its own when that person is unreachable.
 - **Forgetting cloud data.** Assuming Microsoft 365 or Google Workspace backs itself up. As we covered in our [Microsoft 365 guide](/blog/microsoft-365-business/), your cloud data is your responsibility, not the provider's.
 - **Set-and-forget.** Your business changes; your plan has to change with it. A plan written three years ago for systems you no longer run won't save you.
+
+### The cloud-backup blind spot, explained
+
+The "forgetting cloud data" mistake deserves a closer look because it catches so many smart businesses off guard. There's a widespread and entirely understandable assumption that once your email and files live in Microsoft 365 or Google Workspace, they're automatically backed up — the data's "in the cloud," after all. But that's not what those providers actually promise. They guarantee the *availability* of their service; they don't guarantee they'll bring back data *you* lost. If an employee deletes a critical folder, a departing staffer wipes their mailbox, or ransomware encrypts files that then sync to the cloud, the provider's stance is essentially: that was your data and your action, not our outage. Once their short retention window passes, it's gone. This is known as the shared-responsibility model, and the part most businesses miss is that protecting the contents of their cloud accounts falls on *them*. The fix is straightforward — a dedicated third-party backup of your Microsoft 365 or Google Workspace data — but you have to know you need it. Assuming the cloud has you covered is one of the most common and most painful gaps we find, precisely because it feels so safe right up until the day it isn't.
 
 ## The bottom line
 

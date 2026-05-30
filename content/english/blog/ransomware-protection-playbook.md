@@ -29,6 +29,10 @@ Ransomware is malicious software that locks up your files by encrypting them, th
 
 The brutal part is the modern twist: many attackers now steal a copy of your data *before* they encrypt it, then threaten to publish it if you don't pay. So even a perfect backup doesn't fully protect you from the embarrassment and liability of leaked customer information. That's why prevention matters as much as recovery.
 
+### Why small businesses are squarely in the crosshairs
+
+A lot of small-business owners assume ransomware is a big-company problem — something that happens to hospitals and pipelines, not to a thirty-person firm. The data says otherwise, and so does the economics of the crime. Attackers love small businesses precisely because they tend to have data worth ransoming but defenses worth a fraction of an enterprise's. Even better, from the criminal's point of view, the whole operation is now automated and industrialized: ready-made ransomware kits are rented out like software subscriptions, and attacks are sprayed across the internet looking for any weak point, with no care whether it belongs to a giant corporation or the accounting office down the street. You don't get attacked because someone chose you; you get attacked because an automated tool found an opening and walked through it. And smaller businesses are often hurt *worse* than big ones, because they're less likely to have tested backups, an incident response plan, or the cash reserves to survive a week of downtime. The comforting belief that you're "too small to target" is, in practice, one of the most expensive assumptions a small business can make.
+
 ![Network and server equipment secured in a rack](/images/blog/ransomware-protection-playbook-2.webp "Network and server equipment secured in a rack")
 
 ## How attacks really start (it's not what you think)
@@ -40,6 +44,10 @@ Hollywood sold everyone on the image of a hooded genius breaking through firewal
 - **An unpatched vulnerability.** A piece of software has a known security hole, the fix was available for months, and nobody installed it.
 
 Notice what all three have in common: they're preventable, and none of them require genius. They require an opening, and most small businesses leave several open. Closing them is the whole game.
+
+### The anatomy of an attack, hour by hour
+
+It helps to see how a real incident unfolds, because the timeline reveals where defenses actually work. It often starts days or weeks before the ransom note ever appears. An employee clicks a convincing invoice attachment, quietly installing a foothold — nothing visibly happens, which is the point. Over the following days, the attacker explores: mapping the network, escalating their access, and hunting for the most valuable data and, crucially, the backups. This dwell time is when good monitoring can catch them, spotting the unusual logins and lateral movement before the damage is done. Then comes the staging: the attacker quietly copies your sensitive data out (for the extortion threat) and locates every backup they can reach to destroy or encrypt it, removing your ability to recover. Finally, usually timed for a Friday night or a holiday when no one's watching, they trigger the encryption all at once and the ransom note appears. By then it's the endgame — but notice how many earlier moments offered a chance to stop it: the email that should have been filtered or distrusted, the foothold that endpoint protection should have caught, the lateral movement that monitoring should have flagged, and the backups that, kept offline and out of reach, would have made the whole extortion toothless. Ransomware looks like a single catastrophic event, but it's really a slow-motion process with many points where the right defense breaks the chain.
 
 ## The layered defense, from most to least important
 
@@ -85,6 +93,10 @@ Run through this list. Every "no" is a gap worth closing this month.
 - [ ] We have a written plan for who does what if we get hit
 
 That last one matters more than people expect. Panic is the attacker's friend.
+
+## Should you ever pay the ransom?
+
+When the note appears demanding payment, the instinct to just pay and make it stop is overwhelming — so it's worth thinking through the answer *before* you're staring at a countdown timer. Law enforcement and security professionals strongly advise against paying, for several concrete reasons. First, paying funds a criminal enterprise and marks you as a business willing to pay, which paints a target on your back for the next attack — a meaningful share of businesses that pay get hit again. Second, there's no guarantee it works: you're trusting criminals to hand over a working decryption key, and many businesses that pay still don't recover all their data, because the decryptor is buggy or the attacker simply takes the money and vanishes. Third, with the modern "steal-then-encrypt" tactic, paying to decrypt your files does nothing to guarantee the attacker actually deletes the copy they stole — you may pay and still get extorted later. The only thing that genuinely takes payment off the table as your sole option is a clean, tested backup the attackers couldn't reach. That's why every layer in this playbook ultimately points back to the same foundation: when you can restore on your own, the ransom note becomes a threat you can refuse rather than a bill you're forced to pay.
 
 ## What to do if you're hit right now
 

@@ -41,6 +41,10 @@ The incentive is the opposite of break-fix. Because the provider gets paid the s
 
 You also get a real relationship instead of a transaction. The provider learns your environment, your software, your quirks, and the people who use it. That context is worth a surprising amount when something does go wrong.
 
+### The dentist analogy
+
+Here's a way to feel the difference in your gut. Break-fix is like only ever going to the dentist when a tooth is already screaming in pain. By then you're not getting a cleaning — you're getting a root canal, an emergency appointment, and a big bill, all of which a few routine checkups would have prevented. Managed IT is the regular checkup model: small problems get caught and cleaned up while they're still small and cheap, so the agonizing, expensive emergencies mostly never happen. Nobody enjoys paying for the checkup when nothing hurts, and that's exactly why people skip it — right up until the 2am toothache. Technology behaves the same way. The failing drive, the missed patch, the silently broken backup, the creeping malware infection: each is a cavity forming quietly, and each is far cheaper to handle at the checkup than in the emergency room. When you frame the choice this way, the flat monthly fee stops looking like an expense and starts looking like what it is — the routine maintenance that keeps you out of the emergency room entirely.
+
 ## The real cost comparison
 
 Here's where most comparisons go wrong: they only count the invoice. The invoice is the small number. The expensive number is what happens to your business while you wait for the fix.
@@ -48,6 +52,10 @@ Here's where most comparisons go wrong: they only count the invoice. The invoice
 Say a 20-person company loses its main server for a full day. Even at a conservative $40 per hour in loaded labor cost, 20 people sitting idle for 8 hours is $6,400 in lost productivity, before you count missed sales, blown deadlines, or the overtime to catch back up. The repair invoice might be $1,500. The downtime cost it $6,400. Break-fix only shows you the $1,500.
 
 Managed IT attacks that downtime number directly. By monitoring and maintaining systems, the goal is to make the bad day not happen in the first place. You trade an unpredictable spike for a steady monthly line item your accountant can actually plan around.
+
+### A year in the life of each model
+
+Numbers in a table are easy to skim past, so picture the same 20-person company living through a full year under each model. Under **break-fix**, the first quarter is quiet and the company pays almost nothing — which feels like winning. Then in Q2 a server fails mid-week; that's the $1,500 repair plus the $6,400 in lost productivity. In Q3 a phishing email slips through (nobody was monitoring or training), an account gets compromised, and the cleanup plus the scramble eats days and dollars. In Q4 a laptop dies, a backup is discovered to have been silently failing for weeks, and some data is simply gone. Add it up and the "cheaper" model delivered a stressful, unpredictable year with several painful spikes and real losses that never showed up on any single invoice. Under **managed IT**, that same company pays a flat, boring monthly fee. The failing server's warning signs were caught during routine monitoring and the drive was swapped before it died. The phishing email was filtered, and the staff had been trained anyway. The backups were tested monthly, so nothing was ever lost. The year was uneventful — and uneventful, for a business, is exactly the goal. The total cost often comes out lower, but the bigger difference is that one year was a series of fire drills and the other was just… work getting done.
 
 | Factor | Break-Fix | Managed IT |
 | --- | --- | --- |

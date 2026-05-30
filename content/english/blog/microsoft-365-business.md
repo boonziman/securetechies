@@ -43,6 +43,10 @@ Microsoft 365 comes in a few business tiers, and the differences matter. Here's 
 
 Don't overthink **Business Basic**. It saves a few dollars but drops the desktop apps, which most teams end up wanting anyway.
 
+### What you're actually paying for
+
+It's easy to think of Microsoft 365 as "Office plus email," but that undersells what a business is really getting — and understanding the full value helps you use it well rather than leaving half of it on the table. Beyond Word, Excel, Outlook, and PowerPoint, a Microsoft 365 subscription bundles business-class email hosting (no more running your own mail server), Teams for chat, calls, and video meetings, a terabyte of OneDrive cloud storage per user, and SharePoint for shared company files and intranet sites. Tie those together and you have a single, integrated platform where a document can be created in Word, stored in OneDrive, shared in a Teams channel, and co-edited by three people at once in real time, from anywhere, on any device. That integration is the real product. Plenty of businesses pay for all of it and use only a fraction — treating it as Office with email attached while ignoring the collaboration, storage, and communication tools they're already funding. Getting full value means actually adopting the platform, not just installing the apps, which is one more reason a good setup and a little guidance pay off: you stop paying enterprise prices for a glorified word processor and start running your business on a genuinely connected system.
+
 ![Hands typing on a keyboard while working in Microsoft 365](/images/blog/microsoft-365-business-2.webp "Hands typing on a keyboard while working in Microsoft 365")
 
 ## Default does not mean secure
@@ -87,7 +91,11 @@ To keep all of this from drifting over time, treat Microsoft 365 security as an 
 
 ## The backup mistake almost everyone makes
 
-Let's clear up the single most dangerous Microsoft 365 myth: **Microsoft does not fully back up your data for you.**
+### A first-week hardening checklist
+
+If the security section feels like a lot, here's the practical short list to work through in your first week — or to audit today if you've been running Microsoft 365 for a while without revisiting it. Turn on multi-factor authentication for every single user, no exceptions. Disable legacy authentication protocols that can sneak past MFA. Set SharePoint and OneDrive sharing defaults to specific people instead of "anyone with the link." Tune the anti-phishing and anti-malware policies in Exchange Online Protection. Limit how many Global Admins you have to a small handful, and give admins separate accounts for admin work. Check your Microsoft Secure Score to see where you stand and what to fix next. And add a dedicated third-party backup of your Microsoft 365 data. None of these requires advanced expertise to start, and together they close the openings attackers probe first. Working through this list is the difference between a tenant that's merely *running* and one that's genuinely *defended* — and it's exactly the kind of methodical hardening a good managed provider does as a matter of course on day one.
+
+Now, let's clear up the single most dangerous Microsoft 365 myth: **Microsoft does not fully back up your data for you.**
 
 Microsoft runs the platform reliably and protects against its own outages. But under what's called the *shared responsibility model*, the data inside your account, your emails, files, and documents, is *your* responsibility. If an employee deletes something important, falls for a phishing scam, or ransomware encrypts files synced to OneDrive, Microsoft's limited retention may not bring it back.
 

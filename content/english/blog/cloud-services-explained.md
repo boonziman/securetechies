@@ -29,6 +29,10 @@ The cloud flips that. The hardware lives in a provider's professional data cente
 
 You're almost certainly already using it. Microsoft 365, Google Workspace, cloud file storage, hosted phone systems, online accounting software, all of it is cloud services. The [NIST definition of cloud computing](https://www.nist.gov/publications/nist-definition-cloud-computing) is the standard reference for the models we cover below. The question for most businesses isn't *whether* to use the cloud, it's how much, and how to do it well.
 
+### The utility analogy that makes it click
+
+If the cloud still feels abstract, here's the comparison that makes it intuitive: electricity. A century ago, a factory that wanted power often had to build and run its own generator — buy the machine, fuel it, maintain it, repair it, and replace it when it wore out. Today, no business does that. You plug into the grid and pay for the electricity you use, and a utility handles all the messy infrastructure behind the wall socket. The cloud does exactly the same thing for computing. Instead of buying and babysitting your own servers, you plug into a provider's professionally run infrastructure and pay for what you use. You get more reliability than you could build yourself, you stop worrying about the hardware, and you can use as much or as little as you need at any moment. That shift — from owning and maintaining the machinery to simply consuming the capability — is the entire idea behind the cloud, and once it clicks, the buzzwords stop being intimidating.
+
 ![Employee working from the cloud on a laptop](/images/blog/cloud-services-explained-2.webp "Employee working from the cloud on a laptop")
 
 ## The types of cloud (without the jargon)
@@ -66,6 +70,10 @@ But here's the part that trips people up, the **shared responsibility model**:
 This matters because the overwhelming majority of cloud security incidents aren't the provider getting hacked. They're misconfigurations and weak access controls on the customer's side, a storage bucket left open, multi-factor authentication never turned on, sharing settings left wide. As we covered in our [Microsoft 365 guide](/blog/microsoft-365-business/), the cloud gives you powerful security tools, but you have to actually switch them on and use them.
 
 That's why [cloud security](/services/cybersecurity/) is less about trusting the provider and more about configuring your side properly, exactly the kind of thing that's easy to get wrong and worth getting expert help with.
+
+### Shared responsibility, made concrete
+
+The shared responsibility model is abstract until you see what "your side" actually involves, so let's ground it. The provider — Microsoft, Google, Amazon — guarantees that their data centers are physically secure, their hardware is sound, and their platform is patched and resilient. What they explicitly do *not* do is make good decisions on your behalf inside your account. They won't force you to turn on multi-factor authentication. They won't stop you from sharing a sensitive folder with "anyone on the internet with the link." They won't notice that a former employee's account is still active months after they left, or that an admin password is "Summer2024." They won't back up the file your team deleted by mistake. Every one of those is on you, and every one is a common way businesses get breached despite using a world-class provider. Think of it like a bank: the bank builds an impregnable vault, but if you write your PIN on your card and hand it to a stranger, the vault doesn't help. The cloud gives you an extraordinarily secure foundation and a powerful set of locks — but someone still has to turn the locks, manage the keys, and decide who gets in. That "someone" is the part of cloud security that actually determines whether you're safe, and it's exactly where expert configuration earns its keep.
 
 ![Modern server racks powering cloud services for business](/images/blog/cloud-services-explained-3.webp "Cloud services run on secure, professionally managed infrastructure")
 

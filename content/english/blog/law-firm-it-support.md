@@ -179,33 +179,3 @@ That's the real product: not a stack of technology, but the freedom to practice 
 
 If you're not certain your firm's IT meets that bar, you don't have to guess. [Schedule a free assessment](/contact/) and we'll review your security, your backups, and your compliance posture, then tell you plainly where you stand and what, if anything, needs to change. No jargon, no scare tactics, just a clear picture of how well your firm's most sensitive asset, its clients' trust, is being protected.
 
-A general IT provider can keep your computers running. What they often miss is the *context* that makes legal IT different:
-
-- They may not understand your confidentiality obligations, treating your data like any other business files.
-- They may not know legal practice management and document management software, so support is slower and clumsier.
-- They may treat security as a product to sell rather than a duty to uphold.
-- They may not be able to help you document compliance when a client or regulator asks.
-
-The gap isn't usually technical skill, it's understanding what's at stake. For a firm, "the computers are working" is the floor, not the goal. The goal is that client confidence is never in question.
-
-## Signs your firm's IT is putting you at risk
-
-A quick gut check. Any of these should worry you:
-
-- You're not certain your backups have been tested and would actually restore
-- Multi-factor authentication isn't turned on for email and remote access
-- You don't know the last time your systems were patched
-- Staff have never had security awareness training
-- Anyone in the firm can access any client file
-- You couldn't clearly explain to a client how you protect their data
-- Your "IT person" is whoever happens to be most comfortable with computers
-
-If several of those ring true, your firm is likely one phishing click away from a very bad week.
-
-## What good legal IT support looks like
-
-Done right, IT support fades into the background. Attorneys open their files and they're there. Email is secure without anyone thinking about it. Backups run and get tested without anyone remembering. Security updates happen quietly and constantly. And when a client asks how their information is protected, the firm has a confident, documented answer.
-
-That's the real product: not a stack of technology, but the freedom to practice law without wondering whether your systems are about to let you down or let you down your clients.
-
-If you're not certain your firm's IT meets that bar, you don't have to guess. [Schedule a free assessment](/contact/) and we'll review your security, your backups, and your compliance posture, then tell you plainly where you stand and what, if anything, needs to change. No jargon, no scare tactics, just a clear picture of how well your firm's most sensitive asset, its clients' trust, is being protected.
