@@ -2,7 +2,7 @@
 title: "IT Support for Law Firms: A Practical Guide to Security, Compliance & Uptime"
 meta_title: "IT Support for Law Firms: Security & Compliance Guide | Secure Techies"
 description: "What law firms need from IT support in 2026 — client confidentiality, compliance, secure document management, and zero-downtime systems that keep cases moving."
-date: 2025-04-23
+date: 2026-02-19
 image: "/images/blog/law-firm-it-support.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"

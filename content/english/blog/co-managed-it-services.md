@@ -1,8 +1,8 @@
 ---
 title: "Co-Managed IT Services: How to Extend Your Internal IT Team"
 meta_title: "Co-Managed IT Services | Support Your Internal IT Team | Secure Techies"
-description: "A guide to co-managed IT services in 2026 — what they are, how they support an in-house IT team, when they make sense, what they cost, and how to choose the right partner."
-date: 2025-03-31
+description: "Co-managed IT services in 2026 — what they are, how they support your in-house IT team, when they make sense, what they cost, and how to choose a partner."
+date: 2026-02-24
 image: "/images/blog/co-managed-it-services.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"
@@ -61,7 +61,7 @@ Co-managed IT is the right fit when one or more of these is true:
 4. **A big project is coming** — a migration, an office move, a security overhaul.
 5. **You want enterprise tools** without buying and managing them yourself.
 
-In each case, you fill the gap without committing to a new salary and benefits package. According to industry research from groups like CompTIA, the shortage of skilled IT and especially cybersecurity talent has been one of the top concerns for technology leaders for years running — which is exactly why renting specialized expertise has become a mainstream strategy rather than a last resort.
+In each case, you fill the gap without committing to a new salary and benefits package. According to industry research from groups like [CompTIA](https://www.comptia.org/), the shortage of skilled IT and especially cybersecurity talent has been one of the top concerns for technology leaders for years running — which is exactly why renting specialized expertise has become a mainstream strategy rather than a last resort.
 
 ### A quick self-test
 

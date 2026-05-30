@@ -2,7 +2,7 @@
 title: "How Much Does IT Support Cost for a Small Business in 2026?"
 meta_title: "How Much Does IT Support Cost for Small Business? (2026) | Secure Techies"
 description: "A clear, jargon-free breakdown of small business IT support costs in 2026 — pricing models, real per-user rates, what's included, and how to avoid overpaying."
-date: 2025-04-09
+date: 2026-05-26
 image: "/images/blog/it-support-cost-small-business.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"

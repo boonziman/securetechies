@@ -2,7 +2,7 @@
 title: "Dark Web Monitoring: How to Know When Your Business Data Has Leaked"
 meta_title: "Dark Web Monitoring for Business Explained | Secure Techies"
 description: "What the dark web is, how stolen business credentials end up for sale there, and how dark web monitoring warns you before leaked data is used against you."
-date: 2025-05-28
+date: 2026-03-31
 image: "/images/blog/dark-web-monitoring.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"
@@ -37,7 +37,7 @@ For a business, the dark web matters for one concrete reason: **it's where your 
 
 The unsettling part is that your data can land on the dark web without your business doing anything wrong. Here are the common paths:
 
-- **Third-party breaches.** This is the big one. Your employees have accounts on dozens of external services — software tools, retailers, social media, old forums. When any of those gets breached, your employees' email addresses and passwords get stolen and traded. You didn't get hacked; someone else did, and your people's credentials were caught in it.
+- **Third-party breaches.** This is the big one. Your employees have accounts on dozens of external services — software tools, retailers, social media, old forums. When any of those gets breached, your employees' email addresses and passwords get stolen and traded. You didn't get hacked; someone else did, and your people's credentials were caught in it. Many of those exposures end up in public breach databases like [Have I Been Pwned](https://haveibeenpwned.com/).
 - **Password reuse turns a small leak into a big one.** If an employee reused their work-adjacent password on a site that got breached, that leaked password may now unlock your business systems. This is the bridge that turns an unrelated breach into your problem, and it's exactly why [password management](/blog/password-management-best-practices/) matters so much.
 - **Phishing.** An employee enters their credentials into a convincing fake login page, and those credentials go straight to the attacker — who may then sell them.
 - **Infostealer malware.** A particularly nasty category of malware quietly harvests every password saved in a victim's browser and ships them off to criminals, who bundle and sell them in bulk.

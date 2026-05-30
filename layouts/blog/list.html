@@ -1,6 +1,8 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .RegularPages "Type" "blog") }}
-{{ $featured := index (where .RegularPages "Type" "blog") 0 }}
+{{ $all := where .RegularPages "Type" "blog" }}
+{{ $featured := index $all 0 }}
+{{/* Paginate everything EXCEPT the featured post so the grid always fills clean rows of 3. */}}
+{{ $paginator := .Paginate (after 1 $all) 9 }}
 {{ $isFirstPage := eq $paginator.PageNumber 1 }}
 
 <!-- ============================ BLOG HERO ============================ -->
@@ -75,7 +77,6 @@
     <!-- Post grid -->
     <div class="st-blog-grid">
       {{ range $i, $p := $paginator.Pages }}
-      {{ if not (and $isFirstPage (eq $p $featured)) }}
       <a href="{{ $p.RelPermalink }}" class="st-blog-card st-reveal" aria-label="{{ $p.Title }}">
         <div class="st-blog-card-media">
           {{ with $p.Params.image }}
@@ -95,7 +96,6 @@
           </div>
         </div>
       </a>
-      {{ end }}
       {{ end }}
     </div>
 

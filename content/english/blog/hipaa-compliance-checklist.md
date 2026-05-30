@@ -1,8 +1,8 @@
 ---
 title: "HIPAA Compliance Checklist: What Every Healthcare Organization Needs to Know"
 meta_title: "HIPAA Compliance Checklist for Healthcare (2026) | Secure Techies"
-description: "A practical HIPAA compliance checklist for healthcare organizations — the Privacy, Security, and Breach Notification Rules, penalties, and how managed IT keeps you compliant."
-date: 2025-03-05
+description: "A practical HIPAA compliance checklist — the Privacy, Security, and Breach Notification Rules, penalties, and how managed IT keeps you compliant."
+date: 2026-03-03
 image: "/images/blog/hipaa-compliance.webp"
 categories: ["Compliance"]
 author: "Secure Techies"

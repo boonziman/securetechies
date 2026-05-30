@@ -2,7 +2,7 @@
 title: "The Backup & Disaster Recovery Plan Every Business Needs"
 meta_title: "Backup & Disaster Recovery Plan Every Business Needs | Secure Techies"
 description: "Backups aren't a disaster recovery plan. Learn the difference, the 3-2-1 rule, RTO vs RPO, and how to build a recovery plan that actually works when it counts."
-date: 2025-05-14
+date: 2026-04-02
 image: "/images/blog/backup-disaster-recovery.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"
@@ -56,6 +56,14 @@ Every disaster recovery plan rests on two numbers. Set them honestly and everyth
 **RTO, Recovery Time Objective:** how quickly you need to be back up. Can your business tolerate being down for a day? An hour? Five minutes? The shorter your RTO, the more you'll invest in fast-recovery infrastructure.
 
 **RPO, Recovery Point Objective:** how much data you can afford to lose, measured in time. If your backups run nightly and disaster strikes at 4pm, you've lost a full day of work. If that's unacceptable, you need more frequent backups, hourly or continuous.
+
+| | RTO (Recovery Time Objective) | RPO (Recovery Point Objective) |
+| --- | --- | --- |
+| Question it answers | How fast must we be back up? | How much data can we afford to lose? |
+| Measured in | Time to restore operations | Time between backups |
+| A tighter target means | Faster (and usually pricier) recovery infrastructure | More frequent backups |
+| Example: online store | 15 minutes | Near-zero (continuous) |
+| Example: shared file archive | 24 hours | Nightly |
 
 Here's the practical part: not everything needs the same numbers. Your customer database might need an RTO of minutes and near-zero data loss. The folder of old marketing files can probably tolerate a day. Setting these per system keeps you from overpaying to protect things that don't need it.
 

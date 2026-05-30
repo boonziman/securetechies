@@ -2,7 +2,7 @@
 title: "Zero Trust Security Explained: What It Means for a Small Business"
 meta_title: "Zero Trust Security Explained for Small Business | Secure Techies"
 description: "Zero trust security in plain English — what 'never trust, always verify' means, why the old castle-and-moat model failed, and how small businesses adopt it."
-date: 2025-05-12
+date: 2026-03-26
 image: "/images/blog/zero-trust-security.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"

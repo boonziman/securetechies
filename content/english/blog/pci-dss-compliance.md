@@ -2,7 +2,7 @@
 title: "PCI DSS Compliance: What Every Business That Takes Card Payments Must Know"
 meta_title: "PCI DSS Compliance Guide for Business | Secure Techies"
 description: "A plain-English guide to PCI DSS compliance — what it is, the four merchant levels, the twelve requirements, and how to protect card data the simple way."
-date: 2025-06-06
+date: 2026-04-23
 image: "/images/blog/pci-dss-compliance.webp"
 categories: ["Compliance"]
 author: "Secure Techies"

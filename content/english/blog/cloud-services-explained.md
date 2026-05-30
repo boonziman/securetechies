@@ -2,7 +2,7 @@
 title: "Cloud Services Explained: Migration, Costs, and Security for Business"
 meta_title: "Cloud Services Explained: Migration, Costs & Security | Secure Techies"
 description: "A plain-English guide to business cloud services in 2026 — the types of cloud, real costs, security responsibilities, and how to migrate without the chaos."
-date: 2025-05-28
+date: 2026-04-14
 image: "/images/blog/cloud-services-explained.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"
@@ -46,6 +46,12 @@ You'll hear a few terms thrown around. Here's what they actually mean.
 **Hybrid cloud.** A mix, some things in the cloud, some kept on-site, connected together. Common for businesses transitioning gradually or keeping certain sensitive systems in-house.
 
 You'll also hear about service models, briefly: **SaaS** (software you just use, like Microsoft 365), **IaaS** (renting raw computing infrastructure), and **PaaS** (a platform for building applications). For most businesses, SaaS is the bulk of what you'll touch, and a good [infrastructure partner](/services/infrastructure/) handles the rest behind the scenes.
+
+| Model | What you rent | What you still manage | Everyday example |
+| --- | --- | --- | --- |
+| SaaS (Software as a Service) | Ready-to-use software | Just your data and users | Microsoft 365, Google Workspace |
+| PaaS (Platform as a Service) | A platform to build and run apps | Your applications and data | Azure App Service, Google App Engine |
+| IaaS (Infrastructure as a Service) | Raw compute, storage, and networking | The operating system, apps, and data | Azure VMs, Amazon EC2 |
 
 ## What cloud services really cost
 

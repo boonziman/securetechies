@@ -2,7 +2,7 @@
 title: "Microsoft 365 for Business: Setup, Security & Support Best Practices"
 meta_title: "Microsoft 365 for Business: Setup & Security Guide | Secure Techies"
 description: "Get Microsoft 365 right from day one — choosing the right plan, locking down security, avoiding common mistakes, and knowing when to bring in managed support."
-date: 2025-04-30
+date: 2026-05-05
 image: "/images/blog/microsoft-365-business.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"

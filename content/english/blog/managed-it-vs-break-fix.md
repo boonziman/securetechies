@@ -2,7 +2,7 @@
 title: "Managed IT vs. Break-Fix: Which One Actually Saves Your Business Money?"
 meta_title: "Managed IT vs. Break-Fix: Which Saves You More? | Secure Techies"
 description: "Managed IT or break-fix IT support? Compare the real costs, response times, and risks of each model so your business picks the one that actually saves money."
-date: 2025-04-02
+date: 2026-03-05
 image: "/images/blog/managed-it-vs-break-fix.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"
@@ -70,7 +70,7 @@ Numbers in a table are easy to skim past, so picture the same 20-person company 
 
 A decade ago, "IT support" meant fixing printers and replacing hard drives. Today, the biggest threat to a small business isn't a dead drive, it's [ransomware and phishing](/services/cybersecurity/). And here is the uncomfortable truth: break-fix does almost nothing to protect you from those.
 
-Modern security isn't a one-time fix. It's patching the moment a vulnerability is announced, watching for suspicious logins, testing your backups, and training your staff to spot a fake invoice. None of that fits a "call us when it breaks" model, because by the time a breach "breaks," the damage is already done and the data is already gone.
+Modern security isn't a one-time fix. It's patching the moment a vulnerability is announced (the kind [CISA catalogs as known exploited vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)), watching for suspicious logins, testing your backups, and training your staff to spot a fake invoice. None of that fits a "call us when it breaks" model, because by the time a breach "breaks," the damage is already done and the data is already gone.
 
 Managed IT bakes security into the monthly service. Your systems get patched on a schedule, your [network is monitored](/services/network-security/), and your backups are verified, not just assumed. For any business handling customer data, payment info, or anything covered by compliance rules, that ongoing protection is the whole point.
 

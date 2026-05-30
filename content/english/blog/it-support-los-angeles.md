@@ -1,8 +1,8 @@
 ---
 title: "IT Support in Los Angeles: What Local Businesses Should Expect in 2026"
 meta_title: "IT Support Los Angeles | Business IT Support Services | Secure Techies"
-description: "What great IT support looks like for Los Angeles businesses in 2026 — response times, on-site help, pricing models, and how to choose a reliable local IT support company."
-date: 2025-02-10
+description: "What great IT support looks like for Los Angeles businesses — response times, on-site help, pricing models, and how to choose a reliable local company."
+date: 2026-05-07
 image: "/images/blog/it-support-los-angeles.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"
@@ -96,7 +96,7 @@ There's a hidden incentive worth understanding here, too. With hourly break-fix 
 
 ### Questions that separate the pros from the rest
 
-When you're interviewing providers, a few pointed questions cut through the sales polish quickly. Ask how they handle the moment an employee leaves the company — proper offboarding is a security basic that surprisingly many skip. Ask what their average resolution time was last quarter, not just their promised target. Ask how they keep your software patched and who's accountable if a missed update leads to a breach. Ask how onboarding works and how long it takes before they truly understand your environment. The answers reveal whether you're dealing with a mature, organized team or someone improvising. The right partner makes IT something you stop thinking about — not because you're ignoring it, but because it quietly works.
+When you're interviewing providers, a few pointed questions cut through the sales polish quickly. Ask how they handle the moment an employee leaves the company — proper offboarding is a security basic that surprisingly many skip. Ask what their average resolution time was last quarter, not just their promised target. Ask how they keep your software patched (timely patching is a core control in [NIST's patch management guidance](https://csrc.nist.gov/pubs/sp/800/40/r4/final)) and who's accountable if a missed update leads to a breach. Ask how onboarding works and how long it takes before they truly understand your environment. The answers reveal whether you're dealing with a mature, organized team or someone improvising. The right partner makes IT something you stop thinking about — not because you're ignoring it, but because it quietly works.
 
 ## The everyday problems good support quietly prevents
 

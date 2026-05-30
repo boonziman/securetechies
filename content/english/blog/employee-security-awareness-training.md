@@ -1,8 +1,8 @@
 ---
 title: "Employee Security Awareness Training: Your Strongest Defense in 2026"
 meta_title: "Employee Security Awareness Training | Reduce Human Risk | Secure Techies"
-description: "Why security awareness training is the highest-return cybersecurity investment in 2026 — what it covers, how often to run it, what it costs, and how to measure results for your team."
-date: 2025-04-07
+description: "Why security awareness training is the highest-return security investment in 2026 — what it covers, how often to run it, costs, and how to measure results."
+date: 2026-02-03
 image: "/images/blog/employee-security-awareness-training.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"

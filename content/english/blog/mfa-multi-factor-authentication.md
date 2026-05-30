@@ -2,7 +2,7 @@
 title: "Multi-Factor Authentication (MFA): The Cheapest Security Win Your Business Can Make"
 meta_title: "Multi-Factor Authentication (MFA) for Business | Secure Techies"
 description: "What multi-factor authentication is, why it stops almost all account takeovers, and how to roll it out across your business without the headaches."
-date: 2025-05-08
+date: 2026-02-17
 image: "/images/blog/mfa-multi-factor-authentication.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"

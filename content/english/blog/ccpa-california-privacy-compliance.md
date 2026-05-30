@@ -2,7 +2,7 @@
 title: "CCPA & CPRA Compliance: What California Businesses Need to Know About Privacy"
 meta_title: "CCPA & CPRA Compliance Guide for California Business | Secure Techies"
 description: "A plain-English guide to CCPA and CPRA compliance — who must comply, the consumer rights you must honor, business obligations, penalties, and how to comply."
-date: 2025-06-14
+date: 2026-04-16
 image: "/images/blog/ccpa-california-privacy-compliance.webp"
 categories: ["Compliance"]
 author: "Secure Techies"

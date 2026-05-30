@@ -2,7 +2,7 @@
 title: "SOC 2 Compliance Explained: The Trust Badge That Wins Enterprise Deals"
 meta_title: "SOC 2 Compliance Guide for Service Companies | Secure Techies"
 description: "What SOC 2 compliance is, the five Trust Services Criteria, Type I vs Type II, and how SaaS companies prepare for the audit customers increasingly demand."
-date: 2025-06-10
+date: 2026-05-19
 image: "/images/blog/soc-2-compliance.webp"
 categories: ["Compliance"]
 author: "Secure Techies"

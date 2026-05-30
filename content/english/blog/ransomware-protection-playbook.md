@@ -2,7 +2,7 @@
 title: "The 2026 Ransomware Protection Playbook for Small Businesses"
 meta_title: "Ransomware Protection Playbook for Small Business (2026) | Secure Techies"
 description: "A practical, step-by-step ransomware protection plan for small businesses in 2026 — how attacks happen, how to stop them, and what to do if you get hit."
-date: 2025-04-16
+date: 2026-02-10
 image: "/images/blog/ransomware-protection-playbook.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"
@@ -52,6 +52,14 @@ It helps to see how a real incident unfolds, because the timeline reveals where 
 ## The layered defense, from most to least important
 
 Security people talk about "defense in depth," which just means you don't rely on one wall, you build several, so that if one fails the next one holds. Here's that defense for ransomware, in priority order.
+
+| Priority | Defense layer | What it stops |
+| --- | --- | --- |
+| 1 | Tested, offline backups | Turns an attack into a recovery instead of a ransom payment |
+| 2 | Multi-factor authentication | Blocks the stolen-password logins most attacks rely on |
+| 3 | Patching and updates | Closes the known holes attackers scan for |
+| 4 | Email filtering and endpoint protection | Catches malicious messages and isolates infected devices |
+| 5 | Trained people | Stops the clicks that start most infections |
 
 ### Layer 1: Tested, offline backups
 

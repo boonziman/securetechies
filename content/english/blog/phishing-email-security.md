@@ -1,8 +1,8 @@
 ---
 title: "Phishing and Email Security: How to Protect Your Business in 2026"
 meta_title: "Phishing & Email Security for Business | Stop Email Attacks | Secure Techies"
-description: "A practical guide to phishing and email security for businesses in 2026 — how attacks work, the layered defenses that stop them, what they cost, and how to train your team."
-date: 2025-03-24
+description: "A practical guide to phishing and email security for businesses — how attacks work, the layered defenses that stop them, costs, and how to train your team."
+date: 2026-03-24
 image: "/images/blog/phishing-email-security.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"

@@ -2,7 +2,7 @@
 title: "How to Build a Cybersecurity Incident Response Plan for Your Business"
 meta_title: "Cybersecurity Incident Response Plan Guide | Secure Techies"
 description: "A practical guide to building an incident response plan — the six phases, who does what, and why planning your breach response in advance saves your business."
-date: 2025-06-02
+date: 2026-04-30
 image: "/images/blog/incident-response-plan.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"
