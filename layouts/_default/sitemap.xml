@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Data.Pages }}
-  {{- if and (not .Params.noindex) .Permalink }}
+  {{- $isThinTag := and (or (eq .Kind "term") (eq .Kind "taxonomy")) (eq .Data.Singular "tag") }}
+  {{- $isPagesSection := and (eq .Kind "section") (eq .Section "pages") }}
+  {{- if and (not .Params.noindex) .Permalink (not $isThinTag) (not $isPagesSection) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}
@@ -14,6 +16,9 @@
     {{- else if eq .Section "services" }}
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    {{- else if eq .Section "blog" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     {{- else if eq .Section "locations" }}
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

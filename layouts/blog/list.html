@@ -1,0 +1,142 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (where .RegularPages "Type" "blog") }}
+{{ $featured := index (where .RegularPages "Type" "blog") 0 }}
+{{ $isFirstPage := eq $paginator.PageNumber 1 }}
+
+<!-- ============================ BLOG HERO ============================ -->
+<section class="st-blog-hero">
+  <div class="st-blog-hero-grid"></div>
+  <div class="st-blog-hero-glow"></div>
+  <div class="st-blog-hero-inner">
+    <div class="st-blog-badge st-reveal">
+      <span class="st-blog-badge-dot"></span>
+      Insights &amp; Resources
+    </div>
+    <h1 class="st-blog-hero-title st-reveal">IT &amp; Cybersecurity Insights<br><span class="st-blog-hero-accent">for Growing Businesses</span></h1>
+    <p class="st-blog-hero-sub st-reveal">Practical, no-nonsense guides on managed IT, cybersecurity, compliance, and cloud — written by the team that handles this every day for businesses across Los Angeles.</p>
+  </div>
+</section>
+
+<!-- ============================ BLOG BODY ============================ -->
+<section class="st-blog-body">
+  <div class="st-blog-container">
+
+    {{ if and $isFirstPage $featured }}
+    <!-- Featured post -->
+    <a href="{{ $featured.RelPermalink }}" class="st-blog-featured st-reveal" aria-label="{{ $featured.Title }}">
+      <div class="st-blog-featured-media">
+        {{ with $featured.Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $featured.Title }}" loading="eager" width="800" height="500">
+        {{ end }}
+        <span class="st-blog-featured-tag">Featured</span>
+      </div>
+      <div class="st-blog-featured-content">
+        {{ with index $featured.Params.categories 0 }}<span class="st-blog-cat">{{ . | humanize }}</span>{{ end }}
+        <h2 class="st-blog-featured-title">{{ $featured.Title }}</h2>
+        <p class="st-blog-featured-desc">{{ with $featured.Params.description }}{{ . }}{{ else }}{{ $featured.Summary | plainify | truncate 160 }}{{ end }}</p>
+        <div class="st-blog-meta">
+          <span class="st-blog-meta-author">{{ $featured.Params.author }}</span>
+          <span class="st-blog-meta-dot">•</span>
+          <span>{{ $featured.PublishDate.Format "Jan 2, 2006" }}</span>
+          <span class="st-blog-meta-dot">•</span>
+          <span>{{ $featured.ReadingTime }} min read</span>
+        </div>
+        <span class="st-blog-featured-link">Read article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </div>
+    </a>
+    {{ end }}
+
+    <!-- Category filter -->
+    {{ $cats := site.Taxonomies.categories }}
+    {{ if and $isFirstPage $cats }}
+    <div class="st-blog-filters st-reveal">
+      <a href="{{ .RelPermalink }}" class="st-blog-pill st-blog-pill-active">All Posts</a>
+      {{ range $name, $taxonomy := $cats }}
+      <a href="{{ (site.GetPage (printf "/categories/%s" $name)).RelPermalink }}" class="st-blog-pill">{{ $name | humanize }} <span>{{ len $taxonomy }}</span></a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Section heading -->
+    <div class="st-blog-section-head st-reveal">
+      <h2>{{ if $isFirstPage }}Latest Articles{{ else }}Articles — Page {{ $paginator.PageNumber }}{{ end }}</h2>
+      <p>Browse our most recent guides and insights.</p>
+    </div>
+
+    <!-- Post grid -->
+    <div class="st-blog-grid">
+      {{ range $i, $p := $paginator.Pages }}
+      {{ if not (and $isFirstPage (eq $p $featured)) }}
+      <a href="{{ $p.RelPermalink }}" class="st-blog-card st-reveal" aria-label="{{ $p.Title }}">
+        <div class="st-blog-card-media">
+          {{ with $p.Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $p.Title }}" loading="lazy" width="600" height="380">
+          {{ else }}
+          <div class="st-blog-card-media-fallback"></div>
+          {{ end }}
+          {{ with index $p.Params.categories 0 }}<span class="st-blog-card-cat">{{ . | humanize }}</span>{{ end }}
+        </div>
+        <div class="st-blog-card-body">
+          <h3 class="st-blog-card-title">{{ $p.Title }}</h3>
+          <p class="st-blog-card-desc">{{ with $p.Params.description }}{{ . | truncate 110 }}{{ else }}{{ $p.Summary | plainify | truncate 110 }}{{ end }}</p>
+          <div class="st-blog-card-foot">
+            <span>{{ $p.PublishDate.Format "Jan 2, 2006" }}</span>
+            <span class="st-blog-meta-dot">•</span>
+            <span>{{ $p.ReadingTime }} min read</span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="st-blog-pagination" aria-label="Blog pagination">
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="st-blog-page-btn" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </a>
+      {{ end }}
+      {{ range $paginator.Pagers }}
+      <a href="{{ .URL }}" class="st-blog-page-num{{ if eq . $paginator }} st-blog-page-active{{ end }}">{{ .PageNumber }}</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="st-blog-page-btn" aria-label="Next page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      {{ end }}
+    </nav>
+    {{ end }}
+
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="st-blog-cta">
+  <div class="st-blog-cta-grid"></div>
+  <div class="st-blog-cta-inner">
+    <h2>Ready to stop worrying about your IT?</h2>
+    <p>Get a free, no-pressure assessment of your network, security, and backups from a local team that picks up the phone.</p>
+    <div class="st-blog-cta-btns">
+      <a href="{{ "contact" | relURL }}" class="st-btn-white">Get a Free Consultation
+        <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:+18184315607" class="st-btn-outline-white">(818) 431-5607</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.st-reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('st-visible');}); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(e){ obs.observe(e); });
+})();
+</script>
+{{ end }}

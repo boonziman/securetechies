@@ -29,7 +29,11 @@
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <!-- search engine indexing directive -->
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+{{ $robots := "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}
+{{ if .Param "noindex" }}{{ $robots = "noindex, follow" }}{{ end }}
+{{ if and (or (eq .Kind "term") (eq .Kind "taxonomy")) (eq .Data.Singular "tag") }}{{ $robots = "noindex, follow" }}{{ end }}
+{{ if and (eq .Kind "section") (eq .Section "pages") }}{{ $robots = "noindex, follow" }}{{ end }}
+<meta name="robots" content="{{ $robots }}" />
 
 <!-- geo meta tags for local SEO -->
 <meta name="geo.region" content="US-CA" />

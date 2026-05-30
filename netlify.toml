@@ -67,3 +67,81 @@ from = "https://www.securetechie.com/*"
 to = "https://securetechie.com/:splat"
 status = 301
 force = true
+
+# ---------------------------------------------------------------------------
+# Legacy URL cleanup — 301 redirect old WordPress/Webflow pages to live pages.
+# This consolidates link equity and removes the "404" errors in Search Console.
+# Add more lines here as additional old URLs surface in GSC's "Not found (404)" report.
+# ---------------------------------------------------------------------------
+[[redirects]]
+from = "/our-service.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/our-services.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/services.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/home.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/about.html"
+to = "/about/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/contact.html"
+to = "/contact/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacy"
+to = "/privacy-policy/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacy.html"
+to = "/privacy-policy/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacy-policy.html"
+to = "/privacy-policy/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog.html"
+to = "/blog/"
+status = 301
+force = true
+
+# Old WordPress sitemap — point crawlers at the real one
+[[redirects]]
+from = "/sitemap_index.xml"
+to = "/sitemap.xml"
+status = 301
+force = true

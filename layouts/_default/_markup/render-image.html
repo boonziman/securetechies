@@ -1,0 +1,6 @@
+{{- /* Custom image render hook: lazy-load inline content images for better Core Web Vitals. */ -}}
+{{- $alt := .PlainText | default .Text -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"
+  {{- with .Title }} title="{{ . }}"{{ end }}
+  loading="lazy" decoding="async">
+{{- /* Trailing newline */ -}}
