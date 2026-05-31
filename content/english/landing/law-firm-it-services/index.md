@@ -81,7 +81,7 @@ hero:
 # ============================================================
 problems:
   eyebrow: "Sound familiar?"
-  heading: "The IT Risks That Keep Managing Partners Up at Night"
+  heading: "The IT Risks That Keep Managing Partners <span class=\"st-l-hl\">Up at Night</span>"
   sub: "You went to law school to practice law — not to babysit servers, chase your IT vendor, or wonder if your client files are actually secure."
   items:
     - icon: "lock"
@@ -102,7 +102,7 @@ problems:
     - icon: "headset"
       title: "No One Who Speaks Lawyer"
       text: "Generic IT shops don't understand matter management, conflict checks, e-discovery, or the confidentiality rules you live by. You need a partner who gets your world."
-  cost_line: "The average data breach at a small firm now exceeds <b>$120,000</b> — before factoring lost clients, bar exposure, and reputational damage. The right IT partner isn't an expense. It's <b>professional liability insurance that actually prevents the claim.</b>"
+  cost_line: "The average data breach at a small firm now exceeds <b class=\"st-l-hl-green\">$120,000</b> — before factoring lost clients, bar exposure, and reputational damage. The right IT partner isn't an expense. It's <b>professional liability insurance that actually prevents the claim.</b>"
   cta: "Get My Free Security Review"
 
 # ============================================================
@@ -110,7 +110,7 @@ problems:
 # ============================================================
 process:
   eyebrow: "Onboarding without the headache"
-  heading: "How We Secure Your Firm in 5 Simple Steps"
+  heading: "How We <span class=\"st-l-hl\">Secure Your Firm</span> in 5 Simple Steps"
   sub: "You keep practicing. We handle every technical detail — quietly, securely, and with zero downtime to your attorneys or staff."
   steps:
     - step: "Step 1 · Week 1"
@@ -134,7 +134,7 @@ process:
 # ============================================================
 benefits:
   eyebrow: "Why LA firms choose us"
-  heading: "IT That Protects Your Practice and Your Reputation"
+  heading: "IT That <span class=\"st-l-hl\">Protects Your Practice</span> and Your Reputation"
   sub: "For 15+ years, Southern California businesses — including law firms — have trusted Secure Techies to do IT the right way: secure, responsive, and genuinely on your side."
   image: "images/services/cybersecurity-overview.webp"
   image_badge: "Privileged data, locked down"

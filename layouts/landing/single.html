@@ -52,8 +52,8 @@
 
   <div class="st-l-wrap">
     <div class="st-l-hero-grid">
-      <div class="st-l-hero-copy st-reveal st-visible">
-        <div class="st-badge st-l-hero-badge">
+      <div class="st-l-hero-copy st-reveal">
+        <div class="st-badge st-l-hero-badge inline-flex items-center gap-2">
           <span class="st-badge-dot"></span>
           <span>{{ .badge | default "Trusted IT Partner · Southern California" }}</span>
         </div>
@@ -81,7 +81,7 @@
       </div>
 
       {{ with .dashboard }}
-      <div class="st-l-hero-visual st-reveal-right st-visible">
+      <div class="st-l-hero-visual st-reveal-right">
         <div class="st-float-pills" aria-hidden="true">
           {{ range (.pills | default (slice (dict "text" "99.9% Uptime" "dot" "#4ade80") (dict "text" "Zero Downtime" "dot" "#60a5fa"))) }}
           <div class="st-float-pill"><span class="st-float-pill-dot" style="background:{{ .dot }}"></span><span class="st-float-pill-txt">{{ .text }}</span></div>
@@ -122,6 +122,19 @@
                   {{ $heights := slice 28 45 35 62 30 55 22 48 40 33 58 82 36 27 44 51 }}
                   {{ range $bi, $h := $heights }}<div class="st-bar{{ if eq $bi 7 }} st-bar-active{{ end }}{{ if eq $bi 11 }} st-bar-blocked{{ end }}" style="height:{{ $h }}%"></div>{{ end }}
                 </div>
+              </div>
+              <div class="st-alert-feed">
+                {{ range (.alerts | default (slice (dict "text" "Ransomware attempt blocked" "time" "2m ago" "color" "#4ade80" "icon" "check") (dict "text" "All endpoints patched & current" "time" "8m ago" "color" "#4ade80" "icon" "check") (dict "text" "Monthly security report ready" "time" "1h ago" "color" "#60a5fa" "icon" "info"))) }}
+                <div class="st-alert-item">
+                  {{ if eq (.icon | default "check") "info" }}
+                  <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:{{ .color | default "#60a5fa" }}" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                  {{ else }}
+                  <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:{{ .color | default "#4ade80" }}" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  {{ end }}
+                  <span class="text-xs" style="color:#d1d5db">{{ .text | safeHTML }}</span>
+                  <span class="ml-auto text-xs" style="color:#4b5563">{{ .time }}</span>
+                </div>
+                {{ end }}
               </div>
               <div class="st-metric-strip">
                 {{ range $mi, $m := (.metrics | default (slice (dict "val" "247" "lbl" "Threats Blocked") (dict "val" "100%" "lbl" "Uptime") (dict "val" "<2hr" "lbl" "Response"))) }}
@@ -178,13 +191,17 @@
       <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
       {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="st-l-timeline">
-      <span class="st-l-timeline-rail" aria-hidden="true"></span>
-      {{ range $i, $st := .steps }}
-      <div class="st-l-tl-item st-reveal" style="transition-delay:{{ mul $i 70 }}ms">
-        <div class="st-l-tl-marker"><span>{{ add $i 1 }}</span></div>
-        <div class="st-l-tl-body">
-          {{ with .step }}<div class="st-l-tl-step">{{ . }}</div>{{ end }}
+    <div class="st-l-steps">
+      {{ $steps := .steps }}
+      {{ $last := sub (len $steps) 1 }}
+      {{ range $i, $st := $steps }}
+      <div class="st-l-step st-reveal" style="transition-delay:{{ mul $i 90 }}ms">
+        <div class="st-l-step-node">
+          <div class="st-l-step-bubble st-l-step-bubble--{{ add (mod $i 3) 1 }}">{{ add $i 1 }}</div>
+          {{ if ne $i $last }}<span class="st-l-step-connector" aria-hidden="true"></span>{{ end }}
+        </div>
+        <div class="st-l-step-card">
+          {{ with .step }}<span class="st-l-step-count">{{ . }}</span>{{ end }}
           <h3>{{ .title }}</h3>
           <p>{{ .text | safeHTML }}</p>
         </div>
@@ -207,8 +224,8 @@
     <div class="st-l-split">
       <div class="st-l-split-media st-reveal">
         {{ with .image }}
-          {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "640x760 webp q82" }}{{ end }}
-          <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="640" height="760" loading="lazy" decoding="async" />
+          {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "760x620 webp q86" }}{{ end }}
+          <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="760" height="620" loading="lazy" decoding="async" />
         {{ end }}
         {{ with .image_badge }}<span class="st-l-split-badge"><span class="st-live-dot"></span>{{ . }}</span>{{ end }}
       </div>
@@ -400,7 +417,7 @@
     <div class="st-l-final-grid">
       <div class="st-l-final-copy st-reveal">
         <h2>{{ .heading | safeHTML }}{{ with .heading_accent }} <span class="st-l-accent st-l-shimmer">{{ . }}</span>{{ end }}</h2>
-        <div class="st-hero-line st-l-hero-line" aria-hidden="true"></div>
+        <div class="st-hero-line st-l-hero-line st-l-line-scroll" aria-hidden="true"></div>
         <p>{{ .text | safeHTML }}</p>
         {{ with .points }}
         <ul class="st-l-final-list">

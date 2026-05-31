@@ -60,6 +60,22 @@ Landing assets load **only** when `landing: true` is set. Header, footer, announ
 - Honest stats only. Invent specifics that are plausible and defensible; never claim false certifications or numbers.
 - Accessibility: text on dark backgrounds needs contrast ≥ 4.5:1. Every `<img>` gets `width`/`height` + alt. Mobile: the dashboard drops its 3D tilt, grids collapse to 1–2 columns, and reduced-motion disables animations — all handled in CSS, but keep copy short enough to not overflow cards on a phone.
 
+## Premium-polish lessons (hard-won in production — do not regress)
+
+These are real bugs that shipped on the first pass. The fixes are now baked into the shared
+template/CSS/JS, so new pages inherit them automatically — but if you ever touch those files,
+preserve these invariants:
+
+- **Hero must be its own positioning context.** `.st-l-hero` requires `position: relative; overflow: clip; isolation: isolate;`. Without `position: relative`, the `absolute inset-0` background layers (grid/orbs/particles) anchor to the viewport instead of the hero, so the background "gets cut off" and shows a flat navy block. `overflow: clip` on the hero (and `overflow-x: clip` on `.st-landing-body`) is also what kills mobile horizontal scroll/shift.
+- **The hero badge is an inline pill, not a block.** The global `.st-badge` has no `display` set, so it defaults to `block` and stretches full-width on a landing page. Always render the hero badge as `.st-badge ... inline-flex items-center gap-2` (and `.st-l-hero-badge` sets `display: inline-flex; width: auto`). It must look identical to the homepage pill.
+- **Seamless shimmer loop.** A shimmer heading only loops cleanly if the gradient's first and last color stops are identical and the animation travels exactly one tile (`background-size: 200% auto`; animate `background-position` by `-200%`). Mismatched edge colors produce a visible "jump" each cycle.
+- **Dashboard needs the activity feed.** The homepage live-monitor includes an alert/activity feed under the chart. Drive it from `hero.dashboard.alerts` (each item: `text`, `time`, `color`, `icon`; `icon: info` renders the info-circle, anything else renders a check-circle). Omit `alerts` to fall back to sensible security defaults. A dashboard without the feed looks empty next to the homepage.
+- **Images that need cropping must live in `assets/`, not `static/`.** `resources.Get` returns `nil` for files under `static/`, so Hugo can't `Fill`/resize them — they get served raw and look blurry when the template stretches them. Put any photo you intend to crop in `assets/images/...` so `Fill "WxH webp qNN"` produces a sharp, correctly-sized webp. Crop to a near-square aspect (e.g. `760x620`, aspect-ratio ~`76/62`) and **never upscale** beyond the source resolution, or it blurs.
+- **Process section = homepage "Up and Running in N Steps" style.** Use the `.st-l-steps` grid with gradient numbered bubbles (`.st-l-step-bubble--1/2/3` cycled via `mod`), connectors between siblings (hidden on the last and at row ends), and white step cards. The old vertical `.st-l-timeline` looked basic — the bubble grid matches the homepage.
+- **Mobile is >50% of traffic — verify it explicitly.** Center card content on phones, make the before/after case columns stack and center, and **freeze scroll-reveal animations on the final form on mobile** (`opacity:1 !important; transform:none !important`) so the lead-capture form is never stuck invisible. Disable hover-only transforms under `@media (hover: none)` (including the dashboard tilt) so touch users don't get stuck hover states. Make the sticky mobile CTA premium (brighter gradient + stronger shadow).
+- **Emphasis sparingly.** Wrap one or two impactful phrases per key heading in `.st-l-hl` (blue) or `.st-l-hl-green` (for money/positive numbers). Use `.st-l-accent-mark` for the small decorative tick. Don't color whole headings.
+- **Scroll-driven accent line.** The animated underline can grow on scroll via `.st-l-line-scroll` (JS `initScrollLines()` adds `.is-grown` at ~0.6 intersection). Reduced-motion/no-IntersectionObserver grows it immediately.
+
 ## Reference files
 
 - [frontmatter-schema.md](./references/frontmatter-schema.md) — every section + field, with a copy-paste skeleton

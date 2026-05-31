@@ -242,7 +242,35 @@
     });
   }
 
-  /* ---------- 5. MOBILE STICKY CTA ---------- */
+  /* ---------- 5. SCROLL-TRIGGERED ACCENT LINES ---------- */
+  /* The hero accent line animates on load; lines deeper in the page (e.g. the
+     final CTA) should grow only when scrolled into view, mirroring the hero. */
+  function initScrollLines() {
+    var lines = document.querySelectorAll(".st-l-line-scroll");
+    if (!lines.length) return;
+    if (prefersReduced || !("IntersectionObserver" in window)) {
+      lines.forEach(function (el) {
+        el.classList.add("is-grown");
+      });
+      return;
+    }
+    var obs = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-grown");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+    lines.forEach(function (el) {
+      obs.observe(el);
+    });
+  }
+
+  /* ---------- 6. MOBILE STICKY CTA ---------- */
   function initStickyCta() {
     var bar = document.getElementById("st-sticky-cta");
     if (!bar) return;
@@ -264,6 +292,7 @@
     initReveals();
     initCounters();
     initFaq();
+    initScrollLines();
     initStickyCta();
     if (document.readyState === "complete") {
       requestAnimationFrame(initParticlesAll);

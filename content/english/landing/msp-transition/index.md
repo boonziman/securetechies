@@ -81,7 +81,7 @@ hero:
 # ============================================================
 problems:
   eyebrow: "Sound familiar?"
-  heading: "If Your Current IT Provider Does Any of This, You're Overpaying for Stress"
+  heading: "If Your Current IT Provider Does Any of This, You're <span class=\"st-l-hl\">Overpaying for Stress</span>"
   sub: "You're not being difficult. These are red flags that your MSP has outgrown you — or you've outgrown them."
   items:
     - icon: "clock"
@@ -102,7 +102,7 @@ problems:
     - icon: "chart"
       title: "No Strategy, Just Firefighting"
       text: "They only show up when something breaks. No roadmap, no planning, no help growing — just reactive band-aids on recurring problems."
-  cost_line: "Here's the uncomfortable math: a single hour of downtime costs the average small business <b>$8,000–$25,000</b>. A slow, disengaged MSP isn't just annoying — it's <b>expensive</b>. The good news? Switching is far easier than you think."
+  cost_line: "Here's the uncomfortable math: a single hour of downtime costs the average small business <b class=\"st-l-hl-green\">$8,000–$25,000</b>. A slow, disengaged MSP isn't just annoying — it's <b>expensive</b>. The good news? Switching is far easier than you think."
   cta: "Show Me a Better Way — Free"
 
 # ============================================================
@@ -110,7 +110,7 @@ problems:
 # ============================================================
 process:
   eyebrow: "The switch is painless"
-  heading: "How We Move You in 5 Simple Steps — With Zero Downtime"
+  heading: "How We Move You in 5 Simple Steps — With <span class=\"st-l-hl\">Zero Downtime</span>"
   sub: "You stay focused on your business. We handle every technical detail, coordinate with your old provider, and make sure nothing breaks."
   steps:
     - step: "Step 1 · Week 1"
@@ -137,9 +137,9 @@ process:
 # ============================================================
 benefits:
   eyebrow: "Why Secure Techies"
-  heading: "What a Managed IT Partner Should Actually Feel Like"
+  heading: "What a Managed IT Partner Should <span class=\"st-l-hl\">Actually Feel Like</span>"
   sub: "For 15+ years, Los Angeles businesses have trusted us to do IT the right way — responsive, secure, and genuinely on your side."
-  image: "images/services/helpdesk-overview.webp"
+  image: "images/landing/benefits-team.jpg"
   image_badge: "Real engineers, on call"
   cta: "Talk to a Real Engineer"
   items:

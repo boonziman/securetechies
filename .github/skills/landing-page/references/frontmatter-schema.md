@@ -55,6 +55,10 @@ hero:
     chart_title: "Transition Progress (30 days)"
     chart_legend_a: "Migrated"
     chart_legend_b: "Pending"
+    alerts:                              # activity feed under the chart (homepage parity); omit for security defaults
+      - { text: "Ransomware attempt blocked",      time: "2m ago", color: "green", icon: "check" }
+      - { text: "All endpoints patched & current", time: "8m ago", color: "green", icon: "check" }
+      - { text: "Monthly security report ready",   time: "1h ago", color: "blue",  icon: "info"  }
     metrics:                             # 3 small metric-strip stats under the chart
       - { val: "24/7", lbl: "Monitored" }
       - { val: "100%", lbl: "Encrypted" }
