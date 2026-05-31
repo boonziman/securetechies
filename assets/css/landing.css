@@ -782,3 +782,20 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-rev-card, .st-l-cs-card, .st-l-feat,
   .st-l-shimmer, .st-l-hero-line, .st-l-line-scroll, .st-svc-card { animation: none; transition: none; }
 }
+
+/* ============================================================
+   BELOW-THE-FOLD RENDER DEFERRAL (performance, zero visual change)
+   ============================================================
+   Every landing content band sits below the tall hero on first paint.
+   `content-visibility:auto` lets the browser skip their layout/paint until
+   they scroll near the viewport, removing that cost from the critical
+   first-paint window that Lighthouse's CPU-throttled simulation multiplies
+   and charges against LCP "render delay". The rendered result is identical;
+   `contain-intrinsic-size` reserves a stable placeholder height so the
+   scrollbar never jumps (no layout shift). The hero (.st-l-hero, no
+   .st-l-section class) is intentionally excluded so it always paints first. */
+.st-l-section,
+.st-l-statsband {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}

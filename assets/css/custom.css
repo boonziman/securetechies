@@ -1515,6 +1515,24 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============================================================
+   BELOW-THE-FOLD RENDER DEFERRAL (performance, zero visual change)
+   ============================================================
+   The hero is `min-h-screen`, so every section AFTER it starts below the
+   fold on first paint. `content-visibility:auto` tells the browser to SKIP
+   layout/paint/render for those off-screen sections until they scroll near
+   the viewport, then render them just-in-time. This removes their styling,
+   layout and paint cost from the critical first-paint window (the work that
+   Lighthouse's CPU-throttled simulation multiplies ~4x and charges against
+   LCP "render delay"), while the on-screen result is pixel-identical.
+   `contain-intrinsic-size: auto 800px` reserves a stable placeholder height
+   so the scrollbar never jumps (no layout shift); once a section has been
+   rendered once, the browser remembers its real size. */
+.st-hero ~ section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+/* ============================================================
    SCROLL-REVEAL ANIMATIONS
    ============================================================ */
 .st-reveal {
@@ -1826,7 +1844,8 @@ html, body {
     font-size: 1.05rem;
   }
   .st-process-desc {
-    font-size: 0.88rem;
+    /* 12px floor for tablet/mobile legibility (see .st-hero-sub note); no-op on desktop. */
+    font-size: max(0.88rem, 12px);
   }
 
   /* Service area map section */
@@ -1949,7 +1968,11 @@ html, body {
     line-height: 1.2;
   }
   .st-hero-sub {
-    font-size: 0.88rem;
+    /* max(...,12px): on mobile the root font is 12.8px (theme's text-base-sm),
+       so 0.88rem computed to 11.3px and failed Lighthouse "legible font sizes".
+       The 12px floor lifts it to exactly 12px on mobile and is a no-op on
+       desktop (where 0.88rem = 14px), so the visible design is unchanged. */
+    font-size: max(0.88rem, 12px);
   }
 
   /* Hero buttons — stack vertically */
@@ -2032,7 +2055,8 @@ html, body {
     padding: 24px 20px 20px;
   }
   .st-review-text {
-    font-size: 0.85rem;
+    /* 12px floor for mobile legibility (see .st-hero-sub note); no-op on desktop. */
+    font-size: max(0.85rem, 12px);
   }
 
   /* Review badges — full width and snug */
@@ -2069,7 +2093,8 @@ html, body {
     font-size: 1rem;
   }
   .st-svc-desc {
-    font-size: 0.82rem;
+    /* 12px floor for mobile legibility (see .st-hero-sub note); no-op on desktop. */
+    font-size: max(0.82rem, 12px);
   }
 
   /* Process timeline — tighter on small phones */
@@ -2091,7 +2116,8 @@ html, body {
     font-size: 0.95rem;
   }
   .st-process-desc {
-    font-size: 0.82rem;
+    /* 12px floor for mobile legibility (see .st-hero-sub note); no-op on desktop. */
+    font-size: max(0.82rem, 12px);
   }
 
   /* Review write buttons — full width stacked */

@@ -1,0 +1,72 @@
+<!-- cookie -->
+{{/* Project override of the vendored cookie-consent partial.
+     The vendored version's inline script calls `Cookies.get()/set()` from the
+     js-cookie library, which now lives inside the DEFERRED main JS bundle. The
+     inline script runs during HTML parse — BEFORE the deferred bundle defines
+     `window.Cookies` — so it threw "ReferenceError: Cookies is not defined",
+     which Lighthouse counted as a Best-Practices failure (errors-in-console).
+     This override is behaviour- and design-identical (same markup, same
+     classes, same styles) but reads/writes the consent cookie with the native
+     `document.cookie` API, so it has NO dependency on the deferred bundle and
+     logs no console error. */}}
+{{ with site.Params.cookies }}
+  {{ if .enable }}
+    <div id="cookie-box" class="cookie-box cookie-box-hide">
+      {{ .content | markdownify }}
+      <button
+        id="cookie-button"
+        class="cookie-box-button btn btn-sm btn-outline-primary">
+        {{ .button }}
+      </button>
+    </div>
+
+    <!-- cookie script (vanilla document.cookie — no js-cookie dependency) -->
+    <script type="application/javascript">
+      (function () {
+        var cookieBox = document.getElementById('cookie-box');
+        var cookieButton = document.getElementById('cookie-button');
+        if (!cookieBox || !cookieButton) return;
+        function hasConsent() {
+          return document.cookie.split('; ').some(function (c) {
+            return c.indexOf('cookie-consent=') === 0;
+          });
+        }
+        if (!hasConsent()) {
+          cookieBox.classList.remove('cookie-box-hide');
+          cookieButton.onclick = function () {
+            var maxAge = {{ .expire_days }} * 24 * 60 * 60;
+            document.cookie = 'cookie-consent=true; max-age=' + maxAge + '; path=/; SameSite=Lax';
+            cookieBox.classList.add('cookie-box-hide');
+          };
+        }
+      })();
+    </script>
+
+    <!-- cookie style -->
+    <style>
+      .cookie-box {
+        position: fixed;
+        left: 2rem;
+        bottom: 2rem;
+        z-index: 9999;
+        padding: 1.5rem;
+        background-color: #fff;
+        max-width: calc(100% - 4rem);
+        width: 25rem;
+        box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+        border-radius: inherit;
+      }
+      .cookie-box-hide {
+        display: none;
+      }
+      .cookie-box-button {
+        display: block;
+        margin-top: 1rem;
+      }
+
+      .dark .cookie-box {
+        background-color: #222;
+      }
+    </style>
+  {{ end }}
+{{ end }}
