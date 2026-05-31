@@ -139,6 +139,10 @@ lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/icons.css"
 lazy = true
+# Redeclares the Font Awesome @font-face rules with font-display:swap (must stay LAST so it wins the cascade).
+[[params.plugins.css]]
+link = "css/fa-display-swap.css"
+lazy = true
 
 # JS Plugins
 [[params.plugins.js]]

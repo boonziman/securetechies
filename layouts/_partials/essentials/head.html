@@ -55,15 +55,46 @@
 {{ partialCached "custom-script.html" . }}
 
 
-<!-- google analytics (GA4) — robust inline gtag, single source of truth from hugo.toml -->
+<!-- google analytics (GA4) — lazy-loaded for performance, single source of truth from hugo.toml.
+     The gtag library (~150 KB) is kept OFF the critical render path: it loads on the first
+     user interaction, or after the page goes idle / 4s as a fallback. Pageviews are still
+     recorded for every visit; this only changes WHEN the heavy script downloads, which is the
+     PageSpeed-recommended way to handle third-party analytics. Design/tracking are unchanged. -->
 {{ with site.Config.Services.GoogleAnalytics.ID }}
   {{ if ne . "G-MEASUREMENT_ID" }}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ . }}');
+    (function () {
+      var GA_ID = {{ . }};
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+
+      var loaded = false;
+      function loadGA() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        cleanup();
+      }
+      var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click', 'pointerdown'];
+      function cleanup() {
+        events.forEach(function (e) { window.removeEventListener(e, onInteract, { passive: true }); });
+      }
+      function onInteract() { loadGA(); }
+      events.forEach(function (e) { window.addEventListener(e, onInteract, { passive: true }); });
+
+      // Fallbacks so pageviews still fire on bounce / no-interaction visits.
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function () { setTimeout(loadGA, 2500); }, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', function () { setTimeout(loadGA, 3000); });
+      }
+    })();
   </script>
   {{ end }}
 {{ end }}

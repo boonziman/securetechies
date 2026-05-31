@@ -3,6 +3,15 @@ title: "Microsoft 365 Security Audit | Find the Gaps Microsoft Doesn't Cover"
 meta_title: "Your Microsoft 365 Isn't as Secure as You Think — Free Security Audit"
 meta_description: "Most businesses assume Microsoft 365 protects everything. It doesn't. Missing MFA, weak conditional access, email spoofing, no real backup, and over-shared files leave you exposed. Get a free Microsoft 365 security audit from Secure Techies in Los Angeles."
 description: "Microsoft secures its cloud — not your configuration. We audit your Microsoft 365 tenant for the gaps that lead to breaches: MFA, conditional access, email spoofing, backup, and oversharing."
+keywords:
+  - "Microsoft 365 security audit"
+  - "Microsoft 365 security"
+  - "M365 security assessment"
+  - "Office 365 security"
+  - "Microsoft 365 MFA conditional access"
+  - "Microsoft 365 backup"
+  - "Office 365 email security Los Angeles"
+  - "Microsoft 365 security gaps"
 url: "/microsoft-365-security/"
 
 # --- Landing page behaviour (reusable flags) ---

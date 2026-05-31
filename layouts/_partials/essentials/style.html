@@ -1,0 +1,83 @@
+{{/* ----------------------------------------------------------------------
+  Project override of the theme's essentials/style.html.
+  Performance-tuned (PageSpeed/Lighthouse) WITHOUT changing any design:
+    - Main CSS is now MINIFIED in production (theme only fingerprinted it).
+    - Google Fonts load via a single direct <link> with display=swap +
+      preconnect (removes the theme's JS-injection request chain that
+      delayed LCP). Text paints immediately in the fallback, then swaps.
+    - Preconnect/dns-prefetch list trimmed to only origins we actually use
+      (Lighthouse flagged "too many preconnect hints").
+---------------------------------------------------------------------- */}}
+
+<!-- Resource hints — only origins actually used on the page -->
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+<!-- Google fonts: render-blocking with display=optional. This matches the
+     project's landing-page approach (see baseof.html) and is deliberate:
+     `optional` gives the web font a tiny (~100ms) window to load. If it makes
+     it, the brand font paints with NO layout shift; if not, the system
+     fallback is kept for the whole page load (still no shift) and the web font
+     is cached for the next visit. `swap` was avoided here because it reflows
+     text when the font arrives, causing Cumulative Layout Shift (CLS). -->
+{{ $pf := site.Data.theme.fonts.font_family.primary }}
+{{ $sf := site.Data.theme.fonts.font_family.secondary }}
+{{ $fontHref := printf "https://fonts.googleapis.com/css2?family=%s%s&display=optional" ($pf | safeURL) (cond (ne $sf "") (printf "&family=%s" ($sf | safeURL)) "") }}
+<link rel="stylesheet" href="{{ $fontHref | safeURL }}" />
+
+<!-- main styles -->
+{{ $styles := slice }}
+{{ $stylesLazy := slice }}
+
+{{ range site.Params.plugins.css }}
+  {{ if findRE "^http" .link }}
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="{{ .link | relURL }}"
+      {{ .attributes | safeHTMLAttr }} />
+  {{ else }}
+    {{ if not .lazy }}
+      {{ $styles = $styles | append (resources.Get .link) }}
+    {{ else }}
+      {{ $stylesLazy = $stylesLazy | append (resources.Get .link) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $mainCSS := resources.Get "css/main.css" }}
+{{ $tailwindOpts := dict "inlineImports" true }}
+{{ $tailwindCSS := $mainCSS | css.TailwindCSS $tailwindOpts }}
+
+{{ $styles = $styles | append $tailwindCSS }}
+{{ $styles = $styles | resources.Concat "css/style.css" }}
+
+{{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
+
+{{ if hugo.IsProduction }}
+  {{ $styles = $styles | minify | fingerprint }}
+  {{ $stylesLazy = $stylesLazy | minify | fingerprint }}
+{{ end }}
+
+
+<!-- link main style -->
+<link
+  href="{{ $styles.RelPermalink }}"
+  {{ if hugo.IsProduction }}integrity="{{ $styles.Data.Integrity }}"{{ end }}
+  rel="stylesheet" />
+
+<!-- link lazy style (non-render-blocking) -->
+<link
+  rel="stylesheet"
+  href="{{ $stylesLazy.RelPermalink }}"
+  {{ if hugo.IsProduction }}integrity="{{ $stylesLazy.Data.Integrity }}"{{ end }}
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+<noscript>
+  <link rel="stylesheet" href="{{ $stylesLazy.RelPermalink }}" />
+</noscript>

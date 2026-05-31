@@ -3,6 +3,15 @@ title: "IT Services for Law Firms in Los Angeles | Secure, Compliant Legal IT"
 meta_title: "Law Firm IT Services LA | Secure, Confidential, Always-On | Secure Techies"
 meta_description: "Managed IT & cybersecurity built for law firms. Protect privileged client data, stay compliant, and stop downtime during deadlines. 15+ years serving LA firms. Free IT security review."
 description: "Secure Techies provides managed IT, cybersecurity, and compliance for Los Angeles law firms — protecting privileged client data and keeping attorneys productive."
+keywords:
+  - "law firm IT services Los Angeles"
+  - "legal IT support"
+  - "law firm cybersecurity"
+  - "IT support for attorneys"
+  - "law firm managed IT"
+  - "legal IT services LA"
+  - "attorney data security"
+  - "law firm IT compliance"
 url: "/law-firm-it-services/"
 
 # --- Landing page behaviour (reusable flags) ---

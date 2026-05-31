@@ -3,6 +3,15 @@ title: "MSP Transition Services | Switch Managed IT Providers With Zero Downtime
 meta_title: "Stuck With a Bad MSP? Switch to Secure Techies — Zero Downtime"
 meta_description: "Frustrated with slow tickets, surprise invoices, and a provider who ignores you? Secure Techies moves you to a better MSP with zero downtime, no data loss, and no long-term contract. Free transition assessment."
 description: "We help Los Angeles businesses transition away from a frustrating MSP to responsive, secure managed IT — with zero downtime and no data loss."
+keywords:
+  - "switch MSP"
+  - "change managed IT provider"
+  - "MSP transition Los Angeles"
+  - "switch IT support company"
+  - "new managed IT provider Los Angeles"
+  - "MSP migration zero downtime"
+  - "fire my MSP"
+  - "managed IT services Los Angeles"
 url: "/msp-transition/"
 
 # --- Landing page behaviour (reusable flags) ---

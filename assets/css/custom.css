@@ -347,7 +347,7 @@ html { scroll-behavior: smooth; }
   content: '';
   position: absolute;
   top: 0;
-  left: -30%;
+  left: 0;
   width: 2px;
   height: 100%;
   background: linear-gradient(to bottom,
@@ -357,14 +357,19 @@ html { scroll-behavior: smooth; }
     rgba(0,153,255,0.08) 80%,
     transparent 100%);
   box-shadow: 0 0 18px 4px rgba(0,153,255,0.12);
-  transform: skewX(-20deg);
+  transform: translateX(-10vw) skewX(-20deg);
+  will-change: transform, opacity;
   animation: scanSlide 9s linear infinite;
 }
+/* Animate transform (GPU-composited) instead of `left` so the sweeping line
+   does NOT trigger per-frame layout shifts (was a desktop CLS source).
+   Visual path is identical: a skewed vertical line crossing the full-bleed
+   hero left-to-right, fading in and out. */
 @keyframes scanSlide {
-  0%   { left: -10%; opacity: 0; }
+  0%   { transform: translateX(-10vw) skewX(-20deg); opacity: 0; }
   5%   { opacity: 1; }
   95%  { opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+  100% { transform: translateX(110vw) skewX(-20deg); opacity: 0; }
 }
 
 /* Hero accent line beneath H1 */
