@@ -1221,8 +1221,14 @@
       resetAuto();
     }
   }, {passive:true});
-  buildDots();
-  resetAuto();
+  /* Defer the initial build (which reads layout via offsetWidth and creates the
+     dot buttons) off the critical render path. This is a below-the-fold widget,
+     so running it on idle / after load removes a forced-reflow long task from
+     the FCP->LCP window without any visible change. */
+  function stRevInit(){ buildDots(); resetAuto(); }
+  if('requestIdleCallback' in window){ requestIdleCallback(stRevInit, {timeout:2500}); }
+  else if(document.readyState==='complete'){ setTimeout(stRevInit, 300); }
+  else window.addEventListener('load', function(){ setTimeout(stRevInit, 300); });
   window.addEventListener('resize', function(){ buildDots(); slideTo(Math.min(currentIndex, getMaxIndex())); });
   /* Pause auto-advance when reviews section is offscreen */
   if('IntersectionObserver' in window){
@@ -1947,6 +1953,7 @@
 <!-- SCROLL + COUNTER ANIMATIONS -->
 <script>
 (function(){
+  function stInit(){
   var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
@@ -1991,5 +1998,14 @@
     },{threshold:0.3});
     cio.observe(statsSection);
   }
+  }
+  /* The hero entrance is pure CSS (plays immediately), so this observer setup
+     only matters for below-the-fold sections. Run it on idle / after first
+     paint so the querySelectorAll + observer wiring doesn't add a long task to
+     the critical FCP->LCP window. timeout caps the wait so content never stays
+     hidden. */
+  if('requestIdleCallback' in window){ requestIdleCallback(stInit, {timeout:2000}); }
+  else if(document.readyState==='complete'){ requestAnimationFrame(stInit); }
+  else window.addEventListener('load', stInit);
 })();
 </script>

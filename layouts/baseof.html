@@ -22,10 +22,21 @@
            and loaded by essentials/style.html for every page — no need to repeat
            them here (that produced duplicate preconnects + a duplicate font
            request flagged by Lighthouse). We only add the landing stylesheet. */}}
+      {{/* In production the small (~6.5 KB) landing CSS is INLINED into the head
+           instead of loaded as a separate render-blocking <link>. The external
+           stylesheet was the single biggest landing-page FCP cost (~180 ms of
+           render-blocking + a network round-trip on slow mobile): the browser
+           could not paint the hero until it arrived. Inlining is the exact same
+           CSS delivered with the HTML, so the page looks identical but paints as
+           soon as the document is parsed. In development we keep the external
+           link for fast rebuilds and source mapping. */}}
       {{ with resources.Get "css/landing.css" }}
-        {{ $landingCSS := . }}
-        {{ if hugo.IsProduction }}{{ $landingCSS = $landingCSS | minify | fingerprint }}{{ end }}
-        <link rel="stylesheet" href="{{ $landingCSS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $landingCSS.Data.Integrity }}"{{ end }} />
+        {{ if hugo.IsProduction }}
+          {{ $landingCSS := . | minify }}
+          <style>{{ $landingCSS.Content | safeCSS }}</style>
+        {{ else }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ end }}
       {{ end }}
     {{ end }}
 

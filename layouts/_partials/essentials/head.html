@@ -90,9 +90,9 @@
 
       // Fallbacks so pageviews still fire on bounce / no-interaction visits.
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(function () { setTimeout(loadGA, 2500); }, { timeout: 4000 });
+        requestIdleCallback(function () { setTimeout(loadGA, 6000); }, { timeout: 8000 });
       } else {
-        window.addEventListener('load', function () { setTimeout(loadGA, 3000); });
+        window.addEventListener('load', function () { setTimeout(loadGA, 6000); });
       }
     })();
   </script>

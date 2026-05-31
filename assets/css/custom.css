@@ -407,13 +407,21 @@ html { scroll-behavior: smooth; }
 /* Hero accent line beneath H1 */
 .st-hero-line {
   height: 3px;
-  width: 0;
+  width: 180px;
+  transform: scaleX(0);
+  transform-origin: left center;
   background: linear-gradient(90deg, #0066CC, #38bdf8, transparent);
   border-radius: 2px;
   animation: heroLineGrow 1.1s 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+  will-change: transform;
 }
+/* Grow via transform:scaleX (GPU-composited) instead of animating `width`,
+   which forced a main-thread layout on every frame inside the LCP window.
+   transform-origin:left makes it grow left->right exactly like the width
+   animation did, and the gradient is painted across the full 180px then
+   scaled, so the on-screen result is pixel-identical. */
 @keyframes heroLineGrow {
-  to { width: 180px; }
+  to { transform: scaleX(1); }
 }
 
 /* Grid overlay */
