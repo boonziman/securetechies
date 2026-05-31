@@ -1564,13 +1564,23 @@ html { scroll-behavior: smooth; }
    so below-the-fold sections keep their scroll-reveal behaviour. */
 .st-hero .st-reveal { animation: stHeroRevealUp 0.65s ease both; }
 .st-hero .st-reveal-right { animation: stHeroRevealRight 0.65s ease both; }
+/* Opacity is FRONT-LOADED: the text reaches full opacity within the first ~12%
+   of the animation (~80ms) while the 28px slide-up still runs the full 0.65s.
+   Why: the LCP element is the hero paragraph; Google's LCP timer can't record a
+   text paint until the element is visible, so an opacity:0->1 fade over 0.65s
+   was adding the WHOLE fade duration to LCP (render delay was ~91% of LCP).
+   Reaching opacity:1 almost immediately lets the LCP paint right at first paint,
+   cutting ~500ms off LCP on mobile. The slide-up motion (the part the eye reads
+   as the "entrance") is 100% unchanged, so the animation looks the same. */
 @keyframes stHeroRevealUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  0%   { opacity: 0; transform: translateY(28px); }
+  12%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
 }
 @keyframes stHeroRevealRight {
-  from { opacity: 0; transform: translateX(28px); }
-  to   { opacity: 1; transform: translateX(0); }
+  0%   { opacity: 0; transform: translateX(28px); }
+  12%  { opacity: 1; }
+  100% { opacity: 1; transform: translateX(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .st-hero .st-reveal,

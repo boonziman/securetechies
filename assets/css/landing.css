@@ -33,12 +33,17 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
   animation: stHeroVisualReveal 0.65s ease both;
 }
 @keyframes stHeroCopyReveal {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  /* Opacity front-loaded (full by ~12% / ~80ms) so the hero copy — the LCP
+     element — paints immediately; the 28px slide still runs the full 0.65s.
+     See custom.css stHeroRevealUp for the full rationale. Visual feel unchanged. */
+  0%   { opacity: 0; transform: translateY(28px); }
+  12%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
 }
 @keyframes stHeroVisualReveal {
-  from { opacity: 0; transform: translateX(28px); }
-  to   { opacity: 1; transform: translateX(0); }
+  0%   { opacity: 0; transform: translateX(28px); }
+  12%  { opacity: 1; }
+  100% { opacity: 1; transform: translateX(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   html.js .st-landing-body .st-l-hero-copy.st-reveal,
