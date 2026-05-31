@@ -14,8 +14,15 @@
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- 1. HERO PARTICLE FIELD (canvas) ---------- */
-  function initParticles() {
-    var c = document.getElementById("st-particles");
+  /* Initializes every particle canvas on the page (hero + final CTA),
+     so multiple animated backgrounds work, not just one. */
+  function initParticlesAll() {
+    var canvases = document.querySelectorAll(".st-particles-canvas, #st-particles");
+    Array.prototype.forEach.call(canvases, function (c) {
+      initParticles(c);
+    });
+  }
+  function initParticles(c) {
     if (!c || prefersReduced) return;
     var ctx = c.getContext("2d");
     var isMobile = window.innerWidth < 768;
@@ -259,10 +266,10 @@
     initFaq();
     initStickyCta();
     if (document.readyState === "complete") {
-      requestAnimationFrame(initParticles);
+      requestAnimationFrame(initParticlesAll);
     } else {
       window.addEventListener("load", function () {
-        requestAnimationFrame(initParticles);
+        requestAnimationFrame(initParticlesAll);
       });
     }
   }

@@ -1,0 +1,11 @@
+{{/* Reusable centered call-to-action band used between landing sections.
+     Context: dict "text" "..." "btn" "..." "anchor" "#st-landing-final" "tone" "dark|light" */}}
+{{ $text := .text | default "" }}
+{{ $btn := .btn | default "Get My Free Assessment" }}
+{{ $anchor := .anchor | default "#st-landing-final" }}
+<div class="st-l-ctaband st-reveal">
+  {{ with $text }}<p class="st-l-ctaband-text">{{ . | safeHTML }}</p>{{ end }}
+  <a href="{{ $anchor }}" class="st-btn-primary st-l-btn-lg st-l-ctaband-btn">{{ $btn }}
+    <svg style="width:17px;height:17px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  </a>
+</div>

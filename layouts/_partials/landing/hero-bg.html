@@ -1,0 +1,13 @@
+{{/* Reusable animated hero background: gradient + floating orbs + grid +
+     scan line + particle canvas. Identical look to the homepage hero.
+     Pass a canvas id via the context (dict "canvas" "st-particles-2") so a
+     page can have more than one particle field. Default id = st-particles. */}}
+{{ $canvas := . | default "st-particles" }}
+<div class="st-hero-bg absolute inset-0"></div>
+<span class="st-orb st-orb-1 absolute rounded-full"></span>
+<span class="st-orb st-orb-2 absolute rounded-full"></span>
+<span class="st-orb st-orb-3 absolute rounded-full"></span>
+<span class="st-orb st-orb-4 absolute rounded-full"></span>
+<div class="st-grid-overlay absolute inset-0"></div>
+<div class="st-scan-line absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+<canvas id="{{ $canvas }}" class="st-particles-canvas absolute inset-0 pointer-events-none" aria-hidden="true"></canvas>

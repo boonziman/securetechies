@@ -27,37 +27,46 @@ service_name: "Service Name for Schema"   # used by Service JSON-LD
 robots: "index, follow"               # use "noindex, nofollow" for paid-only pages you don't want in search
 ```
 
+Add **"Web Development & Design"** (worded for the niche, e.g. "Law Firm Website & Web Development") to `form_services` — Secure Techies now offers web work and the service cards reference it.
+
 ## hero (required)
 
 ```yaml
 hero:
-  badges: ["Zero downtime guaranteed", "No long-term contract", "15+ years in LA"]  # 2–3, each gets a check icon
+  badge: "Trusted IT Partner · Southern California"   # ONE pill (niche-worded), not a list of 3
   heading: "Primary pain headline?"
-  heading_accent: "Benefit promise."   # rendered in gradient accent color, appended after heading
+  heading_accent: "Benefit promise."   # rendered in gradient + shimmer accent, appended after heading
   lead: "2–3 sentence empathy + promise paragraph."
   cta_text: "Get My Free X Plan"
   cta_anchor: "#st-landing-final"       # default; keep as-is
   sticky_cta: "Get My Free Plan"         # short label for the mobile sticky bar
-  rating_value: "4.8"
+  rating_value: "5"                      # display 5/5 stars on the hero
   rating_count: "120"
-  card:                                  # the animated "live plan" visual (optional but recommended)
-    title: "Live Transition Plan"
-    status: "On track"
-    foot: "Your team keeps working — no interruption"
-    rows:                                # 4–6 rows; state ∈ done | active | queue
-      - { name: "Discovery & risk audit", state: "done" }
-      - { name: "Secure migration", state: "active" }
-      - { name: "Go-live & hypercare", state: "queue" }
+  trust_items: ["24/7 Support", "No Long-Term Contracts", "Free Risk Assessment"]   # 3, niche-worded
+  dashboard:                             # the animated "live monitor" card (homepage component)
+    label: "Secure Techies · Transition Monitor"   # header label next to traffic dots + LIVE
+    pills:                               # 1–2 floating pills above the card
+      - { text: "Zero downtime", dot: "green" }
+      - { text: "Fully encrypted", dot: "cyan" }
+    status:                              # 3 status rows; color ∈ green|blue|purple|amber, icon = icon key
+      - { icon: "shield", label: "Threat Status", value: "All Clear", color: "green" }
+      - { icon: "swap",   label: "Migration",     value: "On Track",  color: "blue" }
+      - { icon: "lock",   label: "Backups",       value: "Protected", color: "purple" }
+    chart_title: "Transition Progress (30 days)"
+    chart_legend_a: "Migrated"
+    chart_legend_b: "Pending"
+    metrics:                             # 3 small metric-strip stats under the chart
+      - { val: "24/7", lbl: "Monitored" }
+      - { val: "100%", lbl: "Encrypted" }
+      - { val: "0",    lbl: "Downtime" }
+    badge: "Migration secured"           # floating badge bottom-corner
 ```
 
-## trustbar (optional)
+The single `badge`, `rating_value: "5"`, `trust_items`, and `dashboard` are **premium-parity requirements** — always include them (re-themed to the topic).
 
-```yaml
-trustbar:
-  stats:                  # 3–4; icon = an icon key (see list below)
-    - { icon: "clock",  value: "<2 hr", label: "avg. response time" }
-    - { icon: "shield", value: "99.9%", label: "uptime delivered" }
-```
+## trustbar (deprecated — do not use)
+
+The old thin trust-stat strip is **removed**. Its job is now done by `hero.trust_items` (under the hero) and the gradient `stats` band. Omit `trustbar`.
 
 ## problems (optional, high-impact)
 
@@ -69,31 +78,56 @@ problems:
   items:                  # 4–6 pain cards
     - { icon: "clock", title: "Tickets Sit for Days", text: "Specific, visceral pain." }
   cost_line: "One stat + reframe. Supports <b>bold</b>."   # optional emphasized closer
+  cta: "Show Me a Better Way — Free"     # optional → renders a mid-page CTA band scrolling to the form
 ```
 
-## process (optional)
+Any section may carry a `cta:` string — it renders the reusable centered CTA band (button → `#st-landing-final`). Add one after `problems`, `benefits`, `services`, and `cases` to keep a CTA always in view.
+
+## process (optional — renders a vertical timeline)
 
 ```yaml
 process:
   eyebrow: "The switch is painless"
   heading: "How it works in 5 simple steps"
   sub: "Optional."
-  steps:                  # numbered automatically
+  steps:                  # numbered automatically, shown on a connected timeline rail
     - { step: "Step 1 · Week 1", title: "Free Discovery", text: "What happens + reassurance." }
 ```
 
-## benefits (optional)
+## benefits (optional — renders a split image + feature list)
 
 ```yaml
 benefits:
   eyebrow: "Why Secure Techies"
   heading: "What it should actually feel like"
   sub: "Optional."
-  items:                  # 4–6
+  image: "images/services/helpdesk-overview.webp"   # left media column (reuse a static/images/services/*.webp or assets/images/landing/*)
+  image_badge: "Real engineers, on call"            # small badge over the image
+  items:                  # 4–6 feature rows with check icons
     - { icon: "headset", title: "Real Humans, Fast", text: "Benefit, not feature." }
+  cta: "Talk to a Real Engineer"   # optional CTA band
 ```
 
-## stats (optional — animated counters)
+## services (optional — photo service cards, no links)
+
+Mirrors the homepage's 6 service cards. Rendered as non-linking `<div>`s (visitors stay on-page). Use a `footnote` to mention web development & design and a `cta` to drive to the form.
+
+```yaml
+services:
+  eyebrow: "Everything under one roof"
+  heading: "Full-stack IT, handled"
+  sub: "Optional."
+  items:                  # ideally 6
+    - title: "Managed IT & Help Desk"
+      text: "Fast, friendly, senior-level support by phone, email, and chat."
+      image: "images/services/helpdesk-overview.webp"   # static/images/services/*.webp (relURL fallback) or assets/images/landing/*
+      tag_class: "cyan"     # number-pill color ∈ cyan|green|amber|purple
+      badge: "24/7"          # optional small pill on the card
+  footnote: "We also offer <b>web development & design</b> services — ask us about your site."
+  cta: "Get My Free Assessment"
+```
+
+## stats (optional — animated counters on a gradient band)
 
 ```yaml
 stats:
@@ -120,10 +154,10 @@ reviews:
       text: "Real review text from a Google screenshot."
       name: "First L."           # or "Placeholder Name N" until real ones supplied
       meta: "Office Manager · Healthcare"
-      # avatar: "images/landing/review-1.jpg"   # optional; falls back to initial
+      avatar: "images/landing/reviews/firstname.jpg"   # copyright-free, gender-matched headshot (Pexels via curl); falls back to initials if omitted
 ```
 
-**Never fabricate named reviews as real.** Use `Placeholder Name 1…9` until the user provides screenshots, then transcribe name/text/rating.
+**Never fabricate named reviews as real.** Use `Placeholder Name 1…9` until the user provides screenshots, then transcribe name/text/rating. Company/org reviewers (no person) can omit `avatar` to show initials. Recommend the **3×3 grid** over a carousel — all social proof is visible at once, which converts better than a slider.
 
 ## cases (optional — before/after case studies)
 
@@ -141,7 +175,10 @@ cases:
       results:                            # small stat chips
         - { value: "0", label: "hrs downtime" }
         - { value: "60%", label: "fewer tickets" }
+  cta: "Get Results Like These"           # optional CTA band
 ```
+
+Case cards render with a **before → after** layout separated by a circular "vs" arrow divider.
 
 ## guarantees (optional)
 
@@ -165,9 +202,12 @@ faq:
 
 ## final (required — CTA + Netlify form)
 
+The final section reuses the **animated hero background** (with a second particle canvas, `st-particles-final`) and a **shimmer accent + divider line** on its heading, so the page closes as strongly as it opens.
+
 ```yaml
 final:
   heading: "Ready to stop babysitting your IT?"
+  heading_accent: "Let's Fix That."     # gradient + shimmer accent appended to the heading
   text: "One short reinforcing paragraph."
   points: ["Free, no-obligation plan", "Response in under 2 hours", "No long-term contract"]
   form_title: "Get Your Free Assessment"
@@ -183,4 +223,4 @@ Form fields are fixed: **Name, Company, Email, Phone** (all required), **Service
 
 ## Minimal valid skeleton
 
-A page needs at least: page-level keys + `hero` + `final`. Everything else is optional but more sections = more persuasion. A strong page uses: hero → trustbar → problems → process → benefits → stats → reviews → cases → guarantees → faq → final.
+A page needs at least: page-level keys + `hero` (with `badge`, `rating_value: "5"`, `trust_items`, and `dashboard`) + `final`. Everything else is optional but more sections = more persuasion. A strong, premium-parity page uses: hero → partner carousel (automatic) → problems (+cta) → process (timeline) → benefits (split image, +cta) → services (photo cards, +cta) → stats (gradient band) → reviews (3×3 grid + headshots) → cases (before/after, +cta) → guarantees → faq → final (hero-bg + shimmer).

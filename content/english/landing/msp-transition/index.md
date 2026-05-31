@@ -22,6 +22,7 @@ form_services:
   - "Cloud & Microsoft 365"
   - "Backup & Disaster Recovery"
   - "Compliance (HIPAA / CMMC / SOC 2)"
+  - "Web Development & Design"
   - "Not Sure — Just Need Help"
 
 service_name: "MSP Transition & Managed IT Services"
@@ -30,51 +31,50 @@ service_name: "MSP Transition & Managed IT Services"
 # HERO
 # ============================================================
 hero:
-  badges:
-    - "Zero downtime guaranteed"
-    - "No long-term contract"
-    - "15+ years in Los Angeles"
+  badge: "Trusted IT Partner · Southern California"
   heading: "Stuck With an MSP That Stopped Caring?"
   heading_accent: "We'll Move You — Without the Headache."
   lead: "Slow ticket responses. Surprise invoices. Security you're not sure actually works. You shouldn't have to babysit the company that's supposed to handle your IT. We make switching managed providers simple, secure, and completely behind the scenes — so your team never feels it."
   cta_text: "Get My Free MSP Transition Plan"
   sticky_cta: "Get My Free Plan"
   cta_anchor: "#st-landing-final"
-  rating_value: "4.8"
+  rating_value: "5"
   rating_count: "120"
-  card:
-    title: "Live Transition Plan"
-    status: "On track"
-    foot: "Your team keeps working — no interruption"
-    rows:
-      - name: "Discovery & risk audit"
-        state: "done"
-      - name: "Secure data + email migration"
-        state: "done"
-      - name: "Endpoint & network handover"
-        state: "active"
-      - name: "Old provider offboarding"
-        state: "queue"
-      - name: "Go-live & 30-day hypercare"
-        state: "queue"
-
-# ============================================================
-# TRUST BAR
-# ============================================================
-trustbar:
-  stats:
-    - icon: "clock"
-      value: "<2 hr"
-      label: "avg. response time"
-    - icon: "shield"
-      value: "99.9%"
-      label: "uptime delivered"
-    - icon: "users"
-      value: "120+"
-      label: "businesses protected"
-    - icon: "check"
-      value: "Zero"
-      label: "downtime switchovers"
+  trust_items:
+    - "24/7 Support"
+    - "No Long-Term Contracts"
+    - "Free Transition Assessment"
+  dashboard:
+    label: "Secure Techies · Transition Monitor"
+    pills:
+      - text: "99.9% Uptime"
+        dot: "#4ade80"
+      - text: "Zero Downtime"
+        dot: "#60a5fa"
+    status:
+      - label: "Threat Status"
+        value: "All Clear"
+        color: "#4ade80"
+        icon: "shield"
+      - label: "Migration"
+        value: "On Track"
+        color: "#60a5fa"
+        icon: "swap"
+      - label: "Backups"
+        value: "Protected"
+        color: "#a78bfa"
+        icon: "lock"
+    chart_title: "Transition Progress (30 days)"
+    chart_legend_a: "Migrated"
+    chart_legend_b: "Pending"
+    metrics:
+      - val: "247"
+        lbl: "Tickets Resolved"
+      - val: "100%"
+        lbl: "Data Integrity"
+      - val: "<2hr"
+        lbl: "Response"
+    badge: "Migration secured"
 
 # ============================================================
 # PROBLEMS — "Does this sound familiar?"
@@ -103,6 +103,7 @@ problems:
       title: "No Strategy, Just Firefighting"
       text: "They only show up when something breaks. No roadmap, no planning, no help growing — just reactive band-aids on recurring problems."
   cost_line: "Here's the uncomfortable math: a single hour of downtime costs the average small business <b>$8,000–$25,000</b>. A slow, disengaged MSP isn't just annoying — it's <b>expensive</b>. The good news? Switching is far easier than you think."
+  cta: "Show Me a Better Way — Free"
 
 # ============================================================
 # PROCESS — How the transition works
@@ -138,6 +139,9 @@ benefits:
   eyebrow: "Why Secure Techies"
   heading: "What a Managed IT Partner Should Actually Feel Like"
   sub: "For 15+ years, Los Angeles businesses have trusted us to do IT the right way — responsive, secure, and genuinely on your side."
+  image: "images/services/helpdesk-overview.webp"
+  image_badge: "Real engineers, on call"
+  cta: "Talk to a Real Engineer"
   items:
     - icon: "headset"
       title: "Real Humans, Fast"
@@ -157,6 +161,41 @@ benefits:
     - icon: "lock"
       title: "Compliance Made Simple"
       text: "HIPAA, CMMC, SOC 2, PCI — we handle the controls, documentation, and audits so you can pass without the panic."
+
+# ============================================================
+# SERVICES (everything we do — no outbound links, stay on page)
+# ============================================================
+services:
+  eyebrow: "Everything under one roof"
+  heading: "One Partner for Your Entire IT Stack"
+  sub: "When you switch to Secure Techies, you don't just get a faster help desk — you get a full team covering every layer of your technology."
+  footnote: "We also offer <b>web development &amp; design services</b> — from fast, secure business websites to custom web apps. Ask us when we talk."
+  cta: "Get My Free Assessment"
+  items:
+    - title: "Infrastructure & Cloud"
+      text: "Server management, virtualization, and cloud with Azure, AWS, and VMware — designed to scale with you."
+      image: "images/services/infrastructure-overview.webp"
+      tag_class: "st-svc-tag-cyan"
+    - title: "Network Security"
+      text: "Firewalls, segmentation, and 24/7 monitoring that keep threats out and your team productive."
+      image: "images/services/network-overview.webp"
+      tag_class: "st-svc-tag-green"
+    - title: "Managed Help Desk"
+      text: "Fast, friendly, senior-level support by phone, email, or chat — with people who know your name."
+      image: "images/services/helpdesk-overview.webp"
+      tag_class: "st-svc-tag-amber"
+    - title: "Backup & Disaster Recovery"
+      text: "Immutable backups and tested recovery plans so a ransomware hit or outage never ends your business."
+      image: "images/services/backup-overview.webp"
+      tag_class: "st-svc-tag-purple"
+    - title: "Compliance & Audits"
+      text: "HIPAA, CMMC, SOC 2, and PCI controls, documentation, and audit support — without the panic."
+      image: "images/services/compliance-overview.webp"
+      tag_class: "st-svc-tag-cyan"
+    - title: "Managed Cybersecurity"
+      text: "Endpoint detection, dark-web monitoring, email protection, and employee training, all in one place."
+      image: "images/services/cybersecurity-overview.webp"
+      tag_class: "st-svc-tag-green"
 
 # ============================================================
 # STATS
@@ -197,14 +236,17 @@ reviews:
       text: "Secure Techies has been a game changer for our IT operations. Their team is professional, responsive, and resolves issues quickly without downtime. We've seen major improvements in our security and overall system performance. Communication is clear, pricing is transparent, and the service is consistently reliable."
       name: "Natali Toth"
       meta: "Local Guide · Google review"
+      avatar: "images/landing/reviews/natali.jpg"
     - rating: 5
       text: "We have been working with this Managed IT & Cybersecurity company since 2015, and we are extremely satisfied. Anytime we have an issue they respond immediately and resolve it quickly. After many years working together, I honestly could not find a better IT and cybersecurity company."
       name: "Nancy Zadeh"
       meta: "Southern California Drug & DNA Testing Clinic"
+      avatar: "images/landing/reviews/nancy.jpg"
     - rating: 5
       text: "I've been working with Secure Techies for over 10 years, and they have been an amazing partner for my business. Anytime we need support, they are quick to help and always reliable. They give us complete peace of mind knowing our systems and sensitive information are safe."
       name: "Noella Nerses"
       meta: "Local Guide · Google review"
+      avatar: "images/landing/reviews/noella.jpg"
     - rating: 5
       text: "Secure Techies has been an exceptional partner for my small business. As a bookkeeper, protecting my clients' sensitive financial information is essential, and because I travel internationally it's invaluable to know my devices, data, and business are protected wherever I go."
       name: "WCG Project Solutions"
@@ -213,22 +255,27 @@ reviews:
       text: "Secure Techies delivered our Cisco network refresh on time and under budget. Their team demonstrated deep technical knowledge at every stage, from equipment configuration to final cutover. Response times were fast, and the transition caused zero downtime."
       name: "Catherine Heywood"
       meta: "Government IT procurement"
+      avatar: "images/landing/reviews/catherine.jpg"
     - rating: 5
       text: "Secure Techies has been an outstanding IT partner for our business. What really stands out is how trustworthy and dependable they are — they always take the time to explain issues clearly and make sure everything is handled properly the first time."
       name: "Shadi Jafari"
       meta: "Google review"
+      avatar: "images/landing/reviews/shadi.jpg"
     - rating: 5
       text: "Secure Techies has been an excellent IT partner for our team at ServiceMaster. They handle everything from IT services and cybersecurity to camera installation and system support. Their team is knowledgeable, responsive, and always available when we need support."
       name: "Heather Manning"
       meta: "ServiceMaster"
+      avatar: "images/landing/reviews/heather.jpg"
     - rating: 5
       text: "Secure Techies helped secure our office network, improve backups, and implement better cybersecurity protection. Highly recommend them for any business needing reliable IT support."
       name: "Morgan Jafari"
       meta: "Google review"
+      avatar: "images/landing/reviews/morgan.jpg"
     - rating: 5
       text: "Sure techies is a godsend. Secure Techies has never failed to solve and resolve problems associated with my activities. Their acumen ranges from computer and internet knowledge to realistic and affordable solutions. They are personable, reliable, trustworthy, and prompt."
       name: "Bonbright Bonbright"
       meta: "Google review"
+      avatar: "images/landing/reviews/bonbright.jpg"
 
 # ============================================================
 # CASE STUDIES
@@ -262,6 +309,7 @@ cases:
           label: "Avg. response"
         - value: "15 min"
           label: "Recovery objective"
+  cta: "Get Results Like These"
 
 # ============================================================
 # GUARANTEES — Risk reversal
@@ -310,6 +358,7 @@ faq:
 # ============================================================
 final:
   heading: "Ready to Stop Babysitting Your IT Provider?"
+  heading_accent: "Let's Fix That."
   text: "Get a free, no-obligation MSP transition assessment. We'll review your current setup, show you exactly what's wrong, and hand you a written plan to switch — with zero downtime. No pressure. No jargon. Just a clear path to better IT."
   form_title: "Get My Free Transition Plan"
   form_sub: "Takes under 2 minutes · No obligation · No spam"

@@ -48,30 +48,22 @@
 {{/* ============ HERO ============ */}}
 {{ with $p.hero }}
 <section class="st-hero st-l-hero st-l-dark">
-  <div class="st-hero-bg">
-    <span class="st-orb st-orb-1"></span>
-    <span class="st-orb st-orb-2"></span>
-    <span class="st-orb st-orb-3"></span>
-    <span class="st-orb st-orb-4"></span>
-    <span class="st-grid-overlay"></span>
-    <span class="st-scan-line"></span>
-  </div>
-  <canvas id="st-particles" aria-hidden="true"></canvas>
+  {{ partial "landing/hero-bg.html" "st-particles" }}
 
   <div class="st-l-wrap">
     <div class="st-l-hero-grid">
       <div class="st-l-hero-copy st-reveal st-visible">
-        {{ with .badges }}
-        <div class="st-l-hero-badges">
-          {{ range . }}
-          <span class="st-l-trust-pill"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "check" }}"/></svg>{{ . }}</span>
-          {{ end }}
+        <div class="st-badge st-l-hero-badge">
+          <span class="st-badge-dot"></span>
+          <span>{{ .badge | default "Trusted IT Partner · Southern California" }}</span>
         </div>
-        {{ end }}
-        <h1 class="st-l-hero-h1">{{ .heading | safeHTML }}{{ with .heading_accent }} <span class="st-l-accent">{{ . }}</span>{{ end }}</h1>
+        <h1 class="st-l-hero-h1">{{ .heading | safeHTML }}{{ with .heading_accent }} <span class="st-l-accent st-l-shimmer">{{ . }}</span>{{ end }}</h1>
+        <div class="st-hero-line st-l-hero-line" aria-hidden="true"></div>
         <p class="st-l-hero-lead">{{ .lead | safeHTML }}</p>
         <div class="st-l-hero-cta">
-          <a href="{{ .cta_anchor | default "#st-landing-final" }}" class="st-btn-primary st-l-btn-lg">{{ .cta_text | default "Get My Free Assessment" }}</a>
+          <a href="{{ .cta_anchor | default "#st-landing-final" }}" class="st-btn-primary st-l-btn-lg">{{ .cta_text | default "Get My Free Assessment" }}
+            <svg style="width:17px;height:17px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
           <a href="tel:{{ $phoneRaw }}" class="st-btn-outline st-l-btn-lg">
             <svg style="width:18px;height:18px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "phone" }}"/></svg>
             {{ $phone }}
@@ -79,29 +71,67 @@
         </div>
         <div class="st-l-hero-rating">
           <span class="st-l-stars">{{ range (seq 5) }}<svg fill="currentColor" viewBox="0 0 20 20"><path d="{{ $star }}"/></svg>{{ end }}</span>
-          <span class="st-l-rating-txt"><b>{{ .rating_value | default "4.8" }}/5</b> from {{ .rating_count | default "120" }}+ verified reviews</span>
+          <span class="st-l-rating-txt"><b>{{ .rating_value | default "5" }}/5 stars</b> · {{ .rating_count | default "120" }}+ verified reviews</span>
         </div>
-      </div>
-
-      {{ with .card }}
-      <div class="st-l-hero-visual st-reveal-right st-visible">
-        <span class="st-l-hero-float st-l-hero-float--tl"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "check" }}"/></svg>Zero downtime</span>
-        <span class="st-l-hero-float st-l-hero-float--br"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "lock" }}"/></svg>Data secured</span>
-        <div class="st-l-hero-card">
-          <div class="st-l-hero-card-head">
-            <span class="st-l-hero-card-title">{{ .title | default "MSP Transition Plan" }}</span>
-            <span class="st-l-hero-card-live"><span class="st-live-dot"></span>{{ .status | default "In progress" }}</span>
-          </div>
-          {{ range .rows }}
-          <div class="st-l-migrate-row">
-            <span class="st-l-migrate-label">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color:{{ if eq .state "done" }}#4ade80{{ else if eq .state "active" }}#60a5fa{{ else }}#64748b{{ end }}"><path stroke-linecap="round" stroke-linejoin="round" d="{{ if eq .state "done" }}{{ index $icons "check" }}{{ else }}{{ index $icons "gear" }}{{ end }}"/></svg>
-              <span class="st-l-migrate-name">{{ .name }}</span>
-            </span>
-            <span class="st-l-migrate-status st-l-status-{{ .state }}">{{ if eq .state "done" }}Complete{{ else if eq .state "active" }}Active{{ else }}Queued{{ end }}</span>
-          </div>
+        <div class="st-l-hero-trust">
+          {{ range (.trust_items | default (slice "24/7 Support" "No Long-Term Contracts" "Free Risk Assessment")) }}
+          <span class="st-l-hero-trust-item"><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>{{ . }}</span>
           {{ end }}
-          <div class="st-l-hero-card-foot"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;color:#4ade80"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "check" }}"/></svg>{{ .foot | default "No interruption to your team" }}</div>
+        </div>
+      </div>
+
+      {{ with .dashboard }}
+      <div class="st-l-hero-visual st-reveal-right st-visible">
+        <div class="st-float-pills" aria-hidden="true">
+          {{ range (.pills | default (slice (dict "text" "99.9% Uptime" "dot" "#4ade80") (dict "text" "Zero Downtime" "dot" "#60a5fa"))) }}
+          <div class="st-float-pill"><span class="st-float-pill-dot" style="background:{{ .dot }}"></span><span class="st-float-pill-txt">{{ .text }}</span></div>
+          {{ end }}
+        </div>
+        <div class="st-hero-card">
+          <div class="st-dashboard">
+            <div class="st-dashboard-header">
+              <div class="st-dashboard-dot" style="background:#f87171"></div>
+              <div class="st-dashboard-dot" style="background:#fbbf24"></div>
+              <div class="st-dashboard-dot" style="background:#4ade80"></div>
+              <span class="ml-3 text-xs" style="color:#6b7280">{{ .label | default "Secure Techies · Security Dashboard" }}</span>
+              <span class="ml-auto flex items-center gap-1.5 text-xs" style="color:#4ade80"><span class="st-live-dot"></span>LIVE</span>
+            </div>
+            <div class="st-dashboard-body">
+              <div class="st-status-row">
+                {{ range (.status | default (slice (dict "label" "Threat Status" "value" "All Clear" "color" "#4ade80" "icon" "shield") (dict "label" "Network" "value" "99.9% Uptime" "color" "#60a5fa" "icon" "chart") (dict "label" "Backups" "value" "Protected" "color" "#a78bfa" "icon" "lock"))) }}
+                <div class="st-status-item">
+                  <div class="st-status-icon" style="background:{{ .color }}26">
+                    <svg class="w-5 h-5" style="color:{{ .color }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "shield") }}"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs" style="color:#9ca3af">{{ .label }}</div>
+                    <div class="text-sm font-semibold" style="color:{{ .color }}">{{ .value }}</div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+              <div class="st-chart-area">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs" style="color:#9ca3af">{{ .chart_title | default "Activity (30d)" }}</div>
+                  <div class="flex items-center gap-3 text-xs" style="color:#6b7280">
+                    <span class="flex items-center gap-1"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(0,102,204,0.7)"></span>{{ .chart_legend_a | default "Handled" }}</span>
+                    <span class="flex items-center gap-1"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(248,113,113,0.7)"></span>{{ .chart_legend_b | default "Flagged" }}</span>
+                  </div>
+                </div>
+                <div class="st-chart-bars">
+                  {{ $heights := slice 28 45 35 62 30 55 22 48 40 33 58 82 36 27 44 51 }}
+                  {{ range $bi, $h := $heights }}<div class="st-bar{{ if eq $bi 7 }} st-bar-active{{ end }}{{ if eq $bi 11 }} st-bar-blocked{{ end }}" style="height:{{ $h }}%"></div>{{ end }}
+                </div>
+              </div>
+              <div class="st-metric-strip">
+                {{ range $mi, $m := (.metrics | default (slice (dict "val" "247" "lbl" "Threats Blocked") (dict "val" "100%" "lbl" "Uptime") (dict "val" "<2hr" "lbl" "Response"))) }}
+                {{ if $mi }}<div class="st-metric-divider"></div>{{ end }}
+                <div class="st-metric"><div class="st-metric-val">{{ $m.val }}</div><div class="st-metric-lbl">{{ $m.lbl }}</div></div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+          {{ with .badge }}<span class="st-float-badge"><svg style="width:13px;height:13px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "check" }}"/></svg>{{ . }}</span>{{ end }}
         </div>
       </div>
       {{ end }}
@@ -110,19 +140,10 @@
 </section>
 {{ end }}
 
-{{/* ============ TRUST BAR ============ */}}
-{{ with $p.trustbar }}
-<section class="st-l-trustbar">
-  <div class="st-l-wrap">
-    <div class="st-l-trustbar-inner">
-      {{ range $i, $s := .stats }}
-      {{ if $i }}<span class="st-l-trustbar-div"></span>{{ end }}
-      <span class="st-l-trustbar-stat"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "check") }}"/></svg><b>{{ .value }}</b>&nbsp;{{ .label }}</span>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
+{{/* ============ PARTNER LOGOS (certified & partnered) ============ */}}
+{{ partial "landing/partner-logos.html" . }}
+
+{{/* ============ TRUST BAR (removed — replaced by partner logos + stats band) ============ */}}
 
 {{/* ============ PROBLEMS ============ */}}
 {{ with $p.problems }}
@@ -143,11 +164,12 @@
       {{ end }}
     </div>
     {{ with .cost_line }}<p class="st-l-prob-cost st-reveal">{{ . | safeHTML }}</p>{{ end }}
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
   </div>
 </section>
 {{ end }}
 
-{{/* ============ PROCESS ============ */}}
+{{/* ============ PROCESS (premium timeline) ============ */}}
 {{ with $p.process }}
 <section class="st-l-section st-l-light">
   <div class="st-l-wrap">
@@ -156,13 +178,16 @@
       <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
       {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="st-l-proc">
+    <div class="st-l-timeline">
+      <span class="st-l-timeline-rail" aria-hidden="true"></span>
       {{ range $i, $st := .steps }}
-      <div class="st-l-proc-card st-reveal" style="transition-delay:{{ mul $i 70 }}ms">
-        <div class="st-l-proc-num">{{ add $i 1 }}</div>
-        {{ with .step }}<div class="st-l-proc-step">{{ . }}</div>{{ end }}
-        <h3>{{ .title }}</h3>
-        <p>{{ .text | safeHTML }}</p>
+      <div class="st-l-tl-item st-reveal" style="transition-delay:{{ mul $i 70 }}ms">
+        <div class="st-l-tl-marker"><span>{{ add $i 1 }}</span></div>
+        <div class="st-l-tl-body">
+          {{ with .step }}<div class="st-l-tl-step">{{ . }}</div>{{ end }}
+          <h3>{{ .title }}</h3>
+          <p>{{ .text | safeHTML }}</p>
+        </div>
       </div>
       {{ end }}
     </div>
@@ -170,7 +195,7 @@
 </section>
 {{ end }}
 
-{{/* ============ BENEFITS ============ */}}
+{{/* ============ BENEFITS (split: sticky image + feature rows) ============ */}}
 {{ with $p.benefits }}
 <section class="st-l-section st-l-dark">
   <div class="st-l-wrap">
@@ -179,32 +204,73 @@
       <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
       {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="st-l-ben">
-      {{ range $i, $it := .items }}
-      <div class="st-l-ben-card st-reveal" style="transition-delay:{{ mul $i 60 }}ms">
-        <div class="st-l-ben-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "check") }}"/></svg></div>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text | safeHTML }}</p>
+    <div class="st-l-split">
+      <div class="st-l-split-media st-reveal">
+        {{ with .image }}
+          {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "640x760 webp q82" }}{{ end }}
+          <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="640" height="760" loading="lazy" decoding="async" />
+        {{ end }}
+        {{ with .image_badge }}<span class="st-l-split-badge"><span class="st-live-dot"></span>{{ . }}</span>{{ end }}
       </div>
-      {{ end }}
+      <div class="st-l-split-list">
+        {{ range $i, $it := .items }}
+        <div class="st-l-feat st-reveal" style="transition-delay:{{ mul $i 60 }}ms">
+          <div class="st-l-feat-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "check") }}"/></svg></div>
+          <div><h3>{{ .title }}</h3><p>{{ .text | safeHTML }}</p></div>
+        </div>
+        {{ end }}
+        {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+      </div>
     </div>
   </div>
 </section>
 {{ end }}
 
-{{/* ============ STATS ============ */}}
-{{ with $p.stats }}
-<section class="st-l-section st-l-section--tight st-l-darker">
+{{/* ============ SERVICES (homepage cards, no outbound links) ============ */}}
+{{ with $p.services }}
+<section class="st-l-section st-l-darker">
   <div class="st-l-wrap">
-    {{ with .heading }}<div class="st-l-head st-reveal" style="margin-bottom:40px">{{ with $.Params.stats.eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}<h2 class="st-l-h2">{{ . | safeHTML }}</h2></div>{{ end }}
-    <div class="st-l-stats">
+    <div class="st-l-head st-reveal">
+      {{ with .eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
+      {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
+    </div>
+    <div class="st-service-grid st-l-svc-grid">
       {{ range $i, $s := .items }}
-      <div class="st-l-stat st-reveal" style="transition-delay:{{ mul $i 70 }}ms">
-        <span class="st-l-stat-num st-stat-num" data-target="{{ .target }}" {{ with .suffix }}data-suffix="{{ . }}"{{ end }} {{ with .prefix }}data-prefix="{{ . }}"{{ end }}>{{ with .prefix }}{{ . }}{{ end }}0{{ with .suffix }}{{ . }}{{ end }}</span>
-        <div class="st-l-stat-label">{{ .label }}</div>
-        {{ with .sub }}<div class="st-l-stat-sub">{{ . }}</div>{{ end }}
+      <div class="st-svc-card st-l-svc-card st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
+        {{ with .image }}{{ $simg := resources.Get . }}{{ if $simg }}{{ $simg = $simg.Fill "560x420 webp q80" }}{{ end }}<img src="{{ if $simg }}{{ $simg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $s.title }}" loading="lazy" class="st-svc-bg-img" width="560" height="420">{{ end }}
+        <div class="st-svc-overlay"></div>
+        <div class="st-svc-content">
+          <span class="st-svc-tag {{ .tag_class }}">{{ printf "%02d" (add $i 1) }}</span>
+          <h3 class="st-svc-title">{{ .title }}</h3>
+          <p class="st-svc-desc">{{ .text | safeHTML }}</p>
+          {{ with .badge }}<span class="st-l-svc-pill">{{ . }}</span>{{ end }}
+        </div>
       </div>
       {{ end }}
+    </div>
+    {{ with .footnote }}<p class="st-l-svc-foot st-reveal">{{ . | safeHTML }}</p>{{ end }}
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{/* ============ STATS (homepage-style premium band) ============ */}}
+{{ with $p.stats }}
+<section class="st-l-statsband">
+  <div class="st-stats-inner">
+    <div class="st-l-wrap" style="position:relative;z-index:2">
+      {{ with .heading }}<div class="st-l-head st-reveal" style="margin-bottom:38px">{{ with $.Params.stats.eyebrow }}<span class="st-l-eyebrow st-l-eyebrow--light">{{ . }}</span>{{ end }}<h2 class="st-l-h2 st-l-h2--light">{{ . | safeHTML }}</h2></div>{{ end }}
+      <div class="st-stats-grid">
+        {{ range $i, $s := .items }}
+        {{ if $i }}<div class="st-stats-divider" aria-hidden="true"></div>{{ end }}
+        <div class="st-stat-item st-reveal" style="transition-delay:{{ mul $i 100 }}ms">
+          <div class="st-stat-num" data-target="{{ .target }}" {{ with .suffix }}data-suffix="{{ . }}"{{ end }} {{ with .prefix }}data-prefix="{{ . }}"{{ end }}>{{ with .prefix }}{{ . }}{{ end }}0{{ with .suffix }}{{ . }}{{ end }}</div>
+          <div class="st-stat-label">{{ .label }}</div>
+          {{ with .sub }}<div class="st-stat-sub">{{ . }}</div>{{ end }}
+        </div>
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>
@@ -267,6 +333,7 @@
           <h3>{{ .title }}</h3>
           <div class="st-l-cs-ba">
             <div class="st-l-cs-col st-l-cs-before"><div class="st-l-cs-col-label">Before</div><p>{{ .before | safeHTML }}</p></div>
+            <span class="st-l-cs-vs" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
             <div class="st-l-cs-col st-l-cs-after"><div class="st-l-cs-col-label">After</div><p>{{ .after | safeHTML }}</p></div>
           </div>
           {{ with .results }}
@@ -278,6 +345,7 @@
       </div>
       {{ end }}
     </div>
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
   </div>
 </section>
 {{ end }}
@@ -327,15 +395,12 @@
 {{/* ============ FINAL CTA + FORM ============ */}}
 {{ with $p.final }}
 <section id="st-landing-final" class="st-hero st-l-section st-l-final st-l-darker">
-  <div class="st-hero-bg">
-    <span class="st-orb st-orb-1"></span>
-    <span class="st-orb st-orb-3"></span>
-    <span class="st-grid-overlay"></span>
-  </div>
+  {{ partial "landing/hero-bg.html" "st-particles-final" }}
   <div class="st-l-wrap">
     <div class="st-l-final-grid">
       <div class="st-l-final-copy st-reveal">
-        <h2>{{ .heading | safeHTML }}</h2>
+        <h2>{{ .heading | safeHTML }}{{ with .heading_accent }} <span class="st-l-accent st-l-shimmer">{{ . }}</span>{{ end }}</h2>
+        <div class="st-hero-line st-l-hero-line" aria-hidden="true"></div>
         <p>{{ .text | safeHTML }}</p>
         {{ with .points }}
         <ul class="st-l-final-list">

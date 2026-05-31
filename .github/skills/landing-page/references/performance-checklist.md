@@ -16,6 +16,22 @@ Use Pexels for case-study / hero imagery (free, license-clear).
 2. Save into `assets/images/landing/`. Reference in front matter as `images/landing/case-<name>.jpg`.
 3. The template runs Hugo's pipeline `.Fill "720x360 webp q82"` automatically → modern **WebP**, correct dimensions, lazy-loaded. You do **not** add `<img>` tags.
 4. Pick photos that look like real LA businesses (offices, teams, clinics, law firms). Avoid stocky handshake clichés. Always set descriptive alt via the case `title`.
+5. **Service-card / benefit-split images** can reuse already-optimized repo photos in `static/images/services/*.webp` (e.g. `helpdesk-overview.webp`, `cybersecurity-overview.webp`, `cloud-overview.webp`, `backup-overview.webp`, `network-overview.webp`, `compliance-overview.webp`). Reference them by `images/services/<name>.webp`; the template resolves static paths via `relURL` fallback (no re-processing needed).
+
+### Reviewer headshots {#headshots}
+
+For named reviews, download **copyright-free, gender-matched** portrait headshots:
+```bash
+# 1) get candidate portrait URLs (women + men)
+curl -s -H "Authorization: Pxs4l9L8cUglCyPGgCsi164C298d0xuBya8sqmAnNMYw7sihztxjEwQV" \
+  "https://api.pexels.com/v1/search?query=professional+woman+headshot&per_page=20&orientation=portrait" \
+  | python3 -c "import sys,json;[print(p['src']['medium']) for p in json.load(sys.stdin)['photos']]"
+# 2) download + square-crop to 160x160
+curl -sL "<src_url>" -o static/images/landing/reviews/<firstname>.jpg
+```
+- **Use curl, not Python urllib** — Pexels blocks the default urllib User-Agent (403); curl works.
+- Save to `static/images/landing/reviews/<firstname>.jpg`; reference as `images/landing/reviews/<firstname>.jpg`.
+- Match the apparent gender of the photo to the reviewer's name. Verify a couple of downloads look professional (the API returns the same query result set, so pick distinct photos). Company/org reviewers omit `avatar` → fall back to initials.
 
 ## CLS (layout shift) {#cls}
 
@@ -35,7 +51,8 @@ If you add new fonts or images, preserve these patterns.
 
 ## Accessibility (must stay 100)
 
-- Body text on dark sections needs contrast **≥ 4.5:1**. Safe light-on-dark colors already in use: headings `#f1f5f9`, body `#aebfd4`/`#cbd5e1`, muted `#93a3ba`. Avoid going dimmer than `#93a3ba` on the darkest backgrounds.
+- Body text on dark sections needs contrast **≥ 4.5:1**. Safe light-on-dark colors already in use: headings `#f1f5f9`, lead/body `#d1d5db`/`#cbd5e1`, muted `#93a3ba`. Avoid going dimmer than `#93a3ba` on the darkest backgrounds.
+- **Section headings (`.st-l-h2`) get their color from the section-tone wrapper** (`.st-l-dark`/`.st-l-darker`/`.st-l-final` → light; `.st-l-light`/`.st-l-white` → dark). Never output an `.st-l-h2` outside a toned section, or the theme's global heading color makes it invisible. Eyebrows on dark/gradient bands use `.st-l-eyebrow--light`.
 - Every interactive control has a label / `aria-*`. Form inputs are labeled; the FAQ uses `aria-expanded`.
 - Don't remove the `alt` fallbacks or the logo `width`/`height`.
 

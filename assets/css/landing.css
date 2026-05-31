@@ -63,7 +63,17 @@ html:not(.js) .st-landing-body .st-reveal-right {
   font-size: clamp(1.7rem, 3.4vw, 2.6rem);
   font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
   margin-bottom: 16px;
+  color: #0f172a; /* sensible default so headings are NEVER invisible */
 }
+/* CRITICAL legibility: on dark sections the theme's global heading color makes
+   uncolored headings near-invisible. Force bright text on dark, dark on light. */
+.st-l-dark .st-l-h2,
+.st-l-darker .st-l-h2,
+.st-l-final .st-l-h2 { color: #f1f5f9; }
+.st-l-light .st-l-h2,
+.st-l-white .st-l-h2 { color: #0f172a; }
+.st-l-h2--light { color: #ffffff !important; }
+.st-l-eyebrow--light { color: #93c5fd !important; }
 .st-l-sub {
   font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.7;
   color: #94a3b8; max-width: 46rem;
@@ -131,7 +141,7 @@ html:not(.js) .st-landing-body .st-reveal-right {
 }
 .st-l-hero-lead {
   font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.65;
-  color: #aebfd4; margin-bottom: 30px; max-width: 34rem;
+  color: #d1d5db; margin-bottom: 30px; max-width: 34rem;
 }
 .st-l-hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 24px; }
 .st-l-btn-lg { padding: 0.95rem 2rem; font-size: 1.02rem; }
@@ -481,6 +491,109 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
 .st-l-cta-row { display: flex; justify-content: center; margin-top: 44px; }
 
 /* ============================================================
+   PREMIUM UPGRADES (hero badge, shimmer, dashboard reuse,
+   stats band, timeline, split, service cards, cta band, cases)
+   ============================================================ */
+
+/* Hero badge spacing + brighter accent shimmer */
+.st-l-hero-badge { margin-bottom: 22px; }
+.st-l-hero-line { width: 0; height: 3px; margin: 0 0 26px; border-radius: 3px;
+  background: linear-gradient(90deg, #3b9eff, #60d5ff);
+  animation: stHeroLineGrow 0.9s 0.25s cubic-bezier(0.22,1,0.36,1) forwards; }
+@keyframes stHeroLineGrow { to { width: 180px; } }
+.st-l-shimmer {
+  background: linear-gradient(95deg, #3b9eff 0%, #93e0ff 30%, #ffffff 50%, #93e0ff 70%, #38bdf8 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: stShimmer 5s linear infinite;
+}
+@keyframes stShimmer { to { background-position: 220% center; } }
+
+/* Hero trust row (mirrors homepage) */
+.st-l-hero-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; }
+.st-l-hero-trust-item { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; font-weight: 600; color: #cbd5e1; }
+.st-l-hero-trust-item svg { width: 17px; height: 17px; color: #4ade80; flex-shrink: 0; }
+
+/* Hero visual wrapper so float pills/badge anchor correctly */
+.st-l-hero-visual { position: relative; }
+.st-l-hero-visual .st-float-pills { position: relative; z-index: 3; }
+
+/* ---------- Stats band (homepage-style) ---------- */
+.st-l-statsband { position: relative; }
+.st-l-statsband .st-stats-inner { padding: 64px 0; }
+.st-l-statsband .st-stats-inner::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px);
+  background-size: 56px 56px; pointer-events: none;
+}
+.st-l-statsband .st-l-head { margin-bottom: 38px; }
+
+/* ---------- Process timeline ---------- */
+.st-l-timeline { position: relative; max-width: 760px; margin: 0 auto; }
+.st-l-timeline-rail { position: absolute; left: 23px; top: 8px; bottom: 8px; width: 2px;
+  background: linear-gradient(to bottom, rgba(0,102,204,0.0), rgba(0,102,204,0.35) 12%, rgba(0,102,204,0.35) 88%, rgba(0,102,204,0.0)); }
+.st-l-tl-item { position: relative; display: grid; grid-template-columns: 48px 1fr; gap: 22px; padding-bottom: 26px; }
+.st-l-tl-item:last-child { padding-bottom: 0; }
+.st-l-tl-marker { position: relative; z-index: 2; width: 48px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem; color: #fff;
+  background: linear-gradient(135deg, #0066CC, #3b9eff); box-shadow: 0 8px 22px rgba(0,102,204,0.3); }
+.st-l-tl-body { background: #ffffff; border: 1px solid #e8eef6; border-radius: 16px; padding: 20px 22px;
+  box-shadow: 0 4px 18px rgba(15,31,56,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+.st-l-tl-item:hover .st-l-tl-body { transform: translateX(4px); box-shadow: 0 14px 36px rgba(0,102,204,0.12); }
+.st-l-tl-step { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066CC; margin-bottom: 5px; }
+.st-l-tl-body h3 { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+.st-l-tl-body p { font-size: 0.92rem; color: #56657a; line-height: 1.65; margin: 0; }
+
+/* ---------- Benefits split (image + feature rows) ---------- */
+.st-l-split { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 48px; align-items: center; }
+.st-l-split-media { position: relative; border-radius: 22px; overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); align-self: stretch; min-height: 100%; }
+.st-l-split-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.st-l-split-media::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,17,32,0) 40%, rgba(8,17,32,0.55) 100%); }
+.st-l-split-badge { position: absolute; left: 16px; bottom: 16px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 700; color: #fff;
+  background: rgba(10,22,40,0.85); border: 1px solid rgba(74,222,128,0.3); border-radius: 9999px; padding: 7px 14px; backdrop-filter: blur(6px); }
+.st-l-split-list { display: flex; flex-direction: column; gap: 14px; }
+.st-l-feat { display: grid; grid-template-columns: 50px 1fr; gap: 16px; align-items: flex-start;
+  background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px 20px;
+  transition: transform 0.3s, border-color 0.3s, background 0.3s; }
+.st-l-feat:hover { transform: translateX(4px); border-color: rgba(96,165,250,0.35); background: rgba(255,255,255,0.05); }
+.st-l-feat-ic { width: 50px; height: 50px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(0,102,204,0.22), rgba(96,165,250,0.12)); }
+.st-l-feat-ic svg { width: 24px; height: 24px; color: #60a5fa; }
+.st-l-feat h3 { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 5px; }
+.st-l-feat p { font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+
+/* ---------- Service cards (homepage style, no links) ---------- */
+.st-l-svc-card { cursor: default; }
+.st-l-svc-card:hover { transform: translateY(-5px); }
+.st-l-svc-pill { display: inline-flex; align-self: flex-start; margin-top: 14px; align-items: center; gap: 6px;
+  font-size: 0.72rem; font-weight: 700; color: #93c5fd; background: rgba(0,102,204,0.18);
+  border: 1px solid rgba(0,102,204,0.3); border-radius: 9999px; padding: 5px 12px; }
+.st-l-svc-foot { text-align: center; margin: 30px auto 0; max-width: 40rem; font-size: 0.95rem; color: #94a3b8; }
+.st-l-svc-foot b, .st-l-svc-foot a { color: #60a5fa; font-weight: 700; text-decoration: none; }
+.st-l-svc-foot a:hover { text-decoration: underline; }
+
+/* ---------- Mid-page CTA band ---------- */
+.st-l-ctaband { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 44px; text-align: center; }
+.st-l-ctaband-text { font-size: 1.05rem; font-weight: 600; color: inherit; margin: 0; max-width: 36rem; }
+.st-l-dark .st-l-ctaband-text, .st-l-darker .st-l-ctaband-text { color: #cbd5e1; }
+.st-l-ctaband-btn { box-shadow: 0 14px 34px rgba(0,102,204,0.3); }
+
+/* ---------- Case studies "vs" divider ---------- */
+.st-l-cs-ba { position: relative; }
+.st-l-cs-vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 3;
+  width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #0066CC, #3b9eff); box-shadow: 0 6px 18px rgba(0,102,204,0.4); }
+.st-l-cs-vs svg { width: 16px; height: 16px; color: #fff; }
+.st-l-cs-result { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.16); border-radius: 12px; padding: 12px 16px; }
+.st-l-cs-results { gap: 14px; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -490,15 +603,28 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-prob-grid, .st-l-proc, .st-l-ben, .st-l-rev-grid { grid-template-columns: repeat(2, 1fr); }
   .st-l-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .st-l-cs { grid-template-columns: 1fr; }
+  .st-l-split { grid-template-columns: 1fr; gap: 28px; }
+  .st-l-split-media { max-height: 360px; }
+  .st-l-svc-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 680px) {
   .st-l-section { padding: 60px 0; }
   .st-l-section--tight { padding: 48px 0; }
-  .st-l-prob-grid, .st-l-proc, .st-l-ben, .st-l-rev-grid, .st-l-guar { grid-template-columns: 1fr; }
+  .st-l-prob-grid, .st-l-proc, .st-l-ben, .st-l-rev-grid, .st-l-guar, .st-l-svc-grid { grid-template-columns: 1fr; }
   .st-l-form-row { grid-template-columns: 1fr; }
   .st-l-cs-ba { grid-template-columns: 1fr; }
+  .st-l-cs-vs { left: 50%; top: 50%; }
   .st-l-hero { padding-top: 36px; }
+  .st-l-hero-trust { gap: 8px 16px; }
   .st-l-topbar-back-text { display: none; }
+  .st-l-timeline-rail { left: 19px; }
+  .st-l-tl-item { grid-template-columns: 40px 1fr; gap: 16px; }
+  .st-l-tl-marker { width: 40px; height: 40px; }
+  .st-l-feat { grid-template-columns: 44px 1fr; gap: 12px; padding: 16px; }
+  .st-l-feat-ic { width: 44px; height: 44px; }
+  /* scale the hero dashboard down so it never overflows on phones */
+  .st-l-hero-visual .st-dashboard { transform: none; }
+  .st-l-statsband .st-stats-inner { padding: 48px 0; }
   /* show sticky CTA only on small screens */
   .st-l-sticky { display: flex; }
   /* add breathing room so sticky bar never covers content */
@@ -510,5 +636,6 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
 
 @media (prefers-reduced-motion: reduce) {
   .st-l-hero-float, .st-l-prob-card, .st-l-proc-card, .st-l-ben-card,
-  .st-l-rev-card, .st-l-cs-card { transition: none; }
+  .st-l-rev-card, .st-l-cs-card, .st-l-feat, .st-l-tl-body,
+  .st-l-shimmer, .st-l-hero-line, .st-svc-card { animation: none; transition: none; }
 }

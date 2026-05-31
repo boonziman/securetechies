@@ -22,6 +22,7 @@ form_services:
   - "Backup & Disaster Recovery"
   - "Compliance (Ethics, HIPAA, PCI)"
   - "Switching From Our Current IT Provider"
+  - "Law Firm Website & Web Development"
   - "Not Sure — We Just Need Help"
 
 service_name: "Law Firm IT Services & Cybersecurity"
@@ -30,51 +31,50 @@ service_name: "Law Firm IT Services & Cybersecurity"
 # HERO
 # ============================================================
 hero:
-  badges:
-    - "Privileged-data protection"
-    - "Zero-downtime guarantee"
-    - "15+ years serving LA firms"
+  badge: "Trusted Legal IT Partner · Southern California"
   heading: "Your Clients Trust You With Their Secrets."
   heading_accent: "Who's Protecting Yours?"
   lead: "One ransomware email, one lost laptop, one hour of downtime during a filing deadline — and your firm's reputation, your client confidences, and your bar standing are all on the line. Secure Techies gives Los Angeles law firms the locked-down, always-on IT that protects privileged data and keeps your attorneys billing."
   cta_text: "Get My Free Firm IT Security Review"
   sticky_cta: "Free Security Review"
   cta_anchor: "#st-landing-final"
-  rating_value: "5.0"
+  rating_value: "5"
   rating_count: "120"
-  card:
-    title: "Firm Security Posture"
-    status: "Protected"
-    foot: "Every device, every matter, every day"
-    rows:
-      - name: "Encrypted devices & email"
-        state: "done"
-      - name: "Privileged data access controls"
-        state: "done"
-      - name: "24/7 threat monitoring"
-        state: "active"
-      - name: "Immutable backups"
-        state: "done"
-      - name: "Compliance documentation"
-        state: "queue"
-
-# ============================================================
-# TRUST BAR
-# ============================================================
-trustbar:
-  stats:
-    - icon: "shield"
-      value: "100%"
-      label: "of data encrypted"
-    - icon: "clock"
-      value: "<2 hr"
-      label: "avg. response time"
-    - icon: "lock"
-      value: "24/7"
-      label: "threat monitoring"
-    - icon: "check"
-      value: "Zero"
-      label: "downtime switchovers"
+  trust_items:
+    - "24/7 Threat Monitoring"
+    - "No Long-Term Contracts"
+    - "Free Security Review"
+  dashboard:
+    label: "Secure Techies · Firm Security Posture"
+    pills:
+      - text: "100% Encrypted"
+        dot: "#4ade80"
+      - text: "Privileged & Protected"
+        dot: "#60a5fa"
+    status:
+      - label: "Data Encryption"
+        value: "Active"
+        color: "#4ade80"
+        icon: "lock"
+      - label: "Threat Monitor"
+        value: "All Clear"
+        color: "#60a5fa"
+        icon: "shield"
+      - label: "Backups"
+        value: "Immutable"
+        color: "#a78bfa"
+        icon: "swap"
+    chart_title: "Threats Blocked (30 days)"
+    chart_legend_a: "Blocked"
+    chart_legend_b: "Flagged"
+    metrics:
+      - val: "100%"
+        lbl: "Devices Encrypted"
+      - val: "0"
+        lbl: "Matters Lost"
+      - val: "<2hr"
+        lbl: "Response"
+    badge: "Privilege protected"
 
 # ============================================================
 # PROBLEMS
@@ -103,6 +103,7 @@ problems:
       title: "No One Who Speaks Lawyer"
       text: "Generic IT shops don't understand matter management, conflict checks, e-discovery, or the confidentiality rules you live by. You need a partner who gets your world."
   cost_line: "The average data breach at a small firm now exceeds <b>$120,000</b> — before factoring lost clients, bar exposure, and reputational damage. The right IT partner isn't an expense. It's <b>professional liability insurance that actually prevents the claim.</b>"
+  cta: "Get My Free Security Review"
 
 # ============================================================
 # PROCESS
@@ -135,6 +136,9 @@ benefits:
   eyebrow: "Why LA firms choose us"
   heading: "IT That Protects Your Practice and Your Reputation"
   sub: "For 15+ years, Southern California businesses — including law firms — have trusted Secure Techies to do IT the right way: secure, responsive, and genuinely on your side."
+  image: "images/services/cybersecurity-overview.webp"
+  image_badge: "Privileged data, locked down"
+  cta: "Protect My Firm"
   items:
     - icon: "lock"
       title: "Confidentiality, Engineered In"
@@ -154,6 +158,41 @@ benefits:
     - icon: "chart"
       title: "Proactive, Not Reactive"
       text: "We prevent outages before they cost you billable hours, and plan your technology around how your firm actually works."
+
+# ============================================================
+# SERVICES (everything we do — no outbound links, stay on page)
+# ============================================================
+services:
+  eyebrow: "Everything your firm needs"
+  heading: "One Partner for Every Layer of Your Firm's Technology"
+  sub: "Secure Techies isn't just cybersecurity — we run the full IT stack your practice depends on, so you have one trusted team instead of a dozen vendors."
+  footnote: "We also build <b>secure, professional law-firm websites &amp; custom web apps</b> — fast, compliant, and designed to win clients. Ask us when we talk."
+  cta: "Get My Free Security Review"
+  items:
+    - title: "Managed IT & Help Desk"
+      text: "Senior-level support by phone, email, or chat from engineers who understand deadlines and confidentiality."
+      image: "images/services/helpdesk-overview.webp"
+      tag_class: "st-svc-tag-amber"
+    - title: "Cybersecurity & Threat Defense"
+      text: "Endpoint detection, dark-web monitoring, phishing defense, and training tuned to the attacks that target law firms."
+      image: "images/services/cybersecurity-overview.webp"
+      tag_class: "st-svc-tag-green"
+    - title: "Secure Network & Access"
+      text: "Encrypted, segmented networks and per-matter access controls so privileged data stays privileged."
+      image: "images/services/network-overview.webp"
+      tag_class: "st-svc-tag-cyan"
+    - title: "Backup & Disaster Recovery"
+      text: "Immutable, off-site backups and tested recovery so a ransomware hit never costs you a matter."
+      image: "images/services/backup-overview.webp"
+      tag_class: "st-svc-tag-purple"
+    - title: "Compliance & Audit Support"
+      text: "Documented controls for ethics rules, client questionnaires, cyber-insurance, HIPAA, and PCI — ready when asked."
+      image: "images/services/compliance-overview.webp"
+      tag_class: "st-svc-tag-cyan"
+    - title: "Infrastructure & Cloud"
+      text: "Server management, virtualization, and secure cloud with Azure, AWS, and Microsoft 365 — built to scale."
+      image: "images/services/infrastructure-overview.webp"
+      tag_class: "st-svc-tag-green"
 
 # ============================================================
 # STATS
@@ -198,34 +237,42 @@ reviews:
       text: "Secure Techies has been a game changer for our IT operations. Their team is professional, responsive, and resolves issues quickly without downtime. We've seen major improvements in our security and overall system performance. Communication is clear and pricing is transparent."
       name: "Natali Toth"
       meta: "Local Guide · Google review"
+      avatar: "images/landing/reviews/natali.jpg"
     - rating: 5
       text: "We have been working with this Managed IT & Cybersecurity company since 2015 and are extremely satisfied. Anytime we need assistance they respond immediately and resolve problems quickly. Their dedication to protecting our systems has given us great peace of mind over the years."
       name: "Nancy Zadeh"
       meta: "Drug & DNA Testing Clinic"
+      avatar: "images/landing/reviews/nancy.jpg"
     - rating: 5
       text: "Secure Techies delivered our Cisco network refresh on time and under budget. Their team demonstrated deep technical knowledge at every stage, from equipment configuration to final cutover. Communication was clear, response times were fast, and the transition caused zero downtime."
       name: "Catherine Heywood"
       meta: "Government IT procurement"
+      avatar: "images/landing/reviews/catherine.jpg"
     - rating: 5
       text: "I've been working with Secure Techies for over 10 years, and they have been an amazing partner. Anytime we need support, they are quick to help and always reliable. They give us complete peace of mind knowing our systems and sensitive information are safe."
       name: "Noella Nerses"
       meta: "Local Guide · Google review"
+      avatar: "images/landing/reviews/noella.jpg"
     - rating: 5
       text: "Secure Techies has been an outstanding IT partner for our business. What really stands out is how trustworthy and dependable they are — they always take the time to explain issues clearly and make sure everything is handled properly the first time."
       name: "Shadi Jafari"
       meta: "Google review"
+      avatar: "images/landing/reviews/shadi.jpg"
     - rating: 5
       text: "Secure Techies has been an excellent IT partner for our team at ServiceMaster. They handle everything from IT services and cybersecurity to system support. Their team is knowledgeable, responsive, and always available when we need support."
       name: "Heather Manning"
       meta: "ServiceMaster"
+      avatar: "images/landing/reviews/heather.jpg"
     - rating: 5
       text: "Secure Techies helped secure our office network, improve backups, and implement better cybersecurity protection. Highly recommend them for any business needing reliable IT support."
       name: "Morgan Jafari"
       meta: "Google review"
+      avatar: "images/landing/reviews/morgan.jpg"
     - rating: 5
       text: "Sure techies is a godsend. They have never failed to solve and resolve problems associated with my activities. Their solutions are realistic and affordable, ranging from computer and internet knowledge to security of person and property. They are personable, reliable, trustworthy, and prompt."
       name: "Bonbright Bonbright"
       meta: "Google review"
+      avatar: "images/landing/reviews/bonbright.jpg"
 
 # ============================================================
 # CASE STUDIES
@@ -259,6 +306,7 @@ cases:
           label: "security audit"
         - value: "0"
           label: "surprise invoices"
+  cta: "Get Results Like These"
 
 # ============================================================
 # GUARANTEES
@@ -305,6 +353,7 @@ faq:
 # ============================================================
 final:
   heading: "Protect Your Firm Before You Need To"
+  heading_accent: "Start With a Free Review."
   text: "Get a free, no-obligation IT security review. In about 20 minutes we'll show you exactly where your firm is exposed — and how to fix it without disrupting a single deadline."
   points:
     - "Free written security review — no obligation"
