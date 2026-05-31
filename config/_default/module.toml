@@ -17,6 +17,9 @@ path = "github.com/gethugothemes/hugo-modules/images"
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/videos"
 
+# Font Awesome module stays mounted for vendor consistency, but its CSS is no
+# longer referenced in hugo.toml plugins — all icons are inline SVG now, so no
+# page loads the FA CSS or the 277 KB webfonts.
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
 
@@ -41,6 +44,8 @@ path = "github.com/gethugothemes/hugo-modules/tab"
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/modal"
 
+# gallery-slider module stays mounted for vendor consistency; its Swiper/GLightbox
+# CSS+JS are no longer referenced in hugo.toml plugins (unused sitewide).
 [[imports]]
 path = "github.com/gethugothemes/hugo-modules/gallery-slider"
 

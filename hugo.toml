@@ -122,42 +122,25 @@ notAlternative = true
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "plugins/swiper/swiper-bundle.css" # https://github.com/gethugothemes/hugo-modules/tree/master/gallery-slider
-lazy = true
-[[params.plugins.css]]
-link = "plugins/glightbox/glightbox.css" 
-# https://github.com/gethugothemes/hugo-modules/tree/master/gallery-slider
-lazy = true
-[[params.plugins.css]]
-link = "plugins/font-awesome/v6/brands.css" 
-# https://github.com/gethugothemes/hugo-modules/tree/master/icons/font-awesome
-lazy = true
-[[params.plugins.css]]
-link = "plugins/font-awesome/v6/solid.css"
-lazy = true
-[[params.plugins.css]]
-link = "plugins/font-awesome/v6/icons.css"
-lazy = true
-# Redeclares the Font Awesome @font-face rules with font-display:swap (must stay LAST so it wins the cascade).
-[[params.plugins.css]]
-link = "css/fa-display-swap.css"
-lazy = true
+# NOTE: swiper + glightbox CSS removed — the gallery-slider module (the only
+# consumer of Swiper/GLightbox) is not used by any page or content on this
+# site, so these were ~unused CSS shipped in the lazy bundle. Removing them
+# trims the "Reduce unused CSS" weight with zero visual change.
+#
+# NOTE: Font Awesome CSS (brands.css / solid.css / icons.css / fa-display-swap.css)
+# removed entirely. Every icon on the site is now rendered as an inline SVG,
+# so no page loads the ~30 KB FA icon CSS or the 277 KB FA webfonts. This is
+# the single biggest "Reduce unused CSS" + LCP win and is visually identical.
 
 # JS Plugins
 [[params.plugins.js]]
 link = "js/search.js" # https://github.com/gethugothemes/hugo-modules/tree/master/search
 lazy = false
-[[params.plugins.js]]
-link = "plugins/swiper/swiper-bundle.js" 
-# https://github.com/gethugothemes/hugo-modules/tree/master/gallery-slider
-lazy = false
-[[params.plugins.js]]
-link = "plugins/glightbox/glightbox.js" # https://github.com/gethugothemes/hugo-modules/tree/master/gallery-slider
-lazy = true
-[[params.plugins.js]]
-link = "js/gallery-slider.js" # https://github.com/gethugothemes/hugo-modules/tree/master/gallery-slider
-lazy = true
+# NOTE: swiper-bundle.js, glightbox.js and gallery-slider.js removed — the
+# gallery-slider module is unused sitewide (no page/content uses Swiper or
+# galleries), and the project's main.js does not call `new Swiper()`. Swiper
+# was ~30 KB of the always-loaded main bundle and was the single largest chunk
+# of "Reduce unused JavaScript". Removing it is behaviourally identical.
 [[params.plugins.js]]
 link = "plugins/cookie.js" # https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
 lazy = false

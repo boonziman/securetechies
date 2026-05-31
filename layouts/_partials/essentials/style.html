@@ -13,7 +13,6 @@
 <meta http-equiv="x-dns-prefetch-control" content="on" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-{{ if not .Params.landing }}<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />{{ end }}
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
@@ -65,11 +64,16 @@
 {{ $styles = $styles | append $tailwindCSS }}
 {{ $styles = $styles | resources.Concat "css/style.css" }}
 
-{{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
+{{ $hasLazy := gt (len $stylesLazy) 0 }}
+{{ if $hasLazy }}
+  {{ $stylesLazy = $stylesLazy | resources.Concat "css/style-lazy.css" }}
+{{ end }}
 
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | minify | fingerprint }}
-  {{ $stylesLazy = $stylesLazy | minify | fingerprint }}
+  {{ if $hasLazy }}
+    {{ $stylesLazy = $stylesLazy | minify | fingerprint }}
+  {{ end }}
 {{ end }}
 
 
@@ -92,7 +96,7 @@
 {{/* Landing pages are self-contained (landing.css) and use none of the theme's
      lazy component styles — skip the ~32 KB style-lazy bundle there to clear
      "Reduce unused CSS" and avoid the extra request/parse. */}}
-{{ if not .Params.landing }}
+{{ if and $hasLazy (not .Params.landing) }}
 <link
   rel="stylesheet"
   href="{{ $stylesLazy.RelPermalink }}"
