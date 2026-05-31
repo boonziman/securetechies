@@ -39,7 +39,7 @@ If the cloud still feels abstract, here's the comparison that makes it intuitive
 
 You'll hear a few terms thrown around. Here's what they actually mean.
 
-**Public cloud.** You share massive, professionally run infrastructure with other customers (think Microsoft Azure, Amazon Web Services, Google Cloud). It's cost-effective, endlessly scalable, and maintained by the provider. This is what most small businesses use.
+**Public cloud.** You share massive, professionally run infrastructure with other customers (think Microsoft Azure, Amazon Web Services, Google Cloud). It's cost-effective, endlessly scalable, and maintained by the provider. This is what most small businesses use — and it's where your public-facing systems live too, including the secure, fast websites and landing pages our [web development team](/services/web-development/) builds and hosts on enterprise-grade cloud.
 
 **Private cloud.** Cloud infrastructure dedicated just to you. More control and sometimes required for strict compliance, but more expensive. Usually for larger organizations or those with special regulatory needs.
 

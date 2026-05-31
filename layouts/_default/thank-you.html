@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $phone := site.Params.contact_phone | default "(818) 431-5607" }}
+{{ $phoneRaw := site.Params.contact_phone_raw | default "+18184315607" }}
+<section class="st-hero st-l-section st-l-darker" style="min-height:80vh;display:flex;align-items:center">
+  <div class="st-hero-bg">
+    <span class="st-orb st-orb-1"></span>
+    <span class="st-orb st-orb-3"></span>
+    <span class="st-grid-overlay"></span>
+  </div>
+  <div class="st-l-wrap" style="position:relative;z-index:10;text-align:center;max-width:680px">
+    <div style="width:88px;height:88px;margin:0 auto 28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(74,222,128,0.18),rgba(34,211,238,0.1));border:1px solid rgba(74,222,128,0.3)">
+      <svg style="width:44px;height:44px;color:#4ade80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+    </div>
+    <h1 class="st-l-hero-h1" style="font-size:clamp(2rem,4vw,3rem)">You're All Set — We've Got It From Here.</h1>
+    <p class="st-l-hero-lead" style="margin:0 auto 28px;max-width:34rem">Thanks for reaching out. A senior engineer from Secure Techies will review your details and reply <b style="color:#fff">within 2 business hours</b> with your free transition plan. Keep an eye on your inbox (and your spam folder, just in case).</p>
+    <div class="st-l-hero-cta" style="justify-content:center">
+      <a href="tel:{{ $phoneRaw }}" class="st-btn-primary st-l-btn-lg">
+        <svg style="width:18px;height:18px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Need help now? Call {{ $phone }}
+      </a>
+      <a href="{{ "/" | relURL }}" class="st-btn-outline st-l-btn-lg">Back to Main Site</a>
+    </div>
+  </div>
+</section>
+
+{{/* GA4 conversion event for the lead submission */}}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "event": "generate_lead", "lead_source": "landing_page", "value": 1 });
+  if (typeof gtag === "function") {
+    gtag("event", "generate_lead", { "lead_source": "landing_page", "value": 1, "currency": "USD" });
+  }
+</script>
+{{ end }}

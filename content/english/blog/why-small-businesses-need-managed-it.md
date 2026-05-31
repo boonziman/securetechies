@@ -100,7 +100,7 @@ A natural reaction to growing IT headaches is to hire someone — a dedicated IT
 
 ## Why businesses choose Secure Techies
 
-Based in the heart of Los Angeles County, Secure Techies understands the challenges facing Southern California businesses. We offer flexible plans that scale with your growth, from basic help desk support to full infrastructure and security management. Our focus is simple: keep your technology stable, secure, and out of your way.
+Based in the heart of Los Angeles County, Secure Techies understands the challenges facing Southern California businesses. We offer flexible plans that scale with your growth, from basic help desk support to full infrastructure and security management. Because we handle your whole technology stack, many clients also lean on our [web development services](/services/web-development/) so the same team that secures their network also builds and maintains their website. Our focus is simple: keep your technology stable, secure, and out of your way.
 
 ### Managed IT grows with you
 

@@ -1,0 +1,105 @@
+<!doctype html>
+<html
+  itemscope
+  class="{{- if not site.Params.theme_switcher -}}
+    {{- site.Params.theme_default -}}
+  {{- end -}}"
+  lang="{{ site.LanguageCode | default `en-US` }}"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    <!-- head (don't cache it) -->
+    {{ partial "essentials/head.html" . }}
+    {{/* Mark JS as available ASAP so the no-JS reveal fail-safe (landing.css)
+         only hides content when JS can actually un-hide it. Runs before paint. */}}
+    {{ if .Params.landing }}<script>document.documentElement.className+=" js";</script>{{ end }}
+
+    <!-- style (always cache it) -->
+    {{ partialCached "essentials/style.html" . }}
+
+    {{/* Landing-page-only CSS (conversion landing pages). Loaded once, minified + fingerprinted. */}}
+    {{ if .Params.landing }}
+      {{/* Load fonts early + render-blocking with display=optional so headline text
+           does not reflow (kills web-font CLS that the theme's swap-loaded fonts cause). */}}
+      {{ $pf := site.Data.theme.fonts.font_family.primary }}
+      {{ $sf := site.Data.theme.fonts.font_family.secondary }}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ $pf | safeURL }}{{ with $sf }}&family={{ . | safeURL }}{{ end }}&display=optional" />
+      {{ with resources.Get "css/landing.css" }}
+        {{ $landingCSS := . }}
+        {{ if hugo.IsProduction }}{{ $landingCSS = $landingCSS | minify | fingerprint }}{{ end }}
+        <link rel="stylesheet" href="{{ $landingCSS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $landingCSS.Data.Integrity }}"{{ end }} />
+      {{ end }}
+    {{ end }}
+
+  </head>
+
+  <body{{ if .Params.landing }} class="st-landing-body"{{ end }}>
+    <!-- Accessibility: skip to main content -->
+    <a href="#main-content" class="st-skip-link">Skip to main content</a>
+
+    <!-- cache partial only in production -->
+    {{ if hugo.IsProduction }}
+      {{ partialCached "preloader.html" . }}
+      {{ partialCached "gtm-noscript.html" . }}
+    {{ else }}
+      {{ partial "preloader.html" . }}
+
+
+      <!-- tailwind size indicator -->
+      {{ partial "components/tw-size-indicator.html" . }}
+    {{ end }}
+
+
+    <!-- announcement -->
+    {{ if not .Params.hide_header }}
+      {{ partialCached "announcement.html" . }}
+    {{ end }}
+
+
+    <!-- header (don't cache it) -->
+    {{ if not .Params.hide_header }}
+      {{ partial "essentials/header.html" . }}
+      {{ partial "search-modal.html" (dict "Context" . ) }}
+    {{ end }}
+
+
+    <main id="main-content">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- footer -->
+    {{ if not .Params.hide_footer }}
+      {{ partial "essentials/footer.html" . }}
+    {{ end }}
+
+    <!-- Back to top -->
+    {{ if not .Params.hide_footer }}
+    <button type="button" id="st-back-to-top" class="st-back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+    </button>
+    <script>
+      (function(){
+        var btn = document.getElementById('st-back-to-top');
+        if(!btn) return;
+        function toggle(){ btn.classList.toggle('show', window.pageYOffset > 600); }
+        window.addEventListener('scroll', toggle, { passive: true });
+        btn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        toggle();
+      })();
+    </script>
+    {{ end }}
+
+    <!-- script (always cache it) -->
+    {{ partialCached "essentials/script.html" . }}
+
+    {{/* Landing-page-only JS (particles, scroll reveals, counters, FAQ accordion, sticky CTA). Deferred. */}}
+    {{ if .Params.landing }}
+      {{ with resources.Get "js/landing.js" }}
+        {{ $landingJS := . }}
+        {{ if hugo.IsProduction }}{{ $landingJS = $landingJS | minify | fingerprint }}{{ end }}
+        <script defer src="{{ $landingJS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $landingJS.Data.Integrity }}"{{ end }}></script>
+      {{ end }}
+    {{ end }}
+  </body>
+</html>

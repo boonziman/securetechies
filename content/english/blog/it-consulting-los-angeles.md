@@ -40,7 +40,7 @@ A consultant works at the strategic level, above the help desk. The focus is dir
 | Compliance strategy | A path to meet California and industry requirements |
 | Vendor management | Help choosing and managing technology vendors |
 
-The goal is to make technology a planned asset that drives growth, not a series of reactive expenses.
+The goal is to make technology a planned asset that drives growth, not a series of reactive expenses. That roadmap increasingly includes your digital presence — a modern, secure website is part of the technology stack, which is why our [web development services](/services/web-development/) plug directly into the same strategy.
 
 ### The hidden cost of having no strategy
 

@@ -1,0 +1,69 @@
+{{/* Landing page structured data: FAQPage + Service with aggregateRating.
+     Driven entirely by the page front matter (faq + reviews). */}}
+{{ $p := .Params }}
+
+{{ with $p.faq }}
+{{ if .items }}
+<script type="application/ld+json">
+{{ $faqs := slice }}
+{{ range .items }}
+  {{ $faqs = $faqs | append (dict
+    "@type" "Question"
+    "name" .q
+    "acceptedAnswer" (dict "@type" "Answer" "text" (.a | plainify | htmlUnescape))
+  ) }}
+{{ end }}
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "FAQPage"
+  "mainEntity" $faqs
+| jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{ end }}
+{{ end }}
+
+{{ with $p.reviews }}
+{{ $svc := dict
+  "@context" "https://schema.org"
+  "@type" "Service"
+  "name" (or $p.service_name $p.meta_title $.Title)
+  "description" (or $p.description "")
+  "provider" (dict
+    "@type" "LocalBusiness"
+    "name" "Secure Techies"
+    "telephone" (site.Params.contact_phone_raw | default "+18184315607")
+    "address" (dict
+      "@type" "PostalAddress"
+      "streetAddress" "21515 Vanowen St Suite 1110"
+      "addressLocality" "Canoga Park"
+      "addressRegion" "CA"
+      "postalCode" "91303"
+      "addressCountry" "US"
+    )
+  )
+  "areaServed" (slice "Los Angeles" "Woodland Hills" "Canoga Park" "Calabasas" "Thousand Oaks")
+}}
+{{ if .rating_value }}
+  {{ $svc = merge $svc (dict "aggregateRating" (dict
+    "@type" "AggregateRating"
+    "ratingValue" (.rating_value | default "4.8")
+    "reviewCount" (.rating_count | default "120")
+    "bestRating" "5"
+  )) }}
+{{ end }}
+{{ if .items }}
+  {{ $revs := slice }}
+  {{ range first 5 .items }}
+    {{ $revs = $revs | append (dict
+      "@type" "Review"
+      "reviewRating" (dict "@type" "Rating" "ratingValue" (string (.rating | default 5)) "bestRating" "5")
+      "author" (dict "@type" "Person" "name" .name)
+      "reviewBody" (.text | plainify | htmlUnescape)
+    ) }}
+  {{ end }}
+  {{ $svc = merge $svc (dict "review" $revs) }}
+{{ end }}
+<script type="application/ld+json">
+{{ $svc | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{ end }}
