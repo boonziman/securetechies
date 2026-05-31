@@ -313,14 +313,23 @@
     });
   }
 
-  /* Delay until after the browser has painted the layout so
-     getBoundingClientRect() returns real dimensions, not 0 */
+  /* Delay until the browser is idle AFTER the layout has painted, so (a)
+     getBoundingClientRect() returns real dimensions, and (b) the particle
+     canvas setup does not compete with the hero's first/largest paint (LCP).
+     requestIdleCallback yields to the LCP paint; the {timeout} guarantees the
+     particles still start within ~2.5s even if the page never goes idle.
+     Visually identical — the particle field just begins a beat later. */
+  function stScheduleParticles(){
+    if('requestIdleCallback' in window){
+      requestIdleCallback(function(){ requestAnimationFrame(initParticles); }, {timeout:2500});
+    } else {
+      setTimeout(function(){ requestAnimationFrame(initParticles); }, 200);
+    }
+  }
   if(document.readyState==='complete'){
-    requestAnimationFrame(initParticles);
+    stScheduleParticles();
   } else {
-    window.addEventListener('load', function(){
-      requestAnimationFrame(initParticles);
-    });
+    window.addEventListener('load', stScheduleParticles);
   }
 })();
 </script>
@@ -1836,8 +1845,18 @@
     });
   }
 
-  if(document.readyState==='complete') requestAnimationFrame(boot);
-  else window.addEventListener('load', function(){ requestAnimationFrame(boot); });
+  /* Defer below-fold canvas setup until the page is idle so the resize()
+     measurements (which force layout on content-visibility:auto sections) do
+     not compete with the hero's largest paint (LCP). Visuals are unchanged. */
+  function stScheduleSectionParticles(){
+    if('requestIdleCallback' in window){
+      requestIdleCallback(function(){ requestAnimationFrame(boot); }, {timeout:3000});
+    } else {
+      setTimeout(function(){ requestAnimationFrame(boot); }, 300);
+    }
+  }
+  if(document.readyState==='complete') stScheduleSectionParticles();
+  else window.addEventListener('load', stScheduleSectionParticles);
 })();
 </script>
 
