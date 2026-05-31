@@ -125,7 +125,7 @@ html:not(.js) .st-landing-body .st-reveal-right {
    viewport, so the animated background "cuts off" mid-hero (solid navy
    below the fold) and the floating orbs spill past the edge causing the
    mobile horizontal-scroll. Anchoring + clipping fixes both at once. */
-.st-l-hero { position: relative; min-height: auto; padding-top: 56px; padding-bottom: 72px; overflow: clip; isolation: isolate; }
+.st-l-hero { position: relative; min-height: auto; padding-top: 40px; padding-bottom: 54px; overflow: clip; isolation: isolate; }
 .st-l-hero .container, .st-l-hero .st-l-wrap { position: relative; z-index: 10; }
 .st-l-hero-grid {
   display: grid; grid-template-columns: 1fr 1.08fr;
@@ -575,14 +575,13 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
 .st-l-step-card p { font-size: 0.92rem; color: #56657a; line-height: 1.65; margin: 0; }
 
 /* ---------- Benefits split (image + feature rows) ---------- */
-/* The media frame is intentionally tall and wide: it stretches the full height
-   of the feature column on the right and bleeds to the left screen edge so it
-   never looks like an awkward little square next to a tall stack of text. */
-.st-l-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 44px; align-items: stretch; }
-.st-l-split-media { position: relative; border-radius: 0 22px 22px 0; overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-left: none;
-  align-self: stretch; min-height: 100%;
-  margin-left: calc(-1 * max(1.5rem, (100vw - 1180px) / 2 + 1.5rem)); }
+/* The media is a clean, sharp-cornered frame that stretches to match the full
+   height of the feature list beside it, so the photo + cards read as one
+   cohesive block (no awkward little square, no full-bleed crop). */
+.st-l-split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: stretch; }
+.st-l-split-media { position: relative; border-radius: 2px; overflow: hidden; display: flex;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08);
+  align-self: stretch; min-height: 460px; }
 .st-l-split-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .st-l-split-media::after { content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(8,17,32,0) 40%, rgba(8,17,32,0.55) 100%); }
@@ -675,7 +674,7 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .st-l-cs { grid-template-columns: 1fr; }
   .st-l-split { grid-template-columns: 1fr; gap: 28px; }
-  .st-l-split-media { max-height: 360px; min-height: 280px; margin-left: 0; border-radius: 22px; border-left: 1px solid rgba(255,255,255,0.08); }
+  .st-l-split-media { max-height: 380px; min-height: 280px; border-radius: 2px; }
   .st-l-svc-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 680px) {

@@ -111,17 +111,21 @@ benefits:
   eyebrow: "Why Secure Techies"
   heading: "What it should actually feel like"
   sub: "Optional."
-  image: "images/services/helpdesk-overview.webp"   # left media column (reuse a static/images/services/*.webp or assets/images/landing/*)
+  image: "images/landing/benefits-<topic>.jpg"   # left media column — a HIGH-RES (≥1600px) Pexels photo downloaded to assets/images/landing/ (NOT a small static service webp)
   image_badge: "Real engineers, on call"            # small badge over the image
   items:                  # 4–6 feature rows with check icons
     - { icon: "headset", title: "Real Humans, Fast", text: "Benefit, not feature." }
   cta: "Talk to a Real Engineer"   # optional CTA band
 ```
 
-The benefits image renders as a TALL frame that bleeds to the left screen edge
-and stretches to the full height of the feature list — pick a strong landscape
-or portrait photo (people / office / team) that crops well when tall; avoid
-small square graphics.
+The benefits image renders as a clean, **square-cornered, full-height frame**
+contained inside its grid column (no full-bleed): it stretches to exactly match
+the height of the feature list beside it, so the photo + cards read as one
+cohesive block. Use a HIGH-RES Pexels photo (≥1600px wide) saved to
+`assets/images/landing/` so Hugo's `Fill "760x840 webp q86"` produces a sharp
+crop — never reuse a small `static/images/services/*.webp` (it blurs when
+stretched). Pick a photo with a person/team facing the viewer, subject roughly
+centered, that crops well when tall.
 
 ## services (optional — photo service cards, no links)
 

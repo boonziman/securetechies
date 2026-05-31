@@ -141,7 +141,7 @@ benefits:
   eyebrow: "Why LA firms choose us"
   heading: "IT That <span class=\"st-l-hl\">Protects Your Practice</span> and Your Reputation"
   sub: "For 15+ years, Southern California businesses — including law firms — have trusted Secure Techies to do IT the right way: secure, responsive, and genuinely on your side."
-  image: "images/services/cybersecurity-overview.webp"
+  image: "images/landing/benefits-lawoffice.jpg"
   image_badge: "Privileged data, locked down"
   cta: "Protect My Firm"
   items:
