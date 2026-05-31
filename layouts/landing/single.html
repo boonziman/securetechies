@@ -34,7 +34,7 @@
 {{/* ============ SUBTLE TOP STRIP (no nav) ============ */}}
 <header class="st-l-topbar">
   <a class="st-l-topbar-brand" href="{{ "/" | relURL }}" aria-label="Secure Techies home">
-    {{ with resources.Get "images/logo-darkmode.png" }}<img src="{{ .RelPermalink }}" alt="Secure Techies" width="120" height="26" loading="eager" />{{ else }}<strong style="color:#fff;font-size:1rem">Secure Techies</strong>{{ end }}
+    {{ with resources.Get "images/logo-darkmode.png" }}{{ $logo := .Resize "360x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="Secure Techies" width="120" height="26" loading="eager" />{{ else }}<strong style="color:#fff;font-size:1rem">Secure Techies</strong>{{ end }}
   </a>
   <div style="display:flex;align-items:center;gap:18px">
     <a class="st-l-topbar-phone" href="tel:{{ $phoneRaw }}">

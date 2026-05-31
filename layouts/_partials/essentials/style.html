@@ -13,7 +13,7 @@
 <meta http-equiv="x-dns-prefetch-control" content="on" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+{{ if not .Params.landing }}<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />{{ end }}
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
@@ -27,7 +27,15 @@
 {{ $pf := site.Data.theme.fonts.font_family.primary }}
 {{ $sf := site.Data.theme.fonts.font_family.secondary }}
 {{ $fontHref := printf "https://fonts.googleapis.com/css2?family=%s%s&display=optional" ($pf | safeURL) (cond (ne $sf "") (printf "&family=%s" ($sf | safeURL)) "") }}
-<link rel="stylesheet" href="{{ $fontHref | safeURL }}" />
+{{/* Load Google Fonts NON-render-blocking on every page. The site now ships
+     metric-matched fallback fonts (Inter-fallback / Jakarta-fallback in
+     custom.css, applied via --font-primary/--font-secondary), so the system
+     fallback renders with ~identical box metrics and the brand font can swap in
+     with zero layout shift. This removes the font-CSS round-trip from the
+     critical path (it was blocking FCP by ~1.7s on mobile). `display=optional`
+     keeps CLS at 0. A <noscript> fallback keeps fonts working without JS. */}}
+<link rel="stylesheet" href="{{ $fontHref | safeURL }}" media="print" onload="this.media='all'; this.onload=null;" />
+<noscript><link rel="stylesheet" href="{{ $fontHref | safeURL }}" /></noscript>
 
 <!-- main styles -->
 {{ $styles := slice }}
@@ -65,13 +73,26 @@
 {{ end }}
 
 
-<!-- link main style -->
-<link
-  href="{{ $styles.RelPermalink }}"
-  {{ if hugo.IsProduction }}integrity="{{ $styles.Data.Integrity }}"{{ end }}
-  rel="stylesheet" />
+<!-- main style -->
+{{/* In production the full (purged + minified) main CSS bundle is INLINED into
+     the document head. The bundle is small (~22 KB) because Tailwind is purged
+     against hugo_stats.json, so inlining it removes a render-blocking CSS
+     round-trip from the critical path. The browser can paint as soon as the
+     HTML arrives instead of waiting for a second request — this is the single
+     biggest mobile FCP/LCP win and changes NOTHING visually (it is the exact
+     same CSS, just delivered inline). In development we keep the external link
+     for fast rebuilds and source mapping. */}}
+{{ if hugo.IsProduction }}
+<style>{{ $styles.Content | safeCSS }}</style>
+{{ else }}
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+{{ end }}
 
 <!-- link lazy style (non-render-blocking) -->
+{{/* Landing pages are self-contained (landing.css) and use none of the theme's
+     lazy component styles — skip the ~32 KB style-lazy bundle there to clear
+     "Reduce unused CSS" and avoid the extra request/parse. */}}
+{{ if not .Params.landing }}
 <link
   rel="stylesheet"
   href="{{ $stylesLazy.RelPermalink }}"
@@ -81,3 +102,4 @@
 <noscript>
   <link rel="stylesheet" href="{{ $stylesLazy.RelPermalink }}" />
 </noscript>
+{{ end }}

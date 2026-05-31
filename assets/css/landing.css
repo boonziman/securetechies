@@ -17,6 +17,38 @@ html:not(.js) .st-landing-body .st-reveal-right {
   transform: none !important;
 }
 
+/* ---------- Above-the-fold hero: reveal on LOAD, not on scroll ----------
+   The hero copy/visual reuse .st-reveal / .st-reveal-right for their entrance
+   fade. Because they are above the fold, gating them behind the JS
+   IntersectionObserver (which adds .st-visible) delays the Largest Contentful
+   Paint — the headline literally cannot be measured until JS runs and reveals
+   it (this is the ~2.3 s LCP "render delay" on mobile). Here we play the
+   IDENTICAL entrance fade as a pure-CSS animation that starts at first paint,
+   so the H1 is paintable immediately while the visual is unchanged. The JS
+   observer still adds .st-visible later; both end states agree (opacity:1). */
+html.js .st-landing-body .st-l-hero-copy.st-reveal {
+  animation: stHeroCopyReveal 0.65s ease both;
+}
+html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
+  animation: stHeroVisualReveal 0.65s ease both;
+}
+@keyframes stHeroCopyReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes stHeroVisualReveal {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .st-landing-body .st-l-hero-copy.st-reveal,
+  html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Base / layout ---------- */
 /* Metric-adjusted fallback fonts: make the system fallback match the web font's
    box metrics so the swap from fallback -> Inter / Plus Jakarta causes ~zero

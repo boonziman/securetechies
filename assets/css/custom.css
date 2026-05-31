@@ -6,6 +6,38 @@
 /* ---- Base ---- */
 html { scroll-behavior: smooth; }
 
+/* ---- Metric-matched fallback fonts (site-wide) ----
+   The brand fonts (Inter / Plus Jakarta Sans) are loaded from Google Fonts.
+   To take that stylesheet OFF the critical render path (it was blocking FCP by
+   ~1.7s on mobile), it now loads non-render-blocking. These fallback faces map
+   a local system font (Arial) to the SAME box metrics as the web fonts via
+   size-adjust / ascent/descent overrides, so when Inter / Jakarta swap in there
+   is ~zero layout shift (keeps CLS at 0). Same values proven on the landing
+   pages (landing.css). Redefining identical @font-face names is harmless. */
+@font-face {
+  font-family: "Inter-fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}
+@font-face {
+  font-family: "Jakarta-fallback";
+  src: local("Arial");
+  ascent-override: 92.6%;
+  descent-override: 23.1%;
+  line-gap-override: 0%;
+  size-adjust: 105.6%;
+}
+/* Insert the metric-matched fallbacks into the global font stacks. The visible
+   font is unchanged (Inter / Plus Jakarta Sans still win once loaded); the
+   fallback only fills the brief pre-load window with matching metrics. */
+:root {
+  --font-primary: "Inter", "Inter-fallback", sans-serif;
+  --font-secondary: "Plus Jakarta Sans", "Jakarta-fallback", sans-serif;
+}
+
 /* ============================================================
    TOP UTILITY BAR
    ============================================================ */
@@ -1491,6 +1523,32 @@ html { scroll-behavior: smooth; }
 .st-reveal-right.st-visible {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+/* ---- Hero entrance plays on LOAD (pure CSS), not on JS scroll-reveal ----
+   The hero copy (H1 + lead = the LCP element) and the dashboard card live in
+   `.st-reveal` / `.st-reveal-right`, which start at opacity:0 and only become
+   visible once the inline IntersectionObserver adds `.st-visible`. Because that
+   observer runs after the page's scripts, the above-the-fold LCP text was held
+   invisible for ~2.3s on mobile (huge "element render delay").
+   These keyframes replay the EXACT same entrance (same 0.65s ease, same 28px
+   offset, opacity 0->1) immediately at first paint, so the LCP element renders
+   right away. The JS observer still adds `.st-visible` afterwards; both reach
+   the identical end state, so the visual is unchanged. Scoped to the hero only,
+   so below-the-fold sections keep their scroll-reveal behaviour. */
+.st-hero .st-reveal { animation: stHeroRevealUp 0.65s ease both; }
+.st-hero .st-reveal-right { animation: stHeroRevealRight 0.65s ease both; }
+@keyframes stHeroRevealUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes stHeroRevealRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-hero .st-reveal,
+  .st-hero .st-reveal-right { animation: none; opacity: 1; transform: none; }
 }
 
 /* ============================================================

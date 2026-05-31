@@ -14,17 +14,14 @@
     {{ if .Params.landing }}<script>document.documentElement.className+=" js";</script>{{ end }}
 
     <!-- style (always cache it) -->
-    {{ partialCached "essentials/style.html" . }}
+    {{ partialCached "essentials/style.html" . .Params.landing }}
 
     {{/* Landing-page-only CSS (conversion landing pages). Loaded once, minified + fingerprinted. */}}
     {{ if .Params.landing }}
-      {{/* Load fonts early + render-blocking with display=optional so headline text
-           does not reflow (kills web-font CLS that the theme's swap-loaded fonts cause). */}}
-      {{ $pf := site.Data.theme.fonts.font_family.primary }}
-      {{ $sf := site.Data.theme.fonts.font_family.secondary }}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ $pf | safeURL }}{{ with $sf }}&family={{ . | safeURL }}{{ end }}&display=optional" />
+      {{/* Fonts (Inter + Plus Jakarta, display=optional) are already preconnected
+           and loaded by essentials/style.html for every page — no need to repeat
+           them here (that produced duplicate preconnects + a duplicate font
+           request flagged by Lighthouse). We only add the landing stylesheet. */}}
       {{ with resources.Get "css/landing.css" }}
         {{ $landingCSS := . }}
         {{ if hugo.IsProduction }}{{ $landingCSS = $landingCSS | minify | fingerprint }}{{ end }}
@@ -91,7 +88,7 @@
     {{ end }}
 
     <!-- script (always cache it) -->
-    {{ partialCached "essentials/script.html" . }}
+    {{ partialCached "essentials/script.html" . .Params.landing }}
 
     {{/* Landing-page-only JS (particles, scroll reveals, counters, FAQ accordion, sticky CTA). Deferred. */}}
     {{ if .Params.landing }}

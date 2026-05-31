@@ -37,6 +37,12 @@
   {{ $scriptsLazy = $scriptsLazy | minify | fingerprint }}
 {{ end }}
 
+{{/* Landing pages hide the header/footer and ship their own self-contained
+     landing.js (particles, reveals, counters, FAQ, sticky CTA). The theme's
+     main bundle here is search/swiper/menu/theme-toggle/cookie code that the
+     landing page never renders — ~42 KB of unused JS + parse/exec time. Skip
+     it on landing pages to cut "Reduce unused JavaScript" and TBT. */}}
+{{ if not .Params.landing }}
 {{/* scripts (deferred — runs after parse, off the critical render path) */}}
 <script
   defer
@@ -50,13 +56,20 @@
   crossorigin="anonymous"
   {{ if hugo.IsProduction }}integrity="{{ $scriptsLazy.Data.Integrity }}"{{ end }}
   src="{{ $scriptsLazy.RelPermalink }}"></script>
+{{ end }}
 
 <!-- progressive web app -->
 {{ partialCached "pwa.html" . }}
 
 
 <!-- cookie consent -->
+{{/* Landing pages never show the cookie banner (landing.css hides .cookie-box)
+     and they ship without the theme bundle that defines the `Cookies` (js-cookie)
+     dependency — so emitting this script there throws "Cookies is not defined".
+     Skip it on landing pages; the banner is intentionally absent anyway. */}}
+{{ if not .Params.landing }}
 {{ partialCached "cookie-consent.html" . }}
+{{ end }}
 
 
 <!-- google adsense -->
