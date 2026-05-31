@@ -98,14 +98,22 @@
             </div>
             <div class="st-dashboard-body">
               <div class="st-status-row">
-                {{ range (.status | default (slice (dict "label" "Threat Status" "value" "All Clear" "color" "#4ade80" "icon" "shield") (dict "label" "Network" "value" "99.9% Uptime" "color" "#60a5fa" "icon" "chart") (dict "label" "Backups" "value" "Protected" "color" "#a78bfa" "icon" "lock"))) }}
+                {{ range $si, $stat := (.status | default (slice (dict "label" "Threat Status" "value" "All Clear" "color" "#4ade80" "icon" "shield") (dict "label" "Network" "value" "99.9% Uptime" "color" "#60a5fa" "icon" "chart") (dict "label" "Backups" "value" "Protected" "color" "#a78bfa" "icon" "lock"))) }}
                 <div class="st-status-item">
-                  <div class="st-status-icon" style="background:{{ .color }}26">
-                    <svg class="w-5 h-5" style="color:{{ .color }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "shield") }}"/></svg>
+                  <div class="st-status-icon" style="background:{{ $stat.color }}26">
+                    {{ if eq $si 0 }}
+                    {{/* First status mirrors the homepage "Threat Status" live pulse ring */}}
+                    <div class="st-shield-wrap">
+                      <div class="st-pulse-ring"></div>
+                      <svg class="w-5 h-5" style="color:{{ $stat.color }};position:relative;z-index:1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons ($stat.icon | default "shield") }}"/></svg>
+                    </div>
+                    {{ else }}
+                    <svg class="w-5 h-5" style="color:{{ $stat.color }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons ($stat.icon | default "shield") }}"/></svg>
+                    {{ end }}
                   </div>
                   <div>
-                    <div class="text-xs" style="color:#9ca3af">{{ .label }}</div>
-                    <div class="text-sm font-semibold" style="color:{{ .color }}">{{ .value }}</div>
+                    <div class="text-xs" style="color:#9ca3af">{{ $stat.label }}</div>
+                    <div class="text-sm font-semibold" style="color:{{ $stat.color }}">{{ $stat.value }}</div>
                   </div>
                 </div>
                 {{ end }}
@@ -193,12 +201,12 @@
     </div>
     <div class="st-l-steps">
       {{ $steps := .steps }}
-      {{ $last := sub (len $steps) 1 }}
       {{ range $i, $st := $steps }}
       <div class="st-l-step st-reveal" style="transition-delay:{{ mul $i 90 }}ms">
         <div class="st-l-step-node">
-          <div class="st-l-step-bubble st-l-step-bubble--{{ add (mod $i 3) 1 }}">{{ add $i 1 }}</div>
-          {{ if ne $i $last }}<span class="st-l-step-connector" aria-hidden="true"></span>{{ end }}
+          <div class="st-l-step-bubble st-l-step-bubble--{{ add (mod $i 3) 1 }}">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons ($st.icon | default "check") }}"/></svg>
+          </div>
         </div>
         <div class="st-l-step-card">
           {{ with .step }}<span class="st-l-step-count">{{ . }}</span>{{ end }}

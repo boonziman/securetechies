@@ -1614,12 +1614,18 @@ html, body {
     padding: 0.7rem 1.25rem;
   }
 
-  /* Hero right column — dashboard card */
+  /* Hero right column — dashboard card: keep a gentle 3D lean + depth shadow
+     on mobile so it never feels flat. Pure rotateX is safe horizontally. */
   .st-dashboard {
-    transform: none !important;
+    transform: perspective(1400px) rotateX(4deg) !important;
+    transform-origin: center top;
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.55),
+      0 0 0 1px rgba(255,255,255,0.07),
+      inset 0 1px 0 rgba(255,255,255,0.06) !important;
   }
   .st-dashboard:hover {
-    transform: none !important;
+    transform: perspective(1400px) rotateX(4deg) !important;
   }
   .st-dashboard-body {
     padding: 1rem;
@@ -1890,14 +1896,21 @@ html, body {
     gap: 0.5rem;
   }
 
-  /* Float pills — hide on very small screens */
+  /* Float pills — keep visible but compact on very small screens */
   .st-float-pills {
-    display: none;
+    display: flex;
+  }
+  .st-float-pill {
+    font-size: 0.66rem;
+    padding: 0.26rem 0.6rem;
   }
 
-  /* Floating badge below dashboard — hide */
+  /* Floating badge below dashboard — keep visible but compact */
   .st-float-badge {
-    display: none;
+    display: inline-flex;
+    font-size: 0.66rem;
+    padding: 0.3rem 0.75rem;
+    bottom: -12px;
   }
 
   /* Stats — fully vertical */

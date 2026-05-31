@@ -87,16 +87,22 @@ problems:
 
 Any section may carry a `cta:` string — it renders the reusable centered CTA band (button → `#st-landing-final`). Add one after `problems`, `benefits`, `services`, and `cases` to keep a CTA always in view.
 
-## process (optional — renders a vertical timeline)
+## process (optional — renders centered circular gradient icon steps)
 
 ```yaml
 process:
   eyebrow: "The switch is painless"
   heading: "How it works in 5 simple steps"
   sub: "Optional."
-  steps:                  # numbered automatically, shown on a connected timeline rail
-    - { step: "Step 1 · Week 1", title: "Free Discovery", text: "What happens + reassurance." }
+  steps:                  # each step shows a CENTERED circular gradient icon above its card
+    - { step: "Step 1 · Week 1", icon: "doc", title: "Free Discovery", text: "What happens + reassurance." }
 ```
+
+ALWAYS give every process step an `icon` (an icon-set key — see the icon list at
+the top of this file, e.g. `doc`, `swap`, `gear`, `users`, `bolt`, `headset`,
+`lock`, `shield`, `chart`). The bubble renders this icon, NOT a number. Pick an
+icon that matches the action of each step. If you omit it, it falls back to a
+check mark.
 
 ## benefits (optional — renders a split image + feature list)
 
@@ -111,6 +117,11 @@ benefits:
     - { icon: "headset", title: "Real Humans, Fast", text: "Benefit, not feature." }
   cta: "Talk to a Real Engineer"   # optional CTA band
 ```
+
+The benefits image renders as a TALL frame that bleeds to the left screen edge
+and stretches to the full height of the feature list — pick a strong landscape
+or portrait photo (people / office / team) that crops well when tall; avoid
+small square graphics.
 
 ## services (optional — photo service cards, no links)
 

@@ -44,6 +44,9 @@ html:not(.js) .st-landing-body .st-reveal-right {
   overflow-x: clip;
 }
 .st-landing-body { background: #0a1628; }
+/* Conversion landing pages never show the site-wide cookie consent banner —
+   it distracts from the single conversion goal. (Landing pages only.) */
+.st-landing-body .cookie-box { display: none !important; }
 .st-l-wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
 .st-l-section { position: relative; padding: 88px 0; overflow: hidden; }
 .st-l-section--tight { padding: 64px 0; }
@@ -125,8 +128,8 @@ html:not(.js) .st-landing-body .st-reveal-right {
 .st-l-hero { position: relative; min-height: auto; padding-top: 56px; padding-bottom: 72px; overflow: clip; isolation: isolate; }
 .st-l-hero .container, .st-l-hero .st-l-wrap { position: relative; z-index: 10; }
 .st-l-hero-grid {
-  display: grid; grid-template-columns: 1.04fr 0.96fr;
-  gap: 52px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1.08fr;
+  gap: 46px; align-items: center;
 }
 .st-l-hero-badges {
   display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px;
@@ -235,11 +238,13 @@ html:not(.js) .st-landing-body .st-reveal-right {
   border-radius: 16px; padding: 26px 24px;
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
-.st-l-prob-card:hover {
+.st-l-prob-card:hover,
+.st-l-prob-card.st-l-glow {
   transform: translateY(-4px);
   border-color: rgba(248, 113, 113, 0.3);
   background: rgba(255, 255, 255, 0.05);
 }
+.st-l-prob-card.st-l-glow::before { width: 100%; }
 .st-l-prob-ic {
   width: 46px; height: 46px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
@@ -543,41 +548,41 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
 }
 .st-l-statsband .st-l-head { margin-bottom: 38px; }
 
-/* ---------- Process steps (homepage "Up and Running" style) ---------- */
+/* ---------- Process steps (premium circular gradient icons) ---------- */
 .st-l-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 26px; max-width: 1080px; margin: 0 auto; }
-.st-l-step { position: relative; display: flex; flex-direction: column; }
-.st-l-step-node { position: relative; display: flex; align-items: center; margin-bottom: 22px; }
+.st-l-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.st-l-step-node { position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
 .st-l-step-bubble {
   position: relative; z-index: 2; flex-shrink: 0;
-  width: 58px; height: 58px; border-radius: 17px;
+  width: 62px; height: 62px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; font-weight: 800; color: #fff;
+  color: #fff;
   background: linear-gradient(135deg, #0066CC, #3b9eff);
-  box-shadow: 0 12px 28px rgba(0,102,204,0.32);
+  box-shadow: 0 14px 30px rgba(0,102,204,0.34);
 }
+.st-l-step-bubble svg { width: 28px; height: 28px; color: #fff; }
 .st-l-step-bubble--2 { background: linear-gradient(135deg, #2563eb, #60a5fa); }
-.st-l-step-bubble--3 { background: linear-gradient(135deg, #0ea5e9, #22d3ee); box-shadow: 0 12px 28px rgba(14,165,233,0.3); }
-.st-l-step-connector {
-  position: absolute; left: 58px; right: -26px; top: 50%; transform: translateY(-50%);
-  height: 2px; border-radius: 2px;
-  background: linear-gradient(90deg, rgba(0,102,204,0.4), rgba(0,102,204,0.06));
-}
-.st-l-steps .st-l-step:nth-child(3n) .st-l-step-connector { display: none; }
+.st-l-step-bubble--3 { background: linear-gradient(135deg, #0ea5e9, #22d3ee); box-shadow: 0 14px 30px rgba(14,165,233,0.32); }
 .st-l-step-card {
   flex: 1; background: #ffffff; border: 1px solid #e8eef6; border-radius: 18px;
   padding: 26px 24px; box-shadow: 0 6px 22px rgba(15,31,56,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .st-l-step:hover .st-l-step-card { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,102,204,0.13); border-color: #d4e2f5; }
+.st-l-step-card { width: 100%; }
 .st-l-step-count { display: inline-block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #0066CC; margin-bottom: 8px; }
 .st-l-step-card h3 { font-size: 1.12rem; font-weight: 800; color: #0f172a; margin-bottom: 9px; line-height: 1.25; }
 .st-l-step-card p { font-size: 0.92rem; color: #56657a; line-height: 1.65; margin: 0; }
 
 /* ---------- Benefits split (image + feature rows) ---------- */
-.st-l-split { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 48px; align-items: center; }
-.st-l-split-media { position: relative; border-radius: 22px; overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08);
-  align-self: center; aspect-ratio: 76 / 62; }
+/* The media frame is intentionally tall and wide: it stretches the full height
+   of the feature column on the right and bleeds to the left screen edge so it
+   never looks like an awkward little square next to a tall stack of text. */
+.st-l-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 44px; align-items: stretch; }
+.st-l-split-media { position: relative; border-radius: 0 22px 22px 0; overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-left: none;
+  align-self: stretch; min-height: 100%;
+  margin-left: calc(-1 * max(1.5rem, (100vw - 1180px) / 2 + 1.5rem)); }
 .st-l-split-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .st-l-split-media::after { content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(8,17,32,0) 40%, rgba(8,17,32,0.55) 100%); }
@@ -667,11 +672,10 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-hero-visual { max-width: 460px; margin: 0 auto; width: 100%; }
   .st-l-final-grid { grid-template-columns: 1fr; gap: 36px; }
   .st-l-prob-grid, .st-l-steps, .st-l-ben, .st-l-rev-grid { grid-template-columns: repeat(2, 1fr); }
-  .st-l-step-connector { display: none; }
   .st-l-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .st-l-cs { grid-template-columns: 1fr; }
   .st-l-split { grid-template-columns: 1fr; gap: 28px; }
-  .st-l-split-media { max-height: 360px; }
+  .st-l-split-media { max-height: 360px; min-height: 280px; margin-left: 0; border-radius: 22px; border-left: 1px solid rgba(255,255,255,0.08); }
   .st-l-svc-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 680px) {
@@ -686,8 +690,12 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-topbar-back-text { display: none; }
   .st-l-feat { grid-template-columns: 44px 1fr; gap: 12px; padding: 16px; }
   .st-l-feat-ic { width: 44px; height: 44px; }
-  /* keep the hero dashboard flat (no 3D tilt) so it never overflows on phones */
-  .st-l-hero-visual .st-dashboard { transform: none; }
+  /* Mobile hero dashboard keeps a gentle 3D lean + depth shadow so it never
+     feels flat (matches homepage). A pure rotateX is safe horizontally. */
+  .st-l-hero-visual .st-dashboard {
+    transform: perspective(1400px) rotateX(4deg);
+    transform-origin: center top;
+  }
   .st-l-statsband .st-stats-inner { padding: 48px 0; }
   /* show sticky CTA only on small screens */
   .st-l-sticky { display: flex; }

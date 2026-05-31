@@ -145,15 +145,44 @@
     els.forEach(function (el) {
       obs.observe(el);
     });
-    // Fail-safe: if anything is still hidden after 4s (observer edge cases,
-    // print, etc.), reveal it so content is never stuck invisible.
+    // Fail-safe: reveal only elements that are already at or above the fold so
+    // nothing above the viewport is ever stuck hidden. Elements further down
+    // the page keep waiting for the observer, so they still animate on scroll
+    // (a blanket reveal here would kill all below-the-fold scroll animations).
     setTimeout(function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
       document
         .querySelectorAll(".st-reveal:not(.st-visible), .st-reveal-right:not(.st-visible)")
         .forEach(function (el) {
-          el.classList.add("st-visible");
+          if (el.getBoundingClientRect().top < vh) el.classList.add("st-visible");
         });
-    }, 4000);
+    }, 1400);
+  }
+
+  /* ---------- 2b. MOBILE PROBLEM-CARD SCROLL GLOW ---------- */
+  /* On desktop the problem cards glow on hover. Touch devices have no hover, so
+     we replicate that "sudden but smooth" glow as each card scrolls into the
+     middle of the viewport, then remove it as the card leaves. */
+  function initProbGlow() {
+    var cards = document.querySelectorAll(".st-l-prob-card");
+    if (!cards.length || prefersReduced || !("IntersectionObserver" in window)) return;
+    // Run the scroll-glow on touch / no-hover devices OR narrow viewports;
+    // wide hover-capable desktops keep the existing :hover glow instead.
+    var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+    if (!noHover && window.innerWidth > 768) return;
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          e.target.classList.toggle("st-l-glow", e.isIntersecting);
+        });
+      },
+      // A tall negative top/bottom margin means a card only counts as "in view"
+      // while it sits in the vertical centre band of the screen.
+      { threshold: 0, rootMargin: "-42% 0px -42% 0px" }
+    );
+    cards.forEach(function (c) {
+      obs.observe(c);
+    });
   }
 
   /* ---------- 3. ANIMATED STAT COUNTERS ---------- */
@@ -290,6 +319,7 @@
   /* ---------- INIT ---------- */
   function start() {
     initReveals();
+    initProbGlow();
     initCounters();
     initFaq();
     initScrollLines();
