@@ -23,6 +23,19 @@ X-Content-Type-Options = "nosniff"
 Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+# Durable global edge cache (Netlify CDN-only directive — does NOT affect the
+# browser Cache-Control, so page content still updates instantly on every deploy
+# because Netlify auto-purges the durable cache on each atomic deploy).
+# Why: this matters for pretty URLs (/, /locations/<city>/, the landing pages)
+# which DON'T end in ".html", so the "*.html" rule below never matched them and
+# they had no edge-persistence hint. Without this, the FIRST visitor to hit a
+# given Netlify edge location (a "cold" POP) waited on a slow origin fetch —
+# that cold time-to-first-byte is exactly what PageSpeed Insights measures (one
+# cold request) and is what was capping the mobile score in the high 80s. With
+# "durable", every edge worldwide keeps the page in a persistent cache, so even
+# a first-time POP serves it instantly. Real users already saw the fast (warm)
+# path; this makes the cold/PSI path fast too.
+Netlify-CDN-Cache-Control = "public, durable, s-maxage=31536000, stale-while-revalidate=60"
 
 # Cache static assets aggressively (images, fonts, CSS, JS)
 [[headers]]
