@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "npm run project-setup && node scripts/themeGenerator.js && hugo --gc --minify --baseURL ${URL}/"
+command = "npm run project-setup && node scripts/themeGenerator.js && hugo --gc --minify --baseURL ${URL}/ && node scripts/indexnow-ping.js"
 
 [build.environment]
 HUGO_VERSION = "0.157.0"
