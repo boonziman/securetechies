@@ -1235,9 +1235,17 @@
      so running it on idle / after load removes a forced-reflow long task from
      the FCP->LCP window without any visible change. */
   function stRevInit(){ buildDots(); resetAuto(); }
-  if('requestIdleCallback' in window){ requestIdleCallback(stRevInit, {timeout:2500}); }
-  else if(document.readyState==='complete'){ setTimeout(stRevInit, 300); }
-  else window.addEventListener('load', function(){ setTimeout(stRevInit, 300); });
+  /* Wait for `load` BEFORE scheduling idle work. Otherwise the idle-callback
+     timeout fires at ~2.5s on CPU-throttled mobile (which never goes idle),
+     landing this forced-reflow build right inside the FCP->LCP window and
+     delaying the hero paint. `load` fires after LCP, so this below-fold
+     carousel now wires up without competing with the largest paint. */
+  function stRevSchedule(){
+    if('requestIdleCallback' in window){ requestIdleCallback(stRevInit, {timeout:3000}); }
+    else { setTimeout(stRevInit, 300); }
+  }
+  if(document.readyState==='complete'){ stRevSchedule(); }
+  else window.addEventListener('load', stRevSchedule);
   window.addEventListener('resize', function(){ buildDots(); slideTo(Math.min(currentIndex, getMaxIndex())); });
   /* Pause auto-advance when reviews section is offscreen */
   if('IntersectionObserver' in window){
@@ -2023,8 +2031,16 @@
      paint so the querySelectorAll + observer wiring doesn't add a long task to
      the critical FCP->LCP window. timeout caps the wait so content never stays
      hidden. */
-  if('requestIdleCallback' in window){ requestIdleCallback(stInit, {timeout:2000}); }
-  else if(document.readyState==='complete'){ requestAnimationFrame(stInit); }
-  else window.addEventListener('load', stInit);
+  /* Wait for `load` BEFORE scheduling idle work so the querySelectorAll +
+     observer wiring runs AFTER the hero's largest paint, not during it. On
+     throttled mobile the idle-timeout would otherwise fire at ~2s, inside the
+     FCP->LCP window, pushing LCP later. The observers only need to exist before
+     the user scrolls to the below-fold sections, which is well after `load`. */
+  function stInitSchedule(){
+    if('requestIdleCallback' in window){ requestIdleCallback(stInit, {timeout:3000}); }
+    else { requestAnimationFrame(stInit); }
+  }
+  if(document.readyState==='complete'){ stInitSchedule(); }
+  else window.addEventListener('load', stInitSchedule);
 })();
 </script>
