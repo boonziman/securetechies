@@ -3,8 +3,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Data.Pages }}
   {{- $isThinTag := and (or (eq .Kind "term") (eq .Kind "taxonomy")) (eq .Data.Singular "tag") }}
-  {{- $isPagesSection := and (eq .Kind "section") (eq .Section "pages") }}
-  {{- if and (not .Params.noindex) .Permalink (not $isThinTag) (not $isPagesSection) }}
+  {{- $isNoindexSection := and (eq .Kind "section") (in (slice "pages" "landing" "sections") .Section) }}
+  {{- $isNoindexRobots := in (lower (or .Params.robots "")) "noindex" }}
+  {{- if and (not .Params.noindex) (not $isNoindexRobots) .Permalink (not $isThinTag) (not $isNoindexSection) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}
