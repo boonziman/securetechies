@@ -31,36 +31,20 @@
             return c.indexOf('cookie-consent=') === 0;
           });
         }
-        /* Reveal the banner only AFTER the page has loaded and the browser is
-           idle. The banner is position:fixed and (on mobile) nearly full-width
-           on a white background, so when it painted during the initial render
-           it became the Largest Contentful Paint element itself — adding ~640ms
-           of "element render delay" to LCP on every page. By holding it hidden
-           until after `load` + idle, the hero content paints first and settles
-           as the LCP element; the consent banner then fades in a beat later.
-           Functionally and visually identical for the user (the banner still
-           appears, in the same place, on the first visit) — it just no longer
-           sits in the critical LCP window. */
-        function revealConsent() {
-          if (hasConsent()) return;
+        /* Reveal the banner immediately during initial render. It is rendered
+           synchronously (not deferred) ON PURPOSE: the banner is a large white
+           text block, so it can be picked as the Largest Contentful Paint
+           element. LCP always records the LARGEST element regardless of when it
+           paints, so if the banner paints LATE (e.g. deferred to `load`) it
+           drags LCP later. Painting it at first render keeps any such LCP early.
+           It only shows on the first visit (until consent is stored). */
+        if (!hasConsent()) {
           cookieBox.classList.remove('cookie-box-hide');
           cookieButton.onclick = function () {
             var maxAge = {{ .expire_days }} * 24 * 60 * 60;
             document.cookie = 'cookie-consent=true; max-age=' + maxAge + '; path=/; SameSite=Lax';
             cookieBox.classList.add('cookie-box-hide');
           };
-        }
-        function scheduleConsent() {
-          if ('requestIdleCallback' in window) {
-            requestIdleCallback(revealConsent, { timeout: 2000 });
-          } else {
-            setTimeout(revealConsent, 800);
-          }
-        }
-        if (document.readyState === 'complete') {
-          scheduleConsent();
-        } else {
-          window.addEventListener('load', scheduleConsent);
         }
       })();
     </script>
