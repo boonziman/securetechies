@@ -33,7 +33,7 @@
 <!-- ============================ FEATURED IMAGE ============================ -->
 {{ with .Params.image }}
 <div class="st-post-featured-img">
-  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="eager" width="1200" height="630">
+  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="eager" fetchpriority="high" decoding="async" width="1200" height="630">
 </div>
 {{ end }}
 

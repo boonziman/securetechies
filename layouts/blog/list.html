@@ -35,7 +35,7 @@
     <a href="{{ $featured.RelPermalink }}" class="st-blog-featured st-reveal" aria-label="{{ $featured.Title }}">
       <div class="st-blog-featured-media">
         {{ with $featured.Params.image }}
-        <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $featured.Title }}" loading="eager" width="800" height="500">
+        <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $featured.Title }}" loading="eager" fetchpriority="high" decoding="async" width="800" height="500">
         {{ end }}
         <span class="st-blog-featured-tag">Featured</span>
       </div>
