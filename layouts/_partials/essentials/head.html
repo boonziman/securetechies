@@ -15,7 +15,11 @@
 {{ if $isBlog }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
+{{/* Load async (non render-blocking): media=print until onload flips it to all.
+     display=optional avoids any font-swap layout shift. Body text uses Inter,
+     so Fraunces arriving a moment later is imperceptible and never blocks paint. */}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=optional" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=optional" /></noscript>
 {{ end }}
 
 <!-- manifest -->
