@@ -333,6 +333,15 @@ html { scroll-behavior: smooth; }
   filter: blur(80px);
   opacity: 0.6;
   pointer-events: none;
+  /* Promote each blurred orb to its own GPU compositor layer. The orbs animate
+     transform infinitely; without this the expensive blur(80px) was being
+     re-rasterized on the main thread every frame DURING the LCP paint window,
+     inflating "Rendering" time on throttled mobile. With will-change the blur
+     is rasterized ONCE and subsequent frames are pure GPU compositing — this
+     frees the main thread to paint the LCP text sooner. Purely a rendering
+     optimization: the visual result (animation, blur, position) is identical. */
+  will-change: transform;
+  transform: translateZ(0);
 }
 .st-orb-1 {
   width: 520px; height: 520px;
