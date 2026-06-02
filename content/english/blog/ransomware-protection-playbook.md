@@ -124,3 +124,10 @@ Ransomware feels terrifying because it's sudden and total. But strip away the dr
 Close those openings, keep a tested backup the attackers can't touch, and you turn a business-ending event into a bad afternoon. That's the whole goal.
 
 If you're not confident your backups would actually save you, or you're not sure whether MFA and patching are properly handled, that uncertainty is itself the risk. [Book a free security assessment](/contact/) and we'll show you exactly where your gaps are, in plain language, before an attacker finds them first.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on ransomware defense, these primary sources are worth bookmarking:
+
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Protect, Detect, Respond, and Recover model behind a ransomware playbook.
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how ransomware actually breaks in.

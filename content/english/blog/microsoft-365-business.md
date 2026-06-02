@@ -121,3 +121,11 @@ Can a small business set up Microsoft 365 themselves? The basics, sure. The trou
 Microsoft 365 is one of the best tools a modern business can run on, but only when it's set up and secured properly. Pick Business Standard, or Premium if security matters, turn on the protections Microsoft leaves off, add a real backup, and treat it as a living system rather than a one-time install.
 
 Not sure whether your Microsoft 365 is actually locked down, or whether your data would survive a deleted-file disaster? [Get a free review](/contact/) and we'll check your setup against these best practices and tell you exactly what's solid and what needs attention, in plain English.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on securing Microsoft 365, these primary sources are worth bookmarking:
+
+- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — email and collaboration threat protection settings.
+- **[Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/)** — identity, conditional access, and MFA configuration.
+- **[Microsoft Purview](https://learn.microsoft.com/en-us/purview/)** — data protection, retention, and compliance for your tenant.

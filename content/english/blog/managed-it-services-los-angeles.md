@@ -101,3 +101,10 @@ If you're not sure whether you've outgrown your current setup, a few signs make 
 The fear of a messy transition keeps a lot of businesses stuck with support they've outgrown, but a professional onboarding is calm and methodical. A good Los Angeles provider runs the switch in parallel with your existing setup so there's never a gap. The first week is discovery — documenting every device, user, server, and cloud service you have. The second deploys monitoring and security tools across your environment. The remaining time handles cleanup, verifies backups, closes urgent security gaps, and transfers knowledge so the new team knows your business cold. Most onboardings take two to four weeks, and the whole point is that your team feels the benefits without ever feeling the disruption. By the end, you've traded a pile of unknowns for a documented, monitored, secured environment and a team that actually knows what you have.
 
 Ready to make technology a strength instead of a stress point? [Contact Secure Techies](/contact/) for a free assessment of your IT environment and a clear, flat-fee plan built for your Los Angeles business.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on managed IT, these sources are worth bookmarking:
+
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management foundation a good managed-IT program is built on.
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on managed services and IT operating models.

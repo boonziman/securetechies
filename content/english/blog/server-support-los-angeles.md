@@ -102,3 +102,10 @@ If there's one idea worth taking away from all of this, it's that the cheapest-l
 ## Keep your infrastructure running
 
 Your servers are too important to manage reactively. [Contact Secure Techies](/contact/) for professional server support in Los Angeles — proactive monitoring, maintenance, and recovery planning that keeps your infrastructure online and secure.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on server administration and hardening, these sources are worth bookmarking:
+
+- **[Microsoft Learn — Windows Server](https://learn.microsoft.com/en-us/windows-server/)** — official documentation for deploying, securing, and maintaining servers.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management foundation behind proactive server management.

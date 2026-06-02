@@ -122,3 +122,11 @@ For most small businesses, the practical path is to combine a compliant payment 
 If your business takes card payments, PCI DSS applies to you, full stop. But it doesn't have to be overwhelming. The twelve requirements are really just solid security fundamentals, the validation burden is light for most small businesses, and the single smartest move — keeping card data out of your own systems by using compliant providers, encryption, and tokenization — makes the whole thing both easier and safer. The cost of doing this well is small. The cost of a breach while non-compliant can be ruinous.
 
 If you're not sure whether your business is PCI compliant, or how much card data is sitting in your systems right now, we can help you find out. [Reach out for a free assessment](/contact/) and we'll review how you handle card payments, where your real exposure is, and how to lock it down — in plain English, with no jargon.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on PCI DSS, these primary sources are worth bookmarking:
+
+- **[PCI Security Standards Council — Document Library](https://www.pcisecuritystandards.org/document_library/)** — the official standards, SAQs, and guidance documents.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a complementary risk-management foundation for protecting cardholder data.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on the everyday controls PCI also requires.

@@ -107,3 +107,11 @@ That integration is what separates monitoring that protects you from monitoring 
 Your business's credentials are almost certainly leaking somewhere, through breaches of other companies you can't control — that's simply the reality of the modern internet. You can't prevent every leak, but you can refuse to be blindsided by them. Dark web monitoring gives you the early warning, and paired with MFA and strong, unique passwords, it turns leaked credentials from a hidden threat into a routine task: spot it, reset it, move on. What you can't do is un-leak the data, so the entire game is about finding out fast and acting faster.
 
 If you'd like to know what of your business's information may already be exposed on the dark web, we can check. [Reach out for a free security review](/contact/) and we'll see what's out there and show you exactly how to lock down anything that's leaked — in plain English, with no scare tactics.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on exposed credentials and identity theft, these primary sources are worth bookmarking:
+
+- **[IdentityTheft.gov (FTC)](https://www.identitytheft.gov/)** — the federal recovery resource if business or personal data is exposed.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on passwords, MFA, and locking down accounts after a leak.
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how stolen credentials fuel breaches.

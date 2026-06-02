@@ -179,3 +179,12 @@ That's the real product: not a stack of technology, but the freedom to practice 
 
 If you're not certain your firm's IT meets that bar, you don't have to guess. [Schedule a free assessment](/contact/) and we'll review your security, your backups, and your compliance posture, then tell you plainly where you stand and what, if anything, needs to change. No jargon, no scare tactics, just a clear picture of how well your firm's most sensitive asset, its clients' trust, is being protected.
 
+## Authoritative resources
+
+For deeper, authoritative guidance on law firm technology and security, these sources are worth bookmarking:
+
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a structured way to protect confidential client data.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed essentials for protecting sensitive information.
+- **[FTC — Cybersecurity for Small Business](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity)** — practical safeguards that map well to small and midsize firms.
+- **[Microsoft Purview](https://learn.microsoft.com/en-us/purview/)** — compliance, data governance, and eDiscovery tools relevant to legal work.
+

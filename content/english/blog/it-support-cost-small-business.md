@@ -156,3 +156,11 @@ If you want a planning number, here it is. A typical small business in 2026 shou
 That number can feel like a lot until you compare it to the cost of a single serious outage or one successful ransomware attack, either of which can dwarf a year of support in a single afternoon.
 
 The most useful thing you can do is get a quote based on your actual environment rather than a generic range. [Reach out for a free, no-pressure assessment](/contact/) and we'll look at your real setup and give you an honest number, including telling you if you're currently overpaying somewhere else.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on IT support costs and value, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on IT spending benchmarks and operating models.
+- **[U.S. Bureau of Labor Statistics — Computer and IT](https://www.bls.gov/ooh/computer-and-information-technology/)** — current wage data behind the true cost of in-house IT staff.
+- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — cost-effective security resources scaled for small businesses.

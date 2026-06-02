@@ -102,3 +102,10 @@ Not every VoIP rollout goes smoothly, and the difference usually comes down to t
 For the overwhelming majority of businesses, the answer is yes — but it's worth being honest about the one real dependency: VoIP lives and dies by your internet connection. A company in an area with unreliable internet and no backup connection needs to address that first, because no phone system can carry calls over a link that isn't there. The good news is that this is a solvable problem: a business-grade primary connection, a backup internet line or cellular failover, and a network properly configured to prioritize voice traffic together make VoIP every bit as dependable as the old copper lines, and far more resilient when something goes wrong. The businesses that struggle with VoIP are almost always the ones that bolted it onto a weak or misconfigured network; the ones that thrive treated the network as the foundation and built the phones on top of it. Get the groundwork right and VoIP isn't just a cheaper phone bill — it's a genuine upgrade to how your whole team communicates.
 
 Ready to modernize your phones and cut your bill? [Contact Secure Techies](/contact/) to design and deploy a business VoIP system that fits how your team actually works.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on business VoIP, these sources are worth bookmarking:
+
+- **[FCC — Cybersecurity for Small Businesses](https://www.fcc.gov/communications-business-opportunities/cybersecurity-small-businesses)** — federal guidance relevant to securing voice and data services.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a foundation for protecting the network your VoIP system runs on.

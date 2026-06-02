@@ -103,3 +103,11 @@ The deliverable that matters most is that roadmap. It should read less like a te
 The return on IT consulting rarely shows up as a flashy new system. It shows up in the disasters that *didn't* happen. The migration that went smoothly because it was planned. The breach that didn't occur because a gap was closed first. The $30,000 that wasn't wasted on the wrong platform because someone with experience said "not that one" before the check was written. The compliance deadline that was met calmly instead of in a panic. Good consulting is a bit like good insurance and good coaching rolled together — you don't always see it working, but you feel its absence sharply when a preventable problem blows up a quarter. For a growing Los Angeles business, the question usually isn't whether you can afford strategic guidance. It's whether you can afford to keep making six-figure technology decisions on instinct.
 
 Want technology that drives your business forward instead of holding it back? [Contact Secure Techies](/contact/) for IT consulting and virtual CIO services built for Los Angeles businesses.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on IT strategy and consulting, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research and frameworks for aligning technology with business goals.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management foundation any sound IT strategy should rest on.
+- **[CompTIA](https://www.comptia.org/)** — industry research on IT trends and the skills behind good advice.

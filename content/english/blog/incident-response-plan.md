@@ -106,3 +106,11 @@ For businesses without the in-house expertise to build and run all of this, that
 You can't guarantee your business will never face a cybersecurity incident, but you can guarantee how prepared you'll be when one comes. An incident response plan decides your reaction in advance — the phases, the roles, the contacts — so that a crisis becomes a checklist instead of a panic. Build it, name who does what, write down your key contacts, and practice it at least once a year. It's one of the cheapest, highest-impact forms of protection there is, and it's the difference between a bad day and a business-ending one.
 
 If you don't have an incident response plan, or you're not confident the one you have would actually hold up under pressure, we can help. [Reach out for a free consultation](/contact/) and we'll help you build and test a plan that fits your business — in plain English, so you know exactly what happens when something goes wrong.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on incident response, these primary sources are worth bookmarking:
+
+- **[NIST SP 800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final)** — the federal blueprint for building and running an incident response process.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed guidance to prepare for and reduce incidents.
+- **[FBI Internet Crime Complaint Center (IC3)](https://www.ic3.gov/)** — where to report cyber incidents and find current threat advisories.

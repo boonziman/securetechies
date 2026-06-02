@@ -105,3 +105,11 @@ A vCIO is executive-level technology strategy made accessible to businesses that
 If your technology decisions feel reactive, your IT budget feels like guesswork, or you simply want someone who understands both business and technology guiding your direction, that's exactly what a vCIO provides.
 
 Curious whether your business would benefit from strategic IT guidance? [Reach out for a free conversation](/contact/) and we'll talk through where your technology stands today and whether a vCIO would actually move the needle for you, with no obligation and no jargon.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on IT leadership and strategy, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research and frameworks that inform CIO-level decisions.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management strategy a vCIO helps you implement.
+- **[CompTIA](https://www.comptia.org/)** — industry research on IT trends and planning.

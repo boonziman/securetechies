@@ -116,3 +116,11 @@ For businesses that would rather not roll this out and manage it themselves, tha
 Reused and weak passwords cause more breaches than any sophisticated attack, and the fix is refreshingly simple: long, unique passwords for every account, generated and stored by a password manager, with MFA on top. It costs little, takes minimal effort to set up, and closes the door that the majority of attackers walk through.
 
 If you're not sure how exposed your business is — how many reused or breached passwords are floating around your team right now — we can help you find out. [Reach out for a free security review](/contact/) and we'll show you where your credentials stand and exactly how to lock them down, in plain English.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on password security, these primary sources are worth bookmarking:
+
+- **[NIST SP 800-63B: Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)** — modern, evidence-based password rules (length over forced complexity).
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on strong passwords, password managers, and MFA.
+- **[Have I Been Pwned](https://haveibeenpwned.com/)** — check whether your accounts appear in known data breaches.

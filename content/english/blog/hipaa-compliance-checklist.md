@@ -149,3 +149,10 @@ Our compliance team specializes in helping healthcare organizations meet and mai
 HIPAA compliance doesn't have to be overwhelming. With the right partner, you protect your patients' data and your organization's reputation at the same time.
 
 **Need help with HIPAA compliance?** [Contact Secure Techies](/contact/) for a free consultation.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on HIPAA, these primary sources are worth bookmarking:
+
+- **[HHS — HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html)** — the official guidance on the Privacy, Security, and Breach Notification Rules.
+- **[NIST SP 800-66: Implementing the HIPAA Security Rule](https://csrc.nist.gov/pubs/sp/800/66/r2/final)** — the federal handbook for putting the Security Rule into practice.

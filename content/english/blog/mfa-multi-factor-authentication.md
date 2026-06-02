@@ -123,3 +123,11 @@ For businesses that would rather not manage all of this themselves, that's exact
 Multi-factor authentication is rare in security because it's both cheap and devastatingly effective. It turns a stolen password — the most common way businesses get breached — into a dead end. It takes minutes to enable, costs little to nothing, and stops the overwhelming majority of the attacks aimed at you every day.
 
 If you're not sure whether MFA is turned on everywhere it should be, or whether your most sensitive accounts are using strong enough factors, we can help you find out. [Get a free security review](/contact/) and we'll map out exactly where you're protected, where you're exposed, and what to lock down first — in plain English, with no scare tactics.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on multi-factor authentication, these primary sources are worth bookmarking:
+
+- **[NIST SP 800-63B: Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)** — the federal standard for authentication and which factors are strong.
+- **[Microsoft Entra — Authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)** — how to deploy MFA and phishing-resistant sign-in.
+- **[OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)** — practical authentication and session-management best practices.

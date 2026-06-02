@@ -104,3 +104,10 @@ You don't need to be a security engineer to spot trouble. A few warning signs su
 ## Build a network attackers can't walk through
 
 Your network security is only as strong as its weakest control — and most businesses don't discover the weak one until it's exploited. A proper assessment finds those gaps first: the unsegmented guest Wi-Fi, the firewall running three-year-old firmware, the remote access secured by a password alone. [Contact Secure Techies](/contact/) for a network security assessment of your Los Angeles business and a managed plan that locks the front door, builds walls inside, and watches it all around the clock.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on network security, these primary sources are worth bookmarking:
+
+- **[NIST SP 800-41: Guidelines on Firewalls and Firewall Policy](https://csrc.nist.gov/pubs/sp/800/41/r1/final)** — the federal reference for firewall design and segmentation.
+- **[CIS Controls](https://www.cisecurity.org/controls)** — a prioritized set of safeguards that hardens networks effectively.

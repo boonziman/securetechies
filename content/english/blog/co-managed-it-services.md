@@ -143,3 +143,12 @@ The right partner treats your internal team as colleagues, communicates openly, 
 ## Strengthen your team without replacing it
 
 Co-managed IT gives your in-house staff reinforcements exactly where they need them — the specialized skills, the round-the-clock coverage, and the enterprise tools that are impractical to build alone, all while your own people keep the institutional knowledge and the relationships that make your business run. Done right, it makes your existing IT team more effective, not redundant. [Contact Secure Techies](/contact/) to design a co-managed IT partnership that extends your team's reach, fills your skill gaps, and scales with your business.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on co-managed IT and staffing models, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on IT operating models and co-sourcing.
+- **[CompTIA](https://www.comptia.org/)** — industry research and certifications behind a credible IT team.
+- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — practical security resources scaled for smaller in-house teams.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a shared language for dividing security work between your team and a partner.

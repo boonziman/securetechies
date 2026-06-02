@@ -103,3 +103,11 @@ For most businesses, getting CCPA-ready means combining legal/policy work with t
 California's privacy laws give residents real control over their personal data, and if your business is large enough to cross a threshold, those rights are enforceable against you — with fines that scale per consumer and a breach lawsuit provision that adds serious risk. But compliance is achievable: know your data, disclose clearly, honor consumer requests, secure what you hold, and train your team. For LA-area businesses especially, this isn't a distant regulatory abstraction — your customers are exactly the people these laws protect.
 
 If you're not sure whether the CCPA applies to you, or whether you'd survive a consumer request or a breach, let's find out together. [Reach out for a free assessment](/contact/) and we'll review the personal data you hold, where your gaps and exposure are, and how to get compliant and secure — in plain English, without the legal headache.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on California privacy compliance, these primary sources are worth bookmarking:
+
+- **[California Privacy Protection Agency](https://cppa.ca.gov/)** — the regulator that enforces and updates the CCPA/CPRA rules.
+- **[NIST Privacy Framework](https://www.nist.gov/privacy-framework)** — a structured way to manage privacy risk alongside your security program.
+- **[FTC — Privacy and Security](https://www.ftc.gov/business-guidance/privacy-security)** — federal guidance on protecting and handling consumer data.

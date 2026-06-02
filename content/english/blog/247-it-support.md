@@ -107,3 +107,10 @@ That peace of mind, knowing someone's always watching, is worth a surprising amo
 The deciding question is simple: what would it cost you if something broke at 2am and no one knew until morning? Answer that honestly and you'll know which coverage you need.
 
 Not sure whether round-the-clock coverage makes sense for your business? [Reach out for a free consultation](/contact/) and we'll look at how you operate, what your downtime risk really is, and give you a straight recommendation, even if that's "you don't need 24/7 yet."
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on round-the-clock IT coverage and monitoring, these sources are worth bookmarking:
+
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Detect, Respond, and Recover functions that 24/7 monitoring is built to support.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — practical, federally backed guidance on the everyday security habits that continuous monitoring reinforces.

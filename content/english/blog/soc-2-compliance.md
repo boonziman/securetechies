@@ -101,3 +101,11 @@ The practical reality is that preparing for SOC 2 alongside your normal operatio
 SOC 2 is the framework that turns "trust us, we're secure" into independently verified proof — and in the software and technology world, it's become the price of admission for serious enterprise business. It's voluntary on paper but often mandatory in practice. Choose the right Trust Services Criteria, aim for a Type II report if you're selling to enterprises, and start before a lost deal forces your hand. Done right, your SOC 2 report stops being a compliance chore and becomes a competitive advantage.
 
 If enterprise prospects are starting to ask whether you're SOC 2 compliant — or you want to be ready before they do — we can help you build toward it. [Get in touch for a free assessment](/contact/) and we'll map out where you stand, what's missing, and the most efficient path to a report your customers will trust.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on SOC 2, these primary sources are worth bookmarking:
+
+- **[AICPA — SOC for Service Organizations](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2)** — the body that defines the SOC 2 standard and reporting framework.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a control foundation that maps cleanly to the SOC 2 Trust Services Criteria.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on the everyday safeguards auditors expect to see.

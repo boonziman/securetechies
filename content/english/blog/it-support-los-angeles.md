@@ -109,3 +109,11 @@ None of this is glamorous, and none of it generates a dramatic "we saved the day
 One underrated sign of a strong IT support company is how seriously they take onboarding. A provider who shows up, glances around, and starts taking tickets doesn't really understand your environment — which means they'll be slow and error-prone when it counts. A mature provider begins with a structured onboarding: documenting every device, user, server, and cloud service; mapping your network; reviewing your security posture and backups; and identifying the urgent risks to fix first. This is unglamorous groundwork, but it's what lets them support you quickly and confidently later. When you evaluate providers, ask what their first 30 days look like. The thorough answer tells you you're dealing with professionals.
 
 Tired of waiting on hold while your team sits idle? [Contact Secure Techies](/contact/) for responsive, local IT support built for Los Angeles businesses, with guaranteed response times and a flat monthly fee.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on reliable IT support and maintenance, these sources are worth bookmarking:
+
+- **[CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)** — the federal list of actively exploited flaws that timely patching closes.
+- **[Microsoft Learn — Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/)** — official administration and support documentation for the tools most LA businesses run.
+- **[CompTIA](https://www.comptia.org/)** — industry research and the certifications behind a competent support team.

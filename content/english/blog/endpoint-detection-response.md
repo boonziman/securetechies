@@ -113,3 +113,11 @@ The goal isn't to chase every acronym. It's to make sure the doorways into your 
 Traditional antivirus was built for a world that no longer exists — one where threats were few, static, and easy to catalog. Today's attacks are constant, disguised, and often brand new, and signature-based antivirus is blind to exactly the threats that matter most. EDR closes that gap by watching behavior instead of fingerprints, catching novel attacks, and giving you the power to respond. Delivered as a managed service, it's now within reach of any small business.
 
 If you're not sure whether your endpoints are protected by modern detection or by yesterday's antivirus, we can tell you. [Reach out for a free security review](/contact/) and we'll assess exactly what's guarding your devices and where your real gaps are — in plain English, with no scare tactics.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on endpoint detection and response, these primary sources are worth bookmarking:
+
+- **[Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/)** — how modern EDR detects, investigates, and responds to threats on devices.
+- **[MITRE ATT&CK](https://attack.mitre.org/)** — the knowledge base of real attacker techniques that good EDR is measured against.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Detect and Respond functions that EDR delivers in practice.

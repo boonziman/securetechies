@@ -115,3 +115,11 @@ For a small business, the practical path is usually to work with a provider who 
 Zero trust isn't a buzzword to be afraid of — it's the security world catching up to reality. The perimeter is gone, work happens everywhere, and pretending the inside of your network is automatically safe is how breaches turn into catastrophes. "Never trust, always verify" simply means making every access request prove itself, every time, so that one stolen password or one infected laptop can't bring the whole business down.
 
 You don't have to get there in one leap. If you'd like to know where your business stands on the road to zero trust and which steps would give you the most protection for the least effort, [reach out for a free assessment](/contact/). We'll show you what's already working, what's exposed, and the smartest order to fix it.
+
+## Authoritative resources
+
+For deeper, authoritative guidance on zero trust, these primary sources are worth bookmarking:
+
+- **[Microsoft Zero Trust Guidance](https://learn.microsoft.com/en-us/security/zero-trust/)** — a practical model for implementing zero trust with tools many businesses already own.
+- **[CISA Zero Trust Maturity Model](https://www.cisa.gov/zero-trust-maturity-model)** — the federal roadmap for advancing zero trust step by step.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the broader risk-management context zero trust fits into.

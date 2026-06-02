@@ -118,3 +118,9 @@ At Secure Techies, we help businesses across Southern California stay protected 
 One idea ties this whole list together and changes how you think about defense. A *threat* is something out in the world that could harm you — a ransomware crew, a phishing campaign, a malicious insider. A *vulnerability* is a weakness on your side that lets a threat succeed — an unpatched server, a reused password, a misconfigured cloud bucket, an untrained employee. Here's the liberating part: you can't control the threats. New ones emerge every week no matter what you do, and worrying about each headline is exhausting and pointless. What you *can* control is your vulnerabilities. Every threat in this article, however sophisticated, still needs a gap to walk through — a stolen credential, an open hole, a human who clicks. Close enough of those gaps and even a clever attacker runs out of doors. That's why effective security isn't about chasing the threat of the month; it's the steady, unglamorous discipline of reducing your own weak points faster than attackers can find them. The five threats above will keep evolving. The handful of controls that close the gaps they rely on — MFA, backups, patching, training, monitoring — stay remarkably constant, which is exactly what makes them worth investing in.
 
 **Don't wait for an attack to think about security.** [Schedule your free risk assessment](/contact/) today.
+
+## Authoritative resources
+
+For deeper, vendor-neutral data on the current threat landscape, these primary sources are worth bookmarking:
+
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — the most-cited annual analysis of how breaches actually happen.

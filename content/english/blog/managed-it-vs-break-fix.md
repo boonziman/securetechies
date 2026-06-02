@@ -105,3 +105,10 @@ If your downtime cost is low, your data is minimal, and a surprise bill wouldn't
 Break-fix sells you repairs. Managed IT sells you uptime. For a tiny, low-tech business, repairs are all you need. For everyone else, the value isn't in the fixing, it's in the not-breaking, and that's the part break-fix can never deliver.
 
 If you're not sure which side of the line your business falls on, that's exactly the kind of thing we'll tell you straight. [Get in touch for a free assessment](/contact/) and we'll look at your actual setup, your actual downtime risk, and tell you honestly which model fits, even if the honest answer is "you don't need us yet."
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on IT service models, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on proactive vs. reactive IT operating models.
+- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — why ongoing, proactive security beats break-fix for smaller organizations.

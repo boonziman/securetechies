@@ -115,3 +115,11 @@ Backups answer "is the data safe?" Disaster recovery answers "how fast can we ge
 Do that, and a disaster that would close some competitors becomes, for you, a controlled, recoverable event. That resilience is the entire point.
 
 If you're not confident your backups would actually restore, or you've never put a real recovery plan to the test, that uncertainty is the risk. [Get a free continuity assessment](/contact/) and we'll review your backups, your recovery readiness, and your real-world RTO, then tell you exactly where the gaps are before a bad day finds them for you.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on backup and disaster recovery, these primary sources are worth bookmarking:
+
+- **[NIST SP 800-34: Contingency Planning Guide](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final)** — the federal standard for building and testing a contingency and recovery plan.
+- **[CISA #StopRansomware](https://www.cisa.gov/stopransomware)** — why isolated, tested backups are the single most important ransomware defense.
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Recover function and how it fits the rest of your security program.

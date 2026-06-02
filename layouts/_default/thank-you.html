@@ -31,4 +31,16 @@
     gtag("event", "generate_lead", { "lead_source": "landing_page", "value": 1, "currency": "USD" });
   }
 </script>
+
+<!-- Event snippet for Website Lead Form conversion page (Google Ads).
+     This is the dedicated conversion page reached after a successful lead-form
+     submission (both the contact form and the landing-page forms redirect here
+     via Netlify), so the conversion fires once per lead and not on ordinary
+     page views. The global Google tag (AW-1005225620) is loaded site-wide in
+     essentials/head.html. -->
+<script>
+  if (typeof gtag === "function") {
+    gtag('event', 'conversion', {'send_to': 'AW-1005225620/j77hCJSxsrccEJSNqt8D'});
+  }
+</script>
 {{ end }}

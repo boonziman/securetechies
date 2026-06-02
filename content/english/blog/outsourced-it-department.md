@@ -119,3 +119,10 @@ A single in-house IT hire is the most expensive way to get the narrowest coverag
 The right answer depends on your size, your industry, and how much you rely on technology, and the honest comparison is worth running before you post a job listing.
 
 Want help running that comparison for your specific situation? [Reach out for a free consultation](/contact/) and we'll look at what you actually need, what it would cost in-house versus outsourced, and give you a straight recommendation, even if that recommendation is to keep what you've got.
+
+## Authoritative resources
+
+For deeper, vendor-neutral perspective on outsourcing IT, these sources are worth bookmarking:
+
+- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on outsourcing and IT operating models.
+- **[CompTIA](https://www.comptia.org/)** — industry research and certifications behind a credible outsourced team.

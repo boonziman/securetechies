@@ -128,3 +128,12 @@ BEC sits at the intersection of email security, identity protection, and human a
 Business email compromise is the costliest cyber threat most businesses face, and it succeeds precisely because it doesn't look like an attack. There's often no malware to catch — just a believable email exploiting trust, authority, and urgency to redirect real money into a criminal's hands. The defense isn't a single product; it's a combination of strong identity controls, smart email security, and above all a simple, mandatory habit: verify every payment change through a trusted channel before you act.
 
 If you're not sure whether your business has the controls and habits to stop a BEC scam, we can help you find the gaps before an attacker does. [Reach out for a free security review](/contact/) and we'll walk through your email security and payment processes and show you exactly where you stand — in plain English, with no scare tactics.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on stopping business email compromise, these primary sources are worth bookmarking:
+
+- **[FTC — Cybersecurity for Small Business](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity)** — covers business email imposters, payment-verification policies, and email authentication.
+- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — configuring anti-phishing, impersonation protection, and SPF/DKIM/DMARC.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on phishing-resistant habits and account protection.
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how BEC and social engineering drive real-world losses.

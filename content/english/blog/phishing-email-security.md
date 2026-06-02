@@ -104,3 +104,10 @@ No defense is perfect, so every business should have a simple plan for the momen
 ## Close the door attackers use most
 
 Email is the front door of nearly every cyberattack. [Contact Secure Techies](/contact/) to deploy layered phishing and email protection for your business, complete with employee training that turns your team into a strong final line of defense.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on phishing and email security, these primary sources are worth bookmarking:
+
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on recognizing and reporting phishing.
+- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — anti-phishing policies and SPF/DKIM/DMARC email authentication.

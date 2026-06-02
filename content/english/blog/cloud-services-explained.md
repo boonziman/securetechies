@@ -115,3 +115,10 @@ Cloud services mean renting computing capability instead of owning and maintaini
 The cloud isn't automatically cheaper or automatically secure. It's a powerful tool that rewards good management and punishes carelessness, which is exactly why having someone who knows how to configure, secure, and optimize it pays off.
 
 Thinking about moving to the cloud, or suspect your current cloud setup is overpriced or under-secured? [Get a free cloud assessment](/contact/) and we'll review where you stand, what a smart migration would look like, and whether your data is actually as safe as you think, all in plain English.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on cloud strategy and security, these primary sources are worth bookmarking:
+
+- **[Microsoft Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/)** — a proven blueprint for planning and governing a cloud migration.
+- **[Cloud Security Alliance](https://cloudsecurityalliance.org/)** — vendor-neutral best practices and the widely used Cloud Controls Matrix.

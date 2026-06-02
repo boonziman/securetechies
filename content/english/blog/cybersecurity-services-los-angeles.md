@@ -109,3 +109,11 @@ One more reason to take layered security seriously: insurers now demand it. Cybe
 If you've never had one, an assessment isn't a sales gimmick — it's a structured review that turns vague worry into a specific, prioritized to-do list. A good one looks at your endpoints and whether they're protected and patched, your email security configuration, whether MFA is enforced everywhere it should be, how your backups are configured and whether they've ever been test-restored, who has access to what, and how your staff would react to a realistic phishing attempt. You come out of it knowing exactly where you stand and what to fix first, ranked by risk. That clarity alone is worth the exercise, whether or not you change anything else.
 
 Don't wait for a breach to find out where you're exposed. [Contact Secure Techies](/contact/) for a cybersecurity assessment of your Los Angeles business and a clear, layered plan to close the gaps.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on layered cybersecurity, these primary sources are worth bookmarking:
+
+- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Govern, Identify, Protect, Detect, Respond, and Recover model behind a layered defense.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed essentials every business should have in place.
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual evidence on how breaches actually happen.

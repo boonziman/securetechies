@@ -119,3 +119,11 @@ Not all security awareness training is equal. The cheapest options are little mo
 ## Turn your team into a firewall
 
 Your employees will always be targeted. The question is whether they're ready. Done right, security awareness training is the rare investment that gets *cheaper* relative to its value every month, as click rates fall and reporting rates climb. [Contact Secure Techies](/contact/) to launch continuous security awareness training and phishing simulations that turn your team into your strongest line of defense.
+
+## Authoritative resources
+
+For deeper, vendor-neutral guidance on security awareness and human risk, these primary sources are worth bookmarking:
+
+- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — year after year, it shows the human element behind most breaches.
+- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — the four habits every awareness program should reinforce.
+- **[SANS](https://www.sans.org/)** — widely respected security training and awareness research.
