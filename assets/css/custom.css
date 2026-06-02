@@ -330,41 +330,44 @@ html { scroll-behavior: smooth; }
 
 /* Floating Orbs */
 .st-orb {
-  filter: blur(80px);
   opacity: 0.6;
   pointer-events: none;
-  /* Promote each blurred orb to its own GPU compositor layer. The orbs animate
-     transform infinitely; without this the expensive blur(80px) was being
-     re-rasterized on the main thread every frame DURING the LCP paint window,
-     inflating "Rendering" time on throttled mobile. With will-change the blur
-     is rasterized ONCE and subsequent frames are pure GPU compositing — this
-     frees the main thread to paint the LCP text sooner. Purely a rendering
-     optimization: the visual result (animation, blur, position) is identical. */
+  /* NO filter:blur() here. A large filter:blur(80px) is one of the most
+     expensive paint operations on a throttled mobile GPU/CPU — it was being
+     rasterized in the critical FCP->LCP window on every page that has a hero
+     (home, all locations, landings), inflating "Style & Layout"/"Rendering"
+     and pushing LCP past the 2.5s "good" boundary (causing scores to bounce
+     86<->100 between runs). The soft glow is now produced ENTIRELY by the
+     multi-stop radial gradients below, which the compositor can paint almost
+     for free. The visual result — a soft coloured glow that fades into the
+     dark hero background — is indistinguishable from the blurred version,
+     because each gradient already fades smoothly to transparent. The orbs
+     still animate via transform on their own GPU layer. */
   will-change: transform;
   transform: translateZ(0);
 }
 .st-orb-1 {
   width: 520px; height: 520px;
   top: -10%; right: -8%;
-  background: radial-gradient(circle, rgba(0,102,204,0.7) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,102,204,0.45) 0%, rgba(0,102,204,0.22) 38%, transparent 78%);
   animation: orbFloat1 8s ease-in-out infinite;
 }
 .st-orb-2 {
   width: 380px; height: 380px;
   bottom: 5%; left: -6%;
-  background: radial-gradient(circle, rgba(99,102,241,0.65) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.42) 0%, rgba(99,102,241,0.2) 38%, transparent 78%);
   animation: orbFloat2 10s ease-in-out infinite;
 }
 .st-orb-3 {
   width: 260px; height: 260px;
   top: 40%; left: 38%;
-  background: radial-gradient(circle, rgba(0,200,255,0.45) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,200,255,0.3) 0%, rgba(0,200,255,0.14) 38%, transparent 78%);
   animation: orbFloat3 7s ease-in-out infinite;
 }
 .st-orb-4 {
   width: 180px; height: 180px;
   bottom: 15%; right: 15%;
-  background: radial-gradient(circle, rgba(167,139,250,0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(167,139,250,0.33) 0%, rgba(167,139,250,0.16) 38%, transparent 78%);
   animation: orbFloat2 12s ease-in-out infinite;
 }
 @keyframes orbFloat1 {
