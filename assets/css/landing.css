@@ -612,13 +612,15 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
 .st-l-step-card p { font-size: 0.92rem; color: #56657a; line-height: 1.65; margin: 0; }
 
 /* ---------- Benefits split (image + feature rows) ---------- */
-/* The media is a clean, sharp-cornered frame that stretches to match the full
-   height of the feature list beside it, so the photo + cards read as one
-   cohesive block (no awkward little square, no full-bleed crop). */
-.st-l-split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: stretch; }
+/* The media is a clean, sharp-cornered portrait frame with a FIXED aspect ratio,
+   vertically centered beside the feature list. Locking the ratio (instead of
+   letting the box stretch to the full height of the feature column) stops the
+   photo from being squeezed into a tall sliver that crops out most of the image
+   on desktop. */
+.st-l-split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
 .st-l-split-media { position: relative; border-radius: 2px; overflow: hidden; display: flex;
   box-shadow: 0 30px 70px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08);
-  align-self: stretch; min-height: 460px; }
+  align-self: center; aspect-ratio: 4 / 5; width: 100%; }
 .st-l-split-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .st-l-split-media::after { content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(8,17,32,0) 40%, rgba(8,17,32,0.55) 100%); }
@@ -711,7 +713,7 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .st-l-cs { grid-template-columns: 1fr; }
   .st-l-split { grid-template-columns: 1fr; gap: 28px; }
-  .st-l-split-media { max-height: 380px; min-height: 280px; border-radius: 2px; }
+  .st-l-split-media { aspect-ratio: 16 / 10; max-height: 420px; min-height: 240px; border-radius: 2px; }
   .st-l-svc-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 680px) {

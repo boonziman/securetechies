@@ -912,6 +912,27 @@ html { scroll-behavior: smooth; }
 .st-services-section .st-section-label { color: #60a5fa; background: rgba(0,102,204,0.15); }
 .st-services-section .st-section-heading { color: #f1f5f9; }
 .st-services-section .st-section-sub { color: #94a3b8; }
+/* "We also do web development" line under the services grid (homepage) */
+.st-svc-foot {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 44rem;
+  margin: 2.75rem auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #94a3b8;
+}
+.st-svc-foot a {
+  color: #60a5fa;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(96,165,250,0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+.st-svc-foot a:hover { color: #93c5fd; border-color: #93c5fd; }
 .st-service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

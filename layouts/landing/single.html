@@ -232,8 +232,8 @@
     <div class="st-l-split">
       <div class="st-l-split-media st-reveal">
         {{ with .image }}
-          {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "760x840 webp q86" }}{{ end }}
-          <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="760" height="840" loading="lazy" decoding="async" />
+          {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "760x950 webp q86" }}{{ end }}
+          <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="760" height="950" loading="lazy" decoding="async" />
         {{ end }}
         {{ with .image_badge }}<span class="st-l-split-badge"><span class="st-live-dot"></span>{{ . }}</span>{{ end }}
       </div>
