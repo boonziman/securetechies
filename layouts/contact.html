@@ -70,25 +70,8 @@
             <p style="font-size:0.88rem;color:#64748b;margin:0">Takes less than 2 minutes • No obligation</p>
           </div>
         </div>
-        <!-- Progress steps -->
-        <div style="display:flex;align-items:center;gap:0;margin:24px 0 32px;padding:16px 20px;background:#f8fafc;border-radius:12px;border:1px solid #f1f5f9">
-          <div style="display:flex;align-items:center;gap:8px;flex:1">
-            <div style="width:28px;height:28px;background:#0066CC;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#fff;flex-shrink:0">1</div>
-            <span style="font-size:0.82rem;font-weight:600;color:#0066CC">Your Info</span>
-          </div>
-          <div style="width:40px;height:2px;background:#e2e8f0;flex-shrink:0"></div>
-          <div style="display:flex;align-items:center;gap:8px;flex:1;justify-content:center">
-            <div style="width:28px;height:28px;background:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#64748b;flex-shrink:0">2</div>
-            <span style="font-size:0.82rem;font-weight:600;color:#94a3b8">IT Needs</span>
-          </div>
-          <div style="width:40px;height:2px;background:#e2e8f0;flex-shrink:0"></div>
-          <div style="display:flex;align-items:center;gap:8px;flex:1;justify-content:flex-end">
-            <div style="width:28px;height:28px;background:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#64748b;flex-shrink:0">3</div>
-            <span style="font-size:0.82rem;font-weight:600;color:#94a3b8">Submit</span>
-          </div>
-        </div>
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "thank-you" | relURL }}">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "thank-you" | relURL }}" style="margin-top:28px">
           <input type="hidden" name="form-name" value="contact" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
 

@@ -213,21 +213,21 @@ services:
 # ============================================================
 stats:
   eyebrow: "The numbers"
-  heading: "Security and Reliability You Can Count On"
+  heading: "Uptime, Security, and Response Your Practice Can Build On"
   items:
     - target: 99.9
       suffix: "%"
       label: "Uptime delivered"
-      sub: "So deadlines are never at risk"
+      sub: "So filing deadlines are never at risk"
     - target: 15
       suffix: "+"
-      label: "Years in business"
+      label: "Years protecting firms"
       sub: "Serving Greater LA since 2009"
     - target: 2
       prefix: "<"
       suffix: " hr"
       label: "Avg. response time"
-      sub: "Real engineers, fast"
+      sub: "Senior engineers, not a queue"
     - target: 100
       suffix: "%"
       label: "Data encrypted"
@@ -238,8 +238,8 @@ stats:
 # ============================================================
 reviews:
   eyebrow: "Don't take our word for it"
-  heading: "Trusted by Businesses That Can't Afford to Get IT Wrong"
-  sub: "Real, verified reviews from the Secure Techies Google Business Profile."
+  heading: "Trusted by Professionals Who Can't Afford a Data Leak"
+  sub: "Real, verified reviews from firms and professionals who trust us with their most sensitive, confidential data — straight from our Google Business Profile."
   rating_value: "5.0"
   rating_count: "120"
   items:
