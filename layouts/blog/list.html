@@ -32,7 +32,7 @@
 
     {{ if and $isFirstPage $featured }}
     <!-- Featured post -->
-    <a href="{{ $featured.RelPermalink }}" class="st-blog-featured st-reveal" aria-label="{{ $featured.Title }}">
+    <a href="{{ $featured.RelPermalink }}" class="st-blog-featured st-reveal">
       <div class="st-blog-featured-media">
         {{ with $featured.Params.image }}
         <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $featured.Title }}" loading="eager" fetchpriority="high" decoding="async" width="800" height="500">
@@ -77,7 +77,7 @@
     <!-- Post grid -->
     <div class="st-blog-grid">
       {{ range $i, $p := $paginator.Pages }}
-      <a href="{{ $p.RelPermalink }}" class="st-blog-card st-reveal" aria-label="{{ $p.Title }}">
+      <a href="{{ $p.RelPermalink }}" class="st-blog-card st-reveal">
         <div class="st-blog-card-media">
           {{ with $p.Params.image }}
           <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $p.Title }}" loading="lazy" width="600" height="380">

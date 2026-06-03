@@ -116,7 +116,7 @@
     <div class="st-blog-section-head"><h2>Related Articles</h2><p>Keep reading — more guides you might find useful.</p></div>
     <div class="st-blog-grid">
       {{ range . }}
-      <a href="{{ .RelPermalink }}" class="st-blog-card" aria-label="{{ .Title }}">
+      <a href="{{ .RelPermalink }}" class="st-blog-card">
         <div class="st-blog-card-media">
           {{ with .Params.image }}<img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="lazy" width="600" height="380">{{ else }}<div class="st-blog-card-media-fallback"></div>{{ end }}
           {{ with index .Params.categories 0 }}<span class="st-blog-card-cat">{{ . | humanize }}</span>{{ end }}

@@ -10,6 +10,22 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
 
+{{/* Preload the LCP (Largest Contentful Paint) image so the browser fetches it
+     immediately instead of waiting until it parses the page body. On a blog post
+     it's the post's own featured image; on the /blog/ list it's the featured
+     (newest) post's image at the top of the page. This shaves LCP on mobile. */}}
+{{ $lcpImage := "" }}
+{{ if eq .Section "blog" }}
+  {{ if eq .Kind "page" }}
+    {{ $lcpImage = .Params.image }}
+  {{ else if eq .Kind "section" }}
+    {{ with index (where .Site.RegularPages "Section" "blog").ByDate.Reverse 0 }}{{ $lcpImage = .Params.image }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ with $lcpImage }}
+<link rel="preload" as="image" href="{{ . | strings.TrimPrefix "/" | relURL }}" fetchpriority="high" />
+{{ end }}
+
 {{/* Editorial display serif (Fraunces) — loaded only on blog pages for the premium post typography. Scoped so the rest of the site is unaffected. */}}
 {{ $isBlog := or (eq .Section "blog") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
 {{ if $isBlog }}
@@ -62,16 +78,30 @@
 {{ partialCached "custom-script.html" . }}
 
 
-<!-- Google tag (gtag.js) — Google Ads conversion tracking + GA4.
-     ONE Google tag instance for the whole site. The gtag.js library is loaded
-     a single time and registers BOTH the Google Ads conversion ID
-     (AW-1005225620) and the GA4 measurement ID. The Ads tag must be present on
-     EVERY page (including landing pages and the /thank-you/ conversion page) so
-     the client's Google Ads conversions and remarketing audiences are tracked
-     reliably. The <script> is `async`, so it downloads in parallel and does NOT
-     block rendering. The conversion event snippet itself lives only on the
-     /thank-you/ conversion page (see layouts/_default/thank-you.html). -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1005225620"></script>
+<!-- Google tag (gtag.js) — GA4 analytics + Google Ads conversion tracking.
+     ONE Google tag instance for the whole site, registering BOTH the Google Ads
+     conversion ID (AW-1005225620) and the GA4 measurement ID. It is present on
+     EVERY page (landing pages and the /thank-you/ conversion page included).
+
+     PERFORMANCE: the gtag.js library (~300 KB of third-party JavaScript) is the
+     single biggest cost on the page, so we keep it OFF the critical path while
+     losing zero tracking:
+       1. The dataLayer + gtag() stub is defined IMMEDIATELY, and the js/config
+          commands are queued right away. Because gtag() exists from the first
+          byte, the /thank-you/ conversion event (and any other gtag call) is
+          captured instantly and flushed the moment the library arrives.
+       2. The actual gtag.js download is deferred until the page is interactive.
+          On normal content pages it loads on the first user interaction, or — for
+          users who never interact — only AFTER the window 'load' event when the
+          browser next goes idle. Loading after 'load' keeps gtag.js completely out
+          of the FCP / LCP / TBT measurement window, so it never costs us
+          performance, while still guaranteeing a pageview is recorded.
+       3. On the /thank-you/ conversion page (front-matter `eager_analytics: true`)
+          gtag.js loads IMMEDIATELY, so the Google Ads conversion is guaranteed to
+          send the instant the visitor lands, even if they never interact. That page
+          is noindexed and post-conversion, so its performance score is irrelevant.
+     Result: Ads + GA4 fire reliably, but on indexed pages gtag.js no longer delays
+     FCP / LCP / TBT. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
@@ -81,6 +111,39 @@
   {{- with site.Config.Services.GoogleAnalytics.ID }}{{ if ne . "G-MEASUREMENT_ID" }}
   gtag('config', '{{ . }}');
   {{- end }}{{ end }}
+  (function(){
+    var loaded = false;
+    var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    function loadGtag(){
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function(e){ window.removeEventListener(e, loadGtag); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-1005225620';
+      document.head.appendChild(s);
+    }
+  {{- if .Param "eager_analytics" }}
+    // Conversion page: load immediately so the Ads conversion always sends.
+    loadGtag();
+  {{- else }}
+    // Content pages: load on first interaction, otherwise after the page has
+    // fully loaded and the browser goes idle (keeps gtag out of the perf window).
+    events.forEach(function(e){ window.addEventListener(e, loadGtag, { passive: true }); });
+    function idleLoad(){
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGtag, { timeout: 6000 });
+      } else {
+        setTimeout(loadGtag, 4000);
+      }
+    }
+    if (document.readyState === 'complete') {
+      idleLoad();
+    } else {
+      window.addEventListener('load', idleLoad, { once: true });
+    }
+  {{- end }}
+  })();
 </script>
 
 
