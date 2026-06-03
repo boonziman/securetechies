@@ -47,7 +47,7 @@ Before we get to recovery, your backups have to be sound, and there's a simple, 
 - **2 different types** of storage (so one storage failure doesn't take out everything)
 - **1 copy offsite** or otherwise isolated from your main network
 
-Why isolation matters so much: modern ransomware specifically hunts for and encrypts connected backups. If every copy you have is reachable from your network, an attack can take them all at once. That one offsite, isolated copy is the lifeboat that survives when everything else goes down. This is the backbone of proper [backup and disaster recovery](/services/backup-disaster-recovery/), and it's the same principle behind [ransomware resilience](/blog/ransomware-protection-playbook/).
+Why isolation matters so much: [modern ransomware](https://www.cisa.gov/stopransomware) specifically hunts for and encrypts connected backups. If every copy you have is reachable from your network, an attack can take them all at once. That one offsite, isolated copy is the lifeboat that survives when everything else goes down. This is the backbone of proper [backup and disaster recovery](/services/backup-disaster-recovery/), and it's the same principle behind [ransomware resilience](/blog/ransomware-protection-playbook/).
 
 ## RTO and RPO: the two numbers that define your plan
 
@@ -73,7 +73,7 @@ Let's make these two abstractions concrete with a small e-commerce business. The
 
 ## What a real disaster recovery plan includes
 
-A complete plan goes well beyond "restore the files." It spells out:
+[A complete plan](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final) goes well beyond "restore the files." It spells out:
 
 1. **Priorities.** A ranked list of which systems come back first. When everything's down, you can't fix everything at once, so decide the order *before* the crisis, not during it.
 2. **Roles.** Who declares a disaster, who runs the recovery, who talks to staff and customers. Panic and confusion cost time; clear roles prevent both.
@@ -110,16 +110,8 @@ The "forgetting cloud data" mistake deserves a closer look because it catches so
 
 ## The bottom line
 
-Backups answer "is the data safe?" Disaster recovery answers "how fast can we get back to business?" You need both, and the second is the one most businesses are missing. Build sound backups on the 3-2-1 rule, define your RTO and RPO honestly, document a real recovery plan with priorities and roles, and then, crucially, test it.
+Backups answer "is the data safe?" [Disaster recovery](https://www.nist.gov/cyberframework) answers "how fast can we get back to business?" You need both, and the second is the one most businesses are missing. Build sound backups on the 3-2-1 rule, define your RTO and RPO honestly, document a real recovery plan with priorities and roles, and then, crucially, test it.
 
 Do that, and a disaster that would close some competitors becomes, for you, a controlled, recoverable event. That resilience is the entire point.
 
 If you're not confident your backups would actually restore, or you've never put a real recovery plan to the test, that uncertainty is the risk. [Get a free continuity assessment](/contact/) and we'll review your backups, your recovery readiness, and your real-world RTO, then tell you exactly where the gaps are before a bad day finds them for you.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on backup and disaster recovery, these primary sources are worth bookmarking:
-
-- **[NIST SP 800-34: Contingency Planning Guide](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final)** — the federal standard for building and testing a contingency and recovery plan.
-- **[CISA #StopRansomware](https://www.cisa.gov/stopransomware)** — why isolated, tested backups are the single most important ransomware defense.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Recover function and how it fits the rest of your security program.

@@ -27,7 +27,7 @@ The phrase gets thrown around loosely, so let's be precise. Real 24/7 support ha
 
 **The help desk.** A team you can actually reach at any hour, on any day, when something goes wrong. Your server hiccups at midnight, your point-of-sale freezes on a holiday weekend, someone gets locked out at 5am, there's a human to call.
 
-**The monitoring.** This is the part people underrate. Around-the-clock automated monitoring watches your systems constantly and catches problems as they emerge, often resolving them before anyone's awake to notice. A disk filling up, a service crashing, a security alarm, many of these get handled in the small hours so they never become your morning emergency.
+**The monitoring.** This is the part people underrate. Around-the-clock automated monitoring watches your systems constantly and [catches problems as they emerge](https://www.nist.gov/cyberframework), often resolving them before anyone's awake to notice. A disk filling up, a service crashing, a security alarm, many of these get handled in the small hours so they never become your morning emergency.
 
 Together they form a safety net that never sleeps. The monitoring prevents most fires. The help desk puts out the ones that need hands. You want both, and a strong [managed help desk](/services/managed-help-desk/) delivers them as one service.
 
@@ -54,7 +54,7 @@ Let's be honest, not every business needs round-the-clock coverage. Here's who g
 - **Businesses that operate outside 9-to-5.** Retail, hospitality, manufacturing, anyone running evenings, nights, or weekends needs support during the hours they actually work.
 - **Companies spanning time zones.** If your team or customers are spread across regions, someone's always working, so someone always needs support.
 - **Operations that can't tolerate downtime.** E-commerce that sells around the clock, [healthcare](/blog/law-firm-it-support/) that runs at all hours, any business where systems being down means real harm or lost revenue.
-- **Anyone holding sensitive data.** Cyberattacks love the off-hours precisely because that's when no one's watching. Round-the-clock [security monitoring](/blog/ransomware-protection-playbook/) means threats get caught at 3am instead of discovered at 9am after the damage is done.
+- **Anyone holding sensitive data.** [Cyberattacks love the off-hours](https://www.cisa.gov/secure-our-world) precisely because that's when no one's watching. Round-the-clock [security monitoring](/blog/ransomware-protection-playbook/) means threats get caught at 3am instead of discovered at 9am after the damage is done.
 - **Growing businesses.** As you scale, more systems and more staff mean more that can go wrong, at any hour.
 
 If you see your business in that list, business-hours support is leaving you exposed for two-thirds of every day.
@@ -107,10 +107,3 @@ That peace of mind, knowing someone's always watching, is worth a surprising amo
 The deciding question is simple: what would it cost you if something broke at 2am and no one knew until morning? Answer that honestly and you'll know which coverage you need.
 
 Not sure whether round-the-clock coverage makes sense for your business? [Reach out for a free consultation](/contact/) and we'll look at how you operate, what your downtime risk really is, and give you a straight recommendation, even if that's "you don't need 24/7 yet."
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on round-the-clock IT coverage and monitoring, these sources are worth bookmarking:
-
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Detect, Respond, and Recover functions that 24/7 monitoring is built to support.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — practical, federally backed guidance on the everyday security habits that continuous monitoring reinforces.

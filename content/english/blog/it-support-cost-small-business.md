@@ -91,7 +91,7 @@ One of the most common questions we hear is whether it's cheaper to just hire so
 | Vacations and sick days | No coverage | Always covered | Always covered |
 | Best for | Larger firms with steady, complex internal needs | Most small and mid-sized businesses | Companies with internal IT that needs backup and depth |
 
-The hidden trap with a single in-house hire isn't the salary, it's the coverage. One generalist can't be a help desk, a security engineer, a network specialist, and a strategist at the same time, and they can't work while they sleep. A managed provider spreads an entire team and a full toolset across many clients, which is why the monthly fee usually lands well below the loaded cost of one full-time person.
+The hidden trap with a single in-house hire isn't the salary, it's the coverage. One generalist can't be a help desk, a security engineer, a network specialist, and a strategist at the same time, and they can't work while they sleep. A managed provider spreads an entire team and a full toolset across many clients, which is why the monthly fee usually lands well below [the loaded cost of one full-time person](https://www.bls.gov/ooh/computer-and-information-technology/).
 
 ## The costs that hide outside the monthly fee
 
@@ -146,7 +146,7 @@ The goal isn't the cheapest quote, it's the right quote. A few ways to get there
 
 - **Compare what's included, not just the rate.** Put two quotes side by side and line up exactly what each covers. The cheaper one often leaves out security.
 - **Ask about response time in writing.** A real provider commits to response times in the contract.
-- **Make sure security is built in, not extra.** If antivirus, patching, backups, and email protection are all add-ons, the headline price is fiction.
+- **Make sure [security is built in](https://www.nist.gov/itl/smallbusinesscyber), not extra.** If antivirus, patching, backups, and email protection are all add-ons, the headline price is fiction.
 - **Watch for long lock-in contracts.** A confident provider doesn't need to trap you for three years to keep your business.
 
 ## So what should you actually budget?
@@ -156,11 +156,3 @@ If you want a planning number, here it is. A typical small business in 2026 shou
 That number can feel like a lot until you compare it to the cost of a single serious outage or one successful ransomware attack, either of which can dwarf a year of support in a single afternoon.
 
 The most useful thing you can do is get a quote based on your actual environment rather than a generic range. [Reach out for a free, no-pressure assessment](/contact/) and we'll look at your real setup and give you an honest number, including telling you if you're currently overpaying somewhere else.
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on IT support costs and value, these sources are worth bookmarking:
-
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on IT spending benchmarks and operating models.
-- **[U.S. Bureau of Labor Statistics — Computer and IT](https://www.bls.gov/ooh/computer-and-information-technology/)** — current wage data behind the true cost of in-house IT staff.
-- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — cost-effective security resources scaled for small businesses.

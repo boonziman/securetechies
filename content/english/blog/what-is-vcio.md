@@ -70,7 +70,7 @@ None of these require you to be a big company. They just require you to be a com
 
 ### A vCIO decision, start to finish
 
-To see the value in action, follow a single decision the way a vCIO would handle it. Say a growing firm is debating whether to keep its on-premise server or move to the cloud — a question that, without guidance, usually gets decided by whoever argues loudest or whichever vendor calls first. A vCIO approaches it differently. They start with the business: how fast is the company growing, what are the compliance obligations, where will the team be working in three years, what's the budget reality? Then they weigh the options honestly against those answers — the upfront cost of new server hardware versus predictable monthly cloud fees, the control of on-premise versus the flexibility and built-in redundancy of cloud, the security and compliance implications of each. The output isn't a sales pitch; it's a reasoned recommendation tied to where the business is actually headed, with the costs and trade-offs laid out plainly. Multiply that across every significant technology choice a company faces — software platforms, security investments, infrastructure, vendors — and you can see why having someone who thinks this way on call is worth so much more than its modest price. The alternative is making six-figure decisions on instinct and hoping for the best.
+To see the value in action, follow a single decision the way a vCIO would handle it. Say a growing firm is debating whether to keep its on-premise server or move to the cloud — a question that, without guidance, usually gets decided by whoever argues loudest or whichever vendor calls first. A vCIO approaches it differently. They start with the business: how fast is the company growing, what are the compliance obligations, where will the team be working in three years, what's the budget reality? Then they weigh the options honestly against those answers — the upfront cost of new server hardware versus predictable monthly cloud fees, the control of on-premise versus the flexibility and built-in redundancy of cloud, the security and compliance implications of each. The output isn't a sales pitch; it's a reasoned recommendation tied to where the business is actually headed, with the costs and trade-offs laid out plainly. Multiply that across [every significant technology choice](https://www.comptia.org/) a company faces — software platforms, security investments, infrastructure, vendors — and you can see why having someone who thinks this way on call is worth so much more than its modest price. The alternative is making six-figure decisions on instinct and hoping for the best.
 
 ![Business leader and vCIO reviewing technology strategy](/images/blog/what-is-vcio-3.webp "A vCIO brings executive-level IT strategy without the full-time cost")
 
@@ -82,7 +82,7 @@ Here's what a vCIO actually changes in practice.
 
 **Surprises shrink.** When you've planned for the server replacement, the [security upgrades](/blog/ransomware-protection-playbook/), and the growth, far fewer things blindside you.
 
-**Security becomes proactive.** A vCIO builds a security strategy ahead of threats rather than scrambling after them.
+**Security becomes proactive.** A vCIO builds a [security strategy](https://www.nist.gov/cyberframework) ahead of threats rather than scrambling after them.
 
 **Technology supports growth.** As you expand, your systems are ready, because someone planned for it. You're not constantly held back by IT that can't keep up.
 
@@ -105,11 +105,3 @@ A vCIO is executive-level technology strategy made accessible to businesses that
 If your technology decisions feel reactive, your IT budget feels like guesswork, or you simply want someone who understands both business and technology guiding your direction, that's exactly what a vCIO provides.
 
 Curious whether your business would benefit from strategic IT guidance? [Reach out for a free conversation](/contact/) and we'll talk through where your technology stands today and whether a vCIO would actually move the needle for you, with no obligation and no jargon.
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on IT leadership and strategy, these sources are worth bookmarking:
-
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research and frameworks that inform CIO-level decisions.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management strategy a vCIO helps you implement.
-- **[CompTIA](https://www.comptia.org/)** — industry research on IT trends and planning.

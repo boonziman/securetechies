@@ -23,13 +23,13 @@ faq:
     answer: "No, and any service that claims it can is being misleading. Once data is on the dark web, it can't be recalled or deleted — it's been copied and distributed beyond anyone's control. What monitoring does is tell you the exposure exists so you can neutralize its value, mainly by changing the leaked passwords and enabling MFA. You can't erase the leak, but you can make it useless to attackers."
 ---
 
-Here's the reality every business owner should sit with for a moment: **your employees' passwords have almost certainly leaked somewhere already — and the only question that matters is whether you'll find out before an attacker does.** Data breaches are so common now that billions of stolen credentials circulate on the dark web, and a good number of them probably belong to people on your team. Dark web monitoring is how you get the early warning. Let's demystify what the dark web actually is, how your data ends up there, and how monitoring turns a hidden exposure into a problem you can fix before it's used against you.
+Here's the reality every business owner should sit with for a moment: **your employees' passwords have almost certainly leaked somewhere already — and the only question that matters is whether you'll find out before an attacker does.** Data breaches are so common now that [billions of stolen credentials circulate on the dark web](https://www.verizon.com/business/resources/reports/dbir/), and a good number of them probably belong to people on your team. Dark web monitoring is how you get the early warning. Let's demystify what the dark web actually is, how your data ends up there, and how monitoring turns a hidden exposure into a problem you can fix before it's used against you.
 
 ## What the dark web actually is (without the mystique)
 
 The dark web gets dramatized into something out of a thriller, so let's ground it. The internet has layers. The **surface web** is everything you can find through Google — websites, news, stores, the normal internet. Beneath that is the **deep web**, which is simply content that isn't indexed by search engines: your online banking dashboard, your email inbox, internal company systems. The deep web isn't sinister at all; it's just the private, login-protected internet, and it's enormous.
 
-The **dark web** is a small, deliberately hidden corner that requires special software to reach and is designed for anonymity. It has legitimate uses — journalists, activists, and people under oppressive regimes use it for privacy. But that same anonymity makes it a thriving marketplace for stolen goods of the digital kind: breached passwords, credit card numbers, identity data, and corporate credentials, all bought and sold or simply dumped for anyone to grab.
+The **dark web** is a small, deliberately hidden corner that requires special software to reach and is designed for anonymity. It has legitimate uses — journalists, activists, and people under oppressive regimes use it for privacy. But that same anonymity makes it a thriving marketplace for stolen goods of the digital kind: breached passwords, credit card numbers, [identity data](https://www.identitytheft.gov/), and corporate credentials, all bought and sold or simply dumped for anyone to grab.
 
 For a business, the dark web matters for one concrete reason: **it's where your stolen data goes to be traded.** When a breach happens — yours or, far more often, some other company your employees have accounts with — the stolen information tends to surface here. And once it does, it becomes raw material for the next attack.
 
@@ -58,7 +58,7 @@ Here's the workflow in practice:
 3. **When your data appears, you get an alert** telling you which credentials or information were exposed and, often, which breach they came from.
 4. **You take action** — force a password reset on the exposed accounts, confirm MFA is on, and watch for misuse.
 
-That fourth step is where the value is realized. The alert itself doesn't fix anything; what protects you is acting on it *fast*. A leaked password is only dangerous while it still works. The moment you reset it and confirm MFA is enabled, that stolen credential becomes a worthless string of characters. Monitoring buys you the time to do that before an attacker gets there first.
+That fourth step is where the value is realized. The alert itself doesn't fix anything; what protects you is acting on it *fast*. A leaked password is only dangerous while it still works. The moment you [reset it and confirm MFA is enabled](https://www.cisa.gov/secure-our-world), that stolen credential becomes a worthless string of characters. Monitoring buys you the time to do that before an attacker gets there first.
 
 ## Being honest about what it can and can't do
 
@@ -107,11 +107,3 @@ That integration is what separates monitoring that protects you from monitoring 
 Your business's credentials are almost certainly leaking somewhere, through breaches of other companies you can't control — that's simply the reality of the modern internet. You can't prevent every leak, but you can refuse to be blindsided by them. Dark web monitoring gives you the early warning, and paired with MFA and strong, unique passwords, it turns leaked credentials from a hidden threat into a routine task: spot it, reset it, move on. What you can't do is un-leak the data, so the entire game is about finding out fast and acting faster.
 
 If you'd like to know what of your business's information may already be exposed on the dark web, we can check. [Reach out for a free security review](/contact/) and we'll see what's out there and show you exactly how to lock down anything that's leaked — in plain English, with no scare tactics.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on exposed credentials and identity theft, these primary sources are worth bookmarking:
-
-- **[IdentityTheft.gov (FTC)](https://www.identitytheft.gov/)** — the federal recovery resource if business or personal data is exposed.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on passwords, MFA, and locking down accounts after a leak.
-- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how stolen credentials fuel breaches.

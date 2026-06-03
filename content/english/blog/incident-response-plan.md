@@ -23,7 +23,7 @@ faq:
     answer: "They overlap but focus on different things. Incident response is about handling a security event — detecting, containing, and eradicating a threat like a breach or ransomware. Disaster recovery is about restoring systems and data after disruption, whether from a cyberattack, hardware failure, or natural disaster. A complete plan covers both: incident response stops the bleeding, and disaster recovery gets you back on your feet."
 ---
 
-Let's be blunt about the stakes: **the businesses that survive a cyberattack with the least damage aren't the ones that never get hit — they're the ones that decided exactly how they'd respond before it ever happened.** When a breach lands, the clock starts immediately, and every minute spent figuring out who to call and what to do is a minute the attacker keeps working. An incident response plan replaces that panic with a checklist. It's one of the highest-value things a business can prepare, and most haven't. Let's walk through what a plan is, the six phases that structure it, and how to build one that actually works when you need it.
+Let's be blunt about the stakes: **the businesses that survive a cyberattack with the least damage aren't the ones that never get hit — they're the ones that decided exactly how they'd respond before it ever happened.** When a breach lands, the clock starts immediately, and every minute spent figuring out who to call and what to do is a minute the attacker keeps working. An incident response plan replaces that panic with a checklist. It's one of the highest-value things a business can prepare, and most haven't. Let's walk through what a plan is, [the six phases that structure it](https://csrc.nist.gov/pubs/sp/800/61/r2/final), and how to build one that actually works when you need it.
 
 ## Why "we'll figure it out" is a plan to fail
 
@@ -39,7 +39,7 @@ The security industry has converged on a widely used framework, reflected in gui
 
 ### Phase 1: Preparation
 
-This is the phase you live in before anything goes wrong, and it's the one that does the most good. Preparation means building the plan, naming the team and their roles, gathering your emergency contacts, making sure you have tested backups, and putting the detection tools in place that will alert you when something's wrong. Every other phase goes better when preparation was done well. A business that prepared has a calm checklist; a business that didn't has chaos. If you do nothing else, do this phase.
+This is the phase you live in before anything goes wrong, and it's the one that does the most good. Preparation means [building the plan](https://www.cisa.gov/secure-our-world), naming the team and their roles, gathering your emergency contacts, making sure you have tested backups, and putting the detection tools in place that will alert you when something's wrong. Every other phase goes better when preparation was done well. A business that prepared has a calm checklist; a business that didn't has chaos. If you do nothing else, do this phase.
 
 ### Phase 2: Identification
 
@@ -75,7 +75,7 @@ A plan is only as good as the people who execute it, so a real incident response
 | Legal / compliance | Advises on notification obligations and legal exposure |
 | Leadership | Authorizes major decisions and resources |
 
-Alongside the roles, your plan should hold the contacts you'll need in a hurry: your IT or security provider's emergency line, your cyber-insurance contact and policy number, legal counsel, and the relevant authorities. The worst time to be searching for a phone number is the middle of a crisis. Writing them down in advance sounds almost too simple to matter, but in the heat of an incident, having every key contact in one place saves precious time and prevents the scramble that derails an otherwise good response.
+Alongside the roles, your plan should hold the contacts you'll need in a hurry: your IT or security provider's emergency line, your cyber-insurance contact and policy number, legal counsel, and [the relevant authorities](https://www.ic3.gov/). The worst time to be searching for a phone number is the middle of a crisis. Writing them down in advance sounds almost too simple to matter, but in the heat of an incident, having every key contact in one place saves precious time and prevents the scramble that derails an otherwise good response.
 
 ## A plan you never test is a plan that will fail
 
@@ -106,11 +106,3 @@ For businesses without the in-house expertise to build and run all of this, that
 You can't guarantee your business will never face a cybersecurity incident, but you can guarantee how prepared you'll be when one comes. An incident response plan decides your reaction in advance — the phases, the roles, the contacts — so that a crisis becomes a checklist instead of a panic. Build it, name who does what, write down your key contacts, and practice it at least once a year. It's one of the cheapest, highest-impact forms of protection there is, and it's the difference between a bad day and a business-ending one.
 
 If you don't have an incident response plan, or you're not confident the one you have would actually hold up under pressure, we can help. [Reach out for a free consultation](/contact/) and we'll help you build and test a plan that fits your business — in plain English, so you know exactly what happens when something goes wrong.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on incident response, these primary sources are worth bookmarking:
-
-- **[NIST SP 800-61: Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final)** — the federal blueprint for building and running an incident response process.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed guidance to prepare for and reduce incidents.
-- **[FBI Internet Crime Complaint Center (IC3)](https://www.ic3.gov/)** — where to report cyber incidents and find current threat advisories.

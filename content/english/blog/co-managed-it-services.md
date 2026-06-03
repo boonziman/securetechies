@@ -35,7 +35,7 @@ That's not a hiring problem you can fix with one more person. The skills require
 
 ![Co-managed IT team working alongside internal staff](/images/blog/co-managed-it-services-2.webp "Co-managed IT extends an internal team with outside expertise")
 
-In a co-managed model, responsibilities are shared based on each side's strengths. Your internal team keeps what it does best, and the provider supplies what's missing. The key word is *shared* — this is a partnership, not a handoff. Nobody gets replaced, and nobody is left guessing who owns what.
+In a co-managed model, [responsibilities are shared based on each side's strengths](https://www.gartner.com/en/information-technology). Your internal team keeps what it does best, and the provider supplies what's missing. The key word is *shared* — this is a partnership, not a handoff. Nobody gets replaced, and nobody is left guessing who owns what.
 
 | Your internal team keeps | The provider supplies |
 | --- | --- |
@@ -77,7 +77,7 @@ If those questions produce uncomfortable answers, you don't necessarily need to 
 
 ## How the partnership divides the work
 
-The most successful co-managed relationships are explicit about who owns what. Ambiguity is the enemy; "I thought *you* were patching the servers" is how things slip through the cracks. A clear division of labor — written down and reviewed quarterly — is what separates a smooth partnership from a frustrating one. A typical split looks like this:
+The most successful co-managed relationships are [explicit about who owns what](https://www.nist.gov/cyberframework). Ambiguity is the enemy; "I thought *you* were patching the servers" is how things slip through the cracks. A clear division of labor — written down and reviewed quarterly — is what separates a smooth partnership from a frustrating one. A typical split looks like this:
 
 | Responsibility | Often internal | Often the provider |
 | --- | --- | --- |
@@ -115,7 +115,7 @@ In practice, most companies start with one of these and expand once they see how
 
 ## The security case for co-managed IT
 
-Of all the reasons businesses adopt co-managed IT, security is the one that's grown fastest — and for good reason. Modern threats don't keep business hours, and the gap between "we have antivirus" and "we have a real security program" is enormous. A lone internal IT generalist, however talented, simply cannot watch every endpoint around the clock, keep up with emerging attack techniques, run incident response, *and* do their day job.
+Of all the reasons businesses adopt co-managed IT, security is the one that's grown fastest — and for good reason. Modern threats don't keep business hours, and the gap between "we have antivirus" and "we have [a real security program](https://www.nist.gov/itl/smallbusinesscyber)" is enormous. A lone internal IT generalist, however talented, simply cannot watch every endpoint around the clock, keep up with emerging attack techniques, run incident response, *and* do their day job.
 
 A co-managed security arrangement closes that gap. The provider brings tooling most small businesses can't afford alone — endpoint detection and response, security information and event management, 24/7 monitoring — plus the specialized eyes to know what the alerts actually mean. Your internal team stays in the loop and keeps ownership of the relationships and context, while the heavy lifting of round-the-clock defense moves to people who do nothing else. If you want the bigger picture on what those threats look like today, our rundown of the [top cybersecurity threats facing businesses](/blog/top-cybersecurity-threats-2025/) is a useful companion read.
 
@@ -143,12 +143,3 @@ The right partner treats your internal team as colleagues, communicates openly, 
 ## Strengthen your team without replacing it
 
 Co-managed IT gives your in-house staff reinforcements exactly where they need them — the specialized skills, the round-the-clock coverage, and the enterprise tools that are impractical to build alone, all while your own people keep the institutional knowledge and the relationships that make your business run. Done right, it makes your existing IT team more effective, not redundant. [Contact Secure Techies](/contact/) to design a co-managed IT partnership that extends your team's reach, fills your skill gaps, and scales with your business.
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on co-managed IT and staffing models, these sources are worth bookmarking:
-
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on IT operating models and co-sourcing.
-- **[CompTIA](https://www.comptia.org/)** — industry research and certifications behind a credible IT team.
-- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — practical security resources scaled for smaller in-house teams.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a shared language for dividing security work between your team and a partner.

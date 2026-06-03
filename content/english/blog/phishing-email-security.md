@@ -50,7 +50,7 @@ Defending against phishing takes several controls working together. Remove any o
 
 1. **Email security gateway.** Filters malicious messages before they reach inboxes.
 2. **Multi-factor authentication (MFA).** Ensures a stolen password alone can't unlock an account.
-3. **Email authentication (SPF, DKIM, DMARC).** Stops attackers from spoofing your domain.
+3. **[Email authentication (SPF, DKIM, DMARC)](https://learn.microsoft.com/en-us/defender-office-365/).** Stops attackers from spoofing your domain.
 4. **Security awareness training.** Teaches your team to recognize what slips through.
 5. **Payment verification procedures.** A simple callback rule stops most BEC wire fraud.
 
@@ -99,15 +99,8 @@ Even strong defenses can occasionally be beaten, and some phishing leads to rans
 
 ## What to do when someone does click
 
-No defense is perfect, so every business should have a simple plan for the moment an employee realizes they clicked or entered a password into a fake page. Speed matters enormously here, and the right response is the opposite of panic or shame. The employee should report it *immediately* — which is exactly why a blame-free culture pays off, because people who fear punishment hide their mistakes until it's too late. From there, the response is straightforward: change the compromised password right away, sign the account out everywhere, and rely on multi-factor authentication to blunt the damage while you act. Your IT team should check the account for forwarding rules the attacker may have added, watch for suspicious logins, and confirm nothing else was touched. If money was involved, contact the bank instantly — fast reporting is sometimes the difference between recovering a wire and losing it. The businesses that weather phishing best aren't the ones that never get fooled; they're the ones that catch it in minutes and respond calmly, because they decided what to do before it happened.
+No defense is perfect, so every business should have a simple plan for the moment an employee realizes they clicked or entered a password into a fake page. Speed matters enormously here, and the right response is the opposite of panic or shame. The employee should [report it *immediately*](https://www.cisa.gov/secure-our-world) — which is exactly why a blame-free culture pays off, because people who fear punishment hide their mistakes until it's too late. From there, the response is straightforward: change the compromised password right away, sign the account out everywhere, and rely on multi-factor authentication to blunt the damage while you act. Your IT team should check the account for forwarding rules the attacker may have added, watch for suspicious logins, and confirm nothing else was touched. If money was involved, contact the bank instantly — fast reporting is sometimes the difference between recovering a wire and losing it. The businesses that weather phishing best aren't the ones that never get fooled; they're the ones that catch it in minutes and respond calmly, because they decided what to do before it happened.
 
 ## Close the door attackers use most
 
 Email is the front door of nearly every cyberattack. [Contact Secure Techies](/contact/) to deploy layered phishing and email protection for your business, complete with employee training that turns your team into a strong final line of defense.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on phishing and email security, these primary sources are worth bookmarking:
-
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on recognizing and reporting phishing.
-- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — anti-phishing policies and SPF/DKIM/DMARC email authentication.

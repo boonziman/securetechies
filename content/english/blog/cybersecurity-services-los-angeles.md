@@ -23,7 +23,7 @@ faq:
 
 Here's the short version: **cybersecurity services protect your Los Angeles business through layered defenses — endpoint protection, email filtering, firewalls, multi-factor authentication, tested backups, and staff training — so that if one control is bypassed, others still stop the attack.** No single tool is enough, and for most LA businesses managed security costs far less than a single breach.
 
-Cyberattacks are no longer a big-company problem. Automated threats hit any vulnerable system, and roughly 43 percent of attacks target businesses with fewer than 250 employees. California businesses also have legal obligations under the [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa), enforced by the state Attorney General. This guide explains the protections every Los Angeles business needs, what each one actually does, what they cost, the compliance landscape you can't ignore, and how to choose a provider that keeps you safe without drowning you in jargon or fear.
+Cyberattacks are no longer a big-company problem. Automated threats hit any vulnerable system, and [roughly 43 percent of attacks target businesses with fewer than 250 employees](https://www.verizon.com/business/resources/reports/dbir/). California businesses also have legal obligations under the [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa), enforced by the state Attorney General. This guide explains the protections every Los Angeles business needs, what each one actually does, what they cost, the compliance landscape you can't ignore, and how to choose a provider that keeps you safe without drowning you in jargon or fear.
 
 ## Why Los Angeles businesses are squarely in the crosshairs
 
@@ -35,7 +35,7 @@ Los Angeles adds a few wrinkles of its own. It's a dense market of professional 
 
 ![Cybersecurity protection for a Los Angeles business](/images/blog/cybersecurity-services-los-angeles-2.webp "Layered cybersecurity protects Los Angeles businesses from modern threats")
 
-Real protection comes from layers, not a single product. Each layer covers a different way attackers get in. Security professionals call this "defense in depth," and the logic is simple: any one control can fail or be bypassed, but an attacker rarely defeats *all* of them at once.
+Real protection comes from layers, not a single product. Each layer covers a different way attackers get in. Security professionals call this ["defense in depth,"](https://www.nist.gov/cyberframework) and the logic is simple: any one control can fail or be bypassed, but an attacker rarely defeats *all* of them at once.
 
 | Layer | What it protects against |
 | --- | --- |
@@ -66,7 +66,7 @@ Now look at where layered security stops this. **Email filtering** might catch t
 
 ## Why phishing and people come first
 
-The most common way attackers get in isn't a sophisticated hack — it's a convincing email that tricks an employee. That's why [phishing and email security](/blog/phishing-email-security/) plus [security awareness training](/blog/employee-security-awareness-training/) deliver some of the best return of any security investment. Technology stops a lot, but a trained team that recognizes a scam stops the attacks that slip through. The most expensive breaches in the world still tend to begin with one person clicking one link — which means your staff aren't your weakest link so much as your most patchable one. A team that's been trained to pause on a suspicious request is a security control you can't buy in a box.
+The most common way attackers get in isn't a sophisticated hack — it's a convincing email that tricks an employee. That's why [phishing and email security](/blog/phishing-email-security/) plus [security awareness training](/blog/employee-security-awareness-training/) deliver some of the best return of any security investment. Technology stops a lot, but [a trained team that recognizes a scam](https://www.cisa.gov/secure-our-world) stops the attacks that slip through. The most expensive breaches in the world still tend to begin with one person clicking one link — which means your staff aren't your weakest link so much as your most patchable one. A team that's been trained to pause on a suspicious request is a security control you can't buy in a box.
 
 ## What cybersecurity services cost in Los Angeles
 
@@ -109,11 +109,3 @@ One more reason to take layered security seriously: insurers now demand it. Cybe
 If you've never had one, an assessment isn't a sales gimmick — it's a structured review that turns vague worry into a specific, prioritized to-do list. A good one looks at your endpoints and whether they're protected and patched, your email security configuration, whether MFA is enforced everywhere it should be, how your backups are configured and whether they've ever been test-restored, who has access to what, and how your staff would react to a realistic phishing attempt. You come out of it knowing exactly where you stand and what to fix first, ranked by risk. That clarity alone is worth the exercise, whether or not you change anything else.
 
 Don't wait for a breach to find out where you're exposed. [Contact Secure Techies](/contact/) for a cybersecurity assessment of your Los Angeles business and a clear, layered plan to close the gaps.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on layered cybersecurity, these primary sources are worth bookmarking:
-
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Govern, Identify, Protect, Detect, Respond, and Recover model behind a layered defense.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed essentials every business should have in place.
-- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual evidence on how breaches actually happen.

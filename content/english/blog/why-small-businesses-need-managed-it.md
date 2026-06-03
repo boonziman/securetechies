@@ -62,7 +62,7 @@ Instead of surprise repair bills, managed IT runs on a flat monthly fee. You kno
 
 ### Enterprise-grade security
 
-Small businesses are the number one target for cyberattacks. Around 43 percent of all attacks hit businesses with fewer than 250 employees. We deploy the same [cybersecurity](/services/cybersecurity/) tools and protocols used by much larger companies, including endpoint protection, email security, [backups](/services/backup-disaster-recovery/), and security awareness training.
+[Small businesses are the number one target for cyberattacks](https://www.nist.gov/itl/smallbusinesscyber). Around 43 percent of all attacks hit businesses with fewer than 250 employees. We deploy the same [cybersecurity](/services/cybersecurity/) tools and protocols used by much larger companies, including endpoint protection, email security, [backups](/services/backup-disaster-recovery/), and security awareness training.
 
 ### Strategic IT planning
 
@@ -90,7 +90,7 @@ You're likely ready for managed IT if any of these sound familiar:
 - You have no idea whether your backups actually work.
 - Nobody is responsible for installing security updates.
 - Your IT spending swings wildly from month to month.
-- You're worried about ransomware or a data breach but unsure what to do about it.
+- You're worried about [ransomware or a data breach](https://www.cisa.gov/secure-our-world) but unsure what to do about it.
 
 If you checked even two of those, the predictable, prevention-first model almost always pays for itself.
 
@@ -107,10 +107,3 @@ Based in the heart of Los Angeles County, Secure Techies understands the challen
 One underappreciated benefit of the managed model is how gracefully it scales. When you hire in-house, every stage of growth triggers a new problem: the one IT person who was plenty at ten employees is drowning at thirty, and now you're running another expensive hiring search. A managed provider absorbs that growth without the drama. Adding users is a line item, not a recruitment project. Opening a second location doesn't mean standing up a second IT operation — it's an extension of the same plan. As you take on more sensitive data or enter a regulated space, the provider already has the compliance expertise on staff. And because a good MSP is also thinking strategically about your roadmap, they help you make technology decisions that fit where the business is *going*, not just where it is today. For a Southern California business with ambitions to grow, that elasticity — broad expertise on tap, scaling up or down as needed, without the lurching hire-and-scramble cycle — is one of the quietest but most valuable things managed IT provides.
 
 **Ready to see what managed IT can do for your business?** [Contact us today](/contact/) for a free, no-pressure risk assessment.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on small-business IT and security, these sources are worth bookmarking:
-
-- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — practical, free security resources built for small organizations.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — the federally backed essentials every small business should have in place.

@@ -51,7 +51,7 @@ Here's where most comparisons go wrong: they only count the invoice. The invoice
 
 Say a 20-person company loses its main server for a full day. Even at a conservative $40 per hour in loaded labor cost, 20 people sitting idle for 8 hours is $6,400 in lost productivity, before you count missed sales, blown deadlines, or the overtime to catch back up. The repair invoice might be $1,500. The downtime cost it $6,400. Break-fix only shows you the $1,500.
 
-Managed IT attacks that downtime number directly. By monitoring and maintaining systems, the goal is to make the bad day not happen in the first place. You trade an unpredictable spike for a steady monthly line item your accountant can actually plan around.
+Managed IT attacks that downtime number directly. By [monitoring and maintaining systems](https://www.gartner.com/en/information-technology), the goal is to make the bad day not happen in the first place. You trade an unpredictable spike for a steady monthly line item your accountant can actually plan around.
 
 ### A year in the life of each model
 
@@ -72,7 +72,7 @@ A decade ago, "IT support" meant fixing printers and replacing hard drives. Toda
 
 Modern security isn't a one-time fix. It's patching the moment a vulnerability is announced (the kind [CISA catalogs as known exploited vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)), watching for suspicious logins, testing your backups, and training your staff to spot a fake invoice. None of that fits a "call us when it breaks" model, because by the time a breach "breaks," the damage is already done and the data is already gone.
 
-Managed IT bakes security into the monthly service. Your systems get patched on a schedule, your [network is monitored](/services/network-security/), and your backups are verified, not just assumed. For any business handling customer data, payment info, or anything covered by compliance rules, that ongoing protection is the whole point.
+Managed IT bakes security into the monthly service. Your systems get patched on a schedule, your [network is monitored](/services/network-security/), and your backups are verified, not just assumed. For any business handling customer data, payment info, or anything covered by compliance rules, that [ongoing protection](https://www.nist.gov/itl/smallbusinesscyber) is the whole point.
 
 ![Technician proactively maintaining office computers](/images/blog/managed-it-vs-break-fix-3.webp "Proactive managed IT prevents the failures break-fix waits for")
 
@@ -105,10 +105,3 @@ If your downtime cost is low, your data is minimal, and a surprise bill wouldn't
 Break-fix sells you repairs. Managed IT sells you uptime. For a tiny, low-tech business, repairs are all you need. For everyone else, the value isn't in the fixing, it's in the not-breaking, and that's the part break-fix can never deliver.
 
 If you're not sure which side of the line your business falls on, that's exactly the kind of thing we'll tell you straight. [Get in touch for a free assessment](/contact/) and we'll look at your actual setup, your actual downtime risk, and tell you honestly which model fits, even if the honest answer is "you don't need us yet."
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on IT service models, these sources are worth bookmarking:
-
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on proactive vs. reactive IT operating models.
-- **[NIST Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber)** — why ongoing, proactive security beats break-fix for smaller organizations.

@@ -41,7 +41,7 @@ Here's why that model broke down:
 
 - **The volume exploded.** Hundreds of thousands of new malware variants appear every single day. The mugshot book can never keep up.
 - **Attackers learned to disguise themselves.** They tweak their malware constantly so each version has a slightly different fingerprint, sailing right past signature matching. This is called polymorphic malware.
-- **Attacks went "fileless."** Many modern attacks don't drop a malicious file at all. They abuse legitimate tools already on your computer — the same trusted programs your operating system ships with — to do their dirty work. There's no bad file to match, so signature-based antivirus sees nothing.
+- **Attacks went "fileless."** Many modern attacks don't drop a malicious file at all. They [abuse legitimate tools already on your computer](https://attack.mitre.org/) — the same trusted programs your operating system ships with — to do their dirty work. There's no bad file to match, so signature-based antivirus sees nothing.
 - **Novel attacks have no signature yet.** A brand-new threat, by definition, isn't in anyone's database. The first victims are completely unprotected until the security industry catches up. These are called zero-day attacks.
 
 The result is a tool that's excellent at stopping yesterday's known threats and effectively blind to today's new and disguised ones. And new, disguised threats are exactly what serious attackers use. The bouncer with the mugshot book simply can't recognize a troublemaker who isn't in the book yet — or who walked in wearing a disguise.
@@ -50,7 +50,7 @@ The result is a tool that's excellent at stopping yesterday's known threats and 
 
 ## How EDR works differently
 
-Endpoint detection and response flips the entire approach. Instead of asking "is this a known bad file?", EDR asks a smarter question: **"is anything on this device behaving like an attack?"**
+[Endpoint detection and response](https://learn.microsoft.com/en-us/defender-endpoint/) flips the entire approach. Instead of asking "is this a known bad file?", EDR asks a smarter question: **"is anything on this device behaving like an attack?"**
 
 EDR installs a lightweight agent on each device that continuously watches behavior — what processes start, what files get accessed and changed, what network connections open, how programs interact with each other. It builds a picture of what normal looks like, and it watches for the patterns that signal an attack, regardless of whether it's ever seen that specific threat before.
 
@@ -74,7 +74,7 @@ That "response" capability matters more than people realize. Old antivirus eithe
 | Investigation and cleanup | Limited | Built-in |
 | Ongoing monitoring | Scan-based | Continuous |
 
-Read down that table and the gap is stark. Antivirus answers one narrow question and goes quiet. EDR watches everything, catches what antivirus can't, and gives you the tools to actually respond when something slips through.
+Read down that table and the gap is stark. Antivirus answers one narrow question and goes quiet. EDR watches everything, catches what antivirus can't, and gives you the tools to [actually respond](https://www.nist.gov/cyberframework) when something slips through.
 
 ## EDR, NGAV, MDR — cutting through the acronyms
 
@@ -113,11 +113,3 @@ The goal isn't to chase every acronym. It's to make sure the doorways into your 
 Traditional antivirus was built for a world that no longer exists — one where threats were few, static, and easy to catalog. Today's attacks are constant, disguised, and often brand new, and signature-based antivirus is blind to exactly the threats that matter most. EDR closes that gap by watching behavior instead of fingerprints, catching novel attacks, and giving you the power to respond. Delivered as a managed service, it's now within reach of any small business.
 
 If you're not sure whether your endpoints are protected by modern detection or by yesterday's antivirus, we can tell you. [Reach out for a free security review](/contact/) and we'll assess exactly what's guarding your devices and where your real gaps are — in plain English, with no scare tactics.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on endpoint detection and response, these primary sources are worth bookmarking:
-
-- **[Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/)** — how modern EDR detects, investigates, and responds to threats on devices.
-- **[MITRE ATT&CK](https://attack.mitre.org/)** — the knowledge base of real attacker techniques that good EDR is measured against.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Detect and Respond functions that EDR delivers in practice.

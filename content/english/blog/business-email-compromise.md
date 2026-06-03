@@ -23,7 +23,7 @@ faq:
     answer: "Act immediately — speed is everything. Contact your bank right away and ask them to recall the wire; if it's caught fast enough, the funds can sometimes be frozen. Report it to the FBI's Internet Crime Complaint Center (IC3) without delay, as they run a recovery process for fraudulent transfers. Then change passwords, enable MFA, investigate how the compromise happened, and review your payment-verification process so it can't happen again."
 ---
 
-Let's name the threat plainly: **the most expensive cyberattack hitting businesses today usually involves no malware, no virus, and no obvious "hack" — just a convincing email that tricks a real person into sending money to a criminal.** It's called business email compromise, or BEC, and the FBI consistently ranks it among the costliest forms of cybercrime, with losses measured in the billions of dollars a year. It works because it doesn't attack your computers — it attacks your trust and your everyday business habits. Let's break down exactly how the scam unfolds, why it slips past your security tools, and the simple habit that stops most of it cold.
+Let's name the threat plainly: **the most expensive cyberattack hitting businesses today usually involves no malware, no virus, and no obvious "hack" — just a convincing email that tricks a real person into sending money to a criminal.** It's called business email compromise, or BEC, and the FBI consistently ranks it among the costliest forms of cybercrime, with [losses measured in the billions of dollars a year](https://www.verizon.com/business/resources/reports/dbir/). It works because it doesn't attack your computers — it attacks your trust and your everyday business habits. Let's break down exactly how the scam unfolds, why it slips past your security tools, and the simple habit that stops most of it cold.
 
 ## What business email compromise actually is
 
@@ -75,7 +75,7 @@ Stack those together and you have an attack that turns your own good instincts �
 
 ## The one habit that stops most BEC
 
-Here's the genuinely good news, and it's worth tattooing on the wall of every finance department: **almost every BEC scam is defeated by a single habit — verifying any payment or banking change through a separate, trusted channel before acting.**
+Here's the genuinely good news, and it's worth tattooing on the wall of every finance department: **almost every BEC scam is defeated by a single habit — [verifying any payment or banking change through a separate, trusted channel](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity) before acting.**
 
 Security people call this "out-of-band verification," which just means: confirm the request using a different method than the one it arrived through. If you get an email asking to change a vendor's bank account or wire a large sum, you do *not* reply to that email or call a number it provides. Instead, you pick up the phone and call the person or vendor at a number you *already know* — one from your records, not from the suspicious message — and confirm it's real.
 
@@ -90,10 +90,10 @@ The trick is making it a *non-negotiable rule*, not a judgment call. When verifi
 The verification habit is the heart of it, but a complete defense layers several controls so that no single failure leads to loss.
 
 1. **Mandatory out-of-band verification.** Confirm every payment or banking-detail change by calling a known number. This is the most important control.
-2. **Multi-factor authentication everywhere.** Much BEC starts with a compromised inbox. [MFA](/blog/mfa-multi-factor-authentication/) stops the account takeover that lets attackers send from a real address and read your payment conversations.
+2. **Multi-factor authentication everywhere.** Much BEC starts with a [compromised inbox](https://www.cisa.gov/secure-our-world). [MFA](/blog/mfa-multi-factor-authentication/) stops the account takeover that lets attackers send from a real address and read your payment conversations.
 3. **Dual approval for transfers.** Require two people to approve any wire or payment over a set threshold. Two sets of eyes catch what one might miss.
 4. **Email authentication.** Set up SPF, DKIM, and DMARC — technical standards that make it much harder for attackers to spoof your domain and impersonate your own staff.
-5. **Advanced email security.** Modern filtering can flag look-alike domains, display-name tricks, and suspicious patterns that basic spam filters miss.
+5. **Advanced email security.** [Modern filtering](https://learn.microsoft.com/en-us/defender-office-365/) can flag look-alike domains, display-name tricks, and suspicious patterns that basic spam filters miss.
 6. **Staff awareness training.** Your people are the target, so they're also your best sensor. [Security awareness training](/blog/employee-security-awareness-training/) teaches them the pressure tactics and the verification habit until it's second nature.
 
 Notice the pattern: technology reduces the number of malicious emails that reach people and stops the account takeovers that fuel the worst attacks, while process and training catch what slips through. Because BEC targets people and procedures, your defense has to cover both — and the human layer is the one too many businesses neglect.
@@ -128,12 +128,3 @@ BEC sits at the intersection of email security, identity protection, and human a
 Business email compromise is the costliest cyber threat most businesses face, and it succeeds precisely because it doesn't look like an attack. There's often no malware to catch — just a believable email exploiting trust, authority, and urgency to redirect real money into a criminal's hands. The defense isn't a single product; it's a combination of strong identity controls, smart email security, and above all a simple, mandatory habit: verify every payment change through a trusted channel before you act.
 
 If you're not sure whether your business has the controls and habits to stop a BEC scam, we can help you find the gaps before an attacker does. [Reach out for a free security review](/contact/) and we'll walk through your email security and payment processes and show you exactly where you stand — in plain English, with no scare tactics.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on stopping business email compromise, these primary sources are worth bookmarking:
-
-- **[FTC — Cybersecurity for Small Business](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity)** — covers business email imposters, payment-verification policies, and email authentication.
-- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — configuring anti-phishing, impersonation protection, and SPF/DKIM/DMARC.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on phishing-resistant habits and account protection.
-- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how BEC and social engineering drive real-world losses.

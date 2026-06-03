@@ -34,7 +34,7 @@ That means one flat monthly fee gets you:
 - Software updates and patching
 - Strategic planning for where your technology is headed
 
-The key advantage is that you're not hiring one person with one skill set. You're renting an entire bench of specialists, the security expert, the network engineer, the help desk technician, the strategist, who each do their part as needed.
+The key advantage is that you're not hiring one person with one skill set. You're renting an entire [bench of specialists](https://www.comptia.org/), the security expert, the network engineer, the help desk technician, the strategist, who each do their part as needed.
 
 ![Remote IT team collaborating over a video call](/images/blog/outsourced-it-department-2.webp "Remote IT team collaborating over a video call")
 
@@ -67,7 +67,7 @@ Let's put it side by side honestly.
 | Knowledge loss risk | High if they quit | Low, documented by the provider |
 | Scales with growth | New hires needed | Adjust the plan |
 
-For most companies under a few hundred employees, the math points clearly toward outsourcing, or a blend, which we'll get to.
+For most companies under a few hundred employees, the math points clearly toward [outsourcing](https://www.gartner.com/en/information-technology), or a blend, which we'll get to.
 
 ## The benefits beyond cost
 
@@ -119,10 +119,3 @@ A single in-house IT hire is the most expensive way to get the narrowest coverag
 The right answer depends on your size, your industry, and how much you rely on technology, and the honest comparison is worth running before you post a job listing.
 
 Want help running that comparison for your specific situation? [Reach out for a free consultation](/contact/) and we'll look at what you actually need, what it would cost in-house versus outsourced, and give you a straight recommendation, even if that recommendation is to keep what you've got.
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on outsourcing IT, these sources are worth bookmarking:
-
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on outsourcing and IT operating models.
-- **[CompTIA](https://www.comptia.org/)** — industry research and certifications behind a credible outsourced team.

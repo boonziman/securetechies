@@ -86,7 +86,7 @@ Zero trust assumes a breach is always possible, so you watch constantly. Logging
 
 ## Zero trust for a small business, step by step
 
-This is the part where a lot of articles lose people, because zero trust sounds like an enterprise mega-project. It doesn't have to be. You don't flip a switch and become "zero trust" overnight — you make steady, prioritized improvements. Here's a realistic order for a smaller organization.
+This is the part where a lot of articles lose people, because zero trust sounds like an enterprise mega-project. It doesn't have to be. You don't flip a switch and become "zero trust" overnight — you make [steady, prioritized improvements](https://www.cisa.gov/zero-trust-maturity-model). Here's a realistic order for a smaller organization.
 
 1. **Lock down identity first.** Turn on MFA everywhere, starting with email and admin accounts. This alone moves you a long way toward zero trust and stops most attacks.
 2. **Apply least privilege.** Review who has access to what and trim it back to what each role actually needs. Pay special attention to administrator accounts and former employees.
@@ -94,7 +94,7 @@ This is the part where a lot of articles lose people, because zero trust sounds 
 4. **Segment your network.** Separate guest Wi-Fi from business systems, and isolate sensitive systems so a breach in one place can't reach everything.
 5. **Turn on monitoring.** Make sure logins, admin changes, and unusual activity are being logged and actually reviewed, so you'd notice an intruder.
 
-Notice that many of these aren't new purchases — they're better use of tools you may already own. Microsoft 365 Business Premium, for example, includes conditional access, device management, and identity protection that map directly onto zero trust principles. The work is in configuring and combining them with intent.
+Notice that many of these aren't new purchases — they're better use of tools you may already own. [Microsoft 365 Business Premium](https://learn.microsoft.com/en-us/security/zero-trust/), for example, includes conditional access, device management, and identity protection that map directly onto zero trust principles. The work is in configuring and combining them with intent.
 
 ## A scenario that shows the difference
 
@@ -106,7 +106,7 @@ That's zero trust earning its keep. It doesn't assume your defenses are perfect 
 
 ## How it connects to everything else
 
-Zero trust isn't a separate product line; it's the philosophy that ties your other security investments together. It builds directly on [strong network security](/services/network-security/), it depends on the identity controls we covered in our [MFA guide](/blog/mfa-multi-factor-authentication/), and it's reinforced by the kind of layered defense we describe in our [cybersecurity services](/services/cybersecurity/). If you've read our other posts and wondered how all the individual pieces — MFA, segmentation, least privilege, monitoring — fit into one coherent strategy, zero trust is the answer. It's the frame that organizes them.
+Zero trust isn't a separate product line; it's the philosophy that ties your other [security investments](https://www.nist.gov/cyberframework) together. It builds directly on [strong network security](/services/network-security/), it depends on the identity controls we covered in our [MFA guide](/blog/mfa-multi-factor-authentication/), and it's reinforced by the kind of layered defense we describe in our [cybersecurity services](/services/cybersecurity/). If you've read our other posts and wondered how all the individual pieces — MFA, segmentation, least privilege, monitoring — fit into one coherent strategy, zero trust is the answer. It's the frame that organizes them.
 
 For a small business, the practical path is usually to work with a provider who can assess where you stand today and build the zero trust pieces in the right order, using tools you may already be paying for. You don't need an enterprise budget. You need a plan and steady execution.
 
@@ -115,11 +115,3 @@ For a small business, the practical path is usually to work with a provider who 
 Zero trust isn't a buzzword to be afraid of — it's the security world catching up to reality. The perimeter is gone, work happens everywhere, and pretending the inside of your network is automatically safe is how breaches turn into catastrophes. "Never trust, always verify" simply means making every access request prove itself, every time, so that one stolen password or one infected laptop can't bring the whole business down.
 
 You don't have to get there in one leap. If you'd like to know where your business stands on the road to zero trust and which steps would give you the most protection for the least effort, [reach out for a free assessment](/contact/). We'll show you what's already working, what's exposed, and the smartest order to fix it.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on zero trust, these primary sources are worth bookmarking:
-
-- **[Microsoft Zero Trust Guidance](https://learn.microsoft.com/en-us/security/zero-trust/)** — a practical model for implementing zero trust with tools many businesses already own.
-- **[CISA Zero Trust Maturity Model](https://www.cisa.gov/zero-trust-maturity-model)** — the federal roadmap for advancing zero trust step by step.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the broader risk-management context zero trust fits into.

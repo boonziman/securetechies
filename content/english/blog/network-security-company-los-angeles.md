@@ -23,7 +23,7 @@ faq:
 
 Here's the short version: **a network security company protects the infrastructure that connects your business — firewalls, routers, switches, Wi-Fi, and the traffic across them — by configuring strong controls, segmenting your network, securing remote access, and monitoring for intrusions around the clock.** Choosing the right Los Angeles provider comes down to their controls, their monitoring, and their willingness to prove results.
 
-Your network is the front door to everything your business runs on. If it's poorly configured or unmonitored, attackers walk right in — and most won't announce themselves. They slip in quietly, look around, and wait for the right moment. This guide explains what network security actually covers, the specific controls every Los Angeles business needs, why two of those controls matter more than the rest, what it all costs, and the pointed questions that separate a genuine network security company from someone who installs a box and disappears.
+Your network is the front door to everything your business runs on. If it's poorly configured or unmonitored, attackers walk right in — and most won't announce themselves. They slip in quietly, look around, and wait for the right moment. This guide explains what network security actually covers, the [specific controls](https://www.cisecurity.org/controls) every Los Angeles business needs, why two of those controls matter more than the rest, what it all costs, and the pointed questions that separate a genuine network security company from someone who installs a box and disappears.
 
 ## What network security covers
 
@@ -44,7 +44,7 @@ These controls are one essential layer of a complete [cybersecurity strategy](/s
 
 ### Why the firewall in your closet isn't enough
 
-Most businesses assume they're covered because there's a firewall somewhere in the network closet. But a firewall is only as good as its configuration, and the default settings that came in the box are rarely the settings you actually need. An out-of-the-box firewall with no rules tuned to your business, no firmware updates in two years, and no one watching its logs is a little like a deadbolt that's never been locked — technically present, practically useless. Worse, network gear itself has become a favorite target: attackers actively hunt for routers and firewalls running old firmware with known vulnerabilities, because compromising the device that guards the network gives them the keys to everything behind it. Real network security isn't a product you buy once; it's a configuration you maintain and a stream of traffic someone keeps watching.
+Most businesses assume they're covered because there's a firewall somewhere in the network closet. But a firewall is only as good as its configuration, and the default settings that came in the box are rarely the settings you actually need. An out-of-the-box firewall with [no rules tuned to your business](https://csrc.nist.gov/pubs/sp/800/41/r1/final), no firmware updates in two years, and no one watching its logs is a little like a deadbolt that's never been locked — technically present, practically useless. Worse, network gear itself has become a favorite target: attackers actively hunt for routers and firewalls running old firmware with known vulnerabilities, because compromising the device that guards the network gives them the keys to everything behind it. Real network security isn't a product you buy once; it's a configuration you maintain and a stream of traffic someone keeps watching.
 
 ## Why segmentation and monitoring matter most
 
@@ -104,10 +104,3 @@ You don't need to be a security engineer to spot trouble. A few warning signs su
 ## Build a network attackers can't walk through
 
 Your network security is only as strong as its weakest control — and most businesses don't discover the weak one until it's exploited. A proper assessment finds those gaps first: the unsegmented guest Wi-Fi, the firewall running three-year-old firmware, the remote access secured by a password alone. [Contact Secure Techies](/contact/) for a network security assessment of your Los Angeles business and a managed plan that locks the front door, builds walls inside, and watches it all around the clock.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on network security, these primary sources are worth bookmarking:
-
-- **[NIST SP 800-41: Guidelines on Firewalls and Firewall Policy](https://csrc.nist.gov/pubs/sp/800/41/r1/final)** — the federal reference for firewall design and segmentation.
-- **[CIS Controls](https://www.cisecurity.org/controls)** — a prioritized set of safeguards that hardens networks effectively.

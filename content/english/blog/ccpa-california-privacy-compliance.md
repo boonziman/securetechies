@@ -80,7 +80,7 @@ None of these is exotic, but together they require deliberate setup. The busines
 
 ## What non-compliance costs
 
-The penalties give the CCPA real teeth. The **California Privacy Protection Agency** (created by the CPRA) and the Attorney General can impose fines of up to **$2,500 per unintentional violation** and up to **$7,500 per intentional violation** or one involving minors. The catch that makes this dangerous: each affected consumer can count as a *separate* violation. Multiply a per-consumer fine across thousands of customers and the totals become staggering very quickly.
+The penalties give the CCPA real teeth. The **[California Privacy Protection Agency](https://cppa.ca.gov/)** (created by the CPRA) and the Attorney General can impose fines of up to **$2,500 per unintentional violation** and up to **$7,500 per intentional violation** or one involving minors. The catch that makes this dangerous: each affected consumer can count as a *separate* violation. Multiply a per-consumer fine across thousands of customers and the totals become staggering very quickly.
 
 On top of regulatory fines, the CCPA includes a **private right of action** for certain data breaches — specifically, breaches of non-encrypted, non-redacted personal information resulting from a failure to maintain reasonable security. Affected consumers can sue and recover **statutory damages even without proving they suffered actual harm.** That's a significant exposure: a single breach can spawn class-action litigation on top of any regulatory penalty. It also ties privacy compliance tightly to security — encrypting personal data and maintaining reasonable safeguards isn't just good practice, it directly limits your legal liability.
 
@@ -94,20 +94,12 @@ Same data, same customer base, same threats — but one treated privacy as a che
 
 ## How privacy and security work together
 
-CCPA compliance and cybersecurity are deeply intertwined. The law's "reasonable security" expectation and its breach-related liability mean you can't separate privacy from protecting the data itself. Strong [cybersecurity fundamentals](/services/cybersecurity/) — encryption, access controls, monitoring — directly reduce your CCPA exposure, because encrypted data is largely outside the private right of action and good safeguards prevent the breaches that trigger penalties. Knowing whether your customers' data has already been exposed elsewhere, through [dark web monitoring](/blog/dark-web-monitoring/), is part of understanding your real risk. Privacy compliance done well rests on a foundation of solid security.
+CCPA compliance and cybersecurity are deeply intertwined. The law's "reasonable security" expectation and its breach-related liability mean you can't separate privacy from protecting the data itself. Strong [cybersecurity fundamentals](/services/cybersecurity/) — encryption, access controls, monitoring — directly reduce your CCPA exposure, because encrypted data is largely outside the private right of action and good safeguards prevent the breaches that trigger penalties. Knowing whether your customers' data has already been exposed elsewhere, through [dark web monitoring](/blog/dark-web-monitoring/), is part of understanding your real risk. [Privacy compliance](https://www.nist.gov/privacy-framework) done well rests on a foundation of solid security.
 
 For most businesses, getting CCPA-ready means combining legal/policy work with technical and operational setup — and that's a lot to coordinate. Working with a partner through [compliance and security audit services](/services/compliance-security-audits/) lets you map your data, close the gaps, build the request-handling processes, and secure the underlying systems in one coordinated effort rather than a series of fire drills.
 
 ## The bottom line
 
-California's privacy laws give residents real control over their personal data, and if your business is large enough to cross a threshold, those rights are enforceable against you — with fines that scale per consumer and a breach lawsuit provision that adds serious risk. But compliance is achievable: know your data, disclose clearly, honor consumer requests, secure what you hold, and train your team. For LA-area businesses especially, this isn't a distant regulatory abstraction — your customers are exactly the people these laws protect.
+California's privacy laws give residents real control over their personal data, and if your business is large enough to cross a threshold, those rights are enforceable against you — with fines that scale per consumer and a breach lawsuit provision that adds serious risk. But compliance is achievable: know your data, disclose clearly, honor consumer requests, [secure what you hold](https://www.ftc.gov/business-guidance/privacy-security), and train your team. For LA-area businesses especially, this isn't a distant regulatory abstraction — your customers are exactly the people these laws protect.
 
 If you're not sure whether the CCPA applies to you, or whether you'd survive a consumer request or a breach, let's find out together. [Reach out for a free assessment](/contact/) and we'll review the personal data you hold, where your gaps and exposure are, and how to get compliant and secure — in plain English, without the legal headache.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on California privacy compliance, these primary sources are worth bookmarking:
-
-- **[California Privacy Protection Agency](https://cppa.ca.gov/)** — the regulator that enforces and updates the CCPA/CPRA rules.
-- **[NIST Privacy Framework](https://www.nist.gov/privacy-framework)** — a structured way to manage privacy risk alongside your security program.
-- **[FTC — Privacy and Security](https://www.ftc.gov/business-guidance/privacy-security)** — federal guidance on protecting and handling consumer data.

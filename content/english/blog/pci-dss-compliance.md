@@ -46,7 +46,7 @@ What does scale is how much is expected of you, and that's governed by **merchan
 | Level 3 | 20,000 to 1 million (e-commerce) | Self-assessment questionnaire |
 | Level 4 | Under 20,000 (e-commerce) or under 1 million total | Self-assessment questionnaire |
 
-Most small businesses land in **Level 4**, the smallest tier. That's good news: Level 4 generally lets you validate compliance through a **Self-Assessment Questionnaire (SAQ)** rather than a costly external audit. But "lighter validation" doesn't mean "no requirements" — you still have to actually implement real security controls. The questionnaire is how you confirm you've done so. The amount of paperwork shrinks for small merchants; the responsibility to protect card data does not.
+Most small businesses land in **Level 4**, the smallest tier. That's good news: Level 4 generally lets you validate compliance through a **[Self-Assessment Questionnaire (SAQ)](https://www.pcisecuritystandards.org/document_library/)** rather than a costly external audit. But "lighter validation" doesn't mean "no requirements" — you still have to actually implement real security controls. The questionnaire is how you confirm you've done so. The amount of paperwork shrinks for small merchants; the responsibility to protect card data does not.
 
 ![A point-of-sale card payment terminal in use](/images/blog/pci-dss-compliance-2.webp "Any business that accepts cards is subject to PCI DSS, regardless of size")
 
@@ -78,7 +78,7 @@ PCI DSS is built around **twelve requirements**, which sound intimidating until 
 **Maintain an information security policy.**
 12. Maintain a written policy that addresses information security for all personnel.
 
-Read through those and you'll notice something reassuring: this isn't exotic. Firewalls, no default passwords, encryption, patching, least-privilege access, unique logins, monitoring, and a written policy — these are the same fundamentals of good security that protect a business from *every* threat, not just card fraud. PCI DSS isn't asking you to do bizarre things; it's asking you to do the security basics, and to do them consistently. Many businesses that get serious about PCI find they've meaningfully improved their overall security posture in the process.
+Read through those and you'll notice something reassuring: this isn't exotic. Firewalls, no default passwords, encryption, patching, least-privilege access, unique logins, monitoring, and a written policy — these are the same fundamentals of good security that protect a business from *every* threat, not just card fraud. PCI DSS isn't asking you to do bizarre things; it's asking you to do the [security basics](https://www.cisa.gov/secure-our-world), and to do them consistently. Many businesses that get serious about PCI find they've meaningfully improved their overall security posture in the process.
 
 ## The smartest move: shrink your scope
 
@@ -113,7 +113,7 @@ Same business size, same threat, wildly different outcomes. The difference was t
 
 ## How this fits into your broader compliance and security picture
 
-PCI DSS rarely stands alone. The controls it requires — firewalls, encryption, access control, monitoring, patching — overlap heavily with general cybersecurity best practices and with other frameworks your business may face. The unique logins and access restrictions echo [zero trust principles](/blog/zero-trust-security/); the monitoring and anti-malware requirements are satisfied by modern [endpoint detection](/blog/endpoint-detection-response/); and the access controls and encryption are the same fundamentals that protect any sensitive data, including under health or privacy regulations. Businesses that build a solid security foundation often find they're most of the way to PCI compliance already, and vice versa.
+PCI DSS rarely stands alone. The controls it requires — firewalls, encryption, access control, monitoring, patching — overlap heavily with general cybersecurity best practices and with [other frameworks](https://www.nist.gov/cyberframework) your business may face. The unique logins and access restrictions echo [zero trust principles](/blog/zero-trust-security/); the monitoring and anti-malware requirements are satisfied by modern [endpoint detection](/blog/endpoint-detection-response/); and the access controls and encryption are the same fundamentals that protect any sensitive data, including under health or privacy regulations. Businesses that build a solid security foundation often find they're most of the way to PCI compliance already, and vice versa.
 
 For most small businesses, the practical path is to combine a compliant payment provider with a managed security partner who can handle the underlying controls and help you complete your assessment. That's exactly what [compliance and security audit services](/services/compliance-security-audits/) are for — mapping the requirements to your actual setup, closing the gaps, and making sure your card handling is both compliant and genuinely secure.
 
@@ -122,11 +122,3 @@ For most small businesses, the practical path is to combine a compliant payment 
 If your business takes card payments, PCI DSS applies to you, full stop. But it doesn't have to be overwhelming. The twelve requirements are really just solid security fundamentals, the validation burden is light for most small businesses, and the single smartest move — keeping card data out of your own systems by using compliant providers, encryption, and tokenization — makes the whole thing both easier and safer. The cost of doing this well is small. The cost of a breach while non-compliant can be ruinous.
 
 If you're not sure whether your business is PCI compliant, or how much card data is sitting in your systems right now, we can help you find out. [Reach out for a free assessment](/contact/) and we'll review how you handle card payments, where your real exposure is, and how to lock it down — in plain English, with no jargon.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on PCI DSS, these primary sources are worth bookmarking:
-
-- **[PCI Security Standards Council — Document Library](https://www.pcisecuritystandards.org/document_library/)** — the official standards, SAQs, and guidance documents.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a complementary risk-management foundation for protecting cardholder data.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on the everyday controls PCI also requires.

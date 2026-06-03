@@ -32,7 +32,7 @@ Every account you own is guarded by a password, which makes passwords the front 
 That coping mechanism is precisely the vulnerability attackers exploit. Here's the chain of events that plays out constantly:
 
 1. Some website you signed up for years ago — a forum, a store, an app — gets breached. Its database of usernames and passwords is stolen.
-2. That database gets sold or dumped online, joining billions of other leaked credentials anyone can download.
+2. That database gets sold or dumped online, joining [billions of other leaked credentials](https://haveibeenpwned.com/) anyone can download.
 3. Attackers run automated tools that take your leaked email-and-password pair and try it against thousands of other services — your bank, your email, your business systems.
 4. Anywhere you reused that password, they get in. They never had to "hack" anything. You handed them the key by reusing it.
 
@@ -95,7 +95,7 @@ The difference wasn't talent, vigilance, or luck. It was a single, inexpensive t
 
 ## Putting it all together: a simple password policy
 
-You don't need a fifty-page security manual. A workable password policy for most businesses comes down to a few clear rules:
+You don't need a fifty-page security manual. A workable [password policy](https://www.cisa.gov/secure-our-world) for most businesses comes down to a few clear rules:
 
 1. **Use a password manager, company-wide.** This is the foundation that makes everything else possible.
 2. **Every account gets a unique, long password.** Let the manager generate them — nobody should be inventing passwords by hand anymore.
@@ -116,11 +116,3 @@ For businesses that would rather not roll this out and manage it themselves, tha
 Reused and weak passwords cause more breaches than any sophisticated attack, and the fix is refreshingly simple: long, unique passwords for every account, generated and stored by a password manager, with MFA on top. It costs little, takes minimal effort to set up, and closes the door that the majority of attackers walk through.
 
 If you're not sure how exposed your business is — how many reused or breached passwords are floating around your team right now — we can help you find out. [Reach out for a free security review](/contact/) and we'll show you where your credentials stand and exactly how to lock them down, in plain English.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on password security, these primary sources are worth bookmarking:
-
-- **[NIST SP 800-63B: Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)** — modern, evidence-based password rules (length over forced complexity).
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on strong passwords, password managers, and MFA.
-- **[Have I Been Pwned](https://haveibeenpwned.com/)** — check whether your accounts appear in known data breaches.

@@ -44,7 +44,7 @@ If a vendor touches protected health information (PHI) on your behalf, they're a
 
 ## Understanding the three HIPAA rules
 
-HIPAA is built on three core rules every healthcare organization must follow. The full text and official guidance are published by [HHS in the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html).
+HIPAA is built on [three core rules](https://www.hhs.gov/hipaa/for-professionals/index.html) every healthcare organization must follow. The full text and official guidance are published by [HHS in the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html).
 
 ### The Privacy Rule
 
@@ -58,7 +58,7 @@ Controls how protected health information can be used and disclosed. Key require
 
 ### The Security Rule
 
-Sets standards for protecting electronic PHI (ePHI) through three kinds of safeguards.
+Sets standards for [protecting electronic PHI (ePHI)](https://csrc.nist.gov/pubs/sp/800/66/r2/final) through three kinds of safeguards.
 
 **Administrative safeguards:**
 
@@ -149,10 +149,3 @@ Our compliance team specializes in helping healthcare organizations meet and mai
 HIPAA compliance doesn't have to be overwhelming. With the right partner, you protect your patients' data and your organization's reputation at the same time.
 
 **Need help with HIPAA compliance?** [Contact Secure Techies](/contact/) for a free consultation.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on HIPAA, these primary sources are worth bookmarking:
-
-- **[HHS — HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html)** — the official guidance on the Privacy, Security, and Breach Notification Rules.
-- **[NIST SP 800-66: Implementing the HIPAA Security Rule](https://csrc.nist.gov/pubs/sp/800/66/r2/final)** — the federal handbook for putting the Security Rule into practice.

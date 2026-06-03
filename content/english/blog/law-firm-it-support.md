@@ -59,7 +59,7 @@ Not everyone in the firm should be able to open every file. Proper access contro
 
 ### 2. Compliance you can actually demonstrate
 
-Your ethical duty to safeguard client data isn't satisfied by good intentions, it's satisfied by controls you can show. Depending on your clients and practice areas, you may also be handling data covered by regulations like HIPAA. Strong [compliance and security audit](/services/compliance-security-audits/) support maps each obligation to a concrete control, and documents it, so if anyone ever asks how you protect client data, you have a real answer. That same documentation is what lets you answer client security questionnaires and satisfy cyber insurance requirements without scrambling.
+Your ethical duty to safeguard client data isn't satisfied by good intentions, it's satisfied by controls you can show. Depending on your clients and practice areas, you may also be handling data covered by regulations like HIPAA. Strong [compliance and security audit](/services/compliance-security-audits/) support [maps each obligation to a concrete control](https://learn.microsoft.com/en-us/purview/), and documents it, so if anyone ever asks how you protect client data, you have a real answer. That same documentation is what lets you answer client security questionnaires and satisfy cyber insurance requirements without scrambling.
 
 ### 3. Bulletproof backups and recovery
 
@@ -67,7 +67,7 @@ Imagine ransomware locking up your active case files the week of a major filing.
 
 ### 4. Security that matches the threat
 
-Because firms are targeted aggressively, the basics aren't enough. You need email filtering to stop phishing before it reaches an attorney's inbox, multi-factor authentication so a stolen password is useless, prompt patching to close known vulnerabilities, and ongoing staff training, because the most expensive breaches still start with someone clicking a convincing fake email. We laid out the full approach in our [ransomware protection playbook](/blog/ransomware-protection-playbook/).
+Because firms are targeted aggressively, the basics aren't enough. You need email filtering to stop phishing before it reaches an attorney's inbox, multi-factor authentication so a stolen password is useless, prompt patching to close known vulnerabilities, and ongoing staff training, because the most expensive breaches still start with [someone clicking a convincing fake email](https://www.cisa.gov/secure-our-world). We laid out the full approach in our [ransomware protection playbook](/blog/ransomware-protection-playbook/).
 
 ### 5. Uptime that respects deadlines
 
@@ -75,7 +75,7 @@ Courts don't grant extensions because your server crashed. When systems go down,
 
 ## The minimum viable IT stack for a small firm
 
-If your firm has one to ten attorneys, IT doesn't need to be advanced. It needs to be reliable, secure, and defensible. Think of the table below as the floor. Operating below it introduces avoidable risk, both operational and ethical.
+If your firm has one to ten attorneys, IT doesn't need to be advanced. It needs to be [reliable, secure, and defensible](https://www.nist.gov/cyberframework). Think of the table below as the floor. Operating below it introduces avoidable risk, both operational and ethical.
 
 | Control | Why it matters |
 | --- | --- |
@@ -135,7 +135,7 @@ Be wary of a provider whose answer to every problem is another server. A practic
 
 ## A practical 60 to 90 day roadmap
 
-You don't need a disruptive overhaul to reduce risk. Most small and mid-sized firms can make meaningful progress in a single quarter:
+You don't need a disruptive overhaul to reduce risk. Most small and mid-sized firms can [make meaningful progress](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity) in a single quarter:
 
 1. **Document everything.** Map every system, user, device, cloud service, and vendor that touches firm data. You can't protect what you haven't inventoried.
 2. **Identify the critical risks.** Flag single points of failure: one server, untested backups, no MFA, shared passwords, no incident response plan. Fix these first.
@@ -178,13 +178,4 @@ Done right, IT support fades into the background. Attorneys open their files and
 That's the real product: not a stack of technology, but the freedom to practice law without wondering whether your systems are about to let you down or let you down your clients.
 
 If you're not certain your firm's IT meets that bar, you don't have to guess. [Schedule a free assessment](/contact/) and we'll review your security, your backups, and your compliance posture, then tell you plainly where you stand and what, if anything, needs to change. No jargon, no scare tactics, just a clear picture of how well your firm's most sensitive asset, its clients' trust, is being protected.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on law firm technology and security, these sources are worth bookmarking:
-
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a structured way to protect confidential client data.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federally backed essentials for protecting sensitive information.
-- **[FTC — Cybersecurity for Small Business](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity)** — practical safeguards that map well to small and midsize firms.
-- **[Microsoft Purview](https://learn.microsoft.com/en-us/purview/)** — compliance, data governance, and eDiscovery tools relevant to legal work.
 

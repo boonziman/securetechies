@@ -57,7 +57,7 @@ Put it in business terms. The most common ways small businesses lose money to cy
 
 ## Not all MFA is created equal
 
-"Turn on MFA" is good advice, but the *type* of second factor matters. Here's the honest ranking, from most to least secure.
+"Turn on MFA" is good advice, but the *type* of second factor matters. Here's the [honest ranking](https://pages.nist.gov/800-63-3/sp800-63b.html), from most to least secure.
 
 | MFA method | Security level | The trade-off |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ Put it in business terms. The most common ways small businesses lose money to cy
 | Email or SMS code | Basic | Better than nothing, but interceptable |
 | No MFA | None | A single stolen password ends the game |
 
-For most small businesses, an **authenticator app** like Microsoft Authenticator, Google Authenticator, or Authy hits the sweet spot: it's free, it works on the phone everyone already carries, and it's dramatically more secure than text messages. For your highest-risk accounts — domain admins, finance, executives — consider stepping up to **physical security keys**, which are the gold standard because they're essentially immune to phishing.
+For most small businesses, an **authenticator app** like [Microsoft Authenticator](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication), Google Authenticator, or Authy hits the sweet spot: it's free, it works on the phone everyone already carries, and it's dramatically more secure than text messages. For your highest-risk accounts — domain admins, finance, executives — consider stepping up to **physical security keys**, which are the gold standard because they're essentially immune to phishing.
 
 A quick warning about the weakest link. Text-message codes can be stolen through "SIM swapping," where an attacker convinces your mobile carrier to transfer your number to their device. It's not common, but it happens, and it tends to target exactly the high-value accounts you most want to protect. So use SMS if it's the only option your team will accept, but don't stop there for the accounts that matter.
 
@@ -75,7 +75,7 @@ A quick warning about the weakest link. Text-message codes can be stolen through
 
 ## The attack MFA can't fully stop — and how to handle it
 
-We promised honesty, so here it is: MFA is not a force field. A newer breed of phishing attack uses fake login pages that sit in the middle, relaying your password *and* your second factor to the real site in real time, then stealing the resulting session. It's called an adversary-in-the-middle attack, and it can defeat app-based and SMS-based MFA.
+We promised honesty, so here it is: MFA is not a force field. A newer breed of phishing attack uses fake login pages that sit in the middle, relaying your password *and* your second factor to the real site in real time, then stealing the resulting session. It's called an [adversary-in-the-middle attack](https://cheatsheetseries.owasp.org/), and it can defeat app-based and SMS-based MFA.
 
 This isn't a reason to skip MFA — it stops virtually every *automated* attack, which is the vast majority of what you'll face. But it's a reason to layer your defenses. Two things blunt these advanced attacks almost entirely: **phishing-resistant MFA** (those physical security keys, which won't authenticate to a fake domain) and **conditional access policies** that only allow logins from known devices or locations. For most small businesses, plain MFA everywhere plus security keys on the crown-jewel accounts is a genuinely strong posture. The point is to make yourself a harder target than the next business over — and MFA does exactly that.
 
@@ -123,11 +123,3 @@ For businesses that would rather not manage all of this themselves, that's exact
 Multi-factor authentication is rare in security because it's both cheap and devastatingly effective. It turns a stolen password — the most common way businesses get breached — into a dead end. It takes minutes to enable, costs little to nothing, and stops the overwhelming majority of the attacks aimed at you every day.
 
 If you're not sure whether MFA is turned on everywhere it should be, or whether your most sensitive accounts are using strong enough factors, we can help you find out. [Get a free security review](/contact/) and we'll map out exactly where you're protected, where you're exposed, and what to lock down first — in plain English, with no scare tactics.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on multi-factor authentication, these primary sources are worth bookmarking:
-
-- **[NIST SP 800-63B: Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)** — the federal standard for authentication and which factors are strong.
-- **[Microsoft Entra — Authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication)** — how to deploy MFA and phishing-resistant sign-in.
-- **[OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)** — practical authentication and session-management best practices.

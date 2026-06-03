@@ -52,7 +52,7 @@ Generic warnings to "be careful online" don't change behavior. People defend aga
 - **Urgency and fear.** "Your account will be suspended in 24 hours." Attackers manufacture pressure so you act before you think. Training teaches staff that urgency is itself a red flag worth slowing down for.
 - **Authority and impersonation.** A message that appears to come from the CEO, a vendor, or the IT department asking for a wire transfer, a gift card, or a password. Real executives don't ask for gift cards by email — but a panicked employee might not stop to question it.
 - **Business email compromise (BEC).** The quiet, expensive one: an attacker who has read your real email threads sends a believable invoice with their bank details swapped in. There's no malware to catch — just a convincing request — which is exactly why human judgment is the only defense.
-- **Lookalike domains and fake login pages.** A link that goes to "micros0ft-support.com" or a pixel-perfect copy of your Microsoft 365 login. Training teaches people to check the address bar before they type a password.
+- **Lookalike domains and fake login pages.** A link that goes to "micros0ft-support.com" or a pixel-perfect copy of your Microsoft 365 login. Training teaches people to [check the address bar before they type a password](https://www.cisa.gov/secure-our-world).
 - **Pretexting over the phone and text.** "Hi, this is IT, we need your code to fix your account." Social engineering isn't just email anymore.
 
 When employees can name these patterns, they stop falling for them. The goal isn't to make everyone paranoid — it's to build a healthy reflex to pause on the handful of requests that don't smell right.
@@ -67,7 +67,7 @@ The old model — one boring annual session — doesn't work. People forget and 
 4. **Relevant content.** Training reflects the actual threats your industry faces.
 5. **Positive, not punitive.** Employees who slip are coached, not shamed.
 
-Simulations are the engine of improvement. They reveal who needs help, and run regularly, they steadily lower the percentage of staff who fall for real attacks. There's a well-documented pattern here: organizations that start phishing simulations often see initial click rates north of 25 or 30 percent, and after several months of consistent training those rates commonly fall into the single digits. That improvement is real risk being removed from the business, month over month.
+Simulations are the engine of improvement. They reveal who needs help, and run regularly, they steadily lower the percentage of staff who fall for real attacks. There's a [well-documented pattern](https://www.sans.org/) here: organizations that start phishing simulations often see initial click rates north of 25 or 30 percent, and after several months of consistent training those rates commonly fall into the single digits. That improvement is real risk being removed from the business, month over month.
 
 ### Why "punitive" training backfires
 
@@ -119,11 +119,3 @@ Not all security awareness training is equal. The cheapest options are little mo
 ## Turn your team into a firewall
 
 Your employees will always be targeted. The question is whether they're ready. Done right, security awareness training is the rare investment that gets *cheaper* relative to its value every month, as click rates fall and reporting rates climb. [Contact Secure Techies](/contact/) to launch continuous security awareness training and phishing simulations that turn your team into your strongest line of defense.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on security awareness and human risk, these primary sources are worth bookmarking:
-
-- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — year after year, it shows the human element behind most breaches.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — the four habits every awareness program should reinforce.
-- **[SANS](https://www.sans.org/)** — widely respected security training and awareness research.

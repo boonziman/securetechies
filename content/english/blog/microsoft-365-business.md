@@ -39,7 +39,7 @@ Microsoft 365 comes in a few business tiers, and the differences matter. Here's 
 
 **Business Standard** is the default recommendation for most teams. You get the real desktop versions of Word, Excel, Outlook, and the rest, plus business email, Teams, and cloud storage. Microsoft publishes a full plan comparison in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/business-premium/) if you want the official feature-by-feature breakdown.
 
-**Business Premium** is the one to choose if you handle sensitive data, worry about security, or need to manage company devices. It adds advanced threat protection and the tools to secure and control the laptops and phones connecting to your data. For a [law firm, medical practice](/blog/law-firm-it-support/), or any business with compliance concerns, the upgrade pays for itself the first time it stops a threat.
+**Business Premium** is the one to choose if you handle sensitive data, worry about security, or need to manage company devices. It adds [advanced threat protection](https://learn.microsoft.com/en-us/defender-office-365/) and the tools to secure and control the laptops and phones connecting to your data. For a [law firm, medical practice](/blog/law-firm-it-support/), or any business with compliance concerns, the upgrade pays for itself the first time it stops a threat.
 
 Don't overthink **Business Basic**. It saves a few dollars but drops the desktop apps, which most teams end up wanting anyway.
 
@@ -63,7 +63,7 @@ This is the part that matters most and gets skipped most. Microsoft 365 *can* be
 - **Disable legacy authentication.** Older protocols like POP3, IMAP, SMTP Auth, and Basic Auth can sail right past MFA. If they're enabled and unused, they're an open door. Turn them off with a Conditional Access policy and confirm nothing legitimate still relies on them.
 - **Email protection.** Tune the anti-phishing and anti-malware policies in Exchange Online Protection. Since most attacks arrive by email, this is your front line.
 - **Sharing controls.** By default, SharePoint and OneDrive often let users share files with "anyone with the link," no sign-in required. One misdirected link can expose sensitive documents to the open internet. Set tenant defaults to specific people or existing guests, and audit external shares quarterly.
-- **Data loss prevention (DLP).** Rules that stop sensitive information, like credit card or client data, from being emailed out by accident.
+- **[Data loss prevention (DLP)](https://learn.microsoft.com/en-us/purview/).** Rules that stop sensitive information, like credit card or client data, from being emailed out by accident.
 - **Admin account protection.** Admin accounts are the keys to everything, so treat them that way.
 
 ### Lock down your admin roles
@@ -79,7 +79,7 @@ Admin exposure is one of the most common and most dangerous gaps. The fix is str
 
 ### Use Conditional Access
 
-Conditional Access is the biggest single gap in most environments, and it's where you set the real rules: who can access what, from which devices, under what conditions. Without it, MFA is enforced inconsistently and device compliance means nothing. A solid baseline blocks legacy authentication, requires MFA for everyone at the policy level, requires compliant or managed devices for sensitive data, blocks anomalous high-risk sign-ins, and limits unmanaged devices to read-only access. Conditional Access requires Business Premium or Entra ID P1, which is a big part of why Premium is worth it.
+[Conditional Access](https://learn.microsoft.com/en-us/entra/identity/) is the biggest single gap in most environments, and it's where you set the real rules: who can access what, from which devices, under what conditions. Without it, MFA is enforced inconsistently and device compliance means nothing. A solid baseline blocks legacy authentication, requires MFA for everyone at the policy level, requires compliant or managed devices for sensitive data, blocks anomalous high-risk sign-ins, and limits unmanaged devices to read-only access. Conditional Access requires Business Premium or Entra ID P1, which is a big part of why Premium is worth it.
 
 ## Most threats go undetected because nobody is watching
 
@@ -121,11 +121,3 @@ Can a small business set up Microsoft 365 themselves? The basics, sure. The trou
 Microsoft 365 is one of the best tools a modern business can run on, but only when it's set up and secured properly. Pick Business Standard, or Premium if security matters, turn on the protections Microsoft leaves off, add a real backup, and treat it as a living system rather than a one-time install.
 
 Not sure whether your Microsoft 365 is actually locked down, or whether your data would survive a deleted-file disaster? [Get a free review](/contact/) and we'll check your setup against these best practices and tell you exactly what's solid and what needs attention, in plain English.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on securing Microsoft 365, these primary sources are worth bookmarking:
-
-- **[Microsoft Defender for Office 365](https://learn.microsoft.com/en-us/defender-office-365/)** — email and collaboration threat protection settings.
-- **[Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/)** — identity, conditional access, and MFA configuration.
-- **[Microsoft Purview](https://learn.microsoft.com/en-us/purview/)** — data protection, retention, and compliance for your tenant.

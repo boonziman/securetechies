@@ -60,7 +60,7 @@ Pricing in the LA market is usually quoted per user, per month. Here's what busi
 | Standard | $140 to $200 | Full help desk plus layered cybersecurity |
 | Compliance | $200 to $250+ | Regulated firms (medical, legal, finance) needing audit-ready security |
 
-A 20-person Los Angeles business on a standard plan generally spends $2,800 to $4,000 a month. That single number replaces unpredictable hourly bills and, more importantly, the hidden cost of downtime, which Gartner estimates at roughly $5,600 per minute. For a deeper breakdown, see our guide on [what IT support costs a small business](/blog/it-support-cost-small-business/).
+A 20-person Los Angeles business on a standard plan generally spends $2,800 to $4,000 a month. That single number replaces unpredictable hourly bills and, more importantly, the hidden cost of downtime, which [Gartner](https://www.gartner.com/en/information-technology) estimates at roughly $5,600 per minute. For a deeper breakdown, see our guide on [what IT support costs a small business](/blog/it-support-cost-small-business/).
 
 ## Why choose a local Los Angeles provider
 
@@ -83,7 +83,7 @@ Los Angeles isn't a generic IT market, and a provider who understands its quirks
 Use these questions to separate a strong partner from a risky one.
 
 1. **Do you guarantee response times?** A real provider commits to a service level agreement (SLA), not vague promises.
-2. **Is cybersecurity built in?** Security should be part of the plan, not an upsell after a breach. Review our list of the [top cybersecurity threats facing businesses](/blog/top-cybersecurity-threats-2025/).
+2. **Is cybersecurity built in?** [Security should be part of the plan](https://www.nist.gov/cyberframework), not an upsell after a breach. Review our list of the [top cybersecurity threats facing businesses](/blog/top-cybersecurity-threats-2025/).
 3. **Are backups tested?** Anyone can run a backup. The question is whether they've proven it restores.
 4. **Is pricing flat and clear?** Beware contracts that bill every on-site visit separately.
 5. **Do you provide strategy, not just repairs?** The best MSPs act like a [virtual CIO](/blog/what-is-vcio/), planning technology around your goals.
@@ -101,10 +101,3 @@ If you're not sure whether you've outgrown your current setup, a few signs make 
 The fear of a messy transition keeps a lot of businesses stuck with support they've outgrown, but a professional onboarding is calm and methodical. A good Los Angeles provider runs the switch in parallel with your existing setup so there's never a gap. The first week is discovery — documenting every device, user, server, and cloud service you have. The second deploys monitoring and security tools across your environment. The remaining time handles cleanup, verifies backups, closes urgent security gaps, and transfers knowledge so the new team knows your business cold. Most onboardings take two to four weeks, and the whole point is that your team feels the benefits without ever feeling the disruption. By the end, you've traded a pile of unknowns for a documented, monitored, secured environment and a team that actually knows what you have.
 
 Ready to make technology a strength instead of a stress point? [Contact Secure Techies](/contact/) for a free assessment of your IT environment and a clear, flat-fee plan built for your Los Angeles business.
-
-## Authoritative resources
-
-For deeper, vendor-neutral perspective on managed IT, these sources are worth bookmarking:
-
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the risk-management foundation a good managed-IT program is built on.
-- **[Gartner — Information Technology](https://www.gartner.com/en/information-technology)** — research on managed services and IT operating models.

@@ -31,7 +31,7 @@ The brutal part is the modern twist: many attackers now steal a copy of your dat
 
 ### Why small businesses are squarely in the crosshairs
 
-A lot of small-business owners assume ransomware is a big-company problem — something that happens to hospitals and pipelines, not to a thirty-person firm. The data says otherwise, and so does the economics of the crime. Attackers love small businesses precisely because they tend to have data worth ransoming but defenses worth a fraction of an enterprise's. Even better, from the criminal's point of view, the whole operation is now automated and industrialized: ready-made ransomware kits are rented out like software subscriptions, and attacks are sprayed across the internet looking for any weak point, with no care whether it belongs to a giant corporation or the accounting office down the street. You don't get attacked because someone chose you; you get attacked because an automated tool found an opening and walked through it. And smaller businesses are often hurt *worse* than big ones, because they're less likely to have tested backups, an incident response plan, or the cash reserves to survive a week of downtime. The comforting belief that you're "too small to target" is, in practice, one of the most expensive assumptions a small business can make.
+A lot of small-business owners assume ransomware is a big-company problem — something that happens to hospitals and pipelines, not to a thirty-person firm. The [data says otherwise](https://www.verizon.com/business/resources/reports/dbir/), and so does the economics of the crime. Attackers love small businesses precisely because they tend to have data worth ransoming but defenses worth a fraction of an enterprise's. Even better, from the criminal's point of view, the whole operation is now automated and industrialized: ready-made ransomware kits are rented out like software subscriptions, and attacks are sprayed across the internet looking for any weak point, with no care whether it belongs to a giant corporation or the accounting office down the street. You don't get attacked because someone chose you; you get attacked because an automated tool found an opening and walked through it. And smaller businesses are often hurt *worse* than big ones, because they're less likely to have tested backups, an incident response plan, or the cash reserves to survive a week of downtime. The comforting belief that you're "too small to target" is, in practice, one of the most expensive assumptions a small business can make.
 
 ![Network and server equipment secured in a rack](/images/blog/ransomware-protection-playbook-2.webp "Network and server equipment secured in a rack")
 
@@ -51,7 +51,7 @@ It helps to see how a real incident unfolds, because the timeline reveals where 
 
 ## The layered defense, from most to least important
 
-Security people talk about "defense in depth," which just means you don't rely on one wall, you build several, so that if one fails the next one holds. Here's that defense for ransomware, in priority order.
+Security people talk about "[defense in depth](https://www.nist.gov/cyberframework)," which just means you don't rely on one wall, you build several, so that if one fails the next one holds. Here's that defense for ransomware, in priority order.
 
 | Priority | Defense layer | What it stops |
 | --- | --- | --- |
@@ -124,10 +124,3 @@ Ransomware feels terrifying because it's sudden and total. But strip away the dr
 Close those openings, keep a tested backup the attackers can't touch, and you turn a business-ending event into a bad afternoon. That's the whole goal.
 
 If you're not confident your backups would actually save you, or you're not sure whether MFA and patching are properly handled, that uncertainty is itself the risk. [Book a free security assessment](/contact/) and we'll show you exactly where your gaps are, in plain language, before an attacker finds them first.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on ransomware defense, these primary sources are worth bookmarking:
-
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — the Protect, Detect, Respond, and Recover model behind a ransomware playbook.
-- **[Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/)** — annual data on how ransomware actually breaks in.

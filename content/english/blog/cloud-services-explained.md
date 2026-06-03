@@ -73,7 +73,7 @@ But here's the part that trips people up, the **shared responsibility model**:
 - **The provider secures the infrastructure**, the data centers, the physical hardware, the underlying platform.
 - **You're responsible for** configuring it correctly, managing who has access, and protecting your data.
 
-This matters because the overwhelming majority of cloud security incidents aren't the provider getting hacked. They're misconfigurations and weak access controls on the customer's side, a storage bucket left open, multi-factor authentication never turned on, sharing settings left wide. As we covered in our [Microsoft 365 guide](/blog/microsoft-365-business/), the cloud gives you powerful security tools, but you have to actually switch them on and use them.
+This matters because the overwhelming majority of cloud security incidents aren't the provider getting hacked. They're [misconfigurations and weak access controls](https://cloudsecurityalliance.org/) on the customer's side, a storage bucket left open, multi-factor authentication never turned on, sharing settings left wide. As we covered in our [Microsoft 365 guide](/blog/microsoft-365-business/), the cloud gives you powerful security tools, but you have to actually switch them on and use them.
 
 That's why [cloud security](/services/cybersecurity/) is less about trusting the provider and more about configuring your side properly, exactly the kind of thing that's easy to get wrong and worth getting expert help with.
 
@@ -87,7 +87,7 @@ The shared responsibility model is abstract until you see what "your side" actua
 
 A bad cloud migration is a nightmare of lost data, downtime, and frustrated staff. A good one is almost invisible to your team. The difference is entirely in the planning.
 
-A solid migration follows a clear path:
+A [solid migration follows a clear path](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/):
 
 1. **Assess.** Understand what you have, what's moving, and what each system needs.
 2. **Plan.** Map out the order, the timing, and the rollback options if something goes wrong.
@@ -115,10 +115,3 @@ Cloud services mean renting computing capability instead of owning and maintaini
 The cloud isn't automatically cheaper or automatically secure. It's a powerful tool that rewards good management and punishes carelessness, which is exactly why having someone who knows how to configure, secure, and optimize it pays off.
 
 Thinking about moving to the cloud, or suspect your current cloud setup is overpriced or under-secured? [Get a free cloud assessment](/contact/) and we'll review where you stand, what a smart migration would look like, and whether your data is actually as safe as you think, all in plain English.
-
-## Authoritative resources
-
-For deeper, vendor-neutral guidance on cloud strategy and security, these primary sources are worth bookmarking:
-
-- **[Microsoft Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/)** — a proven blueprint for planning and governing a cloud migration.
-- **[Cloud Security Alliance](https://cloudsecurityalliance.org/)** — vendor-neutral best practices and the widely used Cloud Controls Matrix.

@@ -29,7 +29,7 @@ Let's start with the punchline: **SOC 2 is the report enterprise customers ask f
 
 SOC 2 — **Service Organization Control 2** — is a compliance framework developed by the **American Institute of Certified Public Accountants (AICPA)**. In plain terms, it's a standardized way for a service company to prove to its customers that it handles their data securely and responsibly.
 
-A "SOC 2 report" isn't something you fill out yourself. It's the output of an **independent audit**, conducted by a licensed CPA firm, that examines your security controls and reports on how well they meet a defined set of criteria. The result is a detailed report you can hand to prospective customers and say, "An independent auditor verified that we protect data the way we claim to." That third-party validation is the entire point — anyone can *say* they're secure; a SOC 2 report is evidence.
+A "SOC 2 report" isn't something you fill out yourself. It's the output of an **independent audit**, conducted by a [licensed CPA firm](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2), that examines your security controls and reports on how well they meet a defined set of criteria. The result is a detailed report you can hand to prospective customers and say, "An independent auditor verified that we protect data the way we claim to." That third-party validation is the entire point — anyone can *say* they're secure; a SOC 2 report is evidence.
 
 It's especially prevalent among **SaaS companies, cloud platforms, and technology service providers**, because those businesses are constantly being handed other companies' sensitive data. When a customer uploads their records into your software, they're trusting you with information they're responsible for protecting. SOC 2 is how that trust gets verified rather than just assumed. You can find the framework's foundations through the [AICPA](https://www.aicpa.org), which maintains the standard.
 
@@ -45,7 +45,7 @@ SOC 2 is built around five **Trust Services Criteria** — the categories of tru
 | **Confidentiality** | Information designated confidential is protected | Optional |
 | **Privacy** | Personal information is collected, used, and disposed of properly | Optional |
 
-**Security** is the mandatory core — sometimes called the "common criteria" — and it's part of every single SOC 2 report. It covers the fundamentals: access controls, network defenses, monitoring, and the ability to detect and respond to security incidents.
+**Security** is the mandatory core — sometimes called the "common criteria" — and it's part of every single SOC 2 report. It covers the fundamentals: [access controls](https://www.nist.gov/cyberframework), network defenses, monitoring, and the ability to detect and respond to security incidents.
 
 The other four are added based on what matters to your business and your customers. A SaaS platform that makes uptime promises in its contracts will likely add **Availability**. A company that processes financial transactions might include **Processing Integrity** to prove its calculations are accurate. A business handling sensitive personal or health data often adds **Confidentiality** and **Privacy**. The flexibility is deliberate — SOC 2 is meant to fit your actual risk profile rather than force every company through identical hoops. Choosing the right scope is one of the first strategic decisions in the process.
 
@@ -73,7 +73,7 @@ Getting to a SOC 2 report follows a fairly predictable arc, and knowing it helps
 
 1. **Scoping.** Decide which Trust Services Criteria apply (Security always, plus any relevant others) and which systems and services the report will cover.
 2. **Gap assessment.** Compare your current controls against what SOC 2 requires and identify what's missing — this is where most of the real work surfaces.
-3. **Remediation.** Implement the missing controls: access management, logging and monitoring, encryption, vendor management, formal security policies, employee training, and an incident response plan, among others.
+3. **Remediation.** Implement the missing controls: access management, logging and monitoring, encryption, vendor management, formal security policies, [employee training](https://www.cisa.gov/secure-our-world), and an incident response plan, among others.
 4. **Evidence and documentation.** SOC 2 runs on evidence. You'll need to document policies and, for Type II, collect proof that controls operated throughout the observation period — access reviews, logs, change records, and so on.
 5. **The audit.** A licensed CPA firm reviews your controls and evidence and issues the report.
 6. **Maintenance.** SOC 2 isn't one-and-done. Reports cover a period, so you'll renew annually, which means living your controls year-round rather than cramming.
@@ -101,11 +101,3 @@ The practical reality is that preparing for SOC 2 alongside your normal operatio
 SOC 2 is the framework that turns "trust us, we're secure" into independently verified proof — and in the software and technology world, it's become the price of admission for serious enterprise business. It's voluntary on paper but often mandatory in practice. Choose the right Trust Services Criteria, aim for a Type II report if you're selling to enterprises, and start before a lost deal forces your hand. Done right, your SOC 2 report stops being a compliance chore and becomes a competitive advantage.
 
 If enterprise prospects are starting to ask whether you're SOC 2 compliant — or you want to be ready before they do — we can help you build toward it. [Get in touch for a free assessment](/contact/) and we'll map out where you stand, what's missing, and the most efficient path to a report your customers will trust.
-
-## Authoritative resources
-
-For deeper, authoritative guidance on SOC 2, these primary sources are worth bookmarking:
-
-- **[AICPA — SOC for Service Organizations](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2)** — the body that defines the SOC 2 standard and reporting framework.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** — a control foundation that maps cleanly to the SOC 2 Trust Services Criteria.
-- **[CISA — Secure Our World](https://www.cisa.gov/secure-our-world)** — federal guidance on the everyday safeguards auditors expect to see.
