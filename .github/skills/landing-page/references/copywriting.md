@@ -32,6 +32,21 @@ Write like a direct-response copywriter whose one job is turning a cold visitor 
 
 Confident, warm, a little bold. Short sentences. Occasional direct address ("Here's the uncomfortable math…"). Never desperate, never spammy, no exclamation-point overload, no fake scarcity. Credibility is the conversion engine.
 
+## Punctuation: go easy on the em-dash
+
+Em-dashes (—) are the #1 tell that copy was AI-generated. They read fine in a **heading, subtitle, or short CTA** for a punchy aside, but stacking them through the **body copy** (feature `text`, `before`/`after`, FAQ answers, `cost_line`, `lead`, `final.text`) makes every paragraph sound the same and screams "a bot wrote this." Keep them rare.
+
+Rules:
+- **Body copy: at most one em-dash per ~6 cards, and ideally none.** Default to a period, comma, or colon instead.
+  - Aside / elaboration → comma: "from court, home, or travel, with the same protection."
+  - Hard stop for emphasis → period: "never costs you a matter. Your files are back in hours."
+  - Introducing a list / definition → colon: "written for owners: what's exposed, what it could cost, and what to fix first."
+  - Parenthetical interruption → parentheses: "the exact attacks (spoofing, account takeover, ransomware) that hit hardest."
+- **Headings / `heading_accent` / `sub` / short `cta` labels: an em-dash is fine** (e.g. "We'll Move You — Without the Headache"). One per heading, not more.
+- **Never touch real review quotes.** Leave testimonial punctuation exactly as the customer wrote it, em-dashes included — they're authentic.
+- Keep en-dashes in numeric ranges ("$8,000–$25,000", "2–3 weeks"); those are correct, not stylistic.
+- Quick self-check before shipping: grep the content file for `—`. If body fields (`text:`/`before:`/`after:`/`a:`/`cost_line:`/`lead:`) light up more than once or twice, you've overused it.
+
 ## Do / Don't
 
 - ✅ "You report a problem and hear nothing back for days."
