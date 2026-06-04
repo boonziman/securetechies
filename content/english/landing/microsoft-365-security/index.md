@@ -19,6 +19,8 @@ landing: true
 hide_header: true
 hide_footer: true
 draft: false
+contact_phone: "(818) 436-6964"
+contact_phone_raw: "+18184366964"
 
 # Netlify form
 form_name: "m365-security-lead"

@@ -1,6 +1,7 @@
 {{/* Landing page structured data: FAQPage + Service with aggregateRating.
      Driven entirely by the page front matter (faq + reviews). */}}
 {{ $p := .Params }}
+{{ $schemaPhoneRaw := $p.contact_phone_raw | default site.Params.contact_phone_raw | default "+18184315607" }}
 
 {{ with $p.faq }}
 {{ if .items }}
@@ -31,7 +32,7 @@
   "provider" (dict
     "@type" "LocalBusiness"
     "name" "Secure Techies"
-    "telephone" (site.Params.contact_phone_raw | default "+18184315607")
+    "telephone" $schemaPhoneRaw
     "address" (dict
       "@type" "PostalAddress"
       "streetAddress" "21515 Vanowen St Suite 1110"
