@@ -19,8 +19,8 @@ landing: true
 hide_header: true
 hide_footer: true
 draft: false
-contact_phone: "(818) 436-6964"
-contact_phone_raw: "+18184366964"
+contact_phone: "(818) 797-9771"
+contact_phone_raw: "+18187979771"
 
 # Netlify form
 form_name: "law-firm-it-lead"
