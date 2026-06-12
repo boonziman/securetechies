@@ -806,3 +806,58 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
 }
+
+/* ============================================================
+   PREMIUM POLISH v2 — richer process, problem icons, guarantees
+   (additive, scoped, no markup change required)
+   ============================================================ */
+
+/* Process: number each step + drop a soft connecting path behind the row */
+.st-l-steps { counter-reset: ststep; position: relative; }
+.st-l-step { counter-increment: ststep; }
+.st-l-step-node::after {
+  content: counter(ststep);
+  position: absolute; top: -6px; right: -6px; z-index: 3;
+  width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 800; color: #0066CC;
+  background: #fff; border: 2px solid #e3edfb;
+  box-shadow: 0 4px 10px rgba(15,31,56,0.12);
+}
+/* faint vertical glow under each bubble for depth */
+.st-l-step-node::before {
+  content: ''; position: absolute; left: 50%; top: 50%;
+  width: 92px; height: 92px; transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(0,102,204,0.12), transparent 70%);
+  border-radius: 50%; z-index: 0; pointer-events: none;
+}
+.st-l-step-bubble { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.st-l-step:hover .st-l-step-bubble { transform: translateY(-3px) scale(1.04); }
+
+/* Problem-card icon: gradient ring + soft glow on hover for less "flat" feel */
+.st-l-prob-ic {
+  position: relative;
+  background: linear-gradient(135deg, rgba(248,113,113,0.18), rgba(251,146,60,0.10));
+  border: 1px solid rgba(248,113,113,0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.st-l-prob-card:hover .st-l-prob-ic {
+  transform: scale(1.06);
+  border-color: rgba(248,113,113,0.45);
+  box-shadow: 0 8px 22px rgba(248,113,113,0.22);
+}
+
+/* Guarantees: gradient icon tile + lift, so the band reads premium not plain */
+.st-l-guar-ic {
+  background: linear-gradient(135deg, rgba(22,163,74,0.16), rgba(34,211,238,0.08)) !important;
+  border: 1px solid rgba(22,163,74,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.st-l-guar-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.st-l-guar-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(15,31,56,0.10); }
+.st-l-guar-card:hover .st-l-guar-ic { transform: scale(1.06); box-shadow: 0 8px 20px rgba(22,163,74,0.18); }
+
+/* Hide the step number badge on single-column mobile (cleaner stack) */
+@media (max-width: 700px) {
+  .st-l-step-node::after { top: -4px; right: calc(50% - 42px); }
+}
