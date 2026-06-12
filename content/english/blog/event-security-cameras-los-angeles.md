@@ -2,7 +2,7 @@
 title: "Event Security Cameras: Temporary Surveillance for LA Events"
 meta_title: "Event Security Cameras Los Angeles | Secure Techies"
 description: "Need temporary surveillance for an LA event? See how mobile camera trailers deliver crowd monitoring, parking security, and rapid setup for festivals and venues."
-date: 2026-06-07
+date: 2026-06-08
 image: "/images/blog/event-security-cameras-los-angeles.webp"
 categories: ["Physical Security"]
 author: "Secure Techies"

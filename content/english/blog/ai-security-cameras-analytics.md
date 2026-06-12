@@ -2,7 +2,7 @@
 title: "AI Security Cameras: How Analytics Stop Crime Before It Happens"
 meta_title: "AI Security Cameras: Stop Crime Early | Secure Techies"
 description: "How AI security cameras use video analytics to detect threats, cut false alarms, and stop crime in real time. A plain-English guide for LA businesses."
-date: 2026-06-08
+date: 2026-06-10
 image: "/images/blog/ai-security-cameras-analytics.webp"
 categories: ["Physical Security"]
 author: "Secure Techies"

@@ -2,7 +2,7 @@
 title: "Rapid Deployment Security Trailers: Protect Any Site Fast"
 meta_title: "Rapid Deployment Security Trailers | Secure Techies"
 description: "Need site security today? Rapid deployment security trailers go live in under an hour with no power or wiring. See how fast surveillance protects LA sites."
-date: 2026-06-09
+date: 2026-06-12
 image: "/images/blog/rapid-deployment-security-trailers.webp"
 categories: ["Physical Security"]
 author: "Secure Techies"
