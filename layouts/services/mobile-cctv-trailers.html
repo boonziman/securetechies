@@ -206,7 +206,7 @@
         <div class="st-succ2">
           {{ with $im }}{{ $f := .Fill "1100x900 webp q74" }}
           <div class="st-succ2-media">
-            <img src="{{ $f.RelPermalink }}" alt="{{ $t.title | plainify }}" loading="lazy" width="1100" height="900" />
+            <img src="{{ $f.RelPermalink }}" alt="{{ $t.title | plainify }}" loading="eager" decoding="async" fetchpriority="low" width="1100" height="900" />
           </div>
           {{ end }}
           <div class="st-succ2-card">
@@ -326,8 +326,8 @@
 {{ with $bandImg }}{{ $b := .Fill "2000x620 webp q72" }}
 <section class="st-band" style="position:relative;min-height:420px;overflow:hidden;background:#060d1a">
   <img src="{{ $b.RelPermalink }}" alt="Foggy industrial yard at night, the kind of vulnerable site a mobile CCTV trailer protects" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%" loading="lazy" width="2000" height="620" />
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.62) 0%,rgba(6,13,26,0.55) 45%,rgba(6,13,26,0.9) 100%)"></div>
-  <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,rgba(0,102,204,0.28) 0%,transparent 60%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.28) 0%,rgba(6,13,26,0.18) 45%,rgba(6,13,26,0.62) 100%)"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(75% 75% at 50% 50%,rgba(6,13,26,0.5) 0%,transparent 70%)"></div>
   <div style="position:relative;z-index:2;min-height:420px;display:flex;align-items:center;justify-content:center;padding:64px 1.5rem">
     <div class="st-reveal" style="text-align:center;max-width:760px">
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:700;color:#bfdbfe;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;padding:7px 16px;border:1px solid rgba(96,165,250,0.35);border-radius:100px;background:rgba(10,22,40,0.5);backdrop-filter:blur(6px)">

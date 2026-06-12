@@ -9,152 +9,213 @@
 */ -}}
 {{- $k := . -}}
 {{- if eq $k "reliability" -}}
-<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weather-resistant unit with the highest uptime in any condition">
+<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A rugged weatherproof trailer with solar and battery backup that keeps watching in sun or rain with industry-leading uptime">
   <!-- ground -->
-  <path class="bd s1" d="M40 268 H380" stroke="#1e3a5f" stroke-width="2"/>
-  <!-- trailer base + mast -->
-  <rect class="bf s2" x="150" y="232" width="120" height="20" rx="4" fill="#0d243f" stroke="#3b82f6" stroke-width="2"/>
-  <path class="bd s2" d="M168 232 V120" stroke="#60a5fa" stroke-width="3"/>
-  <!-- camera head -->
-  <rect class="bf s3" x="150" y="98" width="46" height="24" rx="6" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/>
-  <circle class="bf s3" cx="158" cy="110" r="4.5" fill="#0a1628"/>
-  <!-- solar panel -->
-  <path class="bf s3" d="M214 120 l52 -14 l0 26 l-52 14 Z" fill="#0d243f" stroke="#3b82f6" stroke-width="2"/>
-  <path class="bd s4" d="M222 122 l40 -10 M228 132 l40 -10" stroke="#1e3a5f" stroke-width="1.5"/>
-  <!-- protective shield + check -->
-  <path class="bd s5" d="M300 96 L342 110 V152 C342 184 320 202 300 210 C280 202 258 184 258 152 V110 Z" stroke="#60a5fa" stroke-width="3" fill="rgba(0,102,204,0.10)"/>
-  <path class="bd s6" d="M282 152 l12 12 l22 -26" stroke="#4ade80" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- sun: soft glow + disc + full 8-ray burst -->
-  <circle class="bf s4" cx="90" cy="76" r="23" fill="#fbbf24" opacity="0.14">
-    <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3.2s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="21;25;21" dur="3.2s" repeatCount="indefinite"/>
-  </circle>
-  <g class="bf s6" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round">
-    <line x1="90" y1="56" x2="90" y2="40"/>
-    <line x1="90" y1="96" x2="90" y2="112"/>
-    <line x1="70" y1="76" x2="54" y2="76"/>
-    <line x1="110" y1="76" x2="126" y2="76"/>
-    <line x1="104" y1="62" x2="116" y2="50"/>
-    <line x1="76" y1="62" x2="64" y2="50"/>
-    <line x1="104" y1="90" x2="116" y2="102"/>
-    <line x1="76" y1="90" x2="64" y2="102"/>
-    <animate attributeName="opacity" values="0.55;1;0.55" dur="3.2s" repeatCount="indefinite"/>
+  <path class="bd s1" d="M96 274 H324" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- sun, upper right: the solar source and the sunny side of any weather -->
+  <g class="bf s2">
+    <circle cx="344" cy="60" r="16" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-width="2.5"/>
+    <g stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round">
+      <line x1="344" y1="36" x2="344" y2="26"/>
+      <line x1="344" y1="84" x2="344" y2="94"/>
+      <line x1="320" y1="60" x2="310" y2="60"/>
+      <line x1="368" y1="60" x2="378" y2="60"/>
+      <line x1="361" y1="43" x2="368" y2="36"/>
+      <line x1="327" y1="43" x2="320" y2="36"/>
+      <line x1="361" y1="77" x2="368" y2="84"/>
+      <line x1="327" y1="77" x2="320" y2="84"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.4s" repeatCount="indefinite"/>
+    </g>
   </g>
-  <circle class="bf s5" cx="90" cy="76" r="16" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" stroke-width="2.5"/>
-  <!-- rain sweeping across the scene -->
-  <g class="bf s7" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" opacity="0.85">
-    <line x1="72" y1="150" x2="68" y2="164"><animateTransform attributeName="transform" type="translate" values="0 -14;0 26;0 -14" dur="1.1s" repeatCount="indefinite"/></line>
-    <line x1="100" y1="160" x2="96" y2="174"><animateTransform attributeName="transform" type="translate" values="0 -14;0 26;0 -14" dur="1.1s" begin="0.28s" repeatCount="indefinite"/></line>
-    <line x1="128" y1="150" x2="124" y2="164"><animateTransform attributeName="transform" type="translate" values="0 -14;0 26;0 -14" dur="1.1s" begin="0.55s" repeatCount="indefinite"/></line>
-    <line x1="56" y1="166" x2="52" y2="180"><animateTransform attributeName="transform" type="translate" values="0 -14;0 26;0 -14" dur="1.1s" begin="0.8s" repeatCount="indefinite"/></line>
+  <!-- storm cloud + rain, upper left: the rainy side of any weather -->
+  <path class="bf s2" d="M58 78 a18 18 0 0 1 35 3 a14 14 0 0 1 -3 27 H56 a16 16 0 0 1 2 -30 Z" fill="#0d243f" stroke="#3b82f6" stroke-width="2.5"/>
+  <g class="bf s6" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <line x1="64" y1="116" x2="60" y2="128"><animateTransform attributeName="transform" type="translate" values="0 -10;0 16;0 -10" dur="1.05s" repeatCount="indefinite"/></line>
+    <line x1="80" y1="120" x2="76" y2="132"><animateTransform attributeName="transform" type="translate" values="0 -10;0 16;0 -10" dur="1.05s" begin="0.34s" repeatCount="indefinite"/></line>
+    <line x1="96" y1="116" x2="92" y2="128"><animateTransform attributeName="transform" type="translate" values="0 -10;0 16;0 -10" dur="1.05s" begin="0.62s" repeatCount="indefinite"/></line>
   </g>
-  <!-- uptime label -->
+  <!-- protective weatherproof dome arcing over the unit -->
+  <path class="bd s5" d="M150 150 A64 64 0 0 1 270 150" stroke="#3b82f6" stroke-width="2.5" opacity="0.55"/>
+  <!-- trailer base + wheels, centered on x=210 -->
+  <rect class="bf s2" x="170" y="242" width="80" height="22" rx="4" fill="#0d243f" stroke="#3b82f6" stroke-width="2"/>
+  <circle class="bf s2" cx="186" cy="268" r="6" fill="#0a1628" stroke="#3b82f6" stroke-width="2"/>
+  <circle class="bf s2" cx="234" cy="268" r="6" fill="#0a1628" stroke="#3b82f6" stroke-width="2"/>
+  <!-- mast -->
+  <path class="bd s3" d="M210 242 V152" stroke="#60a5fa" stroke-width="3"/>
+  <!-- sealed camera housing on top of the mast -->
+  <rect class="bf s4" x="186" y="128" width="48" height="26" rx="8" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/>
+  <circle class="bf s4" cx="197" cy="141" r="5" fill="#0a1628"/>
+  <circle class="bf s4" cx="223" cy="135" r="2.4" fill="#4ade80"/>
+  <!-- solar panel mounted left of the mast, angled toward the sun -->
+  <path class="bf s4" d="M150 176 l40 -13 v22 l-40 13 Z" fill="#0d243f" stroke="#3b82f6" stroke-width="2"/>
+  <path class="bf s5" d="M158 178 l28 -9 M163 187 l28 -9" stroke="#1e3a5f" stroke-width="1.5"/>
+  <path class="bf s5" d="M190 174 L210 180" stroke="#60a5fa" stroke-width="2"/>
+  <!-- battery pack right of the mast: charged, so it never goes dark -->
+  <g class="bf s7">
+    <rect x="244" y="186" width="42" height="26" rx="5" fill="#0a1628" stroke="#4ade80" stroke-width="2"/>
+    <rect x="286" y="193" width="4" height="12" rx="1.5" fill="#4ade80"/>
+    <rect x="248" y="190" width="8" height="18" rx="1.5" fill="#4ade80"/>
+    <rect x="259" y="190" width="8" height="18" rx="1.5" fill="#4ade80"/>
+    <rect x="270" y="190" width="8" height="18" rx="1.5" fill="#4ade80" opacity="0.55"><animate attributeName="opacity" values="0.25;0.9;0.25" dur="2s" repeatCount="indefinite"/></rect>
+    <path d="M226 196 l10 0 -4 7 9 0 -12 11 3 -9 -8 0 Z" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"/>
+  </g>
+  <!-- uptime badge, centered -->
   <g class="bf s8">
-    <rect x="150" y="276" width="120" height="30" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/>
-    <text x="210" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#4ade80">99.9% UPTIME</text>
+    <rect x="148" y="288" width="124" height="30" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="210" y="308" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#4ade80">99.9% UPTIME</text>
   </g>
 </svg>
 {{- else if eq $k "scalability" -}}
-<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A rapidly deployable solution scaling across many sites on a map">
+<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One trailer scaling into a connected fleet of sites across a map, instantly deployable">
   <!-- map frame -->
-  <rect class="bd s1" x="44" y="64" width="332" height="200" rx="16" stroke="#1e3a5f" stroke-width="2"/>
+  <rect class="bd s1" x="44" y="58" width="332" height="206" rx="16" stroke="#1e3a5f" stroke-width="2"/>
   <g stroke="#16304f" stroke-width="1.2">
-    <line class="bd s1" x1="44" y1="130" x2="376" y2="130"/><line class="bd s1" x1="44" y1="196" x2="376" y2="196"/>
-    <line class="bd s2" x1="128" y1="64" x2="128" y2="264"/><line class="bd s2" x1="210" y1="64" x2="210" y2="264"/><line class="bd s2" x1="292" y1="64" x2="292" y2="264"/>
+    <line class="bd s1" x1="44" y1="126" x2="376" y2="126"/><line class="bd s1" x1="44" y1="196" x2="376" y2="196"/>
+    <line class="bd s2" x1="128" y1="58" x2="128" y2="264"/><line class="bd s2" x1="210" y1="58" x2="210" y2="264"/><line class="bd s2" x1="292" y1="58" x2="292" y2="264"/>
   </g>
-  <!-- network mesh -->
-  <path class="bd s5" d="M96 104 L186 150 L268 100 L320 168 L150 214 L240 224" stroke="#3b82f6" stroke-width="1.6" opacity="0.7"/>
-  <!-- pins build in sequence -->
-  {{- $pins := slice (dict "x" 96 "y" 104 "c" "s3") (dict "x" 186 "y" 150 "c" "s4") (dict "x" 268 "y" 100 "c" "s5") (dict "x" 320 "y" 168 "c" "s6") (dict "x" 150 "y" 214 "c" "s7") (dict "x" 240 "y" 224 "c" "s8") -}}
+  <!-- mesh links radiating from the central hub -->
+  <g class="bf s5" stroke="#3b82f6" stroke-width="1.6" opacity="0.6">
+    <line x1="210" y1="160" x2="96" y2="100"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" repeatCount="indefinite"/></line>
+    <line x1="210" y1="160" x2="300" y2="96"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" begin="0.4s" repeatCount="indefinite"/></line>
+    <line x1="210" y1="160" x2="124" y2="214"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" begin="0.8s" repeatCount="indefinite"/></line>
+    <line x1="210" y1="160" x2="318" y2="216"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></line>
+    <line x1="210" y1="160" x2="332" y2="150"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.4s" begin="1.6s" repeatCount="indefinite"/></line>
+  </g>
+  <!-- satellite site pins build in one by one -->
+  {{- $pins := slice (dict "x" 96 "y" 100 "c" "s4") (dict "x" 300 "y" 96 "c" "s5") (dict "x" 124 "y" 214 "c" "s6") (dict "x" 318 "y" 216 "c" "s7") (dict "x" 332 "y" 150 "c" "s8") -}}
   {{- range $pins }}
   <g class="bf {{ .c }}" transform="translate({{ .x }},{{ .y }})">
-    <path d="M0 -20 C11 -20 17 -11 17 -4 C17 7 0 22 0 22 C0 22 -17 7 -17 -4 C-17 -11 -11 -20 0 -20 Z" fill="#0066CC" stroke="#60a5fa" stroke-width="2"/>
-    <circle cx="0" cy="-4" r="4.5" fill="#fff"/>
+    <path d="M0 -18 C10 -18 16 -10 16 -3 C16 7 0 20 0 20 C0 20 -16 7 -16 -3 C-16 -10 -10 -18 0 -18 Z" fill="#0066CC" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="0" cy="-3" r="4" fill="#fff"/>
   </g>
   {{- end }}
-  <!-- node count label -->
+  <!-- central hub: the first trailer, larger and highlighted -->
+  <g class="bf s3" transform="translate(210,160)">
+    <circle r="26" fill="rgba(74,222,128,0.10)" stroke="#4ade80" stroke-width="1.5"><animate attributeName="r" values="24;30;24" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.6s" repeatCount="indefinite"/></circle>
+    <path d="M0 -22 C13 -22 20 -12 20 -3 C20 9 0 26 0 26 C0 26 -20 9 -20 -3 C-20 -12 -13 -22 0 -22 Z" fill="#0066CC" stroke="#4ade80" stroke-width="2.5"/>
+    <rect x="-8" y="-9" width="16" height="11" rx="2.5" fill="#0a1628" stroke="#93c5fd" stroke-width="1.5"/>
+    <circle cx="-2.5" cy="-3.5" r="2.6" fill="#60a5fa"/>
+  </g>
+  <!-- scale badge, centered -->
   <g class="bf s9">
-    <rect x="140" y="278" width="140" height="30" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/>
-    <text x="210" y="298" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">1 TO 100+ SITES</text>
+    <rect x="138" y="278" width="144" height="32" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="210" y="299" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">1 TO 100+ SITES</text>
   </g>
 </svg>
 {{- else if eq $k "connectivity" -}}
-<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Built-in cellular connectivity streaming to the cloud, never throttled">
-  <!-- cell tower -->
-  <path class="bd s1" d="M96 250 L116 120 M156 250 L136 120" stroke="#3b82f6" stroke-width="3"/>
-  <path class="bd s2" d="M104 196 H148 M110 162 H142" stroke="#1e3a5f" stroke-width="2"/>
-  <path class="bd s2" d="M120 120 H132 L128 104 H124 Z" stroke="#60a5fa" stroke-width="2.5" fill="#0066CC"/>
-  <!-- signal rings -->
-  <g class="bf s4" stroke="#4ade80" stroke-width="3" fill="none" stroke-linecap="round">
-    <path d="M140 96 A26 26 0 0 1 140 132"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.8s" repeatCount="indefinite"/></path>
-    <path d="M152 84 A42 42 0 0 1 152 144"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.8s" begin="0.3s" repeatCount="indefinite"/></path>
-    <path d="M164 72 A58 58 0 0 1 164 156"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.8s" begin="0.6s" repeatCount="indefinite"/></path>
+<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A trailer streaming live video over built-in cellular to the cloud and on to monitoring teams and devices, never throttled">
+  <!-- left: trailer with antenna -->
+  <g class="bf s1">
+    <rect x="44" y="150" width="58" height="40" rx="8" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
+    <rect x="56" y="160" width="20" height="14" rx="3" fill="#0a1628" stroke="#93c5fd" stroke-width="1.5"/>
+    <circle cx="62" cy="167" r="3" fill="#60a5fa"/>
+    <path d="M73 150 V128" stroke="#60a5fa" stroke-width="2.5"/>
+    <circle cx="73" cy="124" r="4" fill="#0066CC" stroke="#93c5fd" stroke-width="1.5"/>
   </g>
-  <!-- cloud -->
-  <path class="bd s5" d="M280 84 a28 28 0 0 1 54 6 a22 22 0 0 1 -5 43 h-50 a24 24 0 0 1 1 -49 Z" stroke="#60a5fa" stroke-width="2.5" fill="rgba(0,102,204,0.12)"/>
-  <path class="bd s6" d="M296 116 l10 10 l18 -22" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- data packets -->
-  <circle class="bf s6" r="5" fill="#4ade80"><animateMotion path="M128 110 C190 92 250 96 304 104" dur="1.6s" repeatCount="indefinite"/></circle>
-  <circle class="bf s6" r="5" fill="#60a5fa"><animateMotion path="M128 110 C190 92 250 96 304 104" dur="1.6s" begin="0.8s" repeatCount="indefinite"/></circle>
-  <!-- labels -->
-  <g class="bf s7"><rect x="62" y="262" width="142" height="28" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="133" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#4ade80">NEVER THROTTLED</text></g>
-  <g class="bf s8"><rect x="216" y="262" width="138" height="28" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="285" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#60a5fa">DATA INCLUDED</text></g>
+  <!-- signal rings rising from the antenna -->
+  <g class="bf s3" stroke="#4ade80" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M84 114 A22 22 0 0 1 84 134"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite"/></path>
+    <path d="M94 104 A34 34 0 0 1 94 144"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" begin="0.3s" repeatCount="indefinite"/></path>
+    <path d="M104 94 A46 46 0 0 1 104 154"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" begin="0.6s" repeatCount="indefinite"/></path>
+  </g>
+  <!-- center: cloud with check -->
+  <path class="bd s5" d="M178 96 a26 26 0 0 1 50 5 a20 20 0 0 1 -4 39 h-46 a22 22 0 0 1 0 -44 Z" stroke="#60a5fa" stroke-width="2.5" fill="rgba(0,102,204,0.12)"/>
+  <path class="bd s6" d="M193 122 l9 9 l17 -20" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- data packets: trailer -> cloud -->
+  <circle class="bf s5" r="4.5" fill="#4ade80"><animateMotion path="M102 130 C140 110 168 110 196 116" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle class="bf s5" r="4.5" fill="#60a5fa"><animateMotion path="M102 130 C140 110 168 110 196 116" dur="1.5s" begin="0.75s" repeatCount="indefinite"/></circle>
+  <!-- right: monitor + phone receiving the live stream -->
+  <g class="bf s6">
+    <rect x="300" y="92" width="74" height="50" rx="6" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
+    <rect x="307" y="99" width="60" height="36" rx="3" fill="#0a1628"/>
+    <path d="M313 124 l10 -12 l9 9 l8 -14 l12 17" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M328 142 V152 M346 142 V152 M318 152 H356" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g class="bf s7">
+    <rect x="338" y="156" width="26" height="42" rx="5" fill="#0d243f" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="342" y="162" width="18" height="28" rx="2" fill="#0a1628"/>
+    <circle cx="351" cy="194" r="1.8" fill="#60a5fa"/>
+  </g>
+  <!-- packets: cloud -> devices -->
+  <circle class="bf s6" r="4.5" fill="#4ade80"><animateMotion path="M226 116 C260 110 286 110 312 114" dur="1.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <!-- labels, centered pair -->
+  <g class="bf s8"><rect x="58" y="250" width="138" height="28" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="127" y="268" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#4ade80">NEVER THROTTLED</text></g>
+  <g class="bf s9"><rect x="224" y="250" width="138" height="28" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="293" y="268" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="800" fill="#60a5fa">DATA INCLUDED</text></g>
 </svg>
 {{- else if eq $k "security" -}}
-<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Footage encrypted from the lens to the cloud, never touching a public network">
-  <!-- camera node -->
+<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Footage encrypted from the camera lens through a locked private tunnel to secure cloud storage, never touching the public internet">
+  <!-- camera node, left -->
   <g class="bf s1">
-    <rect x="40" y="150" width="64" height="38" rx="8" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
-    <circle cx="58" cy="169" r="9" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="58" cy="169" r="3" fill="#0a1628"/>
-    <text x="72" y="208" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">CAMERA</text>
+    <rect x="42" y="142" width="66" height="40" rx="8" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
+    <circle cx="61" cy="162" r="9.5" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="61" cy="162" r="3" fill="#0a1628"/>
+    <rect x="84" y="154" width="14" height="16" rx="2" fill="#0a1628" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="75" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">CAMERA</text>
   </g>
-  <!-- encrypted pipe -->
-  <path class="bd s3" d="M104 169 H300" stroke="#3b82f6" stroke-width="3"/>
-  <!-- lock on the pipe -->
+  <!-- encrypted tunnel: double rail with a lock midway -->
+  <path class="bd s3" d="M108 156 H300" stroke="#3b82f6" stroke-width="3"/>
+  <path class="bd s3" d="M108 168 H300" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- lock guarding the tunnel, centered -->
   <g class="bf s4">
-    <rect x="178" y="150" width="44" height="36" rx="7" fill="#0a1628" stroke="#4ade80" stroke-width="2.5"/>
-    <path d="M186 150 v-10 a14 14 0 0 1 28 0 v10" stroke="#4ade80" stroke-width="2.5" fill="none"/>
-    <circle cx="200" cy="166" r="4.5" fill="#4ade80"/><line x1="200" y1="166" x2="200" y2="177" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
-    <text x="200" y="208" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">ENCRYPTED</text>
+    <rect x="186" y="146" width="46" height="38" rx="8" fill="#0a1628" stroke="#4ade80" stroke-width="2.5"/>
+    <path d="M194 146 v-11 a15 15 0 0 1 30 0 v11" stroke="#4ade80" stroke-width="2.5" fill="none"/>
+    <circle cx="209" cy="162" r="4.5" fill="#4ade80"/><line x1="209" y1="162" x2="209" y2="174" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <text x="209" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">AES-256</text>
   </g>
-  <!-- moving secure packet -->
-  <circle class="bf s5" r="5" fill="#4ade80"><animateMotion path="M104 169 H300" dur="1.7s" repeatCount="indefinite"/></circle>
-  <!-- cloud node -->
+  <!-- secure packet traveling the tunnel -->
+  <circle class="bf s5" r="5" fill="#4ade80"><animateMotion path="M108 162 H300" dur="1.7s" repeatCount="indefinite"/></circle>
+  <!-- cloud node, right -->
   <g class="bf s6">
-    <path d="M300 150 a26 26 0 0 1 50 6 a20 20 0 0 1 -4 39 h-46 a22 22 0 0 1 0 -45 Z" fill="rgba(0,102,204,0.12)" stroke="#60a5fa" stroke-width="2.5"/>
-    <text x="332" y="216" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">SECURE CLOUD</text>
+    <path d="M300 142 a26 26 0 0 1 50 6 a20 20 0 0 1 -4 39 h-46 a22 22 0 0 1 0 -45 Z" fill="rgba(0,102,204,0.12)" stroke="#60a5fa" stroke-width="2.5"/>
+    <path d="M316 168 l8 8 l14 -17" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="330" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#7d93ad">SECURE CLOUD</text>
   </g>
-  <!-- private-only label -->
-  <g class="bf s7"><rect x="118" y="252" width="184" height="30" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="210" y="272" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="800" fill="#4ade80">PRIVATE NETWORK ONLY</text></g>
-  <!-- crossed-out public -->
-  <g class="bf s8" stroke="#ef6a6a" stroke-width="2.5"><path d="M324 70 l26 26 M350 70 l-26 26"/></g>
-  <text class="bf s8" x="337" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#ef6a6a">NO PUBLIC NET</text>
+  <!-- private-only badge, centered -->
+  <g class="bf s7"><rect x="110" y="250" width="200" height="30" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="210" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="800" fill="#4ade80">PRIVATE NETWORK ONLY</text></g>
+  <!-- crossed-out public net, top right -->
+  <g class="bf s8">
+    <circle cx="340" cy="70" r="16" fill="none" stroke="#ef6a6a" stroke-width="2.5"/>
+    <line x1="329" y1="59" x2="351" y2="81" stroke="#ef6a6a" stroke-width="2.5"/>
+    <text x="340" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#ef6a6a">NO PUBLIC NET</text>
+  </g>
 </svg>
 {{- else if eq $k "ai" -}}
-<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On-board AI recognizing people and vehicles, triggering automated actions">
-  <!-- 3-lens camera head -->
+<svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On-board AI recognizing a person and a vehicle in real time and triggering automated responses">
+  <!-- three-lens AI camera head, centered top -->
   <g class="bf s1">
-    <rect x="120" y="118" width="180" height="72" rx="16" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
-    <circle cx="162" cy="154" r="17" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="162" cy="154" r="6" fill="#0a1628"/>
-    <circle cx="210" cy="154" r="17" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="210" cy="154" r="6" fill="#0a1628"/>
-    <circle cx="258" cy="154" r="17" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="258" cy="154" r="6" fill="#0a1628"/>
+    <rect x="116" y="44" width="188" height="64" rx="16" fill="#0d243f" stroke="#60a5fa" stroke-width="2.5"/>
+    <circle cx="160" cy="76" r="15" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="160" cy="76" r="5" fill="#0a1628"/>
+    <circle cx="210" cy="76" r="15" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="210" cy="76" r="5" fill="#0a1628"/>
+    <circle cx="260" cy="76" r="15" fill="#0066CC" stroke="#93c5fd" stroke-width="2"/><circle cx="260" cy="76" r="5" fill="#0a1628"/>
   </g>
-  <!-- detection brackets -->
-  <g class="bf s3" stroke="#4ade80" stroke-width="3" stroke-linecap="round" fill="none">
-    <path d="M104 70 h-16 v16"/><path d="M316 70 h16 v16"/><path d="M104 240 h-16 v-16"/><path d="M316 240 h16 v-16"/>
+  <!-- scene frame the AI is analysing -->
+  <rect class="bd s2" x="92" y="128" width="236" height="118" rx="12" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- recognised person with bounding box -->
+  <g class="bf s4">
+    <rect x="118" y="150" width="64" height="86" rx="6" stroke="#4ade80" stroke-width="2.5" fill="rgba(74,222,128,0.06)"/>
+    <circle cx="150" cy="172" r="9" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+    <path d="M134 226 v-18 a16 16 0 0 1 32 0 v18" stroke="#60a5fa" stroke-width="2.5" fill="none"/>
+    <rect x="118" y="138" width="44" height="13" rx="3" fill="#4ade80"/><text x="140" y="148" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800" fill="#0a1628">PERSON</text>
   </g>
-  <!-- scanning bar -->
-  <line class="bf s4" x1="88" y1="80" x2="332" y2="80" stroke="#4ade80" stroke-width="2" opacity="0.7">
-    <animate attributeName="y1" values="80;232;80" dur="2.6s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="80;232;80" dur="2.6s" repeatCount="indefinite"/>
+  <!-- recognised vehicle with bounding box -->
+  <g class="bf s5">
+    <rect x="222" y="178" width="86" height="58" rx="6" stroke="#4ade80" stroke-width="2.5" fill="rgba(74,222,128,0.06)"/>
+    <path d="M232 222 v-12 l8 -14 h40 l10 14 v12" stroke="#60a5fa" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+    <circle cx="246" cy="222" r="5" fill="#0a1628" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="284" cy="222" r="5" fill="#0a1628" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="222" y="166" width="48" height="13" rx="3" fill="#4ade80"/><text x="246" y="176" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800" fill="#0a1628">VEHICLE</text>
+  </g>
+  <!-- horizontal scan bar sweeping the scene -->
+  <line class="bf s3" x1="96" y1="138" x2="324" y2="138" stroke="#4ade80" stroke-width="2" opacity="0.7">
+    <animate attributeName="y1" values="138;238;138" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="138;238;138" dur="2.8s" repeatCount="indefinite"/>
   </line>
-  <!-- action chips appearing one by one -->
-  {{- $acts := slice (dict "t" "SPOTLIGHT" "x" 56 "c" "s5") (dict "t" "VOICE-DOWN" "x" 162 "c" "s6") (dict "t" "ALERT SENT" "x" 268 "c" "s7") -}}
+  <!-- automated action chips, centered row -->
+  {{- $acts := slice (dict "t" "SPOTLIGHT" "x" 50 "c" "s6") (dict "t" "VOICE WARN" "x" 162 "c" "s7") (dict "t" "ALERT SENT" "x" 274 "c" "s8") -}}
   {{- range $a := $acts }}
   <g class="bf {{ $a.c }}"><rect x="{{ $a.x }}" y="262" width="96" height="28" rx="8" fill="#0d243f" stroke="#1e3a5f" stroke-width="1.5"/><text x="{{ add $a.x 48 }}" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800" fill="#60a5fa">{{ $a.t }}</text></g>
   {{- end }}
-  <!-- alert dot -->
-  <circle class="bf s8" cx="332" cy="70" r="6" fill="#ef6a6a"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/></circle>
+  <!-- live alert dot on the camera -->
+  <circle class="bf s2" cx="288" cy="60" r="5" fill="#ef6a6a"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/></circle>
 </svg>
 {{- else -}}
 <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
