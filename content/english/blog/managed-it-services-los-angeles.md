@@ -2,7 +2,7 @@
 title: "Managed IT Services in Los Angeles: The Complete 2026 Buyer's Guide"
 meta_title: "Managed IT Services Los Angeles | Managed IT Provider | Secure Techies"
 description: "A complete guide to managed IT services in Los Angeles — what's included, real pricing, how to choose a provider, and what local businesses should expect."
-date: 2026-05-21
+date: 2026-06-09
 image: "/images/blog/managed-it-services-los-angeles.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"

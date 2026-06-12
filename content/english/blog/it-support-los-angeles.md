@@ -2,7 +2,7 @@
 title: "IT Support in Los Angeles: What Local Businesses Should Expect in 2026"
 meta_title: "IT Support Los Angeles | Business IT Support Services | Secure Techies"
 description: "What great IT support looks like for Los Angeles businesses — response times, on-site help, pricing models, and how to choose a reliable local company."
-date: 2026-05-07
+date: 2026-06-11
 image: "/images/blog/it-support-los-angeles.webp"
 categories: ["Managed IT"]
 author: "Secure Techies"

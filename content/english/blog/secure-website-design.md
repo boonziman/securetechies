@@ -2,7 +2,7 @@
 title: "Secure Website Design: Why Your Site Needs Security Built In"
 meta_title: "Secure Website Design: Build Security In | Secure Techies"
 description: "Secure website design protects your data, customers, and rankings. Learn the security every business site needs built in from day one, from an LA web and IT team."
-date: 2026-06-11
+date: 2026-05-07
 image: "/images/blog/secure-website-design.webp"
 categories: ["Web Development"]
 author: "Secure Techies"

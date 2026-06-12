@@ -2,7 +2,7 @@
 title: "EDR vs. Antivirus: Why Traditional Antivirus Isn't Enough Anymore"
 meta_title: "EDR vs Antivirus: What Your Business Needs | Secure Techies"
 description: "Traditional antivirus vs. modern endpoint detection and response (EDR) — why signature-based AV misses today's threats, and what actually protects you now."
-date: 2026-05-14
+date: 2026-06-07
 image: "/images/blog/endpoint-detection-response.webp"
 categories: ["Cybersecurity"]
 author: "Secure Techies"

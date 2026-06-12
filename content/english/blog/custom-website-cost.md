@@ -2,7 +2,7 @@
 title: "How Much Does a Custom Website Cost in 2026?"
 meta_title: "How Much Does a Custom Website Cost in 2026? | Secure Techies"
 description: "What does a custom website cost in 2026? See real price ranges for small business sites, landing pages, and web apps, and what actually drives the price."
-date: 2026-06-09
+date: 2026-05-21
 image: "/images/blog/custom-website-cost.webp"
 categories: ["Web Development"]
 author: "Secure Techies"
