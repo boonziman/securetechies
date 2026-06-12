@@ -27,3 +27,14 @@ jsconfig.json
 .venv
 __pycache__
 *.jpeg
+
+# Local-only: AI assistant skills (not for the production repo)
+.github/skills/
+
+# Local-only: scratch analysis / PageSpeed report notes
+HomePagespeedDesktop.md
+HomePagespeedmobile.md
+Lawfirm-Landing-ps-desktop.md
+Lawfirm-Landing-ps-mobile.md
+IVT-PAGESOURCE.MD
+Onpage seo signals.md
