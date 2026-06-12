@@ -1,4 +1,5 @@
 ---
+date: 2026-06-11
 title: "Compliance & Security Audits"
 meta_title: "Compliance & Security Audits | Secure Techies - HIPAA, CMMC, SOC 2"
 description: "Navigate HIPAA, GDPR, CMMC, and SOC 2 compliance with confidence. Secure Techies provides risk assessments, gap analysis, audit preparation, policy documentation, and security training."

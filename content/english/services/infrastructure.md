@@ -1,4 +1,5 @@
 ---
+date: 2026-06-11
 title: "Managed Infrastructure Services"
 meta_title: "Managed Infrastructure Services | Secure Techies - IT Solutions for LA Businesses"
 description: "Secure Techies provides fully managed infrastructure services including server management, cloud migration, workstation lifecycle, and IT procurement for businesses across Southern California."

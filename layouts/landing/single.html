@@ -459,7 +459,7 @@
             <label for="l-service">{{ $p.form_service_label | default "Service You Need" }}</label>
             <select id="l-service" name="service" class="st-l-input">
               <option value="">Select a service...</option>
-              {{ range ($p.form_services | default (slice "Managed IT Services" "Cybersecurity" "MSP Transition" "Cloud Solutions" "Compliance & Audits" "Help Desk Support" "Other")) }}<option value="{{ . | urlize }}">{{ . }}</option>{{ end }}
+              {{ range ($p.form_services | default (slice "Managed IT Services" "Cybersecurity" "MSP Transition" "Cloud Solutions" "Mobile CCTV Trailers" "Compliance & Audits" "Help Desk Support" "Other")) }}<option value="{{ . | urlize }}">{{ . }}</option>{{ end }}
             </select>
           </div>
           <div class="st-l-field">

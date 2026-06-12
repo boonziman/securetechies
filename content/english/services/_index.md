@@ -3,6 +3,7 @@ title: "Our Managed IT Services"
 meta_title: "Managed IT Services & Cybersecurity Solutions | Secure Techies"
 description: "Explore Secure Techies' full range of managed IT services — infrastructure, network security, help desk, backup & disaster recovery, and compliance solutions for businesses in Southern California."
 layout: "services"
+noindex: true
 draft: false
 ---
 

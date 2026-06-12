@@ -1,4 +1,5 @@
 ---
+date: 2026-06-11
 title: "Web Development & Digital Solutions"
 meta_title: "Web Development & Digital Solutions in Los Angeles | Secure Techies"
 description: "Secure-first web development for Los Angeles & Southern California businesses. Custom websites, landing pages, AI tools, SEO content & ongoing support — built fast, built secure."

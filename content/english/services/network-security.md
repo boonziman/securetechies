@@ -1,4 +1,5 @@
 ---
+date: 2026-06-11
 title: "Network Security Solutions"
 meta_title: "Network Security Solutions | Secure Techies - Enterprise Network Protection"
 description: "Protect your business with enterprise-grade network security from Secure Techies — next-gen firewalls, VPN, SD-WAN, WiFi design, and 24/7 intrusion detection for LA-area businesses."
