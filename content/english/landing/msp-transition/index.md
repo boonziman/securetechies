@@ -1,8 +1,8 @@
 ---
 title: "MSP Transition Services | Switch Managed IT Providers With Zero Downtime"
-meta_title: "Stuck With a Bad MSP? Switch to Secure Techies — Zero Downtime"
+meta_title: "Stuck With a Bad MSP? Switch to Secure Techies, Zero Downtime"
 meta_description: "Frustrated with slow tickets, surprise invoices, and a provider who ignores you? Secure Techies moves you to a better MSP with zero downtime, no data loss, and no long-term contract. Free transition assessment."
-description: "We help Los Angeles businesses transition away from a frustrating MSP to responsive, secure managed IT — with zero downtime and no data loss."
+description: "We help Los Angeles businesses transition away from a frustrating MSP to responsive, secure managed IT, with zero downtime and no data loss."
 keywords:
   - "switch MSP"
   - "change managed IT provider"
@@ -35,7 +35,7 @@ form_services:
   - "Compliance (HIPAA / CMMC / SOC 2)"
   - "Web Development & Design"
   - "Mobile CCTV Trailers"
-  - "Not Sure — Just Need Help"
+  - "Not Sure, Just Need Help"
 
 service_name: "MSP Transition & Managed IT Services"
 
@@ -45,7 +45,7 @@ service_name: "MSP Transition & Managed IT Services"
 hero:
   badge: "Trusted IT Partner · Southern California"
   heading: "Stuck With an MSP That Stopped Caring?"
-  heading_accent: "We'll Move You — Without the Headache."
+  heading_accent: "We'll Move You, Without the Headache."
   lead: "Slow ticket responses. Surprise invoices. Security you're not sure actually works. You shouldn't have to babysit the company that's supposed to handle your IT. We make switching managed providers simple, secure, and completely behind the scenes, so your team never feels it."
   cta_text: "Get My Free MSP Transition Plan"
   sticky_cta: "Get My Free Plan"
@@ -94,7 +94,7 @@ hero:
 problems:
   eyebrow: "Sound familiar?"
   heading: "If Your Current IT Provider Does Any of This, You're <span class=\"st-l-hl\">Overpaying for Stress</span>"
-  sub: "You're not being difficult. These are red flags that your MSP has outgrown you — or you've outgrown them."
+  sub: "You're not being difficult. These are red flags that your MSP has outgrown you, or you've outgrown them."
   items:
     - icon: "clock"
       title: "Tickets Sit for Days"
@@ -115,14 +115,14 @@ problems:
       title: "No Strategy, Just Firefighting"
       text: "They only show up when something breaks. No roadmap, no planning, no help growing, just reactive band-aids on recurring problems."
   cost_line: "Here's the uncomfortable math: a single hour of downtime costs the average small business <b class=\"st-l-hl-green\">$8,000–$25,000</b>. A slow, disengaged MSP isn't just annoying. It's <b>expensive</b>. The good news? Switching is far easier than you think."
-  cta: "Show Me a Better Way — Free"
+  cta: "Show Me a Better Way, Free"
 
 # ============================================================
 # PROCESS — How the transition works
 # ============================================================
 process:
   eyebrow: "The switch is painless"
-  heading: "How We Move You in 5 Simple Steps — With <span class=\"st-l-hl\">Zero Downtime</span>"
+  heading: "How We Move You in 5 Simple Steps, With <span class=\"st-l-hl\">Zero Downtime</span>"
   sub: "You stay focused on your business. We handle every technical detail, coordinate with your old provider, and make sure nothing breaks."
   steps:
     - step: "Step 1 · Week 1"
@@ -156,7 +156,7 @@ process:
 benefits:
   eyebrow: "Why Secure Techies"
   heading: "What a Managed IT Partner Should <span class=\"st-l-hl\">Actually Feel Like</span>"
-  sub: "For 15+ years, Los Angeles businesses have trusted us to do IT the right way — responsive, secure, and genuinely on your side."
+  sub: "For 15+ years, Los Angeles businesses have trusted us to do IT the right way: responsive, secure, and genuinely on your side."
   image: "images/landing/benefits-team.jpg"
   image_badge: "Real engineers, on call"
   cta: "Talk to a Real Engineer"
@@ -186,8 +186,7 @@ benefits:
 services:
   eyebrow: "Everything under one roof"
   heading: "One Partner for Your Entire IT Stack"
-  sub: "When you switch to Secure Techies, you don't just get a faster help desk — you get a full team covering every layer of your technology."
-  footnote: "We also offer <b>web development &amp; design services</b> — from fast, secure business websites to custom web apps. Ask us when we talk."
+  sub: "When you switch to Secure Techies, you don't just get a faster help desk. You get a full team covering every layer of your technology."
   cta: "Get My Free Assessment"
   items:
     - title: "Infrastructure & Cloud"
@@ -214,10 +213,16 @@ services:
       text: "Endpoint detection, dark-web monitoring, email protection, and employee training, all in one place."
       image: "images/services/cybersecurity-overview.webp"
       tag_class: "st-svc-tag-green"
+    - title: "Web Development & Design"
+      text: "Fast, secure, high-converting websites, landing pages, and custom web apps, built by the same security-first team that protects your network."
+      image: "images/services/webdev-overview.webp"
+      tag_class: "st-svc-tag-amber"
+      wide: true
     - title: "Mobile CCTV Trailers"
       text: "Solar-powered, rapidly deployable surveillance trailers with 24/7 remote monitoring, HD night vision, and AI detection for any site."
       image: "images/services/cctv/cctv-overview.jpg"
-      tag_class: "st-svc-tag-amber"
+      tag_class: "st-svc-tag-purple"
+      wide: true
 
 # ============================================================
 # STATS
@@ -249,7 +254,7 @@ stats:
 # ============================================================
 reviews:
   eyebrow: "Don't take our word for it"
-  heading: "Businesses That Trust Secure Techies — and Never Looked Back"
+  heading: "Businesses That Trust Secure Techies and Never Looked Back"
   sub: "Real, verified reviews from the Secure Techies Google Business Profile."
   rating_value: "5.0"
   rating_count: "120"
@@ -279,7 +284,7 @@ reviews:
       meta: "Government IT procurement"
       avatar: "images/landing/reviews/catherine.jpg"
     - rating: 5
-      text: "Secure Techies has been an outstanding IT partner for our business. What really stands out is how trustworthy and dependable they are — they always take the time to explain issues clearly and make sure everything is handled properly the first time."
+      text: "Secure Techies has been an outstanding IT partner for our business. What really stands out is how trustworthy and dependable they are. They always take the time to explain issues clearly and make sure everything is handled properly the first time."
       name: "Shadi Jafari"
       meta: "Google review"
       avatar: "images/landing/reviews/shadi.jpg"
@@ -364,7 +369,7 @@ faq:
   items:
     - q: "Won't switching MSPs cause downtime or lost data?"
       a: "No. Zero-downtime transitions are our specialty. We migrate your data and systems in the background with full encryption and verification, then cut over during a planned window. Your team keeps working, and nothing is lost. We've done this for 120+ businesses without a single data-loss incident."
-    - q: "I'm locked in with my current provider — can I even leave?"
+    - q: "I'm locked in with my current provider, can I even leave?"
       a: "Almost always, yes. Most 'lock-in' is psychological, not contractual. We'll review your agreement for free, identify your exit path, and handle the awkward offboarding, including recovering your passwords, domains, and backups. Many clients are surprised how easy it is once someone experienced manages it."
     - q: "How long does a transition take?"
       a: "Most small-to-mid-size businesses are fully transitioned in 2–3 weeks. We move at the pace that's safe for your environment, and the disruptive part, the actual cutover, is invisible to your staff."
@@ -372,7 +377,7 @@ faq:
       a: "Managed IT is a flat, predictable monthly rate based on your number of users and devices, with no surprise invoices. The transition assessment and migration plan are completely free. We'll give you an exact quote before you commit to anything."
     - q: "What if you turn out to be just like our last provider?"
       a: "That's exactly why we don't lock you into a long-term contract. We're month-to-month and earn your business every single month. If we ever stop delivering, you're free to leave, and we'll help you do it cleanly. We'd rather keep you by being great than by trapping you."
-    - q: "We're a small team — are we too small for you?"
+    - q: "We're a small team, are we too small for you?"
       a: "Not at all. We specialize in Los Angeles small and mid-size businesses, from 5-person offices to 200-seat operations. You get the same senior engineers and fast response regardless of size."
 
 # ============================================================

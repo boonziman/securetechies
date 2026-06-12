@@ -195,7 +195,6 @@ services:
   eyebrow: "Everything under one roof"
   heading: "One Partner for Your <span class=\"st-l-hl\">Entire IT Stack</span>"
   sub: "From the help desk to the firewall to your website, you get one accountable team covering every layer of your technology."
-  footnote: "We also build <b>websites and custom web apps</b> through our web development &amp; design team. Ask us about your site when we talk."
   cta: "Get My Free Assessment"
   items:
     - title: "Managed IT & Help Desk"
@@ -224,13 +223,15 @@ services:
       image: "images/services/compliance-overview.webp"
       tag_class: "st-svc-tag-green"
     - title: "Web Development & Design"
-      text: "Fast, secure, modern websites and custom web apps that turn visitors into customers."
+      text: "Fast, secure, high-converting websites, landing pages, and custom web apps that turn visitors into customers, built by the same security-first team."
       image: "images/services/webdev-overview.webp"
       tag_class: "st-svc-tag-amber"
+      wide: true
     - title: "Mobile CCTV Trailers"
       text: "Solar-powered, rapidly deployable surveillance trailers with 24/7 remote monitoring, HD night vision, and AI detection for any site."
       image: "images/services/cctv/cctv-overview.jpg"
       tag_class: "st-svc-tag-purple"
+      wide: true
 
 # ============================================================
 # STATS

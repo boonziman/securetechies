@@ -262,8 +262,8 @@
     </div>
     <div class="st-service-grid st-l-svc-grid">
       {{ range $i, $s := .items }}
-      <div class="st-svc-card st-l-svc-card st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
-        {{ with .image }}{{ $simg := resources.Get . }}{{ if $simg }}{{ $simg = $simg.Fill "560x420 webp q80" }}{{ end }}<img src="{{ if $simg }}{{ $simg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $s.title }}" loading="lazy" class="st-svc-bg-img" width="560" height="420">{{ end }}
+      <div class="st-svc-card st-l-svc-card{{ if .wide }} st-svc-card--wide{{ end }} st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
+        {{ with .image }}{{ $simg := resources.Get . }}{{ if $simg }}{{ $simg = $simg.Fill (cond $s.wide "1100x620 webp q80" "560x420 webp q80") }}{{ end }}<img src="{{ if $simg }}{{ $simg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $s.title }}" loading="lazy" class="st-svc-bg-img" width="{{ cond $s.wide 1100 560 }}" height="{{ cond $s.wide 620 420 }}">{{ end }}
         <div class="st-svc-overlay"></div>
         <div class="st-svc-content">
           <span class="st-svc-tag {{ .tag_class }}">{{ printf "%02d" (add $i 1) }}</span>

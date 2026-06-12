@@ -302,6 +302,7 @@ features:
 benefits:
   - "Reduce risk, theft, and loss with active deterrence"
   - "Lower costs versus on-site guards and fixed installs"
+  - "Flexible lease, rental, or purchase options to fit any budget"
   - "Flexible and scalable, ready to deploy for a day or a year"
   - "Improve accountability with HD, time-stamped footage"
   - "Meet insurance and liability requirements"
@@ -317,8 +318,8 @@ faqs:
     answer: "On-board AI identifies people, vehicles, and suspicious behavior in real time. Depending on your setup, the system can trigger floodlights, sirens, and automated voice warnings, while a live monitoring operator verifies the event and escalates to your team or law enforcement, turning passive recording into active deterrence."
   - question: "Can I watch the cameras myself?"
     answer: "Yes. You get secure access to live and recorded video from your phone, tablet, or computer, with real-time alerts pushed to you. Our 24/7 monitoring team watches alongside you so nothing slips through the cracks."
-  - question: "Do you rent trailers short-term or only long-term?"
-    answer: "Both. Whether you need coverage for a weekend event, a multi-month construction project, or ongoing protection across several locations, we build a flexible plan around your timeline and budget. Contact us for a free, no-pressure security assessment."
+  - question: "Can I lease a trailer or buy one outright?"
+    answer: "Both. You can lease a trailer month to month for maximum flexibility, set up a longer-term rental for a construction project or seasonal need, or buy a unit outright to own it permanently. Whether you need coverage for a weekend event, a multi-month build, or ongoing protection across several locations, we build a lease, rental, or purchase plan around your timeline and budget. Contact us for a free, no-pressure security assessment."
   - question: "How is footage stored and kept secure?"
     answer: "Footage is encrypted from the camera to the cloud and stored redundantly with both cloud and on-device backup. Because Secure Techies is a cybersecurity company first, your video is protected to enterprise standards and kept private, intact, and court-ready."
   - question: "Where do you deploy mobile CCTV trailers?"
@@ -333,4 +334,4 @@ When a site sits empty after hours, every minute is an opportunity for theft, va
 
 Each solar-powered unit combines HD day-and-night cameras, 360&deg; coverage, AI-driven detection, two-way audio, and live 24/7 monitoring into a single rugged trailer you can roll anywhere. The result is real deterrence: threats are spotted, addressed, and escalated in real time, not discovered the next morning. And because every deployment is backed by our Southern California cybersecurity team, your footage stays encrypted, private, and court-ready from the lens to the cloud.
 
-Secure Techies deploys mobile CCTV trailers throughout Los Angeles and the surrounding region, including the San Fernando Valley, Long Beach, Glendale, Pasadena, Burbank, Santa Monica, Santa Clarita, and across Los Angeles County, Orange County, and Ventura County. From construction sites and auto dealerships to retail centers, storage yards, industrial facilities, and special events, local businesses across Southern California rely on us for rapid, solar-powered surveillance that is monitored, maintained, and supported by a team based right here in California. Call (818) 431-5607 to schedule a free on-site security assessment.
+Secure Techies deploys mobile CCTV trailers throughout Los Angeles and the surrounding region, including the San Fernando Valley, Long Beach, Glendale, Pasadena, Burbank, Santa Monica, Santa Clarita, and across Los Angeles County, Orange County, and Ventura County. From construction sites and auto dealerships to retail centers, storage yards, industrial facilities, and special events, local businesses across Southern California rely on us for rapid, solar-powered surveillance that is monitored, maintained, and supported by a team based right here in California. And because every site is different, you can **lease, rent, or buy** your trailers, whatever fits your timeline and budget best. Call (818) 431-5607 to schedule a free on-site security assessment.

@@ -404,8 +404,10 @@
 </section>
 {{ end }}
 
+<!-- ============ OTHER SERVICES + FINAL CTA (wrapper enables mobile-only reorder) ============ -->
+<div class="st-cctv-tail">
 <!-- ============ OTHER SERVICES ============ -->
-<section style="background:#fff;border-top:1px solid #eef2f7;padding:56px 0">
+<section class="st-cctv-other" style="background:#fff;border-top:1px solid #eef2f7;padding:56px 0">
   <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
     <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">Explore Our Other Services</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px" class="st-reveal">
@@ -454,6 +456,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- ============ SCHEMA ============ -->
 {{ $u := .Permalink }}
@@ -742,6 +745,12 @@
     .st-app-grid { grid-template-columns:1fr !important; }
     .st-feat-grid { grid-template-columns:1fr !important; }
     .st-ind-metrics { grid-template-columns:1fr 1fr !important; }
+  }
+  /* Mobile only: show the demo CTA before "Explore Our Other Services" */
+  @media (max-width:680px){
+    .st-cctv-tail { display:flex; flex-direction:column; }
+    .st-cctv-tail > .st-finalcta { order:1; }
+    .st-cctv-tail > .st-cctv-other { order:2; }
   }
 </style>
 
