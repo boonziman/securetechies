@@ -935,11 +935,21 @@ html { scroll-behavior: smooth; }
 .st-svc-foot a:hover { color: #93c5fd; border-color: #93c5fd; }
 .st-service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.25rem;
 }
-@media (max-width: 1024px) { .st-service-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px)  { .st-service-grid { grid-template-columns: 1fr; } }
+.st-service-grid > .st-svc-card { grid-column: span 2; }
+.st-service-grid > .st-svc-card--wide { grid-column: span 3; }
+@media (max-width: 1024px) {
+  .st-service-grid { grid-template-columns: repeat(2, 1fr); }
+  .st-service-grid > .st-svc-card,
+  .st-service-grid > .st-svc-card--wide { grid-column: span 1; }
+}
+@media (max-width: 640px)  {
+  .st-service-grid { grid-template-columns: 1fr; }
+  .st-service-grid > .st-svc-card,
+  .st-service-grid > .st-svc-card--wide { grid-column: auto; }
+}
 
 .st-svc-card {
   background: #0a1628;

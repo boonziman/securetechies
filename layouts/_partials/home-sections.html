@@ -582,8 +582,29 @@
           <span class="st-svc-link">Explore service <svg class="w-4 h-4 inline ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </div>
       </a>
+      <!-- Card 7 (wide) -->
+      <a href="{{ "services/web-development/" | relURL }}" class="st-svc-card st-svc-card--wide st-reveal group" style="transition-delay:.48s">
+        {{ $img := resources.Get "images/services/webdev-overview.webp" }}{{ $f := $img.Fill "1100x620 webp q72" }}<img src="{{ $f.RelPermalink }}" alt="Web Development and Digital Solutions" loading="lazy" class="st-svc-bg-img" width="1100" height="620">
+        <div class="st-svc-overlay"></div>
+        <div class="st-svc-content">
+          <span class="st-svc-tag st-svc-tag-cyan">07</span>
+          <h3 class="st-svc-title">Web Development</h3>
+          <p class="st-svc-desc">Secure, high-converting websites, landing pages, AI tools, and custom web apps — built fast and backed by the same security-first team.</p>
+          <span class="st-svc-link">Explore service <svg class="w-4 h-4 inline ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+      <!-- Card 8 (wide) -->
+      <a href="{{ "services/mobile-cctv-trailers/" | relURL }}" class="st-svc-card st-svc-card--wide st-reveal group" style="transition-delay:.56s">
+        {{ $img := resources.Get "images/services/cctv/cctv-overview.jpg" }}{{ $f := $img.Fill "1100x620 webp q72" }}<img src="{{ $f.RelPermalink }}" alt="Mobile CCTV Surveillance Trailers" loading="lazy" class="st-svc-bg-img" width="1100" height="620">
+        <div class="st-svc-overlay"></div>
+        <div class="st-svc-content">
+          <span class="st-svc-tag st-svc-tag-green">08</span>
+          <h3 class="st-svc-title">Mobile CCTV Trailers</h3>
+          <p class="st-svc-desc">Solar-powered, rapidly deployable surveillance trailers with 24/7 remote monitoring, HD night vision, and AI detection for any site.</p>
+          <span class="st-svc-link">Explore service <svg class="w-4 h-4 inline ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
     </div>
-    <p class="st-svc-foot st-reveal">Beyond managed IT, we also <a href="{{ "services/web-development/" | relURL }}">build secure, high-converting websites &amp; custom web apps</a> — fast, modern, and backed by the same security-first team.</p>
     <div class="text-center mt-14 st-reveal">
       <a href="{{ "services" | relURL }}" class="st-btn-primary">View All Services <svg class="inline ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
     </div>

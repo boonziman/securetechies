@@ -48,9 +48,15 @@ weight = 6
 
 [[main]]
 parent = "Services"
+name = "Mobile CCTV Trailers"
+url = "/services/mobile-cctv-trailers/"
+weight = 7
+
+[[main]]
+parent = "Services"
 name = "Web Development & Digital"
 url = "/services/web-development/"
-weight = 7
+weight = 8
 
 [[main]]
 name = "About"

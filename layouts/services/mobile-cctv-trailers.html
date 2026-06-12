@@ -1,0 +1,536 @@
+{{ define "main" }}
+{{ $heroSrc := .Params.hero_image | default "/images/services/cctv/cctv-hero.jpg" }}
+{{ $heroImg := resources.Get (strings.TrimPrefix "/" $heroSrc) }}
+
+<!-- ============ HERO ============ -->
+<section class="st-cctv-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:120px 0 96px">
+  {{ with $heroImg }}{{ $h := .Fill "1920x1080 webp q68" }}
+  <img src="{{ $h.RelPermalink }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.30;pointer-events:none" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.55) 0%,rgba(10,22,40,0.82) 100%);pointer-events:none"></div>
+  {{ end }}
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.06) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
+  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:380px;background:radial-gradient(ellipse,rgba(0,102,204,0.16) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:880px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <div class="st-reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.22);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:24px;backdrop-filter:blur(4px)">
+        <div style="width:28px;height:28px;background:rgba(0,102,204,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">{{ .Params.hero_eyebrow }}</span>
+      </div>
+      <h1 style="font-size:clamp(2.4rem,6vw,3.8rem);font-weight:800;color:#f1f5f9;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px">{{ .Params.hero_title }}<br><span style="background:linear-gradient(120deg,#60a5fa,#4ade80);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#60a5fa">{{ .Params.hero_title_accent }}</span></h1>
+      {{ with .Params.hero_subtitle }}
+      <p style="font-size:1.18rem;color:#94a3b8;line-height:1.7;max-width:680px;margin:0 auto 36px">{{ . }}</p>
+      {{ end }}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="{{ "contact" | relURL }}" class="st-btn-primary">
+          See If Your Site Qualifies
+          <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="tel:+18184315607" class="st-cctv-phone" style="display:inline-flex;align-items:center;gap:8px;color:#cbd5e1;font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.15);transition:border-color 0.2s">
+          <svg style="width:15px;height:15px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          (818) 431-5607
+        </a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:34px">
+        {{ range .Params.hero_trust }}
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:0.85rem;color:#9fb3c8;font-weight:600">
+          <svg style="width:15px;height:15px;color:#4ade80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          {{ . | safeHTML }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS STRIP ============ -->
+{{ with .Params.partners }}
+<section style="background:#0a1424;border-top:1px solid rgba(255,255,255,0.06);padding:30px 0">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <p style="font-size:0.72rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:18px">{{ $.Params.partners_title }}</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 44px">
+      {{ range . }}
+      <span style="font-size:1.15rem;font-weight:800;color:#cbd5e1;letter-spacing:0.02em;opacity:0.85">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ OVERVIEW ============ -->
+{{ $ovSrc := .Params.overview_image }}{{ $ovImg := resources.Get (strings.TrimPrefix "/" $ovSrc) }}
+<section style="background:#fff;overflow:hidden">
+  <div class="st-overview-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:520px">
+    <div style="display:flex;align-items:center;padding:76px clamp(1.5rem,5vw,5rem) 76px clamp(1.5rem,8vw,10rem)">
+      <div style="max-width:540px" class="st-reveal">
+        <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">{{ .Params.overview_eyebrow }}</span>
+        <h2 style="font-size:1.85rem;font-weight:800;color:#0f172a;margin-bottom:20px;letter-spacing:-0.02em;line-height:1.22">{{ .Params.overview_title }}</h2>
+        <p style="font-size:1.05rem;color:#475569;line-height:1.85;margin-bottom:24px">{{ .Params.overview }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          {{ range .Params.overview_stats }}
+          <div style="display:flex;align-items:center;gap:10px;background:#f0f6ff;border:1px solid #dbeafe;border-radius:10px;padding:8px 14px">
+            <span style="font-size:1.1rem;font-weight:800;color:#0066CC;line-height:1;letter-spacing:-0.02em">{{ .value | safeHTML }}</span>
+            <span style="font-size:0.8rem;font-weight:600;color:#475569;line-height:1.2">{{ .label | safeHTML }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ with $ovImg }}{{ $o := .Fill "1000x900 webp q74" }}
+    <div style="position:relative;overflow:hidden;min-height:400px">
+      <img src="{{ $o.RelPermalink }}" alt="Secure Techies solar-powered mobile CCTV surveillance trailer deployed on site" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" loading="lazy" width="1000" height="900" />
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES (TABS) ============ -->
+{{ with .Params.industries }}
+<section style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 55%,#0d1f3c 100%);padding:84px 0">
+  <div style="max-width:1120px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:42px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">{{ $.Params.industries_eyebrow }}</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:800;color:#f1f5f9;letter-spacing:-0.02em;margin-bottom:14px">{{ $.Params.industries_title }}</h2>
+      <p style="font-size:1.02rem;color:#94a3b8;line-height:1.7;max-width:640px;margin:0 auto">{{ $.Params.industries_sub | safeHTML }}</p>
+    </div>
+
+    <div class="st-tabs" data-tabgroup="ind">
+      <div class="st-tabbar" role="tablist" aria-label="Industries">
+        {{ range $i, $t := . }}
+        <button class="st-tab{{ if eq $i 0 }} is-active{{ end }}" role="tab" data-tab="ind-{{ $t.key }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $t.label | safeHTML }}</button>
+        {{ end }}
+      </div>
+      {{ range $i, $t := . }}
+      {{ $im := resources.Get (strings.TrimPrefix "/" $t.image) }}
+      <div class="st-tabpanel{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="ind-{{ $t.key }}">
+        <div class="st-ind-grid">
+          <div class="st-ind-copy">
+            <h3 style="font-size:1.5rem;font-weight:800;color:#f1f5f9;letter-spacing:-0.01em;margin-bottom:14px">{{ $t.heading | safeHTML }}</h3>
+            <p style="font-size:1rem;color:#9fb3c8;line-height:1.8;margin-bottom:26px">{{ $t.desc | safeHTML }}</p>
+            <div class="st-ind-metrics">
+              {{ range $t.metrics }}
+              <div class="st-metric">
+                <div class="st-metric-val">{{ .value | safeHTML }}</div>
+                <div class="st-metric-lbl">{{ .label | safeHTML }}</div>
+              </div>
+              {{ end }}
+            </div>
+            <a href="{{ "contact" | relURL }}" style="display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:#60a5fa;font-weight:700;font-size:0.92rem;text-decoration:none">More Info <svg style="width:15px;height:15px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+          {{ with $im }}{{ $f := .Fill "900x680 webp q72" }}
+          <div class="st-ind-media">
+            <img src="{{ $f.RelPermalink }}" alt="{{ $t.heading | plainify }} security with Secure Techies mobile CCTV trailers" loading="lazy" width="900" height="680" />
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ MEASURING SUCCESS (TABS) ============ -->
+{{ with .Params.success_tabs }}
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:84px 0">
+  <div style="max-width:1080px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:36px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">{{ $.Params.success_eyebrow }}</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.05rem);font-weight:800;color:#0f172a;letter-spacing:-0.02em;margin-bottom:12px">{{ $.Params.success_title }}</h2>
+      <p style="font-size:1rem;color:#64748b;line-height:1.7;max-width:580px;margin:0 auto">{{ $.Params.success_sub | safeHTML }}</p>
+    </div>
+
+    <div class="st-tabs" data-tabgroup="succ">
+      <div class="st-chipbar" role="tablist" aria-label="Security challenges">
+        {{ range $i, $t := . }}
+        <button class="st-chip{{ if eq $i 0 }} is-active{{ end }}" role="tab" data-tab="succ-{{ $i }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $t.label | safeHTML }}</button>
+        {{ end }}
+      </div>
+      {{ range $i, $t := . }}
+      {{ $im := resources.Get (strings.TrimPrefix "/" $t.image) }}
+      <div class="st-tabpanel{{ if eq $i 0 }} is-active{{ end }}" role="tabpanel" id="succ-{{ $i }}">
+        <div class="st-succ-grid">
+          {{ with $im }}{{ $f := .Fill "900x620 webp q72" }}
+          <div class="st-succ-media">
+            <img src="{{ $f.RelPermalink }}" alt="{{ $t.title | plainify }}" loading="lazy" width="900" height="620" />
+          </div>
+          {{ end }}
+          <div class="st-succ-copy">
+            <h3 style="font-size:1.4rem;font-weight:800;color:#0f172a;letter-spacing:-0.01em;margin-bottom:14px">{{ $t.title | safeHTML }}</h3>
+            <p style="font-size:1rem;color:#475569;line-height:1.8;margin-bottom:24px">{{ $t.desc | safeHTML }}</p>
+            <div class="st-succ-stats">
+              {{ range $t.stats }}
+              <div class="st-succ-stat">
+                <div class="st-succ-val">{{ .value | safeHTML }}</div>
+                <div class="st-succ-lbl">{{ .label | safeHTML }}</div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ DIFFERENTIATORS (ANIMATED) ============ -->
+{{ with .Params.differentiators }}
+<section style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 55%,#0d1f3c 100%);padding:84px 0;overflow:hidden">
+  <div style="max-width:1120px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:44px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">{{ $.Params.diff_eyebrow }}</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:800;color:#f1f5f9;letter-spacing:-0.02em;margin-bottom:14px">{{ $.Params.diff_title }}</h2>
+      <p style="font-size:1.02rem;color:#94a3b8;line-height:1.7;max-width:640px;margin:0 auto">{{ $.Params.diff_sub | safeHTML }}</p>
+    </div>
+    <div class="st-diff-grid" data-tabgroup="diff">
+      <div class="st-diff-list" role="tablist" aria-label="Differentiators">
+        {{ range $i, $d := . }}
+        <button class="st-diff-item{{ if eq $i 0 }} is-active{{ end }}" role="tab" data-tab="diff-{{ $d.key }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
+          <span class="st-diff-label">{{ $d.label | safeHTML }}</span>
+          <span class="st-diff-title">{{ $d.title | safeHTML }}</span>
+          <span class="st-diff-desc">{{ $d.desc | safeHTML }}</span>
+        </button>
+        {{ end }}
+      </div>
+      <div class="st-diff-stage">
+        {{ range $i, $d := . }}
+        <div class="st-diff-art{{ if eq $i 0 }} is-active{{ end }}" data-art="diff-{{ $d.key }}">
+          {{ partial "cctv-diff-art.html" $d.key }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ APPLICATIONS ============ -->
+{{ with .Params.applications }}
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:80px 0">
+  <div style="max-width:1120px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:42px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">{{ $.Params.apps_eyebrow }}</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.05rem);font-weight:800;color:#0f172a;letter-spacing:-0.02em">{{ $.Params.apps_title }}</h2>
+    </div>
+    <div class="st-app-grid">
+      {{ range $i, $a := . }}
+      {{ $im := resources.Get (strings.TrimPrefix "/" $a.image) }}
+      <div class="st-app-card st-reveal" style="transition-delay:{{ mul $i 60 }}ms">
+        {{ with $im }}{{ $f := .Fill "640x440 webp q72" }}
+        <img src="{{ $f.RelPermalink }}" alt="{{ $a.title | plainify }} — mobile CCTV trailer deployment" loading="lazy" class="st-app-img" width="640" height="440" />
+        {{ end }}
+        <div class="st-app-overlay"></div>
+        <div class="st-app-body">
+          <h3 class="st-app-title">{{ $a.title | safeHTML }}</h3>
+          <p class="st-app-desc">{{ $a.desc | safeHTML }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ FEATURES ============ -->
+{{ with .Params.features }}
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:80px 0">
+  <div style="max-width:1080px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:44px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">{{ $.Params.features_eyebrow }}</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.05rem);font-weight:800;color:#0f172a;letter-spacing:-0.02em">{{ $.Params.features_title }}</h2>
+    </div>
+    <div class="st-feat-grid">
+      {{ range . }}
+      <div class="st-feat-card st-reveal">
+        <div class="st-feat-ic"><svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/></svg></div>
+        <h3 style="font-size:1.02rem;font-weight:700;color:#0f172a;margin:0 0 7px">{{ .title | safeHTML }}</h3>
+        <p style="font-size:0.9rem;color:#64748b;line-height:1.65;margin:0">{{ .desc | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ PHOTO BAND ============ -->
+{{ $bandImg := resources.Get "images/services/cctv/band.jpg" }}
+{{ with $bandImg }}{{ $b := .Fill "1600x420 webp q70" }}
+<section style="position:relative;height:320px;overflow:hidden">
+  <img src="{{ $b.RelPermalink }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9" loading="lazy" width="1600" height="420" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,13,26,0.88) 0%,rgba(0,102,204,0.6) 100%)"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center">
+    <div style="text-align:center;max-width:640px;padding:0 1.5rem">
+      <p style="font-size:1.5rem;font-weight:700;color:#fff;line-height:1.4;margin-bottom:12px;letter-spacing:-0.01em">Deploys in minutes. Watches around the clock. Deters before damage is done.</p>
+      <p style="font-size:0.98rem;color:rgba(255,255,255,0.78)">Active, intelligent site security from a Southern California team that protects businesses every day.</p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ BENEFITS ============ -->
+{{ with .Params.benefits }}
+<section style="background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%);padding:80px 0">
+  <div style="max-width:840px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:38px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Why Secure Techies</span>
+      <h2 style="font-size:1.7rem;font-weight:800;color:#f1f5f9;letter-spacing:-0.02em">Real protection, real value</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="st-reveal st-benefit-grid">
+      {{ range . }}
+      <div class="st-cctv-benefit" style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px;transition:background .2s">
+        <svg style="width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:1px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        <span style="font-size:0.92rem;color:#cbd5e1;line-height:1.5">{{ . | safeHTML }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ BODY CONTENT ============ -->
+{{ if .Content }}
+<section style="background:#fff;padding:64px 0">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <div class="st-cctv-content">{{ .Content }}</div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ FAQ ============ -->
+{{ with .Params.faqs }}
+<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:80px 0">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:40px" class="st-reveal">
+      <span style="display:inline-block;font-size:0.75rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px">Common Questions</span>
+      <h2 style="font-size:1.65rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Frequently Asked Questions</h2>
+    </div>
+    <div class="st-reveal">
+      {{ range . }}
+      <details class="st-faq-item" style="border:1px solid #e2e8f0;border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden">
+        <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;padding:18px 22px;font-size:1rem;font-weight:700;color:#0f172a;list-style:none">
+          <span>{{ .question }}</span>
+          <svg class="st-faq-chev" style="width:18px;height:18px;color:#0066CC;flex-shrink:0;transition:transform 0.25s" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div style="padding:0 22px 20px;font-size:0.95rem;color:#475569;line-height:1.8">{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- ============ OTHER SERVICES ============ -->
+<section style="background:#fff;border-top:1px solid #eef2f7;padding:56px 0">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
+    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">Explore Our Other Services</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px" class="st-reveal">
+      {{ range where (where .Site.RegularPages "Section" "services") "RelPermalink" "ne" .RelPermalink }}
+      <a href="{{ .RelPermalink }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
+        <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+        <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="position:relative;overflow:hidden;background:linear-gradient(135deg,#0066CC 0%,#0052a3 100%);padding:80px 0">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:24px 24px;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 1.5rem;text-align:center" class="st-reveal">
+    <h2 style="font-size:1.9rem;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em">{{ .Params.cta_title }}</h2>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.88);line-height:1.7;margin-bottom:32px">{{ .Params.cta_text }}</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+      <a href="{{ "contact" | relURL }}" class="st-cctv-btn-white" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0f172a;font-weight:700;font-size:15px;padding:14px 30px;border-radius:10px;text-decoration:none;transition:all 0.2s">
+        Get a Free Assessment
+        <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="tel:+18184315607" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3)">
+        (818) 431-5607
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEMA ============ -->
+{{ $u := .Permalink }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Mobile CCTV Surveillance Trailers",
+      "serviceType": "Mobile video surveillance and remote monitoring",
+      "url": {{ $u }},
+      "description": {{ .Params.description }},
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Secure Techies",
+        "telephone": "+18184315607",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "21515 Vanowen St Suite 1110",
+          "addressLocality": "Canoga Park",
+          "addressRegion": "CA",
+          "postalCode": "91303",
+          "addressCountry": "US"
+        }
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Los Angeles &amp; Southern California"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ range $i, $f := .Params.faqs }}{{ if $i }},{{ end }}{
+          "@type": "Question",
+          "name": {{ $f.question }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | plainify }} }
+        }{{ end }}
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ STYLES ============ -->
+<style>
+  .st-cctv-phone:hover { border-color:rgba(255,255,255,0.35) !important; }
+  .st-cctv-btn-white:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.18); }
+  .st-cctv-benefit:hover { background:rgba(255,255,255,0.07) !important; }
+
+  /* Tabs (industries) */
+  .st-tabbar { display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:36px; }
+  .st-tab { font-size:0.92rem;font-weight:700;color:#9fb3c8;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:10px 22px;cursor:pointer;transition:all .2s; }
+  .st-tab:hover { color:#cbd5e1;border-color:rgba(96,165,250,0.4); }
+  .st-tab.is-active { color:#fff;background:linear-gradient(135deg,#0066CC,#3b82f6);border-color:transparent;box-shadow:0 6px 18px rgba(0,102,204,0.3); }
+  .st-tabpanel { display:none;animation:stFade .45s ease both; }
+  .st-tabpanel.is-active { display:block; }
+  @keyframes stFade { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+  .st-ind-grid { display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center; }
+  .st-ind-metrics { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+  .st-metric { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 18px; }
+  .st-metric-val { font-size:1.5rem;font-weight:800;color:#60a5fa;line-height:1.1;letter-spacing:-0.02em;margin-bottom:4px; }
+  .st-metric-lbl { font-size:0.82rem;color:#9fb3c8;line-height:1.35;font-weight:600; }
+  .st-ind-media { position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.4); }
+  .st-ind-media img { display:block;width:100%;height:100%;object-fit:cover; }
+
+  /* Measuring success */
+  .st-chipbar { display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:36px; }
+  .st-chip { font-size:0.86rem;font-weight:700;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;padding:9px 18px;cursor:pointer;transition:all .2s; }
+  .st-chip:hover { color:#0066CC;border-color:#bfdbfe; }
+  .st-chip.is-active { color:#fff;background:linear-gradient(135deg,#0066CC,#3b82f6);border-color:transparent; }
+  .st-succ-grid { display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center; }
+  .st-succ-media { border-radius:18px;overflow:hidden;box-shadow:0 20px 48px rgba(15,23,42,0.16); }
+  .st-succ-media img { display:block;width:100%;height:100%;object-fit:cover; }
+  .st-succ-stats { display:flex;flex-wrap:wrap;gap:14px; }
+  .st-succ-stat { background:#f0f6ff;border:1px solid #dbeafe;border-radius:12px;padding:14px 18px;flex:1;min-width:150px; }
+  .st-succ-val { font-size:1.5rem;font-weight:800;color:#0066CC;line-height:1.1;letter-spacing:-0.02em;margin-bottom:3px; }
+  .st-succ-lbl { font-size:0.82rem;color:#475569;font-weight:600;line-height:1.35; }
+
+  /* Differentiators */
+  .st-diff-grid { display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center; }
+  .st-diff-list { display:flex;flex-direction:column;gap:10px; }
+  .st-diff-item { text-align:left;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-left:3px solid transparent;border-radius:12px;padding:16px 20px;cursor:pointer;transition:all .25s; }
+  .st-diff-item:hover { background:rgba(255,255,255,0.06); }
+  .st-diff-item.is-active { background:rgba(0,102,204,0.1);border-left-color:#60a5fa; }
+  .st-diff-label { display:block;font-size:0.72rem;font-weight:800;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px; }
+  .st-diff-title { display:block;font-size:1.05rem;font-weight:700;color:#f1f5f9;margin-bottom:6px;line-height:1.3; }
+  .st-diff-desc { display:none;font-size:0.9rem;color:#9fb3c8;line-height:1.65; }
+  .st-diff-item.is-active .st-diff-desc { display:block;animation:stFade .4s ease both; }
+  .st-diff-stage { position:relative;min-height:360px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,rgba(0,102,204,0.12),transparent 70%);border-radius:24px; }
+  .st-diff-art { display:none;width:100%;max-width:380px; }
+  .st-diff-art.is-active { display:block;animation:stFade .5s ease both; }
+  .st-diff-art svg { width:100%;height:auto; }
+
+  /* Applications */
+  .st-app-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:18px; }
+  .st-app-card { position:relative;border-radius:16px;overflow:hidden;min-height:240px;box-shadow:0 10px 30px rgba(15,23,42,0.1); }
+  .st-app-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease; }
+  .st-app-card:hover .st-app-img { transform:scale(1.06); }
+  .st-app-overlay { position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,0.1) 0%,rgba(6,13,26,0.85) 100%); }
+  .st-app-body { position:absolute;left:0;right:0;bottom:0;padding:22px 22px 24px;z-index:2; }
+  .st-app-title { font-size:1.1rem;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:-0.01em; }
+  .st-app-desc { font-size:0.88rem;color:rgba(255,255,255,0.82);line-height:1.55;margin:0; }
+
+  /* Features */
+  .st-feat-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px; }
+  .st-feat-card { background:#f8fafc;border:1px solid #e8eef6;border-radius:14px;padding:24px 22px;transition:all .3s; }
+  .st-feat-card:hover { box-shadow:0 10px 28px rgba(0,102,204,0.08);border-color:#bfdbfe;transform:translateY(-2px); }
+  .st-feat-ic { width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0066CC,#3b82f6);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,102,204,0.22); }
+
+  /* FAQ + other services (shared visual language) */
+  .st-faq-item summary::-webkit-details-marker { display:none; }
+  .st-faq-item summary:hover { color:#0066CC; }
+  .st-faq-item[open] { border-color:#bfdbfe;box-shadow:0 4px 16px rgba(0,102,204,0.06); }
+  .st-faq-item[open] .st-faq-chev { transform:rotate(180deg); }
+  .st-service-link:hover { border-color:#93c5fd;box-shadow:0 4px 12px rgba(0,102,204,0.06);background:#fff !important; }
+
+  .st-cctv-content { font-size:1.05rem;color:#374151;line-height:1.9; }
+  .st-cctv-content p { margin-bottom:18px; }
+  .st-cctv-content strong { color:#0f172a; }
+  .st-cctv-content em { color:#0066CC;font-style:normal;font-weight:600; }
+
+  @media (max-width:960px){
+    .st-feat-grid { grid-template-columns:repeat(2,1fr) !important; }
+    .st-app-grid { grid-template-columns:repeat(2,1fr) !important; }
+  }
+  @media (max-width:768px){
+    .st-overview-grid { grid-template-columns:1fr !important; }
+    .st-overview-grid > div:last-child { min-height:300px; }
+    .st-ind-grid, .st-succ-grid, .st-diff-grid { grid-template-columns:1fr !important;gap:28px !important; }
+    .st-succ-grid .st-succ-media { order:-1; }
+    .st-diff-stage { min-height:280px; }
+    .st-benefit-grid { grid-template-columns:1fr !important; }
+  }
+  @media (max-width:560px){
+    .st-app-grid { grid-template-columns:1fr !important; }
+    .st-feat-grid { grid-template-columns:1fr !important; }
+    .st-ind-metrics { grid-template-columns:1fr 1fr !important; }
+  }
+</style>
+
+<!-- ============ INTERACTIVITY + SCROLL ANIMATIONS ============ -->
+<script>
+(function(){
+  // Tab groups (industries, success, differentiators)
+  document.querySelectorAll('.st-tabs, .st-diff-grid').forEach(function(group){
+    var tabs = group.querySelectorAll('[role="tab"]');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        var target = tab.getAttribute('data-tab');
+        tabs.forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+        tab.classList.add('is-active'); tab.setAttribute('aria-selected','true');
+        // panels
+        group.querySelectorAll('.st-tabpanel').forEach(function(p){ p.classList.toggle('is-active', p.id === target); });
+        // differentiator art
+        group.querySelectorAll('.st-diff-art').forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('data-art') === target); });
+      });
+    });
+  });
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.st-reveal,.st-reveal-right');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('st-visible'); io.unobserve(e.target); } });
+    },{threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('st-visible'); }); }
+})();
+</script>
+
+{{ end }}

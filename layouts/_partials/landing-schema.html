@@ -24,23 +24,24 @@
 {{ end }}
 
 {{ with $p.reviews }}
+{{/* Ratings/reviews are hosted on the LocalBusiness (a Google-supported review-snippet
+     type). Service is NOT a valid parent for review/aggregateRating and triggers the
+     "Invalid object type for field <parent_node>" error in Search Console. */}}
 {{ $svc := dict
   "@context" "https://schema.org"
-  "@type" "Service"
-  "name" (or $p.service_name $p.meta_title $.Title)
+  "@type" "LocalBusiness"
+  "@id" (printf "%s#business" site.BaseURL)
+  "name" "Secure Techies"
   "description" (or $p.description "")
-  "provider" (dict
-    "@type" "LocalBusiness"
-    "name" "Secure Techies"
-    "telephone" $schemaPhoneRaw
-    "address" (dict
-      "@type" "PostalAddress"
-      "streetAddress" "21515 Vanowen St Suite 1110"
-      "addressLocality" "Canoga Park"
-      "addressRegion" "CA"
-      "postalCode" "91303"
-      "addressCountry" "US"
-    )
+  "url" $.Permalink
+  "telephone" $schemaPhoneRaw
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" "21515 Vanowen St Suite 1110"
+    "addressLocality" "Canoga Park"
+    "addressRegion" "CA"
+    "postalCode" "91303"
+    "addressCountry" "US"
   )
   "areaServed" (slice "Los Angeles" "Woodland Hills" "Canoga Park" "Calabasas" "Thousand Oaks")
 }}

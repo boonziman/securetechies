@@ -213,6 +213,10 @@ services:
       text: "Endpoint detection, dark-web monitoring, email protection, and employee training, all in one place."
       image: "images/services/cybersecurity-overview.webp"
       tag_class: "st-svc-tag-green"
+    - title: "Mobile CCTV Trailers"
+      text: "Solar-powered, rapidly deployable surveillance trailers with 24/7 remote monitoring, HD night vision, and AI detection for any site."
+      image: "images/services/cctv/cctv-overview.jpg"
+      tag_class: "st-svc-tag-amber"
 
 # ============================================================
 # STATS

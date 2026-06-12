@@ -1,0 +1,7 @@
+{{ define "main" }}
+<!-- /pages/ is a thin auto-generated section index with no standalone value.
+     Redirect it to the homepage (and it is already noindex via head.html). -->
+<meta http-equiv="refresh" content="0; url={{ site.Home.RelPermalink }}">
+<script>window.location.replace("{{ site.Home.RelPermalink }}");</script>
+<p>Redirecting to <a href="{{ site.Home.RelPermalink }}">homepage</a>...</p>
+{{ end }}
