@@ -190,6 +190,35 @@
 
 {{/* ============ TRUST BAR (removed — replaced by partner logos + stats band) ============ */}}
 
+{{/* ============ SERVICES (homepage cards, no outbound links) ============ */}}
+{{ with $p.services }}
+<section class="st-l-section st-l-darker">
+  <div class="st-l-wrap">
+    <div class="st-l-head st-reveal">
+      {{ with .eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
+      {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
+    </div>
+    <div class="st-service-grid st-l-svc-grid">
+      {{ range $i, $s := .items }}
+      <div class="st-svc-card st-l-svc-card{{ if .full }} st-svc-card--full{{ else if .wide }} st-svc-card--wide{{ end }} st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
+        {{ with .image }}{{ $simg := resources.Get . }}{{ if $simg }}{{ $simg = $simg.Fill (cond $s.full "1400x520 webp q80" (cond $s.wide "1100x620 webp q80" "560x420 webp q80")) }}{{ end }}<img src="{{ if $simg }}{{ $simg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $s.title }}" loading="lazy" class="st-svc-bg-img" width="{{ cond $s.full 1400 (cond $s.wide 1100 560) }}" height="{{ cond $s.full 520 (cond $s.wide 620 420) }}"{{ with $s.image_position }} style="object-position:{{ . }}"{{ end }}>{{ end }}
+        <div class="st-svc-overlay"></div>
+        <div class="st-svc-content">
+          <span class="st-svc-tag {{ .tag_class }}">{{ printf "%02d" (add $i 1) }}</span>
+          <h3 class="st-svc-title">{{ .title }}</h3>
+          <p class="st-svc-desc">{{ .text | safeHTML }}</p>
+          {{ with .badge }}<span class="st-l-svc-pill">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .footnote }}<p class="st-l-svc-foot st-reveal">{{ . | safeHTML }}</p>{{ end }}
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{/* ============ PROBLEMS ============ */}}
 {{ with $p.problems }}
 <section class="st-l-section st-l-dark">
@@ -244,7 +273,7 @@
 </section>
 {{ end }}
 
-{{/* ============ BENEFITS (split: sticky image + feature rows) ============ */}}
+{{/* ============ BENEFITS (split or banner+grid for larger lists) ============ */}}
 {{ with $p.benefits }}
 <section class="st-l-section st-l-dark">
   <div class="st-l-wrap">
@@ -253,6 +282,25 @@
       <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
       {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
     </div>
+    {{ if eq .layout "banner-grid" }}
+    <div class="st-l-ben-banner st-reveal">
+      {{ with .image }}
+        {{ $bimg := resources.Get . }}{{ if $bimg }}{{ $bimg = $bimg.Fill "1200x520 webp q86" }}{{ end }}
+        <img src="{{ if $bimg }}{{ $bimg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $.Title }}" width="1200" height="520" loading="lazy" decoding="async" />
+      {{ end }}
+      {{ with .image_badge }}<span class="st-l-ben-banner-badge"><span class="st-live-dot"></span>{{ . }}</span>{{ end }}
+    </div>
+    <div class="st-l-ben st-l-ben-grid-4">
+      {{ range $i, $it := .items }}
+      <div class="st-l-ben-card st-reveal" style="transition-delay:{{ mul (mod $i 4) 60 }}ms">
+        <div class="st-l-ben-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons (.icon | default "check") }}"/></svg></div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+    {{ else }}
     <div class="st-l-split">
       <div class="st-l-split-media st-reveal">
         {{ with .image }}
@@ -271,53 +319,27 @@
         {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
       </div>
     </div>
-  </div>
-</section>
-{{ end }}
-
-{{/* ============ SERVICES (homepage cards, no outbound links) ============ */}}
-{{ with $p.services }}
-<section class="st-l-section st-l-darker">
-  <div class="st-l-wrap">
-    <div class="st-l-head st-reveal">
-      {{ with .eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}
-      <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
-      {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
-    </div>
-    <div class="st-service-grid st-l-svc-grid">
-      {{ range $i, $s := .items }}
-      <div class="st-svc-card st-l-svc-card{{ if .wide }} st-svc-card--wide{{ end }} st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
-        {{ with .image }}{{ $simg := resources.Get . }}{{ if $simg }}{{ $simg = $simg.Fill (cond $s.wide "1100x620 webp q80" "560x420 webp q80") }}{{ end }}<img src="{{ if $simg }}{{ $simg.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" alt="{{ $s.title }}" loading="lazy" class="st-svc-bg-img" width="{{ cond $s.wide 1100 560 }}" height="{{ cond $s.wide 620 420 }}">{{ end }}
-        <div class="st-svc-overlay"></div>
-        <div class="st-svc-content">
-          <span class="st-svc-tag {{ .tag_class }}">{{ printf "%02d" (add $i 1) }}</span>
-          <h3 class="st-svc-title">{{ .title }}</h3>
-          <p class="st-svc-desc">{{ .text | safeHTML }}</p>
-          {{ with .badge }}<span class="st-l-svc-pill">{{ . }}</span>{{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-    {{ with .footnote }}<p class="st-l-svc-foot st-reveal">{{ . | safeHTML }}</p>{{ end }}
-    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+    {{ end }}
   </div>
 </section>
 {{ end }}
 
 {{/* ============ INDUSTRIES ============ */}}
 {{ with $p.industries }}
-<section class="st-l-section st-l-light">
+<section class="st-l-section st-l-industries-premium">
   <div class="st-l-wrap">
     <div class="st-l-head st-reveal">
-      {{ with .eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}
-      <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
-      {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
+      {{ with .eyebrow }}<span class="st-l-eyebrow st-l-eyebrow--light">{{ . }}</span>{{ end }}
+      <h2 class="st-l-h2 st-l-h2--light">{{ .heading | safeHTML }}</h2>
+      {{ with .sub }}<p class="st-l-sub st-l-center st-l-sub--light">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="st-l-ind-grid">
+    <div class="st-industry-grid st-l-industry-grid">
       {{ range $i, $it := .items }}
-      <div class="st-l-ind-card st-reveal" style="transition-delay:{{ mul $i 50 }}ms">
-        <h3>{{ .title }}</h3>
-        <p>{{ .text | safeHTML }}</p>
+      <div class="st-ind-card st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
+        {{ with .icon }}<div class="st-ind-hex {{ $it.hex_class }}" aria-hidden="true"><svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons . }}"/></svg></div>{{ end }}
+        <h3 class="st-ind-title">{{ .title }}</h3>
+        <p class="st-ind-desc">{{ .text | safeHTML }}</p>
+        {{ with .tag }}<div class="st-ind-tag {{ $it.tag_class }}">{{ . }}</div>{{ end }}
       </div>
       {{ end }}
     </div>

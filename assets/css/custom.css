@@ -951,15 +951,21 @@ html { scroll-behavior: smooth; }
 }
 .st-service-grid > .st-svc-card { grid-column: span 2; }
 .st-service-grid > .st-svc-card--wide { grid-column: span 3; }
+.st-service-grid > .st-svc-card--full { grid-column: span 6; min-height: 300px; }
+.st-svc-card--full .st-svc-content { max-width: 52rem; }
 @media (max-width: 1024px) {
   .st-service-grid { grid-template-columns: repeat(2, 1fr); }
   .st-service-grid > .st-svc-card,
-  .st-service-grid > .st-svc-card--wide { grid-column: span 1; }
+  .st-service-grid > .st-svc-card--wide,
+  .st-service-grid > .st-svc-card--full { grid-column: span 2; }
 }
 @media (max-width: 640px)  {
   .st-service-grid { grid-template-columns: 1fr; }
   .st-service-grid > .st-svc-card,
-  .st-service-grid > .st-svc-card--wide { grid-column: auto; }
+  .st-service-grid > .st-svc-card--wide,
+  .st-service-grid > .st-svc-card--full { grid-column: auto; }
+  .st-svc-card--full { min-height: 240px; }
+  .st-svc-card--full .st-svc-bg-img { object-position: center 42% !important; }
 }
 
 .st-svc-card {
