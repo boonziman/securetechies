@@ -322,9 +322,9 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
   position: relative;
   border-radius: 2px;
   overflow: hidden;
-  margin-bottom: 28px;
-  aspect-ratio: 21 / 9;
-  max-height: 420px;
+  width: 100%;
+  height: clamp(220px, 36vw, 420px);
+  margin: 0 auto 28px;
   box-shadow: 0 30px 70px rgba(0,0,0,0.4);
   border: 1px solid rgba(255,255,255,0.08);
 }
@@ -332,6 +332,7 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 .st-l-ben-banner::after {
@@ -673,12 +674,12 @@ textarea.st-l-input { resize: vertical; min-height: 84px; }
   .st-l-hero-form-grid { grid-template-columns: 1fr; }
   .st-l-ind-grid { grid-template-columns: repeat(2, 1fr); }
   .st-l-ben-grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .st-l-ben-banner { aspect-ratio: 16 / 9; max-height: 320px; }
+  .st-l-ben-banner { height: clamp(200px, 42vw, 320px); }
 }
 @media (max-width: 640px) {
   .st-l-ind-grid { grid-template-columns: 1fr; }
   .st-l-ben-grid-4 { grid-template-columns: 1fr; }
-  .st-l-ben-banner { aspect-ratio: 16 / 10; max-height: 260px; }
+  .st-l-ben-banner { height: clamp(180px, 50vw, 260px); }
 }
 
 /* Hero visual wrapper so float pills/badge anchor correctly */
