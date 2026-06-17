@@ -149,7 +149,8 @@ services:
   heading: "Complete Managed IT Services for <span class=\"st-l-hl\">Growing Businesses</span>"
   sub: "One accountable Los Angeles IT support company covering every layer of your technology — from help desk to cybersecurity to cloud."
   footnote: "We also build <b>fast, secure business websites and custom web apps</b> through our web development &amp; design services — ask us when we talk."
-  cta: "Schedule a Free IT Assessment"
+  cta: "Call Now — (818) 431-5607"
+  cta_href: "tel:+18184315607"
   items:
     - title: "Managed IT Services"
       text: "Proactive monitoring, patching, and maintenance that keeps your systems healthy — so your team spends less time waiting on fixes and more time serving customers."

@@ -70,7 +70,7 @@
           <a href="{{ .cta_anchor | default "#st-landing-final" }}" class="st-btn-primary st-l-btn-lg">{{ .cta_text | default "Get My Free Assessment" }}
             <svg style="width:17px;height:17px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-          <a href="{{ .cta_secondary_href | default (printf "tel:%s" $phoneRaw) }}" class="st-btn-outline st-l-btn-lg">
+          <a href="{{ (.cta_secondary_href | default (printf "tel:%s" $phoneRaw)) | safeURL }}" class="st-btn-outline st-l-btn-lg">
             <svg style="width:18px;height:18px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "phone" }}"/></svg>
             {{ .cta_secondary_text | default $phone }}
           </a>
@@ -192,6 +192,7 @@
 
 {{/* ============ SERVICES (homepage cards, no outbound links) ============ */}}
 {{ with $p.services }}
+{{ $svcCtaHref := .cta_href | default ($p.hero.cta_anchor | default "#st-landing-final") }}
 <section class="st-l-section st-l-darker">
   <div class="st-l-wrap">
     <div class="st-l-head st-reveal">
@@ -214,7 +215,7 @@
       {{ end }}
     </div>
     {{ with .footnote }}<p class="st-l-svc-foot st-reveal">{{ . | safeHTML }}</p>{{ end }}
-    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "href" $svcCtaHref) }}{{ end }}
   </div>
 </section>
 {{ end }}

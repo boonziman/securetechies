@@ -31,7 +31,7 @@ An AI security camera adds a layer of software that interprets the video instead
 
 ![AI video analytics analyzing a person in a camera frame](/images/blog/ai-security-cameras-analytics-2.webp "AI analytics classify objects and behaviors instead of just detecting motion")
 
-This builds on the same machine-learning advances the [National Institute of Standards and Technology](https://www.nist.gov/artificial-intelligence) tracks across the AI field, applied to live video. The camera is trained to recognize objects and patterns, so it can tell the difference between a delivery driver at noon and an intruder climbing a fence at 2 a.m. That distinction is everything.
+This builds on the same machine-learning advances the [National Institute of Standards and Technology](https://www.nist.gov/artificial-intelligence) tracks across the AI field, applied to live video — a space evolving as quickly as the broader [AI and technology news](https://datadripco.com/categories/ai/) landscape. The camera is trained to recognize objects and patterns, so it can tell the difference between a delivery driver at noon and an intruder climbing a fence at 2 a.m. That distinction is everything.
 
 ## The false alarm problem AI solves
 
