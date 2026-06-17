@@ -85,7 +85,7 @@
     "addressCountry": "US"
   },
   {{ with $lat }}"geo": { "@type": "GeoCoordinates", "latitude": {{ . }}, "longitude": {{ $lng }} },{{ end }}
-  "areaServed": { "@type": "City", "name": "{{ $city }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "Los Angeles County, California" } },
+  "areaServed": { "@type": "City", "name": "{{ $city }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ $region }}, California" } },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }

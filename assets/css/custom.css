@@ -323,14 +323,15 @@ html { scroll-behavior: smooth; }
    HERO SECTION
    ============================================================ */
 .st-hero { min-height: auto; }
+/* Navbar is sticky/in-flow (~80px). Only add a small gap below it — not a second navbar offset. */
 .st-hero-container {
-  padding-top: 6.5rem;
-  padding-bottom: 4rem;
+  padding-top: 1.25rem;
+  padding-bottom: 3rem;
 }
 @media (min-width: 1024px) {
   .st-hero-container {
-    padding-top: 7rem;
-    padding-bottom: 5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -1743,9 +1744,10 @@ html, body {
     padding-top: 0;
     padding-bottom: 2rem;
   }
-  /* Override Tailwind py-28 on hero container — reduce top gap below navbar */
-  .st-hero > .container {
-    padding-top: 1.5rem !important;
+  /* Tight gap below sticky navbar on home/location heroes */
+  .st-hero > .container,
+  .st-hero-container {
+    padding-top: 1rem !important;
     padding-bottom: 2rem !important;
   }
   .st-hero-heading {
@@ -2215,7 +2217,7 @@ html, body {
   position: relative;
   overflow: hidden;
   background: linear-gradient(160deg, #060d1a 0%, #0a1628 50%, #0d1f3c 100%);
-  padding: 120px 0 90px;
+  padding: 1.25rem 0 2.5rem;
 }
 .st-blog-hero-grid {
   position: absolute; inset: 0;
@@ -2370,7 +2372,7 @@ html, body {
 /* ============================================================
    BLOG — SINGLE POST
    ============================================================ */
-.st-post-hero { position: relative; overflow: hidden; background: linear-gradient(160deg, #060d1a 0%, #0a1628 50%, #0d1f3c 100%); padding: 110px 0 70px; }
+.st-post-hero { position: relative; overflow: hidden; background: linear-gradient(160deg, #060d1a 0%, #0a1628 50%, #0d1f3c 100%); padding: 1.25rem 0 2.5rem; }
 .st-post-hero-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(0,102,204,0.06) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
 .st-post-hero-glow { position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 600px; height: 360px; background: radial-gradient(ellipse, rgba(0,102,204,0.13) 0%, transparent 70%); pointer-events: none; }
 .st-post-hero-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
@@ -2469,7 +2471,7 @@ html, body {
   .st-post-toc { display: none; }
 }
 @media (max-width: 600px) {
-  .st-blog-hero { padding: 96px 0 64px; }
+  .st-blog-hero { padding: 1rem 0 2rem; }
   .st-blog-body { padding: 48px 0 30px; }
   .st-blog-grid { grid-template-columns: 1fr; }
   .st-blog-featured-content { padding: 28px 24px; }
@@ -2499,8 +2501,37 @@ html, body {
    These overrides use !important to tame inline styles on mobile.
    ============================================================ */
 .st-subpage-hero {
-  padding-top: 88px !important;
-  padding-bottom: 56px !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 2.5rem !important;
+}
+.st-subpage-hero-inner,
+.st-subpage-hero > div[style*="z-index:2"] {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.st-subpage-hero h1,
+.st-blog-hero-title,
+.st-post-hero h1 {
+  margin-bottom: 14px !important;
+}
+.st-subpage-hero p,
+.st-blog-hero-sub,
+.st-post-hero-sub {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.st-blog-badge,
+.st-subpage-hero .st-reveal > div:first-child {
+  margin-bottom: 14px !important;
+}
+.st-cctv-hero .st-cctvh-inner {
+  padding: 1.25rem 1.5rem 3rem !important;
+  min-height: auto !important;
+  justify-content: flex-start !important;
 }
 /* Round 8 — subtle, consistent depth for every secondary hero.
    Applied once via the shared class so all heroes match. Purely decorative,
@@ -2529,8 +2560,13 @@ html, body {
 }
 @media (max-width: 768px) {
   .st-subpage-hero {
-    padding-top: 72px !important;
-    padding-bottom: 48px !important;
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .st-hero-container,
+  .st-hero > .container {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
   }
   /* Subpage section padding — reduce from 72px to 48px on mobile */
   .st-subpage-section {
@@ -2540,12 +2576,8 @@ html, body {
 }
 @media (max-width: 480px) {
   .st-subpage-hero {
-    padding-top: 64px !important;
-    padding-bottom: 40px !important;
-  }
-  .st-hero-container {
-    padding-top: 5.5rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 0.875rem !important;
+    padding-bottom: 1.75rem !important;
   }
   .st-subpage-section {
     padding-top: 36px !important;
@@ -2843,7 +2875,7 @@ html, body {
    Richer depth, layered glow, editorial type, bottom fade.
    ============================================================ */
 .st-blog-hero {
-  padding: 96px 0 64px;
+  padding: 1.25rem 0 2.5rem;
   background:
     radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%);
 }
@@ -2876,14 +2908,14 @@ html, body {
 .st-blog-hero-meta strong { color: #cbd5e1; font-weight: 700; }
 
 /* ---- Post hero: serif title, slightly more air ---- */
-.st-post-hero { padding: 96px 0 64px; background: radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%); }
+.st-post-hero { padding: 1.25rem 0 2.5rem; background: radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%); }
 .st-post-cat { background: rgba(96,165,250,0.14); color: #bfdbff; }
 
 /* ---- Responsive niceties for the upgrade ---- */
 @media (max-width: 600px) {
   .st-post-content > p:first-of-type { font-size: 1.12rem; padding: 1.15rem 1.2rem; }
   .st-post-content h2 { font-size: 1.5rem; }
-  .st-blog-hero { padding: 104px 0 76px; }
+  .st-blog-hero { padding: 1rem 0 2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .st-read-progress span { transition: none; }
