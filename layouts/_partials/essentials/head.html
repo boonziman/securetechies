@@ -114,8 +114,20 @@
   (function(){
     var loaded = false;
     var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    function getConsentLevel(){
+      var match = document.cookie.match(/(?:^|;\s*)cookie-consent=([^;]+)/);
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+    function allowsAnalytics(){
+    {{- if or .Params.landing (.Param "eager_analytics") }}
+      return true;
+    {{- else }}
+      var level = getConsentLevel();
+      return level === 'all' || level === 'true';
+    {{- end }}
+    }
     function loadGtag(){
-      if (loaded) return;
+      if (loaded || !allowsAnalytics()) return;
       loaded = true;
       events.forEach(function(e){ window.removeEventListener(e, loadGtag); });
       var s = document.createElement('script');
@@ -123,26 +135,32 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-1005225620';
       document.head.appendChild(s);
     }
-  {{- if .Param "eager_analytics" }}
-    // Conversion page: load immediately so the Ads conversion always sends.
-    loadGtag();
-  {{- else }}
-    // Content pages: load on first interaction, otherwise after the page has
-    // fully loaded and the browser goes idle (keeps gtag out of the perf window).
-    events.forEach(function(e){ window.addEventListener(e, loadGtag, { passive: true }); });
-    function idleLoad(){
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGtag, { timeout: 6000 });
-      } else {
-        setTimeout(loadGtag, 4000);
+    function scheduleLoad(){
+      if (!allowsAnalytics()) return;
+    {{- if .Param "eager_analytics" }}
+      loadGtag();
+    {{- else }}
+      events.forEach(function(e){ window.addEventListener(e, loadGtag, { passive: true }); });
+      function idleLoad(){
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGtag, { timeout: 6000 });
+        } else {
+          setTimeout(loadGtag, 4000);
+        }
       }
+      if (document.readyState === 'complete') {
+        idleLoad();
+      } else {
+        window.addEventListener('load', idleLoad, { once: true });
+      }
+    {{- end }}
     }
-    if (document.readyState === 'complete') {
-      idleLoad();
-    } else {
-      window.addEventListener('load', idleLoad, { once: true });
-    }
-  {{- end }}
+    scheduleLoad();
+    window.addEventListener('cookie-consent-changed', function(e){
+      if (e.detail && (e.detail.level === 'all' || e.detail.level === 'true')) {
+        loadGtag();
+      }
+    });
   })();
 </script>
 

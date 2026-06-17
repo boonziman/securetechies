@@ -322,7 +322,17 @@ html { scroll-behavior: smooth; }
 /* ============================================================
    HERO SECTION
    ============================================================ */
-.st-hero { min-height: 100svh; }
+.st-hero { min-height: auto; }
+.st-hero-container {
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 1024px) {
+  .st-hero-container {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+}
 
 .st-hero-bg {
   background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a2444 100%);
@@ -1150,9 +1160,12 @@ html { scroll-behavior: smooth; }
    ============================================================ */
 .st-industries-section {
   background: #080f1e;
-  padding: 6rem 0;
+  padding: 4rem 0 2rem;
   position: relative;
   overflow: hidden;
+}
+.st-reviews-section {
+  padding: 48px 0 80px;
 }
 .st-industries-section::before {
   content: '';
@@ -2486,7 +2499,8 @@ html, body {
    These overrides use !important to tame inline styles on mobile.
    ============================================================ */
 .st-subpage-hero {
-  /* No changes on desktop — just a hook for mobile */
+  padding-top: 88px !important;
+  padding-bottom: 56px !important;
 }
 /* Round 8 — subtle, consistent depth for every secondary hero.
    Applied once via the shared class so all heroes match. Purely decorative,
@@ -2515,8 +2529,8 @@ html, body {
 }
 @media (max-width: 768px) {
   .st-subpage-hero {
-    padding-top: 80px !important;
-    padding-bottom: 56px !important;
+    padding-top: 72px !important;
+    padding-bottom: 48px !important;
   }
   /* Subpage section padding — reduce from 72px to 48px on mobile */
   .st-subpage-section {
@@ -2528,6 +2542,10 @@ html, body {
   .st-subpage-hero {
     padding-top: 64px !important;
     padding-bottom: 40px !important;
+  }
+  .st-hero-container {
+    padding-top: 5.5rem !important;
+    padding-bottom: 2rem !important;
   }
   .st-subpage-section {
     padding-top: 36px !important;
@@ -2825,7 +2843,7 @@ html, body {
    Richer depth, layered glow, editorial type, bottom fade.
    ============================================================ */
 .st-blog-hero {
-  padding: 134px 0 104px;
+  padding: 96px 0 64px;
   background:
     radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%);
 }
@@ -2858,7 +2876,7 @@ html, body {
 .st-blog-hero-meta strong { color: #cbd5e1; font-weight: 700; }
 
 /* ---- Post hero: serif title, slightly more air ---- */
-.st-post-hero { padding: 120px 0 78px; background: radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%); }
+.st-post-hero { padding: 96px 0 64px; background: radial-gradient(120% 130% at 50% -25%, #103157 0%, #0a1c38 42%, #060d1a 100%); }
 .st-post-cat { background: rgba(96,165,250,0.14); color: #bfdbff; }
 
 /* ---- Responsive niceties for the upgrade ---- */

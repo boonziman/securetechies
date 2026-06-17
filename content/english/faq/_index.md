@@ -1,7 +1,7 @@
 ---
 title: "Frequently Asked Questions"
 meta_title: "FAQ | Secure Techies - Managed IT & Cybersecurity Questions Answered"
-description: "Find answers to common questions about Secure Techies' managed IT services, cybersecurity solutions, and IT support for businesses in Southern California."
+description: "Find answers to common questions about Secure Techies' managed IT services, cybersecurity, mobile CCTV trailers, and IT support for businesses in Southern California."
 layout: "faq"
 draft: false
 

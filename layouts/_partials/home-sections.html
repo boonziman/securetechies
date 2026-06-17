@@ -1,6 +1,6 @@
 
 <!-- HERO -->
-<section class="st-hero relative min-h-screen flex items-center overflow-hidden">
+<section class="st-hero relative overflow-hidden">
   <!-- Background layers -->
   <div class="st-hero-bg absolute inset-0"></div>
   <div class="st-orb st-orb-1 absolute rounded-full"></div>
@@ -13,8 +13,8 @@
   <!-- Canvas particles -->
   <canvas id="st-particles" class="absolute inset-0 pointer-events-none" aria-hidden="true"></canvas>
 
-  <div class="container relative z-10 py-28 lg:py-32">
-    <div class="row items-center gap-y-16">
+  <div class="container relative z-10 st-hero-container">
+    <div class="row items-start gap-y-16">
 
       <!-- LEFT COLUMN -->
       <div class="lg:col-6 xl:col-6">
@@ -783,14 +783,14 @@
         <div class="st-ind-tag st-ind-tag-amber">OT/IT</div>
       </div>
     </div>
-    <div class="text-center mt-14 st-reveal">
+    <div class="text-center mt-8 st-reveal">
       <a href="{{ "contact" | relURL }}" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0066CC,#0052a3);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:10px;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(0,102,204,0.35)">Talk to an Industry Specialist <svg style="width:16px;height:16px" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- CUSTOMER REVIEWS -->
-<section class="st-reviews-section" style="position:relative;overflow:hidden;padding:100px 0 110px">
+<section class="st-reviews-section" style="position:relative;overflow:hidden">
   <!-- Gradient background -->
   <div style="position:absolute;inset:0;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%)"></div>
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none"></div>
@@ -1432,6 +1432,18 @@
           <a href="{{ "locations/culver-city/" | relURL }}" class="st-area-item">
             <svg class="st-area-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
             Culver City
+          </a>
+          <a href="{{ "locations/long-beach/" | relURL }}" class="st-area-item">
+            <svg class="st-area-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            Long Beach
+          </a>
+          <a href="{{ "locations/lax/" | relURL }}" class="st-area-item">
+            <svg class="st-area-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            LAX Area
+          </a>
+          <a href="{{ "locations/irvine/" | relURL }}" class="st-area-item">
+            <svg class="st-area-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            Irvine
           </a>
         </div>
 

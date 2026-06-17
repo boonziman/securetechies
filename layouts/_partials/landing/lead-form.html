@@ -1,0 +1,27 @@
+{{/* Compact Netlify lead form — reused in hero and final CTA sections. */}}
+{{ $p := .Params }}
+{{ $final := .final | default $p.final }}
+<form name="{{ $p.form_name | default "landing-lead" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ $p.form_action | default "/thank-you/" | relURL }}" class="st-l-form-inline">
+  <input type="hidden" name="form-name" value="{{ $p.form_name | default "landing-lead" }}" />
+  <input type="hidden" name="landing-page" value="{{ $p.title | default $.Title }}" />
+  <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+  <div class="st-l-form-row">
+    <div class="st-l-field"><label for="{{ .id_prefix }}-name">Full Name <span class="req">*</span></label><input id="{{ .id_prefix }}-name" name="name" type="text" placeholder="John Smith" required aria-required="true" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ .id_prefix }}-company">Company <span class="req">*</span></label><input id="{{ .id_prefix }}-company" name="company" type="text" placeholder="Your Company" required aria-required="true" class="st-l-input" /></div>
+  </div>
+  <div class="st-l-form-row">
+    <div class="st-l-field"><label for="{{ .id_prefix }}-email">Email <span class="req">*</span></label><input id="{{ .id_prefix }}-email" name="email" type="email" placeholder="john@company.com" required aria-required="true" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ .id_prefix }}-phone">Phone <span class="req">*</span></label><input id="{{ .id_prefix }}-phone" name="phone" type="tel" placeholder="(818) 555-0123" required aria-required="true" class="st-l-input" /></div>
+  </div>
+  <div class="st-l-field">
+    <label for="{{ .id_prefix }}-service">{{ $p.form_service_label | default "Service You Need" }}</label>
+    <select id="{{ .id_prefix }}-service" name="service" class="st-l-input">
+      <option value="">Select a service...</option>
+      {{ range ($p.form_services | default (slice "Managed IT Services" "Cybersecurity" "MSP Transition" "Cloud Solutions" "Mobile CCTV Trailers" "Compliance & Audits" "Help Desk Support" "Other")) }}<option value="{{ . | urlize }}">{{ . }}</option>{{ end }}
+    </select>
+  </div>
+  <button type="submit" class="st-l-form-btn">
+    {{ .form_btn | default ($final.form_btn | default "Schedule a Free IT Assessment") }}
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  </button>
+</form>

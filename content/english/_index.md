@@ -1,6 +1,6 @@
 ---
 meta_title: "Secure Techies | Managed IT Services & Cybersecurity in Southern California"
-description: "Secure Techies provides expert managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Los Angeles & Southern California. Get a free risk assessment today."
+description: "Secure Techies provides expert managed IT services, cybersecurity, mobile CCTV trailers, cloud solutions, and 24/7 support for businesses in Los Angeles & Southern California. Get a free risk assessment today."
 
 # Banner
 banner:

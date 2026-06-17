@@ -23,6 +23,9 @@
 
 ## Locations
 - Los Angeles area service locations directory: https://securetechie.com/locations/
+- Long Beach: https://securetechie.com/locations/long-beach/
+- LAX Area: https://securetechie.com/locations/lax/
+- Irvine: https://securetechie.com/locations/irvine/
 
 ## Resources
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/

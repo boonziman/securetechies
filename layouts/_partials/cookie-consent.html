@@ -1,55 +1,54 @@
 <!-- cookie -->
 {{/* Project override of the vendored cookie-consent partial.
-     The vendored version's inline script calls `Cookies.get()/set()` from the
-     js-cookie library, which now lives inside the DEFERRED main JS bundle. The
-     inline script runs during HTML parse — BEFORE the deferred bundle defines
-     `window.Cookies` — so it threw "ReferenceError: Cookies is not defined",
-     which Lighthouse counted as a Best-Practices failure (errors-in-console).
-     This override is behaviour- and design-identical (same markup, same
-     classes, same styles) but reads/writes the consent cookie with the native
-     `document.cookie` API, so it has NO dependency on the deferred bundle and
-     logs no console error. */}}
+     Uses native document.cookie (no js-cookie dependency).
+     Supports three consent levels: all, essential, rejected. */}}
 {{ with site.Params.cookies }}
   {{ if .enable }}
-    <div id="cookie-box" class="cookie-box cookie-box-hide">
-      {{ .content | markdownify }}
-      <button
-        id="cookie-button"
-        class="cookie-box-button btn btn-sm btn-outline-primary">
-        {{ .button }}
-      </button>
+    <div id="cookie-box" class="cookie-box cookie-box-hide" role="dialog" aria-label="Cookie consent" aria-live="polite">
+      <div class="cookie-box-content">{{ .content | markdownify }}</div>
+      <div class="cookie-box-actions">
+        <button id="cookie-accept-all" class="cookie-box-button btn btn-sm btn-primary" type="button">
+          {{ .button_accept_all | default "Accept All" }}
+        </button>
+        <button id="cookie-accept-essential" class="cookie-box-button btn btn-sm btn-outline-primary" type="button">
+          {{ .button_essential | default "Essential Only" }}
+        </button>
+        <button id="cookie-reject" class="cookie-box-button btn btn-sm btn-outline-secondary" type="button">
+          {{ .button_reject | default "Reject" }}
+        </button>
+      </div>
     </div>
 
-    <!-- cookie script (vanilla document.cookie — no js-cookie dependency) -->
     <script type="application/javascript">
       (function () {
         var cookieBox = document.getElementById('cookie-box');
-        var cookieButton = document.getElementById('cookie-button');
-        if (!cookieBox || !cookieButton) return;
-        function hasConsent() {
-          return document.cookie.split('; ').some(function (c) {
-            return c.indexOf('cookie-consent=') === 0;
-          });
+        var acceptAllBtn = document.getElementById('cookie-accept-all');
+        var essentialBtn = document.getElementById('cookie-accept-essential');
+        var rejectBtn = document.getElementById('cookie-reject');
+        if (!cookieBox || !acceptAllBtn || !essentialBtn || !rejectBtn) return;
+
+        var maxAge = {{ .expire_days }} * 24 * 60 * 60;
+
+        function getConsent() {
+          var match = document.cookie.match(/(?:^|;\s*)cookie-consent=([^;]+)/);
+          return match ? decodeURIComponent(match[1]) : null;
         }
-        /* Reveal the banner immediately during initial render. It is rendered
-           synchronously (not deferred) ON PURPOSE: the banner is a large white
-           text block, so it can be picked as the Largest Contentful Paint
-           element. LCP always records the LARGEST element regardless of when it
-           paints, so if the banner paints LATE (e.g. deferred to `load`) it
-           drags LCP later. Painting it at first render keeps any such LCP early.
-           It only shows on the first visit (until consent is stored). */
-        if (!hasConsent()) {
+
+        function setConsent(level) {
+          document.cookie = 'cookie-consent=' + encodeURIComponent(level) + '; max-age=' + maxAge + '; path=/; SameSite=Lax';
+          cookieBox.classList.add('cookie-box-hide');
+          window.dispatchEvent(new CustomEvent('cookie-consent-changed', { detail: { level: level } }));
+        }
+
+        if (!getConsent()) {
           cookieBox.classList.remove('cookie-box-hide');
-          cookieButton.onclick = function () {
-            var maxAge = {{ .expire_days }} * 24 * 60 * 60;
-            document.cookie = 'cookie-consent=true; max-age=' + maxAge + '; path=/; SameSite=Lax';
-            cookieBox.classList.add('cookie-box-hide');
-          };
+          acceptAllBtn.onclick = function () { setConsent('all'); };
+          essentialBtn.onclick = function () { setConsent('essential'); };
+          rejectBtn.onclick = function () { setConsent('rejected'); };
         }
       })();
     </script>
 
-    <!-- cookie style -->
     <style>
       .cookie-box {
         position: fixed;
@@ -59,20 +58,46 @@
         padding: 1.5rem;
         background-color: #fff;
         max-width: calc(100% - 4rem);
-        width: 25rem;
+        width: 28rem;
         box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
-        border-radius: inherit;
+        border-radius: 12px;
       }
       .cookie-box-hide {
         display: none;
       }
-      .cookie-box-button {
-        display: block;
+      .cookie-box-content {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: #334155;
+      }
+      .cookie-box-content p {
+        margin: 0;
+      }
+      .cookie-box-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         margin-top: 1rem;
       }
-
+      .cookie-box-button {
+        display: block;
+        width: 100%;
+        margin-top: 0;
+      }
       .dark .cookie-box {
         background-color: #222;
+      }
+      .dark .cookie-box-content {
+        color: #cbd5e1;
+      }
+      @media (max-width: 480px) {
+        .cookie-box {
+          left: 1rem;
+          right: 1rem;
+          bottom: 1rem;
+          width: auto;
+          max-width: none;
+        }
       }
     </style>
   {{ end }}

@@ -33,15 +33,21 @@
 
 {{/* ============ SUBTLE TOP STRIP (no nav) ============ */}}
 <header class="st-l-topbar">
+  {{ if $p.hide_logo_link }}
+  <span class="st-l-topbar-brand" aria-label="Secure Techies">
+    {{ with resources.Get "images/logo-darkmode.png" }}{{ $logo := .Resize "360x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="Secure Techies" width="120" height="26" loading="eager" />{{ else }}<strong style="color:#fff;font-size:1rem">Secure Techies</strong>{{ end }}
+  </span>
+  {{ else }}
   <a class="st-l-topbar-brand" href="{{ "/" | relURL }}" aria-label="Secure Techies home">
     {{ with resources.Get "images/logo-darkmode.png" }}{{ $logo := .Resize "360x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="Secure Techies" width="120" height="26" loading="eager" />{{ else }}<strong style="color:#fff;font-size:1rem">Secure Techies</strong>{{ end }}
   </a>
+  {{ end }}
   <div style="display:flex;align-items:center;gap:18px">
     <a class="st-l-topbar-phone" href="tel:{{ $phoneRaw }}">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "phone" }}"/></svg>
       {{ $phone }}
     </a>
-    <a class="st-l-back" href="{{ "/" | relURL }}"><span class="st-l-topbar-back-text">← </span>securetechie.com</a>
+    {{ if not $p.hide_logo_link }}<a class="st-l-back" href="{{ "/" | relURL }}"><span class="st-l-topbar-back-text">← </span>securetechie.com</a>{{ end }}
   </div>
 </header>
 
@@ -64,9 +70,9 @@
           <a href="{{ .cta_anchor | default "#st-landing-final" }}" class="st-btn-primary st-l-btn-lg">{{ .cta_text | default "Get My Free Assessment" }}
             <svg style="width:17px;height:17px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-          <a href="tel:{{ $phoneRaw }}" class="st-btn-outline st-l-btn-lg">
+          <a href="{{ .cta_secondary_href | default (printf "tel:%s" $phoneRaw) }}" class="st-btn-outline st-l-btn-lg">
             <svg style="width:18px;height:18px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="{{ index $icons "phone" }}"/></svg>
-            {{ $phone }}
+            {{ .cta_secondary_text | default $phone }}
           </a>
         </div>
         <div class="st-l-hero-rating">
@@ -156,6 +162,24 @@
         </div>
       </div>
       {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ============ HERO FORM (above the fold) ============ */}}
+{{ if $p.hero_form }}
+<section id="st-landing-hero-form" class="st-l-section st-l-darker st-l-section--tight">
+  <div class="st-l-wrap">
+    <div class="st-l-hero-form-grid">
+      <div class="st-l-hero-form-copy st-reveal">
+        <span class="st-l-eyebrow">{{ $p.hero_form_eyebrow | default "Free IT Assessment" }}</span>
+        <h2 class="st-l-h2">{{ $p.hero_form_heading | default "Schedule Your Free IT Assessment" }}</h2>
+        <p class="st-l-sub">{{ $p.hero_form_sub | default "Tell us about your business and a Los Angeles IT specialist will reach out within two hours." }}</p>
+      </div>
+      <div class="st-l-form-card st-l-hero-form-card st-reveal-right">
+        {{ partial "landing/lead-form.html" (dict "Params" $p "id_prefix" "hero" "form_btn" ($p.hero.cta_text | default "Schedule a Free IT Assessment")) }}
+      </div>
     </div>
   </div>
 </section>
@@ -275,6 +299,28 @@
       {{ end }}
     </div>
     {{ with .footnote }}<p class="st-l-svc-foot st-reveal">{{ . | safeHTML }}</p>{{ end }}
+    {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{/* ============ INDUSTRIES ============ */}}
+{{ with $p.industries }}
+<section class="st-l-section st-l-light">
+  <div class="st-l-wrap">
+    <div class="st-l-head st-reveal">
+      {{ with .eyebrow }}<span class="st-l-eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
+      {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
+    </div>
+    <div class="st-l-ind-grid">
+      {{ range $i, $it := .items }}
+      <div class="st-l-ind-card st-reveal" style="transition-delay:{{ mul $i 50 }}ms">
+        <h3>{{ .title }}</h3>
+        <p>{{ .text | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </div>
     {{ with .cta }}{{ partial "landing/cta-band.html" (dict "btn" . "anchor" ($p.hero.cta_anchor | default "#st-landing-final")) }}{{ end }}
   </div>
 </section>

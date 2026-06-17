@@ -1,7 +1,7 @@
 ---
 title: "About Secure Techies"
 meta_title: "About Us | Secure Techies - Managed IT & Cybersecurity in Los Angeles"
-description: "Learn about Secure Techies, LLC — a trusted managed IT services and cybersecurity provider based in Los Angeles County, serving businesses in Southern California and nationwide."
+description: "Learn about Secure Techies, LLC — a trusted managed IT services, cybersecurity, and mobile CCTV provider based in Los Angeles County, serving businesses in Southern California and nationwide."
 image: ""
 layout: "about"
 draft: false

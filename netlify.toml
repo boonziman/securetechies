@@ -171,3 +171,10 @@ from = "/pages/*"
 to = "/"
 status = 301
 force = true
+
+# Legacy SMB landing page → Managed IT Services Los Angeles Google Ads page
+[[redirects]]
+from = "/smb-it-support/"
+to = "/managed-it-services-los-angeles/"
+status = 301
+force = true
