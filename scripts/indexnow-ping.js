@@ -1,23 +1,19 @@
 #!/usr/bin/env node
 /**
- * IndexNow ping — instantly notifies Bing, Yandex, Seznam, Naver and other
- * IndexNow-enabled search engines whenever the site is (re)deployed.
+ * IndexNow ping — notifies Bing, Yandex, Seznam, Naver and other
+ * IndexNow-enabled search engines after each production deploy.
  *
- * How it works:
- *   1. Reads the freshly built public/sitemap.xml.
- *   2. Extracts every <loc> URL.
- *   3. Submits the full list to the IndexNow API in one batch.
+ * Flow:
+ *   1. Verify the key file exists in public/ with the exact expected content.
+ *   2. Verify the key file is reachable on the live site.
+ *   3. Read public/sitemap.xml and submit all production URLs to IndexNow.
  *
- * Safety:
- *   - Only runs on the Netlify PRODUCTION context (skips deploy previews and
- *     branch deploys, so we never ping with the wrong host).
- *   - Only submits URLs that match the production host, so a misconfigured
- *     baseURL can never leak preview URLs to search engines.
- *   - Never fails the build: any error is logged as a warning and the script
- *     exits 0.
+ * Fails the build (exit 1) if verification or submission fails so problems
+ * are visible in Netlify instead of failing silently.
  *
- * The IndexNow key is public by design and is verified via the key file at
- * https://securetechie.com/<key>.txt (served from static/).
+ * One-time recovery: if the key file has never been live, set
+ * INDEXNOW_SKIP_LIVE_VERIFY=true in Netlify env vars for a single deploy,
+ * confirm the URL returns 200, then remove the variable.
  */
 
 const fs = require("fs");
@@ -25,23 +21,109 @@ const path = require("path");
 
 const KEY = "87a084d2e1e84c7d9d80afaca9a637fa";
 const HOST = "securetechie.com";
-const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
-const SITEMAP = path.join(__dirname, "..", "public", "sitemap.xml");
+const KEY_FILE = `${KEY}.txt`;
+const KEY_LOCATION = `https://${HOST}/${KEY_FILE}`;
+const ROOT = path.join(__dirname, "..");
+const STATIC_KEY = path.join(ROOT, "static", KEY_FILE);
+const PUBLIC_KEY = path.join(ROOT, "public", KEY_FILE);
+const SITEMAP = path.join(ROOT, "public", "sitemap.xml");
 
-function warn(msg) {
-  console.warn(`[indexnow] ${msg}`);
+function log(msg) {
+  console.log(`[indexnow] ${msg}`);
 }
 
-async function main() {
-  // Only ping from the real production deploy.
-  if (process.env.CONTEXT && process.env.CONTEXT !== "production") {
-    console.log(`[indexnow] Skipping (Netlify context: ${process.env.CONTEXT}).`);
+function error(msg) {
+  console.error(`[indexnow] ERROR: ${msg}`);
+}
+
+function fail(msg) {
+  error(msg);
+  process.exit(1);
+}
+
+function readKeyContent(filePath) {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  return fs.readFileSync(filePath, "utf8").trim();
+}
+
+function verifyPublicKeyFile() {
+  log("Checking key file in public/ ...");
+
+  let content = readKeyContent(PUBLIC_KEY);
+
+  if (content !== KEY) {
+    const staticContent = readKeyContent(STATIC_KEY);
+    if (staticContent === KEY) {
+      log("Key missing or invalid in public/ — copying from static/ ...");
+      fs.copyFileSync(STATIC_KEY, PUBLIC_KEY);
+      content = readKeyContent(PUBLIC_KEY);
+    }
+  }
+
+  if (!fs.existsSync(PUBLIC_KEY)) {
+    fail(`Key file not found at ${PUBLIC_KEY}. Hugo must copy static/${KEY_FILE} into public/.`);
+  }
+
+  if (content !== KEY) {
+    fail(
+      `Key file content mismatch in public/${KEY_FILE}.\n` +
+        `  Expected: ${KEY}\n` +
+        `  Got:      ${content === null ? "(unreadable)" : JSON.stringify(content)}`
+    );
+  }
+
+  log(`Key file verification PASSED (public/${KEY_FILE})`);
+}
+
+async function verifyLiveKeyFile() {
+  if (process.env.INDEXNOW_SKIP_LIVE_VERIFY === "true") {
+    log("Skipping live key verification (INDEXNOW_SKIP_LIVE_VERIFY=true).");
     return;
   }
 
+  log(`Checking live key file at ${KEY_LOCATION} ...`);
+
+  let response;
+  try {
+    response = await fetch(KEY_LOCATION, {
+      method: "GET",
+      redirect: "follow",
+      headers: { "User-Agent": "SecureTechies-IndexNow-Verify/1.0" },
+    });
+  } catch (err) {
+    fail(`Live key file fetch failed: ${err.message}`);
+  }
+
+  const body = (await response.text()).trim();
+
+  if (response.status !== 200) {
+    fail(
+      `Live key file verification FAILED (HTTP ${response.status}).\n` +
+        `  URL: ${KEY_LOCATION}\n` +
+        `  The build artifact contains the key, but the live site does not serve it yet.\n` +
+        `  Fix: Netlify → Deploys → Trigger deploy → Clear cache and deploy site.\n` +
+        `  If this is the first recovery deploy, set INDEXNOW_SKIP_LIVE_VERIFY=true for one build,` +
+        ` then remove it after https://${HOST}/${KEY_FILE} returns 200.`
+    );
+  }
+
+  if (body !== KEY) {
+    fail(
+      `Live key file content mismatch.\n` +
+        `  URL:      ${KEY_LOCATION}\n` +
+        `  Expected: ${KEY}\n` +
+        `  Got:      ${JSON.stringify(body)}`
+    );
+  }
+
+  log(`Live key file verification PASSED (${KEY_LOCATION})`);
+}
+
+function collectProductionUrls() {
   if (!fs.existsSync(SITEMAP)) {
-    warn(`Sitemap not found at ${SITEMAP}; nothing to submit.`);
-    return;
+    fail(`Sitemap not found at ${SITEMAP}; cannot submit URLs.`);
   }
 
   const xml = fs.readFileSync(SITEMAP, "utf8");
@@ -56,9 +138,14 @@ async function main() {
     });
 
   if (urls.length === 0) {
-    warn("No production URLs found in sitemap; nothing to submit.");
-    return;
+    fail(`No production URLs found in sitemap for host ${HOST}.`);
   }
+
+  return urls;
+}
+
+async function submitToIndexNow(urls) {
+  log(`Submitting ${urls.length} URLs to IndexNow ...`);
 
   const payload = {
     host: HOST,
@@ -67,24 +154,45 @@ async function main() {
     urlList: urls,
   };
 
+  let response;
   try {
-    const res = await fetch("https://api.indexnow.org/indexnow", {
+    response = await fetch("https://api.indexnow.org/indexnow", {
       method: "POST",
       headers: { "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify(payload),
     });
-    // 200 = accepted, 202 = accepted/queued. Anything else is just logged.
-    if (res.status === 200 || res.status === 202) {
-      console.log(`[indexnow] Submitted ${urls.length} URLs (HTTP ${res.status}).`);
-    } else {
-      warn(`IndexNow responded HTTP ${res.status}. Submitted ${urls.length} URLs anyway.`);
-    }
   } catch (err) {
-    warn(`Ping failed (non-fatal): ${err.message}`);
+    fail(`IndexNow API request failed: ${err.message}`);
   }
+
+  if (response.status === 200 || response.status === 202) {
+    log(`IndexNow submission PASSED (HTTP ${response.status}, ${urls.length} URLs).`);
+    return;
+  }
+
+  const responseText = await response.text().catch(() => "");
+  fail(
+    `IndexNow submission FAILED (HTTP ${response.status}).\n` +
+      (responseText ? `  Response: ${responseText.trim()}\n` : "") +
+      `  Ensure ${KEY_LOCATION} returns HTTP 200 with the key before submitting.`
+  );
+}
+
+async function main() {
+  if (process.env.CONTEXT && process.env.CONTEXT !== "production") {
+    log(`Skipping (Netlify context: ${process.env.CONTEXT}).`);
+    return;
+  }
+
+  log("Starting IndexNow verification ...");
+  verifyPublicKeyFile();
+  await verifyLiveKeyFile();
+
+  const urls = collectProductionUrls();
+  await submitToIndexNow(urls);
+  log("IndexNow complete.");
 }
 
 main().catch((err) => {
-  warn(`Unexpected error (non-fatal): ${err.message}`);
-  process.exit(0);
+  fail(`Unexpected error: ${err.message}`);
 });
