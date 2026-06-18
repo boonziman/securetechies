@@ -23,7 +23,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const KEY = "61877435df8441a864568fdbd3fb3897";
+const KEY = "87a084d2e1e84c7d9d80afaca9a637fa";
 const HOST = "securetechie.com";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP = path.join(__dirname, "..", "public", "sitemap.xml");
