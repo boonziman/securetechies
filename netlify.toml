@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "npm run project-setup && node scripts/themeGenerator.js && hugo --gc --minify --baseURL ${URL}/ && cp static/61877435df8441a864568fdbd3fb3897.txt public/61877435df8441a864568fdbd3fb3897.txt && node scripts/indexnow-ping.js"
+command = "npm run project-setup && node scripts/themeGenerator.js && hugo --gc --minify --baseURL ${URL}/ && cp static/14e3aedb06e64cd69c8940bcf93b7195.txt public/14e3aedb06e64cd69c8940bcf93b7195.txt && node scripts/indexnow-ping.js"
 
 [build.environment]
 HUGO_VERSION = "0.157.0"
