@@ -36,6 +36,14 @@ function error(msg) {
   console.error(`[indexnow] ERROR: ${msg}`);
 }
 
+function warn(msg) {
+  console.warn(`[indexnow] WARNING: ${msg}`);
+}
+
+// IndexNow is a best-effort notification ping. It must never fail the
+// production build, so verification/submission problems are logged as
+// warnings instead of aborting. fail() is kept only for truly fatal,
+// non-network setup issues.
 function fail(msg) {
   error(msg);
   process.exit(1);
@@ -63,18 +71,21 @@ function verifyPublicKeyFile() {
   }
 
   if (!fs.existsSync(PUBLIC_KEY)) {
-    fail(`Key file not found at ${PUBLIC_KEY}. Hugo must copy static/${KEY_FILE} into public/.`);
+    warn(`Key file not found at ${PUBLIC_KEY}. Hugo should copy static/${KEY_FILE} into public/. Skipping IndexNow submit.`);
+    return false;
   }
 
   if (content !== KEY) {
-    fail(
+    warn(
       `Key file content mismatch in public/${KEY_FILE}.\n` +
         `  Expected: ${KEY}\n` +
         `  Got:      ${content === null ? "(unreadable)" : JSON.stringify(content)}`
     );
+    return false;
   }
 
   log(`Key file verification PASSED (public/${KEY_FILE})`);
+  return true;
 }
 
 async function verifyLiveKeyFile() {
@@ -93,29 +104,29 @@ async function verifyLiveKeyFile() {
       headers: { "User-Agent": "SecureTechies-IndexNow-Verify/1.0" },
     });
   } catch (err) {
-    fail(`Live key file fetch failed: ${err.message}`);
+    warn(`Live key file fetch failed: ${err.message}. (Expected on the deploy that first publishes a new key.)`);
+    return;
   }
 
   const body = (await response.text()).trim();
 
   if (response.status !== 200) {
-    fail(
-      `Live key file verification FAILED (HTTP ${response.status}).\n` +
-        `  URL: ${KEY_LOCATION}\n` +
-        `  The build artifact contains the key, but the live site does not serve it yet.\n` +
-        `  Fix: Netlify → Deploys → Trigger deploy → Clear cache and deploy site.\n` +
-        `  If this is the first recovery deploy, set INDEXNOW_SKIP_LIVE_VERIFY=true for one build,` +
-        ` then remove it after https://${HOST}/${KEY_FILE} returns 200.`
+    warn(
+      `Live key file not yet 200 (HTTP ${response.status}) at ${KEY_LOCATION}.\n` +
+        `  This is expected on the deploy that first publishes a new key — it goes live\n` +
+        `  only after this build is published. IndexNow will pick it up on the next ping.`
     );
+    return;
   }
 
   if (body !== KEY) {
-    fail(
+    warn(
       `Live key file content mismatch.\n` +
         `  URL:      ${KEY_LOCATION}\n` +
         `  Expected: ${KEY}\n` +
         `  Got:      ${JSON.stringify(body)}`
     );
+    return;
   }
 
   log(`Live key file verification PASSED (${KEY_LOCATION})`);
@@ -123,7 +134,8 @@ async function verifyLiveKeyFile() {
 
 function collectProductionUrls() {
   if (!fs.existsSync(SITEMAP)) {
-    fail(`Sitemap not found at ${SITEMAP}; cannot submit URLs.`);
+    warn(`Sitemap not found at ${SITEMAP}; cannot submit URLs.`);
+    return [];
   }
 
   const xml = fs.readFileSync(SITEMAP, "utf8");
@@ -138,7 +150,7 @@ function collectProductionUrls() {
     });
 
   if (urls.length === 0) {
-    fail(`No production URLs found in sitemap for host ${HOST}.`);
+    warn(`No production URLs found in sitemap for host ${HOST}.`);
   }
 
   return urls;
@@ -162,7 +174,8 @@ async function submitToIndexNow(urls) {
       body: JSON.stringify(payload),
     });
   } catch (err) {
-    fail(`IndexNow API request failed: ${err.message}`);
+    warn(`IndexNow API request failed: ${err.message}`);
+    return;
   }
 
   if (response.status === 200 || response.status === 202) {
@@ -171,10 +184,10 @@ async function submitToIndexNow(urls) {
   }
 
   const responseText = await response.text().catch(() => "");
-  fail(
-    `IndexNow submission FAILED (HTTP ${response.status}).\n` +
+  warn(
+    `IndexNow submission returned HTTP ${response.status} (not fatal).\n` +
       (responseText ? `  Response: ${responseText.trim()}\n` : "") +
-      `  Ensure ${KEY_LOCATION} returns HTTP 200 with the key before submitting.`
+      `  This usually clears once ${KEY_LOCATION} has been live for a while and Bing has crawled it.`
   );
 }
 
@@ -185,14 +198,23 @@ async function main() {
   }
 
   log("Starting IndexNow verification ...");
-  verifyPublicKeyFile();
+  const keyOk = verifyPublicKeyFile();
   await verifyLiveKeyFile();
 
+  if (!keyOk) {
+    warn("Key file not present in build — skipping IndexNow submission this deploy.");
+    return;
+  }
+
   const urls = collectProductionUrls();
+  if (urls.length === 0) {
+    warn("No URLs to submit — skipping IndexNow submission this deploy.");
+    return;
+  }
   await submitToIndexNow(urls);
   log("IndexNow complete.");
 }
 
 main().catch((err) => {
-  fail(`Unexpected error: ${err.message}`);
+  warn(`Unexpected error (non-fatal): ${err.message}`);
 });
