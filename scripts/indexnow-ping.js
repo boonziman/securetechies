@@ -19,7 +19,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const KEY = "87a084d2e1e84c7d9d80afaca9a637fa";
+const KEY = "61877435df8441a864568fdbd3fb3897";
 const HOST = "securetechie.com";
 const KEY_FILE = `${KEY}.txt`;
 const KEY_LOCATION = `https://${HOST}/${KEY_FILE}`;
