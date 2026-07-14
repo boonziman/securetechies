@@ -1,1 +1,160 @@
+{{ define "main" }}
 
+<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%)">
+  {{ with .Params.hero_image }}
+  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28" loading="eager" width="1200" height="675">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,.35),rgba(10,22,40,.82))"></div>
+  {{ end }}
+  <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;padding:84px 24px;text-align:center">
+    <span style="display:inline-block;color:#93c5fd;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px">Secure Techies Case Study</span>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;color:#f8fafc;line-height:1.12;letter-spacing:-.03em;margin-bottom:20px">{{ .Title }}</h1>
+    {{ with .Params.hero_subtitle }}<p style="max-width:720px;margin:0 auto;color:#cbd5e1;font-size:1.12rem;line-height:1.75">{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+<section style="background:#fff;padding:54px 0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1050px;margin:0 auto;padding:0 24px">
+    <div class="st-case-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      {{ with .Params.industry }}<div class="st-case-stat"><span>Industry</span><strong>{{ . }}</strong></div>{{ end }}
+      {{ with .Params.project_type }}<div class="st-case-stat"><span>Project</span><strong>{{ . }}</strong></div>{{ end }}
+      {{ with .Params.location }}<div class="st-case-stat"><span>Location</span><strong>{{ . }}</strong></div>{{ end }}
+      {{ with .Params.timeline }}<div class="st-case-stat"><span>Delivery</span><strong>{{ . }}</strong></div>{{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .Params.summary }}
+<section style="background:#f8fafc;padding:64px 0">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;text-align:center">
+    <span class="st-kicker">Project Overview</span>
+    <p style="font-size:1.2rem;line-height:1.85;color:#334155;margin:12px 0 0">{{ . }}</p>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.challenge }}
+<section style="background:#fff;padding:72px 0">
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
+    <div style="text-align:center;margin-bottom:36px"><span class="st-kicker">The Challenge</span><h2 class="st-case-heading">What the client needed to solve</h2></div>
+    <div class="st-case-grid">
+      {{ range . }}<div class="st-case-card"><span class="st-dot"></span><p>{{ . }}</p></div>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.solution }}
+<section style="background:#f8fafc;padding:72px 0;border-top:1px solid #eef2f7">
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
+    <div style="text-align:center;margin-bottom:40px"><span class="st-kicker">The Solution</span><h2 class="st-case-heading">How Secure Techies approached the project</h2></div>
+    <div class="st-case-solution-grid">
+      {{ range $i, $s := . }}
+      <article class="st-case-solution">
+        <div class="st-step">{{ printf "%02d" (add $i 1) }}</div>
+        <h3>{{ .title }}</h3><p>{{ .description }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ if .Content }}
+<section style="background:#fff;padding:72px 0">
+  <div class="st-case-content" style="max-width:850px;margin:0 auto;padding:0 24px">{{ .Content }}</div>
+</section>
+{{ end }}
+
+{{ with .Params.results }}
+<section style="background:linear-gradient(160deg,#060d1a,#0d1f3c);padding:72px 0">
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
+    <div style="text-align:center;margin-bottom:38px"><span class="st-kicker" style="color:#60a5fa">The Outcome</span><h2 class="st-case-heading" style="color:#f8fafc">Business and technology improvements</h2></div>
+    <div class="st-results-grid">
+      {{ range . }}<div class="st-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>{{ . }}</span></div>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.technologies }}
+<section style="background:#f8fafc;padding:54px 0">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;text-align:center">
+    <span class="st-kicker">Technologies Used</span>
+    <div class="st-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.faqs }}
+<section style="background:#fff;padding:72px 0">
+  <div style="max-width:760px;margin:0 auto;padding:0 24px">
+    <div style="text-align:center;margin-bottom:38px"><span class="st-kicker">Common Questions</span><h2 class="st-case-heading">Frequently Asked Questions</h2></div>
+    {{ range . }}
+    <details class="st-case-faq"><summary>{{ .question }}<span>+</span></summary><div>{{ .answer | markdownify }}</div></details>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section style="background:linear-gradient(135deg,#0066CC,#0052a3);padding:72px 0;text-align:center">
+  <div style="max-width:680px;margin:0 auto;padding:0 24px">
+    <h2 style="font-size:2rem;color:#fff;font-weight:800;margin-bottom:14px">Planning a Similar IT Project?</h2>
+    <p style="color:rgba(255,255,255,.82);font-size:1.05rem;line-height:1.7;margin-bottom:28px">Speak with Secure Techies about your current environment, risks, timeline, and business goals.</p>
+    <a href="{{ "contact" | relURL }}" class="st-case-cta">Schedule a Consultation</a>
+  </div>
+</section>
+
+<style>
+.st-kicker{display:inline-block;font-size:.75rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.12em}
+.st-case-heading{font-size:1.75rem;font-weight:800;color:#0f172a;letter-spacing:-.02em;margin:10px 0 0}
+.st-case-stat{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
+.st-case-stat span{display:block;color:#64748b;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.st-case-stat strong{color:#0f172a;font-size:.98rem}
+.st-case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.st-case-card{display:flex;gap:13px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px}
+.st-case-card p{margin:0;color:#475569;line-height:1.65}
+.st-dot{width:9px;height:9px;border-radius:50%;background:#0066CC;margin-top:8px;flex-shrink:0}
+.st-case-solution-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.st-case-solution{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:26px}
+.st-case-solution h3{font-size:1.05rem;font-weight:800;color:#0f172a;margin:14px 0 8px}
+.st-case-solution p{margin:0;color:#64748b;line-height:1.7;font-size:.94rem}
+.st-step{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0066CC,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.78rem}
+.st-case-content{font-size:1.02rem;color:#374151;line-height:1.9}
+.st-case-content h2{font-size:1.65rem;font-weight:800;color:#0f172a;margin:38px 0 14px}
+.st-case-content h3{font-size:1.18rem;font-weight:800;color:#0f172a;margin:28px 0 10px}
+.st-case-content ul{padding-left:22px}
+.st-case-content a{color:#0066CC;font-weight:700}
+.st-results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.st-result{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 18px;color:#cbd5e1}
+.st-result svg{width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:2px}
+.st-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.st-tags span{background:#fff;border:1px solid #dbeafe;color:#334155;border-radius:999px;padding:8px 14px;font-size:.86rem;font-weight:700}
+.st-case-faq{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.st-case-faq summary{display:flex;justify-content:space-between;gap:16px;cursor:pointer;padding:18px 20px;font-weight:800;color:#0f172a;list-style:none}
+.st-case-faq summary::-webkit-details-marker{display:none}
+.st-case-faq div{padding:0 20px 20px;color:#475569;line-height:1.75}
+.st-case-cta{display:inline-flex;background:#fff;color:#0f172a;font-weight:800;padding:14px 28px;border-radius:10px;text-decoration:none}
+@media(max-width:760px){.st-case-meta,.st-case-grid,.st-case-solution-grid,.st-results-grid{grid-template-columns:1fr!important}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":{{ .Title | jsonify }},
+  "description":{{ .Params.description | jsonify }},
+  "datePublished":"{{ .Date.Format "2006-01-02" }}",
+  "dateModified":"{{ .Lastmod.Format "2006-01-02" }}",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"{{ .Permalink }}"},
+  "author":{"@type":"Organization","name":"Secure Techies"},
+  "publisher":{"@type":"Organization","name":"Secure Techies, LLC","url":"https://securetechie.com/"}
+}
+</script>
+
+{{ with .Params.faqs }}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i,$f := . }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $f.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $f.answer | jsonify }}}}{{ end }}]}
+</script>
+{{ end }}
+
+{{ end }}
