@@ -27,6 +27,8 @@
 {{/* Ratings/reviews are hosted on the LocalBusiness (a Google-supported review-snippet
      type). Service is NOT a valid parent for review/aggregateRating and triggers the
      "Invalid object type for field <parent_node>" error in Search Console. */}}
+{{ $defaultAreaServed := slice "Los Angeles" "Long Beach" "LAX" "Irvine" "Pasadena" "Glendale" "Burbank" "Santa Monica" "Orange County" "Woodland Hills" "Canoga Park" }}
+{{ $areaServed := $p.area_served | default $defaultAreaServed }}
 {{ $svc := dict
   "@context" "https://schema.org"
   "@type" "LocalBusiness"
@@ -43,7 +45,7 @@
     "postalCode" "91303"
     "addressCountry" "US"
   )
-  "areaServed" (slice "Los Angeles" "Long Beach" "LAX" "Irvine" "Pasadena" "Glendale" "Burbank" "Santa Monica" "Orange County" "Woodland Hills" "Canoga Park")
+  "areaServed" $areaServed
 }}
 {{ if .rating_value }}
   {{ $svc = merge $svc (dict "aggregateRating" (dict

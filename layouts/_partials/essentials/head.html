@@ -69,11 +69,11 @@
 {{ with .Param "robots" }}{{ $robots = . }}{{ end }}
 <meta name="robots" content="{{ $robots }}" />
 
-<!-- geo meta tags for local SEO -->
-<meta name="geo.region" content="US-CA" />
-<meta name="geo.placename" content="Canoga Park, California" />
-<meta name="geo.position" content="34.1940039;-118.599754" />
-<meta name="ICBM" content="34.1940039, -118.599754" />
+<!-- geo meta tags for local SEO (overridable per page via front matter) -->
+<meta name="geo.region" content="{{ .Params.geo_region | default "US-CA" }}" />
+<meta name="geo.placename" content="{{ .Params.geo_placename | default "Canoga Park, California" }}" />
+<meta name="geo.position" content="{{ .Params.geo_position | default "34.1940039;-118.599754" }}" />
+<meta name="ICBM" content="{{ .Params.geo_icbm | default "34.1940039, -118.599754" }}" />
 
 
 <!-- custom script -->

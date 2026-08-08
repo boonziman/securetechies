@@ -27,6 +27,10 @@
 - LAX Area: https://securetechie.com/locations/lax/
 - Irvine: https://securetechie.com/locations/irvine/
 
+## Landing Pages
+- [Managed IT Services Los Angeles](https://securetechie.com/managed-it-services-los-angeles/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Los Angeles.
+- [Managed IT Services Denver](https://securetechie.com/managed-it-services-denver/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Denver and the Front Range.
+
 ## Resources
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/
 - Frequently asked questions: https://securetechie.com/faq/
