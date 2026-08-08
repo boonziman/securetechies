@@ -144,90 +144,117 @@
 </section>
 {{ end }}
 
-<!-- BODY CONTENT — sectioned long-form layout (keeps full copy, breaks the wall-of-text feel) -->
-{{ if .RawContent }}
-{{ $raw := .RawContent | strings.TrimSpace }}
-{{ $raw = strings.TrimPrefix $raw "## " }}
-{{ $parts := split $raw "\n## " }}
-{{ $partCount := len $parts }}
+<!-- BODY CONTENT — always render .Content (source of truth), then enhance layout in the browser -->
+{{ if .Content }}
 <section class="st-svc-longform" aria-label="Service details">
   <div class="st-svc-longform-shell">
-    {{ if gt $partCount 2 }}
-    <aside class="st-svc-toc" aria-label="On this page">
+    <aside class="st-svc-toc" aria-label="On this page" hidden>
       <div class="st-svc-toc-card">
         <div class="st-svc-toc-label">On this page</div>
-        <nav>
-          <ol class="st-svc-toc-list">
-            {{ range $i, $part := $parts }}
-            {{ $title := index (split $part "\n") 0 | strings.TrimSpace }}
-            {{ if $title }}
-            <li><a href="#st-svc-sec-{{ $i }}">{{ $title | plainify }}</a></li>
-            {{ end }}
-            {{ end }}
-          </ol>
-        </nav>
+        <nav><ol class="st-svc-toc-list"></ol></nav>
         <a class="st-svc-toc-cta" href="{{ "contact" | relURL }}">Free assessment</a>
       </div>
     </aside>
-    {{ end }}
-
     <div class="st-svc-longform-main">
-      {{ range $i, $part := $parts }}
-      {{ $lines := split $part "\n" }}
-      {{ $title := index $lines 0 | strings.TrimSpace }}
-      {{ $body := "" }}
-      {{ if gt (len $lines) 1 }}{{ $body = delimit (after 1 $lines) "\n" }}{{ end }}
-      {{ $alt := mod $i 2 }}
-      <section id="st-svc-sec-{{ $i }}" class="st-svc-band{{ if eq $alt 1 }} st-svc-band--alt{{ end }} st-reveal">
-        <div class="st-svc-band-inner">
-          {{ if $title }}
-          <header class="st-svc-band-head">
-            <span class="st-svc-band-num">{{ printf "%02d" (add $i 1) }}</span>
-            <h2>{{ $title | markdownify | plainify }}</h2>
-          </header>
-          {{ end }}
-          {{ with $body }}
-          <div class="st-svc-prose st-svc-prose--section">
-            {{ . | markdownify }}
-          </div>
-          {{ end }}
-        </div>
-      </section>
-
-      {{/* Soft visual/CTA break every 3 sections so the page breathes */}}
-      {{ if and (gt $i 0) (eq (mod (add $i 1) 3) 0) (lt (add $i 1) $partCount) }}
-      <div class="st-svc-midcta">
-        <div class="st-svc-midcta-inner">
-          <div>
-            <strong>Want this applied to your environment?</strong>
-            <p>Get a free assessment and a clear plan with no pressure.</p>
-          </div>
-          <a href="{{ "contact" | relURL }}">Talk to an engineer</a>
-        </div>
+      {{/* Full markdown body is always present for SEO and no-JS users */}}
+      <div class="st-svc-prose st-svc-prose-source">
+        {{ .Content }}
       </div>
-      {{ end }}
-      {{ end }}
     </div>
   </div>
 </section>
 <script>
 (function () {
-  /* Group each H3 with its following siblings into cards, then lay cards in a 2-col grid. */
-  document.querySelectorAll('.st-svc-prose--section').forEach(function (prose) {
-    var nodes = Array.prototype.slice.call(prose.childNodes);
-    var frag = document.createDocumentFragment();
+  var source = document.querySelector('.st-svc-prose-source');
+  if (!source) return;
+  var main = source.parentElement;
+  if (!main) return;
+
+  var kids = Array.prototype.slice.call(source.childNodes).filter(function (n) {
+    return !(n.nodeType === 3 && !String(n.textContent || '').trim());
+  });
+  if (!kids.length) return;
+
+  var frag = document.createDocumentFragment();
+  var band = null;
+  var prose = null;
+  var bandIndex = 0;
+  var tocList = document.querySelector('.st-svc-toc-list');
+  var tocAside = document.querySelector('.st-svc-toc');
+  var contactHref = (document.querySelector('.st-svc-toc-cta') || {}).getAttribute
+    ? document.querySelector('.st-svc-toc-cta').getAttribute('href')
+    : '/contact/';
+
+  function startBand(h2) {
+    bandIndex += 1;
+    band = document.createElement('section');
+    band.className = 'st-svc-band' + (bandIndex % 2 === 0 ? ' st-svc-band--alt' : '') + ' st-reveal';
+    band.id = 'st-svc-sec-' + (bandIndex - 1);
+
+    var inner = document.createElement('div');
+    inner.className = 'st-svc-band-inner';
+
+    if (h2) {
+      var head = document.createElement('header');
+      head.className = 'st-svc-band-head';
+      var num = document.createElement('span');
+      num.className = 'st-svc-band-num';
+      num.textContent = bandIndex < 10 ? '0' + bandIndex : String(bandIndex);
+      head.appendChild(num);
+      head.appendChild(h2);
+      inner.appendChild(head);
+
+      if (tocList) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + band.id;
+        a.textContent = h2.textContent || ('Section ' + bandIndex);
+        li.appendChild(a);
+        tocList.appendChild(li);
+      }
+    }
+
+    prose = document.createElement('div');
+    prose.className = 'st-svc-prose st-svc-prose--section';
+    inner.appendChild(prose);
+    band.appendChild(inner);
+    frag.appendChild(band);
+  }
+
+  function maybeMidCta() {
+    if (bandIndex === 0 || bandIndex % 3 !== 0) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'st-svc-midcta';
+    wrap.innerHTML =
+      '<div class="st-svc-midcta-inner">' +
+      '<div><strong>Want this applied to your environment?</strong>' +
+      '<p>Get a free assessment and a clear plan with no pressure.</p></div>' +
+      '<a href="' + contactHref + '">Talk to an engineer</a></div>';
+    frag.appendChild(wrap);
+  }
+
+  kids.forEach(function (n) {
+    if (n.nodeType === 1 && n.tagName === 'H2') {
+      if (band) maybeMidCta();
+      startBand(n);
+      return;
+    }
+    if (!band) startBand(null);
+    prose.appendChild(n);
+  });
+
+  /* Group H3 + following content into cards inside each section */
+  frag.querySelectorAll('.st-svc-prose--section').forEach(function (sectionProse) {
+    var nodes = Array.prototype.slice.call(sectionProse.childNodes);
+    var out = document.createDocumentFragment();
     var grid = null;
     function ensureGrid() {
       if (!grid) {
         grid = document.createElement('div');
         grid.className = 'st-svc-h3-grid';
-        frag.appendChild(grid);
+        out.appendChild(grid);
       }
       return grid;
-    }
-    function flushLoose(el) {
-      grid = null;
-      frag.appendChild(el);
     }
     var i = 0;
     while (i < nodes.length) {
@@ -236,30 +263,31 @@
         var card = document.createElement('div');
         card.className = 'st-svc-h3-card';
         card.appendChild(n);
-        i++;
+        i += 1;
         while (i < nodes.length) {
           var m = nodes[i];
           if (m.nodeType === 1 && (m.tagName === 'H3' || m.tagName === 'H2' || m.tagName === 'TABLE' || m.tagName === 'HR')) break;
-          if (m.nodeType === 3 && !m.textContent.trim()) { i++; continue; }
+          if (m.nodeType === 3 && !String(m.textContent || '').trim()) { i += 1; continue; }
           card.appendChild(m);
-          i++;
+          i += 1;
         }
         ensureGrid().appendChild(card);
-      } else if (n.nodeType === 1) {
-        flushLoose(n);
-        i++;
-      } else if (n.nodeType === 3 && n.textContent.trim()) {
-        var p = document.createElement('p');
-        p.textContent = n.textContent;
-        flushLoose(p);
-        i++;
       } else {
-        i++;
+        grid = null;
+        out.appendChild(n);
+        i += 1;
       }
     }
-    prose.innerHTML = '';
-    prose.appendChild(frag);
+    sectionProse.innerHTML = '';
+    sectionProse.appendChild(out);
   });
+
+  main.innerHTML = '';
+  main.appendChild(frag);
+  if (tocAside && tocList && tocList.children.length > 2) {
+    tocAside.hidden = false;
+    main.parentElement.classList.add('st-svc-longform-shell--toc');
+  }
 })();
 </script>
 {{ end }}
@@ -366,18 +394,55 @@
   /* ---- Long-form service body ---- */
   .st-svc-longform { border-top:1px solid #eef2f7; background:#fff; }
   .st-svc-longform-shell {
-    max-width:1200px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2rem);
+    max-width:1200px; margin:0 auto; padding:48px clamp(1.25rem,4vw,2rem) 24px;
     display:grid; grid-template-columns:1fr; gap:0;
   }
   @media (min-width:1080px) {
-    .st-svc-longform-shell:has(.st-svc-toc) {
+    .st-svc-longform-shell--toc {
       grid-template-columns:240px minmax(0,1fr); gap:40px; align-items:start;
-      padding-top:40px; padding-bottom:24px;
     }
   }
-  .st-svc-toc { display:none; }
+  .st-svc-toc[hidden] { display:none !important; }
   @media (min-width:1080px) {
-    .st-svc-toc { display:block; position:sticky; top:96px; padding-top:8px; }
+    .st-svc-longform-shell--toc .st-svc-toc:not([hidden]) {
+      display:block; position:sticky; top:96px; padding-top:8px;
+    }
+  }
+  @media (max-width:1079px) {
+    .st-svc-toc { display:none !important; }
+  }
+  /* Fallback styles when JS has not enhanced the page yet */
+  .st-svc-prose-source {
+    max-width:920px; margin:0 auto; font-size:1.03rem; color:#374151; line-height:1.8;
+  }
+  .st-svc-prose-source > h2 {
+    font-size:clamp(1.35rem,2.2vw,1.7rem); font-weight:800; color:#0f172a;
+    letter-spacing:-0.02em; line-height:1.25; margin:48px 0 16px;
+    padding-top:28px; border-top:1px solid #eef2f7;
+  }
+  .st-svc-prose-source > h2:first-child { margin-top:0; padding-top:0; border-top:none; }
+  .st-svc-prose-source > h3 {
+    font-size:1.05rem; font-weight:800; color:#0f172a; margin:28px 0 10px; letter-spacing:-0.01em;
+  }
+  .st-svc-prose-source > p { margin:0 0 16px; color:#475569; max-width:70ch; }
+  .st-svc-prose-source ul, .st-svc-prose-source ol { padding-left:1.2rem; margin:0 0 18px; color:#475569; }
+  .st-svc-prose-source li { margin:0 0 8px; line-height:1.65; }
+  .st-svc-prose-source a { color:#0066CC; font-weight:600; text-decoration:none; }
+  .st-svc-prose-source a:hover { text-decoration:underline; }
+  .st-svc-prose-source strong { color:#0f172a; }
+  .st-svc-prose-source table {
+    width:100%; border-collapse:separate; border-spacing:0; margin:8px 0 22px;
+    border:1px solid #e2e8f0; border-radius:14px; overflow:hidden; font-size:0.93rem;
+  }
+  .st-svc-prose-source thead th {
+    background:#0a1628; color:#f1f5f9; font-weight:700; text-align:left; padding:13px 14px; font-size:0.8rem;
+  }
+  .st-svc-prose-source tbody td { padding:12px 14px; border-top:1px solid #eef2f7; color:#475569; vertical-align:top; }
+  .st-svc-prose-source tbody tr:nth-child(even) td { background:#f8fafc; }
+  .st-svc-prose-source blockquote {
+    margin:18px 0; padding:16px 18px; border-left:4px solid #0066CC;
+    background:linear-gradient(135deg,#f0f7ff 0%,#f8fafc 100%);
+    border-radius:0 12px 12px 0; color:#334155;
   }
   .st-svc-toc-card {
     background:#0a1628; color:#e2e8f0; border-radius:18px; padding:22px 18px 18px;
@@ -401,13 +466,16 @@
     font-weight:700; font-size:0.88rem; padding:11px 14px; border-radius:10px;
   }
   .st-svc-longform-main { min-width:0; }
-  .st-svc-band { padding:52px 0; }
+  .st-svc-band { padding:40px 0; }
   .st-svc-band--alt { background:linear-gradient(180deg,#f8fafc 0%,#f1f5f9 100%); }
-  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band { border-radius:20px; margin-bottom:14px; padding:36px 32px; }
-  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band--alt { background:#f8fafc; border:1px solid #e8eef5; }
-  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band:not(.st-svc-band--alt) { background:#fff; border:1px solid #eef2f7; }
+  .st-svc-longform-shell--toc .st-svc-band,
+  .st-svc-longform-main > .st-svc-band {
+    border-radius:20px; margin-bottom:14px; padding:36px 32px;
+  }
+  .st-svc-longform-main > .st-svc-band--alt { background:#f8fafc; border:1px solid #e8eef5; }
+  .st-svc-longform-main > .st-svc-band:not(.st-svc-band--alt) { background:#fff; border:1px solid #eef2f7; }
   .st-svc-band-inner { max-width:920px; margin:0 auto; }
-  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band-inner { max-width:none; }
+  .st-svc-longform-shell--toc .st-svc-band-inner { max-width:none; }
   .st-svc-band-head {
     display:flex; align-items:flex-start; gap:14px; margin-bottom:18px;
     padding-bottom:16px; border-bottom:1px solid rgba(15,23,42,0.08);
@@ -493,7 +561,7 @@
     background:linear-gradient(135deg,#0a1628 0%,#0f2744 55%,#0b3a6e 100%);
     color:#e2e8f0; box-shadow:0 16px 36px -24px rgba(15,42,80,0.6);
   }
-  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-midcta-inner { max-width:none; }
+  .st-svc-longform-shell--toc .st-svc-midcta-inner { max-width:none; }
   .st-svc-midcta-inner strong { display:block; color:#fff; font-size:1rem; margin-bottom:4px; }
   .st-svc-midcta-inner p { margin:0; color:#94a3b8; font-size:0.9rem; }
   .st-svc-midcta-inner a {
