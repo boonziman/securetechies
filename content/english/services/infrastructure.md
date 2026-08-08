@@ -100,7 +100,7 @@ Moving offices, adopting Microsoft 365, consolidating vendors, or preparing for 
 
 ### Leaders tired of surprise IT bills
 
-Break-fix pricing rewards failure. Every emergency becomes an invoice. Managed infrastructure flips the model: predictable cost, proactive work, and fewer emergencies. For local context on how these engagements work, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/) and [managed IT services in Denver](/managed-it-services-denver/).
+Break-fix pricing rewards failure. Every emergency becomes an invoice. Managed infrastructure flips the model: predictable cost, proactive work, and fewer emergencies. For local context on how these engagements work, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/).
 
 ## Problems Managed Infrastructure Solves
 
@@ -254,8 +254,6 @@ Field teams need devices that work, VPNs that hold up, and office systems that d
 ### Growing SaaS and product companies
 
 Founders often outgrow DIY cloud setups. Governance, cost control, and production hygiene become board-level concerns quickly.
-
-If you operate near our core markets, you can also review [locations in Denver](/locations/denver/) for regional coverage context and service availability.
 
 ## How Managed Infrastructure Connects to the Rest of Your Stack
 

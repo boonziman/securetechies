@@ -150,7 +150,7 @@ You will not predict the future perfectly. You only need to show that sitting on
 | Documented on-call SLA | Faster human response |
 | Continuity plan | Less chaos tax during incidents |
 
-For continuity structure, use [business continuity plan for small business](/blog/business-continuity-plan-small-business/). For local operating models, see [managed IT services Denver](/blog/managed-it-services-denver/) or [Los Angeles managed IT](/blog/managed-it-services-los-angeles/).
+For continuity structure, use [business continuity plan for small business](/blog/business-continuity-plan-small-business/). For local operating models, see [Los Angeles managed IT](/blog/managed-it-services-los-angeles/).
 
 ## How to talk about downtime cost with your team
 
@@ -181,7 +181,7 @@ Capture user reports with times. Correlate with ISP tickets, CPU alarms, and Saa
 
 Weight revenue systems higher in prioritization. A public booking site or payment path down at peak hours may cost more per minute than an internal reporting dashboard down overnight. Build your monitoring and SLA tiers to match that economic reality, not a flat "all servers are critical" list that exhausts your team.
 
-Multi-location businesses should model site-level impact too. One branch offline is different from headquarters identity offline. Central identity and DNS failures deserve higher investment in redundancy because they fan out everywhere. That same logic applies when you expand into new markets such as [Denver](/locations/denver/): replicate standards early so each site does not invent its own fragile setup.
+Multi-location businesses should model site-level impact too. One branch offline is different from headquarters identity offline. Central identity and DNS failures deserve higher investment in redundancy because they fan out everywhere. That same logic applies when you expand into new markets: replicate standards early so each site does not invent its own fragile setup.
 
 Document manual modes for top revenue processes: paper tickets, cellphone customer updates, alternate payment capture. Manual mode is not a strategy for a week, but it can cut first-day losses while IT restores service. Continuity planning and downtime cost math meet in those playbooks.
 

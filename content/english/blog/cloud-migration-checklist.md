@@ -170,7 +170,7 @@ The SBA's technology and cyber guidance for small firms is a good reminder that 
 
 ## When to bring a partner
 
-Bring help if you lack identity expertise, if downtime would hurt revenue immediately, if compliance is in scope, or if line-of-business apps are brittle. A partner running a cloud migration checklist for small business with you should produce written inventories, a security baseline, a cutover plan, and hypercare, not just a license quote. Related services and posts: [managed IT for Denver](/managed-it-services-denver/), [how to switch IT providers](/blog/how-to-switch-it-providers/), and [co-managed IT services](/blog/co-managed-it-services/) if you keep internal staff in the loop.
+Bring help if you lack identity expertise, if downtime would hurt revenue immediately, if compliance is in scope, or if line-of-business apps are brittle. A partner running a cloud migration checklist for small business with you should produce written inventories, a security baseline, a cutover plan, and hypercare, not just a license quote. Related services and posts: [managed infrastructure](/services/infrastructure/), [how to switch IT providers](/blog/how-to-switch-it-providers/), and [co-managed IT services](/blog/co-managed-it-services/) if you keep internal staff in the loop.
 
 ## Hybrid reality: not everything moves on day one
 

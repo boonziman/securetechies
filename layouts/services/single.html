@@ -116,17 +116,6 @@
 </section>
 {{ end }}
 
-<!-- BODY CONTENT — single-column prose for long-form service pages -->
-{{ if .Content }}
-<section style="background:#fff;padding:72px 0;border-top:1px solid #eef2f7">
-  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
-    <div class="st-svc-content st-svc-prose">
-      {{ .Content }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
 <!-- HOW IT WORKS -->
 {{ with .Params.process }}
 <section class="st-subpage-section" style="background:#f8fafc;border-top:1px solid #eef2f7;padding:72px 0">
@@ -153,6 +142,126 @@
     </div>
   </div>
 </section>
+{{ end }}
+
+<!-- BODY CONTENT — sectioned long-form layout (keeps full copy, breaks the wall-of-text feel) -->
+{{ if .RawContent }}
+{{ $raw := .RawContent | strings.TrimSpace }}
+{{ $raw = strings.TrimPrefix $raw "## " }}
+{{ $parts := split $raw "\n## " }}
+{{ $partCount := len $parts }}
+<section class="st-svc-longform" aria-label="Service details">
+  <div class="st-svc-longform-shell">
+    {{ if gt $partCount 2 }}
+    <aside class="st-svc-toc" aria-label="On this page">
+      <div class="st-svc-toc-card">
+        <div class="st-svc-toc-label">On this page</div>
+        <nav>
+          <ol class="st-svc-toc-list">
+            {{ range $i, $part := $parts }}
+            {{ $title := index (split $part "\n") 0 | strings.TrimSpace }}
+            {{ if $title }}
+            <li><a href="#st-svc-sec-{{ $i }}">{{ $title | plainify }}</a></li>
+            {{ end }}
+            {{ end }}
+          </ol>
+        </nav>
+        <a class="st-svc-toc-cta" href="{{ "contact" | relURL }}">Free assessment</a>
+      </div>
+    </aside>
+    {{ end }}
+
+    <div class="st-svc-longform-main">
+      {{ range $i, $part := $parts }}
+      {{ $lines := split $part "\n" }}
+      {{ $title := index $lines 0 | strings.TrimSpace }}
+      {{ $body := "" }}
+      {{ if gt (len $lines) 1 }}{{ $body = delimit (after 1 $lines) "\n" }}{{ end }}
+      {{ $alt := mod $i 2 }}
+      <section id="st-svc-sec-{{ $i }}" class="st-svc-band{{ if eq $alt 1 }} st-svc-band--alt{{ end }} st-reveal">
+        <div class="st-svc-band-inner">
+          {{ if $title }}
+          <header class="st-svc-band-head">
+            <span class="st-svc-band-num">{{ printf "%02d" (add $i 1) }}</span>
+            <h2>{{ $title | markdownify | plainify }}</h2>
+          </header>
+          {{ end }}
+          {{ with $body }}
+          <div class="st-svc-prose st-svc-prose--section">
+            {{ . | markdownify }}
+          </div>
+          {{ end }}
+        </div>
+      </section>
+
+      {{/* Soft visual/CTA break every 3 sections so the page breathes */}}
+      {{ if and (gt $i 0) (eq (mod (add $i 1) 3) 0) (lt (add $i 1) $partCount) }}
+      <div class="st-svc-midcta">
+        <div class="st-svc-midcta-inner">
+          <div>
+            <strong>Want this applied to your environment?</strong>
+            <p>Get a free assessment and a clear plan with no pressure.</p>
+          </div>
+          <a href="{{ "contact" | relURL }}">Talk to an engineer</a>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  /* Group each H3 with its following siblings into cards, then lay cards in a 2-col grid. */
+  document.querySelectorAll('.st-svc-prose--section').forEach(function (prose) {
+    var nodes = Array.prototype.slice.call(prose.childNodes);
+    var frag = document.createDocumentFragment();
+    var grid = null;
+    function ensureGrid() {
+      if (!grid) {
+        grid = document.createElement('div');
+        grid.className = 'st-svc-h3-grid';
+        frag.appendChild(grid);
+      }
+      return grid;
+    }
+    function flushLoose(el) {
+      grid = null;
+      frag.appendChild(el);
+    }
+    var i = 0;
+    while (i < nodes.length) {
+      var n = nodes[i];
+      if (n.nodeType === 1 && n.tagName === 'H3') {
+        var card = document.createElement('div');
+        card.className = 'st-svc-h3-card';
+        card.appendChild(n);
+        i++;
+        while (i < nodes.length) {
+          var m = nodes[i];
+          if (m.nodeType === 1 && (m.tagName === 'H3' || m.tagName === 'H2' || m.tagName === 'TABLE' || m.tagName === 'HR')) break;
+          if (m.nodeType === 3 && !m.textContent.trim()) { i++; continue; }
+          card.appendChild(m);
+          i++;
+        }
+        ensureGrid().appendChild(card);
+      } else if (n.nodeType === 1) {
+        flushLoose(n);
+        i++;
+      } else if (n.nodeType === 3 && n.textContent.trim()) {
+        var p = document.createElement('p');
+        p.textContent = n.textContent;
+        flushLoose(p);
+        i++;
+      } else {
+        i++;
+      }
+    }
+    prose.innerHTML = '';
+    prose.appendChild(frag);
+  });
+})();
+</script>
 {{ end }}
 
 <!-- WHY SECURE TECHIES -->
@@ -254,71 +363,147 @@
   @media (max-width: 640px) {
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   }
-  .st-svc-content { font-size:1.05rem;color:#374151;line-height:1.85; }
-  .st-svc-prose h2 {
-    font-size:clamp(1.45rem,2.5vw,1.75rem);font-weight:800;color:#0f172a;
-    margin:48px 0 16px;letter-spacing:-0.02em;line-height:1.25;
-    padding-top:36px;border-top:1px solid #eef2f7;
+  /* ---- Long-form service body ---- */
+  .st-svc-longform { border-top:1px solid #eef2f7; background:#fff; }
+  .st-svc-longform-shell {
+    max-width:1200px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2rem);
+    display:grid; grid-template-columns:1fr; gap:0;
   }
-  .st-svc-prose > h2:first-child { margin-top:0;padding-top:0;border-top:none; }
+  @media (min-width:1080px) {
+    .st-svc-longform-shell:has(.st-svc-toc) {
+      grid-template-columns:240px minmax(0,1fr); gap:40px; align-items:start;
+      padding-top:40px; padding-bottom:24px;
+    }
+  }
+  .st-svc-toc { display:none; }
+  @media (min-width:1080px) {
+    .st-svc-toc { display:block; position:sticky; top:96px; padding-top:8px; }
+  }
+  .st-svc-toc-card {
+    background:#0a1628; color:#e2e8f0; border-radius:18px; padding:22px 18px 18px;
+    box-shadow:0 18px 40px -24px rgba(15,42,80,0.55);
+  }
+  .st-svc-toc-label {
+    font-size:0.72rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase;
+    color:#93c5fd; margin-bottom:14px;
+  }
+  .st-svc-toc-list { list-style:none; margin:0 0 16px; padding:0; max-height:min(52vh,420px); overflow:auto; }
+  .st-svc-toc-list li { margin:0; }
+  .st-svc-toc-list a {
+    display:block; padding:8px 10px; margin-bottom:4px; border-radius:10px;
+    color:#cbd5e1; text-decoration:none; font-size:0.84rem; font-weight:600; line-height:1.35;
+    border:1px solid transparent;
+  }
+  .st-svc-toc-list a:hover { background:rgba(255,255,255,0.06); color:#fff; border-color:rgba(147,197,253,0.2); }
+  .st-svc-toc-cta {
+    display:flex; align-items:center; justify-content:center; width:100%;
+    background:#0066CC; color:#fff !important; text-decoration:none !important;
+    font-weight:700; font-size:0.88rem; padding:11px 14px; border-radius:10px;
+  }
+  .st-svc-longform-main { min-width:0; }
+  .st-svc-band { padding:52px 0; }
+  .st-svc-band--alt { background:linear-gradient(180deg,#f8fafc 0%,#f1f5f9 100%); }
+  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band { border-radius:20px; margin-bottom:14px; padding:36px 32px; }
+  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band--alt { background:#f8fafc; border:1px solid #e8eef5; }
+  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band:not(.st-svc-band--alt) { background:#fff; border:1px solid #eef2f7; }
+  .st-svc-band-inner { max-width:920px; margin:0 auto; }
+  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band-inner { max-width:none; }
+  .st-svc-band-head {
+    display:flex; align-items:flex-start; gap:14px; margin-bottom:18px;
+    padding-bottom:16px; border-bottom:1px solid rgba(15,23,42,0.08);
+  }
+  .st-svc-band-num {
+    flex-shrink:0; width:42px; height:42px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,#0066CC,#3b82f6); color:#fff;
+    font-size:0.78rem; font-weight:800; letter-spacing:0.02em;
+    box-shadow:0 8px 18px -8px rgba(0,102,204,0.55);
+  }
+  .st-svc-band-head h2 {
+    margin:0; font-size:clamp(1.35rem,2.2vw,1.7rem); font-weight:800;
+    color:#0f172a; letter-spacing:-0.02em; line-height:1.25; padding-top:6px;
+  }
+  .st-svc-prose { font-size:1.03rem; color:#374151; line-height:1.8; }
+  .st-svc-prose > p { margin:0 0 16px; color:#475569; max-width:70ch; }
+  .st-svc-prose > p:last-child { margin-bottom:0; }
   .st-svc-prose h3 {
-    font-size:1.12rem;font-weight:800;color:#0f172a;margin:28px 0 12px;
-    padding-left:14px;position:relative;letter-spacing:-0.01em;
+    font-size:1.05rem; font-weight:800; color:#0f172a; margin:0 0 10px;
+    letter-spacing:-0.01em; line-height:1.3;
   }
-  .st-svc-prose h3::before {
-    content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:3px;
-    background:linear-gradient(180deg,#0066CC,#60a5fa);
-  }
-  .st-svc-prose p { margin:0 0 18px;color:#475569; }
-  .st-svc-prose ul, .st-svc-prose ol { padding-left:0;list-style:none;margin:0 0 24px; }
+  .st-svc-prose ul, .st-svc-prose ol { padding-left:0; list-style:none; margin:0 0 0; }
   .st-svc-prose ul li, .st-svc-prose ol li {
-    position:relative;padding:8px 0 8px 28px;margin:0;color:#475569;font-size:1rem;line-height:1.65;
-    border-bottom:1px solid #f1f5f9;
+    position:relative; padding:7px 0 7px 26px; margin:0; color:#475569; font-size:0.96rem; line-height:1.6;
   }
-  .st-svc-prose ul li:last-child, .st-svc-prose ol li:last-child { border-bottom:none; }
   .st-svc-prose ul li::before {
-    content:"";position:absolute;left:0;top:16px;width:8px;height:8px;background:#0066CC;border-radius:50%;
+    content:""; position:absolute; left:0; top:14px; width:8px; height:8px;
+    background:#0066CC; border-radius:50%;
   }
   .st-svc-prose ol { counter-reset: st-svc-ol; }
-  .st-svc-prose ol li { padding-left:36px; }
+  .st-svc-prose ol li { padding-left:34px; }
   .st-svc-prose ol li::before {
-    content:counter(st-svc-ol);counter-increment:st-svc-ol;
-    position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;
-    background:rgba(0,102,204,0.1);color:#0066CC;font-size:0.72rem;font-weight:800;
-    display:flex;align-items:center;justify-content:center;line-height:22px;text-align:center;
+    content:counter(st-svc-ol); counter-increment:st-svc-ol;
+    position:absolute; left:0; top:8px; width:22px; height:22px; border-radius:50%;
+    background:rgba(0,102,204,0.1); color:#0066CC; font-size:0.72rem; font-weight:800;
+    display:flex; align-items:center; justify-content:center; line-height:22px; text-align:center;
   }
-  .st-svc-prose a { color:#0066CC;font-weight:600;text-decoration:none; }
+  .st-svc-prose a { color:#0066CC; font-weight:600; text-decoration:none; }
   .st-svc-prose a:hover { text-decoration:underline; }
   .st-svc-prose strong { color:#0f172a; }
-  .st-svc-prose hr { border:none;border-top:1px solid #e2e8f0;margin:28px 0; }
+  .st-svc-prose hr { border:none; border-top:1px solid #e2e8f0; margin:22px 0; }
   .st-svc-prose table {
-    width:100%;border-collapse:separate;border-spacing:0;margin:8px 0 28px;
-    border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;font-size:0.95rem;
+    width:100%; border-collapse:separate; border-spacing:0; margin:8px 0 22px;
+    border:1px solid #e2e8f0; border-radius:14px; overflow:hidden; font-size:0.93rem;
   }
   .st-svc-prose thead th {
-    background:#0a1628;color:#f1f5f9;font-weight:700;text-align:left;
-    padding:14px 16px;font-size:0.82rem;letter-spacing:0.02em;
+    background:#0a1628; color:#f1f5f9; font-weight:700; text-align:left;
+    padding:13px 14px; font-size:0.8rem; letter-spacing:0.02em;
   }
-  .st-svc-prose tbody td {
-    padding:13px 16px;border-top:1px solid #eef2f7;color:#475569;vertical-align:top;
-  }
+  .st-svc-prose tbody td { padding:12px 14px; border-top:1px solid #eef2f7; color:#475569; vertical-align:top; }
   .st-svc-prose tbody tr:nth-child(even) td { background:#f8fafc; }
   .st-svc-prose blockquote {
-    margin:24px 0;padding:18px 22px;border-left:4px solid #0066CC;
+    margin:18px 0; padding:16px 18px; border-left:4px solid #0066CC;
     background:linear-gradient(135deg,#f0f7ff 0%,#f8fafc 100%);
-    border-radius:0 12px 12px 0;color:#334155;font-size:1.02rem;line-height:1.7;
+    border-radius:0 12px 12px 0; color:#334155; font-size:1rem; line-height:1.65;
   }
   .st-svc-prose blockquote p:last-child { margin-bottom:0; }
-  .st-svc-cta-inline {
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
-    margin:36px 0;padding:22px 24px;border-radius:16px;
-    background:linear-gradient(135deg,#f0f7ff,#eef6ff);border:1px solid #dbeafe;
+  .st-svc-h3-grid {
+    display:grid; grid-template-columns:1fr; gap:14px; margin-top:8px;
   }
-  .st-svc-cta-inline p { margin:0;color:#334155;font-weight:600;max-width:28rem; }
-  .st-svc-cta-inline a {
-    display:inline-flex;align-items:center;gap:8px;background:#0066CC;color:#fff !important;
-    font-weight:700;font-size:0.9rem;padding:12px 18px;border-radius:10px;text-decoration:none !important;
-    box-shadow:0 4px 14px rgba(0,102,204,0.25);
+  @media (min-width:800px) {
+    .st-svc-h3-grid { grid-template-columns:1fr 1fr; gap:16px; }
+  }
+  .st-svc-h3-card {
+    background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:18px 18px 14px;
+    box-shadow:0 10px 28px -22px rgba(15,42,80,0.35);
+    height:100%;
+  }
+  .st-svc-band--alt .st-svc-h3-card { background:#fff; }
+  .st-svc-h3-card h3 {
+    margin:0 0 10px; padding-bottom:10px; border-bottom:1px solid #eef2f7;
+    font-size:1.02rem; color:#0f172a;
+  }
+  .st-svc-h3-card p { margin:0 0 10px; color:#475569; font-size:0.95rem; line-height:1.65; }
+  .st-svc-h3-card p:last-child { margin-bottom:0; }
+  .st-svc-h3-card ul { margin:0; }
+  .st-svc-midcta { padding:8px 0 22px; }
+  .st-svc-midcta-inner {
+    max-width:920px; margin:0 auto;
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
+    padding:18px 22px; border-radius:16px;
+    background:linear-gradient(135deg,#0a1628 0%,#0f2744 55%,#0b3a6e 100%);
+    color:#e2e8f0; box-shadow:0 16px 36px -24px rgba(15,42,80,0.6);
+  }
+  .st-svc-longform-shell:has(.st-svc-toc) .st-svc-midcta-inner { max-width:none; }
+  .st-svc-midcta-inner strong { display:block; color:#fff; font-size:1rem; margin-bottom:4px; }
+  .st-svc-midcta-inner p { margin:0; color:#94a3b8; font-size:0.9rem; }
+  .st-svc-midcta-inner a {
+    display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
+    background:#fff; color:#0f172a !important; text-decoration:none !important;
+    font-weight:800; font-size:0.9rem; padding:12px 16px; border-radius:10px;
+  }
+  @media (max-width:700px) {
+    .st-svc-band { padding:40px 0; }
+    .st-svc-longform-shell:has(.st-svc-toc) .st-svc-band { padding:28px 18px; }
   }
 </style>
 
@@ -334,17 +519,13 @@
   "category": "Information Technology",
   "areaServed": [
     { "@type": "State", "name": "California" },
-    { "@type": "State", "name": "Colorado" },
     { "@type": "City", "name": "Los Angeles" },
-    { "@type": "City", "name": "Denver" },
     { "@type": "City", "name": "Woodland Hills" },
     { "@type": "City", "name": "Thousand Oaks" },
     { "@type": "City", "name": "Calabasas" },
     { "@type": "City", "name": "Chatsworth" },
     { "@type": "City", "name": "Encino" },
-    { "@type": "City", "name": "Sherman Oaks" },
-    { "@type": "City", "name": "Aurora" },
-    { "@type": "City", "name": "Boulder" }
+    { "@type": "City", "name": "Sherman Oaks" }
   ],
   "provider": {
     "@type": ["LocalBusiness", "ProfessionalService"],

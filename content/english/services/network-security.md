@@ -110,7 +110,7 @@ Healthcare, finance-adjacent firms, defense suppliers, and companies pursuing SO
 
 Consumer-grade gear and ad hoc rules collapse under more users, more cloud apps, and more attackers. Growth is the moment to redesign, not to stack another temporary workaround.
 
-If you operate across our service regions, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/), [managed IT services in Denver](/managed-it-services-denver/), and [Denver locations](/locations/denver/) for coverage context.
+If you operate across our service regions, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/) for coverage context.
 
 ## Problems Network Security Solves
 

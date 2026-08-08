@@ -175,7 +175,7 @@ Record what broke. Fix the plan. A plan that fails in a tabletop is a success if
 
 Avoid those and your business continuity plan for small business becomes a competitive advantage: you recover while competitors improvise.
 
-If you want help turning this outline into a living plan tied to real monitoring, backups, and response, a managed partner can own the technical drills while you set business priorities. Teams across [Denver](/locations/denver/) and Southern California use the same core approach: short plans, real tests, clear owners.
+If you want help turning this outline into a living plan tied to real monitoring, backups, and response, a managed partner can own the technical drills while you set business priorities. Teams across Southern California use the same core approach: short plans, real tests, clear owners.
 
 ## Cyber events as continuity events
 

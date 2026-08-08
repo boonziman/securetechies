@@ -115,7 +115,7 @@ Some failures need hands on hardware. Local technicians matter when a switch die
 
 If support quality depends on who happens to answer email that day, you do not have a process. You have hope. Managed help desk replaces hope with metrics.
 
-Buyers in our core markets can also review [managed IT services Los Angeles](/managed-it-services-los-angeles/) and [managed IT services Denver](/managed-it-services-denver/) for broader service context, plus [Denver location details](/locations/denver/).
+Buyers in our core markets can also review [managed IT services Los Angeles](/managed-it-services-los-angeles/) for broader service context.
 
 ## Problems a Strong Help Desk Solves
 

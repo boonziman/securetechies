@@ -127,7 +127,7 @@ Compare cost models with eyes open using [IT support cost for small business](/b
 
 ### Multi-location and hybrid care
 
-Groups with several clinics, remote billers, or telehealth need consistent identity, standardized endpoints, and reliable SD-WAN or business-class connectivity. Centralized management prevents each location from becoming a unique snowflake. If you are expanding into new markets, the same operating model can span regions, including teams serving [Denver](/locations/denver/) and Southern California practices under one standard.
+Groups with several clinics, remote billers, or telehealth need consistent identity, standardized endpoints, and reliable SD-WAN or business-class connectivity. Centralized management prevents each location from becoming a unique snowflake. If you are expanding into new markets, the same operating model can span regions, including multi-site Southern California practices under one standard.
 
 ## A 90-day improvement plan for neglected clinic IT
 

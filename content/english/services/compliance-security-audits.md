@@ -113,7 +113,7 @@ Card data handling triggers PCI DSS obligations. Even companies that outsource p
 
 CCPA/CPRA rights, notices, and security expectations affect more organizations than many leaders realize. Privacy is no longer only a European concern.
 
-If you operate across our service regions, explore [managed IT services Los Angeles](/managed-it-services-los-angeles/), [managed IT services Denver](/managed-it-services-denver/), and [Denver locations](/locations/denver/) for delivery context.
+If you operate across our service regions, explore [managed IT services Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/) for delivery context.
 
 ## Problems Compliance Engagements Solve
 

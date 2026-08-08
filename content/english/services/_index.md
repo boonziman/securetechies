@@ -1,7 +1,7 @@
 ---
 title: "Our Managed IT Services"
 meta_title: "Managed IT Services & Cybersecurity Solutions | Secure Techies"
-description: "Explore Secure Techies' full range of managed IT services — infrastructure, network security, help desk, backup & disaster recovery, mobile CCTV trailers, and compliance solutions for businesses in Los Angeles, Denver, and nationwide."
+description: "Explore Secure Techies' full range of managed IT services — infrastructure, network security, help desk, backup & disaster recovery, mobile CCTV trailers, and compliance solutions for businesses in Southern California."
 layout: "services"
 noindex: true
 draft: false
@@ -9,7 +9,7 @@ draft: false
 
 ## Comprehensive IT Services Tailored to Your Business
 
-At Secure Techies, we offer a complete suite of managed IT services designed to protect, optimize, and scale your technology infrastructure. Whether you're a small business in [Woodland Hills](/locations/woodland-hills/), a growing company in [Denver](/locations/denver/), or an enterprise expanding nationwide, we deliver solutions that keep your operations running smoothly and securely.
+At Secure Techies, we offer a complete suite of managed IT services designed to protect, optimize, and scale your technology infrastructure. Whether you're a small business in Woodland Hills or an enterprise expanding nationwide, we deliver solutions that keep your operations running smoothly and securely.
 
 ---
 
@@ -128,4 +128,4 @@ Every business is different, and your IT solutions should be too. Contact us tod
 
 ---
 
-Looking for location-specific managed IT? See [Managed IT Services Los Angeles](/managed-it-services-los-angeles/) and [Managed IT Services Denver](/managed-it-services-denver/), or browse [all areas we serve](/locations/).
+Looking for location-specific managed IT? See [Managed IT Services Los Angeles](/managed-it-services-los-angeles/) or browse [all areas we serve](/locations/).

@@ -120,7 +120,7 @@ Geographic and platform diversity can improve resilience or create blind spots. 
 
 Cyber insurance questionnaires and enterprise security reviews increasingly ask about backup immutability, restore testing, and recovery timelines. Weak answers raise premiums and slow deals.
 
-If you operate in our service regions, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/), [managed IT services in Denver](/managed-it-services-denver/), and [Denver locations](/locations/denver/) for coverage context.
+If you operate in our service regions, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/) for coverage context.
 
 ## Problems a Strong BDR Program Solves
 

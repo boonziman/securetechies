@@ -147,7 +147,7 @@ Keep it to one or two pages. Link to longer standards for admins. FTC business g
 | 15 to 21 | Staff one-pager, phishing report process, finance dual-control |
 | 22 to 30 | Alert ownership live, offboarding drill, backup/restore check |
 
-Then move to quarterly reviews. Remote work security is a rhythm: new hires, new apps, new offices (including [Denver](/locations/denver/) or LA expansions) all change the threat surface.
+Then move to quarterly reviews. Remote work security is a rhythm: new hires, new apps, and new offices all change the threat surface.
 
 ## Common remote work security failures
 
