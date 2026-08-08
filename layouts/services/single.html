@@ -116,11 +116,11 @@
 </section>
 {{ end }}
 
-<!-- BODY CONTENT -->
+<!-- BODY CONTENT — single-column prose for long-form service pages -->
 {{ if .Content }}
-<section style="background:#fff;padding:64px 0">
-  <div style="max-width:1080px;margin:0 auto;padding:0 1.5rem">
-    <div class="st-svc-content st-svc-content--cols">
+<section style="background:#fff;padding:72px 0;border-top:1px solid #eef2f7">
+  <div style="max-width:760px;margin:0 auto;padding:0 1.5rem">
+    <div class="st-svc-content st-svc-prose">
       {{ .Content }}
     </div>
   </div>
@@ -254,28 +254,71 @@
   @media (max-width: 640px) {
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   }
-  .st-svc-content { font-size:1.02rem;color:#374151;line-height:1.85; }
-  .st-svc-content h2 { font-size:1.55rem;font-weight:800;color:#0f172a;margin:0 0 18px;letter-spacing:-0.02em;line-height:1.25; }
-  .st-svc-content h3 { font-size:1.15rem;font-weight:800;color:#0f172a;margin:26px 0 10px;padding-left:14px;position:relative;letter-spacing:-0.01em; }
-  .st-svc-content h3::before { content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:3px;background:linear-gradient(180deg,#0066CC,#60a5fa); }
-  .st-svc-content p { margin-bottom:18px; }
-  .st-svc-content ul { padding-left:0;list-style:none;margin-bottom:24px; }
-  .st-svc-content ul li { position:relative;padding:6px 0 6px 28px;margin-bottom:4px;color:#475569;font-size:0.95rem; }
-  .st-svc-content ul li::before { content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:#0066CC;border-radius:50%; }
-  .st-svc-content a { color:#0066CC;font-weight:600;text-decoration:none; }
-  .st-svc-content a:hover { text-decoration:underline; }
-  .st-svc-content strong { color:#0f172a; }
-  .st-svc-content hr { border:none;border-top:1px solid #e2e8f0;margin:8px 0 28px; }
-  /* Two-column condensed body — section titles span full width, dense bullets flow into balanced columns */
-  @media (min-width:880px) {
-    .st-svc-content--cols { column-count:2; column-gap:60px; }
-    .st-svc-content--cols > h2,
-    .st-svc-content--cols > hr { column-span:all; }
-    .st-svc-content--cols > h2 { text-align:center;font-size:1.7rem;margin-bottom:24px; }
-    .st-svc-content--cols > h2 ~ hr + h2 { margin-top:8px; }
-    .st-svc-content--cols > p,
-    .st-svc-content--cols > ul { break-inside:avoid; }
-    .st-svc-content--cols > h3 { break-inside:avoid;break-after:avoid; }
+  .st-svc-content { font-size:1.05rem;color:#374151;line-height:1.85; }
+  .st-svc-prose h2 {
+    font-size:clamp(1.45rem,2.5vw,1.75rem);font-weight:800;color:#0f172a;
+    margin:48px 0 16px;letter-spacing:-0.02em;line-height:1.25;
+    padding-top:36px;border-top:1px solid #eef2f7;
+  }
+  .st-svc-prose > h2:first-child { margin-top:0;padding-top:0;border-top:none; }
+  .st-svc-prose h3 {
+    font-size:1.12rem;font-weight:800;color:#0f172a;margin:28px 0 12px;
+    padding-left:14px;position:relative;letter-spacing:-0.01em;
+  }
+  .st-svc-prose h3::before {
+    content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;border-radius:3px;
+    background:linear-gradient(180deg,#0066CC,#60a5fa);
+  }
+  .st-svc-prose p { margin:0 0 18px;color:#475569; }
+  .st-svc-prose ul, .st-svc-prose ol { padding-left:0;list-style:none;margin:0 0 24px; }
+  .st-svc-prose ul li, .st-svc-prose ol li {
+    position:relative;padding:8px 0 8px 28px;margin:0;color:#475569;font-size:1rem;line-height:1.65;
+    border-bottom:1px solid #f1f5f9;
+  }
+  .st-svc-prose ul li:last-child, .st-svc-prose ol li:last-child { border-bottom:none; }
+  .st-svc-prose ul li::before {
+    content:"";position:absolute;left:0;top:16px;width:8px;height:8px;background:#0066CC;border-radius:50%;
+  }
+  .st-svc-prose ol { counter-reset: st-svc-ol; }
+  .st-svc-prose ol li { padding-left:36px; }
+  .st-svc-prose ol li::before {
+    content:counter(st-svc-ol);counter-increment:st-svc-ol;
+    position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;
+    background:rgba(0,102,204,0.1);color:#0066CC;font-size:0.72rem;font-weight:800;
+    display:flex;align-items:center;justify-content:center;line-height:22px;text-align:center;
+  }
+  .st-svc-prose a { color:#0066CC;font-weight:600;text-decoration:none; }
+  .st-svc-prose a:hover { text-decoration:underline; }
+  .st-svc-prose strong { color:#0f172a; }
+  .st-svc-prose hr { border:none;border-top:1px solid #e2e8f0;margin:28px 0; }
+  .st-svc-prose table {
+    width:100%;border-collapse:separate;border-spacing:0;margin:8px 0 28px;
+    border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;font-size:0.95rem;
+  }
+  .st-svc-prose thead th {
+    background:#0a1628;color:#f1f5f9;font-weight:700;text-align:left;
+    padding:14px 16px;font-size:0.82rem;letter-spacing:0.02em;
+  }
+  .st-svc-prose tbody td {
+    padding:13px 16px;border-top:1px solid #eef2f7;color:#475569;vertical-align:top;
+  }
+  .st-svc-prose tbody tr:nth-child(even) td { background:#f8fafc; }
+  .st-svc-prose blockquote {
+    margin:24px 0;padding:18px 22px;border-left:4px solid #0066CC;
+    background:linear-gradient(135deg,#f0f7ff 0%,#f8fafc 100%);
+    border-radius:0 12px 12px 0;color:#334155;font-size:1.02rem;line-height:1.7;
+  }
+  .st-svc-prose blockquote p:last-child { margin-bottom:0; }
+  .st-svc-cta-inline {
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+    margin:36px 0;padding:22px 24px;border-radius:16px;
+    background:linear-gradient(135deg,#f0f7ff,#eef6ff);border:1px solid #dbeafe;
+  }
+  .st-svc-cta-inline p { margin:0;color:#334155;font-weight:600;max-width:28rem; }
+  .st-svc-cta-inline a {
+    display:inline-flex;align-items:center;gap:8px;background:#0066CC;color:#fff !important;
+    font-weight:700;font-size:0.9rem;padding:12px 18px;border-radius:10px;text-decoration:none !important;
+    box-shadow:0 4px 14px rgba(0,102,204,0.25);
   }
 </style>
 
@@ -291,13 +334,17 @@
   "category": "Information Technology",
   "areaServed": [
     { "@type": "State", "name": "California" },
+    { "@type": "State", "name": "Colorado" },
     { "@type": "City", "name": "Los Angeles" },
+    { "@type": "City", "name": "Denver" },
     { "@type": "City", "name": "Woodland Hills" },
     { "@type": "City", "name": "Thousand Oaks" },
     { "@type": "City", "name": "Calabasas" },
     { "@type": "City", "name": "Chatsworth" },
     { "@type": "City", "name": "Encino" },
-    { "@type": "City", "name": "Sherman Oaks" }
+    { "@type": "City", "name": "Sherman Oaks" },
+    { "@type": "City", "name": "Aurora" },
+    { "@type": "City", "name": "Boulder" }
   ],
   "provider": {
     "@type": ["LocalBusiness", "ProfessionalService"],

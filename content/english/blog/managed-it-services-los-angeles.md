@@ -70,7 +70,7 @@ National help desks have their place, but Los Angeles businesses get real advant
 - **California compliance.** A local team understands CCPA and the privacy rules that apply to California businesses, plus industry frameworks like HIPAA for medical practices.
 - **Same time zone, real relationship.** You talk to people who know your business, not a rotating overseas call center.
 
-Secure Techies is headquartered in Canoga Park and supports businesses across Los Angeles and the broader Southern California region — and because everything runs through one team, that can extend to your [web development](/services/web-development/) needs as well, from a secure company website to high-converting landing pages.
+Secure Techies is headquartered in Canoga Park and supports businesses across Los Angeles and the broader Southern California region, with [managed IT for Denver](/managed-it-services-denver/) and the Front Range as well. Because everything runs through one team, that can extend to your [web development](/services/web-development/) needs, from a secure company website to high-converting landing pages.
 
 ### What the LA market means for your IT
 

@@ -1,15 +1,15 @@
 ---
 title: "About Secure Techies"
-meta_title: "About Us | Secure Techies - Managed IT & Cybersecurity in Los Angeles"
-description: "Learn about Secure Techies, LLC — a trusted managed IT services, cybersecurity, and mobile CCTV provider based in Los Angeles County, serving businesses in Southern California and nationwide."
+meta_title: "About Us | Secure Techies - Managed IT & Cybersecurity"
+description: "Learn about Secure Techies, LLC — a trusted managed IT services, cybersecurity, and mobile CCTV provider based in Los Angeles County, serving businesses in Southern California, Denver, and nationwide."
 image: ""
 layout: "about"
 draft: false
 ---
 
-## Your Trusted IT Partner in Southern California
+## Your Trusted IT Partner Across LA and Denver
 
-Secure Techies is a trusted business based in Los Angeles County that is focused on providing quick and effective IT solutions for you and your business. Our goal is to ensure our customers run their businesses and/or organizations effectively by providing a wide variety of solutions pertaining to any of your technical or logistical issues.
+Secure Techies is a trusted business based in Los Angeles County that is focused on providing quick and effective IT solutions for you and your business. Our goal is to ensure our customers run their businesses and/or organizations effectively by providing a wide variety of solutions pertaining to any of your technical or logistical issues. We serve companies across [Greater Los Angeles](/locations/los-angeles/), [Denver and the Front Range](/locations/denver/), and remotely nationwide.
 
 Our managed IT services in California meet the best standards in the industry, including (but not limited to):
 
@@ -21,7 +21,7 @@ Our managed IT services in California meet the best standards in the industry, i
 
 ### Who We Serve
 
-We proudly serve businesses across Southern California and nationwide, with a focus on helping organizations led by CIOs, CTOs, IT Directors, Managers, CFOs, and CEOs. Our clients range from small and mid-size businesses to growing enterprises that need reliable, enterprise-grade IT without the overhead of a full in-house team.
+We proudly serve businesses across Southern California, [Denver](/locations/denver/), and nationwide, with a focus on helping organizations led by CIOs, CTOs, IT Directors, Managers, CFOs, and CEOs. Our clients range from small and mid-size businesses to growing enterprises that need reliable, enterprise-grade IT without the overhead of a full in-house team. Explore our [full service lineup](/services/infrastructure/) or read the latest from our [IT and cybersecurity blog](/blog/).
 
 ### What We Can Offer Your Business
 

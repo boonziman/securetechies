@@ -1,11 +1,11 @@
 ---
-meta_title: "Secure Techies | Managed IT Services & Cybersecurity in Southern California"
-description: "Secure Techies provides expert managed IT services, cybersecurity, mobile CCTV trailers, cloud solutions, and 24/7 support for businesses in Los Angeles & Southern California. Get a free risk assessment today."
+meta_title: "Secure Techies | Managed IT Services & Cybersecurity LA & Denver"
+description: "Secure Techies provides expert managed IT services, cybersecurity, mobile CCTV trailers, cloud solutions, and 24/7 support for businesses in Los Angeles, Denver, and Southern California. Get a free risk assessment today."
 
 # Banner
 banner:
   title: "Managed IT & Cybersecurity That Protects What Matters Most"
-  content: "Trusted managed IT services, cybersecurity solutions, and 24/7 support for businesses in Southern California and nationwide. Protect your operations with a partner who understands your industry."
+  content: "Trusted managed IT services, cybersecurity solutions, and 24/7 support for businesses in Los Angeles, Denver, Southern California, and nationwide. Protect your operations with a partner who understands your industry."
   image: "/images/banner.png"
   button:
     enable: true
@@ -29,7 +29,7 @@ features:
       label: "View All Services"
       link: "/services"
 
-  - title: "Why Businesses in Southern California Choose Us"
+  - title: "Why Businesses in LA and Denver Choose Us"
     image: "/images/service-2.png"
     content: "We deliver innovative IT-managed services that enable clients to fully outsource the management of their network while they focus on their core business. Our flexible solutions meet the unique challenges of every organization."
     bulletpoints:

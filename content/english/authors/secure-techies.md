@@ -15,4 +15,4 @@ social:
     link: https://www.instagram.com/securetechies/
 ---
 
-The Secure Techies team brings decades of combined experience in managed IT services, cybersecurity, and cloud solutions. Based in Los Angeles County, we help businesses across Southern California and nationwide protect their digital assets and optimize their technology infrastructure.
+The Secure Techies team brings decades of combined experience in managed IT services, cybersecurity, and cloud solutions. Based in Los Angeles County, we help businesses across Southern California, Denver, and nationwide protect their digital assets and optimize their technology infrastructure.

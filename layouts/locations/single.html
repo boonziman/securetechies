@@ -1,6 +1,8 @@
 {{ define "main" }}
 {{ $city := .Params.city }}
 {{ $region := .Params.region | default "Southern California" }}
+{{ $state := .Params.state | default "California" }}
+{{ $stateAbbr := .Params.state_abbr | default "CA" }}
 {{ $lat := .Params.lat }}
 {{ $lng := .Params.lng }}
 {{ $heroSub := .Params.hero_subtitle | default (printf "Secure Techies delivers proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support to businesses in %s and across %s." $city $region) }}
@@ -9,6 +11,7 @@
   "isLocation" true
   "city" $city
   "region" $region
+  "state_abbr" $stateAbbr
   "heroSub" $heroSub
   "introHTML" .Content
 ) }}
@@ -69,7 +72,7 @@
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "{{ .Permalink }}#localbusiness",
   "name": "Secure Techies — IT Services in {{ $city }}",
-  "description": {{ .Params.description | default (printf "Managed IT services, cybersecurity, and 24/7 support for businesses in %s, CA." $city) | jsonify }},
+  "description": {{ .Params.description | default (printf "Managed IT services, cybersecurity, and 24/7 support for businesses in %s, %s." $city $stateAbbr) | jsonify }},
   "url": "{{ .Permalink }}",
   "telephone": "+1-818-431-5607",
   "email": "info@SecureTechie.com",
@@ -85,7 +88,7 @@
     "addressCountry": "US"
   },
   {{ with $lat }}"geo": { "@type": "GeoCoordinates", "latitude": {{ . }}, "longitude": {{ $lng }} },{{ end }}
-  "areaServed": { "@type": "City", "name": "{{ $city }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ $region }}, California" } },
+  "areaServed": { "@type": "City", "name": "{{ $city }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ $region }}, {{ $state }}" } },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
