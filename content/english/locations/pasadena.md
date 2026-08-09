@@ -1,8 +1,8 @@
 ---
 title: "Pasadena"
 city: "Pasadena"
-meta_title: "Managed IT & IT Support Pasadena | Secure Techies"
-description: "24/7 managed IT for Pasadena businesses: help desk, cybersecurity, Microsoft 365, and on-site support. Free assessment. Flat monthly pricing."
+meta_title: "IT Support Pasadena | Managed IT Services"
+description: "Local managed IT for Pasadena: 24/7 help desk, cybersecurity, Microsoft 365, and on-site support. Free assessment. Flat monthly pricing."
 hero_subtitle: "Secure Techies keeps Pasadena businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1478
 lng: -118.1445

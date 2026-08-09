@@ -2,7 +2,7 @@
 title: "Los Angeles"
 city: "Los Angeles"
 meta_title: "Managed IT Services Los Angeles | Secure Techies"
-description: "Managed IT for Los Angeles businesses: 24/7 support, cybersecurity, infrastructure, and on-site help across LA. Free assessment. Local MSP since 2009."
+description: "Managed IT for LA businesses: 24/7 support, cybersecurity, infrastructure, and on-site help. Free assessment. Local MSP since 2009."
 hero_subtitle: "Secure Techies keeps Los Angeles businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0522
 lng: -118.2437

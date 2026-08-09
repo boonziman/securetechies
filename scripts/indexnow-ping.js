@@ -17,7 +17,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Must match static/{KEY}.txt filename and file body exactly.
-const KEY = "2b5b8549d5b1e1d4ba36838fd63ec07c";
+const KEY = "5f6075356bfd4887826aefb626a581ee";
 const HOST = "securetechie.com";
 const KEY_FILE = `${KEY}.txt`;
 const KEY_LOCATION = `https://${HOST}/${KEY_FILE}`;

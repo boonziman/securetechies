@@ -1,8 +1,8 @@
 ---
 title: "West Hollywood"
 city: "West Hollywood"
-meta_title: "Managed IT & IT Support West Hollywood | Secure Techies"
-description: "Managed IT for West Hollywood businesses: 24/7 support, cybersecurity, cloud, and on-site help. Free assessment. Flat monthly pricing."
+meta_title: "IT Support West Hollywood | Managed IT"
+description: "Managed IT for West Hollywood: 24/7 support, cybersecurity, cloud, and on-site help. Free assessment. Flat monthly pricing."
 hero_subtitle: "Secure Techies keeps West Hollywood businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.09
 lng: -118.3617

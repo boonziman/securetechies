@@ -1,8 +1,8 @@
 ---
 title: "Irvine"
 city: "Irvine"
-meta_title: "Managed IT & IT Support Irvine | Secure Techies"
-description: "Managed IT for Irvine and Orange County offices: 24/7 support, cybersecurity, Microsoft 365, on-site coverage. Free assessment. Predictable pricing."
+meta_title: "IT Support Irvine | Managed IT Orange County"
+description: "Managed IT for Irvine and OC offices: 24/7 support, cybersecurity, Microsoft 365, on-site coverage. Free assessment."
 hero_subtitle: "Secure Techies keeps Irvine businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 33.6846
 lng: -117.8265

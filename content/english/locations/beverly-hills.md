@@ -1,8 +1,8 @@
 ---
 title: "Beverly Hills"
 city: "Beverly Hills"
-meta_title: "Managed IT & IT Support Beverly Hills | Secure Techies"
-description: "Managed IT for Beverly Hills professional offices: discreet 24/7 support, cybersecurity, and on-site help. Free assessment. Flat monthly pricing."
+meta_title: "IT Support Beverly Hills | Managed IT Services"
+description: "Managed IT for Beverly Hills offices: discreet 24/7 support, cybersecurity, and on-site help. Free assessment."
 hero_subtitle: "Secure Techies keeps Beverly Hills businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0736
 lng: -118.4004

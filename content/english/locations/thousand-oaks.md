@@ -1,8 +1,8 @@
 ---
 title: "Thousand Oaks"
 city: "Thousand Oaks"
-meta_title: "Managed IT & IT Support Thousand Oaks | Secure Techies"
-description: "Managed IT for Thousand Oaks businesses: 24/7 help desk, cybersecurity, cloud, and local on-site support. Free assessment. Flat monthly pricing."
+meta_title: "IT Support Thousand Oaks | Managed IT"
+description: "Managed IT for Thousand Oaks: 24/7 help desk, cybersecurity, cloud, and local on-site support. Free assessment. Flat pricing."
 hero_subtitle: "Secure Techies keeps Thousand Oaks businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1706
 lng: -118.8376

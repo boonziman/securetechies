@@ -1,8 +1,8 @@
 ---
 title: "Burbank"
 city: "Burbank"
-meta_title: "Managed IT & IT Support Burbank | Secure Techies"
-description: "Managed IT for Burbank media and professional teams: 24/7 support, cybersecurity, cloud, and local on-site help. Free assessment available."
+meta_title: "IT Support Burbank | Managed IT Services"
+description: "Managed IT for Burbank businesses: 24/7 support, cybersecurity, cloud, and local on-site help. Free assessment. Predictable pricing."
 hero_subtitle: "Secure Techies keeps Burbank businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1808
 lng: -118.309

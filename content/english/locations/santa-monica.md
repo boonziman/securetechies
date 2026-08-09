@@ -1,8 +1,8 @@
 ---
 title: "Santa Monica"
 city: "Santa Monica"
-meta_title: "Managed IT & IT Support Santa Monica | Secure Techies"
-description: "Managed IT for Santa Monica and Westside teams: 24/7 help desk, cybersecurity, hybrid support. Free assessment. On-site when you need it."
+meta_title: "IT Support Santa Monica | Westside Managed IT"
+description: "Managed IT for Santa Monica hybrid teams: 24/7 help desk, cybersecurity, on-site when needed. Free assessment."
 hero_subtitle: "Secure Techies keeps Santa Monica businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0195
 lng: -118.4912

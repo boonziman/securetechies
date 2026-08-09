@@ -1,8 +1,8 @@
 ---
 title: "Culver City"
 city: "Culver City"
-meta_title: "Managed IT & IT Support Culver City | Secure Techies"
-description: "Managed IT for Culver City teams: 24/7 help desk, cybersecurity, cloud management, and on-site support. Free assessment for growing businesses."
+meta_title: "IT Support Culver City | Managed IT"
+description: "Managed IT for Culver City: 24/7 help desk, cybersecurity, cloud management, and on-site support. Free assessment available."
 hero_subtitle: "Secure Techies keeps Culver City businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0211
 lng: -118.3965

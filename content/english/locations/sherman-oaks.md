@@ -1,8 +1,8 @@
 ---
 title: "Sherman Oaks"
 city: "Sherman Oaks"
-meta_title: "Managed IT & IT Support Sherman Oaks | Secure Techies"
-description: "Managed IT for Sherman Oaks businesses on the Ventura corridor: 24/7 support, cybersecurity, and on-site help. Free assessment. Flat monthly pricing."
+meta_title: "IT Support Sherman Oaks | Managed IT"
+description: "Managed IT on the Ventura corridor: 24/7 support, cybersecurity, and on-site help for Sherman Oaks teams. Free assessment."
 hero_subtitle: "Secure Techies keeps Sherman Oaks businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.151
 lng: -118.449

@@ -1,8 +1,8 @@
 ---
 title: "Woodland Hills"
 city: "Woodland Hills"
-meta_title: "Managed IT & IT Support Woodland Hills | Secure Techies"
-description: "Managed IT near Warner Center: 24/7 help desk, cybersecurity, Microsoft 365, and on-site support for Woodland Hills. Free assessment. Local team."
+meta_title: "IT Support Woodland Hills | Warner Center IT"
+description: "Managed IT near Warner Center: 24/7 help desk, cybersecurity, Microsoft 365, on-site support. Free assessment. Local team."
 hero_subtitle: "Secure Techies keeps Woodland Hills businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1684
 lng: -118.6059

@@ -1,8 +1,8 @@
 ---
 title: "Glendale"
 city: "Glendale"
-meta_title: "Managed IT & IT Support Glendale | Secure Techies"
-description: "Managed IT for Glendale offices near Brand Blvd: 24/7 help desk, cybersecurity, Microsoft 365, on-site support. Free assessment. Local team."
+meta_title: "IT Support Glendale | Managed IT Services"
+description: "Managed IT near Brand Blvd: 24/7 help desk, cybersecurity, Microsoft 365, on-site support for Glendale offices. Free assessment."
 hero_subtitle: "Secure Techies keeps Glendale businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1425
 lng: -118.2551
