@@ -177,7 +177,7 @@ function collectUrls() {
 }
 
 async function submitIndexNow(urls) {
-  log(`Submitting ${urls.length} URLs to IndexNow ...`);
+  log(`Submitting ${urls.length} URLs to IndexNow endpoints ...`);
 
   const payload = {
     host: HOST,
@@ -186,33 +186,50 @@ async function submitIndexNow(urls) {
     urlList: urls,
   };
 
-  let response;
-  try {
-    response = await fetch("https://api.indexnow.org/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(payload),
-    });
-  } catch (err) {
-    error(`IndexNow request failed: ${err.message}`);
-    return false;
+  // Shared hub + Bing + Yandex (honest per-engine results).
+  const endpoints = [
+    "https://api.indexnow.org/indexnow",
+    "https://www.bing.com/indexnow",
+    "https://yandex.com/indexnow",
+  ];
+
+  let anyOk = false;
+
+  for (const endpoint of endpoints) {
+    let response;
+    try {
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      warn(`${endpoint} request failed: ${err.message}`);
+      continue;
+    }
+
+    const text = await response.text().catch(() => "");
+    if (response.status === 200 || response.status === 202) {
+      log(`IndexNow SUCCESS via ${endpoint} (HTTP ${response.status}).`);
+      anyOk = true;
+      continue;
+    }
+
+    warn(
+      `IndexNow ${endpoint} returned HTTP ${response.status}` +
+        (text ? ` — ${text.trim().slice(0, 240)}` : "")
+    );
   }
 
-  const text = await response.text().catch(() => "");
-
-  if (response.status === 200 || response.status === 202) {
-    log(`IndexNow SUCCESS (HTTP ${response.status}, ${urls.length} URLs).`);
-    return true;
+  if (!anyOk) {
+    error(
+      `No IndexNow endpoint accepted this batch. Key must stay live at ${KEY_LOCATION}. ` +
+        `Bing may return 403 until it crawls the key file; Yandex often accepts sooner. ` +
+        `Set BING_WEBMASTER_API_KEY for SubmitUrlbatch as a reliable Bing path.`
+    );
   }
 
-  // Explicit failure messaging — never pretend this is fine.
-  error(
-    `IndexNow FAILED (HTTP ${response.status}).\n` +
-      (text ? `  Response: ${text.trim()}\n` : "") +
-      `  Common cause: key not trusted yet, wrong key file, or blacklisted key. ` +
-      `Confirm ${KEY_LOCATION} returns the key body, then redeploy or regenerate the key.`
-  );
-  return false;
+  return anyOk;
 }
 
 async function submitBingWebmaster(urls) {
