@@ -71,8 +71,10 @@
           </div>
         </div>
 
+        {{/* Netlify Forms: set form notification email to info@SecureTechie.com in Netlify → Forms → contact → Notifications */}}
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "thank-you" | relURL }}" style="margin-top:28px">
           <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="recipient" value="info@SecureTechie.com" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
@@ -379,7 +381,7 @@
     "https://www.facebook.com/Securetechie/",
     "https://www.linkedin.com/company/secure-techies",
     "https://www.instagram.com/securetechies/",
-    "https://www.yelp.com/biz/secure-techie-winnetka"
+    "https://www.yelp.com/biz/secure-techies-los-angeles"
   ]
 }
 </script>

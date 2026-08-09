@@ -1,8 +1,10 @@
 {{/* Compact Netlify lead form — reused in hero and final CTA sections. */}}
 {{ $p := .Params }}
 {{ $final := .final | default $p.final }}
+{{/* Netlify Forms: notifications must go to info@SecureTechie.com (Netlify dashboard) */}}
 <form name="{{ $p.form_name | default "landing-lead" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ $p.form_action | default "/thank-you/" | relURL }}" class="st-l-form-inline">
   <input type="hidden" name="form-name" value="{{ $p.form_name | default "landing-lead" }}" />
+  <input type="hidden" name="recipient" value="info@SecureTechie.com" />
   <input type="hidden" name="landing-page" value="{{ $p.title | default $.Title }}" />
   <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
   <div class="st-l-form-row">

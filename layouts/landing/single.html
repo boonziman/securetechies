@@ -512,8 +512,10 @@
           <h3>{{ .form_title | default "Get Your Free Assessment" }}</h3>
           <p>{{ .form_sub | default "Takes under 2 minutes • No obligation" }}</p>
         </div>
+        {{/* Netlify Forms: set notification email to info@SecureTechie.com in Netlify dashboard */}}
         <form name="{{ $p.form_name | default "landing-lead" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ $p.form_action | default "/thank-you/" | relURL }}">
           <input type="hidden" name="form-name" value="{{ $p.form_name | default "landing-lead" }}" />
+          <input type="hidden" name="recipient" value="info@SecureTechie.com" />
           <input type="hidden" name="landing-page" value="{{ .Title | default $.Title }}" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
           <div class="st-l-form-row">

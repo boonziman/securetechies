@@ -5,6 +5,8 @@ meta_title: "Microsoft 365 Migration Case Study | Secure Techies"
 description: "See how Secure Techies migrated a professional services company from legacy email hosting to Microsoft 365 with improved security, collaboration, and minimal disruption."
 image: "/images/case-studies/microsoft-365-migration-overview.webp"
 draft: false
+categories: ["Managed IT"]
+tags: ["Microsoft 365", "email migration", "Exchange Online", "MFA", "case study", "professional services"]
 
 industry: "Professional Services"
 project_type: "Microsoft 365 Migration"
@@ -12,6 +14,7 @@ location: "Southern California"
 timeline: "Phased migration"
 client_size: "Small business"
 featured: true
+
 
 hero_subtitle: "A carefully planned migration from legacy email hosting to Microsoft 365, delivering stronger security, centralized administration, and modern collaboration tools."
 hero_image: "/images/case-studies/microsoft-365-migration-hero.webp"

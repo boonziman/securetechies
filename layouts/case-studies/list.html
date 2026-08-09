@@ -11,18 +11,24 @@
   <div style="max-width:1100px;margin:0 auto;padding:0 24px">
     <div class="st-case-list">
       {{ range .Pages.ByDate.Reverse }}
+      {{ $p := . }}
       <article class="st-case-list-card">
-        {{ with .Params.image }}
-        <a href="{{ $.RelPermalink }}" class="st-case-image"><img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}" loading="lazy" width="800" height="500"></a>
+        {{ with $p.Params.image }}
+        <a href="{{ $p.RelPermalink }}" class="st-case-image"><img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $p.Title }}" loading="lazy" width="800" height="500" decoding="async"></a>
+        {{ else }}
+        <a href="{{ $p.RelPermalink }}" class="st-case-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#0d1f3c);text-decoration:none">
+          <span style="color:#93c5fd;font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase">Case Study</span>
+        </a>
         {{ end }}
         <div class="st-case-list-body">
           <div class="st-case-list-meta">
-            {{ with .Params.industry }}<span>{{ . }}</span>{{ end }}
-            {{ with .Params.project_type }}<span>{{ . }}</span>{{ end }}
+            {{ with $p.Params.industry }}<span>{{ . }}</span>{{ end }}
+            {{ with $p.Params.project_type }}<span>{{ . }}</span>{{ end }}
+            {{ range first 2 $p.Params.tags }}<span>{{ . }}</span>{{ end }}
           </div>
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p>{{ .Params.description | default .Summary }}</p>
-          <a href="{{ .RelPermalink }}" class="st-case-read">Read Case Study →</a>
+          <h2><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+          <p>{{ $p.Params.description | default $p.Summary }}</p>
+          <a href="{{ $p.RelPermalink }}" class="st-case-read">Read Case Study →</a>
         </div>
       </article>
       {{ end }}

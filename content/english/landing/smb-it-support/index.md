@@ -63,8 +63,8 @@ hero:
   cta_secondary_href: "tel:+18187979771"
   cta_anchor: "#st-landing-hero-form"
   sticky_cta: "Schedule a Free IT Assessment"
-  rating_value: "5"
-  rating_count: "120"
+  rating_value: "5.0"
+  rating_count: "35"
   trust_items:
     - "Proactive IT Monitoring"
     - "Cybersecurity-Focused Support"
@@ -320,37 +320,44 @@ reviews:
   heading: "Los Angeles Businesses That Trust Secure Techies"
   sub: "Real, verified reviews from the Secure Techies Google Business Profile."
   rating_value: "5.0"
-  rating_count: "120"
+  rating_count: "35"
   items:
     - rating: 5
-      text: "Secure Techies has been a game changer for our IT operations. Their team is professional, responsive, and resolves issues quickly without downtime. We've seen major improvements in our security and overall system performance. Communication is clear, pricing is transparent, and the service is consistently reliable."
-      name: "Natali Toth"
-      meta: "Local Guide · Google review"
-      avatar: "images/landing/reviews/natali.jpg"
-    - rating: 5
-      text: "We have been working with this Managed IT & Cybersecurity company since 2015, and we are extremely satisfied. Anytime we have an issue they respond immediately and resolve it quickly. After many years working together, I honestly could not find a better IT and cybersecurity company."
-      name: "Nancy Zadeh"
-      meta: "Southern California Drug & DNA Testing Clinic"
-      avatar: "images/landing/reviews/nancy.jpg"
-    - rating: 5
-      text: "I've been working with Secure Techies for over 10 years, and they have been an amazing partner for my business. Anytime we need support, they are quick to help and always reliable. They give us complete peace of mind knowing our systems and sensitive information are safe."
+      text: "I've been working with Secure Techies for over 10 years, and they have been an amazing partner for my business. Their team is always professional, responsive, and knowledgeable, and they truly care about keeping our business secure and protected. Anytime we need support, they are quick to help and always reliable. They give us complete peace of mind knowing our systems and sensitive information are safe. I highly recommend Secure Techies to any business looking for trustworthy and security-focused IT services."
       name: "Noella Nerses"
       meta: "Local Guide · Google review"
-      avatar: "images/landing/reviews/noella.jpg"
     - rating: 5
-      text: "Secure Techies has been an exceptional partner for my small business. As a bookkeeper, protecting my clients' sensitive financial information is essential, and because I travel internationally it's invaluable to know my devices, data, and business are protected wherever I go."
+      text: "I am writing to formally recommend Secure Techies for all your IT needs. Over the past ten years, they have demonstrated exceptional professionalism, expertise, and patience in supporting our office at Hilltop Dental. Secure Techies consistently provides outstanding customer service and technical proficiency. They have a keen ability to explain complex issues clearly and implement swift, effective resolutions. Whether they are troubleshooting urgent matters, improving our systems, or strengthening our security, they have made our technology manageable and reliable. In particular, Alex has been proactive, trustworthy, and detail-oriented, consistently exceeding our expectations. I recommend Secure Techies without hesitation to anyone seeking a reliable and knowledgeable IT partner."
+      name: "George Apelian DDS"
+      meta: "Hilltop Dental · Google review"
+    - rating: 5
+      text: "Outstanding IT and Cybersecurity company! Their team is incredibly professional, knowledgeable, and always available when we need support. They respond quickly, solve issues efficiently, and truly care about protecting their clients and businesses. It is very reassuring to work with a company that is dependable, honest, and proactive. Their customer service is exceptional, and they always go above and beyond to make sure everything runs smoothly. I highly recommend them to anyone looking for reliable IT support and strong cybersecurity protection. Truly one of the best companies we have worked with."
+      name: "Kia Samani"
+      meta: "Local Guide · Google review"
+    - rating: 5
+      text: "Secure Techies has been an exceptional partner for my small business. Their team is professional, attentive, and highly knowledgeable, providing not only outstanding technical support but also a strong sense of confidence and peace of mind. What sets them apart is their commitment to security. As a bookkeeper, protecting my clients' sensitive financial information is essential, and when working remotely, I know that information is secure. Because I travel internationally with my laptop, it is invaluable to know that my devices, data, and business are protected wherever I go. Thanks to their expertise, I can focus on my work without the constant concern of cyber threats. I'm genuinely grateful for their support and would highly recommend Secure Techies to any business owner seeking reliable, high-caliber, and security-focused IT services."
       name: "WCG Project Solutions"
       meta: "Bookkeeping · Google review"
     - rating: 5
-      text: "Secure Techies delivered our Cisco network refresh on time and under budget. Their team demonstrated deep technical knowledge at every stage, from equipment configuration to final cutover. Response times were fast, and the transition caused zero downtime."
-      name: "Catherine Heywood"
-      meta: "Government IT procurement"
-      avatar: "images/landing/reviews/catherine.jpg"
+      text: "Secure Techies has been an excellent IT partner for our team at ServiceMaster. They handle everything from IT services and cybersecurity to camera installation and system support. Most recently, they got our camera system up and running quickly and efficiently, and the entire process was smooth from start to finish. Their team is knowledgeable, responsive, and always available when we need support. It's great having a company we can rely on for all of our technology and security needs. Highly recommend Secure Techies for professional and dependable service."
+      name: "Heather Manning"
+      meta: "ServiceMaster · Google review"
     - rating: 5
-      text: "Secure Techies has been an outstanding IT partner for our business. What really stands out is how trustworthy and dependable they are, they always take the time to explain issues clearly and make sure everything is handled properly the first time."
-      name: "Shadi Jafari"
+      text: "We've been working with Secure Techies for a little over 8 years, and I honestly can't say enough good things about Alex and his team. They've taken great care of our company's server and have always been there whenever my staff or I need help. No matter the issue, they respond quickly and make sure everything is handled as smoothly as possible. What I appreciate most is how hands-on and genuinely invested Alex is. It's clear he really cares about his clients and takes pride in protecting our business, including sensitive information for our employees, clients, and company overall. Over the years, Secure Techies has helped us with so much more than just server monitoring — from helping us purchase computers and monitors for the office to stepping in when we've had internet problems. They consistently go above and beyond, and it gives us real peace of mind knowing we can count on them. I highly recommend Alex and Secure Techies to any business looking for dependable, responsive, and trustworthy IT support."
+      name: "Sanz Construction, Inc."
+      meta: "Construction · Google review"
+    - rating: 5
+      text: "Secure Techies have been a great help in setting up my flooring business. They made the process simple, made sure everything was secure and running smoothly, and were always available whenever I needed help. Since I'm not very tech-savvy, it means a lot to have a team I can rely on. They've been professional, responsive, and easy to work with from the start. I would highly recommend them to any business owner looking for reliable IT support."
+      name: "RC Maldonado Flooring, Inc"
       meta: "Google review"
-      avatar: "images/landing/reviews/shadi.jpg"
+    - rating: 5
+      text: "We have been working with this Managed IT & Cybersecurity company since 2015, and we are extremely satisfied with their services. Their team is always responsive, professional, and highly knowledgeable. Anytime we have an issue or need assistance, they respond immediately and resolve problems quickly and efficiently. Their dedication to protecting our systems and keeping our business running smoothly has given us great peace of mind over the years. It is very rare to find a company that is this reliable, trustworthy, and committed to excellent customer service. After many years of working together, I can honestly say I could not find a better IT and cybersecurity company. I highly recommend them to anyone looking for dependable and expert IT support."
+      name: "Nancy Zadeh"
+      meta: "Southern California Drug & DNA Testing Clinic · Google review"
+    - rating: 5
+      text: "We engaged Secure Techies for a managed services contract and were impressed from day one. Their engineers resolved issues proactively before they became problems. Security protocols were rigorous, documentation thorough, and reporting transparent. They operate with the professionalism you expect from a top-tier IT solutions provider."
+      name: "Tristin Shumway"
+      meta: "Google review"
 
 faq:
   eyebrow: "Frequently asked questions"
