@@ -1,8 +1,8 @@
 ---
 title: "Irvine"
 city: "Irvine"
-meta_title: "Managed IT Services in Irvine, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Irvine and Orange County. Fast response, proactive monitoring, and flat monthly pricing."
+meta_title: "Managed IT & IT Support Irvine | Secure Techies"
+description: "Managed IT for Irvine and Orange County offices: 24/7 support, cybersecurity, Microsoft 365, on-site coverage. Free assessment. Predictable pricing."
 hero_subtitle: "Secure Techies keeps Irvine businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 33.6846
 lng: -117.8265
@@ -27,6 +27,14 @@ From our headquarters in Canoga Park, we deliver responsive on-site and remote s
 
 Whether you're a growing startup or a multi-location operation in Irvine, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Irvine team? See our [managed help desk in Irvine](/services/managed-help-desk/irvine/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Irvine
+
+Beyond day-to-day tickets, Secure Techies supports Irvine teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Irvine](/services/managed-help-desk/irvine/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

@@ -1,8 +1,8 @@
 ---
 title: "Glendale"
 city: "Glendale"
-meta_title: "Managed IT Services in Glendale, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Glendale, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Glendale | Secure Techies"
+description: "Managed IT for Glendale offices near Brand Blvd: 24/7 help desk, cybersecurity, Microsoft 365, on-site support. Free assessment. Local team."
 hero_subtitle: "Secure Techies keeps Glendale businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1425
 lng: -118.2551
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Glendale, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Glendale team? See our [managed help desk in Glendale](/services/managed-help-desk/glendale/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Glendale
+
+Beyond day-to-day tickets, Secure Techies supports Glendale teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Glendale](/services/managed-help-desk/glendale/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

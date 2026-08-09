@@ -88,19 +88,55 @@ force = true
 # ---------------------------------------------------------------------------
 [[redirects]]
 from = "/our-service.html"
-to = "/"
+to = "/services/"
 status = 301
 force = true
 
 [[redirects]]
 from = "/our-services.html"
-to = "/"
+to = "/services/"
 status = 301
 force = true
 
 [[redirects]]
 from = "/services.html"
-to = "/"
+to = "/services/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/other-services.html"
+to = "/services/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/contact-us.html"
+to = "/contact/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/about-secure-techies.html"
+to = "/about/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/infrastructure-services.html"
+to = "/services/infrastructure/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/network-services.html"
+to = "/services/network-security/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/backup-services.html"
+to = "/services/backup-disaster-recovery/"
 status = 301
 force = true
 

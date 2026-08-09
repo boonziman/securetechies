@@ -3,6 +3,7 @@ title: "Secure Techies"
 meta_title: "Secure Techies Team | IT & Cybersecurity Insights"
 image: "/images/avatar-sm.png"
 description: "The Secure Techies team provides expert insights on managed IT services, cybersecurity, compliance, and technology best practices for businesses."
+noindex: true
 social:
   - title: facebook
     icon: fab fa-facebook

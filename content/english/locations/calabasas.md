@@ -1,8 +1,8 @@
 ---
 title: "Calabasas"
 city: "Calabasas"
-meta_title: "Managed IT Services in Calabasas, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Calabasas, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Calabasas | Secure Techies"
+description: "Managed IT for Calabasas offices: responsive 24/7 support, cybersecurity, and western Valley on-site help. Free assessment. Flat monthly pricing."
 hero_subtitle: "Secure Techies keeps Calabasas businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1367
 lng: -118.6618
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Calabasas, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Calabasas team? See our [managed help desk in Calabasas](/services/managed-help-desk/calabasas/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Calabasas
+
+Beyond day-to-day tickets, Secure Techies supports Calabasas teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Calabasas](/services/managed-help-desk/calabasas/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

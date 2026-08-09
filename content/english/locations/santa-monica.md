@@ -1,8 +1,8 @@
 ---
 title: "Santa Monica"
 city: "Santa Monica"
-meta_title: "Managed IT Services in Santa Monica, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Santa Monica, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Santa Monica | Secure Techies"
+description: "Managed IT for Santa Monica and Westside teams: 24/7 help desk, cybersecurity, hybrid support. Free assessment. On-site when you need it."
 hero_subtitle: "Secure Techies keeps Santa Monica businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0195
 lng: -118.4912
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Santa Monica, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Santa Monica team? See our [managed help desk in Santa Monica](/services/managed-help-desk/santa-monica/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Santa Monica
+
+Beyond day-to-day tickets, Secure Techies supports Santa Monica teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Santa Monica](/services/managed-help-desk/santa-monica/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

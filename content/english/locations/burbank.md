@@ -1,8 +1,8 @@
 ---
 title: "Burbank"
 city: "Burbank"
-meta_title: "Managed IT Services in Burbank, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Burbank, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Burbank | Secure Techies"
+description: "Managed IT for Burbank media and professional teams: 24/7 support, cybersecurity, cloud, and local on-site help. Free assessment available."
 hero_subtitle: "Secure Techies keeps Burbank businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1808
 lng: -118.309
@@ -26,3 +26,15 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a small office or a multi-location operation in Burbank, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+
+### IT services for Burbank
+
+Secure Techies provides full managed IT for Burbank businesses:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Network security](/services/network-security/) for firewalls and connectivity
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

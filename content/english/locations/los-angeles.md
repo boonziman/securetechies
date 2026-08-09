@@ -1,8 +1,8 @@
 ---
 title: "Los Angeles"
 city: "Los Angeles"
-meta_title: "Managed IT Services in Los Angeles, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Los Angeles, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT Services Los Angeles | Secure Techies"
+description: "Managed IT for Los Angeles businesses: 24/7 support, cybersecurity, infrastructure, and on-site help across LA. Free assessment. Local MSP since 2009."
 hero_subtitle: "Secure Techies keeps Los Angeles businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.0522
 lng: -118.2437
@@ -26,3 +26,15 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a small office or a multi-location operation in Los Angeles, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+
+### IT services for Los Angeles
+
+Secure Techies provides full managed IT for Los Angeles businesses:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Network security](/services/network-security/) for firewalls and connectivity
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

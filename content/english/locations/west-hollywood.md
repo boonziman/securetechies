@@ -1,8 +1,8 @@
 ---
 title: "West Hollywood"
 city: "West Hollywood"
-meta_title: "Managed IT Services in West Hollywood, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in West Hollywood, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support West Hollywood | Secure Techies"
+description: "Managed IT for West Hollywood businesses: 24/7 support, cybersecurity, cloud, and on-site help. Free assessment. Flat monthly pricing."
 hero_subtitle: "Secure Techies keeps West Hollywood businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.09
 lng: -118.3617
@@ -26,3 +26,15 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a small office or a multi-location operation in West Hollywood, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+
+### IT services for West Hollywood
+
+Secure Techies provides full managed IT for West Hollywood businesses:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Network security](/services/network-security/) for firewalls and connectivity
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

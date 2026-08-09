@@ -1,4 +1,6 @@
+# Secure Techies — open to all major search crawlers
 User-agent: *
 Allow: /
 
+# Primary sitemap for Google, Bing, Yandex, DuckDuckGo, and other engines
 Sitemap: https://securetechie.com/sitemap.xml

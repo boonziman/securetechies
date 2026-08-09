@@ -1,8 +1,8 @@
 ---
 title: "Sherman Oaks"
 city: "Sherman Oaks"
-meta_title: "Managed IT Services in Sherman Oaks, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Sherman Oaks, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Sherman Oaks | Secure Techies"
+description: "Managed IT for Sherman Oaks businesses on the Ventura corridor: 24/7 support, cybersecurity, and on-site help. Free assessment. Flat monthly pricing."
 hero_subtitle: "Secure Techies keeps Sherman Oaks businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.151
 lng: -118.449
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Sherman Oaks, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Sherman Oaks team? See our [managed help desk in Sherman Oaks](/services/managed-help-desk/sherman-oaks/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Sherman Oaks
+
+Beyond day-to-day tickets, Secure Techies supports Sherman Oaks teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Sherman Oaks](/services/managed-help-desk/sherman-oaks/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

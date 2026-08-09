@@ -1,8 +1,8 @@
 ---
 title: "Chatsworth"
 city: "Chatsworth"
-meta_title: "Managed IT Services in Chatsworth, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Chatsworth, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Chatsworth | Secure Techies"
+description: "Managed IT for Chatsworth businesses: 24/7 support for office and field teams, cybersecurity, on-site help. Free assessment available."
 hero_subtitle: "Secure Techies keeps Chatsworth businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.257
 lng: -118.6014
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Chatsworth, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Chatsworth team? See our [managed help desk in Chatsworth](/services/managed-help-desk/chatsworth/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Chatsworth
+
+Beyond day-to-day tickets, Secure Techies supports Chatsworth teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Chatsworth](/services/managed-help-desk/chatsworth/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

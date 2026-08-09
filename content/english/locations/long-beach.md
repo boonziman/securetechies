@@ -27,6 +27,14 @@ From our headquarters in Canoga Park, we deliver fast on-site support across Lon
 
 Whether you're a small office near the port or a multi-location operation in Long Beach, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Long Beach team? See our [managed help desk in Long Beach](/services/managed-help-desk/long-beach/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Long Beach
+
+Beyond day-to-day tickets, Secure Techies supports Long Beach teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Long Beach](/services/managed-help-desk/long-beach/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

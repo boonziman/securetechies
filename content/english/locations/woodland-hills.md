@@ -1,8 +1,8 @@
 ---
 title: "Woodland Hills"
 city: "Woodland Hills"
-meta_title: "Managed IT Services in Woodland Hills, CA | Secure Techies"
-description: "Secure Techies provides managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Woodland Hills, CA. Fast local response and flat monthly pricing."
+meta_title: "Managed IT & IT Support Woodland Hills | Secure Techies"
+description: "Managed IT near Warner Center: 24/7 help desk, cybersecurity, Microsoft 365, and on-site support for Woodland Hills. Free assessment. Local team."
 hero_subtitle: "Secure Techies keeps Woodland Hills businesses running with proactive managed IT, enterprise-grade cybersecurity, and responsive 24/7 support."
 lat: 34.1684
 lng: -118.6059
@@ -27,6 +27,14 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 
 Whether you're a small office or a multi-location operation in Woodland Hills, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
 
-### Local managed help desk support
 
-Need day-to-day IT support for your Woodland Hills team? See our [managed help desk in Woodland Hills](/services/managed-help-desk/woodland-hills/) page for 24/7 remote support, onboarding, and on-site help when needed.
+### IT services for Woodland Hills
+
+Beyond day-to-day tickets, Secure Techies supports Woodland Hills teams with full managed IT:
+
+- [Managed infrastructure](/services/infrastructure/) for servers, endpoints, and cloud
+- [Cybersecurity](/services/cybersecurity/) for layered protection and monitoring
+- [Managed help desk](/services/managed-help-desk/) for 24/7 user support
+- [Managed help desk in Woodland Hills](/services/managed-help-desk/woodland-hills/) for local context
+
+Explore [all services](/services/) or [request a free assessment](/contact/).

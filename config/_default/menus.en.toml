@@ -9,6 +9,13 @@ weight = 1
 [[main]]
 weight = 2
 name = "Services"
+url = "/services/"
+
+[[main]]
+parent = "Services"
+name = "All Services"
+url = "/services/"
+weight = 0
 
 [[main]]
 parent = "Services"
@@ -140,7 +147,7 @@ weight = 1
 
 [[footer]]
 name = "Services"
-url = "/services/infrastructure/"
+url = "/services/"
 weight = 2
 
 [[footer]]

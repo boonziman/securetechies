@@ -62,7 +62,16 @@
 <!-- search engine indexing directive -->
 {{ $robots := "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}
 {{ if .Param "noindex" }}{{ $robots = "noindex, follow" }}{{ end }}
-{{ if and (or (eq .Kind "term") (eq .Kind "taxonomy")) (eq .Data.Singular "tag") }}{{ $robots = "noindex, follow" }}{{ end }}
+{{/* Thin taxonomy archives (tags, categories, authors) should not compete with money pages. */}}
+{{ if or (eq .Kind "term") (eq .Kind "taxonomy") }}
+  {{ if or
+    (in (slice "tags" "categories" "authors") .Section)
+    (in (slice "tag" "category" "author") .Data.Singular)
+    (in (slice "tags" "categories" "authors") .Data.Plural)
+  }}
+    {{ $robots = "noindex, follow" }}
+  {{ end }}
+{{ end }}
 {{/* Thin, auto-generated section list pages with no SEO value: /pages/, /landing/, /sections/ */}}
 {{ if and (eq .Kind "section") (in (slice "pages" "landing" "sections") .Section) }}{{ $robots = "noindex, follow" }}{{ end }}
 {{/* An explicit `robots` value in a page's front matter wins (e.g. the /thank-you/ conversion page is noindex, nofollow). */}}
