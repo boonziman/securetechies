@@ -74,6 +74,23 @@ for = "*.html"
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
 
+# IndexNow ownership key: never durable-cache a stale 404; always plain text
+[[headers]]
+for = "/5f6075356bfd4887826aefb626a581ee.txt"
+[headers.values]
+Content-Type = "text/plain; charset=utf-8"
+Cache-Control = "public, max-age=0, must-revalidate"
+Netlify-CDN-Cache-Control = "public, max-age=0, must-revalidate"
+X-Robots-Tag = "noindex"
+
+[[headers]]
+for = "/BingSiteAuth.xml"
+[headers.values]
+Content-Type = "application/xml; charset=utf-8"
+Cache-Control = "public, max-age=0, must-revalidate"
+Netlify-CDN-Cache-Control = "public, max-age=0, must-revalidate"
+X-Robots-Tag = "noindex"
+
 # Redirect www to non-www (primary domain)
 [[redirects]]
 from = "https://www.securetechie.com/*"

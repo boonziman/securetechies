@@ -2,5 +2,9 @@
 User-agent: *
 Allow: /
 
+# Explicit allow for IndexNow / Bing ownership files
+Allow: /*.txt$
+Allow: /BingSiteAuth.xml
+
 # Primary sitemap for Google, Bing, Yandex, DuckDuckGo, and other engines
 Sitemap: https://securetechie.com/sitemap.xml
