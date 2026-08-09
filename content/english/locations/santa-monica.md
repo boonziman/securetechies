@@ -26,3 +26,7 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a small office or a multi-location operation in Santa Monica, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+### Local managed help desk support
+
+Need day-to-day IT support for your Santa Monica team? See our [managed help desk in Santa Monica](/services/managed-help-desk/santa-monica/) page for 24/7 remote support, onboarding, and on-site help when needed.

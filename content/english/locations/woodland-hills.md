@@ -26,3 +26,7 @@ From our nearby headquarters in Canoga Park, we deliver fast on-site support acr
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a small office or a multi-location operation in Woodland Hills, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+### Local managed help desk support
+
+Need day-to-day IT support for your Woodland Hills team? See our [managed help desk in Woodland Hills](/services/managed-help-desk/woodland-hills/) page for 24/7 remote support, onboarding, and on-site help when needed.

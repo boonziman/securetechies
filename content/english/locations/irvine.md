@@ -26,3 +26,7 @@ From our headquarters in Canoga Park, we deliver responsive on-site and remote s
 - **Local, responsive support** — real technicians who know your setup, not a distant call center.
 
 Whether you're a growing startup or a multi-location operation in Irvine, Secure Techies gives you the technology, security, and peace of mind to grow with confidence.
+
+### Local managed help desk support
+
+Need day-to-day IT support for your Irvine team? See our [managed help desk in Irvine](/services/managed-help-desk/irvine/) page for 24/7 remote support, onboarding, and on-site help when needed.

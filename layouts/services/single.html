@@ -28,9 +28,20 @@
             <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             {{ end }}
           </div>
-          <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">{{ .Title }}</span>
+          <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">{{ with .Params.location_city }}{{ . }} · {{ end }}{{ .Params.service_label | default "Managed IT Services" }}</span>
         </div>
         <h1 style="font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;color:#f1f5f9;line-height:1.12;letter-spacing:-0.03em;margin-bottom:20px">{{ .Title }}</h1>
+        {{ if .Params.location_service }}
+        <nav class="st-svc-loc-crumb" aria-label="Breadcrumb" style="margin:0 auto 18px;max-width:640px">
+          <ol style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 8px;list-style:none;margin:0;padding:0;font-size:0.82rem;color:#94a3b8">
+            <li><a href="{{ "/" | relURL }}" style="color:#93c5fd;text-decoration:none;font-weight:600">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="{{ .Params.parent_service | default "/services/managed-help-desk/" | relURL }}" style="color:#93c5fd;text-decoration:none;font-weight:600">{{ .Params.parent_service_name | default "Managed Help Desk" }}</a></li>
+            <li aria-hidden="true">/</li>
+            <li style="color:#e2e8f0;font-weight:600">{{ .Params.location_city }}</li>
+          </ol>
+        </nav>
+        {{ end }}
         {{ with .Params.hero_subtitle }}
         <p style="font-size:1.15rem;color:#94a3b8;line-height:1.7;max-width:580px;margin:0 auto 36px">{{ . }}</p>
         {{ end }}
@@ -335,18 +346,38 @@
 </section>
 {{ end }}
 
-<!-- OTHER SERVICES -->
+<!-- OTHER SERVICES (exclude location-service variants to avoid nav clutter) -->
 <section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:56px 0">
   <div style="max-width:960px;margin:0 auto;padding:0 1.5rem">
-    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">Explore Our Other Services</h2>
+    <h2 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin-bottom:24px;letter-spacing:-0.02em" class="st-reveal">{{ if .Params.location_service }}Related services{{ else }}Explore Our Other Services{{ end }}</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px" class="st-reveal">
-      {{ range where (where .Site.RegularPages "Section" "services") "RelPermalink" "ne" .RelPermalink }}
+      {{ $svcPages := where .Site.RegularPages "Section" "services" }}
+      {{ $svcPages = where $svcPages "Params.location_service" "ne" true }}
+      {{ range where $svcPages "RelPermalink" "ne" .RelPermalink }}
       <a href="{{ .RelPermalink }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
         <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
           <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </div>
         <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ .Title }}</span>
       </a>
+      {{ end }}
+      {{ if .Params.location_service }}
+        {{ with .Params.parent_service }}
+        <a href="{{ . | relURL }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
+          <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </div>
+          <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ $.Params.parent_service_name | default "Main service page" }}</span>
+        </a>
+        {{ end }}
+        {{ with .Params.location_path }}
+        <a href="{{ . | relURL }}" class="st-service-link" style="display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;text-decoration:none;transition:all 0.25s">
+          <div style="width:32px;height:32px;background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(0,102,204,0.05));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg style="width:16px;height:16px;color:#0066CC" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <span style="font-size:0.9rem;font-weight:600;color:#334155">{{ $.Params.location_city }} location overview</span>
+        </a>
+        {{ end }}
       {{ end }}
     </div>
   </div>
@@ -654,25 +685,31 @@
 </style>
 
 <!-- SCHEMA -->
+{{ $areaServed := slice }}
+{{ if .Params.location_city }}
+  {{ $areaServed = slice (dict "@type" "City" "name" .Params.location_city) (dict "@type" "State" "name" (.Params.location_state | default "California")) }}
+{{ else }}
+  {{ $areaServed = slice
+    (dict "@type" "State" "name" "California")
+    (dict "@type" "City" "name" "Los Angeles")
+    (dict "@type" "City" "name" "Woodland Hills")
+    (dict "@type" "City" "name" "Thousand Oaks")
+    (dict "@type" "City" "name" "Calabasas")
+    (dict "@type" "City" "name" "Chatsworth")
+    (dict "@type" "City" "name" "Encino")
+    (dict "@type" "City" "name" "Sherman Oaks")
+  }}
+{{ end }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "{{ .Title }}",
-  "description": "{{ .Params.description }}",
-  "url": "{{ .Permalink }}",
-  "serviceType": "{{ .Title }}",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "serviceType": {{ (.Params.service_label | default .Title) | jsonify }},
   "category": "Information Technology",
-  "areaServed": [
-    { "@type": "State", "name": "California" },
-    { "@type": "City", "name": "Los Angeles" },
-    { "@type": "City", "name": "Woodland Hills" },
-    { "@type": "City", "name": "Thousand Oaks" },
-    { "@type": "City", "name": "Calabasas" },
-    { "@type": "City", "name": "Chatsworth" },
-    { "@type": "City", "name": "Encino" },
-    { "@type": "City", "name": "Sherman Oaks" }
-  ],
+  "areaServed": {{ $areaServed | jsonify }},
   "provider": {
     "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": "https://securetechie.com/#organization",
@@ -690,8 +727,28 @@
     },
     "priceRange": "$$"
   }
+  {{- if .Params.parent_service -}},
+  "isRelatedTo": {
+    "@type": "Service",
+    "name": {{ (.Params.parent_service_name | default "Managed Help Desk Support") | jsonify }},
+    "url": {{ (.Params.parent_service | absURL) | jsonify }}
+  }
+  {{- end }}
 }
 </script>
+{{ if .Params.location_service }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ "/" | absURL | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": {{ (.Params.parent_service_name | default "Managed Help Desk") | jsonify }}, "item": {{ (.Params.parent_service | default "/services/managed-help-desk/" | absURL) | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
+  ]
+}
+</script>
+{{ end }}
 
 {{ with .Params.faqs }}
 <script type="application/ld+json">
