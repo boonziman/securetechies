@@ -3,23 +3,21 @@
  * IndexNow ping — notifies Bing, Yandex, Seznam, Naver and other
  * IndexNow-enabled search engines after each production deploy.
  *
- * Flow:
- *   1. Verify the key file exists in public/ with the exact expected content.
- *   2. Verify the key file is reachable on the live site.
- *   3. Read public/sitemap.xml and submit all production URLs to IndexNow.
+ * Ownership is proven by hosting a UTF-8 key file at:
+ *   https://{host}/{key}.txt  with body exactly equal to {key}
  *
- * Fails the build (exit 1) if verification or submission fails so problems
- * are visible in Netlify instead of failing silently.
- *
- * One-time recovery: if the key file has never been live, set
- * INDEXNOW_SKIP_LIVE_VERIFY=true in Netlify env vars for a single deploy,
- * confirm the URL returns 200, then remove the variable.
+ * IMPORTANT:
+ *   - IndexNow 403 UserForbiddedToAccessSite means ownership failed.
+ *     Fix by regenerating the key and deploying a matching key file.
+ *   - Do not claim success unless the API returns 200 or 202.
+ *   - Optional Bing Webmaster SubmitUrlbatch fallback via env BING_WEBMASTER_API_KEY.
  */
 
 const fs = require("fs");
 const path = require("path");
 
-const KEY = "14e3aedb06e64cd69c8940bcf93b7195";
+// Must match static/{KEY}.txt filename and file body exactly.
+const KEY = "2b5b8549d5b1e1d4ba36838fd63ec07c";
 const HOST = "securetechie.com";
 const KEY_FILE = `${KEY}.txt`;
 const KEY_LOCATION = `https://${HOST}/${KEY_FILE}`;
@@ -28,55 +26,62 @@ const STATIC_KEY = path.join(ROOT, "static", KEY_FILE);
 const PUBLIC_KEY = path.join(ROOT, "public", KEY_FILE);
 const SITEMAP = path.join(ROOT, "public", "sitemap.xml");
 
+// Prefer a focused priority set so we do not spam engines every deploy.
+const PRIORITY_PATHS = [
+  "/",
+  "/services/",
+  "/services/infrastructure/",
+  "/services/managed-help-desk/",
+  "/services/cybersecurity/",
+  "/services/network-security/",
+  "/services/backup-disaster-recovery/",
+  "/services/compliance-security-audits/",
+  "/services/mobile-cctv-trailers/",
+  "/services/web-development/",
+  "/managed-it-services-los-angeles/",
+  "/contact/",
+  "/tools/",
+  "/locations/",
+  "/blog/",
+];
+
 function log(msg) {
   console.log(`[indexnow] ${msg}`);
-}
-
-function error(msg) {
-  console.error(`[indexnow] ERROR: ${msg}`);
 }
 
 function warn(msg) {
   console.warn(`[indexnow] WARNING: ${msg}`);
 }
 
-// IndexNow is a best-effort notification ping. It must never fail the
-// production build, so verification/submission problems are logged as
-// warnings instead of aborting. fail() is kept only for truly fatal,
-// non-network setup issues.
-function fail(msg) {
-  error(msg);
-  process.exit(1);
+function error(msg) {
+  console.error(`[indexnow] ERROR: ${msg}`);
 }
 
 function readKeyContent(filePath) {
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
+  if (!fs.existsSync(filePath)) return null;
   return fs.readFileSync(filePath, "utf8").trim();
 }
 
-function verifyPublicKeyFile() {
+function ensurePublicKeyFile() {
   log("Checking key file in public/ ...");
-
   let content = readKeyContent(PUBLIC_KEY);
 
   if (content !== KEY) {
     const staticContent = readKeyContent(STATIC_KEY);
     if (staticContent === KEY) {
-      log("Key missing or invalid in public/ — copying from static/ ...");
+      log("Copying key file from static/ into public/ ...");
       fs.copyFileSync(STATIC_KEY, PUBLIC_KEY);
       content = readKeyContent(PUBLIC_KEY);
     }
   }
 
   if (!fs.existsSync(PUBLIC_KEY)) {
-    warn(`Key file not found at ${PUBLIC_KEY}. Hugo should copy static/${KEY_FILE} into public/. Skipping IndexNow submit.`);
+    error(`Key file missing at public/${KEY_FILE}. Expected static/${KEY_FILE} to be present in the repo.`);
     return false;
   }
 
   if (content !== KEY) {
-    warn(
+    error(
       `Key file content mismatch in public/${KEY_FILE}.\n` +
         `  Expected: ${KEY}\n` +
         `  Got:      ${content === null ? "(unreadable)" : JSON.stringify(content)}`
@@ -84,14 +89,14 @@ function verifyPublicKeyFile() {
     return false;
   }
 
-  log(`Key file verification PASSED (public/${KEY_FILE})`);
+  log(`Key file OK (public/${KEY_FILE})`);
   return true;
 }
 
 async function verifyLiveKeyFile() {
   if (process.env.INDEXNOW_SKIP_LIVE_VERIFY === "true") {
     log("Skipping live key verification (INDEXNOW_SKIP_LIVE_VERIFY=true).");
-    return;
+    return { ok: true, skipped: true };
   }
 
   log(`Checking live key file at ${KEY_LOCATION} ...`);
@@ -104,59 +109,74 @@ async function verifyLiveKeyFile() {
       headers: { "User-Agent": "SecureTechies-IndexNow-Verify/1.0" },
     });
   } catch (err) {
-    warn(`Live key file fetch failed: ${err.message}. (Expected on the deploy that first publishes a new key.)`);
-    return;
+    warn(`Live key fetch failed: ${err.message}. On the first deploy of a new key this is expected.`);
+    return { ok: false, pending: true };
   }
 
   const body = (await response.text()).trim();
 
   if (response.status !== 200) {
     warn(
-      `Live key file not yet 200 (HTTP ${response.status}) at ${KEY_LOCATION}.\n` +
-        `  This is expected on the deploy that first publishes a new key — it goes live\n` +
-        `  only after this build is published. IndexNow will pick it up on the next ping.`
+      `Live key not HTTP 200 yet (got ${response.status}) at ${KEY_LOCATION}. ` +
+        `First deploy of a new key often needs a second deploy before IndexNow accepts it.`
     );
-    return;
+    return { ok: false, pending: true };
   }
 
   if (body !== KEY) {
-    warn(
-      `Live key file content mismatch.\n` +
+    error(
+      `Live key body mismatch.\n` +
         `  URL:      ${KEY_LOCATION}\n` +
         `  Expected: ${KEY}\n` +
         `  Got:      ${JSON.stringify(body)}`
     );
-    return;
+    return { ok: false, pending: false };
   }
 
-  log(`Live key file verification PASSED (${KEY_LOCATION})`);
+  log(`Live key verification PASSED (${KEY_LOCATION})`);
+  return { ok: true, pending: false };
 }
 
-function collectProductionUrls() {
-  if (!fs.existsSync(SITEMAP)) {
-    warn(`Sitemap not found at ${SITEMAP}; cannot submit URLs.`);
-    return [];
-  }
+function collectUrls() {
+  const urls = new Set(PRIORITY_PATHS.map((p) => `https://${HOST}${p}`));
 
-  const xml = fs.readFileSync(SITEMAP, "utf8");
-  const urls = (xml.match(/<loc>([^<]+)<\/loc>/g) || [])
-    .map((m) => m.replace(/<\/?loc>/g, "").trim())
-    .filter((u) => {
-      try {
-        return new URL(u).host === HOST;
-      } catch {
-        return false;
+  if (fs.existsSync(SITEMAP)) {
+    const xml = fs.readFileSync(SITEMAP, "utf8");
+    const found = (xml.match(/<loc>([^<]+)<\/loc>/g) || [])
+      .map((m) => m.replace(/<\/?loc>/g, "").trim())
+      .filter((u) => {
+        try {
+          return new URL(u).host === HOST;
+        } catch {
+          return false;
+        }
+      });
+
+    // Cap total submit size to avoid spammy full-sitemap dumps while key trust rebuilds.
+    const maxExtra = 40;
+    let added = 0;
+    for (const u of found) {
+      if (urls.has(u)) continue;
+      // Prefer services + locations + tools first
+      if (
+        u.includes("/services/") ||
+        u.includes("/locations/") ||
+        u.includes("/tools/") ||
+        u.includes("/blog/")
+      ) {
+        urls.add(u);
+        added += 1;
+        if (added >= maxExtra) break;
       }
-    });
-
-  if (urls.length === 0) {
-    warn(`No production URLs found in sitemap for host ${HOST}.`);
+    }
+  } else {
+    warn(`Sitemap not found at ${SITEMAP}; submitting priority URLs only.`);
   }
 
-  return urls;
+  return Array.from(urls);
 }
 
-async function submitToIndexNow(urls) {
+async function submitIndexNow(urls) {
   log(`Submitting ${urls.length} URLs to IndexNow ...`);
 
   const payload = {
@@ -174,21 +194,59 @@ async function submitToIndexNow(urls) {
       body: JSON.stringify(payload),
     });
   } catch (err) {
-    warn(`IndexNow API request failed: ${err.message}`);
-    return;
+    error(`IndexNow request failed: ${err.message}`);
+    return false;
   }
+
+  const text = await response.text().catch(() => "");
 
   if (response.status === 200 || response.status === 202) {
-    log(`IndexNow submission PASSED (HTTP ${response.status}, ${urls.length} URLs).`);
+    log(`IndexNow SUCCESS (HTTP ${response.status}, ${urls.length} URLs).`);
+    return true;
+  }
+
+  // Explicit failure messaging — never pretend this is fine.
+  error(
+    `IndexNow FAILED (HTTP ${response.status}).\n` +
+      (text ? `  Response: ${text.trim()}\n` : "") +
+      `  Common cause: key not trusted yet, wrong key file, or blacklisted key. ` +
+      `Confirm ${KEY_LOCATION} returns the key body, then redeploy or regenerate the key.`
+  );
+  return false;
+}
+
+async function submitBingWebmaster(urls) {
+  const apiKey = process.env.BING_WEBMASTER_API_KEY;
+  if (!apiKey) {
+    log("BING_WEBMASTER_API_KEY not set — skipping Bing SubmitUrlbatch fallback.");
     return;
   }
 
-  const responseText = await response.text().catch(() => "");
-  warn(
-    `IndexNow submission returned HTTP ${response.status} (not fatal).\n` +
-      (responseText ? `  Response: ${responseText.trim()}\n` : "") +
-      `  This usually clears once ${KEY_LOCATION} has been live for a while and Bing has crawled it.`
-  );
+  // Bing batch quota is limited; keep a tight priority list.
+  const batch = urls.slice(0, 20);
+  log(`Submitting ${batch.length} URLs via Bing Webmaster SubmitUrlbatch ...`);
+
+  try {
+    const response = await fetch(
+      `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=${encodeURIComponent(apiKey)}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({
+          siteUrl: `https://${HOST}`,
+          urlList: batch,
+        }),
+      }
+    );
+    const text = await response.text().catch(() => "");
+    if (response.status === 200) {
+      log(`Bing SubmitUrlbatch SUCCESS (HTTP 200, ${batch.length} URLs).`);
+    } else {
+      warn(`Bing SubmitUrlbatch HTTP ${response.status}: ${text.slice(0, 300)}`);
+    }
+  } catch (err) {
+    warn(`Bing SubmitUrlbatch failed: ${err.message}`);
+  }
 }
 
 async function main() {
@@ -197,24 +255,41 @@ async function main() {
     return;
   }
 
-  log("Starting IndexNow verification ...");
-  const keyOk = verifyPublicKeyFile();
-  await verifyLiveKeyFile();
+  log("Starting IndexNow pipeline ...");
+  log(`Key: ${KEY}`);
+  log(`Key location: ${KEY_LOCATION}`);
 
+  const keyOk = ensurePublicKeyFile();
   if (!keyOk) {
-    warn("Key file not present in build — skipping IndexNow submission this deploy.");
+    error("Aborting IndexNow submit — key file not ready in build output.");
+    // Still try Bing API fallback if configured
+    await submitBingWebmaster(PRIORITY_PATHS.map((p) => `https://${HOST}${p}`));
     return;
   }
 
-  const urls = collectProductionUrls();
+  const live = await verifyLiveKeyFile();
+  const urls = collectUrls();
+
   if (urls.length === 0) {
-    warn("No URLs to submit — skipping IndexNow submission this deploy.");
+    warn("No URLs to submit.");
     return;
   }
-  await submitToIndexNow(urls);
-  log("IndexNow complete.");
+
+  // Always attempt IndexNow if key is in the build; live pending may still accept after CDN warm.
+  const ok = await submitIndexNow(urls);
+  if (!ok && live.pending) {
+    warn(
+      "IndexNow did not succeed on this deploy. If this was the first deploy of a new key, " +
+        "wait for the key URL to be live worldwide, then redeploy or re-run this script."
+    );
+  }
+
+  // Independent fallback that already works for this property.
+  await submitBingWebmaster(urls);
+
+  log("IndexNow pipeline complete.");
 }
 
 main().catch((err) => {
-  warn(`Unexpected error (non-fatal): ${err.message}`);
+  error(`Unexpected error: ${err.message}`);
 });
