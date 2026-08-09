@@ -399,17 +399,27 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
   box-shadow: 0 4px 18px rgba(15, 31, 56, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 260px;
-  max-height: 310px;
 }
 .st-l-rev-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 102, 204, 0.1); }
 .st-l-rev-stars { display: inline-flex; gap: 2px; margin-bottom: 12px; flex-shrink: 0; }
 .st-l-rev-stars svg { width: 16px; height: 16px; color: #fbbf24; }
-/* Equal visual quote block — long Google reviews no longer blow out the grid */
+.st-l-rev-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+/* Collapsed quotes stay even; Show more reveals the full Google review */
+.st-l-rev-card.is-collapsed .st-l-rev-text {
+  overflow: hidden;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-clamp: 5;
+}
+.st-l-rev-card.is-expanded .st-l-rev-text {
+  display: block; overflow: visible; -webkit-line-clamp: unset; line-clamp: unset;
+}
 .st-l-rev-text {
   font-size: 0.92rem; color: #334155; line-height: 1.65; margin: 0;
-  flex: 1 1 auto; min-height: 0; overflow: hidden;
-  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; line-clamp: 6;
 }
+.st-l-rev-more {
+  align-self: flex-start; margin-top: 10px; padding: 0; border: 0; background: none;
+  color: #0066CC; font-size: 0.82rem; font-weight: 700; cursor: pointer;
+}
+.st-l-rev-more:hover { text-decoration: underline; }
 .st-l-rev-person { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; flex-shrink: 0; border-top: 1px solid #f1f5f9; }
 .st-l-rev-avatar {
   width: 44px; height: 44px; border-radius: 50%; object-fit: cover;

@@ -379,13 +379,16 @@
       <h2 class="st-l-h2">{{ .heading | safeHTML }}</h2>
       {{ with .sub }}<p class="st-l-sub st-l-center">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="st-l-rev-grid">
+    <div class="st-l-rev-grid" id="stLRevGrid">
       {{ range $i, $r := .items }}
-      <div class="st-l-rev-card st-reveal" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
+      <div class="st-l-rev-card st-reveal is-collapsed" style="transition-delay:{{ mul (mod $i 3) 70 }}ms">
         <span class="st-l-rev-stars">{{ range (seq (.rating | default 5)) }}<svg fill="currentColor" viewBox="0 0 20 20"><path d="{{ $star }}"/></svg>{{ end }}</span>
-        <p class="st-l-rev-text">"{{ .text | safeHTML }}"</p>
+        <div class="st-l-rev-body">
+          <p class="st-l-rev-text">"{{ .text | safeHTML }}"</p>
+          <button type="button" class="st-l-rev-more" hidden aria-expanded="false">Show more</button>
+        </div>
         <div class="st-l-rev-person">
-          {{ if .avatar }}<img class="st-l-rev-avatar" src="{{ .avatar | relURL }}" alt="{{ .name }}" width="44" height="44" loading="lazy" />
+          {{ if .avatar }}<img class="st-l-rev-avatar" src="{{ .avatar | relURL }}" alt="{{ .name }}" width="44" height="44" loading="lazy" decoding="async" />
           {{ else }}<span class="st-l-rev-avatar st-l-rev-avatar--initials">{{ .initials | default (substr .name 0 1) }}</span>{{ end }}
           <div>
             <div class="st-l-rev-name">{{ .name }}</div>
@@ -395,6 +398,36 @@
       </div>
       {{ end }}
     </div>
+    <script>
+    (function(){
+      var grid = document.getElementById('stLRevGrid');
+      if(!grid) return;
+      function wire(){
+        grid.querySelectorAll('.st-l-rev-card').forEach(function(card){
+          var text = card.querySelector('.st-l-rev-text');
+          var btn = card.querySelector('.st-l-rev-more');
+          if(!text || !btn) return;
+          card.classList.add('is-collapsed');
+          card.classList.remove('is-expanded');
+          btn.hidden = true;
+          btn.setAttribute('aria-expanded','false');
+          btn.textContent = 'Show more';
+          requestAnimationFrame(function(){
+            if(text.scrollHeight > text.clientHeight + 2) btn.hidden = false;
+          });
+          btn.addEventListener('click', function(){
+            var open = !card.classList.contains('is-expanded');
+            card.classList.toggle('is-expanded', open);
+            card.classList.toggle('is-collapsed', !open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.textContent = open ? 'Show less' : 'Show more';
+          });
+        });
+      }
+      if(document.readyState === 'complete') wire();
+      else window.addEventListener('load', wire);
+    })();
+    </script>
     <div class="st-l-cta-row st-reveal" style="margin-top:40px">
       <div class="st-l-rev-gbadge">
         <span class="st-l-stars">{{ range (seq 5) }}<svg fill="currentColor" viewBox="0 0 20 20"><path d="{{ $star }}"/></svg>{{ end }}</span>
