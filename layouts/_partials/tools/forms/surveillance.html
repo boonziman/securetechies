@@ -1,0 +1,159 @@
+<form id="st-surv-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Camera profile</div>
+  <div id="surv-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="surv-cameras">Cameras</label>
+      <input class="st-tool-input" id="surv-cameras" type="number" min="1" step="1" value="16">
+    </div>
+    <div class="st-tool-field">
+      <label for="surv-days">Retention (days)</label>
+      <input class="st-tool-input" id="surv-days" type="number" min="1" step="1" value="30">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="surv-hours">Hours / day</label>
+      <input class="st-tool-input" id="surv-hours" type="number" min="0.5" max="24" step="0.5" value="24">
+    </div>
+    <div class="st-tool-field">
+      <label for="surv-motion">Motion activity %</label>
+      <input class="st-tool-input" id="surv-motion" type="number" min="1" max="100" step="1" value="100">
+      <div class="st-tool-hint">100% = continuous · parking lots often 20–40%</div>
+    </div>
+  </div>
+
+  <div class="st-tool-field">
+    <label for="surv-bitrate-mode">Bitrate source</label>
+    <select class="st-tool-select" id="surv-bitrate-mode">
+      <option value="estimate" selected>Estimate from resolution / FPS / codec</option>
+      <option value="manual">Manual bitrate (Mbps per camera)</option>
+    </select>
+  </div>
+
+  <div id="surv-estimate-fields">
+    <div class="st-tool-grid-2">
+      <div class="st-tool-field">
+        <label for="surv-resolution">Resolution</label>
+        <select class="st-tool-select" id="surv-resolution">
+          <option value="720p">720p</option>
+          <option value="1080p" selected>1080p (Full HD)</option>
+          <option value="3mp">3MP</option>
+          <option value="2k">2K / 1440p</option>
+          <option value="4k">4K / 8MP</option>
+          <option value="8mp">8MP+ / high detail</option>
+        </select>
+      </div>
+      <div class="st-tool-field">
+        <label for="surv-fps">FPS</label>
+        <select class="st-tool-select" id="surv-fps">
+          <option value="10">10</option>
+          <option value="15" selected>15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+    </div>
+    <div class="st-tool-grid-2">
+      <div class="st-tool-field">
+        <label for="surv-codec">Codec</label>
+        <select class="st-tool-select" id="surv-codec">
+          <option value="h264" selected>H.264</option>
+          <option value="h265">H.265 / HEVC</option>
+          <option value="h265+">H.265+ / smart codec</option>
+          <option value="mjpeg">MJPEG</option>
+        </select>
+      </div>
+      <div class="st-tool-field">
+        <label for="surv-quality">Image quality</label>
+        <select class="st-tool-select" id="surv-quality">
+          <option value="low">Low (smaller files)</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+          <option value="ultra">Ultra / forensic</option>
+        </select>
+      </div>
+    </div>
+    <div class="st-tool-grid-2">
+      <div class="st-tool-field">
+        <label for="surv-scene">Scene activity</label>
+        <select class="st-tool-select" id="surv-scene">
+          <option value="low">Low (hallway / office)</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High (street / lot)</option>
+          <option value="critical">Very high (night IR noise)</option>
+        </select>
+      </div>
+      <div class="st-tool-field">
+        <label for="surv-audio">Audio track</label>
+        <select class="st-tool-select" id="surv-audio">
+          <option value="no" selected>No audio</option>
+          <option value="yes">Include ~64 kbps audio</option>
+        </select>
+      </div>
+    </div>
+    <div class="st-tool-hint">Estimated bitrate: <strong id="surv-est-bitrate">—</strong></div>
+  </div>
+
+  <div id="surv-manual-fields" hidden>
+    <div class="st-tool-field">
+      <label for="surv-bitrate">Bitrate per camera (Mbps)</label>
+      <input class="st-tool-input" id="surv-bitrate" type="number" min="0.1" step="0.1" value="4">
+    </div>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:16px">Capacity planning</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="surv-buffer">Safety buffer %</label>
+      <input class="st-tool-input" id="surv-buffer" type="number" min="0" max="100" step="1" value="25">
+    </div>
+    <div class="st-tool-field">
+      <label for="surv-raid">NVR RAID (for raw sizing)</label>
+      <select class="st-tool-select" id="surv-raid">
+        <option value="none" selected>No RAID / JBOD</option>
+        <option value="1">RAID 1 (~50% usable)</option>
+        <option value="5">RAID 5 (~80% of 5+ disks)</option>
+        <option value="6">RAID 6 (~75% approx)</option>
+        <option value="10">RAID 10 (~50% usable)</option>
+      </select>
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="surv-fixed-cap">Optional: installed capacity (TB)</label>
+    <input class="st-tool-input" id="surv-fixed-cap" type="number" min="0" step="0.1" value="" placeholder="e.g. 8">
+    <div class="st-tool-hint">Reverse-calculate how many days that capacity holds.</div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Storage estimate</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Recording volume</div>
+    <div class="st-tool-metric-value" id="surv-total-tb">—</div>
+    <div class="st-tool-metric-sub" id="surv-total-gb">—</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">With buffer (recommended usable)</div>
+    <div class="st-tool-metric-value" id="surv-buffer-tb">—</div>
+    <div class="st-tool-metric-sub" id="surv-buffer-gb">—</div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Per camera</div><div class="st-tool-metric-value" style="font-size:1rem" id="surv-per-cam">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Daily total</div><div class="st-tool-metric-value" style="font-size:1rem" id="surv-daily">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Avg throughput</div><div class="st-tool-metric-value" style="font-size:1rem" id="surv-throughput">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Raw for RAID plan</div><div class="st-tool-metric-value" style="font-size:1rem" id="surv-raw-raid">—</div></div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Drive planning</div>
+    <div class="st-tool-metric-value" style="font-size:1rem" id="surv-recommend">—</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Days at fixed capacity</div>
+    <div class="st-tool-metric-value" style="font-size:1rem" id="surv-days-fit">—</div>
+  </div>
+  <p class="st-tool-disclaimer">Bitrates are typical security-scene estimates. Confirm with camera datasheets when available. Night IR and busy streets use more space.</p>
+</div>

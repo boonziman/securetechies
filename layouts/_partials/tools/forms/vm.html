@@ -1,0 +1,104 @@
+<form id="st-vm-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">VM workloads</div>
+  <div id="vm-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-table-wrap">
+    <table class="st-tool-table">
+      <thead>
+        <tr>
+          <th>vCPU</th>
+          <th>RAM GB</th>
+          <th>Disk GB</th>
+          <th># VMs</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="vm-workloads"></tbody>
+    </table>
+  </div>
+  <div class="st-tool-actions">
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="vm-add-row">+ Add workload</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="vm-reset">Reset sample</button>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:22px">Host hardware</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="vm-sockets">Sockets</label><input class="st-tool-input" id="vm-sockets" type="number" min="1" step="1" value="2"></div>
+    <div class="st-tool-field"><label for="vm-cores">Cores / socket</label><input class="st-tool-input" id="vm-cores" type="number" min="1" step="1" value="16"></div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="vm-ghz">Clock (GHz)</label><input class="st-tool-input" id="vm-ghz" type="number" min="0.1" step="0.1" value="2.4"></div>
+    <div class="st-tool-field">
+      <label for="vm-ht">Hyper-threading</label>
+      <select class="st-tool-select" id="vm-ht"><option value="yes" selected>Enabled</option><option value="no">Disabled</option></select>
+    </div>
+  </div>
+  <div class="st-tool-field"><label for="vm-host-ram">Host RAM (GB)</label><input class="st-tool-input" id="vm-host-ram" type="number" min="8" step="8" value="512"></div>
+
+  <div class="st-tool-panel-title" style="margin-top:10px">Policy &amp; overhead</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="vm-cpu-alloc">CPU allocation cap %</label><input class="st-tool-input" id="vm-cpu-alloc" type="number" min="10" max="100" value="80"></div>
+    <div class="st-tool-field"><label for="vm-mem-alloc">Memory allocation cap %</label><input class="st-tool-input" id="vm-mem-alloc" type="number" min="10" max="100" value="90"></div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="vm-overcommit">Target vCPU : core ratio</label>
+      <input class="st-tool-input" id="vm-overcommit" type="number" min="1" max="12" step="0.5" value="4">
+      <div class="st-tool-hint">1–2 for databases · 3–6 for general · higher for VDI</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="vm-ha">HA host reserve %</label>
+      <input class="st-tool-input" id="vm-ha" type="number" min="0" max="50" step="1" value="15">
+      <div class="st-tool-hint">Admission control style spare capacity</div>
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="vm-host-cpu-oh">Host CPU overhead fraction</label><input class="st-tool-input" id="vm-host-cpu-oh" type="number" min="0" max="0.5" step="0.01" value="0.05"></div>
+    <div class="st-tool-field"><label for="vm-host-mem-oh">Host RAM overhead (GB)</label><input class="st-tool-input" id="vm-host-mem-oh" type="number" min="0" step="0.5" value="8"></div>
+  </div>
+  <div class="st-tool-field"><label for="vm-vm-mem-oh">Per-VM memory overhead (GB)</label><input class="st-tool-input" id="vm-vm-mem-oh" type="number" min="0" step="0.05" value="0.1"></div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Workload totals</div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">vCPUs</div><div class="st-tool-metric-value" id="vm-total-vcpu">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">VMs</div><div class="st-tool-metric-value" id="vm-total-vms">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">VM RAM</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="vm-total-ram">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Datastore need</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="vm-total-storage">—</div></div>
+  </div>
+  <div class="st-tool-metric-sub" style="margin-bottom:12px">Avg vCPU <span id="vm-avg-vcpu">—</span> · Avg RAM <span id="vm-avg-ram">—</span></div>
+
+  <div class="st-tool-panel-title">Per-host capacity</div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Physical cores</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="vm-phys-cores">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Logical CPUs</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="vm-logical">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">vCPU capacity / host</div><div class="st-tool-metric-value" style="font-size:1rem" id="vm-cores-avail">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">RAM for VMs</div><div class="st-tool-metric-value" style="font-size:1rem" id="vm-mem-avail">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Host GHz pool</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="vm-host-ghz">—</div></div>
+
+  <div class="st-tool-panel-title">Cluster size</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Recommended hosts</div>
+    <div class="st-tool-metric-value" id="vm-hosts-rec">—</div>
+    <div class="st-tool-metric-sub" id="vm-n1-note"></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">N (fit only)</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="vm-hosts-n">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">N+1</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="vm-hosts-n1">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">With HA reserve</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="vm-hosts-ha">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Binding limit</div><div class="st-tool-metric-value" style="font-size:1rem" id="vm-bound">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">CPU pressure @ N</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="vm-cpu-over">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Memory pressure @ N</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="vm-mem-over">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Avg VMs / host (N)</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="vm-vms-per-host">—</div></div>
+  <p class="st-tool-disclaimer">First-pass model. Validate storage IOPS, network, NUMA, licensing, and HA admission control before buying hardware.</p>
+</div>

@@ -50,7 +50,7 @@ link = "/contact"
 [search]
 enable = true
 primary_color = "#121212"
-include_sections = ["blog", "services", "government", "pages"]
+include_sections = ["blog", "services", "government", "pages", "tools"]
 show_image = true
 show_description = true
 show_tags = true

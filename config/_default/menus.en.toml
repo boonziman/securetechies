@@ -75,14 +75,61 @@ url = "/blog/"
 weight = 4
 
 [[main]]
+name = "IT Tools"
+url = "/tools/"
+weight = 5
+
+[[main]]
+parent = "IT Tools"
+name = "All Tools"
+url = "/tools/"
+weight = 1
+
+[[main]]
+parent = "IT Tools"
+name = "RAID Calculator"
+url = "/tools/raid-calculator/"
+weight = 2
+
+[[main]]
+parent = "IT Tools"
+name = "Surveillance Storage"
+url = "/tools/surveillance-storage-calculator/"
+weight = 3
+
+[[main]]
+parent = "IT Tools"
+name = "VM Calculator"
+url = "/tools/vm-calculator/"
+weight = 4
+
+[[main]]
+parent = "IT Tools"
+name = "Password Generator"
+url = "/tools/password-generator/"
+weight = 5
+
+[[main]]
+parent = "IT Tools"
+name = "Ransomware Cost Calculator"
+url = "/tools/ransomware-cost-calculator/"
+weight = 6
+
+[[main]]
+parent = "IT Tools"
+name = "Subnet Calculator"
+url = "/tools/subnet-calculator/"
+weight = 7
+
+[[main]]
 name = "FAQ"
 url = "/faq"
-weight = 5
+weight = 6
 
 [[main]]
 name = "Contact"
 url = "/contact"
-weight = 6
+weight = 7
 
 
 # footer menu
@@ -113,11 +160,16 @@ url = "/blog/"
 weight = 4
 
 [[footer]]
+name = "IT Tools"
+url = "/tools/"
+weight = 5
+
+[[footer]]
 name = "Contact"
 url = "/contact"
-weight = 5
+weight = 6
 
 [[footer]]
 name = "Privacy Policy"
 url = "/privacy-policy"
-weight = 6
+weight = 7

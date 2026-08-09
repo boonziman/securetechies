@@ -112,7 +112,7 @@ A phishing incident, BEC loss, or near-miss ransomware event is often the moment
 
 More locations, more identities, more confidential data. Consistency across sites and roles is the difference between managed risk and accidental exposure.
 
-Coverage context for our markets: [managed IT services Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/).
+Coverage context for our markets: [managed IT services Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/). For planning, use our free [password strength checker](/tools/password-generator/) and [ransomware cost calculator](/tools/ransomware-cost-calculator/).
 
 ## Problems Cybersecurity Services Solve
 

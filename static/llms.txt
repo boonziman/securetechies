@@ -32,6 +32,15 @@
 - [Managed IT Services Los Angeles](https://securetechie.com/managed-it-services-los-angeles/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Los Angeles.
 - [Managed IT Services Denver](https://securetechie.com/managed-it-services-denver/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Denver and the Front Range.
 
+## Free IT Tools
+- Tools hub: https://securetechie.com/tools/
+- RAID Calculator: https://securetechie.com/tools/raid-calculator/
+- Surveillance Storage Calculator: https://securetechie.com/tools/surveillance-storage-calculator/
+- VM & Host Sizing Calculator: https://securetechie.com/tools/vm-calculator/
+- Password Strength Checker & Generator: https://securetechie.com/tools/password-generator/
+- Ransomware Cost Calculator: https://securetechie.com/tools/ransomware-cost-calculator/
+- Subnet Calculator: https://securetechie.com/tools/subnet-calculator/
+
 ## Resources
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/
 - Frequently asked questions: https://securetechie.com/faq/

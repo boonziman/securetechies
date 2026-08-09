@@ -1,0 +1,100 @@
+<form id="st-raid-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Array configuration</div>
+  <div id="raid-error" class="st-tool-error" hidden></div>
+
+  <div class="st-tool-field">
+    <label for="raid-level">RAID level</label>
+    <select class="st-tool-select" id="raid-level">
+      <option value="0">RAID 0 — striping (no redundancy)</option>
+      <option value="1">RAID 1 — mirror</option>
+      <option value="1E">RAID 1E — offset mirror</option>
+      <option value="5" selected>RAID 5 — single parity</option>
+      <option value="6">RAID 6 — dual parity</option>
+      <option value="10">RAID 10 — striped mirrors</option>
+      <option value="50">RAID 50 — striped RAID 5 groups</option>
+      <option value="60">RAID 60 — striped RAID 6 groups</option>
+    </select>
+  </div>
+
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="raid-disks">Data disks (not spares)</label>
+      <input class="st-tool-input" id="raid-disks" type="number" min="1" max="128" step="1" value="6">
+    </div>
+    <div class="st-tool-field">
+      <label for="raid-spares">Hot spares</label>
+      <input class="st-tool-input" id="raid-spares" type="number" min="0" max="16" step="1" value="1">
+    </div>
+  </div>
+
+  <div id="raid-groups-wrap" class="st-tool-field" hidden>
+    <label for="raid-groups">RAID groups (50/60)</label>
+    <input class="st-tool-input" id="raid-groups" type="number" min="2" max="16" step="1" value="2">
+    <div class="st-tool-hint">Disks must divide evenly into groups. RAID 50 needs ≥3 disks/group; RAID 60 needs ≥4.</div>
+  </div>
+
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="raid-size">Disk size</label>
+      <input class="st-tool-input" id="raid-size" type="number" min="0.1" step="0.1" value="4">
+    </div>
+    <div class="st-tool-field">
+      <label for="raid-unit">Unit</label>
+      <select class="st-tool-select" id="raid-unit">
+        <option value="TB" selected>TB (decimal)</option>
+        <option value="GB">GB (decimal)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="st-tool-presets" role="group" aria-label="Disk size presets">
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="2" data-unit="TB">2 TB</button>
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="4" data-unit="TB">4 TB</button>
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="8" data-unit="TB">8 TB</button>
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="12" data-unit="TB">12 TB</button>
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="16" data-unit="TB">16 TB</button>
+    <button type="button" class="st-tool-chip-btn raid-preset" data-size="22" data-unit="TB">22 TB</button>
+  </div>
+
+  <div class="st-tool-grid-2" style="margin-top:12px">
+    <div class="st-tool-field">
+      <label for="raid-iops">Approx IOPS per disk</label>
+      <input class="st-tool-input" id="raid-iops" type="number" min="1" step="1" value="150">
+      <div class="st-tool-hint">HDD ~80–200 · SATA SSD ~5k–20k · NVMe higher</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="raid-ure">URE exponent (10^x bits)</label>
+      <input class="st-tool-input" id="raid-ure" type="number" min="12" max="17" step="1" value="14">
+      <div class="st-tool-hint">Enterprise often 10^15–10^16. Used for rebuild-risk guidance only.</div>
+    </div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Live results</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Usable capacity</div>
+    <div class="st-tool-metric-value" id="raid-usable">—</div>
+    <div class="st-tool-metric-sub" id="raid-usable-alt">—</div>
+    <div class="st-tool-efficiency" aria-hidden="true"><span id="raid-efficiency-bar"></span></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Raw capacity</div><div class="st-tool-metric-value" id="raid-raw">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Efficiency</div><div class="st-tool-metric-value" id="raid-efficiency">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Redundancy space</div><div class="st-tool-metric-value" id="raid-parity">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Total drives (data+spares)</div><div class="st-tool-metric-value" id="raid-total-drives">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Fault tolerance</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="raid-fault">—</div></div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Read estimate</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="raid-read">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Write estimate</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="raid-write">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Hot spares</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="raid-spares-out">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Rebuild risk note</div><div class="st-tool-metric-value" style="font-size:0.9rem" id="raid-rebuild">—</div></div>
+  </div>
+  <p class="st-tool-note" id="raid-notes"></p>
+  <p class="st-tool-disclaimer">Equal-disk model used by most first-pass RAID calculators. Controllers, metadata, and filesystems reduce free space. RAID is not a backup.</p>
+</div>

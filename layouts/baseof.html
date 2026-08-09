@@ -40,6 +40,18 @@
       {{ end }}
     {{ end }}
 
+    {{/* Free IT Tools section CSS */}}
+    {{ if eq .Section "tools" }}
+      {{ with resources.Get "css/tools.css" }}
+        {{ if hugo.IsProduction }}
+          {{ $toolsCSS := . | minify | fingerprint }}
+          <link rel="stylesheet" href="{{ $toolsCSS.RelPermalink }}" integrity="{{ $toolsCSS.Data.Integrity }}" />
+        {{ else }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
   </head>
 
   <body{{ if .Params.landing }} class="st-landing-body"{{ end }}>
@@ -107,6 +119,14 @@
         {{ $landingJS := . }}
         {{ if hugo.IsProduction }}{{ $landingJS = $landingJS | minify | fingerprint }}{{ end }}
         <script defer src="{{ $landingJS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $landingJS.Data.Integrity }}"{{ end }}></script>
+      {{ end }}
+    {{ end }}
+
+    {{ if eq .Section "tools" }}
+      {{ with resources.Get "js/tools.js" }}
+        {{ $toolsJS := . }}
+        {{ if hugo.IsProduction }}{{ $toolsJS = $toolsJS | minify | fingerprint }}{{ end }}
+        <script defer src="{{ $toolsJS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $toolsJS.Data.Integrity }}"{{ end }}></script>
       {{ end }}
     {{ end }}
   </body>

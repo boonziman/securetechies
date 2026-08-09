@@ -1,0 +1,96 @@
+<form id="st-ransom-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Business profile</div>
+  <div id="ransom-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="ransom-revenue">Annual revenue ($)</label><input class="st-tool-input" id="ransom-revenue" type="number" min="0" step="1000" value="2500000"></div>
+    <div class="st-tool-field"><label for="ransom-employees">Employees</label><input class="st-tool-input" id="ransom-employees" type="number" min="0" step="1" value="35"></div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="ransom-records">Sensitive records</label>
+      <input class="st-tool-input" id="ransom-records" type="number" min="0" step="1" value="5000">
+      <div class="st-tool-hint">Customers, patients, employees, PII/PHI</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="ransom-industry">Industry</label>
+      <select class="st-tool-select" id="ransom-industry">
+        <option value="general" selected>General business</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="finance">Finance / insurance</option>
+        <option value="legal">Legal</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="professional">Professional services</option>
+        <option value="retail">Retail / e-commerce</option>
+        <option value="nonprofit">Nonprofit</option>
+        <option value="government">Government / public sector</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:10px">Incident assumptions</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field"><label for="ransom-downtime">Downtime (hours)</label><input class="st-tool-input" id="ransom-downtime" type="number" min="0" step="1" value="72"></div>
+    <div class="st-tool-field"><label for="ransom-recovery-days">Recovery project (days)</label><input class="st-tool-input" id="ransom-recovery-days" type="number" min="0" step="0.5" value="10"></div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="ransom-demand">Ransom demand ($)</label>
+      <input class="st-tool-input" id="ransom-demand" type="number" min="0" step="1000" value="75000">
+      <div class="st-tool-hint">Optional. Paying is not a strategy.</div>
+    </div>
+    <div class="st-tool-field"><label for="ransom-it-rate">Emergency IT rate ($/hr)</label><input class="st-tool-input" id="ransom-it-rate" type="number" min="0" step="5" value="200"></div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="ransom-insurance">Cyber insurance limit ($)</label>
+      <input class="st-tool-input" id="ransom-insurance" type="number" min="0" step="1000" value="0">
+      <div class="st-tool-hint">Optional. Applied lightly to mid/low only.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="ransom-prob">Chance of serious incident / year (%)</label>
+      <input class="st-tool-input" id="ransom-prob" type="number" min="0" max="100" step="0.5" value="5">
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <div class="st-tool-range-row">
+      <label for="ransom-readiness">Security readiness</label>
+      <span id="ransom-ready-val">3</span>/5
+    </div>
+    <input class="st-tool-range" id="ransom-readiness" type="range" min="1" max="5" step="1" value="3">
+    <div class="st-tool-hint">1 = weak backups/MFA · 5 = immutable backups, EDR, drills</div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Estimated impact</div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Low</div><div class="st-tool-metric-value" style="font-size:1.2rem" id="ransom-low">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">High</div><div class="st-tool-metric-value" style="font-size:1.2rem" id="ransom-high">—</div></div>
+  </div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Mid-range (no ransom payment)</div>
+    <div class="st-tool-metric-value" id="ransom-mid">—</div>
+    <div class="st-tool-metric-sub">If ransom paid (no recovery guarantee): <strong id="ransom-mid-pay">—</strong></div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Expected annualized loss</div>
+    <div class="st-tool-metric-value" style="font-size:1.15rem" id="ransom-eal">—</div>
+  </div>
+  <div class="st-tool-panel-title" style="margin-top:10px">Mid-range breakdown</div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Downtime</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-downtime">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Productivity</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-prod">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Recovery labor</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-recovery">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Records response</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-records">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Legal / notice</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-legal">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Reputation</div><div class="st-tool-metric-value" style="font-size:0.98rem" id="ransom-br-rep">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Ransom demand line item</div><div class="st-tool-metric-value" style="font-size:1rem" id="ransom-br-ransom">—</div></div>
+  <p class="st-tool-note" id="ransom-ready-note"></p>
+  <p class="st-tool-note" id="ransom-summary"></p>
+  <p class="st-tool-disclaimer">Planning model only — not insurance, legal, or forensic advice. Real incidents vary by readiness and response quality.</p>
+</div>

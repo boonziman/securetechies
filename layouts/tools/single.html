@@ -1,0 +1,137 @@
+{{ define "main" }}
+{{ $tool := .Params.tool_id | default "raid" }}
+
+<section class="st-subpage-hero st-tools-hero">
+  <div class="st-tools-hero-inner">
+    <div class="st-tools-badge">
+      <div class="st-tools-badge-icon">{{ partial "tools/icon.html" .Params.tool_icon }}</div>
+      <span>{{ .Params.tool_badge | default "Free Tool" }}</span>
+    </div>
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ .Params.tool_summary | default .Params.description }}</p>
+    <p class="st-tools-back">
+      <a href="{{ "tools/" | relURL }}">← All IT tools</a>
+    </p>
+  </div>
+</section>
+
+<section class="st-tool-workspace" data-tool="{{ $tool }}">
+  <div class="st-tool-workspace-inner">
+    {{ if eq $tool "raid" }}{{ partial "tools/forms/raid.html" . }}
+    {{ else if eq $tool "surveillance" }}{{ partial "tools/forms/surveillance.html" . }}
+    {{ else if eq $tool "vm" }}{{ partial "tools/forms/vm.html" . }}
+    {{ else if eq $tool "password" }}{{ partial "tools/forms/password.html" . }}
+    {{ else if eq $tool "ransomware" }}{{ partial "tools/forms/ransomware.html" . }}
+    {{ else if eq $tool "subnet" }}{{ partial "tools/forms/subnet.html" . }}
+    {{ end }}
+  </div>
+  <div class="st-tool-continue">
+    <a href="#st-tool-guide" class="st-tool-continue-btn">
+      <span class="st-tool-continue-label">More below the calculator</span>
+      <strong>Read the full guide, formulas &amp; FAQs</strong>
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </a>
+  </div>
+</section>
+
+{{ if .Content }}
+<section class="st-tool-article" id="st-tool-guide">
+  <div class="st-tool-article-inner">
+    <div class="st-tool-guide-banner">
+      <span>Deep dive</span>
+      <h2 class="st-tool-guide-title">How this {{ .Title | lower }} works (and how to use it well)</h2>
+      <p>The calculator above is the interactive model. This guide explains assumptions, formulas, common mistakes, and when to involve an engineer — written to be useful for humans and clear for search engines.</p>
+    </div>
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.faq }}
+<section class="st-tool-faq">
+  <div class="st-tool-faq-inner">
+    <h2>Frequently asked questions</h2>
+    {{ range . }}
+    <details>
+      <summary>{{ .question }}</summary>
+      <p>{{ .answer }}</p>
+    </details>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="st-tool-related">
+  <div class="st-tool-related-inner">
+    <h2>Related tools &amp; services</h2>
+    <div class="st-tool-related-grid">
+      {{ range where (where .Site.RegularPages "Section" "tools") "RelPermalink" "ne" .RelPermalink }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+      {{ range .Params.related_services }}
+      <a href="{{ .url | relURL }}">{{ .label }}</a>
+      {{ end }}
+      <a href="{{ "contact" | relURL }}">Contact / Free assessment</a>
+      <a href="{{ "blog/" | relURL }}">IT &amp; security blog</a>
+    </div>
+  </div>
+</section>
+
+<section class="st-tool-cta-band">
+  <div style="max-width:640px;margin:0 auto;padding:0 1.5rem">
+    <h2>{{ .Params.tool_cta | default "Need help putting this into production?" }}</h2>
+    <p>Secure Techies can design, implement, and manage the systems behind these numbers — storage, virtualization, cybersecurity, and recovery.</p>
+    <a class="st-tool-btn" href="{{ "contact" | relURL }}">Talk to an engineer</a>
+  </div>
+</section>
+
+{{/* SEO: WebApplication + FAQ + Breadcrumb */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Secure Techies",
+    "url": "https://securetechie.com/"
+  }
+}
+</script>
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := . }}{{ if $i }},{{ end }}{
+      "@type": "Question",
+      "name": {{ $f.question | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ "" | absURL | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "IT Tools", "item": {{ "tools/" | absURL | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
+  ]
+}
+</script>
+{{ end }}
