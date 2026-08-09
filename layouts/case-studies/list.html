@@ -12,13 +12,19 @@
     <div class="st-case-list">
       {{ range .Pages.ByDate.Reverse }}
       {{ $p := . }}
-      <article class="st-case-list-card">
-        {{ with $p.Params.image }}
-        <a href="{{ $p.RelPermalink }}" class="st-case-image"><img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $p.Title }}" loading="lazy" width="800" height="500" decoding="async"></a>
-        {{ else }}
-        <a href="{{ $p.RelPermalink }}" class="st-case-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#0d1f3c);text-decoration:none">
-          <span style="color:#93c5fd;font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase">Case Study</span>
-        </a>
+      {{/* Only render an image band when the asset actually exists — no blank grey boxes. */}}
+      {{ $showImg := false }}
+      {{ $imgSrc := "" }}
+      {{ with $p.Params.image }}
+        {{ $rel := . | strings.TrimPrefix "/" }}
+        {{ if or (fileExists (printf "static/%s" $rel)) (fileExists (printf "assets/%s" $rel)) }}
+          {{ $showImg = true }}
+          {{ $imgSrc = $rel | relURL }}
+        {{ end }}
+      {{ end }}
+      <article class="st-case-list-card{{ if not $showImg }} st-case-list-card--noimg{{ end }}">
+        {{ if $showImg }}
+        <a href="{{ $p.RelPermalink }}" class="st-case-image"><img src="{{ $imgSrc }}" alt="{{ $p.Title }}" loading="lazy" width="800" height="500" decoding="async"></a>
         {{ end }}
         <div class="st-case-list-body">
           <div class="st-case-list-meta">
@@ -38,17 +44,18 @@
 
 <style>
 .st-case-list{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.st-case-list-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(15,23,42,.05)}
+.st-case-list-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(15,23,42,.05);display:flex;flex-direction:column}
+.st-case-list-card--noimg{/* text-first card — no empty media band */}
 .st-case-image{display:block;aspect-ratio:16/9;overflow:hidden;background:#e2e8f0}
 .st-case-image img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .st-case-list-card:hover img{transform:scale(1.03)}
-.st-case-list-body{padding:26px}
+.st-case-list-body{padding:26px;display:flex;flex-direction:column;flex:1}
 .st-case-list-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .st-case-list-meta span{font-size:.72rem;font-weight:800;color:#0066CC;background:#eff6ff;border-radius:999px;padding:6px 10px;text-transform:uppercase;letter-spacing:.05em}
 .st-case-list h2{font-size:1.3rem;line-height:1.35;margin:0 0 12px}
 .st-case-list h2 a{color:#0f172a;text-decoration:none}
-.st-case-list p{color:#64748b;line-height:1.7;margin-bottom:18px}
-.st-case-read{color:#0066CC;font-weight:800;text-decoration:none}
+.st-case-list p{color:#64748b;line-height:1.7;margin-bottom:18px;flex:1}
+.st-case-read{color:#0066CC;font-weight:800;text-decoration:none;margin-top:auto}
 @media(max-width:760px){.st-case-list{grid-template-columns:1fr}}
 </style>
 {{ end }}

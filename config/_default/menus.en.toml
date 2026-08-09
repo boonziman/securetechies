@@ -1,13 +1,9 @@
 ############# English navigation ##############
 
 # main menu
+# Home is the logo only — keeps the bar less crowded and avoids logo/Home collision
 [[main]]
-name = "Home"
-url = "/"
 weight = 1
-
-[[main]]
-weight = 2
 name = "Services"
 url = "/services/"
 

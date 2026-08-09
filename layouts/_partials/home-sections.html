@@ -1092,6 +1092,7 @@
   .st-reviews-viewport { overflow:hidden; border-radius:16px; padding:4px 0; }
   .st-reviews-track {
     display:flex; gap:24px;
+    align-items:stretch; /* equal card heights in each “page” of the carousel */
     transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);
     will-change:transform;
     transform:translate3d(0,0,0);
@@ -1100,10 +1101,14 @@
   .st-review-card {
     flex:0 0 calc((100% - 48px) / 3);
     min-width:0; position:relative;
+    display:flex; flex-direction:column;
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.09);
     border-radius:20px;
-    padding:32px 28px 28px;
+    padding:28px 24px 22px;
+    /* Cap height so one long Google review can’t dominate the row */
+    min-height: 280px;
+    max-height: 320px;
     transition:transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), background 0.35s, border-color 0.35s, box-shadow 0.35s;
   }
   .st-review-card:hover {
@@ -1112,15 +1117,25 @@
     transform:translateY(-4px);
     box-shadow:0 12px 40px rgba(0,102,204,0.12);
   }
-  .st-rev-quote { position:absolute; top:20px; right:24px; color:#fff; }
-  .st-review-stars { display:flex; gap:2px; margin-bottom:16px; }
+  .st-rev-quote { position:absolute; top:18px; right:20px; color:#fff; pointer-events:none; }
+  .st-review-stars { display:flex; gap:2px; margin-bottom:12px; flex-shrink:0; }
+  /* Clamp long quotes to a fixed visual block so short + long reviews look even */
   .st-review-text {
-    font-size:0.92rem; color:#cbd5e1; line-height:1.7; margin:0 0 24px;
-    font-style:italic;
+    font-size:0.9rem; color:#cbd5e1; line-height:1.65;
+    margin:0; font-style:italic;
+    flex:1 1 auto;
+    min-height: 0;
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:6;
+    line-clamp:6;
   }
   .st-review-footer {
     display:flex; align-items:center; gap:12px;
-    padding-top:20px; border-top:1px solid rgba(255,255,255,0.06);
+    margin-top:auto; /* pin author row to the bottom of every card */
+    padding-top:16px; border-top:1px solid rgba(255,255,255,0.06);
+    flex-shrink:0;
   }
   .st-review-avatar {
     width:44px; height:44px; border-radius:50%;
@@ -1174,11 +1189,12 @@
     .st-rev-next { right:8px; }
   }
   @media (max-width:1024px) {
-    .st-review-card { flex:0 0 calc((100% - 24px) / 2); }
+    .st-review-card { flex:0 0 calc((100% - 24px) / 2); min-height:260px; max-height:300px; }
     .st-rev-header { flex-direction:column; align-items:flex-start; }
   }
   @media (max-width:640px) {
-    .st-review-card { flex:0 0 100%; }
+    .st-review-card { flex:0 0 100%; min-height:240px; max-height:280px; padding:22px 18px 18px; }
+    .st-review-text { -webkit-line-clamp:5; line-clamp:5; }
     .st-rev-google-badge { width:100%; }
   }
 </style>
