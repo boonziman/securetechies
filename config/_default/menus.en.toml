@@ -1,11 +1,31 @@
 ############# English navigation ##############
 
-# main menu
-# Home is the logo only — keeps the bar less crowded and avoids logo/Home collision
+# Order: About Us → Services → Industries → Blog → Resources → Contact
+# Logo remains the home link (no separate Home item).
+
+# --- About Us ---
 [[main]]
+name = "About Us"
+url = "/about/"
 weight = 1
+
+[[main]]
+parent = "About Us"
+name = "Company Overview"
+url = "/about/"
+weight = 1
+
+[[main]]
+parent = "About Us"
+name = "Our Founder"
+url = "/about/our-founder/"
+weight = 2
+
+# --- Services ---
+[[main]]
 name = "Services"
 url = "/services/"
+weight = 2
 
 [[main]]
 parent = "Services"
@@ -61,80 +81,53 @@ name = "Web Development & Digital"
 url = "/services/web-development/"
 weight = 8
 
+# --- Industries (hub scaffold; child pages added later) ---
 [[main]]
-name = "About"
-url = "/about"
+name = "Industries"
+url = "/industries/"
 weight = 3
 
-[[main]]
-name = "Case Studies"
-url = "/case-studies/"
-weight = 4
-
-# Government kept off main nav until certifications copy is client-approved
-# Page remains live at /government/ (footer link + WIP banner)
-
+# --- Blog ---
 [[main]]
 name = "Blog"
 url = "/blog/"
+weight = 4
+
+# --- Resources ---
+[[main]]
+name = "Resources"
+url = "/knowledge-center/"
 weight = 5
 
 [[main]]
-name = "IT Tools"
-url = "/tools/"
-weight = 6
-
-[[main]]
-parent = "IT Tools"
-name = "All Tools"
-url = "/tools/"
+parent = "Resources"
+name = "Knowledge Center"
+url = "/knowledge-center/"
 weight = 1
 
 [[main]]
-parent = "IT Tools"
-name = "RAID Calculator"
-url = "/tools/raid-calculator/"
+parent = "Resources"
+name = "Case Studies"
+url = "/case-studies/"
 weight = 2
 
 [[main]]
-parent = "IT Tools"
-name = "Surveillance Storage"
-url = "/tools/surveillance-storage-calculator/"
+parent = "Resources"
+name = "IT Tools"
+url = "/tools/"
 weight = 3
 
 [[main]]
-parent = "IT Tools"
-name = "VM Calculator"
-url = "/tools/vm-calculator/"
+parent = "Resources"
+name = "FAQ"
+url = "/faq/"
 weight = 4
 
-[[main]]
-parent = "IT Tools"
-name = "Password Generator"
-url = "/tools/password-generator/"
-weight = 5
-
-[[main]]
-parent = "IT Tools"
-name = "Ransomware Cost Calculator"
-url = "/tools/ransomware-cost-calculator/"
-weight = 6
-
-[[main]]
-parent = "IT Tools"
-name = "Subnet Calculator"
-url = "/tools/subnet-calculator/"
-weight = 7
-
-[[main]]
-name = "FAQ"
-url = "/faq"
-weight = 7
-
+# --- Contact ---
 [[main]]
 name = "Contact"
-url = "/contact"
-weight = 8
+url = "/contact/"
+weight = 6
 
 
 # footer menu
@@ -144,46 +137,61 @@ url = "/"
 weight = 1
 
 [[footer]]
+name = "About Us"
+url = "/about/"
+weight = 2
+
+[[footer]]
+name = "Our Founder"
+url = "/about/our-founder/"
+weight = 3
+
+[[footer]]
 name = "Services"
 url = "/services/"
-weight = 2
+weight = 4
+
+[[footer]]
+name = "Industries"
+url = "/industries/"
+weight = 5
 
 [[footer]]
 name = "Case Studies"
 url = "/case-studies/"
-weight = 3
-
-[[footer]]
-name = "About"
-url = "/about"
-weight = 4
-
-[[footer]]
-name = "Government"
-url = "/government/"
-weight = 5
+weight = 6
 
 [[footer]]
 name = "Blog"
 url = "/blog/"
-weight = 6
+weight = 7
 
 [[footer]]
 name = "IT Tools"
 url = "/tools/"
-weight = 7
+weight = 8
+
+[[footer]]
+name = "FAQ"
+url = "/faq/"
+weight = 9
 
 [[footer]]
 name = "Locations"
 url = "/locations/"
-weight = 8
+weight = 10
+
+[[footer]]
+name = "Government"
+url = "/government/"
+weight = 11
 
 [[footer]]
 name = "Contact"
-url = "/contact"
-weight = 9
+url = "/contact/"
+weight = 12
 
 [[footer]]
 name = "Privacy Policy"
 url = "/privacy-policy"
-weight = 10
+weight = 13
