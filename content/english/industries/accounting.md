@@ -145,9 +145,9 @@ Secure Techies provides **IT services for accounting firms** that cannot lose a 
 
 The work looks like other professional services — until busy season. Then every shared login, flaky VPN, and untested backup becomes a filing problem. We plan for that cycle on purpose: restore tests, extra licenses, and seasonal accounts **before** January.
 
-### Who this is for
+### Who we work with
 
-CPA firms and accounting practices that already know last tax season was held together with overtime and hope. Typical size is 8–60 people. If you also practice law, start at [law firms](/industries/law-firms/). If you are primarily wealth management, use [financial services](/industries/financial-services/).
+CPA firms and accounting practices, typically 8 to 60 people, that already know last tax season was held together with overtime and hope. Firms that also practice law often start with our [law firm IT](/industries/law-firms/) work. Wealth-management shops are a better fit for [financial services IT](/industries/financial-services/).
 
 ### What is in the plan
 
@@ -161,8 +161,13 @@ CPA firms and accounting practices that already know last tax season was held to
 
 We help with the technical controls behind IRS Publication 4557 and similar questionnaires. Formal SOC 2 attestation is an auditor’s job.
 
-### Coverage
+### Coverage and cost
 
-On-site across Southern California from Canoga Park. Remote nationwide.
+On-site across Southern California from Canoga Park. Remote nationwide. We quote after a free assessment.
 
-Call (818) 431-5607 or [contact us](/contact/). Related: [IT support cost](/blog/it-support-cost-small-business/) and [Microsoft 365 security](/blog/microsoft-365-business/).
+Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [IT support cost for small professional firms](/blog/it-support-cost-small-business/)
+- [Microsoft 365 security](/blog/microsoft-365-business/)

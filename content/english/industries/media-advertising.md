@@ -145,7 +145,7 @@ Secure Techies provides **media and advertising IT** for Los Angeles studios and
 
 If the shared volume dies at 11 p.m., the campaign does not care that it is after hours. Freelancers need access on Monday and none on Friday. Unreleased work is an NDA problem if it walks.
 
-### Who this is for
+### Who we work with
 
 LA advertising agencies, in-house brand studios, and small post rooms that need corporate IT plus large-file literacy. We are not your colorist. Application and panel calibration stay with your post team.
 
@@ -161,6 +161,6 @@ LA advertising agencies, in-house brand studios, and small post rooms that need 
 
 ### Coverage
 
-On-site across Los Angeles from Canoga Park. We are down the 101 from a lot of this work.
+On-site across Los Angeles from Canoga Park.
 
 Call (818) 431-5607 or [contact us](/contact/).

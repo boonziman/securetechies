@@ -69,7 +69,7 @@ work:
         - title: "SAM-ready identity"
           text: "CAGE 7JZF3 and UEI VNXVECFGVAW6 on the [government page](/government/)."
         - title: "No invented vehicles"
-          text: "GSA and clearance claims stay off this page unless verified."
+          text: "We do not claim a GSA schedule or personnel clearances you cannot look up."
         - title: "Local California vendor"
           text: "Canoga Park headquarters."
     - name: "Operations"
@@ -88,7 +88,7 @@ work:
           text: "Technical and process help. Formal certification is a C3PAO’s job."
 stack:
   heading: "What we put in writing"
-  intro: "Scope follows your SOW. We do not invent contract vehicles on this page."
+  intro: "Scope follows your SOW. We do not invent contract vehicles."
   items:
     - "CAGE 7JZF3"
     - "UEI VNXVECFGVAW6"
@@ -143,20 +143,20 @@ faq:
 
 Secure Techies, LLC provides **government IT services** from Canoga Park for agencies and public-sector teams that need a vendor they can find in SAM.gov and a team that documents what it does.
 
-**CAGE 7JZF3. UEI VNXVECFGVAW6.** Procurement details live on the dedicated [government page](/government/). This industry page is about the operational work: [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [compliance](/services/compliance-security-audits/).
+**CAGE 7JZF3. UEI VNXVECFGVAW6.** Full procurement details are on our [government](/government/) page. Day-to-day work is [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [compliance](/services/compliance-security-audits/).
 
-### What we will and will not say
+### Credentials you can verify
 
-We put credentials on the page because procurement teams actually search for them. We will not invent a GSA schedule or a personnel clearance you cannot look up. Some contract-vehicle claims are still being verified. Treat anything not confirmed on the government page — or in writing from us — as not claimed.
+Procurement teams look these up. We will not invent a GSA schedule or a personnel clearance you cannot confirm. Treat anything not listed on the government page — or confirmed in writing from us — as not claimed.
 
 CMMC-oriented technical and process work is in scope when the SOW says so. Formal certification is a C3PAO’s job.
 
-### Who this is for
+### Who we work with
 
-Cities, special districts, and public-sector teams that need managed IT, security, or help desk — not a full municipal ERP replacement. Scope follows the written SOW. Change control is the product, not an extra.
+Cities, special districts, and public-sector teams that need managed IT, security, or help desk — not a full municipal ERP replacement. Scope follows the written SOW. Change control is part of the work, not an extra.
 
 ### Coverage
 
-21515 Vanowen St, Suite 1110, Canoga Park, CA 91303. Local California vendor for state and local work that wants a company they can visit.
+21515 Vanowen St, Suite 1110, Canoga Park, CA 91303.
 
 Call (818) 431-5607 or [contact us](/contact/).

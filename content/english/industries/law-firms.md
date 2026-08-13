@@ -123,10 +123,10 @@ why:
     - title: "We speak in matters, not tickets"
       text: "Staff should not have to translate a calendar crisis into IT jargon to get help."
     - title: "Security is not an add-on"
-      text: "MFA, email filtering, and backups sit inside the plan. See our dedicated [law firm IT landing page](/law-firm-it-services/) for the conversion-focused version of this story."
+      text: "MFA, email filtering, and backups sit inside the plan. Los Angeles firms can also read our [law firm IT services](/law-firm-it-services/) page."
     - title: "Local when hardware fails"
       text: "Canoga Park headquarters. On-site across the Valley and Los Angeles when a workstation or switch needs hands."
-    - title: "Written for the people who buy IT"
+    - title: "A plan partners can read"
       text: "Managing partners and office managers get a clear plan, not a 40-page stack deck."
 faq:
   heading: "Law firm IT questions"
@@ -155,40 +155,36 @@ Secure Techies provides **IT services for law firms** from our Canoga Park headq
 
 We do not sell a mysterious “legal cloud.” We run [managed infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [24/7 help desk](/services/managed-help-desk/) the way a firm actually uses them — shared calendars, large PDFs, remote hearings, and staff who cannot wait until Monday.
 
-### Confidentiality and ethics, in operational terms
+### Confidentiality, in operational terms
 
 The [American Bar Association](https://www.americanbar.org/groups/professional_responsibility/) has been clear for years that competence includes technology. That does not mean every attorney becomes an IT director. It means the firm can show MFA, access control, encryption in transit, and a backup that has been restored.
 
 California firms also sit under the [California Consumer Privacy Act](https://oag.ca.gov/privacy/ccpa) when they hold consumer personal information. We treat that as a control problem, not a slogan.
 
-### Who this page is for
+### Who we work with
 
-Managing partners, office managers, and COOs at firms that bill time in Los Angeles, the San Fernando Valley, or the wider Southern California market. Typical size is 8 to 80 people: enough complexity that informal IT is already failing, not so large that you already have a 12-person internal department.
+Managing partners, office managers, and COOs at firms that bill time in Los Angeles, the San Fernando Valley, and Southern California. Typical size is 8 to 80 people: enough complexity that informal IT is already failing, not so large that you already have a 12-person internal department.
 
-Search intent here is commercial. People typing **IT services for law firms** or **law firm IT support Los Angeles** already know they need a provider. They want proof you understand privilege, matter systems, and insurance questionnaires — not a generic MSP brochure.
-
-### What is included in law firm managed IT
+### What is included
 
 A standard engagement covers:
 
 - 24/7 [managed help desk](/services/managed-help-desk/) for attorneys, staff, and often contract attorneys
-- Microsoft 365 administration: licenses, sharing, retention, and the mess left by the last vendor
+- Microsoft 365 administration: licenses, sharing, retention, litigation holds, and leftover accounts from the last vendor
 - [Cybersecurity](/services/cybersecurity/) that assumes the firm is a target — because it is
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) with restore tests, including Microsoft 365
-- [Network security](/services/network-security/) for the office and the people working from home
+- [Network security](/services/network-security/) for the office and people working from home
 - Vendor coordination when Clio, NetDocuments, or the copier vendor wants to blame “the network”
 
-Projects (a move, a major migration, a new office) are quoted separately so the monthly plan stays predictable.
+Projects — a move, a major migration, a new office — are quoted separately so the monthly plan stays predictable.
 
 ### Los Angeles and Valley coverage
 
-Headquarters is in Canoga Park. That matters when a partner’s laptop dies the morning of a hearing in Van Nuys or Century City. Remote-first still handles most tickets. On-site is available across Los Angeles County and Southern California.
+Headquarters is in Canoga Park. That matters when a partner’s laptop dies the morning of a hearing in Van Nuys or Century City. Most tickets are handled remotely. On-site is available across Los Angeles County and Southern California.
 
-If you want the conversion-focused city landing, use [law firm IT services in Los Angeles](/law-firm-it-services/). This industry page is the deeper reference: what we run, what we will not claim, and how to evaluate any MSP.
+Firms that want the Los Angeles-focused version of this story can also read [law firm IT services in Los Angeles](/law-firm-it-services/).
 
-### How to compare law firm IT providers
-
-Ask every vendor the same five things:
+### Questions worth asking any legal IT provider
 
 1. Who answers after 8 p.m. when Outlook is down?
 2. When did you last restore a Microsoft 365 mailbox for a client — not a lab?
@@ -198,9 +194,9 @@ Ask every vendor the same five things:
 
 If the answers are vague, keep shopping. Our notes on [law firm IT support](/blog/law-firm-it-support/) go deeper on the operational side.
 
-### Cost and next step
+### Cost
 
-Pricing depends on headcount, locations, and how much security work is in scope. Planning ranges for professional firms are discussed on the [FAQ](/faq/). We quote after a free assessment so the number matches your stack, not a blog post.
+Pricing depends on attorney and staff count, locations, and how much security work is in scope. Planning ranges for professional firms are on the [FAQ](/faq/). We quote after a free assessment so the number matches your stack.
 
 Call (818) 431-5607 or [contact us](/contact/).
 

@@ -121,10 +121,10 @@ why:
   intro: "Predictable cost, a named team, and a local office you can visit."
   items:
     - title: "Los Angeles coverage"
-      text: "Start with [managed IT services in Los Angeles](/managed-it-services-los-angeles/) if you want the city-focused landing page."
-    - title: "Industry path when you have one"
-      text: "Law, healthcare, and construction have dedicated pages. Use those if they fit — the plan will be sharper."
-    - title: "Honest pricing talk"
+      text: "On-site across the city and the Valley. See also [managed IT services in Los Angeles](/managed-it-services-los-angeles/)."
+    - title: "A tighter plan when the industry is clear"
+      text: "Law firms, clinics, and contractors get a sharper plan on their industry pages. Use those when they fit."
+    - title: "Clear pricing"
       text: "Ranges and tradeoffs live on the [FAQ](/faq/). We quote after seeing the environment."
     - title: "Local"
       text: "Canoga Park headquarters. On-site across Southern California."
@@ -149,11 +149,11 @@ Secure Techies provides **small business IT services** for Southern California t
 
 The “IT person” model usually breaks around 15 employees. One staffer cannot cover after-hours, security, vendors, and the printer. Break-fix turns every outage into a surprise invoice. Managed IT turns that into a monthly plan.
 
-### Who this is for
+### Who we work with
 
-Offices that need a full outsourced IT department and do not fit a sharper vertical page. If you are a law firm, clinic, contractor, or CPA shop, use that industry page — the plan will be tighter. City landing: [managed IT services Los Angeles](/managed-it-services-los-angeles/).
+Growing offices that need a full outsourced IT department. Law firms, clinics, contractors, and CPA shops usually get a tighter plan on their industry pages. For a Los Angeles overview, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/).
 
-### What should be in a small-business plan
+### What should be in the plan
 
 - A number staff can call 24/7
 - Microsoft 365 that is not a weekend setup someone abandoned
@@ -164,10 +164,10 @@ Offices that need a full outsourced IT department and do not fit a sharper verti
 - Quarterly planning: what to buy, what to ignore, what it will cost
 - Projects (moves, migrations) quoted separately
 
-Read [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/). Co-managed with a part-time internal person is common: [co-managed IT](/blog/co-managed-it-services/).
+More on [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/). If you already have a part-time IT person, [co-managed IT](/blog/co-managed-it-services/) is common.
 
 ### Cost
 
-National planning ranges often sit around $100–$250 per user per month. We quote after a free assessment so the number matches your stack. More on the [FAQ](/faq/).
+Typical managed plans for small professional firms often land around $100–$250 per user per month, depending on devices and security scope. We quote after a free assessment so the number matches your stack. More on the [FAQ](/faq/).
 
 Call (818) 431-5607 or [contact us](/contact/).

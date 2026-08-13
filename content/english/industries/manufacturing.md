@@ -145,21 +145,19 @@ Secure Techies provides **manufacturing IT services** for plants and industrial 
 
 We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park. Change windows follow your production calendar. If a patch could stop a line, it is scheduled, approved, and reversible.
 
-### Who this is for
+### Who we work with
 
-Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems — not a firm that wants us to reprogram PLCs.
+Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems. We do not casually reprogram PLCs. Contractor yards are a better fit for [construction IT](/industries/construction/).
 
-If the operation is closer to a contractor yard than a plant, see [construction](/industries/construction/).
-
-### What “careful around production” means
+### What careful around production means
 
 - Inventory OEM PCs that were dropped on the LAN and never patched
 - Segment IT from OT so a mailbox incident does not walk onto a controller
 - Treat ERP, inventory, and shipping as critical — trucks waiting is not a printer ticket
-- Keep email and endpoints hard on the business side. That is still how ransomware arrives
+- Harden email and endpoints on the business side. That is still how ransomware arrives
 - Tell you when you need a specialist controls engineer instead of improvising
 
-Search for **manufacturing IT services** is full of vendors claiming they “converge OT and IT.” Some should. Many should not. We would rather be precise.
+Plenty of vendors claim they “converge OT and IT.” Some should. Many should not. We would rather be precise.
 
 ### Yard and warehouse
 

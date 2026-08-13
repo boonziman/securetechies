@@ -37,28 +37,30 @@
         <a class="st-indp-btn" href="{{ "contact/" | relURL }}">Free assessment</a>
         <a class="st-indp-phone" href="tel:+18184315607">(818) 431-5607</a>
       </div>
-      {{ with $p.hero_stats }}
-      <ul class="st-indp-facts" aria-label="Key facts">
-        {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
-      </ul>
-      {{ end }}
     </div>
     <div class="st-indp-hero-media">
       {{ partial "ind-img.html" (dict "src" $p.hero_image "alt" $p.hero_alt "w" 1600 "h" 900 "eager" true "sizes" "(max-width: 900px) 100vw, 54vw") }}
     </div>
   </header>
 
-  <nav class="st-indp-jump" aria-label="On this page">
+  <div class="st-indp-toolbar">
     <div class="st-indp-wrap">
-      {{ with $p.challenges }}<a href="#challenges">Challenges</a>{{ end }}
-      {{ with $p.work }}<a href="#scope">What we run</a>{{ end }}
-      {{ with $p.offerings }}<a href="#services">Services</a>{{ end }}
-      {{ if $.Content }}<a href="#details">Details</a>{{ end }}
-      {{ with $p.process }}<a href="#process">How we start</a>{{ end }}
-      {{ with $p.why }}<a href="#why">Why us</a>{{ end }}
-      {{ with $p.faq }}<a href="#faq">FAQ</a>{{ end }}
+      <nav class="st-indp-jump" aria-label="On this page">
+        {{ with $p.challenges }}<a href="#challenges">Challenges</a>{{ end }}
+        {{ with $p.work }}<a href="#scope">What we run</a>{{ end }}
+        {{ with $p.offerings }}<a href="#services">Services</a>{{ end }}
+        {{ if $.Content }}<a href="#details">Details</a>{{ end }}
+        {{ with $p.process }}<a href="#process">How we start</a>{{ end }}
+        {{ with $p.why }}<a href="#why">Why us</a>{{ end }}
+        {{ with $p.faq }}<a href="#faq">FAQ</a>{{ end }}
+      </nav>
+      {{ with $p.hero_stats }}
+      <ul class="st-indp-facts" aria-label="Key facts">
+        {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
     </div>
-  </nav>
+  </div>
 
   {{ with $p.challenges }}
   <section class="st-indp-sec" id="challenges">

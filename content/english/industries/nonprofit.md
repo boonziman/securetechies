@@ -145,11 +145,11 @@ Secure Techies provides **nonprofit IT services** for organizations that need do
 
 A ransomware event does not care that you are a 501(c)(3). Grant reports, donor files, and volunteer lists all have to come back. The “IT person” is usually also operations. We take the tickets so programs stay staffed.
 
-### Who this is for
+### Who we work with
 
-Southern California nonprofits, associations, and churches that look like a small professional office plus volunteers. If you are a school, start at [education](/industries/education/). If you are a growing office that happens to have a mission, [small business IT](/industries/small-business/) may fit better.
+Southern California nonprofits, associations, and churches that look like a small professional office plus volunteers. Schools usually start with [education IT](/industries/education/). Growing offices that happen to have a mission often fit [small business IT](/industries/small-business/).
 
-### What should be in the plan this year
+### What should be in the plan
 
 - MFA, least privilege, and encryption on donor and grant files
 - Microsoft 365 that does not leave board mailboxes alive forever
@@ -161,7 +161,7 @@ Southern California nonprofits, associations, and churches that look like a smal
 
 California nonprofits holding consumer personal information should treat [CCPA](https://oag.ca.gov/privacy/ccpa) as real.
 
-### Pricing talk
+### Cost
 
 We do not pretend nonprofit IT is free. We scope to what you need this year, which is usually the real savings. Ask during the free assessment.
 

@@ -143,7 +143,7 @@ faq:
 
 Secure Techies provides **education IT services** for campuses and education organizations that need student-data hygiene and systems that survive opening week.
 
-We are honest about fit. This page is strongest for independent schools, training organizations, and education nonprofits — not a 50-site public district with its own IT shop. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. If you are closer to a charity than a campus, see [nonprofit IT](/industries/nonprofit/).
+We work most often with independent schools, training organizations, and education nonprofits — not a 50-site public district that already has its own IT shop. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. Organizations that look more like a charity than a campus usually fit [nonprofit IT](/industries/nonprofit/).
 
 ### What a right-sized school plan includes
 
@@ -151,7 +151,7 @@ We are honest about fit. This page is strongest for independent schools, trainin
 - Hardening of the platform you already chose — Google Workspace for Education or Microsoft 365
 - Least privilege, vendor inventory, and no shared admin as the long-term plan
 - Faculty laptop standards: patching, encryption, a replace-when-it-dies process
-- Lab imaging as a **project** before the year starts, not an every-Tuesday surprise
+- Lab imaging as a project before the year starts, not an every-Tuesday surprise
 - Restore tests for the SIS environment, mail, and files
 - Change windows in the breaks. Opening week is not a maintenance window
 

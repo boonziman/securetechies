@@ -145,9 +145,9 @@ Secure Techies provides **technology and startup IT** for companies that need an
 
 We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side. The same people should not own production Kubernetes and the CEO’s stolen laptop.
 
-### Who this is for
+### Who we work with
 
-Los Angeles startups and tech companies past “whoever knows Okta” — often 15–80 people, mixed Mac and Windows, a customer questionnaire on the calendar. If you are still a ten-person shop with no security review in sight, [small business IT](/industries/small-business/) may be the better front door.
+Los Angeles startups and tech companies — often 15 to 80 people, mixed Mac and Windows, a customer questionnaire on the calendar. Smaller shops that are not yet facing a security review usually start with [small business IT](/industries/small-business/).
 
 ### What we take off the plate
 
@@ -159,9 +159,9 @@ Los Angeles startups and tech companies past “whoever knows Okta” — often 
 - Office network and meeting rooms
 - Evidence for laptop management, MFA, backups, and offboarding. Your auditor still signs the SOC 2 report
 
-Default SOW does not include AWS or GCP production. We will not touch prod unless you hire us to.
+The default engagement does not include AWS or GCP production. We will not touch prod unless you hire us to.
 
-Size hardware guesses with the [VM calculator](/tools/vm-calculator/).
+If you are still sizing hardware, the [VM calculator](/tools/vm-calculator/) is a useful first pass.
 
 ### Coverage
 

@@ -142,7 +142,7 @@ faq:
     - question: "Where do you cover jobsites?"
       answer: "Southern California on-site. Remote IT support nationwide when the office is elsewhere."
     - question: "Do you handle both the office and the field in one contract?"
-      answer: "Yes. That is the point of this page. Headquarters Microsoft 365 and help desk sit in the same plan as jobsite connectivity, field-device standards, and optional mobile CCTV. You should not need one vendor for Outlook and another to watch the conex overnight."
+      answer: "Yes. Headquarters Microsoft 365 and help desk sit in the same plan as jobsite connectivity, field-device standards, and optional mobile CCTV. You should not need one vendor for Outlook and another to watch the conex overnight."
     - question: "How much does construction IT support cost?"
       answer: "It depends on office headcount, active sites, and whether cameras are in scope. We quote after a free assessment rather than publishing a fake per-user rate. Planning ranges for professional firms are on the [FAQ](/faq/)."
 ---
@@ -153,13 +153,11 @@ Secure Techies provides **construction IT services** for contractors who need th
 
 A construction company is two businesses sharing a logo. Headquarters has estimators, accounting, and a Procore login. The field has a trailer, a weak cell signal, a tablet that still says “site iPad,” and a lot that goes dark at 6 p.m. Most MSPs only staff the first business. The second is where drawings fail to sync, leftover logins linger after a crew rolls off, and copper walks.
 
-### Who this page is for
+### Who we work with
 
-General contractors, trade contractors, and developers with a Southern California office plus active jobsites. Typical size is a 10–80 person company: enough projects that informal IT is already failing, not a national GC with its own construction-technology department.
+General contractors, trade contractors, and developers with a Southern California office plus active jobsites. Typical size is 10 to 80 people. Plants that need IT/OT boundaries are a better fit for [manufacturing](/industries/manufacturing/). Brokerages that also hold vacant lots often add [real estate IT](/industries/real-estate/).
 
-If you are mainly a plant, start at [manufacturing](/industries/manufacturing/). If you are a brokerage that also holds vacant lots, pair this page with [real estate](/industries/real-estate/).
-
-### What is actually in a construction IT plan
+### What is in the plan
 
 A standard engagement covers three layers:
 
@@ -167,9 +165,9 @@ A standard engagement covers three layers:
 2. **The field.** Trailer connectivity, unique logins on tablets and phones, MFA, a wipe when a crew leaves, and the same wireless standard on job five as on job one.
 3. **The yard.** [Mobile CCTV trailers](/services/mobile-cctv-trailers/) when the risk is after-hours theft, not just a phishing email. Solar, rapidly deployable, no six-month cabling project.
 
-Projects (a new trailer package, a headquarters move, a major Microsoft 365 cleanup) are quoted separately so the monthly plan stays predictable.
+Projects — a new trailer package, a headquarters move, a major Microsoft 365 cleanup — are quoted separately so the monthly plan stays predictable.
 
-### Jobsite connectivity, without pretending cell service is fine
+### Jobsite connectivity
 
 Trailers sit where the work is, not where the fiber is. We plan for ugly cell service: a primary connection, failover where the job is worth it, and backups that still make sense if the trailer is offline overnight. Superintendents should reach drawings and RFIs without calling the office to “email it again.”
 
@@ -177,16 +175,14 @@ We do not replace Procore or Autodesk. We keep identity, devices, and networks h
 
 ### Theft is an operations problem
 
-The [NICB](https://www.nicb.org/) has documented how rarely stolen construction equipment comes back. Cameras do not replace insurance. They change what happens at 2 a.m. on an empty lot: a live view, a recording, a deterrent sitting where a conex used to be an easy target. More context: [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).
+The [NICB](https://www.nicb.org/) has documented how rarely stolen construction equipment comes back. Cameras do not replace insurance. They change what happens at 2 a.m. on an empty lot: a live view, a recording, a deterrent sitting where a conex used to be an easy target. More in our notes on [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).
 
-### How to compare construction IT providers
-
-Ask every vendor the same five things:
+### Questions worth asking
 
 1. Who answers when a superintendent cannot open drawings from the trailer?
 2. How do you wipe a tablet the day a crew rolls off?
 3. When did you last restore project files — not a lab folder?
-4. Do you deploy cameras, or only talk about “physical security”?
+4. Do you deploy cameras, or only talk about physical security?
 5. Will you show up on a Valley or LA jobsite, or is everything a remote contractor?
 
 If the answers are only about Outlook, keep shopping.
@@ -195,7 +191,7 @@ If the answers are only about Outlook, keep shopping.
 
 Headquarters is in Canoga Park. On-site IT and trailer drops cover Los Angeles, the San Fernando Valley, and nearby Southern California counties. Remote help desk covers the office wherever staff are working.
 
-Pricing depends on office headcount, how many active sites, and whether CCTV is in the same contract. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
+Pricing depends on office headcount, how many active sites, and whether CCTV is in the same contract. We quote after a free assessment.
 
 Call (818) 431-5607 or [contact us](/contact/).
 
@@ -204,4 +200,3 @@ Call (818) 431-5607 or [contact us](/contact/).
 - [Construction site security in Los Angeles](/blog/construction-site-security-los-angeles/)
 - [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
 - [Managed help desk](/services/managed-help-desk/)
-- [IT support cost for small professional firms](/blog/it-support-cost-small-business/)

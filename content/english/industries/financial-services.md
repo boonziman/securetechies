@@ -143,15 +143,15 @@ faq:
 
 Secure Techies provides **financial services IT** for advisory and professional finance offices in Southern California. The job is to keep client data tight and the desktop boring — in the best way.
 
-We pair this work with the same [cybersecurity](/services/cybersecurity/) and [backup](/services/backup-disaster-recovery/) stack we use for [law firms](/industries/law-firms/). If you also run a tax practice, see [accounting](/industries/accounting/).
+We use the same [cybersecurity](/services/cybersecurity/) and [backup](/services/backup-disaster-recovery/) stack we run for [law firms](/industries/law-firms/). If the office is primarily a tax practice, see [accounting IT](/industries/accounting/).
 
-### Who this is for
+### Who we work with
 
 Independent RIAs, advisory shops, and professional finance offices — not national banks. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model.
 
-People looking for this page usually have a custodian questionnaire due or a close call with a spoofed wire. [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer.
+[SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer to a custodian or a client.
 
-### What we make true
+### What we run
 
 - Identity cleanup: leftover contractors, shared mailboxes, leftover admin rights
 - MFA on mail, VPN, and the portals we can reach
@@ -164,4 +164,6 @@ We are not your CCO. Regulatory exams belong to your compliance officer and coun
 
 ### Coverage
 
-Canoga Park. On-site across Southern California. Call (818) 431-5607 or [contact us](/contact/).
+Canoga Park headquarters. On-site across Southern California.
+
+Call (818) 431-5607 or [contact us](/contact/).

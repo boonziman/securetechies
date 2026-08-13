@@ -145,11 +145,11 @@ Secure Techies provides **real estate IT services** for brokerages and property 
 
 Most of the workforce is not in the suite. Agents work from cars, listings, and kitchen tables. Property staff work from sites. The IT plan has to follow them without opening the firm to every coffee-shop Wi-Fi — and without leaving a departed agent’s mailbox live for six months.
 
-### Who this is for
+### Who we work with
 
-Independent brokerages, small-to-mid property managers, and hybrid teams in Los Angeles, the Valley, and nearby counties. If you are mainly a builder with a sales trailer, start at [construction](/industries/construction/). If you are a law firm that also does real estate work, start at [law firms](/industries/law-firms/).
+Independent brokerages, property managers, and hybrid teams in Los Angeles, the Valley, and nearby counties. Builders with a sales trailer usually start with [construction IT](/industries/construction/). Law firms that also do real-estate work usually start with [law firm IT](/industries/law-firms/).
 
-### What buyers should demand
+### What should be in the plan
 
 - MFA and email authentication aimed at wiring-instruction scams
 - A written rule that wiring details are verified out of band
@@ -162,7 +162,7 @@ We do not run the MLS. We keep Microsoft 365, devices, and identity healthy so D
 
 ### Sites and vacant lots
 
-When a community, lot, or model home needs eyes after hours, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover the gap without a six-month cabling project. Pair this page with [construction IT](/industries/construction/) if you also run jobs.
+When a community, lot, or model home needs eyes after hours, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover the gap without a six-month cabling project.
 
 ### Coverage
 

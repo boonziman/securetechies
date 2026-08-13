@@ -150,21 +150,19 @@ faq:
 
 Secure Techies delivers **healthcare IT services** for clinics and medical groups that need the chart system up and a straight answer about safeguards. We are not a hospital IT department. We are the outsourced team for practices that cannot hire one.
 
-The first paragraph of every serious healthcare IT conversation is the same: **protected health information** has to stay available to the right people and unavailable to everyone else. That is access control, email security, encryption, and backups — then a help desk that does not leave the front desk on hold.
+Protected health information has to stay available to the right people and unavailable to everyone else. That is access control, email security, encryption, and backups — then a help desk that does not leave the front desk on hold.
 
 ### What we do not claim
 
-We do not replace your EHR vendor. We do not “guarantee HIPAA certification.” HIPAA is a program you operate. We help you run the technical and operational pieces and document them.
+We do not replace your EHR vendor. We do not “guarantee HIPAA certification.” HIPAA is a program you operate. We help you run the technical and operational pieces and document them. When our work involves ePHI, we sign a business associate agreement.
 
-### Who searches for healthcare IT support
+### Who we work with
 
-Office managers and physician-owners looking for **IT support for medical practices** or **HIPAA IT support** in Los Angeles. Intent is commercial: they have already had a close call (ransomware, a failed restore, a vendor that never answers) or a new location opening.
+Office managers and physician-owners at clinics and specialty groups in Los Angeles and Southern California. Dental and imaging-heavy practices are in scope. An 800-bed hospital that needs a full internal IT department is not.
 
-We write this page for clinics and groups, not 800-bed hospitals. If you need a full hospital IT department, we are the wrong size. If you need the chart system up and a BAA that matches the work, we are the right conversation.
+### What HIPAA-ready means in the plan
 
-### What “HIPAA-ready” means here
-
-It does not mean we “certify” you. It means the [Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) shows up in operations:
+It does not mean we certify you. It means the [Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) shows up in operations:
 
 - Unique user IDs — no shared “front desk” login as the long-term plan
 - MFA on email and remote access
@@ -173,7 +171,7 @@ It does not mean we “certify” you. It means the [Security Rule](https://www.
 - Backups that have been restored, including cloud apps
 - A written risk analysis you can show
 
-Details live in our [HIPAA compliance checklist](/blog/hipaa-compliance-checklist/) and [medical practice IT guide](/blog/it-support-for-medical-practices/).
+More detail is in our [HIPAA compliance checklist](/blog/hipaa-compliance-checklist/) and [medical practice IT guide](/blog/it-support-for-medical-practices/).
 
 ### Southern California clinics
 
@@ -182,6 +180,8 @@ On-site from Canoga Park for workstations, networking, and the days hardware wil
 ### Cost
 
 Healthcare plans usually sit above generic office IT because of documentation, backup scope, and after-hours clinical impact. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/).
+
+Call (818) 431-5607 or [contact us](/contact/).
 
 ### Related reading
 
