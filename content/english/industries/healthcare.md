@@ -14,6 +14,13 @@ kicker: "Clinics and medical practices"
 hero_subtitle: "Clinics do not have a spare hour for a frozen EHR. Secure Techies keeps Southern California practices online, backed up, and ready to show how patient data is protected."
 hero_image: "/images/industries/healthcare-it-support-clinic.webp"
 hero_alt: "Modern medical clinic nurse station with computers in a calm Los Angeles practice"
+mid_image: "/images/industries/healthcare-exam-room.webp"
+mid_alt: "Empty modern medical exam room with a blurred clinical monitor"
+badges:
+  - "HIPAA-aware"
+  - "Clinic-sized"
+  - "BAA available"
+  - "SoCal on-site"
 weight: 2
 audience: "Medical practices and healthcare clinics"
 service_type: "Managed IT services for healthcare"
@@ -50,9 +57,31 @@ offerings:
     - title: "Backup and recovery"
       url: "/services/backup-disaster-recovery/"
       text: "Restores that include cloud apps, not only the server in the closet."
+stack:
+  heading: "Clinical systems we work around"
+  intro: "We own the environment. Your EHR vendor owns the application. That split is how clinics stay out of finger-pointing."
+  items:
+    - "EHR / practice management"
+    - "Microsoft 365"
+    - "Imaging and large files"
+    - "MFA and unique logins"
+    - "Encrypted endpoints"
+    - "Cloud and local backup"
+process:
+  heading: "How we onboard a practice"
+  intro: "We schedule around clinic hours. The first week is about charts opening, not a rebrand."
+  items:
+    - title: "Risk and stack review"
+      text: "Who has access, where ePHI lives, last backup test, and the vendors that touch patient data."
+    - title: "Stabilize"
+      text: "Unique IDs, MFA, email security, and a restore test. Shared nurse-station logins get a plan."
+    - title: "Support the floor"
+      text: "Front desk and providers get a help desk that treats schedule impact as severity."
+    - title: "Document"
+      text: "Enough evidence for an insurer or auditor without a 200-page binder nobody reads."
 photo_band:
-  image: "/images/industries/healthcare-it-support-clinic.webp"
-  alt: "Quiet clinic corridor and nurse station"
+  image: "/images/services/compliance-overview.webp"
+  alt: "Compliance documentation and security review for healthcare IT"
   quote: "If the chart will not open, nothing else in the building matters."
 why:
   heading: "How we work with practices"
@@ -92,6 +121,33 @@ The first paragraph of every serious healthcare IT conversation is the same: **p
 ### What we do not claim
 
 We do not replace your EHR vendor. We do not “guarantee HIPAA certification.” HIPAA is a program you operate. We help you run the technical and operational pieces and document them.
+
+### Who searches for healthcare IT support
+
+Office managers and physician-owners looking for **IT support for medical practices** or **HIPAA IT support** in Los Angeles. Intent is commercial: they have already had a close call (ransomware, a failed restore, a vendor that never answers) or a new location opening.
+
+We write this page for clinics and groups, not 800-bed hospitals. If you need a full hospital IT department, we are the wrong size. If you need the chart system up and a BAA that matches the work, we are the right conversation.
+
+### What “HIPAA-ready” means here
+
+It does not mean we “certify” you. It means the [Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) shows up in operations:
+
+- Unique user IDs — no shared “front desk” login as the long-term plan
+- MFA on email and remote access
+- Encryption on laptops that leave the building
+- Audit-friendly access
+- Backups that have been restored, including cloud apps
+- A written risk analysis you can show
+
+Details live in our [HIPAA compliance checklist](/blog/hipaa-compliance-checklist/) and [medical practice IT guide](/blog/it-support-for-medical-practices/).
+
+### Southern California clinics
+
+On-site from Canoga Park for workstations, networking, and the days hardware will not wait. Remote for the rest. Multi-location groups can keep one standard.
+
+### Cost
+
+Healthcare plans usually sit above generic office IT because of documentation, backup scope, and after-hours clinical impact. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/).
 
 ### Related reading
 

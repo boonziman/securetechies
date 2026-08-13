@@ -13,6 +13,13 @@ kicker: "Public sector"
 hero_subtitle: "Agencies need documentation, access control, and a vendor that can be found in SAM.gov. Secure Techies, LLC supports public-sector technology from Canoga Park."
 hero_image: "/images/industries/government-it-civic-building.webp"
 hero_alt: "California civic building interior with service counters and state and U.S. flags"
+mid_image: "/images/industries/government-staff-counter.webp"
+mid_alt: "Staff-side government records counter in a California civic office"
+badges:
+  - "CAGE 7JZF3"
+  - "UEI VNXVECFGVAW6"
+  - "Documented change"
+  - "Canoga Park HQ"
 weight: 10
 audience: "Government and public-sector organizations"
 service_type: "Managed IT services for government"
@@ -49,9 +56,31 @@ offerings:
     - title: "Managed infrastructure"
       url: "/services/infrastructure/"
       text: "Servers, cloud, and endpoints with change control."
+stack:
+  heading: "What we put in writing"
+  intro: "Scope follows your SOW. We do not invent contract vehicles on this page."
+  items:
+    - "CAGE 7JZF3"
+    - "UEI VNXVECFGVAW6"
+    - "Help desk"
+    - "Patch evidence"
+    - "Access reviews"
+    - "CMMC-oriented gap work"
+process:
+  heading: "How public-sector work starts"
+  intro: "Procurement first. Then operations."
+  items:
+    - title: "Find us in SAM"
+      text: "CAGE and UEI are on the [government page](/government/)."
+    - title: "Read the SOW"
+      text: "We only commit to what is written."
+    - title: "Document as we go"
+      text: "Change control is the product, not an extra."
+    - title: "Operate"
+      text: "Help desk and security against that SOW."
 photo_band:
-  image: "/images/industries/government-it-civic-building.webp"
-  alt: "Civic service hall in California"
+  image: "/images/services/compliance-overview.webp"
+  alt: "Compliance documentation for public-sector IT work"
   quote: "We put CAGE and UEI on the page because procurement teams actually search for them."
 why:
   heading: "How we talk about government work"

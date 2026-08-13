@@ -2,7 +2,7 @@
 {{ $pages := .Pages.ByWeight }}
 
 <section class="st-indh-hero">
-  <img src="{{ "images/industries/industries-hub-los-angeles.webp" | relURL }}" alt="Los Angeles office corridor at dusk, where Secure Techies supports multiple industries" width="1280" height="720" fetchpriority="high" decoding="async">
+  {{ partial "ind-img.html" (dict "src" "images/industries/industries-hub-los-angeles.webp" "alt" "Los Angeles office corridor at dusk, where Secure Techies supports multiple industries" "w" 1280 "h" 720 "eager" true "sizes" "100vw") }}
   <div class="st-indh-hero-shade"></div>
   <div class="st-indh-hero-copy">
     <p class="st-indh-kicker">Managed IT by industry</p>
@@ -16,7 +16,7 @@
     <div>
       <h2>IT that matches how the work actually happens</h2>
       <p>Secure Techies has supported Southern California organizations from Canoga Park since 2009. About half of our clients are law firms. The rest span healthcare, construction, finance, real estate, education, manufacturing, and growing businesses that need an IT department without hiring one.</p>
-      <p>Each industry page below is written for the people who run those environments: the compliance pressure, the software stack, the downtime cost, and the services we actually deliver.</p>
+      <p>Each page below is written for the people who run those environments: the compliance pressure, the software stack, the cost of downtime, and the services we actually deliver.</p>
     </div>
     <ul>
       <li><strong>Compliance in the plan</strong> HIPAA, legal ethics, CMMC readiness, and audit evidence — not a later upsell.</li>
@@ -35,7 +35,7 @@
     <div class="st-indh-grid">
       {{ range $pages }}
       <a class="st-indh-card{{ if eq .Params.featured true }} st-indh-card-feat{{ end }}" href="{{ .RelPermalink }}">
-        <img src="{{ .Params.hero_image | relURL }}" alt="" width="640" height="360" loading="lazy">
+        {{ partial "ind-img.html" (dict "src" .Params.hero_image "alt" "" "w" 640 "h" 360 "sizes" "(max-width: 700px) 100vw, 33vw") }}
         <div>
           {{ if .Params.featured }}<span>Primary focus</span>{{ end }}
           <h3>{{ .Params.short_name | default .Title }}</h3>
@@ -58,58 +58,6 @@
   </div>
 </section>
 
-<style>
-.st-indh-wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}
-.st-indh-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;background:#060d1a}
-.st-indh-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.st-indh-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,.25),rgba(6,13,26,.82))}
-.st-indh-hero-copy{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:0 1.5rem 56px;color:#fff}
-.st-indh-kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 12px}
-.st-indh-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 14px;max-width:16ch}
-.st-indh-hero p{max-width:40rem;color:#dbe3ee;line-height:1.7;font-size:1.08rem;margin:0}
-
-.st-indh-intro{background:#fff;padding:72px 0}
-.st-indh-intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
-.st-indh-intro h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:#0f172a;margin:0 0 14px}
-.st-indh-intro p{color:#475569;line-height:1.8;margin:0 0 14px}
-.st-indh-intro ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
-.st-indh-intro li{background:#f4f7fb;border:1px solid #e6edf5;border-radius:14px;padding:18px}
-.st-indh-intro strong{display:block;color:#0f172a;margin-bottom:4px}
-.st-indh-intro li{color:#475569;line-height:1.6;font-size:.95rem}
-
-.st-indh-grid-wrap{background:#f4f7fb;padding:72px 0 80px;border-top:1px solid #e8eef5}
-.st-indh-head{margin-bottom:28px}
-.st-indh-head h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:#0f172a;margin:0 0 8px}
-.st-indh-head p{margin:0;color:#64748b}
-.st-indh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.st-indh-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e6edf5;border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;min-height:100%}
-.st-indh-card img{width:100%;height:170px;object-fit:cover;display:block}
-.st-indh-card div{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
-.st-indh-card span{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0066CC;margin-bottom:6px}
-.st-indh-card h3{font-size:1.12rem;font-weight:800;color:#0f172a;margin:0 0 8px}
-.st-indh-card p{margin:0;color:#64748b;line-height:1.55;font-size:.9rem}
-.st-indh-card:hover{border-color:#bfdbfe;box-shadow:0 14px 32px rgba(15,42,80,.08)}
-.st-indh-card-feat{grid-column:span 2;grid-row:span 1}
-.st-indh-card-feat img{height:240px}
-
-.st-indh-cta{background:linear-gradient(135deg,#0066CC,#0052a3);padding:64px 0}
-.st-indh-cta h2{color:#fff;font-size:1.8rem;font-weight:800;margin:0 0 10px}
-.st-indh-cta p{color:rgba(255,255,255,.88);max-width:560px;margin:0 0 22px;line-height:1.7}
-.st-indh-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.st-indh-btn{display:inline-flex;background:#fff;color:#0f172a;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none}
-.st-indh-phone{color:#fff;font-weight:700;text-decoration:none}
-
-@media (max-width:900px){
-  .st-indh-intro-grid,.st-indh-grid{grid-template-columns:1fr 1fr}
-  .st-indh-card-feat{grid-column:span 2}
-}
-@media (max-width:640px){
-  .st-indh-intro-grid,.st-indh-grid{grid-template-columns:1fr}
-  .st-indh-card-feat{grid-column:auto}
-  .st-indh-hero{min-height:440px}
-}
-</style>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,7 +67,6 @@
   "description": {{ .Params.description | jsonify }},
   "url": {{ .Permalink | jsonify }},
   "isPartOf": {"@type":"WebSite","name":"Secure Techies","url":"https://securetechie.com/"},
-  "about": {"@id":"https://securetechie.com/#organization"},
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [

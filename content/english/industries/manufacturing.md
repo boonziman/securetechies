@@ -13,6 +13,13 @@ kicker: "Plants and industrial offices"
 hero_subtitle: "A down line costs more than a down laptop. Secure Techies supports manufacturers with office IT, careful plant connectivity, and backups that have been restored."
 hero_image: "/images/industries/manufacturing-industrial-it.webp"
 hero_alt: "Clean Southern California manufacturing plant with a glass control room"
+mid_image: "/images/industries/manufacturing-shipping-desk.webp"
+mid_alt: "Manufacturing shipping desk beside a plant floor"
+badges:
+  - "Production-first"
+  - "IT / OT boundary"
+  - "ERP uptime"
+  - "Local plants"
 weight: 6
 audience: "Manufacturers and industrial companies"
 service_type: "Managed IT services for manufacturing"
@@ -49,10 +56,32 @@ offerings:
     - title: "Backup and recovery"
       url: "/services/backup-disaster-recovery/"
       text: "Restore tests for ERP, files, and Microsoft 365 — not only the file share."
+stack:
+  heading: "What we touch — and what we do not"
+  intro: "Business systems are ours. PLCs stay with your controls vendor unless the SOW says otherwise."
+  items:
+    - "ERP infrastructure"
+    - "Microsoft 365"
+    - "Segmented networks"
+    - "Shipping / office PCs"
+    - "Backup of business systems"
+    - "Yard cameras when needed"
+process:
+  heading: "How we enter a plant"
+  intro: "Change windows follow production, not our calendar."
+  items:
+    - title: "Walk the boundary"
+      text: "What is IT, what is OT, and which OEM PCs were dropped on the LAN."
+    - title: "Isolate risk"
+      text: "Segment, inventory, and stop treating the floor like office Wi-Fi."
+    - title: "Harden the office side"
+      text: "Email and endpoints — that is still how ransomware arrives."
+    - title: "Schedule the rest"
+      text: "Patches and projects in the windows you already shut the line."
 photo_band:
-  image: "/images/industries/manufacturing-industrial-it.webp"
-  alt: "Manufacturing floor and control room"
-  quote: "We do not “optimize” a production network we do not fully understand. We isolate and document first."
+  image: "/images/services/infrastructure-overview.webp"
+  alt: "Managed infrastructure supporting plant and office systems"
+  quote: "We do not optimize a production network we do not fully understand. We isolate and document first."
 why:
   heading: "How we treat industrial environments"
   intro: "We are an MSP for the business systems. We are conservative — on purpose — around anything that moves a machine."
@@ -84,4 +113,8 @@ faq:
 
 Secure Techies provides **manufacturing IT services** for plants and industrial offices that need the business network solid and the production network left alone unless there is a plan.
 
-We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park. If your operation is closer to a contractor yard than a plant, see [construction](/industries/construction/).
+We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park.
+
+### Honest positioning
+
+Search for **manufacturing IT services** is full of vendors claiming they “converge OT and IT.” Some should. Many should not. We will tell you when you need a controls engineer. If your operation is closer to a contractor yard than a plant, see [construction](/industries/construction/).

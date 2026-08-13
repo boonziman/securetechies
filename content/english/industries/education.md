@@ -13,6 +13,13 @@ kicker: "Schools and education organizations"
 hero_subtitle: "Schools run on thin staff and a lot of devices. Secure Techies supports education organizations with practical IT, student-data hygiene, and a help desk that answers before the bell."
 hero_image: "/images/industries/education-campus-it.webp"
 hero_alt: "Quiet education campus administration hallway with glass offices and a computer lab"
+mid_image: "/images/industries/education-admin-office.webp"
+mid_alt: "School administration office after hours"
+badges:
+  - "Independent schools"
+  - "Student-data hygiene"
+  - "Academic calendar"
+  - "Right-sized"
 weight: 8
 audience: "Schools and education organizations"
 service_type: "Managed IT services for education"
@@ -49,9 +56,31 @@ offerings:
     - title: "Compliance and audits"
       url: "/services/compliance-security-audits/"
       text: "Vendor reviews and access documentation when a parent or auditor asks."
+stack:
+  heading: "Platforms we harden"
+  intro: "Google Workspace for Education or Microsoft 365 — we work with the one you already chose."
+  items:
+    - "Google Workspace / Microsoft 365"
+    - "SIS environment"
+    - "Faculty laptops"
+    - "Lab imaging (project)"
+    - "MFA for staff"
+    - "Backups"
+process:
+  heading: "How we schedule school work"
+  intro: "Opening week is not a maintenance window."
+  items:
+    - title: "Calendar first"
+      text: "Risky changes sit in breaks."
+    - title: "Staff identity"
+      text: "No shared admin accounts as the long-term plan."
+    - title: "Backup proof"
+      text: "Restore the SIS and mail before you need it."
+    - title: "Year-round tickets"
+      text: "Help desk that answers before the bell."
 photo_band:
-  image: "/images/industries/education-campus-it.webp"
-  alt: "Education administration building interior"
+  image: "/images/services/helpdesk-overview.webp"
+  alt: "Help desk support for school staff and administration"
   quote: "We schedule the risky work in the breaks. Opening week is not a maintenance window."
 why:
   heading: "How we work with schools"
@@ -84,4 +113,4 @@ faq:
 
 Secure Techies provides **education IT services** for campuses and education nonprofits that need student-data hygiene and systems that survive opening week.
 
-We are honest about fit: we are strongest with independent schools and education organizations, not 50-site public districts. If you are closer to a charity than a campus, see [nonprofit IT](/industries/nonprofit/).
+We are honest about fit: strongest with independent schools and education organizations, not 50-site public districts. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. If you are closer to a charity than a campus, see [nonprofit IT](/industries/nonprofit/).

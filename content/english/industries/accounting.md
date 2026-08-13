@@ -13,6 +13,13 @@ kicker: "CPA and accounting firms"
 hero_subtitle: "Tax season is not the time to discover the backup never worked. Secure Techies keeps CPA and accounting firms online, with client data locked down and staff unblocked."
 hero_image: "/images/industries/accounting-cpa-it-office.webp"
 hero_alt: "Accounting office desk with dual monitors and client files at dusk"
+mid_image: "/images/industries/accounting-conference-table.webp"
+mid_alt: "CPA conference table with closed laptops and unlabeled client folders"
+badges:
+  - "Tax-season ready"
+  - "Client-file security"
+  - "CPA firms"
+  - "SoCal local"
 weight: 3
 audience: "CPA and accounting firms"
 service_type: "Managed IT services for accounting firms"
@@ -49,9 +56,31 @@ offerings:
     - title: "Network security"
       url: "/services/network-security/"
       text: "Office Wi-Fi, firewalls, and remote access that does not fall over when everyone logs in at once."
+stack:
+  heading: "Applications we keep the environment ready for"
+  intro: "We are not Intuit or Thomson Reuters support. We keep Windows, Microsoft 365, printing, and backups healthy so tax software can work."
+  items:
+    - "Drake / Lacerte / UltraTax (environment)"
+    - "QuickBooks"
+    - "Microsoft 365"
+    - "Client portals"
+    - "MFA and email security"
+    - "Busy-season capacity"
+process:
+  heading: "How we prepare a firm"
+  intro: "The useful work happens before January."
+  items:
+    - title: "Pre-season review"
+      text: "Restore tests, licenses, patches, and seasonal-hire accounts."
+    - title: "Lock client data"
+      text: "MFA, email filtering, and least privilege on tax files."
+    - title: "Support the floor"
+      text: "Help desk that understands a deadline is not a preference."
+    - title: "After-action"
+      text: "What broke this season, what we change before next year."
 photo_band:
-  image: "/images/industries/accounting-cpa-it-office.webp"
-  alt: "CPA desk prepared for evening work"
+  image: "/images/services/backup-overview.webp"
+  alt: "Backup and recovery systems protecting accounting firm data"
   quote: "If the tax software cannot talk to the printer in April, the whole firm hears about it."
 why:
   heading: "Built for professional services, not a call center"
@@ -85,5 +114,16 @@ faq:
 Secure Techies provides **IT services for accounting firms** that cannot lose a day in March. From Canoga Park we run help desk, security, and backups for CPA practices and bookkeeping groups across Southern California.
 
 The work looks like other professional services — until busy season. Then every shared login, flaky VPN, and untested backup becomes a filing problem. We plan for that cycle on purpose.
+
+### Who this is for
+
+CPA firms and accounting practices searching for **IT services for accounting firms** because last tax season was held together with overtime and hope. If you also practice law, start at [law firms](/industries/law-firms/). If you are primarily wealth management, use [financial services](/industries/financial-services/).
+
+### What to demand from a CPA-focused MSP
+
+- A restore test **before** busy season, not after a failure
+- Seasonal staff onboarded in December
+- Email security that assumes W-2 phishing
+- Someone who will come on site when the scanner farm dies on April 14
 
 Related: [IT support cost for small professional firms](/blog/it-support-cost-small-business/) and [Microsoft 365 security](/blog/microsoft-365-business/).

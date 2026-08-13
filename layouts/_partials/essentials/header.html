@@ -53,17 +53,23 @@
         {{ $pageURL := $currentPage.Permalink | absLangURL }}
         {{ $active := eq $menuURL $pageURL }}
         {{ if .HasChildren }}
-          <li class="nav-item nav-dropdown group relative">
-            <input type="checkbox" id="submenu-{{ .Name | urlize }}" class="peer hidden lg:hidden" />
-            <label
-              for="submenu-{{ .Name | urlize }}"
-              class="nav-link {{ range .Children }}{{ $childURL := .URL | absLangURL }}{{ $active := eq $childURL $pageURL }}{{ if $active }}active{{ end }}{{ end }} inline-flex items-center gap-1 cursor-pointer">
-              {{ .Name }}
-              <svg class="w-3.5 h-3.5 opacity-50 mt-0.5 transition-transform group-hover:rotate-180 duration-200" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
-              </svg>
-            </label>
-            <ul class="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
+          {{ $parentActive := $active }}
+          {{ range .Children }}{{ $childURL := .URL | absLangURL }}{{ if eq $childURL $pageURL }}{{ $parentActive = true }}{{ end }}{{ end }}
+          <li class="nav-item nav-dropdown group relative{{ if ge (len .Children) 6 }} nav-dropdown--wide{{ end }}">
+            <div class="nav-dropdown-parent">
+              <a
+                class="nav-link {{ if $parentActive }}active{{ end }}"
+                href="{{ if findRE `^#` .URL }}{{ if not $.IsHome }}{{ site.Home.RelPermalink }}{{ end }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">
+                {{ .Name }}
+              </a>
+              <input type="checkbox" id="submenu-{{ .Name | urlize }}" class="nav-sub-check hidden lg:hidden" />
+              <label for="submenu-{{ .Name | urlize }}" class="nav-dropdown-toggle lg:pointer-events-none" aria-label="Show {{ .Name }} pages">
+                <svg class="w-3.5 h-3.5 opacity-50 transition-transform duration-200 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                </svg>
+              </label>
+            </div>
+            <ul class="nav-dropdown-list{{ if ge (len .Children) 6 }} nav-dropdown-list--cols{{ end }} hidden lg:invisible lg:absolute lg:grid lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
               {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
                 {{ $childActive := eq $childURL $pageURL }}

@@ -1,0 +1,23 @@
+{{ $src := .src | strings.TrimPrefix "/" }}
+{{ $alt := .alt | default "" }}
+{{ $w := .w | default 1280 }}
+{{ $h := .h | default 720 }}
+{{ $eager := .eager | default false }}
+{{ $sizes := .sizes | default "(max-width: 800px) 100vw, 50vw" }}
+{{ $res := resources.Get $src }}
+{{ if $res }}
+  {{ $s1 := $res.Resize "640x webp q70" }}
+  {{ $s2 := $res.Resize "960x webp q72" }}
+  {{ $s3 := $res.Resize "1280x webp q74" }}
+  <img
+    src="{{ $s2.RelPermalink }}"
+    srcset="{{ $s1.RelPermalink }} 640w, {{ $s2.RelPermalink }} 960w, {{ $s3.RelPermalink }} 1280w"
+    sizes="{{ $sizes }}"
+    alt="{{ $alt }}"
+    width="{{ $w }}"
+    height="{{ $h }}"
+    decoding="async"
+    {{ if $eager }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
+{{ else }}
+  <img src="{{ printf "/%s" $src | relURL }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}" decoding="async" {{ if $eager }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
+{{ end }}

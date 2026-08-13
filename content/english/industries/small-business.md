@@ -13,6 +13,13 @@ kicker: "Growing SMBs"
 hero_subtitle: "Most small businesses do not need a six-person IT shop. They need someone who answers, backups that restore, and security that is not a consumer antivirus trial."
 hero_image: "/images/industries/small-business-it-office.webp"
 hero_alt: "Bright Southern California small-business office with shared desks and plants"
+mid_image: "/images/industries/small-business-server-closet.webp"
+mid_alt: "Small-business server closet and standing desk"
+badges:
+  - "Outsourced IT"
+  - "Los Angeles"
+  - "No break-fix surprises"
+  - "Local team"
 weight: 13
 audience: "Small and mid-size businesses"
 service_type: "Managed IT services for small business"
@@ -49,9 +56,31 @@ offerings:
     - title: "Managed infrastructure"
       url: "/services/infrastructure/"
       text: "Servers, Microsoft 365, and the office network."
+stack:
+  heading: "What most SMBs actually need"
+  intro: "Help desk, Microsoft 365, backups, and security that is not a free antivirus trial."
+  items:
+    - "Microsoft 365"
+    - "24/7 help desk"
+    - "MFA"
+    - "Email security"
+    - "Tested backups"
+    - "Office network"
+process:
+  heading: "How we replace “my cousin looks at it”"
+  intro: "Stabilize first. Then the plan is boring on purpose."
+  items:
+    - title: "See the mess"
+      text: "Users, devices, the last outage, and who has the admin password."
+    - title: "Fix the loud problems"
+      text: "Backups, MFA, mail, and the workstation that reboots twice a day."
+    - title: "Put tickets somewhere"
+      text: "Owners stop being the help desk."
+    - title: "Review quarterly"
+      text: "What to buy, what to ignore, what it will cost."
 photo_band:
-  image: "/images/industries/small-business-it-office.webp"
-  alt: "Growing small-business office in Southern California"
+  image: "/images/services/helpdesk-overview.webp"
+  alt: "Managed help desk for small and mid-size businesses"
   quote: "If you are the owner and also the IT department, you already know this is not a good long-term job."
 why:
   heading: "Why SMBs stay"
@@ -84,4 +113,8 @@ faq:
 
 Secure Techies provides **small business IT services** for Southern California teams that have outgrown “my cousin looks at it.” We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [backups](/services/backup-disaster-recovery/) as one plan.
 
-If you are a law firm, start at [law firms](/industries/law-firms/). If you want the city page, use [managed IT services Los Angeles](/managed-it-services-los-angeles/).
+### What “managed IT for small business Los Angeles” should mean
+
+Not a call center that reads a script. A local team that can show up, a backup that has been restored, and a monthly number you can budget. Read [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/).
+
+If you are a law firm, start at [law firms](/industries/law-firms/). City landing: [managed IT services Los Angeles](/managed-it-services-los-angeles/).

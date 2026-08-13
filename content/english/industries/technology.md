@@ -13,6 +13,13 @@ kicker: "Startups and tech companies"
 hero_subtitle: "Your engineers should ship product, not reset MFA for sales. Secure Techies runs the corporate IT layer for Los Angeles tech teams that have outgrown “whoever knows Okta.”"
 hero_image: "/images/industries/technology-startup-it-loft.webp"
 hero_alt: "Downtown Los Angeles startup loft with a communal table and a glass server closet"
+mid_image: "/images/industries/technology-huddle-room.webp"
+mid_alt: "Startup huddle room with a glass wall and closed laptops"
+badges:
+  - "Corporate IT"
+  - "SOC 2 evidence"
+  - "Mac + Windows"
+  - "Not your prod"
 weight: 12
 audience: "Startups and technology companies"
 service_type: "Managed IT services for technology companies"
@@ -49,9 +56,31 @@ offerings:
     - title: "Infrastructure"
       url: "/services/infrastructure/"
       text: "Office network, meeting rooms, and the unglamorous gear that still breaks."
+stack:
+  heading: "The employee environment"
+  intro: "Production stays yours unless the SOW says otherwise."
+  items:
+    - "Okta / Microsoft 365 / Google"
+    - "MDM (Mac and Windows)"
+    - "Laptop fleet"
+    - "Offboarding"
+    - "SOC 2 evidence pack"
+    - "Office network"
+process:
+  heading: "How we split the work"
+  intro: "Engineers stop being tier 1."
+  items:
+    - title: "Draw the fence"
+      text: "Corporate identity and devices on our side."
+    - title: "Day-one laptops"
+      text: "Hiring should not be a Slack thread."
+    - title: "Questionnaire pack"
+      text: "MFA, offboarding, backups — written down."
+    - title: "Stay out of prod"
+      text: "Unless you hire us for that, we do not touch it."
 photo_band:
-  image: "/images/industries/technology-startup-it-loft.webp"
-  alt: "Startup loft workspace"
+  image: "/images/services/infrastructure-overview.webp"
+  alt: "Corporate infrastructure for growing technology companies"
   quote: "We will not touch production unless you hire us to. Corporate IT is the job."
 why:
   heading: "How we work with tech companies"
@@ -84,4 +113,6 @@ faq:
 
 Secure Techies provides **technology and startup IT** for companies that need an employee environment that will survive a customer’s security review.
 
-We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side. If you are still a ten-person shop, [small business IT](/industries/small-business/) may be the better front door.
+We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side.
+
+**IT support for startups** is usually a co-managed buy: you keep platform, we keep humans. If you are still a ten-person shop, [small business IT](/industries/small-business/) may be the better front door. Size hardware guesses with the [VM calculator](/tools/vm-calculator/).

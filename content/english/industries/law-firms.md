@@ -14,8 +14,13 @@ kicker: "Primary industry · ~50% of clients"
 hero_subtitle: "Law firms cannot miss a filing because Outlook is down. Secure Techies runs the IT behind Southern California practices — confidentiality, matter systems, and a help desk that understands billable time."
 hero_image: "/images/industries/law-firm-it-conference-room.webp"
 hero_alt: "Law firm conference room in Southern California with laptops and matter folders on a walnut table"
-mid_image: "/images/industries/law-firm-it-conference-room.webp"
-mid_alt: "Quiet law firm conference room prepared for a client meeting"
+mid_image: "/images/industries/law-firm-library.webp"
+mid_alt: "Law firm library annex with bound volumes and a closed laptop"
+badges:
+  - "~50% of our clients"
+  - "Los Angeles & Valley"
+  - "24/7 help desk"
+  - "Confidentiality-first"
 featured: true
 weight: 1
 audience: "Law firms and legal practices"
@@ -53,9 +58,31 @@ offerings:
     - title: "Compliance and audits"
       url: "/services/compliance-security-audits/"
       text: "Evidence, policies, and gap work for insurance, client audits, and HIPAA-adjacent matters."
+stack:
+  heading: "Systems we keep running around"
+  intro: "We do not replace your practice-management vendor. We keep identity, devices, email, and networks healthy so those tools stay available."
+  items:
+    - "Microsoft 365"
+    - "Practice management (Clio, Centerbase, and similar)"
+    - "Document systems (NetDocuments, iManage, SharePoint)"
+    - "MFA and email security"
+    - "Endpoint detection"
+    - "Tested Microsoft 365 backup"
+process:
+  heading: "How a firm engagement usually goes"
+  intro: "No 90-day mystery transformation. We stabilize what is noisy, then we stay."
+  items:
+    - title: "Listen and map"
+      text: "Users, locations, matter systems, and the last three outages. We write down what actually hurts."
+    - title: "Close the obvious holes"
+      text: "MFA, email filtering, backup restores, leftover accounts, and the workstation that has not patched since last year."
+    - title: "Help desk and monitoring"
+      text: "Attorneys and staff get a real queue. After-hours issues do not wait for Monday."
+    - title: "Quarterly review"
+      text: "What broke, what we should buy, what can wait. Managing partners get a short, plain report."
 photo_band:
-  image: "/images/industries/law-firm-it-conference-room.webp"
-  alt: "Sunlit law firm conference table ready for work"
+  image: "/images/services/cybersecurity-overview.webp"
+  alt: "Layered cybersecurity operations supporting confidential legal data"
   quote: "If the mailbox is down, the firm is down. We treat that as the starting assumption."
 why:
   heading: "Why firms stay with a local MSP"
@@ -84,6 +111,10 @@ faq:
       answer: "From Canoga Park across Los Angeles, the San Fernando Valley, and Southern California. Remote support is available nationwide for hybrid firms."
     - question: "How much does law firm IT support cost?"
       answer: "It depends on attorney and staff count, locations, and how much security and compliance work is in scope. We quote after a free assessment rather than publishing a fake per-user rate. Typical managed plans for professional firms land in the same ranges discussed on our [FAQ](/faq/)."
+    - question: "What makes legal IT different from generic office IT?"
+      answer: "Privilege, matter systems, billable-time culture, and client security addenda. A printer ticket is the same. A mailbox takeover is not."
+    - question: "Can you take over from our current MSP without downtime?"
+      answer: "Yes. We map access, mail, backups, and vendors first, then cut over in a window you approve. Most firms feel the change as better tickets, not a migration weekend."
 ---
 
 ## Managed IT built around a law firm, not a generic office
@@ -98,8 +129,52 @@ The [American Bar Association](https://www.americanbar.org/groups/professional_r
 
 California firms also sit under the [California Consumer Privacy Act](https://oag.ca.gov/privacy/ccpa) when they hold consumer personal information. We treat that as a control problem, not a slogan.
 
+### Who this page is for
+
+Managing partners, office managers, and COOs at firms that bill time in Los Angeles, the San Fernando Valley, or the wider Southern California market. Typical size is 8 to 80 people: enough complexity that informal IT is already failing, not so large that you already have a 12-person internal department.
+
+Search intent here is commercial. People typing **IT services for law firms** or **law firm IT support Los Angeles** already know they need a provider. They want proof you understand privilege, matter systems, and insurance questionnaires — not a generic MSP brochure.
+
+### What is included in law firm managed IT
+
+A standard engagement covers:
+
+- 24/7 [managed help desk](/services/managed-help-desk/) for attorneys, staff, and often contract attorneys
+- Microsoft 365 administration: licenses, sharing, retention, and the mess left by the last vendor
+- [Cybersecurity](/services/cybersecurity/) that assumes the firm is a target — because it is
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) with restore tests, including Microsoft 365
+- [Network security](/services/network-security/) for the office and the people working from home
+- Vendor coordination when Clio, NetDocuments, or the copier vendor wants to blame “the network”
+
+Projects (a move, a major migration, a new office) are quoted separately so the monthly plan stays predictable.
+
+### Los Angeles and Valley coverage
+
+Headquarters is in Canoga Park. That matters when a partner’s laptop dies the morning of a hearing in Van Nuys or Century City. Remote-first still handles most tickets. On-site is available across Los Angeles County and Southern California.
+
+If you want the conversion-focused city landing, use [law firm IT services in Los Angeles](/law-firm-it-services/). This industry page is the deeper reference: what we run, what we will not claim, and how to evaluate any MSP.
+
+### How to compare law firm IT providers
+
+Ask every vendor the same five things:
+
+1. Who answers after 8 p.m. when Outlook is down?
+2. When did you last restore a Microsoft 365 mailbox for a client — not a lab?
+3. How do you offboard a departing associate the same day?
+4. Will you complete our cyber-insurance questionnaire from the live environment?
+5. Do you show up on site, or is everything a remote contractor?
+
+If the answers are vague, keep shopping. Our notes on [law firm IT support](/blog/law-firm-it-support/) go deeper on the operational side.
+
+### Cost and next step
+
+Pricing depends on headcount, locations, and how much security work is in scope. Planning ranges for professional firms are discussed on the [FAQ](/faq/). We quote after a free assessment so the number matches your stack, not a blog post.
+
+Call (818) 431-5607 or [contact us](/contact/).
+
 ### Related reading
 
 - [Law firm IT services in Los Angeles](/law-firm-it-services/)
 - [Law firm IT support guide](/blog/law-firm-it-support/)
 - [Microsoft 365 for businesses that handle sensitive data](/blog/microsoft-365-business/)
+- [IT support cost for small professional firms](/blog/it-support-cost-small-business/)

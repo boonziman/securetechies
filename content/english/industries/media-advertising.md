@@ -13,6 +13,13 @@ kicker: "Agencies and studios"
 hero_subtitle: "Los Angeles agencies live on renders, shared drives, and client NDAs. Secure Techies keeps the studio online without turning the edit bay into a help-desk experiment."
 hero_image: "/images/industries/media-advertising-studio-it.webp"
 hero_alt: "Los Angeles advertising studio with color-graded monitors and camera equipment"
+mid_image: "/images/industries/media-edit-desk.webp"
+mid_alt: "Creative agency edit desk with color-graded monitors"
+badges:
+  - "LA agencies"
+  - "Large-file storage"
+  - "NDA-aware"
+  - "Deadline help desk"
 weight: 11
 audience: "Advertising agencies and media studios"
 service_type: "Managed IT services for media and advertising"
@@ -49,9 +56,31 @@ offerings:
     - title: "Backup and recovery"
       url: "/services/backup-disaster-recovery/"
       text: "Restores tested on the storage you actually use, not a sample folder."
+stack:
+  heading: "What we size and protect"
+  intro: "We are not your colorist. We keep storage, identity, and the network from becoming the delivery risk."
+  items:
+    - "Shared volumes / RAID"
+    - "Microsoft 365"
+    - "Freelancer access"
+    - "MFA"
+    - "Restore windows"
+    - "Studio websites"
+process:
+  heading: "How we enter a studio"
+  intro: "Ask what must restore in hours versus what can sit cold."
+  items:
+    - title: "Capacity math"
+      text: "Start with the [RAID calculator](/tools/raid-calculator/)."
+    - title: "Access windows"
+      text: "Freelancers appear Monday and vanish Friday."
+    - title: "Prove restore"
+      text: "Yesterday’s edit is the test, not a sample folder."
+    - title: "Deadline support"
+      text: "11 p.m. tickets are normal here."
 photo_band:
-  image: "/images/industries/media-advertising-studio-it.webp"
-  alt: "Creative studio monitors"
+  image: "/images/services/webdev-overview.webp"
+  alt: "Digital production and studio web work"
   quote: "If the shared volume dies at 11 p.m., the campaign does not care that it is after hours."
 why:
   heading: "Why LA agencies use a local MSP"

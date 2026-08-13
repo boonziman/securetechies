@@ -13,6 +13,13 @@ kicker: "Contractors and builders"
 hero_subtitle: "Construction companies run an office and a moving set of jobsites. Secure Techies supports both: Microsoft 365, field devices, and rapidly deployable site surveillance."
 hero_image: "/images/industries/construction-jobsite-it.webp"
 hero_alt: "Southern California construction jobsite at sunset with a site trailer, laptop, and blueprints"
+mid_image: "/images/industries/construction-project-trailer.webp"
+mid_alt: "Construction project trailer interior with plans and a laptop"
+badges:
+  - "Jobsite + HQ"
+  - "Mobile CCTV"
+  - "Field devices"
+  - "SoCal sites"
 weight: 5
 audience: "Construction companies and contractors"
 service_type: "Managed IT and site security for construction"
@@ -49,9 +56,31 @@ offerings:
     - title: "Mobile CCTV trailers"
       url: "/services/mobile-cctv-trailers/"
       text: "Solar, rapidly deployable surveillance for temporary and high-risk sites."
+stack:
+  heading: "Field and office tools we support around"
+  intro: "We keep identity, devices, and networks ready. Application support stays with Procore, Autodesk, and the rest."
+  items:
+    - "Microsoft 365"
+    - "Procore / Autodesk (environment)"
+    - "MDM for tablets"
+    - "Jobsite connectivity"
+    - "Mobile CCTV trailers"
+    - "Project offboarding"
+process:
+  heading: "How we work a contractor"
+  intro: "Stand it up at groundbreaking. Tear access down at punch list."
+  items:
+    - title: "Map office and sites"
+      text: "How many trailers, who has a tablet, where drawings live."
+    - title: "Standardize access"
+      text: "MFA, unique logins, and a wipe process when a crew rolls off."
+    - title: "Watch the yard"
+      text: "Trailers for cameras when the lot is the risk, not just the inbox."
+    - title: "Stay through the job"
+      text: "Help desk for PMs and accounting. Offboard when the job ends."
 photo_band:
-  image: "/images/industries/construction-jobsite-it.webp"
-  alt: "Jobsite trailer and framing at golden hour"
+  image: "/images/services/cctv/cctv-overview.jpg"
+  alt: "Mobile CCTV surveillance trailer for a construction site"
   quote: "If the trailer cannot reach the drawing set, the crew is guessing."
 why:
   heading: "Why contractors use us"
@@ -86,4 +115,10 @@ Secure Techies provides **construction IT services** for contractors who need th
 
 Jobsite connectivity is uneven. That is why the plan includes offline-tolerant backups, MFA that still works on a shared tablet, and a phone number a superintendent will actually call.
 
-Related reading: [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).
+### What buyers are actually searching
+
+**Construction IT services** and **jobsite IT support** mix two jobs: office Microsoft 365, and a moving set of sites with bad cell service and real theft. Most MSPs only do the first. We do both because we already run [mobile CCTV trailers](/services/mobile-cctv-trailers/).
+
+Theft context: the [NICB](https://www.nicb.org/) has documented how rarely stolen equipment comes back. Cameras do not replace insurance. They change what happens at 2 a.m. on an empty lot.
+
+Related: [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).

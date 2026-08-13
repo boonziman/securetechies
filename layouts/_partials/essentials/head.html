@@ -24,9 +24,22 @@
   {{ else if eq .Kind "section" }}
     {{ with index (where .Site.RegularPages "Section" "blog").ByDate.Reverse 0 }}{{ $lcpImage = .Params.image }}{{ end }}
   {{ end }}
+{{ else if eq .Section "industries" }}
+  {{ if eq .Kind "page" }}
+    {{ $lcpImage = .Params.hero_image | default .Params.image }}
+  {{ else }}
+    {{ $lcpImage = "/images/industries/industries-hub-los-angeles.webp" }}
+  {{ end }}
 {{ end }}
 {{ with $lcpImage }}
-<link rel="preload" as="image" href="{{ . | strings.TrimPrefix "/" | relURL }}" fetchpriority="high" />
+  {{ $lcpPath := . | strings.TrimPrefix "/" }}
+  {{ $lcpRes := resources.Get $lcpPath }}
+  {{ if $lcpRes }}
+    {{ $lcpReady := $lcpRes.Resize "1280x webp q74" }}
+    <link rel="preload" as="image" href="{{ $lcpReady.RelPermalink }}" fetchpriority="high" type="image/webp" />
+  {{ else }}
+    <link rel="preload" as="image" href="{{ . | relURL }}" fetchpriority="high" />
+  {{ end }}
 {{ end }}
 
 {{/* Editorial display serif (Fraunces) — loaded only on blog pages for the premium post typography. Scoped so the rest of the site is unaffected. */}}

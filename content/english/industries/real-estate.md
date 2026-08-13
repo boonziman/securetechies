@@ -13,6 +13,13 @@ kicker: "Brokerages and property managers"
 hero_subtitle: "Deals die in the inbox. Secure Techies keeps Los Angeles brokerages and property teams on working email, working devices, and backups that restore a transaction file."
 hero_image: "/images/industries/real-estate-brokerage-it.webp"
 hero_alt: "Bright Los Angeles real estate brokerage with standing desks and large windows"
+mid_image: "/images/industries/real-estate-transaction-desk.webp"
+mid_alt: "Real estate transaction desk with keys and a closed laptop"
+badges:
+  - "Brokerages"
+  - "Property ops"
+  - "Wire-fraud aware"
+  - "Mobile agents"
 weight: 7
 audience: "Real estate brokerages and property managers"
 service_type: "Managed IT services for real estate"
@@ -49,10 +56,32 @@ offerings:
     - title: "Web and digital"
       url: "/services/web-development/"
       text: "Secure sites and landing pages when the brokerage needs a better public face."
+stack:
+  heading: "Tools we keep available"
+  intro: "MLS and transaction platforms stay with their vendors. We keep mail, identity, and devices from becoming the bottleneck."
+  items:
+    - "Microsoft 365"
+    - "Dotloop / SkySlope (environment)"
+    - "MFA"
+    - "Agent offboarding"
+    - "Office Wi-Fi"
+    - "Optional site CCTV"
+process:
+  heading: "How we take a brokerage"
+  intro: "Same-day offboarding is the control most offices skip."
+  items:
+    - title: "Inventory people"
+      text: "Who still has a mailbox from 2019."
+    - title: "Lock email"
+      text: "MFA and filtering aimed at wiring-instruction fraud."
+    - title: "Standardize offices"
+      text: "Five suites should not mean five consumer routers."
+    - title: "Stay on call"
+      text: "Agents in driveways still need a human."
 photo_band:
-  image: "/images/industries/real-estate-brokerage-it.webp"
-  alt: "Los Angeles brokerage interior"
-  quote: "If the listing agent cannot send the docs, the deal is not “pending.” It is stuck."
+  image: "/images/services/network-overview.webp"
+  alt: "Network and connectivity for multi-office real estate teams"
+  quote: "If the listing agent cannot send the docs, the deal is not pending. It is stuck."
 why:
   heading: "Why brokerages hire us"
   intro: "We already live in professional-services IT. Real estate is the mobile version of that problem."
@@ -83,5 +112,9 @@ faq:
 ## IT support for real estate and property teams
 
 Secure Techies provides **real estate IT services** for brokerages and property managers in Southern California. The work is email, devices, identity, and the ugly problem of wiring-instruction fraud.
+
+### Keyword reality
+
+**IT for real estate** and **property management IT** searches are local and commercial. Buyers want fewer mailbox takeovers and faster tickets, not a CRM lecture.
 
 If your portfolio includes construction or vacant sites, pair this with [construction IT](/industries/construction/) and [mobile CCTV trailers](/services/mobile-cctv-trailers/).

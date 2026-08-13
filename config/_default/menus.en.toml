@@ -29,12 +29,6 @@ weight = 2
 
 [[main]]
 parent = "Services"
-name = "All Services"
-url = "/services/"
-weight = 0
-
-[[main]]
-parent = "Services"
 name = "Managed Infrastructure"
 url = "/services/infrastructure/"
 weight = 1
@@ -86,12 +80,6 @@ weight = 8
 name = "Industries"
 url = "/industries/"
 weight = 3
-
-[[main]]
-parent = "Industries"
-name = "All Industries"
-url = "/industries/"
-weight = 0
 
 [[main]]
 parent = "Industries"

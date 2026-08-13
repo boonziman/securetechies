@@ -13,6 +13,13 @@ kicker: "Nonprofits and associations"
 hero_subtitle: "Donors trust you with more than money. Secure Techies keeps nonprofit systems running and supporter data from becoming the next headline."
 hero_image: "/images/industries/nonprofit-it-office.webp"
 hero_alt: "Warm nonprofit community office with shared tables and laptops"
+mid_image: "/images/industries/nonprofit-records-desk.webp"
+mid_alt: "Nonprofit records desk with a locked cabinet and closed laptop"
+badges:
+  - "Donor-data first"
+  - "Mission budget"
+  - "Volunteer access"
+  - "Board-ready reports"
 weight: 9
 audience: "Nonprofit organizations"
 service_type: "Managed IT services for nonprofits"
@@ -49,9 +56,31 @@ offerings:
     - title: "Web and digital"
       url: "/services/web-development/"
       text: "Secure sites when the public-facing page is part of fundraising."
+stack:
+  heading: "Systems we keep around fundraising"
+  intro: "CRM application support stays with the vendor. We keep identity, mail, and backups honest."
+  items:
+    - "Microsoft 365"
+    - "Bloomerang / Salesforce (environment)"
+    - "MFA"
+    - "Volunteer offboarding"
+    - "Donor-file backups"
+    - "Website security"
+process:
+  heading: "How we start with a nonprofit"
+  intro: "We do not sell you a stack you will never staff."
+  items:
+    - title: "See the real budget"
+      text: "What you must protect this year versus what can wait."
+    - title: "Close leftover access"
+      text: "Boards and volunteers who still have mailboxes."
+    - title: "Prove the backup"
+      text: "Restore donor data once so the board can hear it happened."
+    - title: "Quiet operations"
+      text: "Help desk so program staff stay on program work."
 photo_band:
-  image: "/images/industries/nonprofit-it-office.webp"
-  alt: "Nonprofit shared workspace"
+  image: "/images/services/backup-overview.webp"
+  alt: "Backup systems protecting nonprofit donor records"
   quote: "A breach at a nonprofit is not just an IT story. It is a donor-trust story."
 why:
   heading: "How we price and staff this work"
@@ -84,4 +113,4 @@ faq:
 
 Secure Techies provides **nonprofit IT services** for organizations that need donor-data protection and a help desk without building an internal department.
 
-If you are a school, start at [education](/industries/education/). If you are a growing office that happens to have a mission, [small business IT](/industries/small-business/) may fit better.
+California nonprofits holding consumer personal information should treat [CCPA](https://oag.ca.gov/privacy/ccpa) as real. If you are a school, start at [education](/industries/education/). If you are a growing office that happens to have a mission, [small business IT](/industries/small-business/) may fit better.

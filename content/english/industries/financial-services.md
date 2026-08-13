@@ -13,6 +13,13 @@ kicker: "Advisors and financial firms"
 hero_subtitle: "Wealth and financial firms get judged on trust. Secure Techies keeps the technology side of that trust intact — access control, email security, and systems that stay up when markets do not."
 hero_image: "/images/industries/financial-services-it-office.webp"
 hero_alt: "Quiet wealth-management office with a city view and a closed laptop"
+mid_image: "/images/industries/financial-advisor-nook.webp"
+mid_alt: "Quiet financial advisor meeting nook with a city skyline"
+badges:
+  - "Advisor firms"
+  - "Identity-first"
+  - "Questionnaire-ready"
+  - "Local SoCal"
 weight: 4
 audience: "Wealth advisors and financial firms"
 service_type: "Managed IT services for financial firms"
@@ -49,10 +56,32 @@ offerings:
     - title: "Backup and recovery"
       url: "/services/backup-disaster-recovery/"
       text: "Tested recovery for mail, files, and the systems that hold client records."
+stack:
+  heading: "What we harden first"
+  intro: "Identity and email. That is where most financial-office incidents still start."
+  items:
+    - "Microsoft 365"
+    - "MFA everywhere"
+    - "SPF / DKIM / DMARC"
+    - "EDR on endpoints"
+    - "Custodian / vendor questionnaires"
+    - "Mailbox backup"
+process:
+  heading: "How we engage an advisory shop"
+  intro: "We make the technical answers on your next questionnaire true."
+  items:
+    - title: "Inventory identity"
+      text: "Leftover contractors, shared mailboxes, and admin rights nobody remembers."
+    - title: "Close email holes"
+      text: "Authentication, filtering, and MFA. Then we train people to treat urgent wires as suspicious."
+    - title: "Evidence pack"
+      text: "Enough documentation to answer a custodian without fiction."
+    - title: "Stay on watch"
+      text: "Help desk plus monitoring so a takeover is not discovered by a client."
 photo_band:
-  image: "/images/industries/financial-services-it-office.webp"
-  alt: "Advisor office overlooking the city"
-  quote: "Most “wire fraud” starts as an email problem. We treat email as a security system."
+  image: "/images/services/cybersecurity-overview.webp"
+  alt: "Cybersecurity monitoring for financial professional firms"
+  quote: "Most wire fraud starts as an email problem. We treat email as a security system."
 why:
   heading: "How we work with financial teams"
   intro: "We are not your compliance officer. We are the team that makes the technical answers true."
@@ -86,4 +115,10 @@ Secure Techies provides **financial services IT** for advisory and professional 
 
 We pair this work with the same [cybersecurity](/services/cybersecurity/) and [backup](/services/backup-disaster-recovery/) stack we use for [law firms](/industries/law-firms/). If you also run a tax practice, see [accounting](/industries/accounting/).
 
-Authoritative context: the [SEC’s cybersecurity guidance for investment advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer.
+### Search intent
+
+People looking for **IT for wealth advisors** or **financial services IT** usually have a questionnaire due or a close call with a spoofed wire. They are comparing MSPs on whether security is built in.
+
+We support independent advisory and professional finance offices — not national banks. [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer.
+
+If you also run tax work, see [accounting](/industries/accounting/). For law-firm sisters, see [law firms](/industries/law-firms/).
