@@ -62,24 +62,30 @@ offerings:
       text: "Restore tests for ERP, files, and Microsoft 365 — not only the file share."
 work:
   heading: "Everything we do for manufacturers"
-  intro: "Business IT, done carefully around production."
-  items:
-    - title: "Office and shipping help desk"
-      text: "ERP users, accounting, and the shipping desk."
-    - title: "IT / OT boundary"
-      text: "We inventory OEM PCs and isolate what we cannot harden. We do not casually reprogram PLCs."
-    - title: "Network segmentation"
-      text: "The floor is not office Wi-Fi."
-    - title: "Email and ransomware path"
-      text: "Most plant incidents still start in a mailbox."
-    - title: "ERP infrastructure"
-      text: "Servers, identity, and backups. Application issues stay with the ERP vendor."
-    - title: "Change windows"
-      text: "Patches follow the production calendar."
-    - title: "Yard and warehouse cameras"
-      text: "Mobile CCTV when the lot is the risk."
-    - title: "On-site plants"
-      text: "Southern California from Canoga Park."
+  intro: "Business IT, done carefully around production. We do not treat the floor like a coffee-shop network."
+  groups:
+    - name: "Plant and office"
+      items:
+        - title: "Office and shipping help desk"
+          text: "ERP users, accounting, and the shipping desk."
+        - title: "ERP infrastructure"
+          text: "Servers, identity, and backups. Application issues stay with the ERP vendor."
+        - title: "Change windows"
+          text: "Patches follow the production calendar, not our ticket clock."
+    - name: "Boundaries"
+      items:
+        - title: "IT / OT boundary"
+          text: "We inventory OEM PCs and isolate what we cannot harden. We do not casually reprogram PLCs."
+        - title: "Network segmentation"
+          text: "The floor is not office Wi-Fi."
+        - title: "Email and ransomware path"
+          text: "Most plant incidents still start in a mailbox."
+    - name: "Yard and local"
+      items:
+        - title: "Yard and warehouse cameras"
+          text: "Mobile CCTV when the lot is the risk."
+        - title: "On-site plants"
+          text: "Southern California from Canoga Park."
 stack:
   heading: "What we touch — and what we do not"
   intro: "Business systems are ours. PLCs stay with your controls vendor unless the SOW says otherwise."
@@ -135,10 +141,32 @@ faq:
 
 ## IT support for manufacturing companies
 
-Secure Techies provides **manufacturing IT services** for plants and industrial offices that need the business network solid and the production network left alone unless there is a plan.
+Secure Techies provides **manufacturing IT services** for plants and industrial offices that need the business network solid and the production network left alone unless there is a written plan.
 
-We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park.
+We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park. Change windows follow your production calendar. If a patch could stop a line, it is scheduled, approved, and reversible.
 
-### Honest positioning
+### Who this is for
 
-Search for **manufacturing IT services** is full of vendors claiming they “converge OT and IT.” Some should. Many should not. We will tell you when you need a controls engineer. If your operation is closer to a contractor yard than a plant, see [construction](/industries/construction/).
+Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems — not a firm that wants us to reprogram PLCs.
+
+If the operation is closer to a contractor yard than a plant, see [construction](/industries/construction/).
+
+### What “careful around production” means
+
+- Inventory OEM PCs that were dropped on the LAN and never patched
+- Segment IT from OT so a mailbox incident does not walk onto a controller
+- Treat ERP, inventory, and shipping as critical — trucks waiting is not a printer ticket
+- Keep email and endpoints hard on the business side. That is still how ransomware arrives
+- Tell you when you need a specialist controls engineer instead of improvising
+
+Search for **manufacturing IT services** is full of vendors claiming they “converge OT and IT.” Some should. Many should not. We would rather be precise.
+
+### Yard and warehouse
+
+Where the lot or staging area is the risk, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover it without a six-month cabling project.
+
+### Coverage
+
+On-site across Southern California from Canoga Park. Remote for multi-site companies.
+
+Call (818) 431-5607 or [contact us](/contact/).

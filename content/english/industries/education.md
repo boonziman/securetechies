@@ -63,23 +63,29 @@ offerings:
 work:
   heading: "Everything we do for schools"
   intro: "Staff identity, classroom devices, and a calendar that respects opening week."
-  items:
-    - title: "Staff help desk"
-      text: "Tickets that get answered before the bell."
-    - title: "Google Workspace or Microsoft 365"
-      text: "We harden the platform you already chose."
-    - title: "Student-data hygiene"
-      text: "Least privilege, vendor inventory, no shared admin as the long-term plan."
-    - title: "Faculty laptops"
-      text: "Patching, encryption, and a replace-when-it-dies process."
-    - title: "Lab imaging as a project"
-      text: "Before the year starts — not every Tuesday."
-    - title: "Backups"
-      text: "SIS environment, mail, and files with restore tests."
-    - title: "Calendar-aware change"
-      text: "Risky work sits in the breaks."
-    - title: "On-site SoCal"
-      text: "Independent campuses from Canoga Park."
+  groups:
+    - name: "Campus and staff"
+      items:
+        - title: "Staff help desk"
+          text: "Tickets that get answered before the bell."
+        - title: "Faculty laptops"
+          text: "Patching, encryption, and a replace-when-it-dies process."
+        - title: "Lab imaging as a project"
+          text: "Before the year starts — not every Tuesday."
+        - title: "On-site SoCal"
+          text: "Independent campuses from Canoga Park."
+    - name: "Student data"
+      items:
+        - title: "Google Workspace or Microsoft 365"
+          text: "We harden the platform you already chose."
+        - title: "Student-data hygiene"
+          text: "Least privilege, vendor inventory, no shared admin as the long-term plan."
+        - title: "Backups"
+          text: "SIS environment, mail, and files with restore tests."
+    - name: "The school year"
+      items:
+        - title: "Calendar-aware change"
+          text: "Risky work sits in the breaks. Opening week is not a maintenance window."
 stack:
   heading: "Platforms we harden"
   intro: "Google Workspace for Education or Microsoft 365 — we work with the one you already chose."
@@ -135,6 +141,24 @@ faq:
 
 ## IT support for schools and education organizations
 
-Secure Techies provides **education IT services** for campuses and education nonprofits that need student-data hygiene and systems that survive opening week.
+Secure Techies provides **education IT services** for campuses and education organizations that need student-data hygiene and systems that survive opening week.
 
-We are honest about fit: strongest with independent schools and education organizations, not 50-site public districts. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. If you are closer to a charity than a campus, see [nonprofit IT](/industries/nonprofit/).
+We are honest about fit. This page is strongest for independent schools, training organizations, and education nonprofits — not a 50-site public district with its own IT shop. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. If you are closer to a charity than a campus, see [nonprofit IT](/industries/nonprofit/).
+
+### What a right-sized school plan includes
+
+- Staff help desk that answers before the bell
+- Hardening of the platform you already chose — Google Workspace for Education or Microsoft 365
+- Least privilege, vendor inventory, and no shared admin as the long-term plan
+- Faculty laptop standards: patching, encryption, a replace-when-it-dies process
+- Lab imaging as a **project** before the year starts, not an every-Tuesday surprise
+- Restore tests for the SIS environment, mail, and files
+- Change windows in the breaks. Opening week is not a maintenance window
+
+We do not mine student data. We do not pretend a 40-person school needs a district NOC.
+
+### Coverage
+
+On-site from Canoga Park across Southern California. Remote for multi-campus groups.
+
+Call (818) 431-5607 or [contact us](/contact/).

@@ -70,10 +70,10 @@
               </label>
             </div>
             <ul class="nav-dropdown-list{{ if ge (len .Children) 6 }} nav-dropdown-list--cols{{ end }} hidden lg:invisible lg:absolute lg:grid lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
-              {{ range .Children }}
+              {{ range sort .Children "Weight" "asc" }}
                 {{ $childURL := .URL | absLangURL }}
                 {{ $childActive := eq $childURL $pageURL }}
-                <li class="nav-dropdown-item">
+                <li class="nav-dropdown-item{{ if or (eq .Name "All Industries") (eq .Name "All Services") }} nav-dropdown-item--all{{ end }}">
                   <a
                     class="nav-dropdown-link {{ if $childActive }}active{{ end }}"
                     {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}

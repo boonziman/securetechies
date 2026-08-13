@@ -62,24 +62,30 @@ offerings:
       text: "Tested recovery for mail, files, and the systems that hold client records."
 work:
   heading: "Everything we do for financial firms"
-  intro: "Identity and email first. Then the rest of the office."
-  items:
-    - title: "Identity cleanup"
-      text: "Leftover contractors, shared mailboxes, and leftover admin rights."
-    - title: "Email authentication and filtering"
-      text: "SPF, DKIM, DMARC, and a help desk that treats urgent wires as suspicious."
-    - title: "MFA everywhere"
-      text: "Mail, VPN, and the custodian portals we can reach."
-    - title: "Endpoint protection"
-      text: "EDR and encryption on advisor laptops."
-    - title: "Questionnaire evidence"
-      text: "We answer from the live environment, not a sales deck."
-    - title: "Help desk"
-      text: "Advisors and operations staff get a human."
-    - title: "Backups including Microsoft 365"
-      text: "Mailbox and file restores that have been tested."
-    - title: "On-site SoCal"
-      text: "Hardware and office network from Canoga Park."
+  intro: "Identity and email first. Then the rest of the office. That is still how most incidents start — and how most questionnaires are answered."
+  groups:
+    - name: "Identity and email"
+      items:
+        - title: "Identity cleanup"
+          text: "Leftover contractors, shared mailboxes, and leftover admin rights."
+        - title: "Email authentication and filtering"
+          text: "SPF, DKIM, DMARC, and a help desk that treats urgent wires as suspicious."
+        - title: "MFA everywhere"
+          text: "Mail, VPN, and the custodian portals we can reach."
+    - name: "Proof and endpoints"
+      items:
+        - title: "Endpoint protection"
+          text: "EDR and encryption on advisor laptops."
+        - title: "Questionnaire evidence"
+          text: "We answer from the live environment, not a sales deck."
+        - title: "Backups including Microsoft 365"
+          text: "Mailbox and file restores that have been tested."
+    - name: "Day-to-day"
+      items:
+        - title: "Help desk"
+          text: "Advisors and operations staff get a human."
+        - title: "On-site SoCal"
+          text: "Hardware and office network from Canoga Park."
 stack:
   heading: "What we harden first"
   intro: "Identity and email. That is where most financial-office incidents still start."
@@ -139,10 +145,23 @@ Secure Techies provides **financial services IT** for advisory and professional 
 
 We pair this work with the same [cybersecurity](/services/cybersecurity/) and [backup](/services/backup-disaster-recovery/) stack we use for [law firms](/industries/law-firms/). If you also run a tax practice, see [accounting](/industries/accounting/).
 
-### Search intent
+### Who this is for
 
-People looking for **IT for wealth advisors** or **financial services IT** usually have a questionnaire due or a close call with a spoofed wire. They are comparing MSPs on whether security is built in.
+Independent RIAs, advisory shops, and professional finance offices — not national banks. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model.
 
-We support independent advisory and professional finance offices — not national banks. [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer.
+People looking for this page usually have a custodian questionnaire due or a close call with a spoofed wire. [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer.
 
-If you also run tax work, see [accounting](/industries/accounting/). For law-firm sisters, see [law firms](/industries/law-firms/).
+### What we make true
+
+- Identity cleanup: leftover contractors, shared mailboxes, leftover admin rights
+- MFA on mail, VPN, and the portals we can reach
+- SPF, DKIM, DMARC, and a help desk that treats “urgent wire” email as suspicious
+- EDR and encryption on advisor laptops
+- Mailbox and file backups that have been restored
+- Questionnaire answers taken from the live environment, not a sales deck
+
+We are not your CCO. Regulatory exams belong to your compliance officer and counsel. We make the technical answers examinable.
+
+### Coverage
+
+Canoga Park. On-site across Southern California. Call (818) 431-5607 or [contact us](/contact/).

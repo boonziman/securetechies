@@ -1,175 +1,203 @@
 {{ define "main" }}
 {{ $p := .Params }}
 {{ $related := first 4 (where .CurrentSection.Pages.ByWeight "Permalink" "!=" .Permalink) }}
+{{ $bandQuote := "" }}
+{{ $bandAlt := $p.body_alt }}
+{{ with $p.photo_band }}
+  {{ $bandQuote = .quote }}
+  {{ if not $bandAlt }}{{ $bandAlt = .alt }}{{ end }}
+{{ end }}
+{{ $svcPhotos := dict
+  "/services/infrastructure/" "images/services/infrastructure-overview.webp"
+  "/services/managed-help-desk/" "images/services/helpdesk-overview.webp"
+  "/services/network-security/" "images/services/network-overview.webp"
+  "/services/mobile-cctv-trailers/" "images/services/cctv/cctv-overview.jpg"
+  "/services/cybersecurity/" "images/services/cybersecurity-overview.webp"
+  "/services/backup-disaster-recovery/" "images/services/backup-overview.webp"
+  "/services/compliance-security-audits/" "images/services/compliance-overview.webp"
+  "/services/web-development/" "images/services/webdev-overview.webp"
+}}
 
 <article class="st-indp">
+
   <header class="st-indp-hero">
-    <div class="st-accent-glow" aria-hidden="true"></div>
-    <div class="st-indp-hero-copy">
+    {{ partial "ind-img.html" (dict "src" $p.hero_image "alt" $p.hero_alt "w" 1600 "h" 900 "eager" true "sizes" "100vw") }}
+    <div class="st-indp-hero-shade"></div>
+    <div class="st-indp-hero-inner">
       <nav class="st-indp-crumb" aria-label="Breadcrumb">
         <a href="{{ "/" | relURL }}">Home</a>
-        <span aria-hidden="true">/</span>
+        <span>/</span>
         <a href="{{ "industries/" | relURL }}">Industries</a>
-        <span aria-hidden="true">/</span>
+        <span>/</span>
         <span>{{ $p.short_name | default .Title }}</span>
       </nav>
       {{ with $p.kicker }}<p class="st-indp-kicker">{{ . }}</p>{{ end }}
       <h1>{{ .Title }}</h1>
       <span class="st-accent-rule" aria-hidden="true"></span>
       <p class="st-indp-lead">{{ $p.hero_subtitle }}</p>
-      {{ with $p.badges }}
-      <ul class="st-indp-badges">
-        {{ range . }}<li>{{ . }}</li>{{ end }}
-      </ul>
-      {{ end }}
+      <div class="st-indp-actions">
+        <a class="st-indp-btn" href="{{ "contact/" | relURL }}">Free assessment</a>
+        <a class="st-indp-phone" href="tel:+18184315607">(818) 431-5607</a>
+      </div>
       {{ with $p.hero_stats }}
-      <ul class="st-indp-stats">
+      <ul class="st-indp-facts" aria-label="Key facts">
         {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
       </ul>
       {{ end }}
-      <div class="st-indp-actions">
-        <a class="st-indp-btn" href="{{ "contact/" | relURL }}">Free industry assessment</a>
-        <a class="st-indp-phone" href="tel:+18184315607">(818) 431-5607</a>
-      </div>
     </div>
-    <figure class="st-indp-hero-media">
-      {{ partial "ind-img.html" (dict "src" $p.hero_image "alt" $p.hero_alt "w" 1280 "h" 720 "eager" true "sizes" "(max-width: 980px) 100vw, 50vw") }}
-    </figure>
   </header>
 
+  <nav class="st-indp-jump" aria-label="On this page">
+    <div class="st-indp-wrap">
+      {{ with $p.challenges }}<a href="#challenges">Challenges</a>{{ end }}
+      {{ with $p.work }}<a href="#scope">What we run</a>{{ end }}
+      {{ with $p.offerings }}<a href="#services">Services</a>{{ end }}
+      {{ if $.Content }}<a href="#details">Details</a>{{ end }}
+      {{ with $p.process }}<a href="#process">How we start</a>{{ end }}
+      {{ with $p.why }}<a href="#why">Why us</a>{{ end }}
+      {{ with $p.faq }}<a href="#faq">FAQ</a>{{ end }}
+    </div>
+  </nav>
+
   {{ with $p.challenges }}
-  <section class="st-indp-section" id="challenges">
+  <section class="st-indp-sec" id="challenges">
     <div class="st-indp-wrap st-indp-split">
-      <figure class="st-indp-photo st-accent-frame">
-        {{ partial "ind-img.html" (dict "src" ($.Params.mid_image | default $.Params.hero_image) "alt" ($.Params.mid_alt | default $.Params.hero_alt) "w" 1248 "h" 832 "sizes" "(max-width: 980px) 100vw, 44vw") }}
-      </figure>
       <div>
+        <p class="st-indp-eyebrow">Why this industry is different</p>
         <h2>{{ .heading }}</h2>
         <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
-        <p>{{ .intro }}</p>
-        <ul class="st-indp-challenges">
-          {{ range .items }}
+        <p class="st-indp-lede">{{ .intro }}</p>
+        <ol class="st-indp-issues">
+          {{ range $i, $item := .items }}
           <li>
-            <span class="st-indp-ico" aria-hidden="true">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
-            </span>
+            <span>{{ printf "%02d" (add $i 1) }}</span>
             <div>
-              <h3>{{ .title }}</h3>
-              <p>{{ .text }}</p>
+              <h3>{{ $item.title }}</h3>
+              <p>{{ $item.text }}</p>
             </div>
           </li>
           {{ end }}
-        </ul>
+        </ol>
       </div>
-    </div>
-  </section>
-  {{ end }}
-
-  {{ with $p.offerings }}
-  <section class="st-indp-section st-indp-alt" id="what-we-do">
-    <div class="st-indp-wrap">
-      <div class="st-indp-head">
-        <div>
-          <h2>{{ .heading }}</h2>
-          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
-          <p>{{ .intro }}</p>
-        </div>
-      </div>
-      <div class="st-indp-offer">
-        {{ range .items }}
-        <a href="{{ .url | relURL }}">
-          <span class="st-indp-ico st-indp-ico-blue" aria-hidden="true">
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </span>
-          <h3>{{ .title }}</h3>
-          <p>{{ .text }}</p>
-          <span class="st-indp-more">Explore {{ .title }}</span>
-        </a>
-        {{ end }}
-      </div>
+      <figure class="st-indp-frame">
+        {{ partial "ind-img.html" (dict "src" ($.Params.mid_image | default $.Params.hero_image) "alt" ($.Params.mid_alt | default $.Params.hero_alt) "w" 1248 "h" 832 "sizes" "(max-width: 900px) 100vw, 46vw") }}
+      </figure>
     </div>
   </section>
   {{ end }}
 
   {{ with $p.work }}
-  <section class="st-indp-section" id="scope">
-    <div class="st-indp-wrap st-indp-split st-indp-split-rev">
-      <div>
+  <section class="st-indp-sec st-indp-tint" id="scope">
+    <div class="st-indp-wrap">
+      <header class="st-indp-head">
+        <p class="st-indp-eyebrow">What is in the plan</p>
         <h2>{{ .heading }}</h2>
-        <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
         <p>{{ .intro }}</p>
-        <ul class="st-indp-work">
-          {{ range .items }}
-          <li>
-            <h3>{{ .title }}</h3>
-            <p>{{ .text }}</p>
-          </li>
-          {{ end }}
-        </ul>
+      </header>
+      {{ if .groups }}
+      <div class="st-indp-groups">
+        {{ range .groups }}
+        <div class="st-indp-group">
+          <h3>{{ .name }}</h3>
+          <ul>
+            {{ range .items }}
+            <li>
+              <strong>{{ .title }}</strong>
+              <div class="st-indp-group-text">{{ .text | markdownify }}</div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
       </div>
-      <figure class="st-indp-photo st-accent-frame">
-        {{ partial "ind-img.html" (dict "src" ($.Params.body_image | default $.Params.mid_image) "alt" ($.Params.body_alt | default $.Params.mid_alt) "w" 1152 "h" 864 "sizes" "(max-width: 980px) 100vw, 44vw") }}
-      </figure>
+      {{ else }}
+      <ul class="st-indp-scope">
+        {{ range .items }}
+        <li>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
     </div>
   </section>
   {{ end }}
 
-  {{ with $p.stack }}
-  <section class="st-indp-section st-indp-alt" id="stack">
+  {{ with $p.body_image }}
+  <figure class="st-indp-quote">
+    {{ partial "ind-img.html" (dict "src" . "alt" ($bandAlt | default "") "w" 1600 "h" 800 "sizes" "100vw") }}
+    <div class="st-indp-quote-shade"></div>
+    {{ if $bandQuote }}
+    <blockquote>
+      <p>{{ $bandQuote }}</p>
+    </blockquote>
+    {{ end }}
+  </figure>
+  {{ end }}
+
+  {{ with $p.offerings }}
+  <section class="st-indp-sec" id="services">
     <div class="st-indp-wrap">
-      <div class="st-indp-head">
+      <header class="st-indp-rowhead">
         <div>
+          <p class="st-indp-eyebrow">How the work is packaged</p>
           <h2>{{ .heading }}</h2>
-          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
           <p>{{ .intro }}</p>
         </div>
+        <a class="st-indp-textlink" href="{{ "services/" | relURL }}">All services</a>
+      </header>
+      <div class="st-indp-svcgrid">
+        {{ range .items }}
+        {{ $photo := index $svcPhotos .url }}
+        <a href="{{ .url | relURL }}">
+          {{ if $photo }}
+          {{ partial "ind-img.html" (dict "src" $photo "alt" "" "w" 640 "h" 360 "sizes" "(max-width: 700px) 100vw, 50vw") }}
+          {{ end }}
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+            <span>View service</span>
+          </div>
+        </a>
+        {{ end }}
       </div>
-      <ul class="st-indp-stack">
-        {{ range .items }}<li>{{ . }}</li>{{ end }}
-      </ul>
+      {{ with $p.stack }}
+      <div class="st-indp-stack">
+        <h3>{{ .heading }}</h3>
+        <p>{{ .intro }}</p>
+        <ul>
+          {{ range .items }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      </div>
+      {{ end }}
     </div>
   </section>
   {{ end }}
 
   {{ if .Content }}
-  <section class="st-indp-section" id="details">
-    <div class="st-indp-wrap st-indp-magazine">
-      <div class="st-indp-prose">
+  <section class="st-indp-sec st-indp-tint" id="details">
+    <div class="st-indp-wrap st-indp-deep">
+      {{ with $p.body_image_b }}
+      <figure>
+        {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt_b | default "") "w" 960 "h" 640 "sizes" "(max-width: 900px) 100vw, 34vw") }}
+      </figure>
+      {{ end }}
+      <div class="st-indp-article">
         {{ .Content }}
       </div>
-      <aside class="st-indp-rail">
-        {{ with $p.body_image_b }}
-        <figure class="st-indp-photo st-accent-frame">
-          {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt_b | default "") "w" 1152 "h" 864 "sizes" "(max-width: 980px) 100vw, 32vw") }}
-        </figure>
-        {{ end }}
-        <div class="st-indp-rail-card">
-          <p>Need this applied to your office?</p>
-          <a href="{{ "contact/" | relURL }}">Book an assessment</a>
-          <a href="tel:+18184315607">(818) 431-5607</a>
-        </div>
-      </aside>
     </div>
   </section>
   {{ end }}
 
-  {{ with $p.photo_band }}
-  <section class="st-indp-band">
-    {{ partial "ind-img.html" (dict "src" .image "alt" .alt "w" 1600 "h" 700 "sizes" "100vw") }}
-    <div class="st-indp-band-copy"><p>{{ .quote }}</p></div>
-  </section>
-  {{ end }}
-
   {{ with $p.process }}
-  <section class="st-indp-section st-indp-alt" id="process">
+  <section class="st-indp-sec" id="process">
     <div class="st-indp-wrap">
-      <div class="st-indp-head">
-        <div>
-          <h2>{{ .heading }}</h2>
-          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
-          <p>{{ .intro }}</p>
-        </div>
-      </div>
+      <header class="st-indp-head">
+        <p class="st-indp-eyebrow">How an engagement starts</p>
+        <h2>{{ .heading }}</h2>
+        <p>{{ .intro }}</p>
+      </header>
       <ol class="st-indp-steps">
         {{ range $i, $step := .items }}
         <li>
@@ -184,14 +212,13 @@
   {{ end }}
 
   {{ with $p.why }}
-  <section class="st-indp-section" id="why">
-    <div class="st-indp-wrap st-indp-why">
-      <div>
+  <section class="st-indp-sec st-indp-why" id="why">
+    <div class="st-indp-wrap st-indp-whygrid">
+      <header class="st-indp-head">
         <h2>{{ .heading }}</h2>
-        <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
         <p>{{ .intro }}</p>
-      </div>
-      <ul>
+      </header>
+      <ul class="st-indp-whylist">
         {{ range .items }}
         <li>
           <h3>{{ .title }}</h3>
@@ -204,12 +231,11 @@
   {{ end }}
 
   {{ with $p.faq }}
-  <section class="st-indp-section st-indp-alt" id="faq">
-    <div class="st-indp-wrap st-indp-faq">
+  <section class="st-indp-sec st-indp-tint" id="faq">
+    <div class="st-indp-wrap st-indp-faqwrap">
       <h2>{{ .heading | default "Questions we hear from this industry" }}</h2>
-      <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
       {{ range .items }}
-      <details>
+      <details class="st-indp-faq">
         <summary>{{ .question }}</summary>
         <div>{{ .answer | markdownify }}</div>
       </details>
@@ -219,12 +245,14 @@
   {{ end }}
 
   {{ if $related }}
-  <section class="st-indp-section">
+  <section class="st-indp-sec">
     <div class="st-indp-wrap">
-      <div class="st-indp-head">
-        <h2>Other industries we support</h2>
-        <a href="{{ "industries/" | relURL }}">All industries</a>
-      </div>
+      <header class="st-indp-rowhead">
+        <div>
+          <h2>Other industries</h2>
+        </div>
+        <a class="st-indp-textlink" href="{{ "industries/" | relURL }}">See all industries</a>
+      </header>
       <div class="st-indp-related">
         {{ range $related }}
         <a href="{{ .RelPermalink }}">
@@ -239,8 +267,8 @@
 
   <section class="st-indp-cta">
     <div class="st-indp-wrap">
-      <h2>Talk through your {{ $p.short_name | default "industry" }} environment</h2>
-      <p>A free assessment from the Canoga Park team. We will tell you what is actually broken, what can wait, and what a managed plan would cover.</p>
+      <h2>Ready to talk about your IT?</h2>
+      <p>A free assessment from the Canoga Park team. We will tell you what we would fix first.</p>
       <div class="st-indp-actions">
         <a class="st-indp-btn st-indp-btn-light" href="{{ "contact/" | relURL }}">Contact us</a>
         <a class="st-indp-phone st-indp-phone-light" href="tel:+18184315607">(818) 431-5607</a>
@@ -249,74 +277,19 @@
   </section>
 </article>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "{{ .Permalink }}#service",
-  "name": {{ .Title | jsonify }},
-  "serviceType": {{ $p.service_type | default .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "image": "{{ $p.hero_image | absURL }}",
-  "provider": {
-    "@type": "Organization",
-    "@id": "https://securetechie.com/#organization",
-    "name": "Secure Techies, LLC",
-    "url": "https://securetechie.com/",
-    "telephone": "+1-818-431-5607",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "21515 Vanowen St Suite 1110",
-      "addressLocality": "Canoga Park",
-      "addressRegion": "CA",
-      "postalCode": "91303",
-      "addressCountry": "US"
-    }
-  },
-  "areaServed": [
-    {"@type":"AdministrativeArea","name":"Los Angeles County"},
-    {"@type":"AdministrativeArea","name":"Southern California"}
-  ],
-  "audience": {"@type":"BusinessAudience","audienceType": {{ $p.audience | default $p.short_name | jsonify }}}
-}
-</script>
+{{ $addr := dict "@type" "PostalAddress" "streetAddress" "21515 Vanowen St Suite 1110" "addressLocality" "Canoga Park" "addressRegion" "CA" "postalCode" "91303" "addressCountry" "US" }}
+{{ $provider := dict "@type" "Organization" "@id" "https://securetechie.com/#organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "telephone" "+1-818-431-5607" "address" $addr }}
+{{ $service := dict "@context" "https://schema.org" "@type" "Service" "@id" (printf "%s#service" .Permalink) "name" .Title "serviceType" ($p.service_type | default .Title) "description" .Params.description "url" .Permalink "image" ($p.hero_image | absURL) "provider" $provider "areaServed" (slice (dict "@type" "AdministrativeArea" "name" "Los Angeles County") (dict "@type" "AdministrativeArea" "name" "Southern California")) "audience" (dict "@type" "BusinessAudience" "audienceType" ($p.audience | default $p.short_name)) }}
+<script type="application/ld+json">{{ $service | jsonify | safeJS }}</script>
 {{ with $p.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $item := .items }}{{ if $i }},{{ end }}{
-      "@type": "Question",
-      "name": {{ $item.question | jsonify }},
-      "acceptedAnswer": {"@type":"Answer","text": {{ $item.answer | jsonify }}}
-    }{{ end }}
-  ]
-}
-</script>
+{{ $qs := slice }}
+{{ range .items }}
+{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
 {{ end }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
-    {"@type":"ListItem","position":2,"name":"Industries","item":"{{ "industries/" | absURL }}"},
-    {"@type":"ListItem","position":3,"name":{{ ($p.short_name | default .Title) | jsonify }},"item":"{{ .Permalink }}"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "{{ .Permalink }}#webpage",
-  "url": "{{ .Permalink }}",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "isPartOf": {"@type":"WebSite","name":"Secure Techies","url":"https://securetechie.com/"},
-  "speakable": {"@type":"SpeakableSpecification","cssSelector":["h1",".st-indp-lead"]}
-}
-</script>
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
+{{ end }}
+{{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL)) (dict "@type" "ListItem" "position" 2 "name" "Industries" "item" ("industries/" | absURL)) (dict "@type" "ListItem" "position" 3 "name" ($p.short_name | default .Title) "item" .Permalink) }}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) | jsonify | safeJS }}</script>
+{{ $page := dict "@context" "https://schema.org" "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" .Params.description "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/") "speakable" (dict "@type" "SpeakableSpecification" "cssSelector" (slice "h1" ".st-indp-lead")) }}
+<script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
 {{ end }}

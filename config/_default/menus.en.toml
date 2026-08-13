@@ -85,85 +85,85 @@ weight = 3
 parent = "Industries"
 name = "All Industries"
 url = "/industries/"
-weight = 0
+weight = 1
 
 [[main]]
 parent = "Industries"
 name = "Law Firms"
 url = "/industries/law-firms/"
-weight = 1
+weight = 2
 
 [[main]]
 parent = "Industries"
 name = "Healthcare"
 url = "/industries/healthcare/"
-weight = 2
+weight = 3
 
 [[main]]
 parent = "Industries"
 name = "Accounting"
 url = "/industries/accounting/"
-weight = 3
+weight = 4
 
 [[main]]
 parent = "Industries"
 name = "Financial Services"
 url = "/industries/financial-services/"
-weight = 4
+weight = 5
 
 [[main]]
 parent = "Industries"
 name = "Construction"
 url = "/industries/construction/"
-weight = 5
+weight = 6
 
 [[main]]
 parent = "Industries"
 name = "Manufacturing"
 url = "/industries/manufacturing/"
-weight = 6
+weight = 7
 
 [[main]]
 parent = "Industries"
 name = "Real Estate"
 url = "/industries/real-estate/"
-weight = 7
+weight = 8
 
 [[main]]
 parent = "Industries"
 name = "Education"
 url = "/industries/education/"
-weight = 8
+weight = 9
 
 [[main]]
 parent = "Industries"
 name = "Nonprofit"
 url = "/industries/nonprofit/"
-weight = 9
+weight = 10
 
 [[main]]
 parent = "Industries"
 name = "Government"
 url = "/industries/government/"
-weight = 10
+weight = 11
 
 [[main]]
 parent = "Industries"
 name = "Media & Advertising"
 url = "/industries/media-advertising/"
-weight = 11
+weight = 12
 
 [[main]]
 parent = "Industries"
 name = "Technology"
 url = "/industries/technology/"
-weight = 12
+weight = 13
 
 [[main]]
 parent = "Industries"
 name = "Small Business"
 url = "/industries/small-business/"
-weight = 13
+weight = 14
 
 # --- Blog ---
 [[main]]

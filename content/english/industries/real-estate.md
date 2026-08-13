@@ -62,24 +62,30 @@ offerings:
       text: "Secure sites and landing pages when the brokerage needs a better public face."
 work:
   heading: "Everything we do for brokerages and property teams"
-  intro: "Deals and resident requests both die in the inbox. That is the work."
-  items:
-    - title: "Help desk for agents and coordinators"
-      text: "Driveway tickets. Mail that will not send. The laptop that dies at a listing."
-    - title: "Microsoft 365"
-      text: "Mail, sharing, and guest access that is not a free-for-all."
-    - title: "Wire-fraud oriented email security"
-      text: "MFA, authentication, filtering, and a rule that wiring instructions get verified out of band."
-    - title: "Same-day offboarding"
-      text: "Departing agents lose mail and files the day they leave."
-    - title: "Multi-office networks"
-      text: "Five suites, one standard — not five consumer routers."
-    - title: "Transaction-file backups"
-      text: "Microsoft 365 and file restores that have been tested."
-    - title: "Property-site cameras"
-      text: "Mobile CCTV when a lot or community is the risk."
-    - title: "On-site SoCal"
-      text: "Hardware from Canoga Park."
+  intro: "Deals and resident requests both die in the inbox. The work follows the people, not the suite."
+  groups:
+    - name: "Agents and staff"
+      items:
+        - title: "Help desk for agents and coordinators"
+          text: "Driveway tickets. Mail that will not send. The laptop that dies at a listing."
+        - title: "Same-day offboarding"
+          text: "Departing agents lose mail and files the day they leave."
+        - title: "On-site SoCal"
+          text: "Hardware from Canoga Park."
+    - name: "Deals and mail"
+      items:
+        - title: "Microsoft 365"
+          text: "Mail, sharing, and guest access that is not a free-for-all."
+        - title: "Wire-fraud oriented email security"
+          text: "MFA, authentication, filtering, and a rule that wiring instructions get verified out of band."
+        - title: "Transaction-file backups"
+          text: "Microsoft 365 and file restores that have been tested."
+    - name: "Offices and sites"
+      items:
+        - title: "Multi-office networks"
+          text: "Five suites, one standard — not five consumer routers."
+        - title: "Property-site cameras"
+          text: "Mobile CCTV when a lot or community is the risk."
 stack:
   heading: "Tools we keep available"
   intro: "MLS and transaction platforms stay with their vendors. We keep mail, identity, and devices from becoming the bottleneck."
@@ -91,7 +97,7 @@ stack:
     - "Office Wi-Fi"
     - "Optional site CCTV"
 process:
-  heading: "How we take a brokerage"
+  heading: "How we onboard a brokerage"
   intro: "Same-day offboarding is the control most offices skip."
   items:
     - title: "Inventory people"
@@ -137,8 +143,29 @@ faq:
 
 Secure Techies provides **real estate IT services** for brokerages and property managers in Southern California. The work is email, devices, identity, and the ugly problem of wiring-instruction fraud.
 
-### Keyword reality
+Most of the workforce is not in the suite. Agents work from cars, listings, and kitchen tables. Property staff work from sites. The IT plan has to follow them without opening the firm to every coffee-shop Wi-Fi — and without leaving a departed agent’s mailbox live for six months.
 
-**IT for real estate** and **property management IT** searches are local and commercial. Buyers want fewer mailbox takeovers and faster tickets, not a CRM lecture.
+### Who this is for
 
-If your portfolio includes construction or vacant sites, pair this with [construction IT](/industries/construction/) and [mobile CCTV trailers](/services/mobile-cctv-trailers/).
+Independent brokerages, small-to-mid property managers, and hybrid teams in Los Angeles, the Valley, and nearby counties. If you are mainly a builder with a sales trailer, start at [construction](/industries/construction/). If you are a law firm that also does real estate work, start at [law firms](/industries/law-firms/).
+
+### What buyers should demand
+
+- MFA and email authentication aimed at wiring-instruction scams
+- A written rule that wiring details are verified out of band
+- Same-day offboarding when an agent leaves
+- One network standard across offices — not five leftover consumer routers
+- Tested restores of Microsoft 365 and transaction files
+- A help desk that will pick up when someone is standing in a driveway
+
+We do not run the MLS. We keep Microsoft 365, devices, and identity healthy so Dotloop, SkySlope, and the rest can do their jobs.
+
+### Sites and vacant lots
+
+When a community, lot, or model home needs eyes after hours, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover the gap without a six-month cabling project. Pair this page with [construction IT](/industries/construction/) if you also run jobs.
+
+### Coverage
+
+Canoga Park headquarters. On-site across Southern California. Remote for hybrid agents nationwide.
+
+Call (818) 431-5607 or [contact us](/contact/).

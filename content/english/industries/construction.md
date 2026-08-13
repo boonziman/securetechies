@@ -62,28 +62,34 @@ offerings:
       text: "Solar, rapidly deployable surveillance for temporary and high-risk sites."
 work:
   heading: "Everything we do for contractors"
-  intro: "Office IT plus the field layer most MSPs skip."
-  items:
-    - title: "Office Microsoft 365 and help desk"
-      text: "PMs, accounting, and estimators get the same ticket standard as any professional firm."
-    - title: "Jobsite connectivity"
-      text: "Trailer internet, failover where it is worth it, and access to drawings when cell service is ugly."
-    - title: "Field device management"
-      text: "Tablets and phones with unique logins, MFA, and a wipe when a crew rolls off."
-    - title: "Project onboarding and offboarding"
-      text: "Stand up access at groundbreaking. Shut it down at punch list."
-    - title: "Mobile CCTV trailers"
-      text: "Solar, rapidly deployable cameras for lots, conex boxes, and after-hours sites."
-    - title: "Email and identity security"
-      text: "Shared “site iPad” accounts are how Procore gets compromised. We replace that habit."
-    - title: "Backups"
-      text: "Office files, Microsoft 365, and the shared project data you cannot rebuild from memory."
-    - title: "Multi-site standards"
-      text: "Five jobs should not mean five different consumer routers and password schemes."
-    - title: "Vendor coordination"
-      text: "Procore, Autodesk, and accounting software — we own the environment, they own the app."
-    - title: "On-site SoCal"
-      text: "Hardware and trailer drops across Los Angeles, the Valley, and nearby counties."
+  intro: "Office IT plus the field layer most MSPs skip. Grouped the way a GC actually runs a job."
+  groups:
+    - name: "Office and headquarters"
+      items:
+        - title: "Microsoft 365 and help desk"
+          text: "PMs, accounting, and estimators get the same ticket standard as any professional firm."
+        - title: "Backups"
+          text: "Office files, Microsoft 365, and the shared project data you cannot rebuild from memory."
+        - title: "Vendor coordination"
+          text: "Procore, Autodesk, and accounting software — we own the environment, they own the app."
+        - title: "On-site across SoCal"
+          text: "Hardware and trailer drops across Los Angeles, the Valley, and nearby counties."
+    - name: "Jobsites and field"
+      items:
+        - title: "Jobsite connectivity"
+          text: "Trailer internet, failover where it is worth it, and access to drawings when cell service is ugly."
+        - title: "Field device management"
+          text: "Tablets and phones with unique logins, MFA, and a wipe when a crew rolls off."
+        - title: "Project onboarding and offboarding"
+          text: "Stand up access at groundbreaking. Shut it down at punch list."
+        - title: "Multi-site standards"
+          text: "Five jobs should not mean five different consumer routers and password schemes."
+    - name: "Site security"
+      items:
+        - title: "Mobile CCTV trailers"
+          text: "Solar, rapidly deployable cameras for lots, conex boxes, and after-hours sites."
+        - title: "Email and identity security"
+          text: "Shared “site iPad” accounts are how Procore gets compromised. We replace that habit."
 stack:
   heading: "Field and office tools we support around"
   intro: "We keep identity, devices, and networks ready. Application support stays with Procore, Autodesk, and the rest."
@@ -95,8 +101,8 @@ stack:
     - "Mobile CCTV trailers"
     - "Project offboarding"
 process:
-  heading: "How we work a contractor"
-  intro: "Stand it up at groundbreaking. Tear access down at punch list."
+  heading: "How we start with a contractor"
+  intro: "Stand access up at groundbreaking. Tear it down at punch list."
   items:
     - title: "Map office and sites"
       text: "How many trailers, who has a tablet, where drawings live."
@@ -135,18 +141,67 @@ faq:
       answer: "Yes. The pattern is the same: a small office, several sites, and a lot of shared equipment."
     - question: "Where do you cover jobsites?"
       answer: "Southern California on-site. Remote IT support nationwide when the office is elsewhere."
+    - question: "Do you handle both the office and the field in one contract?"
+      answer: "Yes. That is the point of this page. Headquarters Microsoft 365 and help desk sit in the same plan as jobsite connectivity, field-device standards, and optional mobile CCTV. You should not need one vendor for Outlook and another to watch the conex overnight."
+    - question: "How much does construction IT support cost?"
+      answer: "It depends on office headcount, active sites, and whether cameras are in scope. We quote after a free assessment rather than publishing a fake per-user rate. Planning ranges for professional firms are on the [FAQ](/faq/)."
 ---
 
 ## Managed IT for construction companies
 
-Secure Techies provides **construction IT services** for contractors who need the trailer online and the yard watched. From Canoga Park we combine [managed help desk](/services/managed-help-desk/) with [mobile CCTV](/services/mobile-cctv-trailers/).
+Secure Techies provides **construction IT services** for contractors who need the trailer online and the yard watched. From Canoga Park we run [managed help desk](/services/managed-help-desk/), [infrastructure](/services/infrastructure/), and [mobile CCTV trailers](/services/mobile-cctv-trailers/) as one plan — not two vendors who will not return each other’s calls.
 
-Jobsite connectivity is uneven. That is why the plan includes offline-tolerant backups, MFA that still works on a shared tablet, and a phone number a superintendent will actually call.
+A construction company is two businesses sharing a logo. Headquarters has estimators, accounting, and a Procore login. The field has a trailer, a weak cell signal, a tablet that still says “site iPad,” and a lot that goes dark at 6 p.m. Most MSPs only staff the first business. The second is where drawings fail to sync, leftover logins linger after a crew rolls off, and copper walks.
 
-### What buyers are actually searching
+### Who this page is for
 
-**Construction IT services** and **jobsite IT support** mix two jobs: office Microsoft 365, and a moving set of sites with bad cell service and real theft. Most MSPs only do the first. We do both because we already run [mobile CCTV trailers](/services/mobile-cctv-trailers/).
+General contractors, trade contractors, and developers with a Southern California office plus active jobsites. Typical size is a 10–80 person company: enough projects that informal IT is already failing, not a national GC with its own construction-technology department.
 
-Theft context: the [NICB](https://www.nicb.org/) has documented how rarely stolen equipment comes back. Cameras do not replace insurance. They change what happens at 2 a.m. on an empty lot.
+If you are mainly a plant, start at [manufacturing](/industries/manufacturing/). If you are a brokerage that also holds vacant lots, pair this page with [real estate](/industries/real-estate/).
 
-Related: [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).
+### What is actually in a construction IT plan
+
+A standard engagement covers three layers:
+
+1. **The office.** Microsoft 365, help desk for PMs and accounting, backups that include mail and shared project data, and vendor coordination when Procore or Autodesk wants to blame “the network.”
+2. **The field.** Trailer connectivity, unique logins on tablets and phones, MFA, a wipe when a crew leaves, and the same wireless standard on job five as on job one.
+3. **The yard.** [Mobile CCTV trailers](/services/mobile-cctv-trailers/) when the risk is after-hours theft, not just a phishing email. Solar, rapidly deployable, no six-month cabling project.
+
+Projects (a new trailer package, a headquarters move, a major Microsoft 365 cleanup) are quoted separately so the monthly plan stays predictable.
+
+### Jobsite connectivity, without pretending cell service is fine
+
+Trailers sit where the work is, not where the fiber is. We plan for ugly cell service: a primary connection, failover where the job is worth it, and backups that still make sense if the trailer is offline overnight. Superintendents should reach drawings and RFIs without calling the office to “email it again.”
+
+We do not replace Procore or Autodesk. We keep identity, devices, and networks healthy so those tools stay available — and we stay on the call when the vendor needs a counterpart.
+
+### Theft is an operations problem
+
+The [NICB](https://www.nicb.org/) has documented how rarely stolen construction equipment comes back. Cameras do not replace insurance. They change what happens at 2 a.m. on an empty lot: a live view, a recording, a deterrent sitting where a conex used to be an easy target. More context: [construction site security in Los Angeles](/blog/construction-site-security-los-angeles/).
+
+### How to compare construction IT providers
+
+Ask every vendor the same five things:
+
+1. Who answers when a superintendent cannot open drawings from the trailer?
+2. How do you wipe a tablet the day a crew rolls off?
+3. When did you last restore project files — not a lab folder?
+4. Do you deploy cameras, or only talk about “physical security”?
+5. Will you show up on a Valley or LA jobsite, or is everything a remote contractor?
+
+If the answers are only about Outlook, keep shopping.
+
+### Coverage and cost
+
+Headquarters is in Canoga Park. On-site IT and trailer drops cover Los Angeles, the San Fernando Valley, and nearby Southern California counties. Remote help desk covers the office wherever staff are working.
+
+Pricing depends on office headcount, how many active sites, and whether CCTV is in the same contract. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
+
+Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Construction site security in Los Angeles](/blog/construction-site-security-los-angeles/)
+- [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
+- [Managed help desk](/services/managed-help-desk/)
+- [IT support cost for small professional firms](/blog/it-support-cost-small-business/)

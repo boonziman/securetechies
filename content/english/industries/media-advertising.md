@@ -63,23 +63,29 @@ offerings:
 work:
   heading: "Everything we do for agencies and studios"
   intro: "Storage, identity, and a help desk that understands 11 p.m. deliveries."
-  items:
-    - title: "Help desk on deadline"
-      text: "Producers, editors, and account teams. After-hours is normal."
-    - title: "Shared storage and RAID"
-      text: "Sized for the restore window you actually need. Start with the [RAID calculator](/tools/raid-calculator/)."
-    - title: "Freelancer access"
-      text: "Time-boxed accounts. Same-week offboard."
-    - title: "Microsoft 365"
-      text: "Mail and sharing that does not leak unreleased work."
-    - title: "Endpoint and MFA"
-      text: "NDAs are a technical problem now."
-    - title: "Restore tests on real edits"
-      text: "Yesterday’s timeline, not a sample folder."
-    - title: "Studio network"
-      text: "The edit bay is not guest Wi-Fi."
-    - title: "On-site LA"
-      text: "Hardware from Canoga Park."
+  groups:
+    - name: "Studio floor"
+      items:
+        - title: "Help desk on deadline"
+          text: "Producers, editors, and account teams. After-hours is normal."
+        - title: "Shared storage and RAID"
+          text: "Sized for the restore window you actually need. Start with the [RAID calculator](/tools/raid-calculator/)."
+        - title: "Studio network"
+          text: "The edit bay is not guest Wi-Fi."
+        - title: "On-site LA"
+          text: "Hardware from Canoga Park."
+    - name: "Access and NDAs"
+      items:
+        - title: "Freelancer access"
+          text: "Time-boxed accounts. Same-week offboard."
+        - title: "Microsoft 365"
+          text: "Mail and sharing that does not leak unreleased work."
+        - title: "Endpoint and MFA"
+          text: "NDAs are a technical problem now."
+    - name: "Recovery"
+      items:
+        - title: "Restore tests on real edits"
+          text: "Yesterday’s timeline, not a sample folder."
 stack:
   heading: "What we size and protect"
   intro: "We are not your colorist. We keep storage, identity, and the network from becoming the delivery risk."
@@ -137,4 +143,24 @@ faq:
 
 Secure Techies provides **media and advertising IT** for Los Angeles studios and agencies that cannot miss a delivery. The stack is familiar — Microsoft 365, identity, backups — plus storage and workstations that do not pretend a 4K timeline is a Word doc.
 
-Size a first pass with the [RAID calculator](/tools/raid-calculator/). Then talk to us about the restore window you actually need.
+If the shared volume dies at 11 p.m., the campaign does not care that it is after hours. Freelancers need access on Monday and none on Friday. Unreleased work is an NDA problem if it walks.
+
+### Who this is for
+
+LA advertising agencies, in-house brand studios, and small post rooms that need corporate IT plus large-file literacy. We are not your colorist. Application and panel calibration stay with your post team.
+
+### What should be in the plan
+
+- Help desk that treats after-hours as normal
+- Shared storage and RAID sized for the restore window you actually need — start with the [RAID calculator](/tools/raid-calculator/)
+- Time-boxed freelancer accounts and same-week offboard
+- MFA, encryption, and mail that does not leak unreleased cuts
+- Restore tests on yesterday’s timeline, not a sample folder
+- A studio network that is not guest Wi-Fi
+- [Web development](/services/web-development/) when a campaign or studio site is part of the work
+
+### Coverage
+
+On-site across Los Angeles from Canoga Park. We are down the 101 from a lot of this work.
+
+Call (818) 431-5607 or [contact us](/contact/).

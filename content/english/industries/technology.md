@@ -62,24 +62,30 @@ offerings:
       text: "Office network, meeting rooms, and the unglamorous gear that still breaks."
 work:
   heading: "Everything we do for tech companies"
-  intro: "Corporate IT only — unless you hire us for production."
-  items:
-    - title: "Employee help desk"
-      text: "Engineers stop being tier 1."
-    - title: "Identity"
-      text: "Okta, Microsoft 365, or Google — MFA and least privilege."
-    - title: "Laptop fleet"
-      text: "Mac and Windows, imaging, encryption, and a cart that is not a junk pile."
-    - title: "Offboarding"
-      text: "Same-day revoke. SOC 2 cares."
-    - title: "SOC 2 evidence"
-      text: "Laptop management, MFA, backups — written down. Your auditor still signs."
-    - title: "Office network and rooms"
-      text: "The unglamorous gear that still breaks."
-    - title: "SaaS inventory"
-      text: "What holds company data, and who still has a login."
-    - title: "Stay out of prod"
-      text: "Default SOW does not include AWS/GCP production."
+  intro: "Corporate IT only — unless you hire us for production. Engineers stop being tier 1."
+  groups:
+    - name: "Employees"
+      items:
+        - title: "Employee help desk"
+          text: "Engineers stop being tier 1."
+        - title: "Identity"
+          text: "Okta, Microsoft 365, or Google — MFA and least privilege."
+        - title: "Laptop fleet"
+          text: "Mac and Windows, imaging, encryption, and a cart that is not a junk pile."
+        - title: "Offboarding"
+          text: "Same-day revoke. SOC 2 cares."
+    - name: "Evidence"
+      items:
+        - title: "SOC 2 evidence"
+          text: "Laptop management, MFA, backups — written down. Your auditor still signs."
+        - title: "SaaS inventory"
+          text: "What holds company data, and who still has a login."
+    - name: "Office, not prod"
+      items:
+        - title: "Office network and rooms"
+          text: "The unglamorous gear that still breaks."
+        - title: "Stay out of prod"
+          text: "Default SOW does not include AWS/GCP production."
 stack:
   heading: "The employee environment"
   intro: "Production stays yours unless the SOW says otherwise."
@@ -137,6 +143,28 @@ faq:
 
 Secure Techies provides **technology and startup IT** for companies that need an employee environment that will survive a customer’s security review.
 
-We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side.
+We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side. The same people should not own production Kubernetes and the CEO’s stolen laptop.
 
-**IT support for startups** is usually a co-managed buy: you keep platform, we keep humans. If you are still a ten-person shop, [small business IT](/industries/small-business/) may be the better front door. Size hardware guesses with the [VM calculator](/tools/vm-calculator/).
+### Who this is for
+
+Los Angeles startups and tech companies past “whoever knows Okta” — often 15–80 people, mixed Mac and Windows, a customer questionnaire on the calendar. If you are still a ten-person shop with no security review in sight, [small business IT](/industries/small-business/) may be the better front door.
+
+### What we take off the plate
+
+- Employee help desk so engineering is not tier 1
+- Identity: Okta, Microsoft 365, or Google — MFA and least privilege
+- Laptop fleet: imaging, encryption, MDM, a cart that is not a junk pile
+- Same-day offboarding
+- SaaS inventory: what holds company data, and who still has a login
+- Office network and meeting rooms
+- Evidence for laptop management, MFA, backups, and offboarding. Your auditor still signs the SOC 2 report
+
+Default SOW does not include AWS or GCP production. We will not touch prod unless you hire us to.
+
+Size hardware guesses with the [VM calculator](/tools/vm-calculator/).
+
+### Coverage
+
+Canoga Park, supporting Los Angeles offices and remote-first teams nationwide.
+
+Call (818) 431-5607 or [contact us](/contact/).

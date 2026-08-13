@@ -63,23 +63,29 @@ offerings:
 work:
   heading: "Everything we do for public-sector teams"
   intro: "Only what the SOW says — plus the credentials procurement actually searches."
-  items:
-    - title: "SAM-ready identity"
-      text: "CAGE 7JZF3 and UEI VNXVECFGVAW6 on the [government page](/government/)."
-    - title: "Help desk"
-      text: "Named support, not an anonymous queue."
-    - title: "Patch and access evidence"
-      text: "Change control is the product."
-    - title: "Cybersecurity on contracted systems"
-      text: "Email, endpoints, and monitoring in scope."
-    - title: "CMMC-oriented gap work"
-      text: "Technical and process help. Formal certification is a C3PAO’s job."
-    - title: "Infrastructure"
-      text: "Servers, cloud, and endpoints with written change."
-    - title: "No invented vehicles"
-      text: "GSA and clearance claims stay off this page unless verified."
-    - title: "Local California vendor"
-      text: "Canoga Park headquarters."
+  groups:
+    - name: "Procurement"
+      items:
+        - title: "SAM-ready identity"
+          text: "CAGE 7JZF3 and UEI VNXVECFGVAW6 on the [government page](/government/)."
+        - title: "No invented vehicles"
+          text: "GSA and clearance claims stay off this page unless verified."
+        - title: "Local California vendor"
+          text: "Canoga Park headquarters."
+    - name: "Operations"
+      items:
+        - title: "Named help desk"
+          text: "Named support, not an anonymous queue."
+        - title: "Infrastructure with change control"
+          text: "Servers, cloud, and endpoints with written change."
+        - title: "Cybersecurity on contracted systems"
+          text: "Email, endpoints, and monitoring in scope."
+    - name: "Evidence"
+      items:
+        - title: "Patch and access evidence"
+          text: "Change control is the product."
+        - title: "CMMC-oriented gap work"
+          text: "Technical and process help. Formal certification is a C3PAO’s job."
 stack:
   heading: "What we put in writing"
   intro: "Scope follows your SOW. We do not invent contract vehicles on this page."
@@ -137,4 +143,20 @@ faq:
 
 Secure Techies, LLC provides **government IT services** from Canoga Park for agencies and public-sector teams that need a vendor they can find in SAM.gov and a team that documents what it does.
 
-Procurement details live on the dedicated [government page](/government/). This industry page is about the operational work: [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [compliance](/services/compliance-security-audits/).
+**CAGE 7JZF3. UEI VNXVECFGVAW6.** Procurement details live on the dedicated [government page](/government/). This industry page is about the operational work: [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [compliance](/services/compliance-security-audits/).
+
+### What we will and will not say
+
+We put credentials on the page because procurement teams actually search for them. We will not invent a GSA schedule or a personnel clearance you cannot look up. Some contract-vehicle claims are still being verified. Treat anything not confirmed on the government page — or in writing from us — as not claimed.
+
+CMMC-oriented technical and process work is in scope when the SOW says so. Formal certification is a C3PAO’s job.
+
+### Who this is for
+
+Cities, special districts, and public-sector teams that need managed IT, security, or help desk — not a full municipal ERP replacement. Scope follows the written SOW. Change control is the product, not an extra.
+
+### Coverage
+
+21515 Vanowen St, Suite 1110, Canoga Park, CA 91303. Local California vendor for state and local work that wants a company they can visit.
+
+Call (818) 431-5607 or [contact us](/contact/).

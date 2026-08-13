@@ -63,27 +63,33 @@ offerings:
 work:
   heading: "Everything we do for small businesses"
   intro: "The full outsourced IT department, written as work — not slogans."
-  items:
-    - title: "24/7 help desk"
-      text: "Owners stop being the IT department. Staff get a number that answers."
-    - title: "Microsoft 365"
-      text: "Mail, sharing, licenses, and the mess left by whoever set it up in a weekend."
-    - title: "Cybersecurity basics that are not optional"
-      text: "MFA, email filtering, endpoint protection, and patching."
-    - title: "Backups with restore tests"
-      text: "The part break-fix shops skip until the disk dies."
-    - title: "Office network"
-      text: "Firewall, Wi-Fi, and guest access that is not the same password as 2018."
-    - title: "Onboarding and offboarding"
-      text: "Day-one laptops and same-day revoke when someone leaves."
-    - title: "Vendor wrangling"
-      text: "Internet, copiers, line-of-business apps — we sit on the call."
-    - title: "On-site when needed"
-      text: "Canoga Park team across Southern California."
-    - title: "Quarterly planning"
-      text: "What to buy, what to ignore, what it will cost next year."
-    - title: "Honest scope"
-      text: "Projects (moves, migrations) quoted separately so the monthly plan stays predictable."
+  groups:
+    - name: "Day-to-day"
+      items:
+        - title: "24/7 help desk"
+          text: "Owners stop being the IT department. Staff get a number that answers."
+        - title: "Microsoft 365"
+          text: "Mail, sharing, licenses, and the mess left by whoever set it up in a weekend."
+        - title: "Onboarding and offboarding"
+          text: "Day-one laptops and same-day revoke when someone leaves."
+        - title: "Vendor wrangling"
+          text: "Internet, copiers, line-of-business apps — we sit on the call."
+    - name: "Protect the business"
+      items:
+        - title: "Cybersecurity that is not optional"
+          text: "MFA, email filtering, endpoint protection, and patching."
+        - title: "Backups with restore tests"
+          text: "The part break-fix shops skip until the disk dies."
+        - title: "Office network"
+          text: "Firewall, Wi-Fi, and guest access that is not the same password as 2018."
+    - name: "The plan"
+      items:
+        - title: "Quarterly planning"
+          text: "What to buy, what to ignore, what it will cost next year."
+        - title: "Honest scope"
+          text: "Projects (moves, migrations) quoted separately so the monthly plan stays predictable."
+        - title: "On-site when needed"
+          text: "Canoga Park team across Southern California."
 stack:
   heading: "What most SMBs actually need"
   intro: "Help desk, Microsoft 365, backups, and security that is not a free antivirus trial."
@@ -139,10 +145,29 @@ faq:
 
 ## Outsourced IT for small and mid-size businesses
 
-Secure Techies provides **small business IT services** for Southern California teams that have outgrown “my cousin looks at it.” We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [backups](/services/backup-disaster-recovery/) as one plan.
+Secure Techies provides **small business IT services** for Southern California teams that have outgrown “my cousin looks at it.” We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [backups](/services/backup-disaster-recovery/) as one plan.
 
-### What “managed IT for small business Los Angeles” should mean
+The “IT person” model usually breaks around 15 employees. One staffer cannot cover after-hours, security, vendors, and the printer. Break-fix turns every outage into a surprise invoice. Managed IT turns that into a monthly plan.
 
-Not a call center that reads a script. A local team that can show up, a backup that has been restored, and a monthly number you can budget. Read [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/).
+### Who this is for
 
-If you are a law firm, start at [law firms](/industries/law-firms/). City landing: [managed IT services Los Angeles](/managed-it-services-los-angeles/).
+Offices that need a full outsourced IT department and do not fit a sharper vertical page. If you are a law firm, clinic, contractor, or CPA shop, use that industry page — the plan will be tighter. City landing: [managed IT services Los Angeles](/managed-it-services-los-angeles/).
+
+### What should be in a small-business plan
+
+- A number staff can call 24/7
+- Microsoft 365 that is not a weekend setup someone abandoned
+- MFA, email filtering, endpoint protection, and patching — not a consumer antivirus trial
+- Backups that have been restored
+- Day-one onboarding and same-day offboarding
+- An office network that is not the 2018 guest password
+- Quarterly planning: what to buy, what to ignore, what it will cost
+- Projects (moves, migrations) quoted separately
+
+Read [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/). Co-managed with a part-time internal person is common: [co-managed IT](/blog/co-managed-it-services/).
+
+### Cost
+
+National planning ranges often sit around $100–$250 per user per month. We quote after a free assessment so the number matches your stack. More on the [FAQ](/faq/).
+
+Call (818) 431-5607 or [contact us](/contact/).

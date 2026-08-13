@@ -62,24 +62,30 @@ offerings:
       text: "Office Wi-Fi, firewalls, and remote access that does not fall over when everyone logs in at once."
 work:
   heading: "Everything we do for CPA firms"
-  intro: "Busy season is a load test. The work below is what we actually run year-round."
-  items:
-    - title: "Help desk through tax season"
-      text: "After-hours tickets when the software will not print. Seasonal hires onboarded before January."
-    - title: "Tax software environment"
-      text: "Windows, licenses, printers, and scanners. Application support stays with Drake, Lacerte, or UltraTax."
-    - title: "Client-file security"
-      text: "MFA, least privilege, and email filtering aimed at W-2 phishing."
-    - title: "Microsoft 365"
-      text: "Mail, sharing, and the portal that is not a desktop folder named FINAL_v7."
-    - title: "Backups with a pre-season restore test"
-      text: "We test before January, not after a failure."
-    - title: "Capacity planning"
-      text: "VPN, licenses, and workstations sized for the rush."
-    - title: "Offboarding"
-      text: "Seasonal staff lose access when the season ends."
-    - title: "On-site hardware"
-      text: "The scanner farm and the one printer everyone needs on April 14."
+  intro: "Busy season is a load test. We run this year-round so January is not a surprise."
+  groups:
+    - name: "Busy season"
+      items:
+        - title: "Help desk through tax season"
+          text: "After-hours tickets when the software will not print. Seasonal hires onboarded before January."
+        - title: "Tax software environment"
+          text: "Windows, licenses, printers, and scanners. Application support stays with Drake, Lacerte, or UltraTax."
+        - title: "Capacity planning"
+          text: "VPN, licenses, and workstations sized for the rush — not added in March."
+    - name: "Client files"
+      items:
+        - title: "Client-file security"
+          text: "MFA, least privilege, and email filtering aimed at W-2 phishing."
+        - title: "Microsoft 365"
+          text: "Mail, sharing, and a portal that is not a desktop folder named FINAL_v7."
+        - title: "Backups with a pre-season restore test"
+          text: "We test before January, not after a failure."
+    - name: "People and hardware"
+      items:
+        - title: "Seasonal offboarding"
+          text: "Seasonal staff lose access when the season ends."
+        - title: "On-site hardware"
+          text: "The scanner farm and the one printer everyone needs on April 14."
 stack:
   heading: "Applications we keep the environment ready for"
   intro: "We are not Intuit or Thomson Reuters support. We keep Windows, Microsoft 365, printing, and backups healthy so tax software can work."
@@ -137,17 +143,26 @@ faq:
 
 Secure Techies provides **IT services for accounting firms** that cannot lose a day in March. From Canoga Park we run help desk, security, and backups for CPA practices and bookkeeping groups across Southern California.
 
-The work looks like other professional services — until busy season. Then every shared login, flaky VPN, and untested backup becomes a filing problem. We plan for that cycle on purpose.
+The work looks like other professional services — until busy season. Then every shared login, flaky VPN, and untested backup becomes a filing problem. We plan for that cycle on purpose: restore tests, extra licenses, and seasonal accounts **before** January.
 
 ### Who this is for
 
-CPA firms and accounting practices searching for **IT services for accounting firms** because last tax season was held together with overtime and hope. If you also practice law, start at [law firms](/industries/law-firms/). If you are primarily wealth management, use [financial services](/industries/financial-services/).
+CPA firms and accounting practices that already know last tax season was held together with overtime and hope. Typical size is 8–60 people. If you also practice law, start at [law firms](/industries/law-firms/). If you are primarily wealth management, use [financial services](/industries/financial-services/).
 
-### What to demand from a CPA-focused MSP
+### What is in the plan
 
-- A restore test **before** busy season, not after a failure
-- Seasonal staff onboarded in December
-- Email security that assumes W-2 phishing
-- Someone who will come on site when the scanner farm dies on April 14
+- Help desk through filing season, including after-hours when the software will not print
+- Windows, printers, and scanners around Drake, Lacerte, UltraTax, or QuickBooks — application support stays with the vendor
+- MFA, least privilege, and email filtering aimed at W-2 phishing
+- Microsoft 365 that is not a desktop folder named FINAL_v7
+- A restore test before January
+- Seasonal staff onboarded in December and offboarded when the season ends
+- On-site for the scanner farm and the printer everyone needs on April 14
 
-Related: [IT support cost for small professional firms](/blog/it-support-cost-small-business/) and [Microsoft 365 security](/blog/microsoft-365-business/).
+We help with the technical controls behind IRS Publication 4557 and similar questionnaires. Formal SOC 2 attestation is an auditor’s job.
+
+### Coverage
+
+On-site across Southern California from Canoga Park. Remote nationwide.
+
+Call (818) 431-5607 or [contact us](/contact/). Related: [IT support cost](/blog/it-support-cost-small-business/) and [Microsoft 365 security](/blog/microsoft-365-business/).

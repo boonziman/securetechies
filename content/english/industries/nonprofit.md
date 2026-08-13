@@ -63,23 +63,29 @@ offerings:
 work:
   heading: "Everything we do for nonprofits"
   intro: "Donor data, volunteer access, and a help desk that does not eat program time."
-  items:
-    - title: "Staff and volunteer help desk"
-      text: "Including the people who only work Tuesdays."
-    - title: "Microsoft 365"
-      text: "Mail, sharing, and board accounts that should not live forever."
-    - title: "Donor-data protection"
-      text: "MFA, least privilege, encryption, and a backup that has been restored."
-    - title: "CRM environment"
-      text: "Identity and devices around Bloomerang, Salesforce, or similar. App support stays with the vendor."
-    - title: "Volunteer offboarding"
-      text: "Access ends when the shift or term ends."
-    - title: "Website security"
-      text: "When the public page is part of fundraising."
-    - title: "Board-ready reporting"
-      text: "We can show backups were tested."
-    - title: "Right-sized security"
-      text: "No unused enterprise suite."
+  groups:
+    - name: "People"
+      items:
+        - title: "Staff and volunteer help desk"
+          text: "Including the people who only work Tuesdays."
+        - title: "Volunteer offboarding"
+          text: "Access ends when the shift or term ends."
+        - title: "Board-ready reporting"
+          text: "We can show backups were tested."
+    - name: "Donor and program data"
+      items:
+        - title: "Donor-data protection"
+          text: "MFA, least privilege, encryption, and a backup that has been restored."
+        - title: "Microsoft 365"
+          text: "Mail, sharing, and board accounts that should not live forever."
+        - title: "CRM environment"
+          text: "Identity and devices around Bloomerang, Salesforce, or similar. App support stays with the vendor."
+    - name: "Right-sized stack"
+      items:
+        - title: "Website security"
+          text: "When the public page is part of fundraising."
+        - title: "Practical security"
+          text: "No unused enterprise suite you will never staff."
 stack:
   heading: "Systems we keep around fundraising"
   intro: "CRM application support stays with the vendor. We keep identity, mail, and backups honest."
@@ -137,4 +143,26 @@ faq:
 
 Secure Techies provides **nonprofit IT services** for organizations that need donor-data protection and a help desk without building an internal department.
 
-California nonprofits holding consumer personal information should treat [CCPA](https://oag.ca.gov/privacy/ccpa) as real. If you are a school, start at [education](/industries/education/). If you are a growing office that happens to have a mission, [small business IT](/industries/small-business/) may fit better.
+A ransomware event does not care that you are a 501(c)(3). Grant reports, donor files, and volunteer lists all have to come back. The “IT person” is usually also operations. We take the tickets so programs stay staffed.
+
+### Who this is for
+
+Southern California nonprofits, associations, and churches that look like a small professional office plus volunteers. If you are a school, start at [education](/industries/education/). If you are a growing office that happens to have a mission, [small business IT](/industries/small-business/) may fit better.
+
+### What should be in the plan this year
+
+- MFA, least privilege, and encryption on donor and grant files
+- Microsoft 365 that does not leave board mailboxes alive forever
+- Identity and devices around Bloomerang, Salesforce, or similar — application support stays with the vendor
+- Volunteer offboarding when the shift or term ends
+- A backup that has been restored, with a sentence the board can hear
+- Website security when the public page is part of fundraising
+- No unused enterprise suite you will never staff
+
+California nonprofits holding consumer personal information should treat [CCPA](https://oag.ca.gov/privacy/ccpa) as real.
+
+### Pricing talk
+
+We do not pretend nonprofit IT is free. We scope to what you need this year, which is usually the real savings. Ask during the free assessment.
+
+Call (818) 431-5607 or [contact us](/contact/).
