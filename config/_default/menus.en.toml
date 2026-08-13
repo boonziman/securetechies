@@ -83,6 +83,12 @@ weight = 3
 
 [[main]]
 parent = "Industries"
+name = "All Industries"
+url = "/industries/"
+weight = 0
+
+[[main]]
+parent = "Industries"
 name = "Law Firms"
 url = "/industries/law-firms/"
 weight = 1

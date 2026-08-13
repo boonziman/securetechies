@@ -8,6 +8,7 @@
   <div class="st-kc-hero-copy">
     <p class="st-kc-kicker">Guides · Tools · Case studies · FAQ</p>
     <h1 id="st-kc-h1">Knowledge Center</h1>
+    <span class="st-accent-rule" aria-hidden="true"></span>
     <p class="st-kc-lead">Practical IT and cybersecurity guidance for Southern California businesses. Written by the team that does the work — not a content mill.</p>
     <p class="st-kc-meta"><strong>{{ len $blogs }}</strong> guides · <strong>{{ len $tools }}</strong> free tools · real project write-ups</p>
   </div>
@@ -101,7 +102,11 @@
 
 <style>
 .st-kc-wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.st-kc-hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:#060d1a;color:#f8fafc}
+.st-kc-hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:#060d1a;color:#f8fafc;position:relative}
+.st-kc-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 18% 25%,rgba(0,102,204,.2),transparent 52%);z-index:1}
+.st-kc-hero-copy{position:relative;z-index:2}
+.st-kc-cards a{position:relative;overflow:hidden}
+.st-kc-cards a::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#60a5fa,#0066CC)}
 .st-kc-hero-copy{padding:clamp(80px,10vw,120px) clamp(24px,5vw,64px) 56px;display:flex;flex-direction:column;justify-content:center}
 .st-kc-kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 16px}
 .st-kc-hero h1{font-size:clamp(2.4rem,5vw,3.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 18px}

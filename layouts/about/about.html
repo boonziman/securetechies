@@ -1,9 +1,11 @@
 {{ define "main" }}
 
 <section class="st-au-hero" aria-labelledby="st-au-h1">
+  <div class="st-accent-glow" aria-hidden="true"></div>
   <div class="st-au-hero-copy">
     <p class="st-au-kicker">Canoga Park, California · Founded 2009</p>
     <h1 id="st-au-h1">About Secure Techies</h1>
+    <span class="st-accent-rule" aria-hidden="true"></span>
     <p class="st-au-lead">We are a local managed IT and cybersecurity company. Law firms, healthcare practices, and growing Southern California businesses hire us to keep systems up, data protected, and tickets actually resolved.</p>
     <ul class="st-au-facts" aria-label="Company facts">
       <li><strong>2009</strong><span>Year founded</span></li>
@@ -260,8 +262,15 @@
 .st-au-hero{
   display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
   min-height:min(88vh,760px);background:#060d1a;color:#f1f5f9;
+  position:relative;
 }
-.st-au-hero-copy{padding:clamp(72px,10vw,120px) clamp(24px,5vw,64px) 64px;display:flex;flex-direction:column;justify-content:center}
+.st-au-hero .st-accent-glow{width:50%}
+.st-au-aside{position:relative}
+.st-au-aside::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#60a5fa,#0066CC)}
+.st-svc-card,.st-why-card{position:relative}
+.st-svc-card::before,.st-why-card::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;background:linear-gradient(180deg,#60a5fa,#0066CC);opacity:.7}
+.st-au-hero{position:relative}
+.st-au-hero-copy{padding:clamp(72px,10vw,120px) clamp(24px,5vw,64px) 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .st-au-kicker{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 18px}
 .st-au-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 20px}
 .st-au-lead{font-size:1.12rem;line-height:1.7;color:#cbd5e1;max-width:38rem;margin:0 0 28px}

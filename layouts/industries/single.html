@@ -4,6 +4,7 @@
 
 <article class="st-indp">
   <header class="st-indp-hero">
+    <div class="st-accent-glow" aria-hidden="true"></div>
     <div class="st-indp-hero-copy">
       <nav class="st-indp-crumb" aria-label="Breadcrumb">
         <a href="{{ "/" | relURL }}">Home</a>
@@ -14,6 +15,7 @@
       </nav>
       {{ with $p.kicker }}<p class="st-indp-kicker">{{ . }}</p>{{ end }}
       <h1>{{ .Title }}</h1>
+      <span class="st-accent-rule" aria-hidden="true"></span>
       <p class="st-indp-lead">{{ $p.hero_subtitle }}</p>
       {{ with $p.badges }}
       <ul class="st-indp-badges">
@@ -38,11 +40,12 @@
   {{ with $p.challenges }}
   <section class="st-indp-section" id="challenges">
     <div class="st-indp-wrap st-indp-split">
-      <figure class="st-indp-photo">
+      <figure class="st-indp-photo st-accent-frame">
         {{ partial "ind-img.html" (dict "src" ($.Params.mid_image | default $.Params.hero_image) "alt" ($.Params.mid_alt | default $.Params.hero_alt) "w" 1248 "h" 832 "sizes" "(max-width: 980px) 100vw, 44vw") }}
       </figure>
       <div>
         <h2>{{ .heading }}</h2>
+        <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
         <p>{{ .intro }}</p>
         <ul class="st-indp-challenges">
           {{ range .items }}
@@ -66,8 +69,11 @@
   <section class="st-indp-section st-indp-alt" id="what-we-do">
     <div class="st-indp-wrap">
       <div class="st-indp-head">
-        <h2>{{ .heading }}</h2>
-        <p>{{ .intro }}</p>
+        <div>
+          <h2>{{ .heading }}</h2>
+          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
+          <p>{{ .intro }}</p>
+        </div>
       </div>
       <div class="st-indp-offer">
         {{ range .items }}
@@ -85,12 +91,38 @@
   </section>
   {{ end }}
 
+  {{ with $p.work }}
+  <section class="st-indp-section" id="scope">
+    <div class="st-indp-wrap st-indp-split st-indp-split-rev">
+      <div>
+        <h2>{{ .heading }}</h2>
+        <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
+        <p>{{ .intro }}</p>
+        <ul class="st-indp-work">
+          {{ range .items }}
+          <li>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <figure class="st-indp-photo st-accent-frame">
+        {{ partial "ind-img.html" (dict "src" ($.Params.body_image | default $.Params.mid_image) "alt" ($.Params.body_alt | default $.Params.mid_alt) "w" 1152 "h" 864 "sizes" "(max-width: 980px) 100vw, 44vw") }}
+      </figure>
+    </div>
+  </section>
+  {{ end }}
+
   {{ with $p.stack }}
-  <section class="st-indp-section" id="stack">
+  <section class="st-indp-section st-indp-alt" id="stack">
     <div class="st-indp-wrap">
       <div class="st-indp-head">
-        <h2>{{ .heading }}</h2>
-        <p>{{ .intro }}</p>
+        <div>
+          <h2>{{ .heading }}</h2>
+          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
+          <p>{{ .intro }}</p>
+        </div>
       </div>
       <ul class="st-indp-stack">
         {{ range .items }}<li>{{ . }}</li>{{ end }}
@@ -100,9 +132,23 @@
   {{ end }}
 
   {{ if .Content }}
-  <section class="st-indp-section st-indp-alt" id="details">
-    <div class="st-indp-wrap st-indp-prose">
-      {{ .Content }}
+  <section class="st-indp-section" id="details">
+    <div class="st-indp-wrap st-indp-magazine">
+      <div class="st-indp-prose">
+        {{ .Content }}
+      </div>
+      <aside class="st-indp-rail">
+        {{ with $p.body_image_b }}
+        <figure class="st-indp-photo st-accent-frame">
+          {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt_b | default "") "w" 1152 "h" 864 "sizes" "(max-width: 980px) 100vw, 32vw") }}
+        </figure>
+        {{ end }}
+        <div class="st-indp-rail-card">
+          <p>Need this applied to your office?</p>
+          <a href="{{ "contact/" | relURL }}">Book an assessment</a>
+          <a href="tel:+18184315607">(818) 431-5607</a>
+        </div>
+      </aside>
     </div>
   </section>
   {{ end }}
@@ -115,11 +161,14 @@
   {{ end }}
 
   {{ with $p.process }}
-  <section class="st-indp-section" id="process">
+  <section class="st-indp-section st-indp-alt" id="process">
     <div class="st-indp-wrap">
       <div class="st-indp-head">
-        <h2>{{ .heading }}</h2>
-        <p>{{ .intro }}</p>
+        <div>
+          <h2>{{ .heading }}</h2>
+          <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
+          <p>{{ .intro }}</p>
+        </div>
       </div>
       <ol class="st-indp-steps">
         {{ range $i, $step := .items }}
@@ -135,10 +184,11 @@
   {{ end }}
 
   {{ with $p.why }}
-  <section class="st-indp-section st-indp-alt" id="why">
+  <section class="st-indp-section" id="why">
     <div class="st-indp-wrap st-indp-why">
       <div>
         <h2>{{ .heading }}</h2>
+        <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
         <p>{{ .intro }}</p>
       </div>
       <ul>
@@ -154,9 +204,10 @@
   {{ end }}
 
   {{ with $p.faq }}
-  <section class="st-indp-section" id="faq">
+  <section class="st-indp-section st-indp-alt" id="faq">
     <div class="st-indp-wrap st-indp-faq">
       <h2>{{ .heading | default "Questions we hear from this industry" }}</h2>
+      <span class="st-accent-rule st-accent-rule-dark" aria-hidden="true"></span>
       {{ range .items }}
       <details>
         <summary>{{ .question }}</summary>
@@ -168,7 +219,7 @@
   {{ end }}
 
   {{ if $related }}
-  <section class="st-indp-section st-indp-alt">
+  <section class="st-indp-section">
     <div class="st-indp-wrap">
       <div class="st-indp-head">
         <h2>Other industries we support</h2>
@@ -264,7 +315,6 @@
   "url": "{{ .Permalink }}",
   "name": {{ .Title | jsonify }},
   "description": {{ .Params.description | jsonify }},
-  "dateModified": "{{ now.Format "2006-01-02" }}",
   "isPartOf": {"@type":"WebSite","name":"Secure Techies","url":"https://securetechie.com/"},
   "speakable": {"@type":"SpeakableSpecification","cssSelector":["h1",".st-indp-lead"]}
 }
