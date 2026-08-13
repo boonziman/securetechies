@@ -72,6 +72,14 @@
 <!-- canonical URL -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
+<!-- machine-readable site map for search engines and LLM / AI agents -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "sitemap.xml" | absURL }}" />
+<link rel="alternate" type="text/plain" title="llms.txt" href="{{ "llms.txt" | absURL }}" />
+<link rel="alternate" type="text/plain" title="llms-full.txt" href="{{ "llms-full.txt" | absURL }}" />
+{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}" />
+{{ end }}
+
 <!-- search engine indexing directive -->
 {{ $robots := "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}
 {{ if .Param "noindex" }}{{ $robots = "noindex, follow" }}{{ end }}
@@ -205,5 +213,7 @@
   {{ partial "schema-website.html" . }}
 {{ end }}
 
-<!-- JSON-LD: BreadcrumbList (all pages except homepage) -->
-{{ partial "schema-breadcrumb.html" . }}
+<!-- JSON-LD: BreadcrumbList (skip industries — those pages emit a tighter trail) -->
+{{ if ne .Section "industries" }}
+  {{ partial "schema-breadcrumb.html" . }}
+{{ end }}

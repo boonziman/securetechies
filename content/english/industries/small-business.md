@@ -1,6 +1,6 @@
 ---
 title: "Small Business IT Services"
-meta_title: "Small Business IT Services | Outsourced IT Los Angeles | Secure Techies"
+meta_title: "Small Business IT | Outsourced IT Los Angeles | Secure Techies"
 description: "Managed IT for small and mid-size businesses in Los Angeles: help desk, cybersecurity, backups, and a local team so you do not have to hire a full IT department."
 image: "/images/industries/small-business-it-office.webp"
 keywords:
@@ -26,7 +26,7 @@ body_image_b: "/images/industries/small-business-owner-desk.webp"
 body_alt_b: "Small-business owner desk after hours with a closed laptop"
 why_image: "/images/industries/small-business-storefront.webp"
 why_alt: "Small-business storefront interior after closing"
-weight: 13
+weight: 16
 audience: "Small and mid-size businesses"
 service_type: "Managed IT services for small business"
 hero_stats:
@@ -159,7 +159,7 @@ The “IT person” model usually breaks around 15 employees. One staffer cannot
 
 ### Who we work with
 
-Growing offices that need a full outsourced IT department. Law firms, clinics, contractors, and CPA shops usually get a tighter plan on their industry pages. For a Los Angeles overview, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/).
+Growing offices that need a full outsourced IT department. Law firms, clinics, contractors, and CPA shops usually get a tighter plan on their industry pages. Restaurants and hotels start at [hospitality](/industries/hospitality/). Warehouses start at [warehousing and logistics](/industries/warehousing-logistics/). For a Los Angeles overview, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/).
 
 ### What is included
 

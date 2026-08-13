@@ -48,6 +48,13 @@ const PRIORITY_PATHS = [
   "/locations/burbank/",
   "/locations/glendale/",
   "/blog/",
+  "/industries/",
+  "/industries/law-firms/",
+  "/industries/healthcare/",
+  "/industries/hospitality/",
+  "/industries/warehousing-logistics/",
+  "/llms.txt",
+  "/llms-full.txt",
 ];
 
 function log(msg) {

@@ -1,10 +1,142 @@
-# Secure Techies — open to all major search crawlers
+# Secure Techies — open to search engines and AI crawlers
+# https://securetechie.com/
+
 User-agent: *
 Allow: /
 
 # Explicit allow for IndexNow / Bing ownership files
 Allow: /*.txt$
 Allow: /BingSiteAuth.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/llms.txt
+
+# ---------------------------------------------------------------------------
+# Search engines
+# ---------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI / LLM crawlers, search bots, and on-demand fetchers
+# Allowed so ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot, and
+# similar assistants can read, cite, and recommend these pages.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: GoogleAgent-Mariner
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: GrokBot
+Allow: /
+
+User-agent: xAI
+Allow: /
+
+User-agent: xAI-Grok
+Allow: /
+
+# Machine-readable summaries for LLMs and agents
+# https://securetechie.com/llms.txt
+# https://securetechie.com/llms-full.txt
+# https://securetechie.com/.well-known/llms.txt
 
 # Primary sitemap for Google, Bing, Yandex, DuckDuckGo, and other engines
 Sitemap: https://securetechie.com/sitemap.xml

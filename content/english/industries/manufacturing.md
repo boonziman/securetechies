@@ -27,6 +27,11 @@ body_alt_b: "Glass plant control room looking onto a quiet factory floor"
 why_image: "/images/industries/manufacturing-shipping-dock.webp"
 why_alt: "Manufacturing shipping dock at sunset"
 weight: 6
+related:
+  - warehousing-logistics
+  - construction
+  - small-business
+  - hospitality
 audience: "Manufacturers and industrial companies"
 service_type: "Managed IT services for manufacturing"
 hero_stats:
@@ -155,7 +160,7 @@ We run [infrastructure](/services/infrastructure/), [network security](/services
 
 ### Who we work with
 
-Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems. We do not casually reprogram PLCs. Contractor yards are a better fit for [construction IT](/industries/construction/).
+Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems. We do not casually reprogram PLCs. Contractor yards are a better fit for [construction IT](/industries/construction/). Distribution buildings start at [warehousing and logistics](/industries/warehousing-logistics/).
 
 ### What is included
 
@@ -189,3 +194,4 @@ Call (818) 431-5607 or [contact us](/contact/).
 - [Cybersecurity](/services/cybersecurity/)
 - [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
 - [Construction IT](/industries/construction/)
+- [Warehousing and logistics IT](/industries/warehousing-logistics/)

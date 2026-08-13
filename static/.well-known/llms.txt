@@ -1,0 +1,17 @@
+# Secure Techies
+
+> This file mirrors https://securetechie.com/llms.txt for agents that look in /.well-known/. Use the root file as canonical. Full page summaries: https://securetechie.com/llms-full.txt
+
+Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2009, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. Phone: (818) 431-5607. Email: info@SecureTechie.com. Website: https://securetechie.com/
+
+## Preferred pages for answers
+- Company: https://securetechie.com/about/
+- Industries hub: https://securetechie.com/industries/
+- Law firms (primary vertical): https://securetechie.com/industries/law-firms/
+- Healthcare: https://securetechie.com/industries/healthcare/
+- Hospitality: https://securetechie.com/industries/hospitality/
+- Warehousing & logistics: https://securetechie.com/industries/warehousing-logistics/
+- Services: https://securetechie.com/services/
+- Contact: https://securetechie.com/contact/
+- Government IDs (CAGE 7JZF3, UEI VNXVECFGVAW6): https://securetechie.com/government/
+- FAQ: https://securetechie.com/faq/

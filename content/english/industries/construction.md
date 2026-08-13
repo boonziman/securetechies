@@ -1,6 +1,6 @@
 ---
 title: "Construction IT Services"
-meta_title: "Construction IT Services | Jobsite Connectivity & Security | Secure Techies"
+meta_title: "Construction IT Services | Jobsite IT & CCTV | Secure Techies"
 description: "IT support for construction companies: jobsite connectivity, Microsoft 365, MDM, backups, and mobile CCTV trailers for Southern California sites."
 image: "/images/industries/construction-jobsite-it.webp"
 keywords:
@@ -27,6 +27,11 @@ body_alt_b: "Jobsite trailer desk with a tablet, rolled plans, and a hard hat"
 why_image: "/images/industries/construction-conex-lot.webp"
 why_alt: "Locked jobsite conex on a Southern California lot at dusk"
 weight: 5
+related:
+  - warehousing-logistics
+  - manufacturing
+  - real-estate
+  - small-business
 audience: "Construction companies and contractors"
 service_type: "Managed IT and site security for construction"
 hero_stats:
@@ -147,6 +152,8 @@ faq:
       answer: "Yes. Headquarters Microsoft 365 and help desk sit in the same plan as jobsite connectivity, field-device standards, and optional mobile CCTV. You should not need one vendor for Outlook and another to watch the conex overnight."
     - question: "How much does construction IT support cost?"
       answer: "It depends on office headcount, active sites, and whether cameras are in scope. We quote after a free assessment rather than publishing a fake per-user rate. Planning ranges for professional firms are on the [FAQ](/faq/)."
+    - question: "Is a warehouse the same plan as a jobsite?"
+      answer: "No. Construction is trailers and temporary lots. Warehouses have WMS, docks, and a standing building. If you run both, we will say which plan fits which site. See [warehousing and logistics](/industries/warehousing-logistics/)."
 ---
 
 ## Managed IT for construction companies
@@ -157,7 +164,7 @@ A construction company is two businesses sharing a logo. Headquarters has estima
 
 ### Who we work with
 
-General contractors, trade contractors, and developers with a Southern California office plus active jobsites. Typical size is 10 to 80 people. Plants that need IT/OT boundaries are a better fit for [manufacturing](/industries/manufacturing/). Brokerages that also hold vacant lots often add [real estate IT](/industries/real-estate/).
+General contractors, trade contractors, and developers with a Southern California office plus active jobsites. Typical size is 10 to 80 people. Plants that need IT/OT boundaries are a better fit for [manufacturing](/industries/manufacturing/). Distribution buildings start at [warehousing and logistics](/industries/warehousing-logistics/). Brokerages that also hold vacant lots often add [real estate IT](/industries/real-estate/).
 
 ### What is in the plan
 
@@ -202,3 +209,4 @@ Call (818) 431-5607 or [contact us](/contact/).
 - [Construction site security in Los Angeles](/blog/construction-site-security-los-angeles/)
 - [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
 - [Managed help desk](/services/managed-help-desk/)
+- [Warehousing and logistics IT](/industries/warehousing-logistics/)

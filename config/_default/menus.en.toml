@@ -161,9 +161,21 @@ weight = 13
 
 [[main]]
 parent = "Industries"
+name = "Hospitality"
+url = "/industries/hospitality/"
+weight = 14
+
+[[main]]
+parent = "Industries"
+name = "Warehousing & Logistics"
+url = "/industries/warehousing-logistics/"
+weight = 15
+
+[[main]]
+parent = "Industries"
 name = "Small Business"
 url = "/industries/small-business/"
-weight = 14
+weight = 16
 
 # --- Blog ---
 [[main]]

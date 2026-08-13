@@ -1,6 +1,6 @@
 ---
 title: "Technology & Startup IT"
-meta_title: "Technology & Startup IT | Scalable Infrastructure Support | Secure Techies"
+meta_title: "Startup & Technology IT | Scalable Support | Secure Techies"
 description: "IT support for startups and tech companies in Los Angeles: identity, devices, Microsoft 365, security, and help desk so product teams are not also the help desk."
 image: "/images/industries/technology-startup-it-loft.webp"
 keywords:

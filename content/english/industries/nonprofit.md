@@ -1,6 +1,6 @@
 ---
 title: "Nonprofit IT Services"
-meta_title: "Nonprofit IT Services | Donor Data & Mission-First Support | Secure Techies"
+meta_title: "Nonprofit IT Services | Donor Data & Support | Secure Techies"
 description: "Managed IT for nonprofits in Southern California: donor-data protection, Microsoft 365, help desk, and practical security that fits a mission budget."
 image: "/images/industries/nonprofit-it-office.webp"
 keywords:

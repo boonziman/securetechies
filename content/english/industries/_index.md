@@ -1,7 +1,7 @@
 ---
 title: "Industries We Serve"
-meta_title: "IT Services by Industry | Legal, Healthcare & More | Secure Techies"
-description: "Industry-specific managed IT and cybersecurity for law firms, healthcare, construction, finance, and Southern California businesses. Local team since 2009."
+meta_title: "IT Services by Industry | Law, Healthcare, Hospitality | Secure Techies"
+description: "Industry-specific managed IT for law firms, healthcare, hospitality, warehouses, construction, and Southern California businesses. Local team since 2009."
 image: "/images/industries/industries-hub-los-angeles.webp"
 keywords:
   - IT services by industry
@@ -9,6 +9,9 @@ keywords:
   - law firm IT support
   - healthcare IT services
   - construction IT services
+  - hospitality IT services
+  - warehouse IT support
+  - restaurant IT Los Angeles
 draft: false
 ---
 

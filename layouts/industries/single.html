@@ -1,6 +1,16 @@
 {{ define "main" }}
 {{ $p := .Params }}
-{{ $related := first 4 (where .CurrentSection.Pages.ByWeight "Permalink" "!=" .Permalink) }}
+{{ $related := slice }}
+{{ with $p.related }}
+  {{ range . }}
+    {{ with $.Site.GetPage (printf "/industries/%s" .) }}
+      {{ $related = $related | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if lt (len $related) 1 }}
+  {{ $related = first 4 (where .CurrentSection.Pages.ByWeight "Permalink" "!=" .Permalink) }}
+{{ end }}
 {{ $bandQuote := "" }}
 {{ $bandAlt := $p.body_alt }}
 {{ with $p.photo_band }}
@@ -288,17 +298,17 @@
 
 {{ $addr := dict "@type" "PostalAddress" "streetAddress" "21515 Vanowen St Suite 1110" "addressLocality" "Canoga Park" "addressRegion" "CA" "postalCode" "91303" "addressCountry" "US" }}
 {{ $provider := dict "@type" "Organization" "@id" "https://securetechie.com/#organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "telephone" "+1-818-431-5607" "address" $addr }}
-{{ $service := dict "@context" "https://schema.org" "@type" "Service" "@id" (printf "%s#service" .Permalink) "name" .Title "serviceType" ($p.service_type | default .Title) "description" .Params.description "url" .Permalink "image" ($p.hero_image | absURL) "provider" $provider "areaServed" (slice (dict "@type" "AdministrativeArea" "name" "Los Angeles County") (dict "@type" "AdministrativeArea" "name" "Southern California")) "audience" (dict "@type" "BusinessAudience" "audienceType" ($p.audience | default $p.short_name)) }}
+{{ $service := dict "@context" "https://schema.org" "@type" "Service" "@id" (printf "%s#service" .Permalink) "name" .Title "serviceType" ($p.service_type | default .Title) "description" .Params.description "url" .Permalink "inLanguage" "en-US" "image" ($p.hero_image | absURL) "provider" $provider "areaServed" (slice (dict "@type" "AdministrativeArea" "name" "Los Angeles County") (dict "@type" "AdministrativeArea" "name" "Southern California")) "audience" (dict "@type" "BusinessAudience" "audienceType" ($p.audience | default $p.short_name)) }}
 <script type="application/ld+json">{{ $service | jsonify | safeJS }}</script>
 {{ with $p.faq }}
 {{ $qs := slice }}
 {{ range .items }}
-{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
+{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" (.answer | markdownify | plainify))) }}
 {{ end }}
-<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "inLanguage" "en-US" "mainEntity" $qs) | jsonify | safeJS }}</script>
 {{ end }}
 {{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL)) (dict "@type" "ListItem" "position" 2 "name" "Industries" "item" ("industries/" | absURL)) (dict "@type" "ListItem" "position" 3 "name" ($p.short_name | default .Title) "item" .Permalink) }}
 <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) | jsonify | safeJS }}</script>
-{{ $page := dict "@context" "https://schema.org" "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" .Params.description "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/") "speakable" (dict "@type" "SpeakableSpecification" "cssSelector" (slice "h1" ".st-indp-lead")) }}
+{{ $page := dict "@context" "https://schema.org" "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" .Params.description "inLanguage" "en-US" "dateModified" (.Lastmod.Format "2006-01-02") "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/") "about" (dict "@type" "Service" "@id" (printf "%s#service" .Permalink)) "speakable" (dict "@type" "SpeakableSpecification" "cssSelector" (slice "h1" ".st-indp-lead" ".st-indp-article h2")) "publisher" $provider }}
 <script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
 {{ end }}

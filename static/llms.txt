@@ -6,7 +6,9 @@
 - Company: Secure Techies LLC — Managed IT Services & Cybersecurity
 - Founded: 2009
 - Service area: Los Angeles, San Fernando Valley, and all of Southern California (clients served nationwide)
-- Client mix: approximately half law firms; also healthcare, professional services, construction, finance, and growing SMBs
+- Client mix: approximately half law firms; also healthcare, professional services, construction, hospitality, warehousing, finance, and growing SMBs
+- LLM index: https://securetechie.com/llms.txt
+- LLM full index: https://securetechie.com/llms-full.txt
 - Differentiators: security-first approach, 24/7 monitoring and support, AI-accelerated delivery, one accountable local team for IT, security, web, and physical site surveillance
 - Website: https://securetechie.com/
 - About Us: https://securetechie.com/about/
@@ -24,6 +26,8 @@
 - Government (also /government/ for procurement IDs): https://securetechie.com/industries/government/
 - Media & advertising: https://securetechie.com/industries/media-advertising/
 - Technology & startups: https://securetechie.com/industries/technology/
+- Hospitality (restaurants, hotels, venues): https://securetechie.com/industries/hospitality/
+- Warehousing & logistics: https://securetechie.com/industries/warehousing-logistics/
 - Small business: https://securetechie.com/industries/small-business/
 - Government (CAGE 7JZF3, UEI VNXVECFGVAW6): https://securetechie.com/government/
 - Contact: https://securetechie.com/contact/
