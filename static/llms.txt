@@ -65,6 +65,7 @@
 ## Resources
 - Knowledge Center: https://securetechie.com/knowledge-center/
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/
+- Secure Techies vs a typical MSP (comparison table): https://securetechie.com/blog/secure-techies-vs-typical-msp/
 - Case studies: https://securetechie.com/case-studies/
 - Frequently asked questions (categorized FAQ with schema): https://securetechie.com/faq/
 - Privacy policy: https://securetechie.com/privacy-policy/

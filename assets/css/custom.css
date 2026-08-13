@@ -2931,6 +2931,127 @@ html, body {
 .st-post-content td { border-bottom: 1px solid #eef2f7; }
 .st-post-content tr:last-child td { border-bottom: none; }
 
+/* ---- MSP comparison table (Secure Techies vs typical MSP) ---- */
+.st-msp-compare { margin: 2rem 0 2.4rem; }
+.st-msp-compare-bar {
+  background: linear-gradient(135deg, #0a1628 0%, #123056 100%);
+  color: #e2e8f0;
+  border-radius: 16px 16px 0 0;
+  padding: 18px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.st-msp-compare-bar strong {
+  display: block;
+  color: #fff;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.st-msp-compare-bar p { margin: 0; color: #cbd5e1; font-size: 0.92rem; line-height: 1.55; }
+.st-msp-compare-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #dbe3ee;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  background: #fff;
+}
+.st-msp-compare table {
+  margin: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-width: 640px;
+  font-size: 0.94rem;
+}
+.st-msp-compare th,
+.st-msp-compare td { vertical-align: top; }
+.st-msp-compare thead th {
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 16px;
+}
+.st-msp-compare thead th.st-msp-us {
+  background: #0066CC;
+  color: #fff;
+  width: 28%;
+}
+.st-msp-compare thead th:last-child { width: 28%; color: #cbd5e1; }
+.st-msp-compare tbody th {
+  background: #eef4fb;
+  color: #0f172a;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.st-msp-compare td { padding: 14px 16px; background: #fff; }
+.st-msp-compare tr:nth-child(even) td { background: #f8fafc; }
+.st-msp-compare td:first-child {
+  font-weight: 700;
+  color: #0f172a;
+  width: 36%;
+}
+.st-msp-compare td:first-child span {
+  display: block;
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+.st-msp-compare td.st-msp-us {
+  background: #f0f7ff;
+  border-left: 3px solid #0066CC;
+  color: #0f172a;
+  font-weight: 600;
+}
+.st-msp-compare tr:nth-child(even) td.st-msp-us { background: #e8f2ff; }
+.st-msp-yes,
+.st-msp-mid,
+.st-msp-no {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.st-msp-yes { color: #047857; }
+.st-msp-mid { color: #b45309; }
+.st-msp-no { color: #64748b; }
+.st-msp-yes svg,
+.st-msp-mid svg,
+.st-msp-no svg { width: 16px; height: 16px; flex-shrink: 0; }
+.st-msp-compare td.st-msp-us .st-msp-detail,
+.st-msp-compare td .st-msp-detail {
+  display: block;
+  font-weight: 500;
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.st-msp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+@media (max-width: 700px) {
+  .st-msp-compare-bar { padding: 16px; }
+  .st-msp-compare td:first-child { min-width: 190px; }
+}
+
 /* ---- TOC: active section highlight ---- */
 .st-post-toc-label { color: #0066CC; }
 .st-post-toc nav a.st-toc-active {
