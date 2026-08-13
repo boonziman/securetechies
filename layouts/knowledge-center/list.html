@@ -1,89 +1,187 @@
 {{ define "main" }}
+{{ $blogs := where site.RegularPages "Section" "blog" }}
+{{ $tools := where site.RegularPages "Section" "tools" }}
+{{ $cases := where site.RegularPages "Section" "case-studies" }}
+{{ $featured := index $blogs 0 }}
 
-<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%)">
-  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,102,204,0.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none"></div>
-  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(0,102,204,0.12) 0%,transparent 70%);pointer-events:none"></div>
-  <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 1.5rem;text-align:center">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,204,0.12);border:1px solid rgba(0,102,204,0.2);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:20px;backdrop-filter:blur(4px)">
-      <div style="width:28px;height:28px;background:rgba(0,102,204,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center">
-        <svg style="width:14px;height:14px;color:#60a5fa" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-      </div>
-      <span style="font-size:0.78rem;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.08em">Knowledge Center</span>
+<section class="st-kc-hero" aria-labelledby="st-kc-h1">
+  <div class="st-kc-hero-copy">
+    <p class="st-kc-kicker">Guides · Tools · Case studies · FAQ</p>
+    <h1 id="st-kc-h1">Knowledge Center</h1>
+    <p class="st-kc-lead">Practical IT and cybersecurity guidance for Southern California businesses. Written by the team that does the work — not a content mill.</p>
+    <p class="st-kc-meta"><strong>{{ len $blogs }}</strong> guides · <strong>{{ len $tools }}</strong> free tools · real project write-ups</p>
+  </div>
+  {{ if $featured }}
+  <a class="st-kc-feat" href="{{ $featured.RelPermalink }}">
+    <span class="st-kc-feat-tag">Latest guide</span>
+    {{ with $featured.Params.image }}
+    <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" width="720" height="420" fetchpriority="high" decoding="async">
+    {{ end }}
+    <div class="st-kc-feat-body">
+      <h2>{{ $featured.Title }}</h2>
+      <p>{{ with $featured.Params.description }}{{ . | truncate 140 }}{{ else }}{{ $featured.Summary | plainify | truncate 140 }}{{ end }}</p>
+      <span>Read the guide</span>
     </div>
-    <h1 style="font-size:clamp(2rem,4.5vw,2.8rem);font-weight:800;color:#f1f5f9;line-height:1.15;letter-spacing:-0.03em;margin-bottom:16px">{{ .Title }}</h1>
-    <p style="font-size:1.05rem;color:#94a3b8;line-height:1.7;max-width:560px;margin:0 auto">{{ .Params.description | default "Practical IT, cybersecurity, and operations guidance for Southern California businesses — plus free tools and real project results." }}</p>
+  </a>
+  {{ end }}
+</section>
+
+<section class="st-kc-hubs" aria-labelledby="st-kc-hubs-h">
+  <div class="st-kc-wrap">
+    <div class="st-kc-head">
+      <h2 id="st-kc-hubs-h">Start with what you need</h2>
+      <p>Four places we keep current. Pick a path instead of hunting through the whole site.</p>
+    </div>
+    <div class="st-kc-cards">
+      <a href="{{ "blog/" | relURL }}">
+        <span class="st-kc-count">{{ len $blogs }}</span>
+        <h3>IT security blog</h3>
+        <p>Managed IT, cybersecurity, compliance, and mobile surveillance guides for owners and operators.</p>
+        <span class="st-kc-go">Browse articles</span>
+      </a>
+      <a href="{{ "tools/" | relURL }}">
+        <span class="st-kc-count">{{ len $tools }}</span>
+        <h3>Free IT calculators</h3>
+        <p>RAID, CCTV storage, VM sizing, ransomware cost, subnet, and password tools. No signup.</p>
+        <span class="st-kc-go">Open tools</span>
+      </a>
+      <a href="{{ "case-studies/" | relURL }}">
+        <span class="st-kc-count">{{ len $cases }}</span>
+        <h3>Case studies</h3>
+        <p>Real Secure Techies projects: the problem, what we changed, and the outcome.</p>
+        <span class="st-kc-go">See results</span>
+      </a>
+      <a href="{{ "faq/" | relURL }}">
+        <span class="st-kc-count">FAQ</span>
+        <h3>Questions, answered</h3>
+        <p>Pricing, help desk, security, government credentials, and how we work with law firms.</p>
+        <span class="st-kc-go">Read the FAQ</span>
+      </a>
+    </div>
   </div>
 </section>
 
-<section style="background:#fff;padding:64px 0 40px">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
-    <div style="text-align:center;margin-bottom:36px">
-      <span style="display:inline-block;font-size:0.72rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Browse by type</span>
-      <h2 style="font-size:1.55rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em">Everything in one place</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
-      <a href="{{ "blog/" | relURL }}" style="display:block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:28px 24px;text-decoration:none;transition:box-shadow .2s,border-color .2s" class="st-kc-card">
-        <div style="font-size:0.72rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Guides & articles</div>
-        <h3 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin:0 0 8px">IT Security Blog</h3>
-        <p style="font-size:0.95rem;color:#64748b;line-height:1.65;margin:0">Managed IT, cybersecurity, compliance, and mobile surveillance guides for business leaders.</p>
-      </a>
-      <a href="{{ "tools/" | relURL }}" style="display:block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:28px 24px;text-decoration:none;transition:box-shadow .2s,border-color .2s" class="st-kc-card">
-        <div style="font-size:0.72rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Interactive tools</div>
-        <h3 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin:0 0 8px">Free IT Calculators</h3>
-        <p style="font-size:0.95rem;color:#64748b;line-height:1.65;margin:0">RAID, CCTV storage, VM sizing, ransomware cost, subnet, and password tools — free in your browser.</p>
-      </a>
-      <a href="{{ "case-studies/" | relURL }}" style="display:block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:28px 24px;text-decoration:none;transition:box-shadow .2s,border-color .2s" class="st-kc-card">
-        <div style="font-size:0.72rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Proof</div>
-        <h3 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin:0 0 8px">Case Studies</h3>
-        <p style="font-size:0.95rem;color:#64748b;line-height:1.65;margin:0">Real Secure Techies projects with challenges, solutions, and measurable outcomes.</p>
-      </a>
-      <a href="{{ "faq/" | relURL }}" style="display:block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:28px 24px;text-decoration:none;transition:box-shadow .2s,border-color .2s" class="st-kc-card">
-        <div style="font-size:0.72rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Quick answers</div>
-        <h3 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin:0 0 8px">FAQ</h3>
-        <p style="font-size:0.95rem;color:#64748b;line-height:1.65;margin:0">Common questions about managed IT, support, pricing models, and getting started.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section style="background:#f8fafc;border-top:1px solid #eef2f7;padding:56px 0">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
-    <div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px">
+<section class="st-kc-recent" aria-labelledby="st-kc-recent-h">
+  <div class="st-kc-wrap">
+    <div class="st-kc-head st-kc-head-row">
       <div>
-        <span style="display:inline-block;font-size:0.72rem;font-weight:700;color:#0066CC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Latest from the blog</span>
-        <h2 style="font-size:1.45rem;font-weight:800;color:#0f172a;letter-spacing:-0.02em;margin:0">Recent guides</h2>
+        <h2 id="st-kc-recent-h">Recent guides</h2>
+        <p>New writing from the same engineers who handle tickets and security reviews.</p>
       </div>
-      <a href="{{ "blog/" | relURL }}" style="font-weight:800;color:#0066CC;text-decoration:none;font-size:0.95rem">View all articles →</a>
+      <a class="st-kc-textlink" href="{{ "blog/" | relURL }}">All articles</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-      {{ range first 6 (where site.RegularPages "Section" "blog") }}
-      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:22px 20px;box-shadow:0 4px 16px rgba(15,23,42,.04)">
-        <h3 style="font-size:1.02rem;font-weight:800;line-height:1.4;margin:0 0 10px"><a href="{{ .RelPermalink }}" style="color:#0f172a;text-decoration:none">{{ .Title }}</a></h3>
-        <p style="font-size:0.88rem;color:#64748b;line-height:1.6;margin:0 0 14px">{{ .Summary | plainify | truncate 120 }}</p>
-        <a href="{{ .RelPermalink }}" style="font-size:0.88rem;font-weight:800;color:#0066CC;text-decoration:none">Read guide →</a>
+    <div class="st-kc-posts">
+      {{ range first 6 $blogs }}
+      {{ $p := . }}
+      <article>
+        {{ with $p.Params.image }}
+        <a class="st-kc-thumb" href="{{ $p.RelPermalink }}"><img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" width="400" height="240" loading="lazy"></a>
+        {{ end }}
+        <div>
+          {{ with index $p.Params.categories 0 }}<span class="st-kc-cat">{{ . | humanize }}</span>{{ end }}
+          <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+          <p>{{ $p.Summary | plainify | truncate 110 }}</p>
+        </div>
       </article>
       {{ end }}
     </div>
   </div>
 </section>
 
-<section style="position:relative;overflow:hidden;background:linear-gradient(135deg,#0066CC 0%,#0052a3 100%);padding:56px 0">
-  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem;text-align:center">
-    <h2 style="font-size:1.55rem;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-0.02em">Need help applying this to your business?</h2>
-    <p style="color:rgba(255,255,255,0.88);line-height:1.7;margin:0 0 22px">Schedule a free IT risk assessment with Secure Techies — local engineers, clear findings, no obligation.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
-      <a href="{{ "contact/" | relURL }}" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0066CC;font-weight:800;font-size:15px;padding:14px 22px;border-radius:10px;text-decoration:none">Get Free Assessment</a>
-      <a href="tel:+18184315607" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3)">(818) 431-5607</a>
+<section class="st-kc-cta">
+  <div class="st-kc-wrap st-kc-cta-inner">
+    <h2>Need this applied to your office?</h2>
+    <p>A free IT risk assessment from the Canoga Park team. Local engineers, clear findings, no obligation.</p>
+    <div class="st-kc-actions">
+      <a class="st-kc-btn" href="{{ "contact/" | relURL }}">Get a free assessment</a>
+      <a class="st-kc-phone" href="tel:+18184315607">(818) 431-5607</a>
     </div>
   </div>
 </section>
 
 <style>
-.st-kc-card:hover{border-color:#bfdbfe;box-shadow:0 10px 28px rgba(0,102,204,.08)}
-@media(max-width:860px){
-  section div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}
-  section div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
+.st-kc-wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.st-kc-hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:#060d1a;color:#f8fafc}
+.st-kc-hero-copy{padding:clamp(80px,10vw,120px) clamp(24px,5vw,64px) 56px;display:flex;flex-direction:column;justify-content:center}
+.st-kc-kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 16px}
+.st-kc-hero h1{font-size:clamp(2.4rem,5vw,3.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 18px}
+.st-kc-lead{font-size:1.12rem;line-height:1.7;color:#cbd5e1;max-width:34rem;margin:0 0 22px}
+.st-kc-meta{margin:0;color:#94a3b8;font-size:.92rem}
+.st-kc-feat{position:relative;display:block;overflow:hidden;color:inherit;text-decoration:none;min-height:420px}
+.st-kc-feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st-kc-feat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,.15),rgba(6,13,26,.82))}
+.st-kc-feat-tag{position:absolute;top:20px;left:20px;z-index:2;background:#0066CC;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.st-kc-feat-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:28px}
+.st-kc-feat h2{font-size:1.45rem;line-height:1.25;margin:0 0 10px;color:#fff}
+.st-kc-feat p{margin:0 0 12px;color:#cbd5e1;line-height:1.55}
+.st-kc-feat span:last-child{font-weight:800;color:#93c5fd}
+.st-kc-feat:hover span:last-child{color:#fff}
+
+.st-kc-hubs{background:#fff;padding:80px 0 40px}
+.st-kc-head{max-width:640px;margin:0 0 32px}
+.st-kc-head h2,.st-kc-recent h2,.st-kc-cta h2{font-size:clamp(1.65rem,3vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:#0f172a;margin:0 0 10px}
+.st-kc-head p,.st-kc-cta p{color:#64748b;line-height:1.7;margin:0}
+.st-kc-head-row{display:flex;justify-content:space-between;align-items:end;gap:16px;max-width:none;margin-bottom:28px}
+.st-kc-textlink{font-weight:800;color:#0066CC;text-decoration:none;white-space:nowrap}
+.st-kc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.st-kc-cards a{display:flex;flex-direction:column;min-height:260px;padding:24px 22px;border-radius:18px;background:#0a1628;color:#e2e8f0;text-decoration:none;border:1px solid rgba(255,255,255,.06)}
+.st-kc-cards a:nth-child(2){background:#0d1f3c}
+.st-kc-cards a:nth-child(3){background:#07101d}
+.st-kc-cards a:nth-child(4){background:#0b2244}
+.st-kc-cards a:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(6,13,26,.18)}
+.st-kc-count{font-size:1.8rem;font-weight:800;letter-spacing:-.03em;color:#60a5fa;margin-bottom:18px}
+.st-kc-cards h3{font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 10px}
+.st-kc-cards p{font-size:.92rem;line-height:1.6;color:#94a3b8;margin:0 0 auto;padding-bottom:18px}
+.st-kc-go{font-weight:800;color:#93c5fd;font-size:.9rem}
+
+.st-kc-recent{background:#f4f7fb;padding:64px 0 80px;border-top:1px solid #e8eef5}
+.st-kc-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.st-kc-posts article{background:#fff;border:1px solid #e6edf5;border-radius:16px;overflow:hidden}
+.st-kc-thumb{display:block;aspect-ratio:16/9;overflow:hidden;background:#e2e8f0}
+.st-kc-thumb img{width:100%;height:100%;object-fit:cover}
+.st-kc-posts article>div{padding:18px 18px 20px}
+.st-kc-cat{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0066CC}
+.st-kc-posts h3{font-size:1.02rem;line-height:1.35;margin:8px 0 8px}
+.st-kc-posts h3 a{color:#0f172a;text-decoration:none}
+.st-kc-posts p{margin:0;color:#64748b;font-size:.88rem;line-height:1.55}
+
+.st-kc-cta{background:linear-gradient(135deg,#0066CC,#0052a3);padding:64px 0}
+.st-kc-cta-inner{max-width:640px}
+.st-kc-cta h2,.st-kc-cta p{color:#fff}
+.st-kc-cta p{color:rgba(255,255,255,.88);margin:0 0 22px}
+.st-kc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.st-kc-btn{display:inline-flex;background:#fff;color:#0f172a;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none}
+.st-kc-phone{color:#fff;font-weight:700;text-decoration:none}
+
+@media (max-width:980px){
+  .st-kc-hero{grid-template-columns:1fr}
+  .st-kc-cards{grid-template-columns:1fr 1fr}
+  .st-kc-posts{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .st-kc-cards,.st-kc-posts{grid-template-columns:1fr}
+  .st-kc-hero-copy{padding-top:88px}
 }
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "isPartOf": { "@type": "WebSite", "name": "Secure Techies", "url": "https://securetechie.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
+    {"@type":"ListItem","position":2,"name":"Knowledge Center","item":"{{ .Permalink }}"}
+  ]
+}
+</script>
 {{ end }}

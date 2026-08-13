@@ -1,7 +1,7 @@
 ---
 title: "Knowledge Center"
 meta_title: "IT Knowledge Center | Guides, Tools & Case Studies | Secure Techies"
-description: "Free IT knowledge hub from Secure Techies: cybersecurity guides, managed IT articles, free calculators, FAQs, and real case studies for Southern California businesses."
+description: "Secure Techies Knowledge Center: managed IT and cybersecurity guides, free calculators, case studies, and FAQs for Southern California businesses."
 draft: false
 ---
 
