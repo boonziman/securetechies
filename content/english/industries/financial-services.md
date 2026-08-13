@@ -130,42 +130,69 @@ faq:
   heading: "Financial IT questions"
   items:
     - question: "Do you work with RIAs and independent advisors?"
-      answer: "Yes. Most of this work is independent advisory and professional financial offices, not national banks."
+      answer: "Yes. Most of this work is independent advisory and professional finance offices, not national banks."
     - question: "Can you help with SOC 2 or SEC cybersecurity questions?"
-      answer: "We implement and document technical controls and help you respond to questionnaires. Formal audits and legal interpretations stay with your auditor and counsel. Start with [compliance and security audits](/services/compliance-security-audits/)."
+      answer: "We implement and document technical controls and help you respond to questionnaires. Formal audits and legal interpretations stay with your auditor and counsel. See [compliance and security audits](/services/compliance-security-audits/)."
     - question: "How do you reduce business-email compromise?"
       answer: "MFA everywhere, email authentication (SPF, DKIM, DMARC), advanced filtering, and training. Then a help desk that treats “urgent wire” emails as suspicious by default."
     - question: "Do you replace our existing cybersecurity vendor?"
       answer: "Sometimes we consolidate. Sometimes we co-manage. We will not run two overlapping EDR agents just to keep a logo on a slide."
+    - question: "Will you complete custodian and broker-dealer questionnaires?"
+      answer: "Yes. We answer from the live environment: MFA, backups, encryption, monitoring, and who is on call. We do not fill a form from a sales deck."
+    - question: "How much does financial-firm IT support cost?"
+      answer: "It depends on advisor and staff count, locations, and how much security and questionnaire work is in scope. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/)."
+    - question: "Do you work with firms that already have a compliance officer?"
+      answer: "Almost always. We run the technology. Your CCO and counsel own the exam. The split is written down."
     - question: "Where are you based?"
       answer: "21515 Vanowen St, Suite 1110, Canoga Park, CA. On-site across Southern California."
 ---
 
 ## IT support for wealth and financial firms
 
-Secure Techies provides **financial services IT** for advisory and professional finance offices in Southern California. The job is to keep client data tight and the desktop boring — in the best way.
+Secure Techies provides **financial services IT** for advisory and professional finance offices in Southern California. The job is to keep client data tight and the desktop boring — in the best way. A spoofed wire instruction is both an IT problem and a firm problem. The stack has to assume someone will try.
 
 We use the same [cybersecurity](/services/cybersecurity/) and [backup](/services/backup-disaster-recovery/) stack we run for [law firms](/industries/law-firms/). If the office is primarily a tax practice, see [accounting IT](/industries/accounting/).
 
 ### Who we work with
 
-Independent RIAs, advisory shops, and professional finance offices — not national banks. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model.
+Independent RIAs, advisory shops, and professional finance offices — not national banks. Typical size is 8 to 40 people. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model.
 
 [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer to a custodian or a client.
 
-### What we run
+### What is included
 
+A standard engagement covers:
+
+- [Managed help desk](/services/managed-help-desk/) for advisors and operations staff
 - Identity cleanup: leftover contractors, shared mailboxes, leftover admin rights
 - MFA on mail, VPN, and the portals we can reach
-- SPF, DKIM, DMARC, and a help desk that treats “urgent wire” email as suspicious
-- EDR and encryption on advisor laptops
-- Mailbox and file backups that have been restored
-- Questionnaire answers taken from the live environment, not a sales deck
+- Email authentication (SPF, DKIM, DMARC) and filtering aimed at business-email compromise
+- Endpoint detection and encryption on advisor laptops
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) that includes Microsoft 365, with restore tests
+- Questionnaire answers taken from the live environment
+- On-site hardware and office network from Canoga Park
 
 We are not your CCO. Regulatory exams belong to your compliance officer and counsel. We make the technical answers examinable.
 
-### Coverage
+### Wire fraud and email
 
-Canoga Park headquarters. On-site across Southern California.
+Most incidents in this market still start as an email. Urgent-sounding wiring instructions, a lookalike domain, a mailbox that forwarded copies for a week before anyone noticed. We treat email as a security system: authentication, filtering, MFA, and a help desk that slows down “send this now” instead of rushing it.
+
+### Custodian and client questionnaires
+
+Broker-dealers and custodians ask the same cluster of questions: MFA, encryption, backups, monitoring, incident process, who is on call. We map the live environment to those questions and close the gaps before you send the form back. Formal SOC 2 attestation and legal interpretations stay with your auditor and counsel.
+
+### Coverage and cost
+
+Canoga Park headquarters. On-site across Southern California. Remote when that is faster.
+
+Pricing depends on headcount, locations, and how much security and questionnaire work is in scope. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
 
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Cybersecurity](/services/cybersecurity/)
+- [Compliance and security audits](/services/compliance-security-audits/)
+- [Law firm IT](/industries/law-firms/)
+- [Accounting IT](/industries/accounting/)

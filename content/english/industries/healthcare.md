@@ -146,6 +146,10 @@ faq:
       answer: "Yes. Imaging-heavy specialties and dental offices have the same uptime and ePHI problems, plus large files and vendor-specific hardware."
     - question: "Where do you provide healthcare IT support?"
       answer: "Southern California on-site from Canoga Park, with remote support for multi-location groups."
+    - question: "How much does clinic IT support cost?"
+      answer: "Healthcare plans usually sit above generic office IT because of documentation, backup scope, and after-hours clinical impact. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/)."
+    - question: "What happens if the EHR goes down during clinic hours?"
+      answer: "Clinical outages are treated as urgent. Call (818) 431-5607. We coordinate with your EHR vendor when the issue is inside the application."
 ---
 
 ## HIPAA-aware managed IT for medical practices

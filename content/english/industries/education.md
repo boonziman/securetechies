@@ -139,6 +139,12 @@ faq:
       answer: "Yes, as a scoped project — usually before the school year — not as an every-Tuesday surprise."
     - question: "Where do you provide education IT support?"
       answer: "Southern California on-site, remote for multi-campus groups."
+    - question: "How do you schedule work around the school year?"
+      answer: "Risky changes sit in the breaks. Opening week and exam weeks are not maintenance windows unless the outage already is the disruption."
+    - question: "How much does school IT support cost?"
+      answer: "It depends on staff count, devices, and how much imaging or security work is in scope. We quote after a walkthrough. Planning ranges are on the [FAQ](/faq/)."
+    - question: "Do you support a student information system?"
+      answer: "We support the identity, devices, network, and backups around it. Application issues stay with the SIS vendor."
 ---
 
 ## IT support for schools and education organizations
@@ -147,20 +153,40 @@ Secure Techies provides **education IT services** for campuses and education org
 
 We work most often with independent schools, training organizations, and education nonprofits — not a 50-site public district that already has its own IT shop. [FERPA guidance](https://studentprivacy.ed.gov/) is the student-privacy baseline. Organizations that look more like a charity than a campus usually fit [nonprofit IT](/industries/nonprofit/).
 
-### What a right-sized school plan includes
+### Who we work with
 
-- Staff help desk that answers before the bell
+Independent campuses and education organizations that need an outsourced team, not a district NOC. Typical size is a school that already feels device and staff load and does not have a full internal IT department.
+
+### What is included
+
+A standard engagement covers:
+
+- Staff [help desk](/services/managed-help-desk/) that answers before the bell
 - Hardening of the platform you already chose — Google Workspace for Education or Microsoft 365
 - Least privilege, vendor inventory, and no shared admin as the long-term plan
 - Faculty laptop standards: patching, encryption, a replace-when-it-dies process
 - Lab imaging as a project before the year starts, not an every-Tuesday surprise
-- Restore tests for the SIS environment, mail, and files
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) for the SIS environment, mail, and files, with restore tests
+- [Cybersecurity](/services/cybersecurity/) sized for a campus, not a bank
 - Change windows in the breaks. Opening week is not a maintenance window
+- On-site from Canoga Park
 
 We do not mine student data. We do not pretend a 40-person school needs a district NOC.
 
-### Coverage
+### Student privacy
+
+FERPA and California student-privacy rules expect access control and a story for vendors. Shared admin logins fail that test. The plan is least privilege, encryption, a vendor inventory, and a written process for access requests.
+
+### Coverage and cost
 
 On-site from Canoga Park across Southern California. Remote for multi-campus groups.
 
+Pricing depends on staff count, devices, and how much imaging or security work is in scope. We quote after a walkthrough.
+
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Nonprofit IT](/industries/nonprofit/)
+- [Backup and disaster recovery](/services/backup-disaster-recovery/)
+- [FERPA guidance from the U.S. Department of Education](https://studentprivacy.ed.gov/)

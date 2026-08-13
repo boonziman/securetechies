@@ -139,6 +139,12 @@ faq:
       answer: "Yes. Resident portals, on-site staff, and vendor access are a different mix than a sales floor, but the same discipline applies."
     - question: "Where are you located?"
       answer: "Canoga Park. On-site across Southern California."
+    - question: "How fast do you offboard a departing agent?"
+      answer: "Same day. Mail, files, and shared logins get disabled when they leave. Leftover mailbox access is how deals leak."
+    - question: "How much does brokerage IT support cost?"
+      answer: "It depends on agent and staff count, offices, and whether cameras are in scope. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/)."
+    - question: "Do you build brokerage websites?"
+      answer: "Yes, when the public site is part of the work. See [web development](/services/web-development/)."
 ---
 
 ## IT support for real estate and property teams
@@ -151,23 +157,36 @@ Most of the workforce is not in the suite. Agents work from cars, listings, and 
 
 Independent brokerages, property managers, and hybrid teams in Los Angeles, the Valley, and nearby counties. Builders with a sales trailer usually start with [construction IT](/industries/construction/). Law firms that also do real-estate work usually start with [law firm IT](/industries/law-firms/).
 
-### What should be in the plan
+### What is included
 
-- MFA and email authentication aimed at wiring-instruction scams
+A standard engagement covers:
+
+- [Managed help desk](/services/managed-help-desk/) that will pick up when someone is standing in a driveway
+- Microsoft 365 administration: mail, sharing, and guest access that is not a free-for-all
+- [Cybersecurity](/services/cybersecurity/) aimed at mailbox takeovers and wiring-instruction scams — MFA, authentication, filtering
 - A written rule that wiring details are verified out of band
 - Same-day offboarding when an agent leaves
 - One network standard across offices — not five leftover consumer routers
-- Tested restores of Microsoft 365 and transaction files
-- A help desk that will pick up when someone is standing in a driveway
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) for Microsoft 365 and transaction files, with restore tests
+- [Mobile CCTV trailers](/services/mobile-cctv-trailers/) when a lot, community, or model home needs eyes after hours
+- [Web development](/services/web-development/) when the brokerage needs a better public face
 
 We do not run the MLS. We keep Microsoft 365, devices, and identity healthy so Dotloop, SkySlope, and the rest can do their jobs.
 
-### Sites and vacant lots
+### Wire fraud
 
-When a community, lot, or model home needs eyes after hours, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover the gap without a six-month cabling project.
+Real-estate wire fraud is a business model, not a rare event. Technical controls (MFA, email authentication, filtering) plus a habit (verify wiring instructions out of band) are what actually reduce it. A help desk that treats “urgent wire” email as suspicious is part of that habit.
 
-### Coverage
+### Coverage and cost
 
 Canoga Park headquarters. On-site across Southern California. Remote for hybrid agents nationwide.
 
+Pricing depends on agent and staff count, offices, and whether cameras are in scope. We quote after a free assessment.
+
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Cybersecurity](/services/cybersecurity/)
+- [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
+- [Construction IT](/industries/construction/)

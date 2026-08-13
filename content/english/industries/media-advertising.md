@@ -139,6 +139,12 @@ faq:
       answer: "Yes. The pattern is the same: mixed Mac/Windows, large files, and client confidentiality."
     - question: "Where do you provide on-site support?"
       answer: "Los Angeles and Southern California from Canoga Park."
+    - question: "Do you work nights and weekends?"
+      answer: "Yes. After-hours is normal in this market. A dead volume at 11 p.m. is treated as urgent."
+    - question: "How much does agency IT support cost?"
+      answer: "It depends on headcount, storage size, and how much after-hours coverage you need. We quote after seeing the restore window you actually need. Planning ranges are on the [FAQ](/faq/)."
+    - question: "Can you help size storage before we buy?"
+      answer: "Yes. Start with the [RAID calculator](/tools/raid-calculator/), then we map that to a restore window — what must come back in hours versus what can sit cold."
 ---
 
 ## IT support for media and advertising agencies
@@ -151,18 +157,34 @@ If the shared volume dies at 11 p.m., the campaign does not care that it is afte
 
 LA advertising agencies, in-house brand studios, and small post rooms that need corporate IT plus large-file literacy. We are not your colorist. Application and panel calibration stay with your post team.
 
-### What should be in the plan
+### What is included
 
-- Help desk that treats after-hours as normal
+A standard engagement covers:
+
+- [Managed help desk](/services/managed-help-desk/) that treats after-hours as normal
 - Shared storage and RAID sized for the restore window you actually need — start with the [RAID calculator](/tools/raid-calculator/)
 - Time-boxed freelancer accounts and same-week offboard
-- MFA, encryption, and mail that does not leak unreleased cuts
-- Restore tests on yesterday’s timeline, not a sample folder
+- Microsoft 365 that does not leak unreleased work
+- [Cybersecurity](/services/cybersecurity/): MFA, encryption, email filtering
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) tested on yesterday’s timeline, not a sample folder
 - A studio network that is not guest Wi-Fi
 - [Web development](/services/web-development/) when a campaign or studio site is part of the work
+- On-site from Canoga Park
 
-### Coverage
+### Storage and restore windows
+
+The first honest conversation is what must restore in hours versus what can sit on cold storage. We size the volume to that window. A restore test on a real edit is how you know the backup is not theater.
+
+### Coverage and cost
 
 On-site across Los Angeles from Canoga Park.
 
+Pricing depends on headcount, storage size, and after-hours coverage. We quote after seeing the environment.
+
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [RAID calculator](/tools/raid-calculator/)
+- [Backup and disaster recovery](/services/backup-disaster-recovery/)
+- [Web development](/services/web-development/)

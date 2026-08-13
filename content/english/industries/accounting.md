@@ -139,6 +139,12 @@ faq:
       answer: "We help you answer the technical controls and close gaps. Formal SOC 2 attestation is an auditor’s job. See [compliance services](/services/compliance-security-audits/)."
     - question: "Where do you support accounting firms?"
       answer: "On-site across Southern California from Canoga Park, remote nationwide."
+    - question: "What happens if tax software will not print at 10 p.m. in April?"
+      answer: "That ticket jumps the queue. We treat filing-window outages as urgent. Call (818) 431-5607."
+    - question: "Do you onboard seasonal staff?"
+      answer: "Yes. We set up accounts, devices, and MFA in December and revoke access when the season ends."
+    - question: "How much does CPA firm IT support cost?"
+      answer: "It depends on staff count, locations, and how much security work is in scope. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/)."
 ---
 
 ## CPA and accounting firm IT support
@@ -151,21 +157,30 @@ The work looks like other professional services — until busy season. Then ever
 
 CPA firms and accounting practices, typically 8 to 60 people, that already know last tax season was held together with overtime and hope. Firms that also practice law often start with our [law firm IT](/industries/law-firms/) work. Wealth-management shops are a better fit for [financial services IT](/industries/financial-services/).
 
-### What is in the plan
+### What is included
 
-- Help desk through filing season, including after-hours when the software will not print
+A standard engagement covers:
+
+- [Managed help desk](/services/managed-help-desk/) through filing season, including after-hours when the software will not print
 - Windows, printers, and scanners around Drake, Lacerte, UltraTax, or QuickBooks — application support stays with the vendor
-- MFA, least privilege, and email filtering aimed at W-2 phishing
-- Microsoft 365 that is not a desktop folder named FINAL_v7
-- A restore test before January
+- [Cybersecurity](/services/cybersecurity/): MFA, least privilege, and email filtering aimed at W-2 phishing
+- Microsoft 365 administration so client files are not sitting in a desktop folder named FINAL_v7
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) with a restore test before January
 - Seasonal staff onboarded in December and offboarded when the season ends
+- [Network security](/services/network-security/) and VPN sized for the rush
 - On-site for the scanner farm and the printer everyone needs on April 14
 
 We help with the technical controls behind IRS Publication 4557 and similar questionnaires. Formal SOC 2 attestation is an auditor’s job.
 
+### How we prepare for tax season
+
+The useful work happens in the fall. We test restores, patch windows, add licenses, create seasonal accounts, and agree how after-hours issues get escalated. Risky changes wait until after the filing window. If the tax software will not talk to the printer in April, the whole firm hears about it — so we treat that as a planning problem, not a surprise.
+
 ### Coverage and cost
 
-On-site across Southern California from Canoga Park. Remote nationwide. We quote after a free assessment.
+On-site across Southern California from Canoga Park. Remote nationwide.
+
+Pricing depends on staff count, locations, and how much security work is in scope. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
 
 Call (818) 431-5607 or [contact us](/contact/).
 
@@ -173,3 +188,4 @@ Call (818) 431-5607 or [contact us](/contact/).
 
 - [IT support cost for small professional firms](/blog/it-support-cost-small-business/)
 - [Microsoft 365 security](/blog/microsoft-365-business/)
+- [Managed help desk](/services/managed-help-desk/)

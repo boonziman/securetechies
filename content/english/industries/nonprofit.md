@@ -139,6 +139,12 @@ faq:
       answer: "Yes, when the environment looks like a small professional office plus volunteers."
     - question: "Where do you provide support?"
       answer: "Southern California on-site, remote nationwide."
+    - question: "Can you report to a board that backups were tested?"
+      answer: "Yes. We restore donor or grant data in a test and write down what happened so the board can hear it in one sentence."
+    - question: "How much does nonprofit IT support cost?"
+      answer: "It depends on staff count, volunteers, and what you must protect this year. We scope to that, which is usually the real savings. We quote after a free assessment."
+    - question: "Do you secure fundraising websites?"
+      answer: "Yes, when the public page is part of the work. See [web development](/services/web-development/)."
 ---
 
 ## Managed IT for nonprofits
@@ -151,20 +157,33 @@ A ransomware event does not care that you are a 501(c)(3). Grant reports, donor 
 
 Southern California nonprofits, associations, and churches that look like a small professional office plus volunteers. Schools usually start with [education IT](/industries/education/). Growing offices that happen to have a mission often fit [small business IT](/industries/small-business/).
 
-### What should be in the plan
+### What is included
 
-- MFA, least privilege, and encryption on donor and grant files
-- Microsoft 365 that does not leave board mailboxes alive forever
+A standard engagement covers:
+
+- [Managed help desk](/services/managed-help-desk/) for staff and the people who only work Tuesdays
+- Microsoft 365 so board mailboxes do not live forever
+- [Cybersecurity](/services/cybersecurity/): MFA, least privilege, encryption, email filtering
 - Identity and devices around Bloomerang, Salesforce, or similar — application support stays with the vendor
 - Volunteer offboarding when the shift or term ends
-- A backup that has been restored, with a sentence the board can hear
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) that has been restored, with a sentence the board can hear
 - Website security when the public page is part of fundraising
 - No unused enterprise suite you will never staff
 
 California nonprofits holding consumer personal information should treat [CCPA](https://oag.ca.gov/privacy/ccpa) as real.
+
+### Donor data and the board
+
+A breach at a nonprofit is a donor-trust story, not only an IT story. The plan is access control, email security, a backup that has been tested, and reporting a board can understand. We do not sell a stack you will never staff.
 
 ### Cost
 
 We do not pretend nonprofit IT is free. We scope to what you need this year, which is usually the real savings. Ask during the free assessment.
 
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Education IT](/industries/education/)
+- [Backup and disaster recovery](/services/backup-disaster-recovery/)
+- [Web development](/services/web-development/)

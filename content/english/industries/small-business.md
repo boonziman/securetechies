@@ -143,6 +143,12 @@ faq:
       answer: "Terms are written in the proposal. We prefer relationships that survive because the work is good."
     - question: "Where do you provide small-business IT support?"
       answer: "Southern California on-site from Canoga Park, remote nationwide."
+    - question: "What is included in a typical monthly plan?"
+      answer: "Help desk, Microsoft 365 administration, MFA and email security, endpoint protection, patching, backups with restore tests, and the office network. Projects such as moves and migrations are quoted separately."
+    - question: "How fast do you respond?"
+      answer: "Average response on standard tickets is under two hours. Business-stopping outages jump the queue. Call (818) 431-5607."
+    - question: "Can you take over from our current vendor?"
+      answer: "Yes. We map access, mail, backups, and vendors first, then cut over in a window you approve."
 ---
 
 ## Outsourced IT for small and mid-size businesses
@@ -155,21 +161,34 @@ The “IT person” model usually breaks around 15 employees. One staffer cannot
 
 Growing offices that need a full outsourced IT department. Law firms, clinics, contractors, and CPA shops usually get a tighter plan on their industry pages. For a Los Angeles overview, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/).
 
-### What should be in the plan
+### What is included
 
-- A number staff can call 24/7
+A standard engagement covers:
+
+- A number staff can call 24/7 — [managed help desk](/services/managed-help-desk/)
 - Microsoft 365 that is not a weekend setup someone abandoned
-- MFA, email filtering, endpoint protection, and patching — not a consumer antivirus trial
-- Backups that have been restored
+- [Cybersecurity](/services/cybersecurity/): MFA, email filtering, endpoint protection, and patching
+- [Backups](/services/backup-disaster-recovery/) that have been restored
 - Day-one onboarding and same-day offboarding
-- An office network that is not the 2018 guest password
+- [Infrastructure](/services/infrastructure/) and an office network that is not the 2018 guest password
 - Quarterly planning: what to buy, what to ignore, what it will cost
-- Projects (moves, migrations) quoted separately
+- Vendor coordination for internet, copiers, and line-of-business apps
+- On-site from Canoga Park across Southern California
 
-More on [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/). If you already have a part-time IT person, [co-managed IT](/blog/co-managed-it-services/) is common.
+Projects (moves, migrations) are quoted separately so the monthly plan stays predictable.
+
+### Break-fix versus a monthly plan
+
+Break-fix means you pay when things are already on fire. A managed plan means someone is already watching backups, patches, and email security — and there is a number to call at 9 p.m. More in [managed IT vs break-fix](/blog/managed-it-vs-break-fix/) and [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/). If you already have a part-time IT person, [co-managed IT](/blog/co-managed-it-services/) is common.
 
 ### Cost
 
 Typical managed plans for small professional firms often land around $100–$250 per user per month, depending on devices and security scope. We quote after a free assessment so the number matches your stack. More on the [FAQ](/faq/).
 
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Managed IT services in Los Angeles](/managed-it-services-los-angeles/)
+- [Managed IT vs break-fix](/blog/managed-it-vs-break-fix/)
+- [Co-managed IT](/blog/co-managed-it-services/)

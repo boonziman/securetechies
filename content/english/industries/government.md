@@ -139,26 +139,49 @@ faq:
       answer: "Yes, when the scope is managed IT, security, or help desk rather than a full municipal ERP replacement."
     - question: "Where are you headquartered?"
       answer: "21515 Vanowen St, Suite 1110, Canoga Park, CA 91303."
+    - question: "Do you document patch and access changes?"
+      answer: "Yes. Change control is part of the work. Patch evidence and access reviews are written against the SOW."
+    - question: "How do you price public-sector work?"
+      answer: "Against the written scope. We do not invent a rate card that ignores the SOW. Ask during the assessment."
+    - question: "Can we co-manage with internal IT?"
+      answer: "Yes. Named support for after-hours, security, and overflow is common while an internal lead stays strategic."
 ---
 
 ## Public-sector managed IT
 
 Secure Techies, LLC provides **government IT services** from Canoga Park for agencies and public-sector teams that need a vendor they can find in SAM.gov and a team that documents what it does.
 
-**CAGE 7JZF3. UEI VNXVECFGVAW6.** Full procurement details are on our [government](/government/) page. Day-to-day work is [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [compliance](/services/compliance-security-audits/).
-
-### Credentials you can verify
-
-Procurement teams look these up. We will not invent a GSA schedule or a personnel clearance you cannot confirm. Treat anything not listed on the government page — or confirmed in writing from us — as not claimed.
-
-CMMC-oriented technical and process work is in scope when the SOW says so. Formal certification is a C3PAO’s job.
+**CAGE 7JZF3. UEI VNXVECFGVAW6.** Full procurement details are on our [government](/government/) page.
 
 ### Who we work with
 
-Cities, special districts, and public-sector teams that need managed IT, security, or help desk — not a full municipal ERP replacement. Scope follows the written SOW. Change control is part of the work, not an extra.
+Cities, special districts, and public-sector teams that need managed IT, security, or help desk — not a full municipal ERP replacement. Scope follows the written SOW.
 
-### Coverage
+### What is included
 
-21515 Vanowen St, Suite 1110, Canoga Park, CA 91303.
+When the SOW calls for it, the work is:
+
+- Named [help desk](/services/managed-help-desk/), not an anonymous queue
+- [Infrastructure](/services/infrastructure/) with written change control
+- [Cybersecurity](/services/cybersecurity/) on the systems we are contracted to protect
+- Patch and access evidence you can put in a binder
+- [Compliance](/services/compliance-security-audits/) support, including CMMC-oriented gap work
+- A local California vendor at 21515 Vanowen St, Suite 1110, Canoga Park, CA 91303
+
+CMMC-oriented technical and process work is in scope when the SOW says so. Formal certification is a C3PAO’s job.
+
+### Credentials you can verify
+
+Procurement teams look these up. We will not invent a GSA schedule or a personnel clearance you cannot confirm. Treat anything not listed on the [government](/government/) page — or confirmed in writing from us — as not claimed.
+
+### Coverage and next step
+
+Canoga Park headquarters. On-site for local California work. Remote where the SOW allows.
 
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Government procurement](/government/)
+- [Compliance and security audits](/services/compliance-security-audits/)
+- [Cybersecurity](/services/cybersecurity/)

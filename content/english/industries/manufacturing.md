@@ -139,6 +139,12 @@ faq:
       answer: "We support the infrastructure, identity, and backups those systems need, and we escalate to the ERP vendor for application issues."
     - question: "Where do you work?"
       answer: "Southern California plants and offices, remote support for multi-site companies."
+    - question: "Do you come on site for plant hardware?"
+      answer: "Yes. Canoga Park team across Southern California for workstations, switches, and the days remote is not enough."
+    - question: "How much does manufacturing IT support cost?"
+      answer: "It depends on office headcount, sites, and whether cameras or extra segmentation are in scope. We quote after a walkthrough. Planning ranges are on the [FAQ](/faq/)."
+    - question: "What is out of scope by default?"
+      answer: "Reprogramming PLCs and owning the controls network. We isolate, document, and coordinate with your controls vendor unless the statement of work says otherwise."
 ---
 
 ## IT support for manufacturing companies
@@ -151,22 +157,35 @@ We run [infrastructure](/services/infrastructure/), [network security](/services
 
 Southern California manufacturers with an office, a shipping desk, and a floor that should not share Wi-Fi with accounting. Typical fit is a plant that already has a controls vendor and needs an MSP for business systems. We do not casually reprogram PLCs. Contractor yards are a better fit for [construction IT](/industries/construction/).
 
+### What is included
+
+A standard engagement covers:
+
+- Help desk for ERP users, accounting, and the shipping desk
+- [Infrastructure](/services/infrastructure/) under ERP, inventory, and shipping — application issues stay with the ERP vendor
+- [Network security](/services/network-security/) and segmentation so the floor is not office Wi-Fi
+- Inventory of OEM PCs dropped on the LAN, and isolation of what we cannot harden
+- [Cybersecurity](/services/cybersecurity/) on the business side — email and endpoints are still how ransomware arrives
+- [Backup and disaster recovery](/services/backup-disaster-recovery/) for business systems, with restore tests
+- Change windows that follow production, not our ticket clock
+- [Mobile CCTV trailers](/services/mobile-cctv-trailers/) when the yard or warehouse is the risk
+- On-site from Canoga Park
+
 ### What careful around production means
 
-- Inventory OEM PCs that were dropped on the LAN and never patched
-- Segment IT from OT so a mailbox incident does not walk onto a controller
-- Treat ERP, inventory, and shipping as critical — trucks waiting is not a printer ticket
-- Harden email and endpoints on the business side. That is still how ransomware arrives
-- Tell you when you need a specialist controls engineer instead of improvising
+Plenty of vendors claim they “converge OT and IT.” Some should. Many should not. We inventory the boundary, isolate risk, harden the office side, and tell you when you need a specialist controls engineer instead of improvising. If a change could stop a line, it is scheduled, approved, and reversible.
 
-Plenty of vendors claim they “converge OT and IT.” Some should. Many should not. We would rather be precise.
-
-### Yard and warehouse
-
-Where the lot or staging area is the risk, [mobile CCTV trailers](/services/mobile-cctv-trailers/) cover it without a six-month cabling project.
-
-### Coverage
+### Coverage and cost
 
 On-site across Southern California from Canoga Park. Remote for multi-site companies.
 
+Pricing depends on office headcount, sites, and whether cameras or extra segmentation are in scope. We quote after a walkthrough.
+
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Network security](/services/network-security/)
+- [Cybersecurity](/services/cybersecurity/)
+- [Mobile CCTV trailers](/services/mobile-cctv-trailers/)
+- [Construction IT](/industries/construction/)

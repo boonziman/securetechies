@@ -139,6 +139,12 @@ faq:
       answer: "When the first security questionnaire arrives, or when an engineer is spending a day a week on password resets. Often 15–40 people."
     - question: "Where are you based?"
       answer: "Canoga Park, supporting Los Angeles and remote-first teams nationwide."
+    - question: "Do you support Okta and Google Workspace?"
+      answer: "Yes. Okta, Microsoft 365, or Google — we harden the identity platform you already chose."
+    - question: "How much does startup corporate IT cost?"
+      answer: "It depends on headcount, fleet mix, and how much SOC 2 evidence work is in scope. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/)."
+    - question: "Can we keep our internal IT lead?"
+      answer: "Yes. Co-managed is the usual model: you keep product infrastructure, we keep employees productive and examinable."
 ---
 
 ## Corporate IT for startups and tech companies
@@ -151,22 +157,37 @@ We are not here to rewrite your product. We run [help desk](/services/managed-he
 
 Los Angeles startups and tech companies — often 15 to 80 people, mixed Mac and Windows, a customer questionnaire on the calendar. Smaller shops that are not yet facing a security review usually start with [small business IT](/industries/small-business/).
 
-### What we take off the plate
+### What is included
 
-- Employee help desk so engineering is not tier 1
+A standard engagement covers:
+
+- Employee [help desk](/services/managed-help-desk/) so engineering is not tier 1
 - Identity: Okta, Microsoft 365, or Google — MFA and least privilege
 - Laptop fleet: imaging, encryption, MDM, a cart that is not a junk pile
 - Same-day offboarding
 - SaaS inventory: what holds company data, and who still has a login
 - Office network and meeting rooms
-- Evidence for laptop management, MFA, backups, and offboarding. Your auditor still signs the SOC 2 report
+- [Backup](/services/backup-disaster-recovery/) and evidence for laptop management, MFA, and offboarding
+- On-site from Canoga Park across Los Angeles
 
-The default engagement does not include AWS or GCP production. We will not touch prod unless you hire us to.
+Your auditor still signs the SOC 2 report. We implement and evidence the controls we operate.
+
+### Corporate IT, not production
+
+The default engagement does not include AWS or GCP production. We will not touch prod unless you hire us to. That fence is how you stay sane past Series A.
 
 If you are still sizing hardware, the [VM calculator](/tools/vm-calculator/) is a useful first pass.
 
-### Coverage
+### Coverage and cost
 
 Canoga Park, supporting Los Angeles offices and remote-first teams nationwide.
 
+Pricing depends on headcount, fleet mix, and how much evidence work is in scope. We quote after a free assessment.
+
 Call (818) 431-5607 or [contact us](/contact/).
+
+### Related reading
+
+- [Compliance and security audits](/services/compliance-security-audits/)
+- [Small business IT](/industries/small-business/)
+- [VM calculator](/tools/vm-calculator/)
