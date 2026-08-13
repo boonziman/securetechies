@@ -1,7 +1,8 @@
 ---
 title: "Industries We Serve"
-meta_title: "Industries | IT & Cybersecurity by Vertical | Secure Techies"
-description: "Secure Techies delivers managed IT and cybersecurity for law firms, healthcare, finance, construction, and growing businesses across Southern California."
+meta_title: "IT Services by Industry | Legal, Healthcare & More | Secure Techies"
+description: "Industry-specific managed IT and cybersecurity for law firms, healthcare, construction, finance, and Southern California businesses. Local team since 2009."
+image: "/images/industries/industries-hub-los-angeles.webp"
 draft: false
 ---
 

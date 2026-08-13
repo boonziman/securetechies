@@ -1,0 +1,87 @@
+---
+title: "Small Business IT Services"
+meta_title: "Small Business IT Services | Outsourced IT Los Angeles | Secure Techies"
+description: "Managed IT for small and mid-size businesses in Los Angeles: help desk, cybersecurity, backups, and a local team so you do not have to hire a full IT department."
+image: "/images/industries/small-business-it-office.webp"
+keywords:
+  - small business IT services Los Angeles
+  - managed IT for small business
+  - outsourced IT SMB
+short_name: "Small business"
+card_text: "Full outsourced IT for teams that need enterprise-grade tools without an internal department."
+kicker: "Growing SMBs"
+hero_subtitle: "Most small businesses do not need a six-person IT shop. They need someone who answers, backups that restore, and security that is not a consumer antivirus trial."
+hero_image: "/images/industries/small-business-it-office.webp"
+hero_alt: "Bright Southern California small-business office with shared desks and plants"
+weight: 13
+audience: "Small and mid-size businesses"
+service_type: "Managed IT services for small business"
+hero_stats:
+  - value: "Outsourced"
+    label: "Full IT department"
+  - value: "24/7"
+    label: "Help desk"
+  - value: "SoCal"
+    label: "On-site when needed"
+challenges:
+  heading: "The “IT person” model breaks at 15 employees"
+  intro: "One staffer cannot cover after-hours, security, vendors, and the printer. That is when outages start getting personal."
+  items:
+    - title: "Break-fix is a surprise invoice"
+      text: "You pay when things are already on fire. Managed IT turns that into a monthly plan. See [managed IT vs break-fix](/blog/managed-it-vs-break-fix/)."
+    - title: "Security is skipped until it is not"
+      text: "Small firms are automated targets. MFA and backups are cheaper than a week of downtime."
+    - title: "No one owns onboarding"
+      text: "New hires wait two days for email. We make day-one access a checklist."
+offerings:
+  heading: "What small businesses usually buy"
+  intro: "A complete plan, not a pile of tools you have to operate."
+  items:
+    - title: "Managed help desk"
+      url: "/services/managed-help-desk/"
+      text: "The day-to-day reason people hire us."
+    - title: "Cybersecurity"
+      url: "/services/cybersecurity/"
+      text: "Email, endpoints, and MFA included in how we work — not a scare upsell."
+    - title: "Backup and recovery"
+      url: "/services/backup-disaster-recovery/"
+      text: "Tested restores. The part most break-fix shops skip."
+    - title: "Managed infrastructure"
+      url: "/services/infrastructure/"
+      text: "Servers, Microsoft 365, and the office network."
+photo_band:
+  image: "/images/industries/small-business-it-office.webp"
+  alt: "Growing small-business office in Southern California"
+  quote: "If you are the owner and also the IT department, you already know this is not a good long-term job."
+why:
+  heading: "Why SMBs stay"
+  intro: "Predictable cost, a named team, and a local office you can visit."
+  items:
+    - title: "Los Angeles coverage"
+      text: "Start with [managed IT services in Los Angeles](/managed-it-services-los-angeles/) if you want the city-focused landing page."
+    - title: "Industry path when you have one"
+      text: "Law, healthcare, and construction have dedicated pages. Use those if they fit — the plan will be sharper."
+    - title: "Honest pricing talk"
+      text: "Ranges and tradeoffs live on the [FAQ](/faq/). We quote after seeing the environment."
+    - title: "Local"
+      text: "Canoga Park headquarters. On-site across Southern California."
+faq:
+  heading: "Small business IT questions"
+  items:
+    - question: "How much does managed IT cost for a small business?"
+      answer: "It depends on users, devices, and security scope. National planning ranges often sit around $100–$250 per user per month. We quote after a free assessment. Details on the [FAQ](/faq/)."
+    - question: "Is an MSP cheaper than hiring someone?"
+      answer: "For most firms under ~75 people, yes, once salary, benefits, after-hours, and skills gaps are included. See [why small businesses need managed IT](/blog/why-small-businesses-need-managed-it/)."
+    - question: "Can you work with our part-time IT person?"
+      answer: "Yes. Co-managed IT is common. Read [co-managed IT services](/blog/co-managed-it-services/)."
+    - question: "Do I need a long-term contract?"
+      answer: "Terms are written in the proposal. We prefer relationships that survive because the work is good."
+    - question: "Where do you provide small-business IT support?"
+      answer: "Southern California on-site from Canoga Park, remote nationwide."
+---
+
+## Outsourced IT for small and mid-size businesses
+
+Secure Techies provides **small business IT services** for Southern California teams that have outgrown “my cousin looks at it.” We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [backups](/services/backup-disaster-recovery/) as one plan.
+
+If you are a law firm, start at [law firms](/industries/law-firms/). If you want the city page, use [managed IT services Los Angeles](/managed-it-services-los-angeles/).

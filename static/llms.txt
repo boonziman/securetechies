@@ -11,7 +11,20 @@
 - Website: https://securetechie.com/
 - About Us: https://securetechie.com/about/
 - Our Founder: https://securetechie.com/about/our-founder/
-- Industries: https://securetechie.com/industries/
+- Industries hub: https://securetechie.com/industries/
+- Law firms (primary vertical): https://securetechie.com/industries/law-firms/
+- Healthcare: https://securetechie.com/industries/healthcare/
+- Accounting: https://securetechie.com/industries/accounting/
+- Financial services: https://securetechie.com/industries/financial-services/
+- Construction: https://securetechie.com/industries/construction/
+- Manufacturing: https://securetechie.com/industries/manufacturing/
+- Real estate: https://securetechie.com/industries/real-estate/
+- Education: https://securetechie.com/industries/education/
+- Nonprofit: https://securetechie.com/industries/nonprofit/
+- Government (also /government/ for procurement IDs): https://securetechie.com/industries/government/
+- Media & advertising: https://securetechie.com/industries/media-advertising/
+- Technology & startups: https://securetechie.com/industries/technology/
+- Small business: https://securetechie.com/industries/small-business/
 - Government (CAGE 7JZF3, UEI VNXVECFGVAW6): https://securetechie.com/government/
 - Contact: https://securetechie.com/contact/
 

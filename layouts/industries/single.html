@@ -1,0 +1,315 @@
+{{ define "main" }}
+{{ $p := .Params }}
+{{ $related := first 4 (where (where .CurrentSection.Pages "Permalink" "!=" .Permalink) "Params.weight" "!=" nil) }}
+
+<article class="st-indp" itemscope itemtype="https://schema.org/Service">
+  <header class="st-indp-hero">
+    <div class="st-indp-hero-copy">
+      <nav class="st-indp-crumb" aria-label="Breadcrumb">
+        <a href="{{ "/" | relURL }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="{{ "industries/" | relURL }}">Industries</a>
+        <span aria-hidden="true">/</span>
+        <span>{{ $p.short_name | default .Title }}</span>
+      </nav>
+      {{ with $p.kicker }}<p class="st-indp-kicker">{{ . }}</p>{{ end }}
+      <h1 itemprop="name">{{ .Title }}</h1>
+      <p class="st-indp-lead">{{ $p.hero_subtitle }}</p>
+      {{ with $p.hero_stats }}
+      <ul class="st-indp-stats">
+        {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
+      <div class="st-indp-actions">
+        <a class="st-indp-btn" href="{{ "contact/" | relURL }}">Free industry assessment</a>
+        <a class="st-indp-phone" href="tel:+18184315607">(818) 431-5607</a>
+      </div>
+    </div>
+    <figure class="st-indp-hero-media">
+      <img src="{{ $p.hero_image | relURL }}" alt="{{ $p.hero_alt }}" width="1280" height="720" fetchpriority="high" decoding="async">
+    </figure>
+  </header>
+
+  {{ with $p.challenges }}
+  <section class="st-indp-section" id="challenges" aria-labelledby="st-indp-ch-h">
+    <div class="st-indp-wrap st-indp-split">
+      <figure>
+        <img src="{{ $.Params.mid_image | default $.Params.hero_image | relURL }}" alt="{{ $.Params.mid_alt | default $.Params.hero_alt }}" width="900" height="700" loading="lazy">
+      </figure>
+      <div>
+        <h2 id="st-indp-ch-h">{{ .heading }}</h2>
+        <p>{{ .intro }}</p>
+        <ul class="st-indp-challenges">
+          {{ range .items }}
+          <li>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.offerings }}
+  <section class="st-indp-section st-indp-alt" id="what-we-do" aria-labelledby="st-indp-off-h">
+    <div class="st-indp-wrap">
+      <div class="st-indp-head">
+        <h2 id="st-indp-off-h">{{ .heading }}</h2>
+        <p>{{ .intro }}</p>
+      </div>
+      <div class="st-indp-offer">
+        {{ range .items }}
+        <a href="{{ .url | relURL }}">
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+          <span>Explore {{ .title }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if .Content }}
+  <section class="st-indp-section" id="details" aria-labelledby="st-indp-body-h">
+    <div class="st-indp-wrap st-indp-prose">
+      {{ .Content }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.photo_band }}
+  <section class="st-indp-band" aria-hidden="false">
+    <img src="{{ .image | relURL }}" alt="{{ .alt }}" width="1600" height="700" loading="lazy">
+    <div class="st-indp-band-copy">
+      <p>{{ .quote }}</p>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.why }}
+  <section class="st-indp-section st-indp-alt" id="why" aria-labelledby="st-indp-why-h">
+    <div class="st-indp-wrap st-indp-why">
+      <div>
+        <h2 id="st-indp-why-h">{{ .heading }}</h2>
+        <p>{{ .intro }}</p>
+      </div>
+      <ul>
+        {{ range .items }}
+        <li>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.faq }}
+  <section class="st-indp-section" id="faq" aria-labelledby="st-indp-faq-h">
+    <div class="st-indp-wrap st-indp-faq">
+      <h2 id="st-indp-faq-h">{{ .heading | default "Questions we hear from this industry" }}</h2>
+      {{ range .items }}
+      <details>
+        <summary>{{ .question }}</summary>
+        <div>{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if $related }}
+  <section class="st-indp-section st-indp-alt" aria-labelledby="st-indp-rel-h">
+    <div class="st-indp-wrap">
+      <div class="st-indp-head">
+        <h2 id="st-indp-rel-h">Other industries we support</h2>
+        <a href="{{ "industries/" | relURL }}">All industries</a>
+      </div>
+      <div class="st-indp-related">
+        {{ range $related }}
+        <a href="{{ .RelPermalink }}">
+          <img src="{{ .Params.hero_image | relURL }}" alt="" width="640" height="360" loading="lazy">
+          <strong>{{ .Params.short_name | default .Title }}</strong>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="st-indp-cta">
+    <div class="st-indp-wrap">
+      <h2>Talk through your {{ $p.short_name | default "industry" }} environment</h2>
+      <p>A free assessment from the Canoga Park team. We will tell you what is actually broken, what can wait, and what a managed plan would cover.</p>
+      <div class="st-indp-actions">
+        <a class="st-indp-btn st-indp-btn-light" href="{{ "contact/" | relURL }}">Contact us</a>
+        <a class="st-indp-phone st-indp-phone-light" href="tel:+18184315607">(818) 431-5607</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+.st-indp-wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.st-indp-hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;background:#060d1a;color:#f8fafc}
+.st-indp-hero-copy{padding:clamp(80px,10vw,110px) clamp(24px,5vw,64px) 56px;display:flex;flex-direction:column;justify-content:center}
+.st-indp-crumb{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;color:#94a3b8;margin:0 0 18px}
+.st-indp-crumb a{color:#93c5fd;text-decoration:none;font-weight:600}
+.st-indp-kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 12px}
+.st-indp-hero h1{font-size:clamp(2.1rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin:0 0 16px}
+.st-indp-lead{font-size:1.08rem;line-height:1.7;color:#cbd5e1;max-width:36rem;margin:0 0 22px}
+.st-indp-stats{list-style:none;margin:0 0 26px;padding:18px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid rgba(255,255,255,.1)}
+.st-indp-stats li{display:flex;flex-direction:column;gap:2px}
+.st-indp-stats strong{font-size:1.15rem;font-weight:800}
+.st-indp-stats span{font-size:.74rem;color:#94a3b8;font-weight:600}
+.st-indp-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.st-indp-btn{display:inline-flex;background:#0066CC;color:#fff;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none}
+.st-indp-btn:hover{background:#0052a3}
+.st-indp-btn-light{background:#fff;color:#0f172a}
+.st-indp-phone{color:#93c5fd;font-weight:700;text-decoration:none}
+.st-indp-phone-light{color:#fff}
+.st-indp-hero-media{margin:0;min-height:360px}
+.st-indp-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+.st-indp-section{padding:80px 0;background:#fff}
+.st-indp-alt{background:#f4f7fb}
+.st-indp-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.st-indp-split figure{margin:0;border-radius:18px;overflow:hidden}
+.st-indp-split img{width:100%;height:100%;object-fit:cover;min-height:420px;display:block}
+.st-indp-section h2,.st-indp-prose h2{font-size:clamp(1.6rem,3vw,2.05rem);font-weight:800;letter-spacing:-.03em;color:#0f172a;margin:0 0 14px;line-height:1.15}
+.st-indp-section p,.st-indp-prose p{color:#475569;line-height:1.8;margin:0 0 16px}
+.st-indp-challenges{list-style:none;margin:20px 0 0;padding:0}
+.st-indp-challenges li{padding:16px 0;border-top:1px solid #e8eef5}
+.st-indp-challenges h3,.st-indp-offer h3,.st-indp-why h3{font-size:1.02rem;font-weight:800;color:#0f172a;margin:0 0 6px}
+.st-indp-challenges p{margin:0;font-size:.95rem}
+
+.st-indp-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+.st-indp-head a{font-weight:800;color:#0066CC;text-decoration:none;white-space:nowrap}
+.st-indp-offer{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.st-indp-offer a{display:block;padding:22px;background:#fff;border:1px solid #e6edf5;border-radius:16px;text-decoration:none}
+.st-indp-offer a:hover{border-color:#bfdbfe;box-shadow:0 10px 28px rgba(15,42,80,.06)}
+.st-indp-offer p{margin:0 0 12px;font-size:.92rem}
+.st-indp-offer span{font-weight:800;color:#0066CC;font-size:.88rem}
+
+.st-indp-prose{max-width:760px}
+.st-indp-prose h2:first-child{margin-top:0}
+.st-indp-prose h3{font-size:1.15rem;font-weight:800;color:#0f172a;margin:1.6rem 0 .6rem}
+.st-indp-prose ul,.st-indp-prose ol{margin:0 0 18px;padding-left:1.2rem;color:#475569;line-height:1.75}
+.st-indp-prose a{color:#0066CC;font-weight:600;text-decoration:none}
+.st-indp-prose a:hover{text-decoration:underline}
+
+.st-indp-band{position:relative;min-height:320px;overflow:hidden}
+.st-indp-band img{width:100%;height:360px;object-fit:cover;display:block}
+.st-indp-band-copy{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,13,26,.78),rgba(6,13,26,.25));display:flex;align-items:center}
+.st-indp-band-copy p{max-width:640px;margin:0 auto;padding:0 1.5rem;color:#fff;font-size:clamp(1.25rem,2.5vw,1.7rem);font-weight:700;line-height:1.35}
+
+.st-indp-why{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+.st-indp-why ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.st-indp-why li{padding:18px 0;border-top:1px solid #e2e8f0}
+.st-indp-why li p{margin:0;font-size:.92rem}
+
+.st-indp-faq{max-width:800px}
+.st-indp-faq details{background:#fff;border:1px solid #e6edf5;border-radius:12px;margin-bottom:10px;padding:0 18px}
+.st-indp-faq summary{cursor:pointer;font-weight:750;color:#0f172a;padding:16px 0;list-style:none}
+.st-indp-faq summary::-webkit-details-marker{display:none}
+.st-indp-faq details[open]{border-color:#93c5fd}
+.st-indp-faq details>div{padding:0 0 16px;color:#475569;line-height:1.75}
+
+.st-indp-related{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.st-indp-related a{display:block;text-decoration:none;color:#0f172a;background:#fff;border:1px solid #e6edf5;border-radius:14px;overflow:hidden}
+.st-indp-related img{width:100%;height:120px;object-fit:cover;display:block}
+.st-indp-related strong{display:block;padding:12px 14px;font-size:.9rem}
+
+.st-indp-cta{background:linear-gradient(135deg,#0066CC,#0052a3);padding:72px 0;color:#fff}
+.st-indp-cta h2{color:#fff;font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 12px}
+.st-indp-cta p{color:rgba(255,255,255,.88);max-width:560px;margin:0 0 22px}
+
+@media (max-width:980px){
+  .st-indp-hero,.st-indp-split,.st-indp-why{grid-template-columns:1fr}
+  .st-indp-offer,.st-indp-related,.st-indp-why ul{grid-template-columns:1fr 1fr}
+  .st-indp-hero-media{min-height:280px}
+}
+@media (max-width:640px){
+  .st-indp-offer,.st-indp-related,.st-indp-stats,.st-indp-why ul{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ .Permalink }}#service",
+  "name": {{ .Title | jsonify }},
+  "serviceType": {{ $p.service_type | default .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "image": "{{ $p.hero_image | absURL }}",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://securetechie.com/#organization",
+    "name": "Secure Techies, LLC",
+    "url": "https://securetechie.com/",
+    "telephone": "+1-818-431-5607",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "21515 Vanowen St Suite 1110",
+      "addressLocality": "Canoga Park",
+      "addressRegion": "CA",
+      "postalCode": "91303",
+      "addressCountry": "US"
+    }
+  },
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Los Angeles County"},
+    {"@type":"AdministrativeArea","name":"Southern California"}
+  ],
+  "audience": {"@type":"BusinessAudience","audienceType": {{ $p.audience | default $p.short_name | jsonify }}}
+}
+</script>
+{{ with $p.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := .items }}{{ if $i }},{{ end }}{
+      "@type": "Question",
+      "name": {{ $item.question | jsonify }},
+      "acceptedAnswer": {"@type":"Answer","text": {{ $item.answer | jsonify }}}
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
+    {"@type":"ListItem","position":2,"name":"Industries","item":"{{ "industries/" | absURL }}"},
+    {"@type":"ListItem","position":3,"name":{{ ($p.short_name | default .Title) | jsonify }},"item":"{{ .Permalink }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{ .Permalink }}#webpage",
+  "url": "{{ .Permalink }}",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Params.description | jsonify }},
+  "isPartOf": {"@type":"WebSite","name":"Secure Techies","url":"https://securetechie.com/"},
+  "about": {"@id":"{{ .Permalink }}#service"},
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".st-indp-lead"]
+  }
+}
+</script>
+{{ end }}

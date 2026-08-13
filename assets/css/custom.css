@@ -1206,6 +1206,8 @@ html { scroll-behavior: smooth; }
   flex-direction: column;
   gap: 0.6rem;
   backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: inherit;
 }
 .st-ind-card::before {
   content: '';
