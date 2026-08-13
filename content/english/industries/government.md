@@ -22,8 +22,8 @@ badges:
   - "Canoga Park HQ"
 body_image: "/images/industries/government-it-bench.webp"
 body_alt: "Civic IT workbench with charging laptops"
-body_image_b: "/images/services/network-overview.webp"
-body_alt_b: "Documented network operations for public-sector teams"
+body_image_b: "/images/industries/government-records-bench.webp"
+body_alt_b: "Civic records bench with charging laptops and California flags"
 weight: 10
 audience: "Government and public-sector organizations"
 service_type: "Managed IT services for government"

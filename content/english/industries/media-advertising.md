@@ -22,8 +22,8 @@ badges:
   - "Deadline help desk"
 body_image: "/images/industries/media-raid-shelf.webp"
 body_alt: "Studio RAID and storage shelf in an advertising office"
-body_image_b: "/images/services/backup-overview.webp"
-body_alt_b: "Backup systems for large creative files"
+body_image_b: "/images/industries/media-raid-closet.webp"
+body_alt_b: "Studio RAID rack and cable coils in a Los Angeles production closet"
 weight: 11
 audience: "Advertising agencies and media studios"
 service_type: "Managed IT services for media and advertising"

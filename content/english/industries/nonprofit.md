@@ -22,8 +22,8 @@ badges:
   - "Board-ready reports"
 body_image: "/images/industries/nonprofit-board-table.webp"
 body_alt: "Nonprofit board table after a meeting"
-body_image_b: "/images/services/helpdesk-overview.webp"
-body_alt_b: "Help desk for nonprofit staff and volunteers"
+body_image_b: "/images/industries/nonprofit-badge-alcove.webp"
+body_alt_b: "Nonprofit records alcove with a locked cabinet and volunteer badges"
 weight: 9
 audience: "Nonprofit organizations"
 service_type: "Managed IT services for nonprofits"

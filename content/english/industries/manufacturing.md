@@ -22,8 +22,8 @@ badges:
   - "Local plants"
 body_image: "/images/industries/manufacturing-qc-bench.webp"
 body_alt: "Manufacturing quality-control bench beside the plant floor"
-body_image_b: "/images/services/network-overview.webp"
-body_alt_b: "Segmented network supporting plant and office"
+body_image_b: "/images/industries/manufacturing-control-glass.webp"
+body_alt_b: "Glass plant control room looking onto a quiet factory floor"
 weight: 6
 audience: "Manufacturers and industrial companies"
 service_type: "Managed IT services for manufacturing"

@@ -22,8 +22,8 @@ badges:
   - "Not your prod"
 body_image: "/images/industries/technology-laptop-cart.webp"
 body_alt: "Startup laptop fleet on a charging cart"
-body_image_b: "/images/services/helpdesk-overview.webp"
-body_alt_b: "Corporate help desk for technology companies"
+body_image_b: "/images/industries/technology-fleet-closet.webp"
+body_alt_b: "Startup laptop charging cart beside a glass server closet"
 weight: 12
 audience: "Startups and technology companies"
 service_type: "Managed IT services for technology companies"

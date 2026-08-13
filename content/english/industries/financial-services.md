@@ -22,8 +22,8 @@ badges:
   - "Local SoCal"
 body_image: "/images/industries/financial-ops-monitors.webp"
 body_alt: "Financial operations desk with dual monitors"
-body_image_b: "/images/services/infrastructure-overview.webp"
-body_alt_b: "Infrastructure supporting an advisory firm"
+body_image_b: "/images/industries/financial-advisor-desk.webp"
+body_alt_b: "Wealth advisor desk with dual monitors and a Los Angeles skyline"
 weight: 4
 audience: "Wealth advisors and financial firms"
 service_type: "Managed IT services for financial firms"

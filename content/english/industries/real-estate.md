@@ -22,8 +22,8 @@ badges:
   - "Mobile agents"
 body_image: "/images/industries/real-estate-key-wall.webp"
 body_alt: "Brokerage back office key and lockbox wall"
-body_image_b: "/images/services/backup-overview.webp"
-body_alt_b: "Backups protecting transaction files"
+body_image_b: "/images/industries/real-estate-key-desk.webp"
+body_alt_b: "Brokerage back office with a key wall and closed laptop"
 weight: 7
 audience: "Real estate brokerages and property managers"
 service_type: "Managed IT services for real estate"

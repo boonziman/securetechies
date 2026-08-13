@@ -23,8 +23,8 @@ badges:
   - "Confidentiality-first"
 body_image: "/images/industries/law-firm-associate-desk.webp"
 body_alt: "Law firm associate workstation with dual monitors and a legal pad"
-body_image_b: "/images/services/helpdesk-overview.webp"
-body_alt_b: "Help desk technicians supporting law firm staff"
+body_image_b: "/images/industries/law-firm-counsel-nook.webp"
+body_alt_b: "Law firm side conference nook at dusk with stacked matter binders"
 featured: true
 weight: 1
 audience: "Law firms and legal practices"

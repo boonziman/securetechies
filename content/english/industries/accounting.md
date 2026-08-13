@@ -22,8 +22,8 @@ badges:
   - "SoCal local"
 body_image: "/images/industries/accounting-scan-station.webp"
 body_alt: "Accounting firm scan and print station"
-body_image_b: "/images/services/network-overview.webp"
-body_alt_b: "Office network supporting a CPA firm"
+body_image_b: "/images/industries/accounting-dusk-desk.webp"
+body_alt_b: "CPA desk at dusk with client folders and dual monitors"
 weight: 3
 audience: "CPA and accounting firms"
 service_type: "Managed IT services for accounting firms"

@@ -21,9 +21,7 @@
 <article class="st-indp">
 
   <header class="st-indp-hero">
-    {{ partial "ind-img.html" (dict "src" $p.hero_image "alt" $p.hero_alt "w" 1600 "h" 900 "eager" true "sizes" "100vw") }}
-    <div class="st-indp-hero-shade"></div>
-    <div class="st-indp-hero-inner">
+    <div class="st-indp-hero-copy">
       <nav class="st-indp-crumb" aria-label="Breadcrumb">
         <a href="{{ "/" | relURL }}">Home</a>
         <span>/</span>
@@ -44,6 +42,9 @@
         {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
       </ul>
       {{ end }}
+    </div>
+    <div class="st-indp-hero-media">
+      {{ partial "ind-img.html" (dict "src" $p.hero_image "alt" $p.hero_alt "w" 1600 "h" 900 "eager" true "sizes" "(max-width: 900px) 100vw, 54vw") }}
     </div>
   </header>
 
@@ -179,8 +180,8 @@
   <section class="st-indp-sec st-indp-tint" id="details">
     <div class="st-indp-wrap st-indp-deep">
       {{ with $p.body_image_b }}
-      <figure>
-        {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt_b | default "") "w" 960 "h" 640 "sizes" "(max-width: 900px) 100vw, 34vw") }}
+      <figure class="st-indp-deep-photo">
+        {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt_b | default "") "w" 960 "h" 1280 "sizes" "(max-width: 900px) 100vw, 38vw") }}
       </figure>
       {{ end }}
       <div class="st-indp-article">
@@ -214,18 +215,24 @@
   {{ with $p.why }}
   <section class="st-indp-sec st-indp-why" id="why">
     <div class="st-indp-wrap st-indp-whygrid">
-      <header class="st-indp-head">
-        <h2>{{ .heading }}</h2>
-        <p>{{ .intro }}</p>
-      </header>
-      <ul class="st-indp-whylist">
-        {{ range .items }}
-        <li>
-          <h3>{{ .title }}</h3>
-          <p>{{ .text | markdownify }}</p>
-        </li>
-        {{ end }}
-      </ul>
+      <figure class="st-indp-why-photo">
+        {{ partial "ind-img.html" (dict "src" ($.Params.mid_image | default $.Params.hero_image) "alt" ($.Params.mid_alt | default $.Params.hero_alt) "w" 960 "h" 720 "sizes" "(max-width: 900px) 100vw, 40vw") }}
+      </figure>
+      <div>
+        <header class="st-indp-head">
+          <p class="st-indp-eyebrow">Why this team</p>
+          <h2>{{ .heading }}</h2>
+          <p>{{ .intro }}</p>
+        </header>
+        <ul class="st-indp-whylist">
+          {{ range .items }}
+          <li>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text | markdownify }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
     </div>
   </section>
   {{ end }}
