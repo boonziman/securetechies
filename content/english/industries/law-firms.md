@@ -25,6 +25,8 @@ body_image: "/images/industries/law-firm-associate-desk.webp"
 body_alt: "Law firm associate workstation with dual monitors and a legal pad"
 body_image_b: "/images/industries/law-firm-counsel-nook.webp"
 body_alt_b: "Law firm side conference nook at dusk with stacked matter binders"
+why_image: "/images/industries/law-firm-reception.webp"
+why_alt: "Law firm reception waiting area at dusk"
 featured: true
 weight: 1
 audience: "Law firms and legal practices"

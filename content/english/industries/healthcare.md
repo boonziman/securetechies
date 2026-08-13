@@ -25,6 +25,8 @@ body_image: "/images/industries/healthcare-network-closet.webp"
 body_alt: "Clinic network closet beside a healthcare hallway"
 body_image_b: "/images/industries/healthcare-chart-station.webp"
 body_alt_b: "Clinic charting station looking down an empty medical hallway"
+why_image: "/images/industries/healthcare-waiting-room.webp"
+why_alt: "Empty medical clinic waiting room and check-in window"
 weight: 2
 audience: "Medical practices and healthcare clinics"
 service_type: "Managed IT services for healthcare"

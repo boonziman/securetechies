@@ -24,6 +24,8 @@ body_image: "/images/industries/manufacturing-qc-bench.webp"
 body_alt: "Manufacturing quality-control bench beside the plant floor"
 body_image_b: "/images/industries/manufacturing-control-glass.webp"
 body_alt_b: "Glass plant control room looking onto a quiet factory floor"
+why_image: "/images/industries/manufacturing-shipping-dock.webp"
+why_alt: "Manufacturing shipping dock at sunset"
 weight: 6
 audience: "Manufacturers and industrial companies"
 service_type: "Managed IT services for manufacturing"

@@ -24,6 +24,8 @@ body_image: "/images/industries/construction-superintendent-desk.webp"
 body_alt: "Construction superintendent desk in a jobsite trailer"
 body_image_b: "/images/industries/construction-trailer-tablet.webp"
 body_alt_b: "Jobsite trailer desk with a tablet, rolled plans, and a hard hat"
+why_image: "/images/industries/construction-conex-lot.webp"
+why_alt: "Locked jobsite conex on a Southern California lot at dusk"
 weight: 5
 audience: "Construction companies and contractors"
 service_type: "Managed IT and site security for construction"

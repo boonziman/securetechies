@@ -24,6 +24,8 @@ body_image: "/images/industries/accounting-scan-station.webp"
 body_alt: "Accounting firm scan and print station"
 body_image_b: "/images/industries/accounting-dusk-desk.webp"
 body_alt_b: "CPA desk at dusk with client folders and dual monitors"
+why_image: "/images/industries/accounting-printer-alcove.webp"
+why_alt: "CPA firm printer alcove with stacked copy paper"
 weight: 3
 audience: "CPA and accounting firms"
 service_type: "Managed IT services for accounting firms"

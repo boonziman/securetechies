@@ -24,6 +24,8 @@ body_image: "/images/industries/small-business-huddle-tv.webp"
 body_alt: "Small-business huddle nook with a display and notebooks"
 body_image_b: "/images/industries/small-business-owner-desk.webp"
 body_alt_b: "Small-business owner desk after hours with a closed laptop"
+why_image: "/images/industries/small-business-storefront.webp"
+why_alt: "Small-business storefront interior after closing"
 weight: 13
 audience: "Small and mid-size businesses"
 service_type: "Managed IT services for small business"

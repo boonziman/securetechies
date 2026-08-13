@@ -24,6 +24,8 @@ body_image: "/images/industries/real-estate-key-wall.webp"
 body_alt: "Brokerage back office key and lockbox wall"
 body_image_b: "/images/industries/real-estate-key-desk.webp"
 body_alt_b: "Brokerage back office with a key wall and closed laptop"
+why_image: "/images/industries/real-estate-storefront.webp"
+why_alt: "Real estate storefront interior at dusk"
 weight: 7
 audience: "Real estate brokerages and property managers"
 service_type: "Managed IT services for real estate"

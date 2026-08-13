@@ -24,6 +24,8 @@ body_image: "/images/industries/media-raid-shelf.webp"
 body_alt: "Studio RAID and storage shelf in an advertising office"
 body_image_b: "/images/industries/media-raid-closet.webp"
 body_alt_b: "Studio RAID rack and cable coils in a Los Angeles production closet"
+why_image: "/images/industries/media-huddle-room.webp"
+why_alt: "Advertising agency huddle room with a dark preview monitor"
 weight: 11
 audience: "Advertising agencies and media studios"
 service_type: "Managed IT services for media and advertising"

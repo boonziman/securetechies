@@ -3031,9 +3031,10 @@ html, body {
 .st-indh-cta h2,.st-indp-cta h2{color:#fff;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;letter-spacing:-.03em;margin:0 0 10px}
 .st-indh-cta p,.st-indp-cta p{color:rgba(255,255,255,.88);max-width:560px;margin:0 0 22px;line-height:1.7}
 .st-indh-actions,.st-indp-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.st-indh-btn,.st-indp-btn{display:inline-flex;background:#0066CC;color:#fff!important;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none}
+.st-indh-btn,.st-indp-btn{display:inline-flex;background:#0066CC;color:#fff;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none}
 .st-indp-btn:hover{background:#0052a3}
-.st-indh-btn,.st-indp-btn-light{background:#fff;color:#0f172a}
+.st-indh-btn,.st-indp-btn-light{background:#fff;color:#0f172a!important}
+.st-indp-hero .st-indp-btn{color:#fff}
 .st-indh-phone,.st-indp-phone{color:#93c5fd;font-weight:700;text-decoration:none}
 .st-indp-phone-light,.st-indh-phone{color:#fff}
 
@@ -3048,13 +3049,13 @@ html, body {
 .st-indp-hero .st-accent-rule{margin-bottom:18px}
 .st-indp-lead{font-size:1.08rem;line-height:1.7;color:#e2eaf4!important;max-width:36rem;margin:0 0 22px}
 .st-indp-toolbar{background:#fff;border-bottom:1px solid #e8eef5}
-.st-indp-jump{display:flex;flex-wrap:wrap;gap:4px 2px;padding:14px 0 0}
+.st-indp-toolbar .st-indp-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.st-indp-jump{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 2px;padding:14px 0 0}
 .st-indp-jump a{color:#64748b;text-decoration:none;font-size:.8rem;font-weight:700;padding:7px 11px;border-radius:8px}
 .st-indp-jump a:hover{color:#0f172a;background:#f1f5f9}
-.st-indp-facts{list-style:none;margin:14px 0 0;padding:18px 0 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #e8eef5}
-.st-indp-facts li{display:flex;flex-direction:column;gap:4px;padding:0 24px 0 0;border-right:1px solid #e8eef5}
-.st-indp-facts li:last-child{border-right:0;padding-right:0}
-.st-indp-facts li:first-child{padding-left:0}
+.st-indp-facts{list-style:none;margin:14px auto 0;padding:18px 0 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #e8eef5;max-width:640px;width:100%}
+.st-indp-facts li{display:flex;flex-direction:column;gap:4px;align-items:center;padding:0 16px;border-right:1px solid #e8eef5}
+.st-indp-facts li:last-child{border-right:0}
 .st-indp-facts strong{font-size:1.4rem;font-weight:800;letter-spacing:-.03em;color:#0f172a}
 .st-indp-facts span{font-size:.78rem;color:#64748b;font-weight:600}
 
@@ -3184,7 +3185,7 @@ html, body {
   .st-indp-rowhead{flex-direction:column;align-items:flex-start}
   .st-indp-jump{padding-top:10px}
   .st-indp-jump a{font-size:.75rem;padding:6px 9px}
-  .st-indp-facts{grid-template-columns:1fr;gap:12px;padding:14px 0 16px}
+  .st-indp-facts{grid-template-columns:1fr;gap:12px;padding:14px 0 16px;max-width:320px}
   .st-indp-facts li{border-right:0;padding:0 0 12px;border-bottom:1px solid #e8eef5}
   .st-indp-facts li:last-child{border-bottom:0;padding-bottom:0}
   .st-indh-intro,.st-indh-grid-wrap{padding:56px 0}

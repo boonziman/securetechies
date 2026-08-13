@@ -24,6 +24,8 @@ body_image: "/images/industries/technology-laptop-cart.webp"
 body_alt: "Startup laptop fleet on a charging cart"
 body_image_b: "/images/industries/technology-fleet-closet.webp"
 body_alt_b: "Startup laptop charging cart beside a glass server closet"
+why_image: "/images/industries/technology-standup.webp"
+why_alt: "Startup standup table and blank whiteboard in a loft"
 weight: 12
 audience: "Startups and technology companies"
 service_type: "Managed IT services for technology companies"

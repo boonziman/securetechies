@@ -24,6 +24,8 @@ body_image: "/images/industries/education-computer-lab.webp"
 body_alt: "School computer lab after hours"
 body_image_b: "/images/industries/education-staff-desk.webp"
 body_alt_b: "School administration desk beside a locker hallway after hours"
+why_image: "/images/industries/education-classroom.webp"
+why_alt: "Empty independent-school classroom after hours"
 weight: 8
 audience: "Schools and education organizations"
 service_type: "Managed IT services for education"

@@ -218,7 +218,7 @@
   <section class="st-indp-sec st-indp-why" id="why">
     <div class="st-indp-wrap st-indp-whygrid">
       <figure class="st-indp-why-photo">
-        {{ partial "ind-img.html" (dict "src" ($.Params.mid_image | default $.Params.hero_image) "alt" ($.Params.mid_alt | default $.Params.hero_alt) "w" 960 "h" 720 "sizes" "(max-width: 900px) 100vw, 40vw") }}
+        {{ partial "ind-img.html" (dict "src" ($.Params.why_image | default $.Params.body_image_b | default $.Params.hero_image) "alt" ($.Params.why_alt | default $.Params.body_alt_b | default $.Params.hero_alt) "w" 960 "h" 720 "sizes" "(max-width: 900px) 100vw, 40vw") }}
       </figure>
       <div>
         <header class="st-indp-head">

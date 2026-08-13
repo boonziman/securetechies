@@ -24,6 +24,8 @@ body_image: "/images/industries/government-it-bench.webp"
 body_alt: "Civic IT workbench with charging laptops"
 body_image_b: "/images/industries/government-records-bench.webp"
 body_alt_b: "Civic records bench with charging laptops and California flags"
+why_image: "/images/industries/government-public-counter.webp"
+why_alt: "Civic public counter with California and U.S. flags"
 weight: 10
 audience: "Government and public-sector organizations"
 service_type: "Managed IT services for government"
