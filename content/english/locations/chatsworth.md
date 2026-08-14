@@ -48,6 +48,7 @@ These are the core services most local teams combine:
 - [Network security](/services/network-security/) for firewalls and connectivity
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk in Chatsworth](/services/managed-help-desk/chatsworth/) for local help desk detail
+- [Managed infrastructure in Chatsworth](/services/infrastructure/chatsworth/) for local servers, endpoints, and cloud
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 

@@ -757,42 +757,42 @@
     (dict "@type" "City" "name" "Sherman Oaks")
   }}
 {{ end }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "serviceType": {{ (.Params.service_label | default .Title) | jsonify }},
-  "category": "Information Technology",
-  "areaServed": {{ $areaServed | jsonify }},
-  "provider": {
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": "https://securetechie.com/#organization",
-    "name": "Secure Techies, LLC",
-    "telephone": "+1-818-431-5607",
-    "url": "https://securetechie.com/",
-    "image": "https://securetechie.com/images/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "21515 Vanowen St Suite 1110",
-      "addressLocality": "Canoga Park",
-      "addressRegion": "CA",
-      "postalCode": "91303",
-      "addressCountry": "US"
-    },
-    "priceRange": "$$"
-  }
-  {{- if .Params.parent_service -}},
-  "isRelatedTo": {
-    "@type": "Service",
-    "name": {{ (.Params.parent_service_name | default "Managed Help Desk Support") | jsonify }},
-    "url": {{ (.Params.parent_service | absURL) | jsonify }}
-  }
-  {{- end }}
-}
-</script>
+{{ $provider := dict
+  "@type" (slice "LocalBusiness" "ProfessionalService")
+  "@id" "https://securetechie.com/#organization"
+  "name" "Secure Techies, LLC"
+  "telephone" "+1-818-431-5607"
+  "url" "https://securetechie.com/"
+  "image" "https://securetechie.com/images/logo.png"
+  "priceRange" "$$"
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" "21515 Vanowen St Suite 1110"
+    "addressLocality" "Canoga Park"
+    "addressRegion" "CA"
+    "postalCode" "91303"
+    "addressCountry" "US"
+  )
+}}
+{{ $service := dict
+  "@context" "https://schema.org"
+  "@type" "Service"
+  "name" .Title
+  "description" .Params.description
+  "url" .Permalink
+  "serviceType" (.Params.service_label | default .Title)
+  "category" "Information Technology"
+  "areaServed" $areaServed
+  "provider" $provider
+}}
+{{ if .Params.parent_service }}
+  {{ $service = merge $service (dict "isRelatedTo" (dict
+    "@type" "Service"
+    "name" (.Params.parent_service_name | default "Managed Help Desk Support")
+    "url" (.Params.parent_service | absURL)
+  )) }}
+{{ end }}
+<script type="application/ld+json">{{ $service | jsonify | safeJS }}</script>
 {{ if .Params.location_service }}
 {{ $svcCrumbs := slice
   (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
@@ -803,19 +803,15 @@
 {{ end }}
 
 {{ with .Params.faqs }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $f := . }}{{ if $i }},{{ end }}{
-      "@type": "Question",
-      "name": {{ $f.question | jsonify }},
-      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} }
-    }{{ end }}
-  ]
-}
-</script>
+{{ $qs := slice }}
+{{ range . }}
+  {{ $qs = $qs | append (dict
+    "@type" "Question"
+    "name" .question
+    "acceptedAnswer" (dict "@type" "Answer" "text" .answer)
+  ) }}
+{{ end }}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
 {{ end }}
 
 <!-- SCROLL ANIMATIONS -->

@@ -35,8 +35,28 @@
 ## Services
 - [Mobile CCTV Trailers](https://securetechie.com/services/mobile-cctv-trailers/): Solar-powered, rapidly deployable mobile surveillance trailers with HD day/night cameras, 360° coverage, AI analytics, two-way audio, real-time alerts, and live 24/7 remote monitoring. Deploys in under an hour with no power or internet required. Ideal for construction sites, parking lots and dealerships, storage facilities, industrial yards, remote/off-grid sites, and events.
 - [Managed Infrastructure](https://securetechie.com/services/infrastructure/): Remote and onsite IT support, infrastructure design, server management, and virtualization with Azure, AWS, and VMware.
+  - Woodland Hills: https://securetechie.com/services/infrastructure/woodland-hills/
+  - Sherman Oaks: https://securetechie.com/services/infrastructure/sherman-oaks/
+  - Encino: https://securetechie.com/services/infrastructure/encino/
+  - Studio City: https://securetechie.com/services/infrastructure/studio-city/
+  - Chatsworth: https://securetechie.com/services/infrastructure/chatsworth/
+  - Calabasas: https://securetechie.com/services/infrastructure/calabasas/
+  - Santa Monica: https://securetechie.com/services/infrastructure/santa-monica/
+  - Irvine: https://securetechie.com/services/infrastructure/irvine/
+  - Glendale: https://securetechie.com/services/infrastructure/glendale/
+  - Long Beach: https://securetechie.com/services/infrastructure/long-beach/
 - [Network Security](https://securetechie.com/services/network-security/): Next-generation firewalls, network design, wireless, layer-3 security upgrades, and 24/7 monitoring.
 - [Managed Help Desk](https://securetechie.com/services/managed-help-desk/): Tier 1–3 support, Microsoft 365, device management, and employee onboarding.
+  - Woodland Hills: https://securetechie.com/services/managed-help-desk/woodland-hills/
+  - Sherman Oaks: https://securetechie.com/services/managed-help-desk/sherman-oaks/
+  - Encino: https://securetechie.com/services/managed-help-desk/encino/
+  - Studio City: https://securetechie.com/services/managed-help-desk/studio-city/
+  - Chatsworth: https://securetechie.com/services/managed-help-desk/chatsworth/
+  - Calabasas: https://securetechie.com/services/managed-help-desk/calabasas/
+  - Santa Monica: https://securetechie.com/services/managed-help-desk/santa-monica/
+  - Irvine: https://securetechie.com/services/managed-help-desk/irvine/
+  - Glendale: https://securetechie.com/services/managed-help-desk/glendale/
+  - Long Beach: https://securetechie.com/services/managed-help-desk/long-beach/
 - [Backup & Disaster Recovery](https://securetechie.com/services/backup-disaster-recovery/): Cloud backup, business continuity planning, and rapid recovery.
 - [Compliance & Security Audits](https://securetechie.com/services/compliance-security-audits/): HIPAA, GDPR, CMMC, and SOC 2 assessments, gap analysis, policy development, and security training.
 - [Cybersecurity](https://securetechie.com/services/cybersecurity/): EDR/XDR endpoint protection, email security, dark web monitoring, zero trust, penetration testing, and 24/7 SIEM/SOC.

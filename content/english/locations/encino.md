@@ -48,6 +48,7 @@ These are the core services most local teams combine:
 - [Network security](/services/network-security/) for firewalls and connectivity
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk in Encino](/services/managed-help-desk/encino/) for local help desk detail
+- [Managed infrastructure in Encino](/services/infrastructure/encino/) for local servers, endpoints, and cloud
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 
