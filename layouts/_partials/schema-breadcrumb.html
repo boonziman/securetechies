@@ -1,35 +1,13 @@
 {{- if not .IsHome -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ site.BaseURL }}"
-    }
-    {{- $ancestors := .Ancestors.Reverse -}}
-    {{- $pos := 2 -}}
-    {{- range $ancestors -}}
-    {{- if ne .Kind "home" -}}
-    ,{
-      "@type": "ListItem",
-      "position": {{ $pos }},
-      "name": "{{ .Title }}",
-      "item": "{{ .Permalink }}"
-    }
+{{- $home := "" | absURL -}}
+{{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" $home) -}}
+{{- $pos := 2 -}}
+{{- range .Ancestors.Reverse -}}
+  {{- if ne .Kind "home" -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" (.Params.short_name | default .Title) "item" .Permalink) -}}
     {{- $pos = add $pos 1 -}}
-    {{- end -}}
-    {{- end -}}
-    ,{
-      "@type": "ListItem",
-      "position": {{ $pos }},
-      "name": "{{ .Title }}",
-      "item": "{{ .Permalink }}"
-    }
-  ]
-}
-</script>
+  {{- end -}}
+{{- end -}}
+{{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" (.Params.short_name | default .Title) "item" .Permalink) -}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) | jsonify | safeJS }}</script>
 {{- end -}}

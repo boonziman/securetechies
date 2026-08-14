@@ -158,7 +158,7 @@ faq:
 
 ## Managed IT for construction companies
 
-Secure Techies provides **construction IT services** for contractors who need the trailer online and the yard watched. From Canoga Park we run [managed help desk](/services/managed-help-desk/), [infrastructure](/services/infrastructure/), and [mobile CCTV trailers](/services/mobile-cctv-trailers/) as one plan — not two vendors who will not return each other’s calls.
+Secure Techies provides **construction IT services** for contractors who need the trailer online and the yard watched. From Canoga Park we run [managed help desk](/services/managed-help-desk/), [infrastructure](/services/infrastructure/), and [mobile CCTV trailers](/services/mobile-cctv-trailers/) as one plan — not two vendors who will not return each other’s calls. For a project record of taking over a contractor from a neglected vendor without a Friday cutover, see [switching IT providers without a weekend outage](/case-studies/switching-it-providers/).
 
 A construction company is two businesses sharing a logo. Headquarters has estimators, accounting, and a Procore login. The field has a trailer, a weak cell signal, a tablet that still says “site iPad,” and a lot that goes dark at 6 p.m. Most MSPs only staff the first business. The second is where drawings fail to sync, leftover logins linger after a crew rolls off, and copper walks.
 

@@ -152,7 +152,7 @@ Send a short kickoff note and a go-live note. Name an internal champion who can 
 
 If you also need a strategic refresh after the move, pair the transition with [IT infrastructure](/services/infrastructure/) planning or a [compliance-minded security review](/services/compliance-security-audits/). Location-specific teams can help when you are comparing [managed IT in Los Angeles](/blog/managed-it-services-los-angeles/) or other Southern California markets.
 
-Switching IT providers is a project, not a gamble. With parallel coverage, written acceptance criteria, and ruthless attention to access and backups, you can leave a weak relationship and land in a stronger one without your customers ever noticing the handoff.
+Switching IT providers is a project, not a gamble. With parallel coverage, written acceptance criteria, and ruthless attention to access and backups, you can leave a weak relationship and land in a stronger one without your customers ever noticing the handoff. We wrote that sequence up as a project record in [switching IT providers without a weekend outage](/case-studies/switching-it-providers/).
 
 ## Tools, licensing, and who pays for what during the move
 

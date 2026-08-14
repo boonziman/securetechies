@@ -63,5 +63,10 @@ https://securetechie.com/tools/
 - FAQ: https://securetechie.com/faq/
 - Blog: https://securetechie.com/blog/
 - Knowledge center: https://securetechie.com/knowledge-center/
-- Case studies: https://securetechie.com/case-studies/
+- Case studies hub: https://securetechie.com/case-studies/
+- Fake wire instruction close call: https://securetechie.com/case-studies/wire-fraud-email-close-call/
+- Switching IT providers: https://securetechie.com/case-studies/switching-it-providers/
+- CrowdStrike outage response: https://securetechie.com/case-studies/crowdstrike-outage-response/
+- IT risk assessment (financial services): https://securetechie.com/case-studies/financial-services-risk-assessment/
+- Microsoft 365 email migration: https://securetechie.com/case-studies/microsoft-365-email-migration/
 - Privacy: https://securetechie.com/privacy-policy/

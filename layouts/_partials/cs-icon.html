@@ -1,0 +1,38 @@
+{{ $name := . | default "check" }}
+{{ if eq $name "search" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M20 20l-3.5-3.5"/></svg>
+{{ else if eq $name "list" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" d="M8 6h13M8 12h13M8 18h13"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h.01M3 12h.01M3 18h.01"/></svg>
+{{ else if eq $name "shield" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M12 3l8 3v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6l8-3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+{{ else if eq $name "scope" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg>
+{{ else if eq $name "scan" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" d="M4 8V5h3M16 5h3v3M20 16v3h-3M8 19H5v-3"/><path stroke-linecap="round" d="M4 12h16"/></svg>
+{{ else if eq $name "report" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M7 3h8l5 5v13H7z"/><path stroke-linecap="round" d="M15 3v5h5M10 13h6M10 17h4"/></svg>
+{{ else if eq $name "talk" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M5 6h14v10H8l-3 3V6z"/></svg>
+{{ else if eq $name "identity" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path stroke-linecap="round" d="M5.5 19c1.2-3 3.6-4.5 6.5-4.5S17.8 16 19 19"/></svg>
+{{ else if eq $name "cloud" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M7 18h10a4 4 0 00.4-8 6 6 0 00-11.5-1.6A3.8 3.8 0 007 18z"/></svg>
+{{ else if eq $name "network" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="7" height="5" rx="1"/><rect x="14" y="4" width="7" height="5" rx="1"/><rect x="8.5" y="15" width="7" height="5" rx="1"/><path d="M6.5 9v2.5h11V9M12 11.5V15"/></svg>
+{{ else if eq $name "bug" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M8 9h8v6a4 4 0 01-8 0V9z"/><path stroke-linecap="round" d="M12 9V6M8 7L6 5M16 7l2-2M6 12h2M16 12h2M7 16l-2 2M17 16l2 2"/></svg>
+{{ else if eq $name "data" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V6M5 10v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4M5 14v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4"/></svg>
+{{ else if eq $name "policy" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M6 3h9l4 4v14H6z"/><path stroke-linecap="round" d="M15 3v4h4M9 12h7M9 16h5"/></svg>
+{{ else if eq $name "nist" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M4 18V6l8-3 8 3v12l-8 3-8-3z"/><path stroke-linecap="round" d="M12 3v18M4 10h16"/></svg>
+{{ else if eq $name "mail" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linejoin="round" d="M4 7l8 6 8-6"/></svg>
+{{ else if eq $name "clock" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path stroke-linecap="round" d="M12 8v5l3 2"/></svg>
+{{ else if eq $name "map" }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linejoin="round" d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+{{ else }}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12l5 5L20 7"/></svg>
+{{ end }}

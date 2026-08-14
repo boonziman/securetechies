@@ -192,5 +192,6 @@ Call (818) 431-5607 or [contact us](/contact/).
 ### Related reading
 
 - [IT support for medical practices](/blog/it-support-for-medical-practices/)
+- [CrowdStrike outage response case study](/case-studies/crowdstrike-outage-response/)
 - [HIPAA compliance checklist](/blog/hipaa-compliance-checklist/)
 - [Compliance and security audits](/services/compliance-security-audits/)

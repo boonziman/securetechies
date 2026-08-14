@@ -52,9 +52,21 @@
       {{ end }}
     {{ end }}
 
+    {{/* Case studies hub + singles */}}
+    {{ if eq .Section "case-studies" }}
+      {{ with resources.Get "css/case-studies.css" }}
+        {{ if hugo.IsProduction }}
+          {{ $csCSS := . | minify | fingerprint }}
+          <link rel="stylesheet" href="{{ $csCSS.RelPermalink }}" integrity="{{ $csCSS.Data.Integrity }}" />
+        {{ else }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
   </head>
 
-  <body{{ if .Params.landing }} class="st-landing-body"{{ end }}>
+  <body{{ if .Params.landing }} class="st-landing-body"{{ else if eq .Section "case-studies" }} class="st-cs-page"{{ end }}>
     <!-- Accessibility: skip to main content -->
     <a href="#main-content" class="st-skip-link">Skip to main content</a>
 

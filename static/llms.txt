@@ -62,10 +62,17 @@
 - Ransomware Cost Calculator: https://securetechie.com/tools/ransomware-cost-calculator/
 - Subnet Calculator: https://securetechie.com/tools/subnet-calculator/
 
+## Case Studies
+- Hub: https://securetechie.com/case-studies/. Project records: situation, method, outcome. Clients anonymized when required.
+- A close call with a fake wire instruction: https://securetechie.com/case-studies/wire-fraud-email-close-call/. Law firm lookalike email, call-back, mailbox review, DMARC path. No invented dollar save.
+- Switching IT providers without a weekend outage: https://securetechie.com/case-studies/switching-it-providers/. Five-week parallel MSP handoff for a Valley contractor. Inventory, restore test, then cancel. No planned weekend outage.
+- CrowdStrike outage response for a healthcare practice: https://securetechie.com/case-studies/crowdstrike-outage-response/. July 19, 2024 Falcon content update. Safe Mode, BitLocker, rooms first. Not invented percentages.
+- IT risk assessment for a Southern California financial firm: https://securetechie.com/case-studies/financial-services-risk-assessment/. Four-week NIST CSF 2.0-aligned assessment, ranked register, 30/60/90 plan. Not a certification.
+- Microsoft 365 email migration for a professional services firm: https://securetechie.com/case-studies/microsoft-365-email-migration/
+
 ## Resources
 - Knowledge Center: https://securetechie.com/knowledge-center/
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/
 - Secure Techies vs a typical MSP (comparison table): https://securetechie.com/blog/secure-techies-vs-typical-msp/
-- Case studies: https://securetechie.com/case-studies/
 - Frequently asked questions (categorized FAQ with schema): https://securetechie.com/faq/
 - Privacy policy: https://securetechie.com/privacy-policy/

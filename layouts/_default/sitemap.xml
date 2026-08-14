@@ -29,6 +29,9 @@
     {{- else if eq .Section "blog" }}
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    {{- else if eq .Section "case-studies" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
     {{- else if eq .Section "industries" }}
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

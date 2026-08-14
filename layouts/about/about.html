@@ -414,14 +414,9 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
-    {"@type":"ListItem","position":2,"name":"About Us","item":"{{ .Permalink }}"}
-  ]
-}
-</script>
+{{ $aboutCrumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "About Us" "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $aboutCrumbs) | jsonify | safeJS }}</script>
 {{ end }}

@@ -221,17 +221,12 @@
 }
 </script>
 {{ end }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ "/" | absURL }}" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ "/blog/" | absURL }}" },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": "{{ .Permalink }}" }
-  ]
-}
-</script>
+{{ $blogCrumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "Blog" "item" ("blog/" | absURL))
+  (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $blogCrumbs) | jsonify | safeJS }}</script>
 
 <script>
 (function(){

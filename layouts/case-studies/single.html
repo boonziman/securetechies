@@ -1,160 +1,377 @@
 {{ define "main" }}
+{{ $p := .Params }}
+{{ $hero := $p.hero_image | default $p.image }}
+{{ $faqs := $p.faqs | default $p.faq }}
+{{ $process := $p.process | default $p.solution }}
+{{ $related := first 2 (where .CurrentSection.Pages.ByDate.Reverse "Permalink" "!=" .Permalink) }}
 
-<section class="st-subpage-hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#060d1a 0%,#0a1628 50%,#0d1f3c 100%)">
-  {{ with .Params.hero_image }}
-  <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28" loading="eager" width="1200" height="675">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,26,.35),rgba(10,22,40,.82))"></div>
-  {{ end }}
-  <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;padding:84px 24px;text-align:center">
-    <span style="display:inline-block;color:#93c5fd;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px">Secure Techies Case Study</span>
-    <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;color:#f8fafc;line-height:1.12;letter-spacing:-.03em;margin-bottom:20px">{{ .Title }}</h1>
-    {{ with .Params.hero_subtitle }}<p style="max-width:720px;margin:0 auto;color:#cbd5e1;font-size:1.12rem;line-height:1.75">{{ . }}</p>{{ end }}
-  </div>
-</section>
+<article class="st-csp-article">
 
-<section style="background:#fff;padding:54px 0;border-bottom:1px solid #e2e8f0">
-  <div style="max-width:1050px;margin:0 auto;padding:0 24px">
-    <div class="st-case-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-      {{ with .Params.industry }}<div class="st-case-stat"><span>Industry</span><strong>{{ . }}</strong></div>{{ end }}
-      {{ with .Params.project_type }}<div class="st-case-stat"><span>Project</span><strong>{{ . }}</strong></div>{{ end }}
-      {{ with .Params.location }}<div class="st-case-stat"><span>Location</span><strong>{{ . }}</strong></div>{{ end }}
-      {{ with .Params.timeline }}<div class="st-case-stat"><span>Delivery</span><strong>{{ . }}</strong></div>{{ end }}
+  <header class="st-csp-hero">
+    <div class="st-csp-hero-copy">
+      <nav class="st-csp-crumb" aria-label="Breadcrumb">
+        <a href="{{ "/" | relURL }}">Home</a>
+        <span>/</span>
+        <a href="{{ "case-studies/" | relURL }}">Case Studies</a>
+        <span>/</span>
+        <span>{{ $p.short_name | default .Title }}</span>
+      </nav>
+      <p class="st-csp-kicker">{{ $p.kicker | default "Secure Techies case study" }}</p>
+      <h1>{{ .Title }}</h1>
+      <span class="st-accent-rule" aria-hidden="true"></span>
+      {{ with $p.hero_subtitle }}<p class="st-csp-lead">{{ . }}</p>{{ end }}
+      <div class="st-csp-actions">
+        <a class="st-csp-btn" href="{{ "contact/" | relURL }}">Talk about a similar project</a>
+        <a class="st-csp-phone" href="tel:+18184315607">(818) 431-5607</a>
+      </div>
     </div>
-  </div>
-</section>
-
-{{ with .Params.summary }}
-<section style="background:#f8fafc;padding:64px 0">
-  <div style="max-width:900px;margin:0 auto;padding:0 24px;text-align:center">
-    <span class="st-kicker">Project Overview</span>
-    <p style="font-size:1.2rem;line-height:1.85;color:#334155;margin:12px 0 0">{{ . }}</p>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.challenge }}
-<section style="background:#fff;padding:72px 0">
-  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
-    <div style="text-align:center;margin-bottom:36px"><span class="st-kicker">The Challenge</span><h2 class="st-case-heading">What the client needed to solve</h2></div>
-    <div class="st-case-grid">
-      {{ range . }}<div class="st-case-card"><span class="st-dot"></span><p>{{ . }}</p></div>{{ end }}
+    <div class="st-csp-hero-media">
+      {{ partial "ind-img.html" (dict "src" $hero "alt" ($p.hero_alt | default .Title) "w" 1600 "h" 900 "eager" true "sizes" "(max-width: 900px) 100vw, 50vw") }}
     </div>
-  </div>
-</section>
-{{ end }}
+  </header>
 
-{{ with .Params.solution }}
-<section style="background:#f8fafc;padding:72px 0;border-top:1px solid #eef2f7">
-  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
-    <div style="text-align:center;margin-bottom:40px"><span class="st-kicker">The Solution</span><h2 class="st-case-heading">How Secure Techies approached the project</h2></div>
-    <div class="st-case-solution-grid">
-      {{ range $i, $s := . }}
-      <article class="st-case-solution">
-        <div class="st-step">{{ printf "%02d" (add $i 1) }}</div>
-        <h3>{{ .title }}</h3><p>{{ .description }}</p>
-      </article>
+  <section class="st-csp-dossier" aria-label="Project facts">
+    <div class="st-csp-wrap">
+      <ul class="st-csp-dossier-grid">
+        {{ with $p.industry }}<li><span>Industry</span><strong>{{ $.Params.fact_industry | default . }}</strong></li>{{ end }}
+        {{ with $p.location }}<li><span>Where</span><strong>{{ $.Params.fact_location | default . }}</strong></li>{{ end }}
+        {{ with $p.timeline }}<li><span>Timeline</span><strong>{{ $.Params.fact_timeline | default . }}</strong></li>{{ end }}
+        {{ with $p.project_type }}<li><span>Engagement</span><strong>{{ $.Params.fact_project | default . }}</strong></li>{{ end }}
+      </ul>
+    </div>
+  </section>
+
+  <nav class="st-csp-chapters" aria-label="On this page">
+    <div class="st-csp-chapters-inner">
+      <a href="#client">Client</a>
+      {{ with $p.goals }}<a href="#goals">Goals</a>{{ end }}
+      {{ with $p.challenge }}<a href="#challenge">Challenge</a>{{ end }}
+      {{ with $process }}<a href="#process">Process</a>{{ end }}
+      {{ with $p.workstreams }}<a href="#scope">Scope</a>{{ end }}
+      {{ if $.Content }}<a href="#details">Write-up</a>{{ end }}
+      {{ with $p.results }}<a href="#results">Outcome</a>{{ end }}
+      {{ with $faqs }}<a href="#faq">FAQ</a>{{ end }}
+    </div>
+  </nav>
+
+  <section class="st-csp-sec" id="client">
+    <div class="st-csp-wrap st-csp-split">
+      <div>
+        <p class="st-csp-eyebrow">Meet the client</p>
+        <h2>{{ $p.client_heading | default "Who we worked with" }}</h2>
+        {{ with $p.anonymized }}<p class="st-csp-anon">{{ . }}</p>{{ end }}
+        <p class="st-csp-lede">{{ $p.summary }}</p>
+        <div class="st-csp-snapshot">
+          {{ with $p.industry }}<div><span>Industry</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with $p.client_size }}<div><span>Size</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with $p.location }}<div><span>Location</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with $p.timeline }}<div><span>Delivery</span><strong>{{ . }}</strong></div>{{ end }}
+        </div>
+      </div>
+      {{ with $p.client_image }}
+      <figure class="st-csp-frame">
+        {{ partial "ind-img.html" (dict "src" . "alt" ($p.client_alt | default "Client workshop") "w" 960 "h" 720 "sizes" "(max-width: 900px) 100vw, 46vw") }}
+      </figure>
       {{ end }}
     </div>
-  </div>
-</section>
-{{ end }}
+  </section>
 
-{{ if .Content }}
-<section style="background:#fff;padding:72px 0">
-  <div class="st-case-content" style="max-width:850px;margin:0 auto;padding:0 24px">{{ .Content }}</div>
-</section>
-{{ end }}
-
-{{ with .Params.results }}
-<section style="background:linear-gradient(160deg,#060d1a,#0d1f3c);padding:72px 0">
-  <div style="max-width:1000px;margin:0 auto;padding:0 24px">
-    <div style="text-align:center;margin-bottom:38px"><span class="st-kicker" style="color:#60a5fa">The Outcome</span><h2 class="st-case-heading" style="color:#f8fafc">Business and technology improvements</h2></div>
-    <div class="st-results-grid">
-      {{ range . }}<div class="st-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>{{ . }}</span></div>{{ end }}
+  {{ with $p.goals }}
+  <section class="st-csp-sec st-csp-sec-tint" id="goals">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">Primary goals</p>
+        <h2>{{ $.Params.goals_heading | default "What success had to look like" }}</h2>
+      </header>
+      <div class="st-csp-goals">
+        {{ range . }}
+        <article class="st-csp-goal">
+          <span class="st-csp-ico">{{ partial "cs-icon.html" (.icon | default "check") }}</span>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </article>
+        {{ end }}
+      </div>
     </div>
-  </div>
-</section>
-{{ end }}
+  </section>
+  {{ end }}
 
-{{ with .Params.technologies }}
-<section style="background:#f8fafc;padding:54px 0">
-  <div style="max-width:900px;margin:0 auto;padding:0 24px;text-align:center">
-    <span class="st-kicker">Technologies Used</span>
-    <div class="st-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
-  </div>
-</section>
-{{ end }}
+  {{ with $p.challenge }}
+  <section class="st-csp-sec" id="challenge">
+    <div class="st-csp-wrap st-csp-split">
+      <div>
+        <p class="st-csp-eyebrow">The challenge</p>
+        <h2>{{ $.Params.challenge_heading | default "What the client needed to solve" }}</h2>
+        {{ with $.Params.challenge_intro }}<p class="st-csp-lede">{{ . }}</p>{{ end }}
+        <ol class="st-csp-issues">
+          {{ range $i, $item := . }}
+          <li>
+            <span>{{ printf "%02d" (add $i 1) }}</span>
+            <div>
+              {{ if reflect.IsMap $item }}
+                <h3>{{ $item.title }}</h3>
+                <p>{{ $item.text }}</p>
+              {{ else }}
+                <p>{{ $item }}</p>
+              {{ end }}
+            </div>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+      {{ with $.Params.mid_image }}
+      <figure class="st-csp-frame">
+        {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.mid_alt | default "") "w" 960 "h" 640 "sizes" "(max-width: 900px) 100vw, 46vw") }}
+      </figure>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 
-{{ with .Params.faqs }}
-<section style="background:#fff;padding:72px 0">
-  <div style="max-width:760px;margin:0 auto;padding:0 24px">
-    <div style="text-align:center;margin-bottom:38px"><span class="st-kicker">Common Questions</span><h2 class="st-case-heading">Frequently Asked Questions</h2></div>
-    {{ range . }}
-    <details class="st-case-faq"><summary>{{ .question }}<span>+</span></summary><div>{{ .answer | markdownify }}</div></details>
+  {{ with $process }}
+  <section class="st-csp-sec st-csp-sec-tint" id="process">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">How we worked</p>
+        <h2>{{ $.Params.process_heading | default "How we approached the work" }}</h2>
+        {{ with $.Params.process_intro }}<p class="st-csp-lede">{{ . }}</p>{{ end }}
+      </header>
+      <ol class="st-csp-steps">
+        {{ range $i, $step := . }}
+        <li>
+          <em>{{ printf "%02d" (add $i 1) }}</em>
+          <h3>{{ $step.title }}</h3>
+          <p>{{ $step.description | default $step.text }}</p>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.workstreams }}
+  <section class="st-csp-sec" id="scope">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">What we examined</p>
+        <h2>{{ $.Params.workstreams_heading | default "Workstreams inside the engagement" }}</h2>
+        {{ with $.Params.workstreams_intro }}<p class="st-csp-lede">{{ . }}</p>{{ end }}
+      </header>
+      <div class="st-csp-streams">
+        {{ range . }}
+        <article class="st-csp-stream">
+          <span class="st-csp-ico">{{ partial "cs-icon.html" (.icon | default "scan") }}</span>
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description | default .text }}</p>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.band_image }}
+  <figure class="st-csp-band">
+    {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.band_alt | default "") "w" 1600 "h" 800 "sizes" "100vw") }}
+    <div class="st-csp-band-shade"></div>
+    {{ with $.Params.band_quote }}
+    <blockquote><p>{{ . }}</p></blockquote>
     {{ end }}
-  </div>
-</section>
+  </figure>
+  {{ end }}
+
+  {{ if .Content }}
+  <section class="st-csp-sec st-csp-sec-tint" id="details">
+    <div class="st-csp-wrap st-csp-writeup">
+      {{ if .TableOfContents }}
+      <aside class="st-csp-toc" aria-label="Table of contents">
+        <div class="st-csp-toc-inner">
+          <p class="st-csp-toc-label">On this page</p>
+          {{ .TableOfContents }}
+          <div class="st-csp-toc-cta">
+            <p>Want this kind of project on your network?</p>
+            <a class="st-csp-toc-btn" href="{{ "contact/" | relURL }}">Get a free assessment</a>
+            <a class="st-csp-toc-phone" href="tel:+18184315607">(818) 431-5607</a>
+          </div>
+        </div>
+      </aside>
+      {{ end }}
+      <div class="st-csp-prose">
+        {{ with $p.body_image }}
+        <figure class="st-csp-prose-photo">
+          {{ partial "ind-img.html" (dict "src" . "alt" ($.Params.body_alt | default "") "w" 1200 "h" 720 "sizes" "(max-width: 900px) 100vw, 62vw") }}
+        </figure>
+        {{ end }}
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.results }}
+  <section class="st-csp-results" id="results">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">The outcome</p>
+        <h2>{{ $.Params.results_heading | default "What the client left with" }}</h2>
+      </header>
+      {{ with $.Params.metrics }}
+      <div class="st-csp-metrics">
+        {{ range . }}
+        <div><strong>{{ .value }}</strong><span>{{ .label }}</span></div>
+        {{ end }}
+      </div>
+      {{ end }}
+      <ul class="st-csp-outcomes">
+        {{ range . }}
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span>{{ if reflect.IsMap . }}{{ .text | default .title }}{{ else }}{{ . }}{{ end }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.technologies }}
+  <section class="st-csp-sec">
+    <div class="st-csp-wrap" style="text-align:center">
+      <p class="st-csp-eyebrow">Technologies and frameworks</p>
+      <div class="st-csp-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.related_services }}
+  <section class="st-csp-sec st-csp-sec-tint">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">Related services</p>
+        <h2>Work that sits next to this project</h2>
+      </header>
+      <div class="st-csp-svcgrid">
+        {{ range . }}
+        <a href="{{ .url | relURL }}">
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $related }}
+  <section class="st-csp-sec">
+    <div class="st-csp-wrap">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">More projects</p>
+        <h2>Other case studies</h2>
+      </header>
+      <div class="st-csp-related">
+        {{ range . }}
+        <a href="{{ .RelPermalink }}">
+          {{ $rimg := .Params.image | default .Params.hero_image }}
+          {{ partial "ind-img.html" (dict "src" $rimg "alt" "" "w" 640 "h" 360 "sizes" "(max-width: 700px) 100vw, 46vw") }}
+          <strong>{{ .Title }}</strong>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $faqs }}
+  <section class="st-csp-sec st-csp-sec-tint" id="faq">
+    <div class="st-csp-wrap" style="max-width:780px">
+      <header class="st-csp-head">
+        <p class="st-csp-eyebrow">Questions</p>
+        <h2>Frequently asked questions</h2>
+      </header>
+      {{ range . }}
+      <details class="st-csp-faq">
+        <summary>{{ .question }}</summary>
+        <div>{{ .answer | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="st-csp-cta">
+    <div class="st-csp-wrap">
+      <h2>{{ $p.cta_heading | default "Planning a similar IT project?" }}</h2>
+      <p>{{ $p.cta_text | default "Speak with Secure Techies about your environment, risks, timeline, and what a ranked plan would look like." }}</p>
+      <div class="st-csp-actions">
+        <a class="st-csp-btn" href="{{ "contact/" | relURL }}">Schedule a consultation</a>
+        <a class="st-csp-phone" href="tel:+18184315607">(818) 431-5607</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+{{ $img := cond (hasPrefix (or $p.image "") "http") $p.image ((or $p.image $hero) | absURL) }}
+{{ $aboutUrl := "services/" | absURL }}
+{{ with $p.related_services }}{{ with index . 0 }}{{ $aboutUrl = .url | absURL }}{{ end }}{{ end }}
+{{ $article := dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "@id" (printf "%s#article" .Permalink)
+  "headline" .Title
+  "description" $p.description
+  "image" $img
+  "datePublished" (.Date.Format "2006-01-02")
+  "dateModified" (.Lastmod.Format "2006-01-02")
+  "inLanguage" "en-US"
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  "author" (dict "@type" "Organization" "name" "Secure Techies" "url" "https://securetechie.com/about/")
+  "publisher" (dict "@type" "Organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "logo" (dict "@type" "ImageObject" "url" ("images/logo.png" | absURL)))
+  "articleSection" ($p.industry | default "Case Studies")
+  "keywords" (delimit ($p.tags | default slice) ", ")
+  "about" (dict "@type" "Service" "name" ($p.project_type | default "Managed IT") "url" $aboutUrl)
+  "speakable" (dict "@type" "SpeakableSpecification" "cssSelector" (slice "h1" ".st-csp-lead" ".st-csp-article h2"))
+}}
+<script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{ with $faqs }}
+{{ $qs := slice }}
+{{ range . }}
+{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" (.answer | markdownify | plainify))) }}
 {{ end }}
-
-<section style="background:linear-gradient(135deg,#0066CC,#0052a3);padding:72px 0;text-align:center">
-  <div style="max-width:680px;margin:0 auto;padding:0 24px">
-    <h2 style="font-size:2rem;color:#fff;font-weight:800;margin-bottom:14px">Planning a Similar IT Project?</h2>
-    <p style="color:rgba(255,255,255,.82);font-size:1.05rem;line-height:1.7;margin-bottom:28px">Speak with Secure Techies about your current environment, risks, timeline, and business goals.</p>
-    <a href="{{ "contact" | relURL }}" class="st-case-cta">Schedule a Consultation</a>
-  </div>
-</section>
-
-<style>
-.st-kicker{display:inline-block;font-size:.75rem;font-weight:800;color:#0066CC;text-transform:uppercase;letter-spacing:.12em}
-.st-case-heading{font-size:1.75rem;font-weight:800;color:#0f172a;letter-spacing:-.02em;margin:10px 0 0}
-.st-case-stat{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
-.st-case-stat span{display:block;color:#64748b;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.st-case-stat strong{color:#0f172a;font-size:.98rem}
-.st-case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.st-case-card{display:flex;gap:13px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px}
-.st-case-card p{margin:0;color:#475569;line-height:1.65}
-.st-dot{width:9px;height:9px;border-radius:50%;background:#0066CC;margin-top:8px;flex-shrink:0}
-.st-case-solution-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.st-case-solution{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:26px}
-.st-case-solution h3{font-size:1.05rem;font-weight:800;color:#0f172a;margin:14px 0 8px}
-.st-case-solution p{margin:0;color:#64748b;line-height:1.7;font-size:.94rem}
-.st-step{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0066CC,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.78rem}
-.st-case-content{font-size:1.02rem;color:#374151;line-height:1.9}
-.st-case-content h2{font-size:1.65rem;font-weight:800;color:#0f172a;margin:38px 0 14px}
-.st-case-content h3{font-size:1.18rem;font-weight:800;color:#0f172a;margin:28px 0 10px}
-.st-case-content ul{padding-left:22px}
-.st-case-content a{color:#0066CC;font-weight:700}
-.st-results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.st-result{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 18px;color:#cbd5e1}
-.st-result svg{width:18px;height:18px;color:#4ade80;flex-shrink:0;margin-top:2px}
-.st-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
-.st-tags span{background:#fff;border:1px solid #dbeafe;color:#334155;border-radius:999px;padding:8px 14px;font-size:.86rem;font-weight:700}
-.st-case-faq{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:12px;overflow:hidden}
-.st-case-faq summary{display:flex;justify-content:space-between;gap:16px;cursor:pointer;padding:18px 20px;font-weight:800;color:#0f172a;list-style:none}
-.st-case-faq summary::-webkit-details-marker{display:none}
-.st-case-faq div{padding:0 20px 20px;color:#475569;line-height:1.75}
-.st-case-cta{display:inline-flex;background:#fff;color:#0f172a;font-weight:800;padding:14px 28px;border-radius:10px;text-decoration:none}
-@media(max-width:760px){.st-case-meta,.st-case-grid,.st-case-solution-grid,.st-results-grid{grid-template-columns:1fr!important}}
-</style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":{{ .Title | jsonify }},
-  "description":{{ .Params.description | jsonify }},
-  "datePublished":"{{ .Date.Format "2006-01-02" }}",
-  "dateModified":"{{ .Lastmod.Format "2006-01-02" }}",
-  "mainEntityOfPage":{"@type":"WebPage","@id":"{{ .Permalink }}"},
-  "author":{"@type":"Organization","name":"Secure Techies"},
-  "publisher":{"@type":"Organization","name":"Secure Techies, LLC","url":"https://securetechie.com/"}
-}
-</script>
-
-{{ with .Params.faqs }}
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i,$f := . }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $f.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $f.answer | jsonify }}}}{{ end }}]}
-</script>
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "inLanguage" "en-US" "mainEntity" $qs) | jsonify | safeJS }}</script>
 {{ end }}
-
+{{ $crumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "Case Studies" "item" ("case-studies/" | absURL))
+  (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) | jsonify | safeJS }}</script>
+<script>
+(function(){
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.st-csp-toc a'));
+  if (!tocLinks.length) return;
+  var headings = tocLinks.map(function(a){
+    var id = decodeURIComponent((a.getAttribute('href') || '').replace(/^#/, ''));
+    return id ? document.getElementById(id) : null;
+  });
+  function onSpy(){
+    var pos = window.scrollY + 140;
+    var active = -1;
+    for (var i = 0; i < headings.length; i++) {
+      if (headings[i] && headings[i].offsetTop <= pos) active = i;
+    }
+    tocLinks.forEach(function(a, i){ a.classList.toggle('st-toc-active', i === active); });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){ onSpy(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+  onSpy();
+})();
+</script>
 {{ end }}

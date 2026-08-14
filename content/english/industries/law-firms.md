@@ -159,7 +159,7 @@ We do not sell a mysterious “legal cloud.” We run [managed infrastructure](/
 
 ### Confidentiality, in operational terms
 
-The [American Bar Association](https://www.americanbar.org/groups/professional_responsibility/) has been clear for years that competence includes technology. That does not mean every attorney becomes an IT director. It means the firm can show MFA, access control, encryption in transit, and a backup that has been restored.
+The [American Bar Association](https://www.americanbar.org/groups/professional_responsibility/) has been clear for years that competence includes technology. That does not mean every attorney becomes an IT director. It means the firm can show MFA, access control, encryption in transit, and a backup that has been restored. For a project record of a lookalike wire email that did not land, see [a close call with a fake wire instruction](/case-studies/wire-fraud-email-close-call/).
 
 California firms also sit under the [California Consumer Privacy Act](https://oag.ca.gov/privacy/ccpa) when they hold consumer personal information. We treat that as a control problem, not a slogan.
 

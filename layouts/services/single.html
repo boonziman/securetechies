@@ -794,17 +794,12 @@
 }
 </script>
 {{ if .Params.location_service }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ "/" | absURL | jsonify }} },
-    { "@type": "ListItem", "position": 2, "name": {{ (.Params.parent_service_name | default "Managed Help Desk") | jsonify }}, "item": {{ (.Params.parent_service | default "/services/managed-help-desk/" | absURL) | jsonify }} },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
-  ]
-}
-</script>
+{{ $svcCrumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" (.Params.parent_service_name | default "Managed Help Desk") "item" ((.Params.parent_service | default "services/managed-help-desk/") | absURL))
+  (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $svcCrumbs) | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ with .Params.faqs }}

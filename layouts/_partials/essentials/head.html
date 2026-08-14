@@ -30,6 +30,12 @@
   {{ else }}
     {{ $lcpImage = "/images/industries/industries-hub-los-angeles.webp" }}
   {{ end }}
+{{ else if eq .Section "case-studies" }}
+  {{ if eq .Kind "page" }}
+    {{ $lcpImage = .Params.hero_image | default .Params.image }}
+  {{ else }}
+    {{ $lcpImage = "/images/case-studies/case-studies-hub-hero.webp" }}
+  {{ end }}
 {{ end }}
 {{ with $lcpImage }}
   {{ $lcpPath := . | strings.TrimPrefix "/" }}
@@ -42,8 +48,8 @@
   {{ end }}
 {{ end }}
 
-{{/* Editorial display serif (Fraunces) — loaded only on blog pages for the premium post typography. Scoped so the rest of the site is unaffected. */}}
-{{ $isBlog := or (eq .Section "blog") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
+{{/* Editorial display serif (Fraunces). Blog posts and case studies only. */}}
+{{ $isBlog := or (eq .Section "blog") (eq .Section "case-studies") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
 {{ if $isBlog }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -213,7 +219,18 @@
   {{ partial "schema-website.html" . }}
 {{ end }}
 
-<!-- JSON-LD: BreadcrumbList (skip industries — those pages emit a tighter trail) -->
-{{ if ne .Section "industries" }}
+<!-- JSON-LD: BreadcrumbList. Skip sections that emit their own trail so Google
+     does not see two lists, and so we never double-encode item URLs. -->
+{{ $ownCrumbs := or
+  (eq .Section "industries")
+  (eq .Section "blog")
+  (eq .Section "locations")
+  (eq .Section "about")
+  (eq .Section "faq")
+  (eq .Section "knowledge-center")
+  (eq .Section "case-studies")
+  (and (eq .Section "services") .Params.location_service)
+}}
+{{ if not $ownCrumbs }}
   {{ partial "schema-breadcrumb.html" . }}
 {{ end }}

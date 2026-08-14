@@ -47,24 +47,19 @@
   </div>
 </section>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "isPartOf": { "@type": "WebSite", "name": "Secure Techies", "url": "https://securetechie.com/" },
-  "about": ["RAID calculator", "CCTV storage calculator", "VM calculator", "Subnet calculator", "Password generator", "Ransomware cost calculator"],
-  "hasPart": [
-    {{ range $i, $p := .Pages }}{{ if $i }},{{ end }}{
-      "@type": "WebApplication",
-      "name": {{ $p.Title | jsonify }},
-      "url": {{ $p.Permalink | jsonify }},
-      "applicationCategory": "BusinessApplication",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    }{{ end }}
-  ]
-}
-</script>
+{{ $parts := slice }}
+{{ range .Pages }}
+{{ $parts = $parts | append (dict "@type" "WebApplication" "name" .Title "url" .Permalink "applicationCategory" "BusinessApplication" "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD")) }}
+{{ end }}
+{{ $hub := dict
+  "@context" "https://schema.org"
+  "@type" "CollectionPage"
+  "name" .Title
+  "description" .Params.description
+  "url" .Permalink
+  "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/")
+  "about" (slice "RAID calculator" "CCTV storage calculator" "VM calculator" "Subnet calculator" "Password generator" "Ransomware cost calculator")
+  "hasPart" $parts
+}}
+<script type="application/ld+json">{{ $hub | jsonify | safeJS }}</script>
 {{ end }}

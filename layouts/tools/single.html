@@ -85,53 +85,25 @@
   </div>
 </section>
 
-{{/* SEO: WebApplication + FAQ + Breadcrumb */}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Requires JavaScript",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "Secure Techies",
-    "url": "https://securetechie.com/"
-  }
-}
-</script>
+{{/* SEO: WebApplication + FAQ. Breadcrumbs come from schema-breadcrumb.html (one valid trail). */}}
+{{ $app := dict
+  "@context" "https://schema.org"
+  "@type" "WebApplication"
+  "name" .Title
+  "description" .Params.description
+  "url" .Permalink
+  "applicationCategory" "BusinessApplication"
+  "operatingSystem" "Any"
+  "browserRequirements" "Requires JavaScript"
+  "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD")
+  "provider" (dict "@type" "Organization" "name" "Secure Techies" "url" "https://securetechie.com/")
+}}
+<script type="application/ld+json">{{ $app | jsonify | safeJS }}</script>
 {{ with .Params.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $f := . }}{{ if $i }},{{ end }}{
-      "@type": "Question",
-      "name": {{ $f.question | jsonify }},
-      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} }
-    }{{ end }}
-  ]
-}
-</script>
+{{ $qs := slice }}
+{{ range . }}
+{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
 {{ end }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ "" | absURL | jsonify }} },
-    { "@type": "ListItem", "position": 2, "name": "IT Tools", "item": {{ "tools/" | absURL | jsonify }} },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
-  ]
-}
-</script>
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
+{{ end }}
 {{ end }}

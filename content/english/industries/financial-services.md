@@ -155,7 +155,7 @@ We use the same [cybersecurity](/services/cybersecurity/) and [backup](/services
 
 ### Who we work with
 
-Independent RIAs, advisory shops, and professional finance offices — not national banks. Typical size is 8 to 40 people. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model.
+Independent RIAs, advisory shops, and professional finance offices — not national banks. Typical size is 8 to 40 people. A ten-person advisory firm often holds more sensitive data than a 50-person warehouse. Size is not the risk model. For a worked example, see our [IT risk assessment case study](/case-studies/financial-services-risk-assessment/) for a San Fernando Valley advisory firm.
 
 [SEC cybersecurity material for advisers](https://www.sec.gov/investment) is a useful reminder that “we have antivirus” is no longer an answer to a custodian or a client.
 

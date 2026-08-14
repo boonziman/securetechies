@@ -38,15 +38,10 @@
 .st-about-prose li{margin:0 0 .45rem}
 </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
-    {"@type":"ListItem","position":2,"name":"About Us","item":"{{ "about/" | absURL }}"},
-    {"@type":"ListItem","position":3,"name":{{ .Title | jsonify }},"item":"{{ .Permalink }}"}
-  ]
-}
-</script>
+{{ $aboutCrumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "About Us" "item" ("about/" | absURL))
+  (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $aboutCrumbs) | jsonify | safeJS }}</script>
 {{ end }}

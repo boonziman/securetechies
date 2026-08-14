@@ -74,7 +74,7 @@ Compliance and security audits from Secure Techies help businesses prove that th
 
 If you handle protected health information, pursue defense work, sell software to enterprise buyers, process card payments, or store personal data for California or EU residents, someone will eventually ask hard questions. The companies that answer with current policies, working controls, and clean evidence move forward. The companies that scramble lose time, trust, and sometimes the contract itself.
 
-For practical deep dives, see our guides on [HIPAA compliance](/blog/hipaa-compliance-checklist/), [SOC 2 compliance](/blog/soc-2-compliance/), [PCI DSS compliance](/blog/pci-dss-compliance/), and [CCPA California privacy compliance](/blog/ccpa-california-privacy-compliance/).
+For practical deep dives, see our guides on [HIPAA compliance](/blog/hipaa-compliance-checklist/), [SOC 2 compliance](/blog/soc-2-compliance/), [PCI DSS compliance](/blog/pci-dss-compliance/), and [CCPA California privacy compliance](/blog/ccpa-california-privacy-compliance/). For a worked example of a four-week assessment, read the [IT risk assessment case study](/case-studies/financial-services-risk-assessment/) for a Southern California financial firm.
 
 ## What Compliance and Security Audits Mean in Practice
 

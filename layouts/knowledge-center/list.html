@@ -179,14 +179,9 @@
   "isPartOf": { "@type": "WebSite", "name": "Secure Techies", "url": "https://securetechie.com/" }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"{{ "" | absURL }}"},
-    {"@type":"ListItem","position":2,"name":"Knowledge Center","item":"{{ .Permalink }}"}
-  ]
-}
-</script>
+{{ $kcCrumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "Knowledge Center" "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $kcCrumbs) | jsonify | safeJS }}</script>
 {{ end }}
