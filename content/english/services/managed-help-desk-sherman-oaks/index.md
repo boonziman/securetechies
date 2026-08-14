@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Sherman Oaks"
-meta_title: "Managed Help Desk Sherman Oaks | Secure Techies"
+title: "Managed Help Desk & IT Support in Sherman Oaks"
+meta_title: "Managed Help Desk & IT Support Sherman Oaks | Secure Techies"
 description: "24/7 managed help desk for Sherman Oaks businesses. Fast IT support along Ventura Blvd, on-site help nearby, Microsoft 365 admin, and secure staff onboarding."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

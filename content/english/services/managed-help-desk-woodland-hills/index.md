@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Woodland Hills"
-meta_title: "Managed Help Desk Woodland Hills | Secure Techies"
+title: "Managed Help Desk & IT Support in Woodland Hills"
+meta_title: "Managed Help Desk & IT Support Woodland Hills | Secure Techies"
 description: "24/7 managed help desk and IT support for Woodland Hills businesses. Fast remote fixes, on-site help near Warner Center, Microsoft 365, and secure onboarding."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

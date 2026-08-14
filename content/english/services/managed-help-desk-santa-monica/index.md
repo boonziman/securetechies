@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Santa Monica"
-meta_title: "Managed Help Desk Santa Monica | Secure Techies"
+title: "Managed Help Desk & IT Support in Santa Monica"
+meta_title: "Managed Help Desk & IT Support Santa Monica | Secure Techies"
 description: "24/7 managed help desk for Santa Monica businesses. Fast IT support for Westside hybrid teams, Microsoft 365 help, onboarding, and on-site service when needed."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

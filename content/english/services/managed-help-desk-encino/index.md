@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Encino"
-meta_title: "Managed Help Desk Encino | IT Support | Secure Techies"
+title: "Managed Help Desk & IT Support in Encino"
+meta_title: "Managed Help Desk & IT Support Encino | Secure Techies"
 description: "Managed help desk support for Encino businesses. 24/7 IT help, Microsoft 365 admin, onboarding, and on-site service across the southern San Fernando Valley."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

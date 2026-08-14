@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Chatsworth"
-meta_title: "Managed Help Desk Chatsworth | Secure Techies"
+title: "Managed Help Desk & IT Support in Chatsworth"
+meta_title: "Managed Help Desk & IT Support Chatsworth | Secure Techies"
 description: "24/7 managed help desk for Chatsworth businesses. Practical IT support for office and field teams, on-site help in the northwest Valley, and Microsoft 365."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

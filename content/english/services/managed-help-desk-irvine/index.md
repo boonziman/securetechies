@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Irvine"
-meta_title: "Managed Help Desk Irvine | IT Support | Secure Techies"
+title: "Managed Help Desk & IT Support in Irvine"
+meta_title: "Managed Help Desk & IT Support Irvine | Secure Techies"
 description: "24/7 managed help desk for Irvine and Orange County businesses. Fast remote IT support, on-site help in OC, Microsoft 365 admin, and secure onboarding."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

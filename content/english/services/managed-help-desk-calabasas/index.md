@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Calabasas"
-meta_title: "Managed Help Desk in Calabasas | Secure Techies"
+title: "Managed Help Desk & IT Support in Calabasas"
+meta_title: "Managed Help Desk & IT Support Calabasas | Secure Techies"
 description: "24/7 managed help desk for Calabasas businesses. Discreet, fast IT support, Microsoft 365 admin, onboarding, and on-site help across the western Valley."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

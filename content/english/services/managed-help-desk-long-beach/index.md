@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Long Beach"
-meta_title: "Managed Help Desk Long Beach | Secure Techies"
+title: "Managed Help Desk & IT Support in Long Beach"
+meta_title: "Managed Help Desk & IT Support Long Beach | Secure Techies"
 description: "24/7 managed help desk for Long Beach businesses. Fast IT support for harbor-area and multi-site teams, Microsoft 365 help, onboarding, and on-site service."
 image: "/images/services/helpdesk-overview.webp"
 draft: false

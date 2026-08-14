@@ -1,7 +1,7 @@
 ---
 date: 2026-08-08
-title: "Managed Help Desk in Studio City"
-meta_title: "Managed Help Desk Studio City | Secure Techies"
+title: "Managed Help Desk & IT Support in Studio City"
+meta_title: "Managed Help Desk & IT Support Studio City | Secure Techies"
 description: "24/7 managed help desk for Studio City businesses. IT support for creative and hybrid teams, Microsoft 365 help, onboarding, and on-site service nearby."
 image: "/images/services/helpdesk-overview.webp"
 draft: false
