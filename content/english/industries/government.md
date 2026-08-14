@@ -34,7 +34,7 @@ hero_stats:
     label: "CAGE code"
   - value: "VNXVECFGVAW6"
     label: "UEI"
-  - value: "2009"
+  - value: "2016"
     label: "In business"
 challenges:
   heading: "Public work has a paper trail"

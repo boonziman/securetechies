@@ -43,7 +43,7 @@ If the only difference between two proposals is the logo, you do not have an MSP
 
 ## What Secure Techies is built to be
 
-[Secure Techies](/about/) is a Canoga Park company, founded in 2009. About half of our clients are [law firms](/industries/law-firms/). The rest look like the rest of Southern California: clinics, contractors, warehouses, restaurants, advisors, and growing offices.
+[Secure Techies](/about/) is a Canoga Park company, founded in 2016. About half of our clients are [law firms](/industries/law-firms/). The rest look like the rest of Southern California: clinics, contractors, warehouses, restaurants, advisors, and growing offices.
 
 We run [managed help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [backups](/services/backup-disaster-recovery/), and, when the lot is the risk, [mobile CCTV trailers](/services/mobile-cctv-trailers/) as one relationship. That last piece is not a typical MSP line item. Most providers stop at the firewall and tell you to call a camera company.
 

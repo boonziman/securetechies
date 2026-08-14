@@ -304,7 +304,7 @@ stats:
     - target: 15
       suffix: "+"
       label: "Years in business"
-      sub: "Serving Greater LA since 2009"
+      sub: "Serving Greater LA since 2016"
     - target: 2
       prefix: "<"
       suffix: " hr"
@@ -401,7 +401,7 @@ faq:
 final:
   heading: "Ready for Reliable Managed IT Services in Los Angeles?"
   heading_accent: "Let's Talk."
-  text: "Schedule a free IT assessment with a local managed service provider trusted by Los Angeles businesses since 2009. We serve companies across Los Angeles, Pasadena, Glendale, Burbank, Long Beach, Santa Monica, and Orange County."
+  text: "Schedule a free IT assessment with a local managed service provider trusted by Los Angeles businesses since 2016. We serve companies across Los Angeles, Pasadena, Glendale, Burbank, Long Beach, Santa Monica, and Orange County."
   points:
     - "Free, no-obligation IT assessment"
     - "Response in under 2 hours"

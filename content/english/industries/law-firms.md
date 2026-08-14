@@ -1,7 +1,7 @@
 ---
 title: "IT Services for Law Firms"
 meta_title: "IT Services for Law Firms | Legal IT Support LA | Secure Techies"
-description: "Managed IT for law firms in Los Angeles: confidentiality-first Microsoft 365, matter systems, 24/7 help desk, and backups that restore. Local team since 2009."
+description: "Managed IT for law firms in Los Angeles: confidentiality-first Microsoft 365, matter systems, 24/7 help desk, and backups that restore. Local team since 2016."
 image: "/images/industries/law-firm-it-conference-room.webp"
 keywords:
   - IT services for law firms

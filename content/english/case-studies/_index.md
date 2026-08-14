@@ -10,6 +10,6 @@ hero_alt: "Downtown Los Angeles brick and glass towers seen through a dusty stee
 intro_image: "images/case-studies/case-studies-hub-intro.webp"
 intro_alt: "Lived-in San Fernando Valley conference room after a project meeting"
 intro_heading: "What happened, what we did, what changed"
-intro: "Secure Techies has supported Southern California businesses from Canoga Park since 2009. These pages are how we show the work. Each study names the constraint, the scope, and the deliverable. Client names stay out when the engagement requires it."
+intro: "Secure Techies has supported Southern California businesses from Canoga Park since 2016. These pages are how we show the work. Each study names the constraint, the scope, and the deliverable. Client names stay out when the engagement requires it."
 draft: false
 ---

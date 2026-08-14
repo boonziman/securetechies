@@ -35,7 +35,7 @@ hero_stats:
     label: "Safeguards in ops"
   - value: "24/7"
     label: "Clinical uptime support"
-  - value: "2009"
+  - value: "2016"
     label: "Serving SoCal"
 challenges:
   heading: "Patient care does not pause for a ticket"

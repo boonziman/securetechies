@@ -225,7 +225,7 @@ stats:
     - target: 15
       suffix: "+"
       label: "Years protecting firms"
-      sub: "Serving Greater LA since 2009"
+      sub: "Serving Greater LA since 2016"
     - target: 2
       prefix: "<"
       suffix: " hr"

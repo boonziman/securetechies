@@ -1,10 +1,10 @@
 # Secure Techies
 
-> Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2009, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. We provide proactive, security-first technology management, 24/7 support, and rapidly deployable mobile video surveillance for small and mid-size businesses across Los Angeles, the San Fernando Valley, and all of Southern California. Phone: (818) 431-5607. Email: info@SecureTechie.com.
+> Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2016, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. We provide proactive, security-first technology management, 24/7 support, and rapidly deployable mobile video surveillance for small and mid-size businesses across Los Angeles, the San Fernando Valley, and all of Southern California. Phone: (818) 431-5607. Email: info@SecureTechie.com.
 
 ## About
 - Company: Secure Techies LLC — Managed IT Services & Cybersecurity
-- Founded: 2009
+- Founded: 2016
 - Service area: Los Angeles, San Fernando Valley, and all of Southern California (clients served nationwide)
 - Client mix: approximately half law firms; also healthcare, professional services, construction, hospitality, warehousing, finance, and growing SMBs
 - LLM index: https://securetechie.com/llms.txt

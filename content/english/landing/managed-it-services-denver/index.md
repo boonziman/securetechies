@@ -325,7 +325,7 @@ stats:
     - target: 15
       suffix: "+"
       label: "Years in business"
-      sub: "Trusted MSP since 2009"
+      sub: "Trusted MSP since 2016"
     - target: 2
       prefix: "<"
       suffix: " hr"
@@ -422,7 +422,7 @@ faq:
 final:
   heading: "Ready for Reliable Managed IT Services in Denver?"
   heading_accent: "Let's Talk."
-  text: "Schedule a free IT assessment with a managed service provider trusted by businesses since 2009. We serve companies across Denver, Aurora, Boulder, Lakewood, Littleton, Centennial, Englewood, and the greater Front Range."
+  text: "Schedule a free IT assessment with a managed service provider trusted by businesses since 2016. We serve companies across Denver, Aurora, Boulder, Lakewood, Littleton, Centennial, Englewood, and the greater Front Range."
   points:
     - "Free, no-obligation IT assessment"
     - "Response in under 2 hours"

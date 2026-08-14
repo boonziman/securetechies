@@ -13,7 +13,7 @@ faq_categories:
       - question: "What does Secure Techies do?"
         answer: "Secure Techies is a managed IT and cybersecurity company based in Canoga Park, California. We act as the outsourced IT department for law firms, healthcare practices, professional services teams, and growing businesses.\n\nThat usually means we monitor systems, run the help desk, harden security, manage backups, and plan upgrades so staff stay on client work instead of troubleshooting printers and phishing emails. We work remote-first and come on site when the problem needs hands-on work."
       - question: "How long has Secure Techies been in business?"
-        answer: "We have served Southern California organizations since 2009. Continuity matters here: the same local company, not a new brand every few years with a different support model and a new set of people who do not know your environment."
+        answer: "We have served Southern California organizations since 2016. Continuity matters here: the same local company, not a new brand every few years with a different support model and a new set of people who do not know your environment."
       - question: "Who are your typical clients?"
         answer: "About half of our clients are law firms. The rest include healthcare and medical practices, finance and professional services, construction and job-site operations, real estate, education, manufacturing, and small-to-midsize businesses that need serious IT without hiring a full internal department.\n\nThe common thread is deadline-driven work. If email, documents, or appointments stop, the business stops. That is the environment we are built for."
       - question: "Do you only work with large companies?"
