@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Glendale"
-meta_title: "Managed Infrastructure in Glendale | Secure Techies"
+title: "Managed Infrastructure Services in Glendale"
+meta_title: "Managed Infrastructure Services Glendale | Secure Techies"
 description: "Managed infrastructure in Glendale: servers, workstations, cloud, and 24/7 monitoring for Brand Boulevard and professional offices. Book a free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Glendale"
 location_state: "California"
 location_path: "/locations/glendale/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/glendale/"

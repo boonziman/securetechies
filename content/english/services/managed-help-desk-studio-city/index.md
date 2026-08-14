@@ -8,7 +8,7 @@ draft: false
 location_service: true
 location_city: "Studio City"
 location_state: "California"
-service_label: "Managed Help Desk"
+service_label: "Managed Help Desk & IT Support"
 parent_service: "/services/managed-help-desk/"
 parent_service_name: "Managed Help Desk Support"
 url: "/services/managed-help-desk/studio-city/"

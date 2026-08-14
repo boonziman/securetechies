@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Santa Monica"
-meta_title: "Managed Infrastructure Santa Monica | Secure Techies"
+title: "Managed Infrastructure Services in Santa Monica"
+meta_title: "Managed Infrastructure Services Santa Monica | Secure Techies"
 description: "Managed infrastructure in Santa Monica: servers, workstations, cloud, and 24/7 monitoring for Westside hybrid and professional offices. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Santa Monica"
 location_state: "California"
 location_path: "/locations/santa-monica/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/santa-monica/"

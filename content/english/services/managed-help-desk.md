@@ -319,16 +319,16 @@ That trust matters. A help desk nobody uses is as useless as a help desk nobody 
 
 Looking for local help desk coverage pages? We support businesses across Southern California, including:
 
-- [Managed Help Desk in Woodland Hills](/services/managed-help-desk/woodland-hills/)
-- [Managed Help Desk in Sherman Oaks](/services/managed-help-desk/sherman-oaks/)
-- [Managed Help Desk in Encino](/services/managed-help-desk/encino/)
-- [Managed Help Desk in Studio City](/services/managed-help-desk/studio-city/)
-- [Managed Help Desk in Chatsworth](/services/managed-help-desk/chatsworth/)
-- [Managed Help Desk in Calabasas](/services/managed-help-desk/calabasas/)
-- [Managed Help Desk in Santa Monica](/services/managed-help-desk/santa-monica/)
-- [Managed Help Desk in Irvine](/services/managed-help-desk/irvine/)
-- [Managed Help Desk in Glendale](/services/managed-help-desk/glendale/)
-- [Managed Help Desk in Long Beach](/services/managed-help-desk/long-beach/)
+- [Managed Help Desk & IT Support in Woodland Hills](/services/managed-help-desk/woodland-hills/)
+- [Managed Help Desk & IT Support in Sherman Oaks](/services/managed-help-desk/sherman-oaks/)
+- [Managed Help Desk & IT Support in Encino](/services/managed-help-desk/encino/)
+- [Managed Help Desk & IT Support in Studio City](/services/managed-help-desk/studio-city/)
+- [Managed Help Desk & IT Support in Chatsworth](/services/managed-help-desk/chatsworth/)
+- [Managed Help Desk & IT Support in Calabasas](/services/managed-help-desk/calabasas/)
+- [Managed Help Desk & IT Support in Santa Monica](/services/managed-help-desk/santa-monica/)
+- [Managed Help Desk & IT Support in Irvine](/services/managed-help-desk/irvine/)
+- [Managed Help Desk & IT Support in Glendale](/services/managed-help-desk/glendale/)
+- [Managed Help Desk & IT Support in Long Beach](/services/managed-help-desk/long-beach/)
 
 These pages are location-specific guides for the same core help desk service. Use them for local context, then talk with us about onboarding your team.
 

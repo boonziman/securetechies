@@ -300,16 +300,16 @@ We also publish practical guidance on topics like [server support in Los Angeles
 
 Local versions of this service for Southern California offices we cover regularly:
 
-- [Managed Infrastructure in Woodland Hills](/services/infrastructure/woodland-hills/)
-- [Managed Infrastructure in Sherman Oaks](/services/infrastructure/sherman-oaks/)
-- [Managed Infrastructure in Encino](/services/infrastructure/encino/)
-- [Managed Infrastructure in Studio City](/services/infrastructure/studio-city/)
-- [Managed Infrastructure in Chatsworth](/services/infrastructure/chatsworth/)
-- [Managed Infrastructure in Calabasas](/services/infrastructure/calabasas/)
-- [Managed Infrastructure in Santa Monica](/services/infrastructure/santa-monica/)
-- [Managed Infrastructure in Irvine](/services/infrastructure/irvine/)
-- [Managed Infrastructure in Glendale](/services/infrastructure/glendale/)
-- [Managed Infrastructure in Long Beach](/services/infrastructure/long-beach/)
+- [Managed Infrastructure Services in Woodland Hills](/services/infrastructure/woodland-hills/)
+- [Managed Infrastructure Services in Sherman Oaks](/services/infrastructure/sherman-oaks/)
+- [Managed Infrastructure Services in Encino](/services/infrastructure/encino/)
+- [Managed Infrastructure Services in Studio City](/services/infrastructure/studio-city/)
+- [Managed Infrastructure Services in Chatsworth](/services/infrastructure/chatsworth/)
+- [Managed Infrastructure Services in Calabasas](/services/infrastructure/calabasas/)
+- [Managed Infrastructure Services in Santa Monica](/services/infrastructure/santa-monica/)
+- [Managed Infrastructure Services in Irvine](/services/infrastructure/irvine/)
+- [Managed Infrastructure Services in Glendale](/services/infrastructure/glendale/)
+- [Managed Infrastructure Services in Long Beach](/services/infrastructure/long-beach/)
 
 ## Ready to Stabilize and Scale Your Infrastructure?
 

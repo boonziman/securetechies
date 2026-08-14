@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Irvine"
-meta_title: "Managed Infrastructure Irvine CA | Secure Techies"
+title: "Managed Infrastructure Services in Irvine"
+meta_title: "Managed Infrastructure Services Irvine | Secure Techies"
 description: "Managed infrastructure in Irvine: servers, workstations, cloud, and 24/7 monitoring for Orange County business-park and campus offices. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Irvine"
 location_state: "California"
 location_path: "/locations/irvine/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/irvine/"

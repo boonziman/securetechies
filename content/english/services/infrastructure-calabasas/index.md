@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Calabasas"
-meta_title: "Managed Infrastructure in Calabasas | Secure Techies"
+title: "Managed Infrastructure Services in Calabasas"
+meta_title: "Managed Infrastructure Services Calabasas | Secure Techies"
 description: "Managed infrastructure in Calabasas: servers, workstations, cloud, and 24/7 monitoring for West Valley professional offices. Book a free IT assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Calabasas"
 location_state: "California"
 location_path: "/locations/calabasas/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/calabasas/"

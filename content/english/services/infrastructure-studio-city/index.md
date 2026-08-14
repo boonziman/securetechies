@@ -1,14 +1,14 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Studio City"
-meta_title: "Managed Infrastructure Studio City | Secure Techies"
+title: "Managed Infrastructure Services in Studio City"
+meta_title: "Managed Infrastructure Services Studio City | Secure Techies"
 description: "Managed infrastructure in Studio City: servers, workstations, cloud, and 24/7 monitoring for production-adjacent and professional offices. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
 location_service: true
 location_city: "Studio City"
 location_state: "California"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/studio-city/"

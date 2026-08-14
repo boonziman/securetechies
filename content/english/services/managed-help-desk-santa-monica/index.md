@@ -9,7 +9,7 @@ location_service: true
 location_city: "Santa Monica"
 location_state: "California"
 location_path: "/locations/santa-monica/"
-service_label: "Managed Help Desk"
+service_label: "Managed Help Desk & IT Support"
 parent_service: "/services/managed-help-desk/"
 parent_service_name: "Managed Help Desk Support"
 url: "/services/managed-help-desk/santa-monica/"

@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Encino"
-meta_title: "Managed Infrastructure in Encino | Secure Techies"
+title: "Managed Infrastructure Services in Encino"
+meta_title: "Managed Infrastructure Services Encino | Secure Techies"
 description: "Managed infrastructure in Encino: servers, workstations, cloud, and 24/7 monitoring for Ventura corridor medical and legal offices. Book a free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Encino"
 location_state: "California"
 location_path: "/locations/encino/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/encino/"

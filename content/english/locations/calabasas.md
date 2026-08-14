@@ -47,8 +47,8 @@ These are the core services most local teams combine:
 - [Managed help desk](/services/managed-help-desk/) for 24/7 user support
 - [Network security](/services/network-security/) for firewalls and connectivity
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
-- [Managed help desk in Calabasas](/services/managed-help-desk/calabasas/) for local help desk detail
-- [Managed infrastructure in Calabasas](/services/infrastructure/calabasas/) for local servers, endpoints, and cloud
+- [Managed help desk & IT support in Calabasas](/services/managed-help-desk/calabasas/) for local help desk detail
+- [Managed infrastructure services in Calabasas](/services/infrastructure/calabasas/) for local servers, endpoints, and cloud
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 

@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Chatsworth"
-meta_title: "Managed Infrastructure Chatsworth | Secure Techies"
+title: "Managed Infrastructure Services in Chatsworth"
+meta_title: "Managed Infrastructure Services Chatsworth | Secure Techies"
 description: "Managed infrastructure in Chatsworth: servers, workstations, cloud, and 24/7 monitoring for North Valley industrial and professional offices. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Chatsworth"
 location_state: "California"
 location_path: "/locations/chatsworth/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/chatsworth/"

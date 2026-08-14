@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Sherman Oaks"
-meta_title: "Managed Infrastructure Sherman Oaks | Secure Techies"
+title: "Managed Infrastructure Services in Sherman Oaks"
+meta_title: "Managed Infrastructure Services Sherman Oaks | Secure Techies"
 description: "Managed infrastructure in Sherman Oaks: servers, workstations, cloud, and 24/7 monitoring on the Ventura corridor. Predictable IT cost. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Sherman Oaks"
 location_state: "California"
 location_path: "/locations/sherman-oaks/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/sherman-oaks/"

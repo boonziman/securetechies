@@ -9,7 +9,7 @@ location_service: true
 location_city: "Long Beach"
 location_state: "California"
 location_path: "/locations/long-beach/"
-service_label: "Managed Help Desk"
+service_label: "Managed Help Desk & IT Support"
 parent_service: "/services/managed-help-desk/"
 parent_service_name: "Managed Help Desk Support"
 url: "/services/managed-help-desk/long-beach/"

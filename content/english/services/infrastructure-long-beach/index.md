@@ -1,7 +1,7 @@
 ---
 date: 2026-08-14
-title: "Managed Infrastructure in Long Beach"
-meta_title: "Managed Infrastructure Long Beach | Secure Techies"
+title: "Managed Infrastructure Services in Long Beach"
+meta_title: "Managed Infrastructure Services Long Beach | Secure Techies"
 description: "Managed infrastructure in Long Beach: servers, workstations, cloud, and 24/7 monitoring for port, healthcare, and professional offices. Free assessment."
 image: "/images/services/infrastructure-overview.webp"
 draft: false
@@ -9,7 +9,7 @@ location_service: true
 location_city: "Long Beach"
 location_state: "California"
 location_path: "/locations/long-beach/"
-service_label: "Managed Infrastructure"
+service_label: "Managed Infrastructure Services"
 parent_service: "/services/infrastructure/"
 parent_service_name: "Managed Infrastructure Services"
 url: "/services/infrastructure/long-beach/"
