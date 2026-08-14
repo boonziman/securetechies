@@ -1,16 +1,24 @@
 {{ define "main" }}
 {{ $tool := .Params.tool_id | default "raid" }}
 
-<section class="st-subpage-hero st-tools-hero">
+<section class="st-subpage-hero st-tools-hero st-tools-hero--tool">
   <div class="st-tools-hero-inner">
+    <nav class="st-th-crumb st-th-crumb--on-dark" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span>/</span>
+      <a href="{{ "tools/" | relURL }}">Tools</a>
+      <span>/</span>
+      <span>{{ .Title }}</span>
+    </nav>
     <div class="st-tools-badge">
       <div class="st-tools-badge-icon">{{ partial "tools/icon.html" .Params.tool_icon }}</div>
       <span>{{ .Params.tool_badge | default "Free Tool" }}</span>
     </div>
     <h1>{{ .Title }}</h1>
+    <span class="st-accent-rule" aria-hidden="true"></span>
     <p class="lead">{{ .Params.tool_summary | default .Params.description }}</p>
     <p class="st-tools-back">
-      <a href="{{ "tools/" | relURL }}">← All IT tools</a>
+      <a href="{{ "tools/" | relURL }}">All IT tools</a>
     </p>
   </div>
 </section>

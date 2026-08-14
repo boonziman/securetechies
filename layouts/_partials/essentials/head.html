@@ -36,6 +36,8 @@
   {{ else }}
     {{ $lcpImage = "/images/case-studies/case-studies-hub-hero.webp" }}
   {{ end }}
+{{ else if and (eq .Section "tools") (ne .Kind "page") }}
+  {{ $lcpImage = "images/tools/tools-hub-hero.webp" }}
 {{ end }}
 {{ with $lcpImage }}
   {{ $lcpPath := . | strings.TrimPrefix "/" }}
@@ -48,8 +50,8 @@
   {{ end }}
 {{ end }}
 
-{{/* Editorial display serif (Fraunces). Blog posts and case studies only. */}}
-{{ $isBlog := or (eq .Section "blog") (eq .Section "case-studies") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
+{{/* Editorial display serif (Fraunces). Blog, case studies, and tools. */}}
+{{ $isBlog := or (eq .Section "blog") (eq .Section "case-studies") (eq .Section "tools") (and (or (eq .Kind "term") (eq .Kind "taxonomy")) (in (slice "categories" "tags") .Data.Plural)) }}
 {{ if $isBlog }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
