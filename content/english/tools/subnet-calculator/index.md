@@ -1,6 +1,6 @@
 ---
 title: "Subnet Calculator"
-meta_title: "Subnet Calculator — Free IPv4 CIDR & VLSM Tool | Secure Techies"
+meta_title: "Subnet Calculator: Free IPv4 CIDR & VLSM Tool | Secure Techies"
 description: "Free subnet calculator for IPv4 CIDR planning. Get network address, broadcast, usable host range, wildcard mask, binary mask, and VLSM-style subnet splits."
 tool_id: "subnet"
 tool_icon: "network"
@@ -12,6 +12,13 @@ related_services:
     url: "/services/network-security/"
   - label: "Managed Infrastructure"
     url: "/services/infrastructure/"
+howto_steps:
+  - name: "Enter an IPv4 address and prefix"
+    text: "Example: 192.168.10.0 and /24. Use the chips for common prefixes."
+  - name: "Read network, mask, usable range, and wildcard"
+    text: "/31 and /32 follow modern point-to-point and host-route rules, not the old minus-two formula."
+  - name: "Optionally plan a VLSM split"
+    text: "Hosts needed or subnet count produces a first-pass child prefix. Confirm in IPAM."
 faq:
   - question: "What is a subnet calculator?"
     answer: "A subnet calculator converts an IP address and CIDR prefix (or mask) into network details: network address, broadcast address, usable host range, subnet mask, wildcard mask, and host counts."
@@ -29,7 +36,9 @@ draft: false
 
 ## Free IPv4 subnet calculator (CIDR)
 
-Use this **subnet calculator** to plan IPv4 networks without spreadsheet math. Enter an IP address and CIDR prefix to get the network address, broadcast address, first and last usable hosts, subnet mask, wildcard mask, total addresses, and usable host count. Optional fields help with VLSM-style planning when you know how many hosts or subnets you need.
+**Here is the short version:** a prefix of n bits is the network. The rest are hosts. This **subnet calculator** turns an IPv4 address and CIDR prefix into network, broadcast, mask, wildcard, usable range, and host count, plus an optional VLSM split.
+
+CIDR itself is defined in [RFC 4632](https://www.rfc-editor.org/rfc/rfc4632). Private ranges still follow [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918) (10/8, 172.16/12, 192.168/16).
 
 ## How CIDR subnet math works
 
@@ -45,7 +54,7 @@ IPv4 addresses are 32-bit numbers. A prefix length of **n** means the first **n*
 | /24 | Common LAN default | 254 |
 | /16 | Large private block | 65,534 |
 
-Modern point-to-point links often use **/31** (RFC 3021) with 2 addresses and no classic broadcast. Host routes use **/32**.
+Modern point-to-point links often use **/31** ([RFC 3021](https://www.rfc-editor.org/rfc/rfc3021)) with both addresses usable and no classic broadcast. Host routes use **/32**.
 
 ## Formulas this tool uses
 

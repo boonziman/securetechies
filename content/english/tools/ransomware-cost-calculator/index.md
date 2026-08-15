@@ -1,6 +1,6 @@
 ---
 title: "Ransomware Cost Calculator"
-meta_title: "Ransomware Cost Calculator — Free Breach Impact Tool | Secure Techies"
+meta_title: "Ransomware Cost Calculator: Free Breach Impact Tool | Secure Techies"
 description: "Free ransomware cost calculator for SMBs. Estimate downtime, recovery, records response, legal, reputation, readiness, and expected annualized loss ranges."
 tool_id: "ransomware"
 tool_icon: "shield"
@@ -14,6 +14,13 @@ related_services:
     url: "/services/backup-disaster-recovery/"
   - label: "Compliance & Security Audits"
     url: "/services/compliance-security-audits/"
+howto_steps:
+  - name: "Enter revenue, staff, and records"
+    text: "Those three numbers drive downtime, productivity, and notification cost more than the ransom line."
+  - name: "Set downtime hours and recovery days honestly"
+    text: "If you have never restored a backup, use a longer recovery window than marketing slides suggest."
+  - name: "Read the mid range, not only the high"
+    text: "Use the breakdown to decide whether MFA, immutable backups, or EDR would cut the largest slice."
 faq:
   - question: "How is ransomware cost estimated?"
     answer: "This calculator combines downtime revenue loss, IT recovery labor, optional ransom demand, per-record breach response costs, legal/notification costs, and a reputation impact range. It produces low, mid, and high estimates because real incidents vary widely."
@@ -31,9 +38,11 @@ draft: false
 
 ## Free ransomware and data breach cost calculator
 
-Translate cyber risk into dollars with this **ransomware cost calculator**. Enter revenue, employees, sensitive records, industry, downtime hours, recovery days, optional ransom demand, emergency IT rate, cyber insurance limit, annual probability, and security readiness. The model returns low, mid, and high impact ranges, a mid-range breakdown, and optional expected annualized loss.
+**Here is the short version:** for most small firms the ransom is not the bill. Downtime, rebuild labor, and record-response costs usually dwarf it. This **ransomware cost calculator** turns revenue, staff, records, downtime, recovery days, and readiness into low, mid, and high ranges plus an optional annualized loss.
 
-Use it for board conversations, budget justification, and tabletop exercises — not as insurance or legal advice.
+Use it for board conversations and tabletop exercises. It is not an insurance quote or legal advice.
+
+CISA's [StopRansomware](https://www.cisa.gov/stopransomware) program and the FBI [Internet Crime Complaint Center ransomware page](https://www.ic3.gov/ransomware) are the public baselines for what to do in an incident. This model is for the money conversation before one happens.
 
 ## Cost categories modeled
 
@@ -49,24 +58,22 @@ Use it for board conversations, budget justification, and tabletop exercises —
 
 Readiness (backups, MFA, EDR, drills) scales impact down. Industry multipliers reflect higher sensitivity sectors such as healthcare and finance.
 
-## Why mid-range beats a single “scary number”
+## Why mid-range beats a single scary number
 
-Incidents vary wildly. A company with immutable backups and rehearsed recovery can limit damage; one without backups may face multi-week outages. Ranges keep planning honest.
+Incidents vary. A company with immutable backups and a rehearsed restore can limit damage. One without backups may face multi-week outages. Ranges keep planning honest. CISA's [StopRansomware Guide](https://www.cisa.gov/resources-tools/resources/stopransomware-guide) is blunt: paying does not guarantee recovery and can fund the next wave.
 
 ## Prevention levers that move the model
 
-- MFA everywhere privileged  
-- EDR + email security  
-- Immutable / offline backups and restore tests  
-- Least privilege and network segmentation  
-- Incident response plan and tabletop drills  
+- MFA on email, VPN, and admin
+- EDR plus email security
+- Immutable or offline backups and restore tests
+- Least privilege and network segmentation
+- An incident response plan you have walked through once
 
-Explore [cybersecurity](/services/cybersecurity/), [backup and disaster recovery](/services/backup-disaster-recovery/), and [compliance audits](/services/compliance-security-audits/).
+Score the control gaps with the [cybersecurity risk assessment](/tools/cybersecurity-risk-assessment/). Then use [cybersecurity](/services/cybersecurity/), [backup and disaster recovery](/services/backup-disaster-recovery/), and [compliance audits](/services/compliance-security-audits/).
 
 ## Worked thinking example
 
-A $2.5M revenue firm with 35 staff, 5,000 records, 72 hours downtime, and mid readiness often sees mid-range totals dominated by downtime + recovery + records response — frequently larger than the ransom demand itself. That is why “just pay” is a poor strategy even before legal and re-extortion risk.
+A $2.5M revenue firm with 35 staff, 5,000 records, 72 hours downtime, and mid readiness often sees mid-range totals dominated by downtime, recovery, and records response. That stack is frequently larger than the ransom demand. "Just pay" is a poor strategy even before legal and re-extortion risk.
 
-## Next step
-
-If the mid-range number is uncomfortable, schedule a security and backup assessment with Secure Techies. [Contact us](/contact/).
+If the mid-range number is uncomfortable, schedule a security and backup assessment. [Contact Secure Techies](/contact/).

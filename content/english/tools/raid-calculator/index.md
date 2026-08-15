@@ -1,6 +1,6 @@
 ---
 title: "RAID Calculator"
-meta_title: "RAID Calculator — Free RAID 0/1/5/6/10/50/60 Tool | Secure Techies"
+meta_title: "RAID Calculator: Free RAID 0/1/5/6/10/50/60 Tool | Secure Techies"
 description: "Free RAID calculator for RAID 0, 1, 1E, 5, 6, 10, 50, and 60. Estimate usable capacity, efficiency, IOPS, fault tolerance, hot spares, and rebuild risk."
 tool_id: "raid"
 tool_icon: "disk"
@@ -12,6 +12,13 @@ related_services:
     url: "/services/backup-disaster-recovery/"
   - label: "Managed Infrastructure"
     url: "/services/infrastructure/"
+howto_steps:
+  - name: "Pick the RAID level and disk count"
+    text: "Use even counts for RAID 10. RAID 50/60 also need a group count that divides the disks."
+  - name: "Enter one disk size and optional hot spares"
+    text: "Spares add to the buy list, not to usable capacity until a disk fails."
+  - name: "Read usable TB, efficiency, and the rebuild note"
+    text: "Parity arrays on large disks need RAID 6 or 10 plus tested backups. RAID is not a backup."
 faq:
   - question: "What does a RAID calculator show?"
     answer: "A RAID calculator estimates usable capacity, storage efficiency, and how many drives can fail before data is lost. It uses the number of disks, single-disk size, and RAID level (0, 1, 5, 6, or 10)."
@@ -29,9 +36,9 @@ draft: false
 
 ## Free RAID calculator for capacity, efficiency, and fault tolerance
 
-Use this **RAID calculator** to estimate usable storage before you buy disks or quote a server. Choose RAID 0, 1, 1E, 5, 6, 10, 50, or 60, set disk count, disk size, optional hot spares, groups for RAID 50/60, approximate IOPS per disk, and URE guidance. Results update live with usable capacity, raw capacity, efficiency, redundancy space, fault tolerance, relative read/write performance, and a rebuild-risk note for parity arrays.
+**Here is the short version:** usable space is always less than raw except on RAID 0, and RAID 0 is not protection. This **RAID calculator** estimates usable capacity, efficiency, fault tolerance, and a first-pass IOPS range for RAID 0, 1, 1E, 5, 6, 10, 50, and 60 before you buy disks.
 
-This tool is designed for IT managers, MSPs, and business owners comparing NAS/SAN layouts — the same job classic tools like raid-calculator.com and ServeTheHome-style calculators target, with a modern interface and clearer planning outputs.
+It is a planning model for equal-sized disks. Vendor RAID (Synology SHR, unRAID, Storage Spaces) can differ. Microsoft documents Windows Server software RAID options in [Storage Spaces and RAID](https://learn.microsoft.com/en-us/windows-server/storage/storage-spaces/overview).
 
 ## RAID formulas used (equal-sized disks)
 
@@ -60,18 +67,20 @@ Read and write multipliers are educational first-pass estimates:
 
 ## Rebuild risk on large disks
 
-Parity RAID rebuilds read almost the entire remaining array. As multi-terabyte disks became common, long rebuild windows increased the chance of a second failure or an unrecoverable read error (URE). That is why many designs prefer **RAID 6** or **RAID 10** for production data, plus tested backups. The rebuild-risk note uses your URE exponent as a teaching signal — not a guarantee from any single drive vendor.
+Parity RAID rebuilds read almost the entire remaining array. As multi-terabyte disks became common, long rebuild windows increased the chance of a second failure or an unrecoverable read error (URE). That is why many designs prefer **RAID 6** or **RAID 10** for production data, plus tested backups. The rebuild-risk note uses your URE exponent as a teaching signal, not a guarantee from any single drive vendor.
 
 ## RAID is not backup
 
-An array can survive a disk failure and still lose everything to ransomware, accidental deletion, fire, or a failed controller write hole. Pair RAID with:
+An array can survive a disk failure and still lose everything to ransomware, accidental deletion, fire, or a failed controller. CISA's [data backup guidance](https://www.cisa.gov/news-events/news/backing-your-data) is the same lesson in public-sector language: copies that cannot be changed, stored somewhere else, and tested.
 
-- Versioned, **immutable or offline backups**
+Pair RAID with:
+
+- Versioned, immutable or offline backups
 - Restore tests on a schedule
 - Monitoring for degraded arrays
-- Documented RTO/RPO targets
+- Documented RTO and RPO
 
-See [backup and disaster recovery](/services/backup-disaster-recovery/) and [managed infrastructure](/services/infrastructure/). Camera systems should also use the [surveillance storage calculator](/tools/surveillance-storage-calculator/).
+See [backup and disaster recovery](/services/backup-disaster-recovery/) and [managed infrastructure](/services/infrastructure/). Camera systems should also use the [surveillance storage calculator](/tools/surveillance-storage-calculator/). The SNIA and vendor RAID primers agree on the formulas above; they also agree RAID does not replace a restore test.
 
 ## Worked example
 

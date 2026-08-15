@@ -1,6 +1,6 @@
 ---
 title: "Surveillance Storage Calculator"
-meta_title: "CCTV Storage Calculator — Free NVR Capacity Tool | Secure Techies"
+meta_title: "CCTV Storage Calculator: Free NVR Capacity Tool | Secure Techies"
 description: "Free CCTV storage calculator for NVR planning. Estimate capacity from cameras, resolution, FPS, H.264/H.265, quality, scene activity, motion, RAID, and retention."
 tool_id: "surveillance"
 tool_icon: "camera"
@@ -12,6 +12,13 @@ related_services:
     url: "/services/mobile-cctv-trailers/"
   - label: "Backup & Disaster Recovery"
     url: "/services/backup-disaster-recovery/"
+howto_steps:
+  - name: "Set cameras, retention, and hours"
+    text: "Retention days and motion percent move the number more than most people expect."
+  - name: "Choose estimate or paste a real bitrate"
+    text: "A live sample from one camera beats any table. H.265 usually cuts H.264 roughly in half."
+  - name: "Add buffer and optional RAID"
+    text: "The RAID factor is a first pass. Use the RAID calculator for exact array math."
 faq:
   - question: "How do you calculate CCTV storage?"
     answer: "Storage is estimated from bitrate (or resolution and FPS), number of cameras, hours recorded per day, retention days, and whether recording is continuous or motion-based. Higher resolution and frame rates need more disk space."
@@ -29,7 +36,9 @@ draft: false
 
 ## Free CCTV / NVR storage calculator
 
-Use this **surveillance storage calculator** (also searched as a CCTV storage calculator or NVR hard drive calculator) to estimate how much disk space a camera system needs. Configure cameras, retention days, hours per day, motion percentage, codec (H.264, H.265, H.265+, MJPEG), resolution, FPS, quality, scene activity, audio, safety buffer, and optional NVR RAID. Results include recording volume, buffered usable capacity, throughput, raw capacity for RAID, drive planning hints, and reverse day-count if you already know installed TB.
+**Here is the short version:** storage is bitrate × time × cameras × motion fraction, then a buffer. This **surveillance storage calculator** (CCTV / NVR hard drive calculator) estimates disk from cameras, retention, codec, resolution, and FPS.
+
+Camera vendors use the same bitrate method. [AXIS Site Designer](https://www.axis.com/support/tools/axis-site-designer) is the manufacturer-grade version of this math. Always confirm with a live sample from one camera on the real scene. Axis [Zipstream](https://www.axis.com/solutions/zipstream) and H.265 both exist to cut that bitrate. They do not change the formula.
 
 ## Core storage formula
 
@@ -41,7 +50,7 @@ With bitrate in Mbps:
 
 **GB ≈ Mbps × 1,000,000 / 8 × hours × 3600 × days × cameras × (motion%/100) / 1e9**
 
-Add buffer (often 20–30%) for growth, filesystem overhead, and bitrate spikes. If the NVR uses RAID, usable space is lower than raw drives — this tool applies a first-pass RAID factor and links to the [RAID calculator](/tools/raid-calculator/) for precise array math.
+Add buffer (often 20–30%) for growth, filesystem overhead, and bitrate spikes. If the NVR uses RAID, usable space is lower than raw drives. This tool applies a first-pass RAID factor and links to the [RAID calculator](/tools/raid-calculator/) for precise array math.
 
 ## What changes storage the most
 
@@ -71,7 +80,7 @@ Construction, events, and remote lots often rely on [mobile CCTV trailers](/serv
 
 **16 cameras, 1080p, 15 fps, H.265, medium quality/scene, continuous, 30 days, 25% buffer**
 
-Bitrate is estimated per camera, scaled for codec and scene, then multiplied by time and camera count. Expect on the order of multiple terabytes usable — confirm with live bitrate from a sample camera when possible.
+Bitrate is estimated per camera, scaled for codec and scene, then multiplied by time and camera count. Expect multiple terabytes usable. Confirm with live bitrate from a sample camera when possible.
 
 ## Next steps
 

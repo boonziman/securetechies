@@ -70,7 +70,7 @@ Industry is a pressure note, not a vanity multiplier that hides a zero on MFA. L
 4. Estimate money impact with the [ransomware cost calculator](/tools/ransomware-cost-calculator/).
 5. Give staff a place to send suspicious mail. The [email header analyzer](/tools/email-header-analyzer/) is the two-minute check.
 
-NIST's [Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber) is a good companion reading list if you want the longer version of the same priorities.
+NIST's [Small Business Cybersecurity Corner](https://www.nist.gov/itl/smallbusinesscyber) is a good companion reading list if you want the longer version of the same priorities. CISA's [Cross-Sector Cybersecurity Performance Goals](https://www.cisa.gov/cross-sector-cybersecurity-performance-goals) is the same idea in federal language: identity, email, backups, and known assets first.
 
 ## What this assessment is not
 
