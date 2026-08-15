@@ -109,4 +109,4 @@ It is not a ransomware model. It does not add HIPAA notification or reputation b
 
 Southern California professional firms feel downtime as missed billable time and missed appointments. Raise operating-hour honesty if April, trial week, or month-end is when you actually make the year.
 
-If you want fewer unplanned hours, that is [managed infrastructure](/services/infrastructure/), [managed help desk](/services/managed-help-desk/), and [backup and disaster recovery](/services/backup-disaster-recovery/). Bring last quarter's outage list. [Contact Secure Techies](/contact/).
+If you want fewer unplanned hours, that is [managed infrastructure](/services/infrastructure/), [managed help desk](/services/managed-help-desk/), and [backup and disaster recovery](/services/backup-disaster-recovery/). Bring last quarter's outage list to the assessment if you have one. If you do not, start the list this month. [Contact Secure Techies](/contact/).
