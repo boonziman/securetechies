@@ -108,7 +108,7 @@ That sequence matches CISA and CIS IG1 better than buying a new dashboard.
 
 Owners sometimes want a single product that "does security." That product does not exist. MFA, backups, email authentication, and someone watching alerts are four jobs. This score exists to stop you from buying the fifth tool first.
 
-Share the score with whoever pays the bills, not only with IT. An owner who sees "At risk" and a four-item gap list can approve MFA and a restore weekend. A 40-page PDF often waits until after the incident. If you cannot name who watches alerts on a Saturday, the EDR line is not a 10 even if the agent is installed.
+Share the score with whoever pays the bills, not only with IT. An owner who sees "At risk" and a four-item gap list can approve MFA and a restore weekend. A 40-page PDF often waits until after the incident. If you cannot name who watches alerts on a Saturday, the EDR line is not a 10 even if the agent is installed. Installed and watched are different controls.
 
 Re-take the score after those 90 days. If MFA and restores moved and the number did not, you answered generously the first time. That is useful. Fix the answers, then fix the systems.
 
