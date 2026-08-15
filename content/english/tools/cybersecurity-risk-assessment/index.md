@@ -78,6 +78,38 @@ It does not scan your network. It does not log into Microsoft 365. It does not p
 
 For a real review of the tenant, endpoints, and backups, use [cybersecurity services](/services/cybersecurity/) or [compliance and security audits](/services/compliance-security-audits/).
 
+Offboarding is on the list because leftover mailboxes are how former staff and forgotten vendors stay in the tenant. Same-day revoke of mail, VPN, and SaaS is the bar. "We will get to it Monday" is how a departed laptop still syncs SharePoint.
+
+## Why these ten questions and not forty
+
+You can buy a 200-control spreadsheet. Most small firms will not finish it. These ten map to the failures we see: stolen mailboxes, unrestored backups, silent endpoints, spoofed invoices, unpatched servers, nobody trained, everyone an admin, no plan, mystery devices, and leftover accounts.
+
+CIS IG1 has more safeguards. Use that list when you have a program. Use this page when you need a starting rank. Do not skip MFA because a longer list also mentions secure configuration of browsers.
+
+Patching is on the list because unpatched VPN and mail appliances are still how ransomware starts. "Monthly, but servers slip" is honest for a lot of firms. Move the critical internet-facing boxes first. Internal print servers can wait a week. Edge devices cannot.
+
+## How to answer without lying to yourself
+
+Pick the row that matches last Tuesday, not the policy PDF. If MFA is on for the owner and nobody else, that is "some staff." If backups exist in the cloud but nobody has restored a file this year, that is "untested." If the "incident plan" is a phone number in someone's head, that is "we would call whoever answers."
+
+Law, healthcare, and finance should treat a mid score as more urgent. Attackers already know those inboxes move money and records. The industry dropdown is a pressure note. It does not change the weights so a law firm can feel better about missing MFA.
+
+## What "good" looks like in 90 days
+
+Week 1: MFA on Microsoft 365 and every admin path.  
+Week 2: Confirm backups, then restore one file and one full system on purpose.  
+Week 3: Publish SPF and DMARC at `p=none` with the [SPF and DMARC generator](/tools/spf-dmarc-generator/).  
+Week 4: Name who watches EDR and mailbox alerts.  
+The rest of the quarter: privilege cleanup, offboarding, and one tabletop.
+
+That sequence matches CISA and CIS IG1 better than buying a new dashboard.
+
 ## Next step
 
-If the band is Critical or At risk, do not buy three new products. Close MFA and recovery, then talk to a partner who will own the rest. [Contact Secure Techies](/contact/) for a free assessment that looks at the actual systems.
+Owners sometimes want a single product that "does security." That product does not exist. MFA, backups, email authentication, and someone watching alerts are four jobs. This score exists to stop you from buying the fifth tool first.
+
+Share the score with whoever pays the bills, not only with IT. An owner who sees "At risk" and a four-item gap list can approve MFA and a restore weekend. A 40-page PDF often waits until after the incident. If you cannot name who watches alerts on a Saturday, the EDR line is not a 10 even if the agent is installed.
+
+Re-take the score after those 90 days. If MFA and restores moved and the number did not, you answered generously the first time. That is useful. Fix the answers, then fix the systems.
+
+If the band is Critical or At risk, close MFA and recovery, then talk to a partner who will own the rest. Bring the gap list. [Contact Secure Techies](/contact/) for a free assessment that looks at the actual systems.

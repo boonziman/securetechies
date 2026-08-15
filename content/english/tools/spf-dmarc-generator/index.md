@@ -95,8 +95,47 @@ Use the [email header analyzer](/tools/email-header-analyzer/) to confirm Authen
 - DMARC `reject` on day one with no report history
 - Publishing DMARC on the wrong host (it belongs at `_dmarc.domain.com`)
 
+## DKIM, in one paragraph
+
+This generator does not create a DKIM key pair. That belongs in the tenant (Microsoft 365 or Google) and then in DNS as a TXT at `selector._domainkey.domain`. Turn DKIM on before you raise DMARC. SPF-only alignment breaks more often when mail is forwarded. DKIM survives forwarding better. Microsoft's [email authentication overview](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-about) covers the trio as one project, not three hobbies.
+
 ## How this ties to the rest of the stack
 
 Authentication does not replace inbox filtering, MFA, or a call-back rule for payment changes. It does make lookalike-From spoofs fail more often. That is the same theme as our [wire fraud close call](/case-studies/wire-fraud-email-close-call/) and our [cybersecurity](/services/cybersecurity/) work.
+
+After you publish, paste a test message into the [email header analyzer](/tools/email-header-analyzer/). You want to see pass, not "we think we added the record."
+
+## Worked example
+
+Domain `yourfirm.com`, Microsoft 365 only, ready for hard fail:
+
+- SPF: `v=spf1 include:spf.protection.outlook.com -all`
+- Lookups: 1 (the include). Headroom is fine.
+- DMARC host: `_dmarc.yourfirm.com`
+- First DMARC: `v=DMARC1; p=none; rua=mailto:dmarc-reports@yourfirm.com; adkim=r; aspf=r`
+
+Thirty days later, if reports show only Microsoft, raise `p=quarantine`. Then `reject`. If a scanner or a marketing platform appears, add its include or ip4 **before** you reject, or you will block your own mail.
+
+## Alignment, percent, and subdomain policy
+
+Relaxed alignment (`adkim=r` and `aspf=r`) lets a subdomain pass as the parent. That is the usual start. Strict alignment is tighter and breaks more forwarding and some vendors. Do not turn on strict the same week you publish the first record.
+
+`pct` applies the policy to a percentage of mail. Use it as a dimmer when you move from quarantine to reject if you are nervous. It is not a substitute for reading reports.
+
+`sp` sets policy for subdomains. If marketing uses `news.yourfirm.com` and you do not control it, think before you set `sp=reject`. If you do not use subdomains for mail, matching `p` and `sp` is cleaner.
+
+## Reports, mailboxes, and who actually reads them
+
+`rua` addresses receive XML aggregate reports. They are not pretty. Someone has to parse them or send them to a service that does. An unread `dmarc-reports@` mailbox is the same as no DMARC. Set a calendar reminder for the first four Fridays after you publish `p=none`.
+
+If you use a third-party report processor, their docs will give you a mailbox or a URI to put in `rua`. That is fine. Still keep an owner inside the firm.
+
+Do not put a personal Gmail in `rua` for a company domain unless you like mixing work and a mailbox you will lose. Use a role address.
+
+## Third-party senders
+
+Bill-pay, scanners, marketing tools, and "the printer that emails PDFs" all send as you. Inventory them. Add includes or ip4s. If you cannot find a vendor's SPF include, ask them in writing. Then test. Then raise policy.
+
+A law firm that adds Mailchimp the week after `p=reject` will learn about DMARC from bounced newsletters. That is the wrong classroom.
 
 If you want this implemented and monitored on Microsoft 365, [contact Secure Techies](/contact/).

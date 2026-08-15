@@ -103,8 +103,26 @@ That is the pattern in our [fake wire instruction case study](/case-studies/wire
 
 Law firms, clinics, and professional offices in Los Angeles get polished payment and W-9 requests every week. A two-minute header check is cheaper than a wire recall. Pair it with [cybersecurity](/services/cybersecurity/) and [managed help desk](/services/managed-help-desk/) so staff have a place to escalate.
 
+## How to walk a suspicious invoice
+
+1. Do not click. Do not open the attachment on a workstation you care about.
+2. Copy headers into this analyzer.
+3. If SPF, DKIM, or DMARC fail, treat the message as hostile until proven otherwise.
+4. If they pass, still call the vendor on a number from last month's invoice, not from the email.
+5. Send the message to whoever owns security or [managed help desk](/services/managed-help-desk/). Do not forward it to the whole firm.
+
+That is a two-minute process. Firms skip it because the email looks like last week's PDF. That is the point of the display name.
+
+## Forwarding, lists, and other honest mismatches
+
+Not every mismatch is a crime. A mailing list can break DKIM. A forwarding rule can change Return-Path. Some small hosts never write Authentication-Results. Ask: does this message ask me to do something irreversible (wire, password, W-9, gift cards)? If yes, the bar is higher. If it is a newsletter, a fail is still a reason to unsubscribe, not a reason to panic.
+
+Internal messages on Microsoft 365 often look different from internet mail. Compare against a known-good message from the same person before you train the whole office on one sample.
+
 ## What this tool is not
 
-It is not a sandbox, a VirusTotal scan, or a court-grade forensic report. It will not fetch live DNS. It will not mark mail in your inbox. Use it to read what is already on the message, then decide the next human step.
+It is not a sandbox, a VirusTotal scan, or a court-grade forensic report. It will not fetch live DNS. It will not mark mail in your inbox. It will not see a lookalike domain that has its own clean SPF. Use it to read what is already on the message, then decide the next human step.
+
+Teach one person in finance this page. They do not need to become mail administrators. They need to know where Show original lives and what "fail" means. That is cheaper than a recall.
 
 If you want DMARC enforcement, Microsoft 365 hardening, or a staff process for payment changes, [contact Secure Techies](/contact/).
