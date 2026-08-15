@@ -128,7 +128,7 @@ Smart TVs, badge systems, cameras, printers, and warehouse sensors often land on
 
 ### Performance issues mistaken for "slow internet"
 
-Poor QoS, overloaded access points, and messy routing look like bandwidth problems. Professional design often restores performance while improving security, which is why WiFi site surveys are part of real network work, not a luxury.
+Poor QoS, overloaded access points, and messy routing look like bandwidth problems. Professional design often restores performance while improving security, which is why WiFi site surveys are part of real network work, not a luxury. Size the pipe first with the [office bandwidth calculator](/tools/bandwidth-calculator/).
 
 ### Audit findings nobody expected
 

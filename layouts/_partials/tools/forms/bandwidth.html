@@ -1,0 +1,85 @@
+<form id="st-bw-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Office peak load</div>
+  <div id="bw-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="bw-employees">People on site at peak</label>
+      <input class="st-tool-input" id="bw-employees" type="number" min="1" step="1" value="25">
+    </div>
+    <div class="st-tool-field">
+      <label for="bw-video-pct">On video at the same time (%)</label>
+      <div class="st-tool-range-row"><span></span><span id="bw-video-pct-val">35</span></div>
+      <input class="st-tool-range" id="bw-video-pct" type="range" min="0" max="100" step="5" value="35">
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="bw-video-q">Typical video quality</label>
+    <select class="st-tool-select" id="bw-video-q">
+      <option value="audio">Audio / VoIP only (~0.1 Mbps each)</option>
+      <option value="720" selected>HD 720p (~1.5 Mbps each way)</option>
+      <option value="1080">HD 1080p (~2.5 Mbps each way)</option>
+    </select>
+    <div class="st-tool-hint">Planning rates, not the lowest number on a vendor slide.</div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="bw-voip">Extra concurrent voice-only calls</label>
+      <input class="st-tool-input" id="bw-voip" type="number" min="0" step="1" value="5">
+    </div>
+    <div class="st-tool-field">
+      <label for="bw-cloud">Cloud / web / Microsoft 365 load</label>
+      <select class="st-tool-select" id="bw-cloud">
+        <option value="0.5">Light (mail, light web)</option>
+        <option value="1.5" selected>Typical (SharePoint, browsers, SaaS)</option>
+        <option value="3.5">Heavy (large files, VDI, constant sync)</option>
+      </select>
+    </div>
+  </div>
+  <div class="st-tool-panel-title" style="margin-top:8px">Optional extras</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="bw-cams">Cameras uploading offsite</label>
+      <input class="st-tool-input" id="bw-cams" type="number" min="0" step="1" value="0">
+    </div>
+    <div class="st-tool-field">
+      <label for="bw-cam-mbps">Mbps per camera (upload)</label>
+      <input class="st-tool-input" id="bw-cam-mbps" type="number" min="0" step="0.1" value="2">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="bw-backup">Cloud backup / sync (Mbps)</label>
+      <input class="st-tool-input" id="bw-backup" type="number" min="0" step="1" value="10">
+    </div>
+    <div class="st-tool-field">
+      <label for="bw-headroom">Headroom (%)</label>
+      <input class="st-tool-input" id="bw-headroom" type="number" min="0" max="80" step="5" value="30">
+    </div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Recommended circuit</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Download (with headroom)</div>
+    <div class="st-tool-metric-value" id="bw-down">—</div>
+  </div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Upload (with headroom)</div>
+    <div class="st-tool-metric-value" id="bw-up">—</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Next common business circuit</div>
+    <div class="st-tool-metric-value" style="font-size:1.15rem" id="bw-sku">—</div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Video</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="bw-br-video">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Voice</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="bw-br-voip">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Cloud / web</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="bw-br-cloud">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Cameras + backup</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="bw-br-extra">—</div></div>
+  </div>
+  <p class="st-tool-note" id="bw-note"></p>
+  <p class="st-tool-disclaimer">Planning model. Real circuits also need QoS, Wi-Fi design, and a provider SLA. Peak is not average.</p>
+</div>

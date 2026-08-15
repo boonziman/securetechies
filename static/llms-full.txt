@@ -90,6 +90,8 @@ https://securetechie.com/tools/
 - Email header analyzer: https://securetechie.com/tools/email-header-analyzer/
 - SPF and DMARC record generator: https://securetechie.com/tools/spf-dmarc-generator/
 - Cybersecurity risk assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
+- Office bandwidth calculator: https://securetechie.com/tools/bandwidth-calculator/
+- IT downtime cost calculator: https://securetechie.com/tools/downtime-cost-calculator/
 
 ## Resources
 - About: https://securetechie.com/about/

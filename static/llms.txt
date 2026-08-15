@@ -84,6 +84,8 @@
 - Email Header Analyzer: https://securetechie.com/tools/email-header-analyzer/
 - SPF & DMARC Record Generator: https://securetechie.com/tools/spf-dmarc-generator/
 - Cybersecurity Risk Assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
+- Office Bandwidth Calculator: https://securetechie.com/tools/bandwidth-calculator/
+- IT Downtime Cost Calculator: https://securetechie.com/tools/downtime-cost-calculator/
 
 ## Case Studies
 - Hub: https://securetechie.com/case-studies/. Project records: situation, method, outcome. Clients anonymized when required.

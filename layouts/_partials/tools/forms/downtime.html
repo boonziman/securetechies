@@ -1,0 +1,69 @@
+<form id="st-dt-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">The outage</div>
+  <div id="dt-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="dt-revenue">Annual revenue ($)</label>
+      <input class="st-tool-input" id="dt-revenue" type="number" min="0" step="1000" value="2500000">
+    </div>
+    <div class="st-tool-field">
+      <label for="dt-hours">Operating hours per year</label>
+      <input class="st-tool-input" id="dt-hours" type="number" min="500" step="50" value="2000">
+      <div class="st-tool-hint">2,000 is a 40-hour week. Tax season is not 2,000.</div>
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="dt-employees">People blocked</label>
+      <input class="st-tool-input" id="dt-employees" type="number" min="0" step="1" value="25">
+    </div>
+    <div class="st-tool-field">
+      <label for="dt-wage">Loaded hourly cost per person ($)</label>
+      <input class="st-tool-input" id="dt-wage" type="number" min="0" step="1" value="48">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="dt-prod">Productivity lost (%)</label>
+      <input class="st-tool-input" id="dt-prod" type="number" min="0" max="100" step="5" value="70">
+    </div>
+    <div class="st-tool-field">
+      <label for="dt-duration">Outage length (hours)</label>
+      <input class="st-tool-input" id="dt-duration" type="number" min="0.25" step="0.25" value="4">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="dt-recover-h">Emergency recovery hours</label>
+      <input class="st-tool-input" id="dt-recover-h" type="number" min="0" step="0.5" value="6">
+    </div>
+    <div class="st-tool-field">
+      <label for="dt-recover-r">Recovery labor rate ($/hr)</label>
+      <input class="st-tool-input" id="dt-recover-r" type="number" min="0" step="10" value="200">
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="dt-kind">Kind of outage</label>
+    <select class="st-tool-select" id="dt-kind">
+      <option value="1">Planned (maintenance window)</option>
+      <option value="1.35" selected>Unplanned (incident)</option>
+    </select>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Estimated cost</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">This outage (total)</div>
+    <div class="st-tool-metric-value" id="dt-total">—</div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Per hour</div><div class="st-tool-metric-value" style="font-size:1.15rem" id="dt-hourly">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Revenue / hour</div><div class="st-tool-metric-value" style="font-size:1.15rem" id="dt-rev-hr">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Lost revenue</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="dt-br-rev">—</div></div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Lost productivity</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="dt-br-prod">—</div></div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Recovery labor</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="dt-br-rec">—</div></div>
+  <p class="st-tool-note" id="dt-note"></p>
+  <p class="st-tool-disclaimer">Planning model for any outage: internet, Microsoft 365, a failed host. Not a ransomware or insurance quote. Not Gartner's data-center average.</p>
+</div>

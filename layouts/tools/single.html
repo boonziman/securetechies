@@ -34,6 +34,8 @@
     {{ else if eq $tool "headers" }}{{ partial "tools/forms/headers.html" . }}
     {{ else if eq $tool "authgen" }}{{ partial "tools/forms/authgen.html" . }}
     {{ else if eq $tool "risk" }}{{ partial "tools/forms/risk.html" . }}
+    {{ else if eq $tool "bandwidth" }}{{ partial "tools/forms/bandwidth.html" . }}
+    {{ else if eq $tool "downtime" }}{{ partial "tools/forms/downtime.html" . }}
     {{ end }}
   </div>
   <div class="st-tool-continue">

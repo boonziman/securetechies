@@ -1370,6 +1370,137 @@
     score();
   }
 
+  /* ============================================================
+     Office bandwidth calculator
+     video = employees * (peakPct/100) * mbpsPerStream (each way)
+     voip  = extraCalls * 0.1
+     cloud = employees * cloudMbps (download-heavy)
+     extra = cameras * camMbps (upload) + backupMbps (upload)
+     apply headroom to both directions
+     Planning rates sit above vendor minimums (Teams / Zoom tables).
+     ============================================================ */
+  function initBandwidth(root) {
+    var form = $("#st-bw-form", root);
+    if (!form) return;
+
+    var videoMbps = { audio: 0.1, "720": 1.5, "1080": 2.5 };
+    var skus = [
+      { d: 50, u: 50, label: "50/50 Mbps" },
+      { d: 100, u: 100, label: "100/100 Mbps" },
+      { d: 200, u: 200, label: "200/200 Mbps" },
+      { d: 300, u: 300, label: "300/300 Mbps" },
+      { d: 500, u: 500, label: "500/500 Mbps" },
+      { d: 1000, u: 1000, label: "1 Gbps symmetric" },
+      { d: 2000, u: 2000, label: "2 Gbps class" }
+    ];
+
+    function pickSku(down, up) {
+      for (var i = 0; i < skus.length; i++) {
+        if (skus[i].d >= down && skus[i].u >= up) return skus[i].label;
+      }
+      return "Above 2 Gbps: talk to the carrier about a custom handoff";
+    }
+
+    function calc() {
+      var employees = int($("#bw-employees", root), 0);
+      var pct = Math.max(0, Math.min(100, num($("#bw-video-pct", root), 35)));
+      var q = ($("#bw-video-q", root) || {}).value || "720";
+      var voipN = Math.max(0, int($("#bw-voip", root), 0));
+      var cloudEach = Math.max(0, num($("#bw-cloud", root), 1.5));
+      var cams = Math.max(0, int($("#bw-cams", root), 0));
+      var camMbps = Math.max(0, num($("#bw-cam-mbps", root), 2));
+      var backup = Math.max(0, num($("#bw-backup", root), 0));
+      var head = Math.max(0, Math.min(80, num($("#bw-headroom", root), 30)));
+      setText("bw-video-pct-val", String(pct));
+      showErr("bw-error", "");
+      if (employees < 1) {
+        showErr("bw-error", "Enter at least one person on site at peak.");
+        return;
+      }
+      var streams = employees * (pct / 100);
+      var v = videoMbps[q] != null ? videoMbps[q] : 1.5;
+      var video = streams * v;
+      var voip = voipN * 0.1;
+      var cloud = employees * cloudEach;
+      var extraUp = cams * camMbps + backup;
+      var downRaw = video + voip + cloud;
+      var upRaw = video + voip + cloud * 0.35 + extraUp;
+      var factor = 1 + head / 100;
+      var down = downRaw * factor;
+      var up = upRaw * factor;
+      setText("bw-down", fmt(down, 0) + " Mbps");
+      setText("bw-up", fmt(up, 0) + " Mbps");
+      setText("bw-sku", pickSku(down, up));
+      setText("bw-br-video", fmt(video, 1) + " Mbps ×2");
+      setText("bw-br-voip", fmt(voip, 1) + " Mbps");
+      setText("bw-br-cloud", fmt(cloud, 1) + " Mbps");
+      setText("bw-br-extra", fmt(extraUp, 1) + " Mbps up");
+      setText(
+        "bw-note",
+        streams >= 1
+          ? "About " + fmt(streams, 1) + " concurrent video streams at peak."
+          : "No video in this peak. Upload may still be set by backup or cameras."
+      );
+    }
+
+    on($("#bw-video-pct", root), "input", calc);
+    bindForm(form, calc);
+    calc();
+  }
+
+  /* ============================================================
+     IT downtime cost
+     hourlyRev = revenue / operatingHours
+     lostRev   = hourlyRev * duration * kind
+     lostProd  = employees * wage * (prodPct/100) * duration * kind
+     recovery  = recoverHours * recoverRate
+     total     = lostRev + lostProd + recovery
+     kind = 1 planned, 1.35 unplanned
+     Not a ransomware model (no ransom, records, legal bands).
+     ============================================================ */
+  function initDowntime(root) {
+    var form = $("#st-dt-form", root);
+    if (!form) return;
+
+    function calc() {
+      var revenue = Math.max(0, num($("#dt-revenue", root), 0));
+      var yearH = Math.max(1, num($("#dt-hours", root), 2000));
+      var emp = Math.max(0, int($("#dt-employees", root), 0));
+      var wage = Math.max(0, num($("#dt-wage", root), 0));
+      var prod = Math.max(0, Math.min(100, num($("#dt-prod", root), 70))) / 100;
+      var dur = Math.max(0, num($("#dt-duration", root), 0));
+      var recH = Math.max(0, num($("#dt-recover-h", root), 0));
+      var recR = Math.max(0, num($("#dt-recover-r", root), 0));
+      var kind = num($("#dt-kind", root), 1);
+      if (kind <= 0) kind = 1;
+      showErr("dt-error", "");
+      if (revenue <= 0 && emp <= 0) {
+        showErr("dt-error", "Enter revenue and/or people blocked.");
+      }
+      var hourlyRev = revenue / yearH;
+      var lostRev = hourlyRev * dur * kind;
+      var lostProd = emp * wage * prod * dur * kind;
+      var recovery = recH * recR;
+      var total = lostRev + lostProd + recovery;
+      var perHour = dur > 0 ? total / dur : 0;
+      setText("dt-total", fmtMoney(total));
+      setText("dt-hourly", fmtMoney(perHour) + " / hr");
+      setText("dt-rev-hr", fmtMoney(hourlyRev));
+      setText("dt-br-rev", fmtMoney(lostRev));
+      setText("dt-br-prod", fmtMoney(lostProd));
+      setText("dt-br-rec", fmtMoney(recovery));
+      setText(
+        "dt-note",
+        kind > 1
+          ? "Unplanned factor 1.35× applied to revenue and productivity. Recovery labor is actual hours."
+          : "Planned window: no chaos factor. Recovery is still real labor."
+      );
+    }
+
+    bindForm(form, calc);
+    calc();
+  }
+
   function boot() {
     var root = document.querySelector("[data-tool]") || document;
     var id = (root.getAttribute && root.getAttribute("data-tool")) || "";
@@ -1383,6 +1514,8 @@
     if (id === "headers") initHeaders(root);
     if (id === "authgen") initAuthgen(root);
     if (id === "risk") initRisk(root);
+    if (id === "bandwidth") initBandwidth(root);
+    if (id === "downtime") initDowntime(root);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

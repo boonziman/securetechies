@@ -23,7 +23,7 @@ faq:
 
 Here's the short version: **the cost of IT downtime for small business is rarely the repair invoice. It is lost revenue, paid time that produces nothing, recovery labor, and customer trust that leaks while systems are down.** If you only track the technician's bill, you are undercounting by a wide margin.
 
-Leaders feel downtime emotionally ("that was a rough Tuesday") but budget prevention only when the cost is visible. This article gives you a practical way to quantify outages, shows where small firms bleed money, and connects the math to investments that shorten or prevent the next event.
+Leaders feel downtime emotionally ("that was a rough Tuesday") but budget prevention only when the cost is visible. This article gives you a practical way to quantify outages, shows where small firms bleed money, and connects the math to investments that shorten or prevent the next event. For a live version of the same math, use the free [IT downtime cost calculator](/tools/downtime-cost-calculator/).
 
 ## What counts as downtime (hint: not only black screens)
 
