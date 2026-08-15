@@ -81,6 +81,15 @@ https://securetechie.com/locations/
 
 ## Tools
 https://securetechie.com/tools/
+- RAID calculator: https://securetechie.com/tools/raid-calculator/
+- CCTV storage calculator: https://securetechie.com/tools/surveillance-storage-calculator/
+- VM calculator: https://securetechie.com/tools/vm-calculator/
+- Password generator: https://securetechie.com/tools/password-generator/
+- Ransomware cost calculator: https://securetechie.com/tools/ransomware-cost-calculator/
+- Subnet calculator: https://securetechie.com/tools/subnet-calculator/
+- Email header analyzer: https://securetechie.com/tools/email-header-analyzer/
+- SPF and DMARC record generator: https://securetechie.com/tools/spf-dmarc-generator/
+- Cybersecurity risk assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
 
 ## Resources
 - About: https://securetechie.com/about/

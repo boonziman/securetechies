@@ -81,6 +81,9 @@
 - Password Strength Checker & Generator: https://securetechie.com/tools/password-generator/
 - Ransomware Cost Calculator: https://securetechie.com/tools/ransomware-cost-calculator/
 - Subnet Calculator: https://securetechie.com/tools/subnet-calculator/
+- Email Header Analyzer: https://securetechie.com/tools/email-header-analyzer/
+- SPF & DMARC Record Generator: https://securetechie.com/tools/spf-dmarc-generator/
+- Cybersecurity Risk Assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
 
 ## Case Studies
 - Hub: https://securetechie.com/case-studies/. Project records: situation, method, outcome. Clients anonymized when required.

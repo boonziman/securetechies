@@ -1,0 +1,107 @@
+<form id="st-risk-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Business snapshot</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="risk-size">Approximate staff</label>
+      <select class="st-tool-select" id="risk-size">
+        <option value="10">1–15</option>
+        <option value="35" selected>16–50</option>
+        <option value="80">51–150</option>
+        <option value="200">150+</option>
+      </select>
+    </div>
+    <div class="st-tool-field">
+      <label for="risk-industry">Industry</label>
+      <select class="st-tool-select" id="risk-industry">
+        <option value="1.0">General / other</option>
+        <option value="1.15" selected>Professional services or law</option>
+        <option value="1.2">Healthcare</option>
+        <option value="1.15">Finance / accounting</option>
+        <option value="1.05">Construction / field</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">1. Multi-factor authentication on email and admin accounts</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-mfa" value="0"> None, or only on a few people</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-mfa" value="7" checked> Some staff, not all privileged accounts</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-mfa" value="14"> Required on email, VPN, and admin</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">2. Backups and restore tests</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-bak" value="0"> No reliable backups</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-bak" value="6" checked> Backups exist, restore is untested</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-bak" value="14"> Offline or immutable copies, restore tested this year</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">3. Endpoint detection (EDR) on laptops and servers</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-edr" value="0"> Built-in antivirus only, or unknown</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-edr" value="5" checked> EDR on some devices</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-edr" value="10"> EDR on endpoints, alerts go to a person</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">4. Email authentication (SPF, DKIM, DMARC)</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-mail" value="0"> Not sure, or nothing published</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-mail" value="5" checked> SPF only, or DMARC still at none</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-mail" value="10"> SPF + DKIM + DMARC at quarantine or reject</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">5. Patching and updates</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-patch" value="0"> When someone remembers</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-patch" value="4" checked> Monthly, but servers slip</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-patch" value="8"> Scheduled patches, critical updates in days</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">6. Phishing awareness</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-phish" value="0"> No training, no reporting path</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-phish" value="3" checked> Annual slideshow</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-phish" value="7"> Recurring training plus a report button</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">7. Privileged and everyday accounts</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-priv" value="0"> Everyone is a local admin</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-priv" value="4" checked> Admins exist, used for daily email</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-priv" value="8"> Separate admin accounts, least privilege</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">8. Incident response</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-ir" value="0"> We would call whoever answers</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-ir" value="3" checked> A written plan, never rehearsed</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-ir" value="7"> Plan plus a tabletop this year</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">9. Device and account inventory</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-inv" value="0"> No list we trust</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-inv" value="3" checked> A spreadsheet, often stale</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-inv" value="7"> Living inventory of devices and cloud accounts</label>
+  </div>
+  <div class="st-tool-q">
+    <p class="st-tool-q-title">10. Offboarding</p>
+    <label class="st-tool-radio"><input type="radio" name="risk-off" value="0"> Access often lingers</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-off" value="3" checked> HR emails IT, same day if we are lucky</label>
+    <label class="st-tool-radio"><input type="radio" name="risk-off" value="7"> Same-day revoke of mail, VPN, and SaaS</label>
+  </div>
+  <p class="st-tool-hint">Answers stay in this browser. This is a planning score, not a pentest or certification.</p>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Score</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Control score (0–100)</div>
+    <div class="st-tool-metric-value" id="risk-score">—</div>
+    <div class="st-tool-score-bar" aria-hidden="true"><span id="risk-bar"></span></div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Band</div>
+    <div class="st-tool-metric-value" style="font-size:1.2rem" id="risk-band">—</div>
+    <p class="st-tool-note" id="risk-blurb"></p>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Industry pressure</div>
+    <div class="st-tool-metric-value" style="font-size:1.05rem" id="risk-pressure">—</div>
+  </div>
+  <div class="st-tool-panel-title" style="margin-top:8px">Highest-value gaps</div>
+  <div id="risk-gaps" class="st-tool-note">Answer the questions to rank gaps.</div>
+  <p class="st-tool-disclaimer">Weighted toward CISA Cybersecurity Performance Goals and CIS Implementation Group 1 themes: MFA, backups, email auth, inventory, and privilege. Not an audit opinion.</p>
+</div>

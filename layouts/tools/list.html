@@ -9,7 +9,7 @@
     <p class="st-th-kicker">Free IT tools</p>
     <h1 id="st-th-h1">IT Tools &amp; Calculators</h1>
     <span class="st-accent-rule" aria-hidden="true"></span>
-    <p class="st-th-lead">Browser calculators for RAID, CCTV storage, VM sizing, subnets, passwords, and ransomware risk. Built for IT managers and growing businesses. No signup.</p>
+    <p class="st-th-lead">Browser tools for RAID, CCTV storage, VM sizing, subnets, passwords, ransomware cost, email headers, SPF/DMARC, and a cybersecurity risk score. Built for IT managers and growing businesses. No signup.</p>
     <ul class="st-th-facts" aria-label="Tool facts">
       <li><strong>{{ len .Pages }}</strong><span>Free tools</span></li>
       <li><strong>0</strong><span>Signups required</span></li>
@@ -25,8 +25,8 @@
   <div class="st-th-wrap">
     <header class="st-th-head">
       <p class="st-th-kicker st-th-kicker--ink">The toolkit</p>
-      <h2>Pick a calculator</h2>
-      <p>Each one runs in the browser and includes a short guide: formulas, assumptions, and the mistakes that waste money.</p>
+      <h2>Pick a tool</h2>
+      <p>Each one runs in the browser and includes a short guide: how it works, assumptions, and the mistakes that waste money.</p>
     </header>
     <div class="st-tools-grid st-tools-grid--unified">
       {{ range .Pages.ByWeight }}
@@ -78,7 +78,7 @@
   "description" .Params.description
   "url" .Permalink
   "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/")
-  "about" (slice "RAID calculator" "CCTV storage calculator" "VM calculator" "Subnet calculator" "Password generator" "Ransomware cost calculator")
+  "about" (slice "RAID calculator" "CCTV storage calculator" "VM calculator" "Subnet calculator" "Password generator" "Ransomware cost calculator" "Email header analyzer" "SPF DMARC record generator" "Cybersecurity risk assessment")
   "hasPart" $parts
 }}
 <script type="application/ld+json">{{ $hub | jsonify | safeJS }}</script>

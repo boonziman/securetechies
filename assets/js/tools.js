@@ -60,6 +60,31 @@
       on(el, "change", calc);
     });
   }
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function emailDomain(value) {
+    var m = String(value || "").match(/[A-Z0-9._%+-]+@([A-Z0-9.-]+\.[A-Z]{2,})/i);
+    return m ? m[1].toLowerCase() : "";
+  }
+  function extractEmail(value) {
+    var m = String(value || "").match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+    return m ? m[0].toLowerCase() : String(value || "").trim();
+  }
+  function copyText(val, statusId, label) {
+    if (!val) return;
+    function ok() {
+      setText(statusId, label || "Copied");
+      setTimeout(function () { setText(statusId, ""); }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(val).then(ok).catch(function () {});
+    }
+  }
 
   /* ============================================================
      RAID — 0, 1, 1E, 5, 6, 10, 50, 60
@@ -939,6 +964,412 @@
     calc();
   }
 
+  /* ============================================================
+     Email header analyzer — RFC 5322 unfold + auth results
+     ============================================================ */
+  var SAMPLE_HEADERS_PASS =
+    "Delivered-To: jane@example.com\n" +
+    "Return-Path: <billing@example.com>\n" +
+    "Received: from mail.example.com (mail.example.com [203.0.113.10])\n" +
+    "\tby mx.google.com with ESMTPS id abc123\n" +
+    "\tfor <jane@example.com>; Fri, 14 Aug 2026 10:04:12 -0700\n" +
+    "Received: from internal.example.com (internal.example.com [192.0.2.20])\n" +
+    "\tby mail.example.com with ESMTP id xyz789; Fri, 14 Aug 2026 10:04:01 -0700\n" +
+    "Authentication-Results: mx.google.com;\n" +
+    "       dkim=pass header.d=example.com header.s=selector1;\n" +
+    "       spf=pass (google.com: domain of billing@example.com designates 203.0.113.10 as permitted sender) smtp.mailfrom=billing@example.com;\n" +
+    "       dmarc=pass (p=REJECT sp=REJECT) header.from=example.com\n" +
+    "Received-SPF: pass (google.com: domain of billing@example.com designates 203.0.113.10 as permitted sender) client-ip=203.0.113.10\n" +
+    "DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=selector1; h=from:to:subject:date:message-id;\n" +
+    "From: \"Example Billing\" <billing@example.com>\n" +
+    "To: Jane Doe <jane@example.com>\n" +
+    "Reply-To: billing@example.com\n" +
+    "Subject: August invoice\n" +
+    "Date: Fri, 14 Aug 2026 10:03:55 -0700\n" +
+    "Message-ID: <inv-8891@example.com>\n" +
+    "MIME-Version: 1.0\n" +
+    "Content-Type: text/plain; charset=\"UTF-8\"\n";
+
+  var SAMPLE_HEADERS_FAIL =
+    "Return-Path: <random8821@mail-relay.invalid>\n" +
+    "Received: from unknown (unknown [198.51.100.44])\n" +
+    "\tby mx.contoso.com with ESMTP; Fri, 14 Aug 2026 09:11:02 -0700\n" +
+    "Authentication-Results: mx.contoso.com;\n" +
+    "       spf=fail (sender IP is not authorized) smtp.mailfrom=mail-relay.invalid;\n" +
+    "       dkim=none;\n" +
+    "       dmarc=fail (p=none) header.from=firstnational.example\n" +
+    "From: \"First National Wire Desk\" <treasury@firstnational.example>\n" +
+    "Reply-To: payments-update@gmail.com\n" +
+    "To: ap@contoso.com\n" +
+    "Subject: Updated wiring instructions: action required\n" +
+    "Date: Fri, 14 Aug 2026 09:10:44 -0700\n";
+
+  function unfoldHeaders(raw) {
+    return String(raw || "")
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n")
+      .replace(/\n[ \t]+/g, " ");
+  }
+
+  function parseHeaderFields(raw) {
+    var text = unfoldHeaders(raw);
+    var headerBlock = text.split(/\n\s*\n/)[0] || "";
+    var fields = [];
+    headerBlock.split("\n").forEach(function (line) {
+      var idx = line.indexOf(":");
+      if (idx < 1) return;
+      fields.push({
+        name: line.slice(0, idx).trim().toLowerCase(),
+        value: line.slice(idx + 1).trim(),
+      });
+    });
+    return fields;
+  }
+
+  function headerGet(fields, name) {
+    var n = name.toLowerCase();
+    for (var i = 0; i < fields.length; i++) {
+      if (fields[i].name === n) return fields[i].value;
+    }
+    return "";
+  }
+
+  function headerAll(fields, name) {
+    var n = name.toLowerCase();
+    return fields.filter(function (f) { return f.name === n; }).map(function (f) { return f.value; });
+  }
+
+  function parseAuthToken(block, key) {
+    if (!block) return "";
+    var re = new RegExp("(?:^|[\\s;])" + key + "\\s*=\\s*([a-z0-9-]+)", "i");
+    var m = String(block).match(re);
+    return m ? m[1].toLowerCase() : "";
+  }
+
+  function initHeaders(root) {
+    var form = $("#st-headers-form", root);
+    var area = $("#headers-raw", root);
+    if (!form || !area) return;
+
+    function analyze() {
+      var raw = area.value || "";
+      showErr("headers-error", "");
+      if (!raw.trim()) {
+        setText("headers-verdict", "Paste headers to begin");
+        setText("headers-spf", "—");
+        setText("headers-dkim", "—");
+        setText("headers-dmarc", "—");
+        setText("headers-hops", "—");
+        setText("headers-from", "—");
+        setText("headers-return", "—");
+        setText("headers-reply", "—");
+        setHTML("headers-flags", '<span class="st-tool-chip">Waiting for headers</span>');
+        setHTML("headers-path", "Paste headers to list mail hops.");
+        return;
+      }
+      if (!/^[A-Za-z0-9-]+:/m.test(raw)) {
+        showErr("headers-error", "That does not look like an email header block. Copy View message details or Show original, not just the body.");
+      }
+
+      var fields = parseHeaderFields(raw);
+      var auth = headerGet(fields, "authentication-results");
+      var receivedSpf = headerGet(fields, "received-spf");
+      var from = headerGet(fields, "from");
+      var ret = headerGet(fields, "return-path");
+      var reply = headerGet(fields, "reply-to");
+      var received = headerAll(fields, "received");
+      var dkimSig = headerGet(fields, "dkim-signature");
+
+      var spf = parseAuthToken(auth, "spf") || parseAuthToken(receivedSpf, "received-spf") || (receivedSpf ? receivedSpf.split(/\s+/)[0].toLowerCase() : "");
+      if (spf === "received-spf") spf = "";
+      var dkim = parseAuthToken(auth, "dkim");
+      if (!dkim && dkimSig) dkim = "present";
+      var dmarc = parseAuthToken(auth, "dmarc");
+
+      var fromDom = emailDomain(from);
+      var retDom = emailDomain(ret);
+      var replyDom = emailDomain(reply);
+      var flags = [];
+      var failish = { fail: 1, softfail: 1, temperror: 1, permerror: 1 };
+
+      if (spf && failish[spf]) flags.push({ t: "warn", m: "SPF is " + spf });
+      if (dkim && failish[dkim]) flags.push({ t: "warn", m: "DKIM is " + dkim });
+      if (dmarc && failish[dmarc]) flags.push({ t: "warn", m: "DMARC is " + dmarc });
+      if (!auth) flags.push({ t: "warn", m: "No Authentication-Results line found" });
+      if (fromDom && retDom && fromDom !== retDom) flags.push({ t: "warn", m: "From domain does not match Return-Path (" + fromDom + " vs " + retDom + ")" });
+      if (fromDom && replyDom && fromDom !== replyDom) flags.push({ t: "warn", m: "Reply-To domain differs from From (" + replyDom + ")" });
+      if (/gmail\.com|outlook\.com|yahoo\.com|hotmail\.com|icloud\.com/i.test(from || "") === false &&
+          /gmail\.com|outlook\.com|yahoo\.com|hotmail\.com|icloud\.com/i.test(reply || "")) {
+        flags.push({ t: "warn", m: "Business-looking From with a free-mail Reply-To" });
+      }
+      var display = (from.match(/^"?([^"<]+)"?\s*</) || [])[1] || "";
+      if (display && /bank|wire|treasury|invoice|payroll|ceo|cfo|president|attorney|counsel/i.test(display) &&
+          /gmail\.com|outlook\.com|yahoo\.com|hotmail\.com/i.test(from)) {
+        flags.push({ t: "warn", m: "Authority-style display name on a free-mail From address" });
+      }
+      if (spf === "pass" && dmarc === "pass") flags.push({ t: "ok", m: "SPF and DMARC passed on this copy" });
+      if (!flags.length) flags.push({ t: "ok", m: "No obvious header mismatches in this paste" });
+
+      var hardFail = (spf === "fail") || (dmarc === "fail") || (fromDom && retDom && fromDom !== retDom);
+      var verdict = !auth && !from
+        ? "Could not parse a From or Authentication-Results line"
+        : hardFail
+          ? "Treat as suspicious until you verify out of band"
+          : (spf === "pass" && (dmarc === "pass" || !dmarc))
+            ? "Authentication looks aligned. Still verify money requests."
+            : "Mixed or incomplete authentication. Read the flags.";
+
+      setText("headers-verdict", verdict);
+      setText("headers-spf", spf || "not found");
+      setText("headers-dkim", dkim || "not found");
+      setText("headers-dmarc", dmarc || "not found");
+      setText("headers-hops", String(received.length || 0));
+      setText("headers-from", from || "—");
+      setText("headers-return", ret || "—");
+      setText("headers-reply", reply || "—");
+      setHTML(
+        "headers-flags",
+        flags.map(function (f) {
+          return '<span class="st-tool-chip' + (f.t === "warn" ? " st-tool-chip--warn" : "") + '">' + esc(f.m) + "</span>";
+        }).join("")
+      );
+      if (!received.length) {
+        setHTML("headers-path", "No Received lines found.");
+      } else {
+        setHTML(
+          "headers-path",
+          '<ol class="st-tool-hops">' +
+            received.map(function (hop, i) {
+              return "<li><strong>Hop " + (i + 1) + "</strong> " + esc(hop.replace(/\s+/g, " ")) + "</li>";
+            }).join("") +
+            "</ol>"
+        );
+      }
+    }
+
+    on($("#headers-analyze", root), "click", analyze);
+    on($("#headers-clear", root), "click", function () {
+      area.value = "";
+      analyze();
+      area.focus();
+    });
+    on($("#headers-sample-pass", root), "click", function () {
+      area.value = SAMPLE_HEADERS_PASS;
+      analyze();
+    });
+    on($("#headers-sample-fail", root), "click", function () {
+      area.value = SAMPLE_HEADERS_FAIL;
+      analyze();
+    });
+    on(area, "input", function () {
+      if (area.value.trim().length > 40) analyze();
+    });
+    analyze();
+  }
+
+  /* ============================================================
+     SPF + DMARC record generator
+     Lookup count follows RFC 7208 mechanisms that cause DNS:
+     include, a, mx, ptr, exists, redirect. ip4/ip6/all do not count.
+     Nested includes cannot be expanded without live DNS.
+     ============================================================ */
+  function splitTokens(raw) {
+    return String(raw || "")
+      .split(/[\s,;]+/)
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+  }
+
+  function validDomain(d) {
+    return /^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$/i.test(d);
+  }
+
+  function validIPv4(s) {
+    var m = String(s).match(/^(\d{1,3}\.){3}\d{1,3}(\/([0-9]|[12][0-9]|3[0-2]))?$/);
+    if (!m) return false;
+    return s.split("/")[0].split(".").every(function (o) { return Number(o) >= 0 && Number(o) <= 255; });
+  }
+
+  function validIPv6(s) {
+    return /^[0-9a-f:]+(\/\d{1,3})?$/i.test(s) && s.indexOf(":") !== -1;
+  }
+
+  function initAuthgen(root) {
+    var form = $("#st-authgen-form", root);
+    if (!form) return;
+
+    function build() {
+      var domain = String(($("#auth-domain", root) || {}).value || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+      var includes = splitTokens(($("#auth-spf-include", root) || {}).value);
+      var ip4 = splitTokens(($("#auth-spf-ip4", root) || {}).value);
+      var ip6 = splitTokens(($("#auth-spf-ip6", root) || {}).value);
+      var useMx = $("#auth-spf-mx", root) && $("#auth-spf-mx", root).checked;
+      var useA = $("#auth-spf-a", root) && $("#auth-spf-a", root).checked;
+      var all = ($("#auth-spf-all", root) || {}).value || "-all";
+      var p = ($("#auth-dmarc-p", root) || {}).value || "none";
+      var sp = ($("#auth-dmarc-sp", root) || {}).value || "";
+      var rua = String(($("#auth-dmarc-rua", root) || {}).value || "").trim();
+      var pct = int($("#auth-dmarc-pct", root), 100);
+      var align = ($("#auth-dmarc-align", root) || {}).value || "r";
+
+      showErr("authgen-error", "");
+      var notes = [];
+      if (!validDomain(domain)) {
+        showErr("authgen-error", "Enter a domain like yourfirm.com (no https, no path).");
+        setText("auth-spf-out", "—");
+        setText("auth-dmarc-out", "—");
+        setText("auth-dmarc-host", "—");
+        setText("auth-lookups", "—");
+        setHTML("auth-notes", "");
+        return;
+      }
+
+      var badInc = includes.filter(function (x) { return !validDomain(x); });
+      var bad4 = ip4.filter(function (x) { return !validIPv4(x); });
+      var bad6 = ip6.filter(function (x) { return !validIPv6(x); });
+      if (badInc.length) notes.push("Skipped invalid include: " + badInc.join(", "));
+      if (bad4.length) notes.push("Skipped invalid IPv4: " + bad4.join(", "));
+      if (bad6.length) notes.push("Skipped invalid IPv6: " + bad6.join(", "));
+      includes = includes.filter(validDomain);
+      ip4 = ip4.filter(validIPv4);
+      ip6 = ip6.filter(validIPv6);
+
+      var parts = ["v=spf1"];
+      if (useMx) parts.push("mx");
+      if (useA) parts.push("a");
+      includes.forEach(function (inc) { parts.push("include:" + inc); });
+      ip4.forEach(function (ip) { parts.push("ip4:" + ip); });
+      ip6.forEach(function (ip) { parts.push("ip6:" + ip); });
+      parts.push(all);
+      var spf = parts.join(" ");
+
+      var lookups = (useMx ? 1 : 0) + (useA ? 1 : 0) + includes.length;
+      if (lookups > 10) notes.push("This record already lists " + lookups + " DNS-using mechanisms. RFC 7208 fails SPF over 10. Nested includes from vendors can add more at lookup time.");
+      else if (lookups >= 7) notes.push("Lookup count is " + lookups + " before vendor nesting. Leave headroom. Flatten or drop unused includes if reports stay clean.");
+      if (all === "+all") notes.push("+all authorizes the entire internet to send as you. Do not publish this.");
+      if (all === "-all" && p === "none") notes.push("Hard fail SPF with DMARC p=none is fine if you have inventoried senders. Watch bounce reports.");
+      if (includes.length === 0 && ip4.length === 0 && ip6.length === 0 && !useMx && !useA) notes.push("SPF has no senders besides all. Add your real mail platform before you publish.");
+
+      var ruaAddr = rua;
+      if (ruaAddr && ruaAddr.indexOf("@") !== -1 && ruaAddr.indexOf("mailto:") !== 0) ruaAddr = "mailto:" + ruaAddr;
+      if (ruaAddr && ruaAddr.indexOf("@") === -1) {
+        notes.push("rua should be an email address.");
+        ruaAddr = "";
+      }
+      var dmarcParts = ["v=DMARC1", "p=" + p];
+      if (sp) dmarcParts.push("sp=" + sp);
+      if (ruaAddr) dmarcParts.push("rua=" + ruaAddr);
+      if (pct && pct !== 100) dmarcParts.push("pct=" + Math.min(100, Math.max(1, pct)));
+      dmarcParts.push("adkim=" + align);
+      dmarcParts.push("aspf=" + align);
+      var dmarc = dmarcParts.join("; ");
+
+      if (p === "reject") notes.push("p=reject will drop unauthenticated mail using your From domain. Only do this after reports look clean.");
+      if (p === "none") notes.push("p=none is monitor mode. Plan a date to move to quarantine.");
+
+      setText("auth-spf-out", spf);
+      setText("auth-dmarc-out", dmarc);
+      setText("auth-dmarc-host", "_dmarc." + domain);
+      setText("auth-lookups", String(lookups) + " / 10");
+      setHTML(
+        "auth-notes",
+        notes.length
+          ? "<ul>" + notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>"
+          : "<p>Looks publishable. Confirm DKIM is on in the tenant, then add these TXT records in DNS.</p>"
+      );
+    }
+
+    bindForm(form, build);
+    on($("#auth-copy-spf", root), "click", function () {
+      copyText(($("#auth-spf-out", root) || {}).textContent, "auth-copy-status", "SPF copied");
+    });
+    on($("#auth-copy-dmarc", root), "click", function () {
+      copyText(($("#auth-dmarc-out", root) || {}).textContent, "auth-copy-status", "DMARC copied");
+    });
+    build();
+  }
+
+  /* ============================================================
+     Cybersecurity risk assessment
+     Weights (max 92, scaled to 100):
+       MFA 14, backups 14, EDR 10, email auth 10,
+       patch 8, privilege 8, phishing 7, IR 7,
+       inventory 7, offboarding 7
+     ============================================================ */
+  function radioVal(root, name) {
+    var el = root.querySelector('input[name="' + name + '"]:checked');
+    return el ? parseFloat(el.value) : 0;
+  }
+
+  function initRisk(root) {
+    var form = $("#st-risk-form", root);
+    if (!form) return;
+
+    var items = [
+      { name: "risk-mfa", max: 14, label: "Turn on MFA for email, VPN, and every admin account" },
+      { name: "risk-bak", max: 14, label: "Add an offline or immutable backup and restore it on purpose" },
+      { name: "risk-edr", max: 10, label: "Put EDR on laptops and servers, and name who watches alerts" },
+      { name: "risk-mail", max: 10, label: "Publish SPF, DKIM, and raise DMARC past p=none" },
+      { name: "risk-patch", max: 8, label: "Put servers on a patch calendar with a measured window" },
+      { name: "risk-priv", max: 8, label: "Stop daily work on privileged accounts" },
+      { name: "risk-phish", max: 7, label: "Give staff a report button and short, recurring training" },
+      { name: "risk-ir", max: 7, label: "Write a one-page incident plan and walk through it once" },
+      { name: "risk-inv", max: 7, label: "Build a living list of devices and cloud accounts" },
+      { name: "risk-off", max: 7, label: "Revoke mail, VPN, and SaaS on the employee's last day" }
+    ];
+    var maxRaw = items.reduce(function (s, it) { return s + it.max; }, 0);
+
+    function score() {
+      var raw = 0;
+      var gaps = [];
+      items.forEach(function (it) {
+        var v = radioVal(root, it.name);
+        raw += v;
+        var miss = it.max - v;
+        if (miss > 0) gaps.push({ miss: miss, pct: miss / it.max, label: it.label });
+      });
+      gaps.sort(function (a, b) { return b.miss - a.miss || b.pct - a.pct; });
+      var scaled = Math.round((raw / maxRaw) * 100);
+      var band = scaled < 40 ? "Critical" : scaled < 60 ? "At risk" : scaled < 80 ? "Fair" : "Strong";
+      var blurb =
+        scaled < 40
+          ? "Basics are missing. MFA and recoverable backups beat any new product this month."
+          : scaled < 60
+            ? "Some controls exist, but a single gap (usually identity or recovery) can still end the week badly."
+            : scaled < 80
+              ? "The skeleton is there. Close the ranked gaps and rehearse restore and incident steps."
+              : "Strong on paper. Confirm restore tests and DMARC are real, not assumed.";
+
+      var industry = num($("#risk-industry", root), 1);
+      var size = int($("#risk-size", root), 35);
+      var pressure =
+        industry >= 1.15
+          ? "Higher. Law, health, and finance get spoofed more and have less room for a bad week."
+          : size >= 80
+            ? "Headcount raises blast radius. Inventory and offboarding matter as much as tools."
+            : "Typical SMB pressure. The same ten controls still apply.";
+
+      var bar = $("#risk-bar", root);
+      if (bar) {
+        bar.style.width = scaled + "%";
+        bar.style.background = scaled < 40 ? "#f87171" : scaled < 60 ? "#fbbf24" : scaled < 80 ? "#60a5fa" : "#4ade80";
+      }
+      setText("risk-score", String(scaled));
+      setText("risk-band", band);
+      setText("risk-blurb", blurb);
+      setText("risk-pressure", pressure);
+      setHTML(
+        "risk-gaps",
+        gaps.length
+          ? "<ol>" + gaps.slice(0, 4).map(function (g) { return "<li>" + esc(g.label) + "</li>"; }).join("") + "</ol>"
+          : "<p>No gaps in the answers you selected. Verify them against the live tenant before you celebrate.</p>"
+      );
+    }
+
+    bindForm(form, score);
+    score();
+  }
+
   function boot() {
     var root = document.querySelector("[data-tool]") || document;
     var id = (root.getAttribute && root.getAttribute("data-tool")) || "";
@@ -949,6 +1380,9 @@
     if (id === "password") initPassword(root);
     if (id === "ransomware") initRansomware(root);
     if (id === "subnet") initSubnet(root);
+    if (id === "headers") initHeaders(root);
+    if (id === "authgen") initAuthgen(root);
+    if (id === "risk") initRisk(root);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

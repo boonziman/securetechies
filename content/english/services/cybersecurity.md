@@ -118,7 +118,7 @@ Coverage context for our markets: [managed IT services Los Angeles](/managed-it-
 
 ### Phishing and business email compromise
 
-Email remains the top initial access path for many incidents. Attackers impersonate vendors, executives, and finance workflows to redirect payments or steal credentials. Strong filtering, authentication hardening, and user coaching reduce both frequency and impact. See [phishing email security](/blog/phishing-email-security/) and [business email compromise](/blog/business-email-compromise/).
+Email remains the top initial access path for many incidents. Attackers impersonate vendors, executives, and finance workflows to redirect payments or steal credentials. Strong filtering, authentication hardening, and user coaching reduce both frequency and impact. See [phishing email security](/blog/phishing-email-security/) and [business email compromise](/blog/business-email-compromise/). Free checks: [email header analyzer](/tools/email-header-analyzer/), [SPF and DMARC generator](/tools/spf-dmarc-generator/), and a [cybersecurity risk assessment](/tools/cybersecurity-risk-assessment/).
 
 ### Ransomware
 

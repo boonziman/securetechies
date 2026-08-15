@@ -1,0 +1,39 @@
+<form id="st-headers-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Raw email headers</div>
+  <div id="headers-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-field">
+    <label for="headers-raw">Paste the full header block</label>
+    <textarea class="st-tool-textarea st-tool-textarea--tall" id="headers-raw" spellcheck="false" placeholder="Delivered-To: ...&#10;Return-Path: ...&#10;Received: ...&#10;Authentication-Results: ..."></textarea>
+    <div class="st-tool-hint">Runs in your browser only. Nothing is uploaded to Secure Techies.</div>
+  </div>
+  <div class="st-tool-actions">
+    <button type="button" class="st-tool-btn st-tool-btn-primary" id="headers-analyze">Analyze headers</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="headers-sample-pass">Load clean sample</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="headers-sample-fail">Load spoof sample</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="headers-clear">Clear</button>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Analysis</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Overall read</div>
+    <div class="st-tool-metric-value" style="font-size:1.35rem" id="headers-verdict">Paste headers to begin</div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">SPF</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="headers-spf">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">DKIM</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="headers-dkim">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">DMARC</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="headers-dmarc">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Hops</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="headers-hops">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">From</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="headers-from">—</div></div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Return-Path</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="headers-return">—</div></div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Reply-To</div><div class="st-tool-metric-value" style="font-size:0.95rem" id="headers-reply">—</div></div>
+  <div class="st-tool-panel-title" style="margin-top:8px">Flags</div>
+  <div id="headers-flags" class="st-tool-chips"><span class="st-tool-chip">Waiting for headers</span></div>
+  <div class="st-tool-panel-title" style="margin-top:14px">Received path (newest first)</div>
+  <div id="headers-path" class="st-tool-note">Paste headers to list mail hops.</div>
+  <p class="st-tool-disclaimer">Educational parser. It does not query DNS or quarantine mail. Treat failures and From / Return-Path mismatches as reasons to pause, especially on wire or login requests.</p>
+</div>
