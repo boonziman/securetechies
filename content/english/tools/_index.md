@@ -1,7 +1,7 @@
 ---
 title: "Free IT Tools & Calculators"
 meta_title: "Free IT Tools: RAID, Email Auth, Risk Score | Secure Techies"
-description: "Free IT tools: RAID, CCTV, VM, subnets, passwords, ransomware, email headers, SPF/DMARC, risk score, office bandwidth, and downtime cost. No signup."
+description: "Free IT tools: RAID, CCTV, VM, subnets, passwords, ransomware, email headers, SPF/DMARC, risk, bandwidth, downtime, phishing, offboarding, SHA-256, and backup retention. No signup."
 draft: false
 ---
 

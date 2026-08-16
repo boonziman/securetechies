@@ -36,6 +36,10 @@
     {{ else if eq $tool "risk" }}{{ partial "tools/forms/risk.html" . }}
     {{ else if eq $tool "bandwidth" }}{{ partial "tools/forms/bandwidth.html" . }}
     {{ else if eq $tool "downtime" }}{{ partial "tools/forms/downtime.html" . }}
+    {{ else if eq $tool "phish" }}{{ partial "tools/forms/phish.html" . }}
+    {{ else if eq $tool "offboard" }}{{ partial "tools/forms/offboard.html" . }}
+    {{ else if eq $tool "hash" }}{{ partial "tools/forms/hash.html" . }}
+    {{ else if eq $tool "backup" }}{{ partial "tools/forms/backup.html" . }}
     {{ end }}
   </div>
   <div class="st-tool-continue">
@@ -53,7 +57,7 @@
     <div class="st-tool-guide-banner">
       <span>Deep dive</span>
       <h2 class="st-tool-guide-title">How this {{ .Title | lower }} works (and how to use it well)</h2>
-      <p>The calculator above is the interactive model. This guide explains assumptions, formulas, common mistakes, and when to involve an engineer — written to be useful for humans and clear for search engines.</p>
+      <p>The tool above is the interactive model. This guide explains assumptions, limits, common mistakes, and when to involve an engineer. Written to be useful for people and clear for search engines.</p>
     </div>
     {{ .Content }}
   </div>

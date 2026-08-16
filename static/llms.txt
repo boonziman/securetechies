@@ -86,6 +86,10 @@
 - Cybersecurity Risk Assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
 - Office Bandwidth Calculator: https://securetechie.com/tools/bandwidth-calculator/
 - IT Downtime Cost Calculator: https://securetechie.com/tools/downtime-cost-calculator/
+- Phishing Email Checker: https://securetechie.com/tools/phishing-email-checker/
+- Employee Offboarding Checklist: https://securetechie.com/tools/employee-offboarding-checklist/
+- SHA-256 File Checksum: https://securetechie.com/tools/sha256-file-checksum/
+- Backup Retention Calculator: https://securetechie.com/tools/backup-retention-calculator/
 
 ## Case Studies
 - Hub: https://securetechie.com/case-studies/. Project records: situation, method, outcome. Clients anonymized when required.

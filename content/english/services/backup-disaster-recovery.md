@@ -74,7 +74,7 @@ Backup and disaster recovery from Secure Techies protects the data and systems y
 
 Many organizations believe they are protected because a backup job exists somewhere. Existence is not recovery. Recovery requires verified copies, defined timelines, known ownership, and rehearsed steps. Secure Techies builds that full capability so a bad day does not become a permanent setback.
 
-For a practical overview of program design, read our [backup and disaster recovery guide](/blog/backup-disaster-recovery/) and [ransomware protection playbook](/blog/ransomware-protection-playbook/).
+For a practical overview of program design, read our [backup and disaster recovery guide](/blog/backup-disaster-recovery/) and [ransomware protection playbook](/blog/ransomware-protection-playbook/). Size retention with the free [backup retention calculator](/tools/backup-retention-calculator/) before you buy another disk.
 
 ## What Backup and Disaster Recovery Really Means
 

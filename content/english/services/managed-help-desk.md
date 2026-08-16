@@ -129,7 +129,7 @@ One employee gets white-glove help. Another waits two days. That inconsistency b
 
 ### Security gaps during joiners and leavers
 
-Accounts left active after termination are a classic incident path. Incomplete onboarding creates shadow accounts and password sharing. Lifecycle management is a security control, not just an HR convenience.
+Accounts left active after termination are a classic incident path. Incomplete onboarding creates shadow accounts and password sharing. Lifecycle management is a security control, not just an HR convenience. Use the free [employee offboarding checklist](/tools/employee-offboarding-checklist/) for the same-day Microsoft 365 steps.
 
 ### Tool sprawl and mailbox chaos
 

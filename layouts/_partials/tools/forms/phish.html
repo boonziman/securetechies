@@ -1,0 +1,41 @@
+<form id="st-phish-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Message to review</div>
+  <div id="phish-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-field">
+    <label for="phish-from">From (display name and address)</label>
+    <input class="st-tool-input" id="phish-from" type="text" spellcheck="false" placeholder='Example Billing &lt;ap@gmail.com&gt;'>
+  </div>
+  <div class="st-tool-field">
+    <label for="phish-reply">Reply-To (if shown)</label>
+    <input class="st-tool-input" id="phish-reply" type="text" spellcheck="false" placeholder="optional">
+  </div>
+  <div class="st-tool-field">
+    <label for="phish-subject">Subject</label>
+    <input class="st-tool-input" id="phish-subject" type="text" placeholder="Updated wiring instructions">
+  </div>
+  <div class="st-tool-field">
+    <label for="phish-body">Body (paste text, not a screenshot)</label>
+    <textarea class="st-tool-textarea st-tool-textarea--tall" id="phish-body" spellcheck="false" placeholder="Paste the email text. Do not open attachments."></textarea>
+    <div class="st-tool-hint">Runs in your browser. Nothing is uploaded. Pair with the header analyzer for SPF/DKIM/DMARC.</div>
+  </div>
+  <div class="st-tool-actions">
+    <button type="button" class="st-tool-btn st-tool-btn-primary" id="phish-run">Check red flags</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="phish-sample">Load sample</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="phish-clear">Clear</button>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Reading</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Risk band</div>
+    <div class="st-tool-metric-value" id="phish-band">Paste a message</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Flags found</div>
+    <div class="st-tool-metric-value" style="font-size:1.2rem" id="phish-count">—</div>
+  </div>
+  <div id="phish-flags" class="st-tool-chips"><span class="st-tool-chip">Waiting</span></div>
+  <p class="st-tool-note" id="phish-note"></p>
+  <p class="st-tool-disclaimer">Heuristic only. It does not scan links live or open attachments. A clean score is not a green light to wire money.</p>
+</div>

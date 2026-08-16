@@ -1,0 +1,72 @@
+<form id="st-offboard-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Who is leaving</div>
+  <div id="offboard-error" class="st-tool-error" hidden></div>
+  <label class="st-tool-check"><input type="checkbox" id="offboard-priv"> Privileged / IT admin (Entra, servers, DNS, vaults)</label>
+  <label class="st-tool-check"><input type="checkbox" id="offboard-money"> Handles money (AP, payroll, banking, bill-pay)</label>
+  <label class="st-tool-check"><input type="checkbox" id="offboard-device" checked> Has a company laptop, phone, or badge</label>
+  <p class="st-tool-hint">Check an item when it is done. Leave it open if it still applies. Uncheck a role box if that group does not apply.</p>
+
+  <div class="st-tool-panel-title" style="margin-top:18px">Same day (block access first)</div>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="3" data-label="Block Microsoft 365 / Entra sign-in"> Block Microsoft 365 / Entra sign-in</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="3" data-label="Revoke sessions and refresh tokens"> Revoke sessions and refresh tokens</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="3" data-label="Reset password and remove MFA methods"> Reset password and remove MFA methods</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="3" data-label="Check inbox rules and auto-forwards"> Check inbox rules and auto-forwards</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="2" data-label="Revoke Entra app consents and OAuth grants"> Revoke Entra app consents and OAuth grants</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="2" data-label="Remove from security groups and shared mailboxes"> Remove from security groups and shared mailboxes</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="3" data-label="Disable VPN, remote desktop, and on-prem AD"> Disable VPN, remote desktop, and on-prem AD</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="same" data-w="2" data-label="Remove from the company password vault"> Remove from the company password vault</label>
+
+  <div id="offboard-device-block">
+    <div class="st-tool-panel-title" style="margin-top:18px">Company device</div>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="device" data-w="3" data-label="Collect laptop, phone, badge, keys, tokens"> Collect laptop, phone, badge, keys, tokens</label>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="device" data-w="2" data-label="Retire or wipe the device in Intune / MDM"> Retire or wipe the device in Intune / MDM</label>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:18px">Next 48 hours (keep the work, drop the license later)</div>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="2" data-label="Legal hold or convert mailbox before delete"> Legal hold or convert mailbox before delete</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="2" data-label="Transfer OneDrive and Teams ownership"> Transfer OneDrive and Teams ownership</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="2" data-label="Remove SaaS (CRM, Adobe, payroll, project tools)"> Remove SaaS (CRM, Adobe, payroll, project tools)</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="2" data-label="Remove vendor portals (insurance, benefits, shipping)"> Remove vendor portals (insurance, benefits, shipping)</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="1" data-label="Remove guest accounts or Teams invites they created"> Remove guest accounts or Teams invites they created</label>
+  <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="later" data-w="1" data-label="Reclaim the Microsoft 365 license after the hold window"> Reclaim the Microsoft 365 license after the hold window</label>
+
+  <div id="offboard-priv-block" hidden>
+    <div class="st-tool-panel-title" style="margin-top:18px">Privileged extras</div>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="priv" data-w="3" data-label="Remove Global Admin, domain admin, and break-glass they held"> Remove Global Admin, domain admin, and break-glass they held</label>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="priv" data-w="3" data-label="Rotate shared secrets and service accounts they knew"> Rotate shared secrets and service accounts they knew</label>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="priv" data-w="3" data-label="Transfer Azure, AWS, GitHub, DNS, and registrar"> Transfer Azure, AWS, GitHub, DNS, and registrar</label>
+  </div>
+
+  <div id="offboard-money-block" hidden>
+    <div class="st-tool-panel-title" style="margin-top:18px">Finance extras</div>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="money" data-w="3" data-label="Remove bank, bill-pay, and payroll admin"> Remove bank, bill-pay, and payroll admin</label>
+    <label class="st-tool-check"><input type="checkbox" class="offboard-item" data-group="money" data-w="2" data-label="Tell AP that payment-change mail from this person is invalid"> Tell AP that payment-change mail from this person is invalid</label>
+  </div>
+
+  <div class="st-tool-actions">
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="offboard-reset">Reset checks</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="offboard-copy">Copy remaining list</button>
+    <span id="offboard-copy-status" style="font-size:0.85rem;font-weight:700;color:#16a34a;align-self:center"></span>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Status</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Completion (applicable items)</div>
+    <div class="st-tool-metric-value" id="offboard-pct">0%</div>
+    <div class="st-tool-score-bar" aria-hidden="true"><span id="offboard-bar"></span></div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Band</div>
+    <div class="st-tool-metric-value" style="font-size:1.2rem" id="offboard-band">Open risk</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Same-day items still open</div>
+    <div class="st-tool-metric-value" style="font-size:1.2rem" id="offboard-open">—</div>
+  </div>
+  <div class="st-tool-panel-title" style="margin-top:8px">Still open</div>
+  <div id="offboard-remain" class="st-tool-chips"><span class="st-tool-chip st-tool-chip--warn">Nothing checked yet</span></div>
+  <p class="st-tool-note" id="offboard-note"></p>
+  <p class="st-tool-disclaimer">A checklist, not a live Entra action. Blocking sign-in is not the same as revoking tokens. Do not delete the account on day one if you still need the mailbox.</p>
+</div>

@@ -92,6 +92,10 @@ https://securetechie.com/tools/
 - Cybersecurity risk assessment: https://securetechie.com/tools/cybersecurity-risk-assessment/
 - Office bandwidth calculator: https://securetechie.com/tools/bandwidth-calculator/
 - IT downtime cost calculator: https://securetechie.com/tools/downtime-cost-calculator/
+- Phishing email checker: https://securetechie.com/tools/phishing-email-checker/
+- Employee offboarding checklist: https://securetechie.com/tools/employee-offboarding-checklist/
+- SHA-256 file checksum: https://securetechie.com/tools/sha256-file-checksum/
+- Backup retention calculator: https://securetechie.com/tools/backup-retention-calculator/
 
 ## Resources
 - About: https://securetechie.com/about/

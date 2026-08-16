@@ -1,0 +1,80 @@
+<form id="st-backup-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">What you are protecting</div>
+  <div id="backup-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="backup-source">Source data (TB)</label>
+      <input class="st-tool-input" id="backup-source" type="number" min="0.05" step="0.05" value="2">
+    </div>
+    <div class="st-tool-field">
+      <label for="backup-change">Daily change rate (%)</label>
+      <input class="st-tool-input" id="backup-change" type="number" min="0" max="100" step="0.5" value="5">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="backup-comp">Compression ratio</label>
+      <input class="st-tool-input" id="backup-comp" type="number" min="1" step="0.1" value="1.5">
+      <div class="st-tool-hint">1.0 = none. Office files often 1.5-2. Already-zipped data stays near 1.0.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="backup-dedup">Dedup factor</label>
+      <input class="st-tool-input" id="backup-dedup" type="number" min="1" step="0.1" value="1">
+      <div class="st-tool-hint">1.0 = none. Do not plan on vendor slide-deck 10x.</div>
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="backup-method">Retention method</label>
+    <select class="st-tool-select" id="backup-method">
+      <option value="gfs" selected>Classic GFS (weekly / monthly / yearly fulls)</option>
+      <option value="forever">Forever incremental (one full + incrementals)</option>
+    </select>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:18px">How long you keep copies</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="backup-daily">Daily incrementals to keep</label>
+      <input class="st-tool-input" id="backup-daily" type="number" min="0" step="1" value="14">
+    </div>
+    <div class="st-tool-field">
+      <label for="backup-weekly">Weekly points to keep</label>
+      <input class="st-tool-input" id="backup-weekly" type="number" min="0" step="1" value="4">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="backup-monthly">Monthly points to keep</label>
+      <input class="st-tool-input" id="backup-monthly" type="number" min="0" step="1" value="12">
+    </div>
+    <div class="st-tool-field">
+      <label for="backup-yearly">Yearly points to keep</label>
+      <input class="st-tool-input" id="backup-yearly" type="number" min="0" step="1" value="3">
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="backup-copies">Backup repository copies (3-2-1)</label>
+    <select class="st-tool-select" id="backup-copies">
+      <option value="1">1: primary backup only</option>
+      <option value="2" selected>2: primary + offsite / cloud (typical 3-2-1)</option>
+      <option value="3">3: primary + offsite + extra vault</option>
+    </select>
+    <div class="st-tool-hint">Production is the third copy of the data. It is not extra backup storage.</div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Estimated repository</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">All backup copies</div>
+    <div class="st-tool-metric-value" id="backup-total">—</div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">One repository</div><div class="st-tool-metric-value" style="font-size:1.15rem" id="backup-one">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">One full (stored)</div><div class="st-tool-metric-value" style="font-size:1.15rem" id="backup-full">—</div></div>
+  </div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Daily incrementals</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="backup-dailies">—</div></div>
+  <div class="st-tool-metric"><div class="st-tool-metric-label">Weekly / monthly / yearly points</div><div class="st-tool-metric-value" style="font-size:1.1rem" id="backup-points">—</div></div>
+  <p class="st-tool-note" id="backup-note"></p>
+  <p class="st-tool-disclaimer">Planning model, not a Veeam or Acronis quote. Classic GFS is conservative. Forever incremental is closer to modern products. A restore test still matters more than the TB number.</p>
+</div>

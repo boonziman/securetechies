@@ -1501,6 +1501,502 @@
     calc();
   }
 
+  /* ============================================================
+     Phishing email red-flag checker
+     Local heuristics on From, Reply-To, subject, body.
+     Does not fetch URLs or open attachments.
+     ============================================================ */
+  function initPhish(root) {
+    var form = $("#st-phish-form", root);
+    if (!form) return;
+
+    var SAMPLE = {
+      from: "First National Wire Desk <treasury@firstnational.example>",
+      reply: "payments-update@gmail.com",
+      subject: "Updated wiring instructions: action required",
+      body:
+        "Please process the attached ACH change today. Our bank details have been updated.\n\n" +
+        "Confirm by clicking https://bit.ly/pay-now-88 and do not use the old routing number.\n\n" +
+        "Regards,\nTreasury"
+    };
+
+    function flagsFor(from, reply, subject, body) {
+      var text = (subject + "\n" + body).toLowerCase();
+      var hay = from + "\n" + reply + "\n" + subject + "\n" + body;
+      var flags = [];
+      function add(w, m) { flags.push({ w: w, m: m }); }
+      var freeMail = /gmail\.com|outlook\.com|yahoo\.com|hotmail\.com|icloud\.com|aol\.com/i;
+
+      if (/(urgent|immediately|action required|act now|today only|account (will be )?suspend|final notice|within \d+ hours)/i.test(text))
+        add(2, "Urgency language");
+      if (/(wire|wiring|ach|routing number|swift|iban|w-?9|overdue invoice|invoice attached|past[- ]due|updated bank|bank details|new routing|updated wiring|payment details)/i.test(text))
+        add(3, "Payment or bank-detail change");
+      if (/(gift ?card|itunes|steam card|bitcoin|crypto wallet|prepaid)/i.test(text))
+        add(4, "Gift card or crypto request");
+      if (/(verify (your )?password|unusual sign-?in|mfa (reset|code)|unlock (your )?account|confirm your identity)/i.test(text))
+        add(3, "Credential or MFA lure");
+      if (/(click here|click the link|must click)/i.test(text))
+        add(1, "Click-here pressure");
+
+      var fromDom = emailDomain(from);
+      var replyDom = emailDomain(reply);
+      if (String(from || "").trim() && !fromDom)
+        add(1, "From line has no email address");
+      if (freeMail.test(fromDom) &&
+          /(bank|wire|treasury|invoice|payroll|attorney|counsel|ceo|cfo|hr\b|microsoft|amazon|paypal)/i.test(from))
+        add(3, "Authority-style name on a free-mail From");
+      if (fromDom && replyDom && fromDom !== replyDom)
+        add(2, "Reply-To domain differs from From");
+      if (freeMail.test(replyDom) && fromDom && !freeMail.test(fromDom))
+        add(3, "Business-looking From with a free-mail Reply-To");
+
+      [
+        ["microsoft", /microsoft|office365|onmicrosoft/],
+        ["paypal", /paypal/],
+        ["amazon", /amazon|amazonaws/],
+        ["docusign", /docusign/],
+        ["quickbooks", /intuit|quickbooks|qbo/]
+      ].forEach(function (pair) {
+        if (new RegExp(pair[0], "i").test(from) && fromDom && !pair[1].test(fromDom))
+          add(3, "Display name looks like " + pair[0] + ", From domain does not");
+      });
+      if (/(m[1l]icrosoft|micr0soft|micros0ft|paypa1|g00gle|go0gle|app1e|securetechie-)/i.test(hay))
+        add(3, "Lookalike or misspelled brand in the text");
+
+      var urls = String(subject + "\n" + body).match(/https?:\/\/[^\s<>\"]+/gi) || [];
+      urls.forEach(function (u) {
+        var low = u.toLowerCase();
+        if (/bit\.ly|tinyurl\.com|t\.co\/|goo\.gl|ow\.ly|rebrand\.ly|cutt\.ly|tiny\.cc|is\.gd/.test(low))
+          add(2, "Shortened URL: " + u.slice(0, 48));
+        if (/https?:\/\/\d{1,3}(\.\d{1,3}){3}/.test(low))
+          add(3, "URL uses a raw IP address");
+        if (/xn--/i.test(low))
+          add(3, "Punycode (xn--) in a URL");
+        if (/\.(exe|scr|js|vbs|iso|html|htm|zip)(\?|$|\/)/i.test(low))
+          add(3, "URL points at a risky file type");
+        var host = (low.split("/")[2] || "").split("@").pop();
+        if (host && /\.(zip|mov|click|xyz|top|gq|tk|ml|cf|ga|link|country)$/.test(host))
+          add(2, "Unusual link TLD: " + host);
+      });
+      if (/(attach(ed|ment).*\.(html|htm|iso|img|js|vbs|exe|scr|zip))/i.test(text))
+        add(3, "Mentions a risky attachment type");
+
+      return flags;
+    }
+
+    function run() {
+      var from = (($("#phish-from", root) || {}).value || "").trim();
+      var reply = (($("#phish-reply", root) || {}).value || "").trim();
+      var subject = (($("#phish-subject", root) || {}).value || "").trim();
+      var body = (($("#phish-body", root) || {}).value || "").trim();
+      showErr("phish-error", "");
+      if (!from && !subject && !body) {
+        setText("phish-band", "Paste a message");
+        setText("phish-count", "—");
+        setHTML("phish-flags", '<span class="st-tool-chip">Waiting</span>');
+        setText("phish-note", "");
+        return;
+      }
+      var flags = flagsFor(from, reply, subject, body);
+      var score = flags.reduce(function (s, f) { return s + f.w; }, 0);
+      var band = score >= 7 ? "High" : score >= 3 ? "Medium" : "Low";
+      setText("phish-band", band);
+      setText("phish-count", String(flags.length));
+      setHTML(
+        "phish-flags",
+        flags.length
+          ? flags.map(function (f) {
+              return '<span class="st-tool-chip' + (f.w >= 3 ? " st-tool-chip--warn" : "") + '">' + esc(f.m) + "</span>";
+            }).join("")
+          : '<span class="st-tool-chip">No wording flags. Still verify money requests by phone.</span>'
+      );
+      setText(
+        "phish-note",
+        band === "High"
+          ? "Treat as hostile until you verify out of band. Do not click. Do not pay."
+          : band === "Medium"
+            ? "Read headers and ask help desk before you act."
+            : "Wording looks ordinary. A clean vendor mailbox can still be compromised."
+      );
+    }
+
+    on($("#phish-run", root), "click", run);
+    on($("#phish-clear", root), "click", function () {
+      ["phish-from", "phish-reply", "phish-subject", "phish-body"].forEach(function (id) {
+        if ($("#" + id, root)) $("#" + id, root).value = "";
+      });
+      run();
+    });
+    on($("#phish-sample", root), "click", function () {
+      if ($("#phish-from", root)) $("#phish-from", root).value = SAMPLE.from;
+      if ($("#phish-reply", root)) $("#phish-reply", root).value = SAMPLE.reply;
+      if ($("#phish-subject", root)) $("#phish-subject", root).value = SAMPLE.subject;
+      if ($("#phish-body", root)) $("#phish-body", root).value = SAMPLE.body;
+      run();
+    });
+    bindForm(form, run);
+    run();
+  }
+
+  /* ============================================================
+     Employee offboarding checklist
+     Weighted completion of applicable items.
+     Role checkboxes show extra groups; they do not auto-complete.
+     Band: any same-day/device/priv/money open -> Open risk
+           same-day closed, later open -> In progress
+           all applicable done -> Closed
+     ============================================================ */
+  function initOffboard(root) {
+    var form = $("#st-offboard-form", root);
+    if (!form) return;
+
+    function applicableItems() {
+      return $all(".offboard-item", root).filter(function (el) {
+        var wrap = el.closest("label");
+        if (wrap && wrap.offsetParent === null) return false;
+        var block = el.closest("[id$='-block']");
+        if (block && block.hidden) return false;
+        return true;
+      });
+    }
+
+    function run() {
+      var priv = $("#offboard-priv", root);
+      var money = $("#offboard-money", root);
+      var device = $("#offboard-device", root);
+      var privBlock = $("#offboard-priv-block", root);
+      var moneyBlock = $("#offboard-money-block", root);
+      var deviceBlock = $("#offboard-device-block", root);
+      if (privBlock) privBlock.hidden = !(priv && priv.checked);
+      if (moneyBlock) moneyBlock.hidden = !(money && money.checked);
+      if (deviceBlock) deviceBlock.hidden = !(device && device.checked);
+
+      var items = applicableItems();
+      var totalW = 0;
+      var doneW = 0;
+      var sameOpen = 0;
+      var anySameOpen = false;
+      var laterOpen = 0;
+      var remain = [];
+      items.forEach(function (el) {
+        var w = parseInt(el.getAttribute("data-w"), 10) || 1;
+        var group = el.getAttribute("data-group") || "";
+        var label = el.getAttribute("data-label") || "Item";
+        totalW += w;
+        if (el.checked) {
+          doneW += w;
+        } else {
+          remain.push({ w: w, m: label, same: group === "same" || group === "device" || group === "priv" || group === "money" });
+          if (group === "same" || group === "device" || group === "priv" || group === "money") {
+            sameOpen += 1;
+            anySameOpen = true;
+          } else {
+            laterOpen += 1;
+          }
+        }
+      });
+      var pct = totalW ? Math.round((doneW / totalW) * 100) : 0;
+      var band = anySameOpen ? "Open risk" : laterOpen ? "In progress" : "Closed";
+      setText("offboard-pct", pct + "%");
+      setText("offboard-band", band);
+      setText("offboard-open", String(sameOpen));
+      var bar = document.getElementById("offboard-bar");
+      if (bar) bar.style.width = pct + "%";
+      setHTML(
+        "offboard-remain",
+        remain.length
+          ? remain
+              .slice(0, 8)
+              .map(function (f) {
+                return '<span class="st-tool-chip' + (f.same ? " st-tool-chip--warn" : "") + '">' + esc(f.m) + "</span>";
+              })
+              .join("") +
+              (remain.length > 8 ? '<span class="st-tool-chip">+' + (remain.length - 8) + " more</span>" : "")
+          : '<span class="st-tool-chip">All applicable items checked</span>'
+      );
+      setText(
+        "offboard-note",
+        band === "Closed"
+          ? "Checks are done on this page. Confirm the tenant, vault, and devices in the admin centers."
+          : band === "In progress"
+            ? "Access looks blocked. Finish mailbox, OneDrive, and SaaS before you delete the account."
+            : "Do not convert or delete the mailbox until same-day access is closed."
+      );
+    }
+
+    on($("#offboard-reset", root), "click", function () {
+      $all(".offboard-item", root).forEach(function (el) { el.checked = false; });
+      run();
+    });
+    on($("#offboard-copy", root), "click", function () {
+      var lines = applicableItems()
+        .filter(function (el) { return !el.checked; })
+        .map(function (el) { return "- [ ] " + (el.getAttribute("data-label") || "Item"); });
+      copyText(
+        lines.length ? "Offboarding still open:\n" + lines.join("\n") : "Offboarding: all applicable items checked.",
+        "offboard-copy-status",
+        "Copied"
+      );
+    });
+    bindForm(form, run);
+    run();
+  }
+
+  /* ============================================================
+     SHA-256 / SHA-1 / SHA-512 file checksum
+     Uses Web Crypto subtle.digest on local bytes.
+     Compare: normalize hex (lowercase, strip spaces : 0x).
+     Soft warn > 80 MiB. Refuse > 150 MiB (memory).
+     File wins over text when both are present.
+     ============================================================ */
+  function initHash(root) {
+    var form = $("#st-hash-form", root);
+    if (!form) return;
+    var MAX_HARD = 150 * 1024 * 1024;
+    var MAX_SOFT = 80 * 1024 * 1024;
+    var SAMPLE_TEXT = "Hello world";
+    var SAMPLE_HEX = "64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c";
+    var lastHex = "";
+    var chosenFile = null;
+    var runSeq = 0;
+
+    function normHex(s) {
+      return String(s || "")
+        .trim()
+        .replace(/^0x/i, "")
+        .toLowerCase()
+        .replace(/[^0-9a-f]/g, "");
+    }
+    function bufToHex(buf) {
+      var u8 = new Uint8Array(buf);
+      var out = "";
+      for (var i = 0; i < u8.length; i++) {
+        var h = u8[i].toString(16);
+        out += h.length === 1 ? "0" + h : h;
+      }
+      return out;
+    }
+    function fmtBytes(n) {
+      if (n < 1024) return n + " B";
+      if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+      return (n / (1024 * 1024)).toFixed(1) + " MB";
+    }
+    function run() {
+      showErr("hash-error", "");
+      var algoEl = $("#hash-algo", root);
+      var algo = (algoEl && algoEl.value) || "SHA-256";
+      var expect = normHex(($("#hash-expect", root) || {}).value);
+      var text = (($("#hash-text", root) || {}).value) || "";
+      var fileInput = $("#hash-file", root);
+      var file = chosenFile || (fileInput && fileInput.files && fileInput.files[0]) || null;
+      chosenFile = file;
+
+      if (!file && !String(text).length) {
+        lastHex = "";
+        setText("hash-match", "Choose a file");
+        setText("hash-source", "—");
+        if ($("#hash-out", root)) $("#hash-out", root).value = "";
+        setText("hash-note", "");
+        return;
+      }
+      if (file && file.size > MAX_HARD) {
+        lastHex = "";
+        setText("hash-match", "Too large");
+        setText("hash-source", file.name + " · " + fmtBytes(file.size));
+        if ($("#hash-out", root)) $("#hash-out", root).value = "";
+        setText("hash-note", "Use Get-FileHash or sha256sum for files over 150 MB.");
+        return;
+      }
+      if (!window.crypto || !crypto.subtle) {
+        showErr("hash-error", "This browser does not expose Web Crypto. Use Get-FileHash on a workstation.");
+        return;
+      }
+
+      setText("hash-match", "Hashing…");
+      var label = file ? file.name + " · " + fmtBytes(file.size) : "UTF-8 text · " + text.length + " chars";
+      setText("hash-source", label);
+      var warn = file && file.size > MAX_SOFT ? " Large file. A phone may stall." : "";
+      var seq = ++runSeq;
+
+      var ready = file
+        ? file.arrayBuffer()
+        : Promise.resolve(new TextEncoder().encode(text).buffer);
+
+      ready
+        .then(function (buf) {
+          return crypto.subtle.digest(algo, buf);
+        })
+        .then(function (digest) {
+          if (seq !== runSeq) return;
+          lastHex = bufToHex(digest);
+          if ($("#hash-out", root)) $("#hash-out", root).value = lastHex;
+          if (!expect) {
+            setText("hash-match", "Hash ready");
+            setText("hash-note", "Paste the vendor digest to compare." + warn);
+            return;
+          }
+          if (expect.length !== lastHex.length) {
+            setText("hash-match", "Mismatch");
+            setText(
+              "hash-note",
+              "Expected length is " + expect.length + " hex chars. " + algo + " is " + lastHex.length + "." + warn
+            );
+            return;
+          }
+          if (expect === lastHex) {
+            setText("hash-match", "Match");
+            setText("hash-note", "Bytes match the digest you pasted. That is not a malware verdict." + warn);
+          } else {
+            setText("hash-match", "Mismatch");
+            setText("hash-note", "Different bytes, or the wrong algorithm. Do not run the file." + warn);
+          }
+        })
+        .catch(function () {
+          if (seq !== runSeq) return;
+          lastHex = "";
+          showErr("hash-error", "Could not hash that input. Try a smaller file or another browser.");
+          setText("hash-match", "Error");
+        });
+    }
+
+    var drop = $("#hash-drop", root);
+    on(drop, "dragover", function (e) {
+      e.preventDefault();
+      if (drop) drop.classList.add("is-over");
+    });
+    on(drop, "dragleave", function () {
+      if (drop) drop.classList.remove("is-over");
+    });
+    on(drop, "drop", function (e) {
+      e.preventDefault();
+      if (drop) drop.classList.remove("is-over");
+      var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) {
+        chosenFile = f;
+        if ($("#hash-file", root)) $("#hash-file", root).value = "";
+        run();
+      }
+    });
+    on($("#hash-file", root), "change", function () {
+      chosenFile = null;
+      run();
+    });
+    on($("#hash-run", root), "click", run);
+    on($("#hash-copy", root), "click", function () {
+      copyText(lastHex, "hash-copy-status", "Copied");
+    });
+    on($("#hash-sample", root), "click", function () {
+      chosenFile = null;
+      if ($("#hash-file", root)) $("#hash-file", root).value = "";
+      if ($("#hash-text", root)) $("#hash-text", root).value = SAMPLE_TEXT;
+      if ($("#hash-algo", root)) $("#hash-algo", root).value = "SHA-256";
+      if ($("#hash-expect", root)) $("#hash-expect", root).value = SAMPLE_HEX;
+      run();
+    });
+    on($("#hash-clear", root), "click", function () {
+      chosenFile = null;
+      lastHex = "";
+      ["hash-file", "hash-text", "hash-expect"].forEach(function (id) {
+        if ($("#" + id, root)) $("#" + id, root).value = "";
+      });
+      if ($("#hash-algo", root)) $("#hash-algo", root).value = "SHA-256";
+      run();
+    });
+    bindForm(form, run);
+    run();
+  }
+
+  /* ============================================================
+     Backup retention (GFS / forever incremental)
+     S = sourceTB * 1024 (GB)
+     F = S / compression / dedup
+     I = S * (changePct/100) / compression / dedup
+     GFS:      one = dailies*I + (weeklies+monthlies+yearlies)*F
+     Forever:  one = F + (dailies+weeklies+monthlies+yearlies)*I
+     total = one * copies
+     Production is not added (3-2-1 copy 1).
+     ============================================================ */
+  function initBackup(root) {
+    var form = $("#st-backup-form", root);
+    if (!form) return;
+
+    function sizeLabel(gb) {
+      if (!isFinite(gb) || gb < 0) return "—";
+      if (gb >= 1024) return fmt(gb / 1024, 2) + " TB";
+      return fmt(gb, 1) + " GB";
+    }
+
+    function run() {
+      showErr("backup-error", "");
+      var sourceTB = num($("#backup-source", root), 0);
+      var change = num($("#backup-change", root), 0);
+      var comp = num($("#backup-comp", root), 1);
+      var dedup = num($("#backup-dedup", root), 1);
+      var method = (($("#backup-method", root) || {}).value) || "gfs";
+      var dailies = Math.max(0, int($("#backup-daily", root), 0));
+      var weeklies = Math.max(0, int($("#backup-weekly", root), 0));
+      var monthlies = Math.max(0, int($("#backup-monthly", root), 0));
+      var yearlies = Math.max(0, int($("#backup-yearly", root), 0));
+      var copies = Math.max(1, int($("#backup-copies", root), 2));
+
+      if (sourceTB <= 0) {
+        showErr("backup-error", "Enter used source data in TB.");
+        setText("backup-total", "—");
+        setText("backup-one", "—");
+        setText("backup-full", "—");
+        setText("backup-dailies", "—");
+        setText("backup-points", "—");
+        setText("backup-note", "");
+        return;
+      }
+      if (change < 0 || change > 100) {
+        showErr("backup-error", "Daily change must be between 0 and 100 percent.");
+        return;
+      }
+      if (comp < 1) comp = 1;
+      if (dedup < 1) dedup = 1;
+
+      var S = sourceTB * 1024;
+      var F = S / comp / dedup;
+      var I = S * (change / 100) / comp / dedup;
+      var pointCount = weeklies + monthlies + yearlies;
+      var dailyGB;
+      var pointsGB;
+      var one;
+      if (method === "forever") {
+        dailyGB = dailies * I;
+        pointsGB = pointCount * I;
+        one = F + (dailies + pointCount) * I;
+      } else {
+        dailyGB = dailies * I;
+        pointsGB = pointCount * F;
+        one = dailyGB + pointsGB;
+      }
+      var total = one * copies;
+      setText("backup-total", sizeLabel(total));
+      setText("backup-one", sizeLabel(one));
+      setText("backup-full", sizeLabel(F));
+      setText("backup-dailies", sizeLabel(dailyGB) + " (" + dailies + " x " + sizeLabel(I) + ")");
+      setText(
+        "backup-points",
+        sizeLabel(pointsGB) +
+          " (" +
+          pointCount +
+          (method === "forever" ? " incrementals" : " fulls") +
+          ")"
+      );
+      setText(
+        "backup-note",
+        method === "forever"
+          ? "Forever incremental is closer to modern products. Confirm synthetic fulls with the vendor."
+          : "Classic GFS is conservative. If the vendor synthesizes monthly fulls, switch the method."
+      );
+    }
+
+    bindForm(form, run);
+    run();
+  }
+
   function boot() {
     var root = document.querySelector("[data-tool]") || document;
     var id = (root.getAttribute && root.getAttribute("data-tool")) || "";
@@ -1516,6 +2012,10 @@
     if (id === "risk") initRisk(root);
     if (id === "bandwidth") initBandwidth(root);
     if (id === "downtime") initDowntime(root);
+    if (id === "phish") initPhish(root);
+    if (id === "offboard") initOffboard(root);
+    if (id === "hash") initHash(root);
+    if (id === "backup") initBackup(root);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

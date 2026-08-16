@@ -1,0 +1,52 @@
+<form id="st-hash-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">File or text to hash</div>
+  <div id="hash-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-drop" id="hash-drop">
+    Drop a file here, or choose one. It stays in this browser.
+    <input class="st-tool-input" id="hash-file" type="file">
+  </div>
+  <div class="st-tool-field">
+    <label for="hash-text">Or hash this text (UTF-8)</label>
+    <textarea class="st-tool-textarea" id="hash-text" spellcheck="false" placeholder="Optional. Ignored if a file is selected."></textarea>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="hash-algo">Algorithm</label>
+      <select class="st-tool-select" id="hash-algo">
+        <option value="SHA-256" selected>SHA-256</option>
+        <option value="SHA-1">SHA-1 (legacy vendor lists)</option>
+        <option value="SHA-512">SHA-512</option>
+      </select>
+    </div>
+    <div class="st-tool-field">
+      <label for="hash-expect">Expected hash (optional)</label>
+      <input class="st-tool-input" id="hash-expect" type="text" spellcheck="false" placeholder="Paste the published hex">
+    </div>
+  </div>
+  <div class="st-tool-hint">Spaces, colons, and 0x prefixes are ignored. Case does not matter. Files over 80 MB should be hashed on a workstation.</div>
+  <div class="st-tool-actions">
+    <button type="button" class="st-tool-btn st-tool-btn-primary" id="hash-run">Compute hash</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="hash-sample">Load sample</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="hash-copy">Copy hash</button>
+    <button type="button" class="st-tool-btn st-tool-btn-secondary" id="hash-clear">Clear</button>
+    <span id="hash-copy-status" style="font-size:0.85rem;font-weight:700;color:#16a34a;align-self:center"></span>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Result</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label">Compare</div>
+    <div class="st-tool-metric-value" id="hash-match">Choose a file</div>
+  </div>
+  <div class="st-tool-metric">
+    <div class="st-tool-metric-label">Source</div>
+    <div class="st-tool-metric-value" style="font-size:1.05rem" id="hash-source">—</div>
+  </div>
+  <div class="st-tool-field">
+    <label for="hash-out">Hash (hex, lowercase)</label>
+    <textarea class="st-tool-textarea" id="hash-out" readonly rows="3"></textarea>
+  </div>
+  <p class="st-tool-note" id="hash-note"></p>
+  <p class="st-tool-disclaimer">A matching hash means the bytes match the published digest. It is not a malware scan. SHA-1 is only for old vendor lists.</p>
+</div>
