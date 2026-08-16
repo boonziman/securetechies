@@ -31,6 +31,20 @@ const PRIORITY_PATHS = [
   `/${KEY_FILE}`, // help Bing re-crawl ownership proof first
   "/BingSiteAuth.xml",
   "/",
+  "/blog/",
+  "/case-studies/",
+  "/blog/microsoft-365-business-premium-vs-e3/",
+  "/blog/employee-offboarding-it-checklist/",
+  "/blog/microsoft-365-backup/",
+  "/blog/cyber-insurance-requirements-small-business/",
+  "/blog/microsoft-intune-small-business/",
+  "/blog/guest-wifi-security-office/",
+  "/blog/vendor-risk-management-small-business/",
+  "/case-studies/backup-restore-test-tax-season/",
+  "/case-studies/microsoft-intune-rollout/",
+  "/case-studies/restaurant-guest-wifi-isolation/",
+  "/case-studies/warehouse-mobile-surveillance-trailer/",
+  "/case-studies/co-managed-it-after-admin-left/",
   "/services/",
   "/services/infrastructure/",
   "/services/managed-help-desk/",
@@ -47,14 +61,18 @@ const PRIORITY_PATHS = [
   "/locations/pasadena/",
   "/locations/burbank/",
   "/locations/glendale/",
-  "/blog/",
   "/industries/",
   "/industries/law-firms/",
   "/industries/healthcare/",
   "/industries/hospitality/",
   "/industries/warehousing-logistics/",
+  "/industries/accounting/",
+  "/industries/real-estate/",
+  "/industries/manufacturing/",
   "/llms.txt",
   "/llms-full.txt",
+  "/.well-known/llms.txt",
+  "/sitemap.xml",
 ];
 
 function log(msg) {
@@ -115,30 +133,36 @@ async function verifyLiveKey() {
 }
 
 function collectUrls() {
-  const urls = new Set(PRIORITY_PATHS.map((p) => `https://${HOST}${p.startsWith("/") ? p : `/${p}`}`));
+  const urls = [];
+  const seen = new Set();
+  const add = (u) => {
+    if (!u || seen.has(u)) return;
+    try {
+      if (new URL(u).host !== HOST) return;
+    } catch {
+      return;
+    }
+    seen.add(u);
+    urls.push(u);
+  };
+
+  for (const p of PRIORITY_PATHS) {
+    add(`https://${HOST}${p.startsWith("/") ? p : `/${p}`}`);
+  }
 
   if (fs.existsSync(SITEMAP)) {
     const xml = fs.readFileSync(SITEMAP, "utf8");
-    const found = (xml.match(/<loc>([^<]+)<\/loc>/g) || [])
-      .map((m) => m.replace(/<\/?loc>/g, "").trim())
-      .filter((u) => {
-        try {
-          return new URL(u).host === HOST;
-        } catch {
-          return false;
-        }
-      });
-    let n = 0;
-    for (const u of found) {
-      if (urls.has(u)) continue;
-      if (u.includes("/services/") || u.includes("/locations/") || u.includes("/tools/")) {
-        urls.add(u);
-        n += 1;
-        if (n >= 30) break;
-      }
-    }
+    const found = (xml.match(/<loc>([^<]+)<\/loc>/g) || []).map((m) => m.replace(/<\/?loc>/g, "").trim());
+    for (const u of found) add(u);
   }
-  return Array.from(urls);
+
+  return urls;
+}
+
+function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
 }
 
 async function submitBingWebmaster(urls) {
@@ -151,7 +175,7 @@ async function submitBingWebmaster(urls) {
     return false;
   }
 
-  const batch = urls.slice(0, 25);
+  const batch = urls.slice(0, 500);
   log(`Bing SubmitUrlbatch: ${batch.length} URLs ...`);
   try {
     const res = await fetch(
@@ -176,46 +200,42 @@ async function submitBingWebmaster(urls) {
 }
 
 async function submitIndexNow(urls) {
-  const payload = {
-    host: HOST,
-    key: KEY,
-    keyLocation: KEY_LOCATION,
-    urlList: urls.slice(0, 100),
-  };
-
-  // Also try option-1 style payload without keyLocation (root key file).
-  const payloadRoot = {
-    host: HOST,
-    key: KEY,
-    urlList: urls.slice(0, 100),
-  };
-
   const endpoints = [
     "https://api.indexnow.org/indexnow",
     "https://www.bing.com/indexnow",
     "https://yandex.com/indexnow",
+    "https://search.seznam.cz/indexnow",
+    "https://searchadvisor.naver.com/indexnow",
   ];
 
   let anyOk = false;
+  const batches = chunk(urls, 100);
+  log(`IndexNow batches: ${batches.length} (${urls.length} URLs).`);
 
-  for (const endpoint of endpoints) {
-    for (const [label, body] of [
-      ["with keyLocation", payload],
-      ["root key only", payloadRoot],
-    ]) {
+  for (let i = 0; i < batches.length; i += 1) {
+    const payload = {
+      host: HOST,
+      key: KEY,
+      keyLocation: KEY_LOCATION,
+      urlList: batches[i],
+    };
+
+    for (const endpoint of endpoints) {
       try {
         const res = await fetch(endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json; charset=utf-8" },
-          body: JSON.stringify(body),
+          body: JSON.stringify(payload),
         });
         const text = await res.text().catch(() => "");
         if (res.status === 200 || res.status === 202) {
-          log(`IndexNow SUCCESS ${endpoint} (${label}) HTTP ${res.status}`);
+          log(`IndexNow SUCCESS ${endpoint} batch ${i + 1}/${batches.length} HTTP ${res.status}`);
           anyOk = true;
-          break; // next endpoint
+        } else {
+          warn(
+            `IndexNow ${endpoint} batch ${i + 1}/${batches.length} HTTP ${res.status} ${text.slice(0, 160)}`
+          );
         }
-        warn(`IndexNow ${endpoint} (${label}) HTTP ${res.status} ${text.slice(0, 160)}`);
       } catch (e) {
         warn(`IndexNow ${endpoint} error: ${e.message}`);
       }
@@ -224,15 +244,29 @@ async function submitIndexNow(urls) {
 
   if (!anyOk) {
     error(
-      "Bing IndexNow still rejected all attempts (403 = ownership not trusted by Bing yet). " +
-        "Yandex may still succeed separately. " +
+      "Every IndexNow endpoint rejected the submit. " +
         "ACTION FOR BING: In Bing Webmaster Tools, re-verify the site using XML file verification " +
-        "(BingSiteAuth.xml is now hosted at /BingSiteAuth.xml). " +
-        "Microsoft Q&A: verifying Bing via Google Search Console import can break IndexNow until re-verified with XML. " +
+        "(BingSiteAuth.xml is hosted at /BingSiteAuth.xml). " +
+        "Importing the site from Google Search Console can break IndexNow until XML re-verify. " +
         "Bing SubmitUrlbatch remains the reliable Bing path when BING_WEBMASTER_API_KEY is set."
     );
   }
   return anyOk;
+}
+
+async function pingSitemaps() {
+  const sitemap = `https://${HOST}/sitemap.xml`;
+  const pings = [
+    `https://webmaster.yandex.com/ping?sitemap=${encodeURIComponent(sitemap)}`,
+  ];
+  for (const url of pings) {
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": "SecureTechies-IndexNow/1.0" } });
+      log(`Sitemap ping ${url.split("?")[0]} HTTP ${res.status}`);
+    } catch (e) {
+      warn(`Sitemap ping failed: ${e.message}`);
+    }
+  }
 }
 
 async function main() {
@@ -251,8 +285,9 @@ async function main() {
   // Bing API first (reliable when env is set).
   await submitBingWebmaster(urls);
 
-  // IndexNow second (Yandex often works; Bing may 403 until XML re-verify).
+  // IndexNow second (Yandex, Seznam, Naver usually work; Bing may 403 until XML re-verify).
   await submitIndexNow(urls);
+  await pingSitemaps();
 
   log("Search notify pipeline complete.");
 }
