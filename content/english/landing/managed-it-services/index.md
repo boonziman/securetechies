@@ -203,7 +203,7 @@ benefits:
   layout: "banner-grid"
   eyebrow: "Why Secure Techies"
   heading: "Why Businesses Choose <span class=\"st-l-hl\">Secure Techies</span>"
-  sub: "For more than 15 years, businesses have trusted us as their managed service provider — responsive, security-first, and genuinely on your side."
+  sub: "For more than 15 years, Southern California businesses have trusted us as their managed service provider — responsive, security-first, and genuinely on your side."
   image: "images/landing/benefits-smb.jpg"
   image_badge: "Local engineers"
   cta: "Speak With an IT Specialist"

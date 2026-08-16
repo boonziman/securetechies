@@ -141,5 +141,11 @@
         <script defer src="{{ $toolsJS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $toolsJS.Data.Integrity }}"{{ end }}></script>
       {{ end }}
     {{ end }}
+
+    {{/* CallRail swap.js: number replacement + call tracking for ads.
+         Method 2 from CallRail (script before </body> on every page).
+         GTM is not configured (empty google_tag_manager), so Method 3 would never fire.
+         Do not also add this snippet in Tag Manager or numbers will swap twice. */}}
+    <script type="text/javascript" src="https://cdn.callrail.com/companies/715430725/28aababb064634b94b3b/12/swap.js"></script>
   </body>
 </html>
