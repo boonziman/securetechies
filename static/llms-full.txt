@@ -72,6 +72,7 @@ City variants of a parent service. Same program, city-targeted SEO. Do not treat
   - https://securetechie.com/services/managed-help-desk/long-beach/
 
 ## High-intent landing pages
+- Managed IT: https://securetechie.com/managed-it-services/
 - Managed IT Los Angeles: https://securetechie.com/managed-it-services-los-angeles/
 - Managed IT Denver: https://securetechie.com/managed-it-services-denver/
 - Law firm IT landing: https://securetechie.com/law-firm-it-services/

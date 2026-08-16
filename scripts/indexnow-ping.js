@@ -54,6 +54,7 @@ const PRIORITY_PATHS = [
   "/services/compliance-security-audits/",
   "/services/mobile-cctv-trailers/",
   "/services/web-development/",
+  "/managed-it-services/",
   "/managed-it-services-los-angeles/",
   "/contact/",
   "/tools/",

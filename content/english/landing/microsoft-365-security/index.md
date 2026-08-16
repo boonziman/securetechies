@@ -18,6 +18,7 @@ url: "/microsoft-365-security/"
 landing: true
 hide_header: true
 hide_footer: true
+hide_logo_link: true
 draft: false
 contact_phone: "(818) 797-9771"
 contact_phone_raw: "+18187979771"
