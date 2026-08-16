@@ -198,4 +198,4 @@ Projects stall for boring reasons:
 
 Tell staff what you will and will not see on a personal device. Then keep that promise.
 
-If you are still on a pile of unmanaged PCs and a hope, start with Business Premium (or confirm you already have it), buy Pro for the next order of laptops, and run the 90-day list. If you want a Canoga Park team to do the enrollment and the wipe test with you, [contact Secure Techies](/contact/).
+If you are still on a pile of unmanaged PCs and a hope, start with Business Premium (or confirm you already have it), buy Pro for the next order of laptops, and run the 90-day list. We wrote one rollout up as [Microsoft Intune without recalling every laptop](/case-studies/microsoft-intune-rollout/). If you want a Canoga Park team to do the enrollment and the wipe test with you, [contact Secure Techies](/contact/).

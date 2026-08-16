@@ -174,7 +174,7 @@ We help with the technical controls behind IRS Publication 4557 and similar ques
 
 ### How we prepare for tax season
 
-The useful work happens in the fall. We test restores, patch windows, add licenses, create seasonal accounts, and agree how after-hours issues get escalated. Risky changes wait until after the filing window. If the tax software will not talk to the printer in April, the whole firm hears about it — so we treat that as a planning problem, not a surprise.
+The useful work happens in the fall. We test restores, patch windows, add licenses, create seasonal accounts, and agree how after-hours issues get escalated. Risky changes wait until after the filing window. If the tax software will not talk to the printer in April, the whole firm hears about it, so we treat that as a planning problem, not a surprise. A worked example is the [backup restore test before tax season](/case-studies/backup-restore-test-tax-season/).
 
 ### Coverage and cost
 

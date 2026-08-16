@@ -326,6 +326,7 @@
   "datePublished" (.Date.Format "2006-01-02")
   "dateModified" (.Lastmod.Format "2006-01-02")
   "inLanguage" "en-US"
+  "genre" "Case study"
   "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
   "author" (dict "@type" "Organization" "name" "Secure Techies" "url" "https://securetechie.com/about/")
   "publisher" (dict "@type" "Organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "logo" (dict "@type" "ImageObject" "url" ("images/logo.png" | absURL)))
@@ -334,6 +335,7 @@
   "about" (dict "@type" "Service" "name" ($p.project_type | default "Managed IT") "url" $aboutUrl)
   "speakable" (dict "@type" "SpeakableSpecification" "cssSelector" (slice "h1" ".st-csp-lead" ".st-csp-article h2"))
 }}
+{{ with $p.summary }}{{ $article = merge $article (dict "abstract" .) }}{{ end }}
 <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
 {{ with $faqs }}
 {{ $qs := slice }}

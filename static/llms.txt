@@ -99,6 +99,11 @@
 - CrowdStrike outage response for a healthcare practice: https://securetechie.com/case-studies/crowdstrike-outage-response/. July 19, 2024 Falcon content update. Safe Mode, BitLocker, rooms first. Not invented percentages.
 - IT risk assessment for a Southern California financial firm: https://securetechie.com/case-studies/financial-services-risk-assessment/. Four-week NIST CSF 2.0-aligned assessment, ranked register, 30/60/90 plan. Not a certification.
 - Microsoft 365 email migration for a professional services firm: https://securetechie.com/case-studies/microsoft-365-email-migration/
+- A backup restore test before tax season: https://securetechie.com/case-studies/backup-restore-test-tax-season/. CPA firm, shared mailbox and SharePoint library restored to a test location. Green jobs were not proof. No invented time-save.
+- Microsoft Intune without recalling every laptop: https://securetechie.com/case-studies/microsoft-intune-rollout/. Brokerage. Autopilot, Pro upgrades, app protection on phones, wipe test on a spare. Not full MDM of personal iPhones.
+- Guest Wi-Fi that stopped at the register: https://securetechie.com/case-studies/restaurant-guest-wifi-isolation/. Restaurant. Guest VLAN, deny LAN, client isolation, dining-room test. Not a PCI QSA seal.
+- A mobile surveillance trailer on a warehouse yard: https://securetechie.com/case-studies/warehouse-mobile-surveillance-trailer/. 3PL. Solar unit on gravel, dusk walk, night test. No invented theft-drop percentage.
+- Co-managed IT after the internal admin left: https://securetechie.com/case-studies/co-managed-it-after-admin-left/. Manufacturer. Coordinator stayed. Help desk, Microsoft 365, backups. No PLC work. Not a full outsourcing.
 
 ## Resources
 - Knowledge Center: https://securetechie.com/knowledge-center/

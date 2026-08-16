@@ -171,7 +171,7 @@ A standard engagement covers:
 - [Mobile CCTV trailers](/services/mobile-cctv-trailers/) when a lot, community, or model home needs eyes after hours
 - [Web development](/services/web-development/) when the brokerage needs a better public face
 
-We do not run the MLS. We keep Microsoft 365, devices, and identity healthy so Dotloop, SkySlope, and the rest can do their jobs.
+We do not run the MLS. We keep Microsoft 365, devices, and identity healthy so Dotloop, SkySlope, and the rest can do their jobs. A worked device project is [Microsoft Intune without recalling every laptop](/case-studies/microsoft-intune-rollout/).
 
 ### Wire fraud
 

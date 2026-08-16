@@ -137,7 +137,7 @@ If you have no product and no restore test, you are hoping. Hope is not an RPO. 
 
 If you have retention only, you have a compliance tool. Add backup if a bad delete or ransomware would stop the firm.
 
-If you already pay for a Microsoft 365 backup product, run a restore this quarter. Restore one shared mailbox and one SharePoint library to a test place. Write down how long it took. That number is the one that matters in an incident, not the brochure.
+If you already pay for a Microsoft 365 backup product, run a restore this quarter. Restore one shared mailbox and one SharePoint library to a test place. Write down how long it took. That number is the one that matters in an incident, not the brochure. We wrote that drill up as [a backup restore test before tax season](/case-studies/backup-restore-test-tax-season/).
 
 [Ransomware protection](/blog/ransomware-protection-playbook/) without a restorable Microsoft 365 copy is a plan with a hole. Price that hole with the [ransomware cost calculator](/tools/ransomware-cost-calculator/) if you need a number for the partners. [Microsoft 365 for business](/blog/microsoft-365-business/) without backup is the same hole with better branding. Pair it with a written [business continuity](/blog/business-continuity-plan-small-business/) note so someone owns the restore, not "IT in general."
 

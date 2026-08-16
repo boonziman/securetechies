@@ -118,7 +118,7 @@ Geographic and platform diversity can improve resilience or create blind spots. 
 
 ### Leadership teams that want insurance and customer confidence
 
-Cyber insurance questionnaires and enterprise security reviews increasingly ask about backup immutability, restore testing, and recovery timelines. Weak answers raise premiums and slow deals.
+Cyber insurance questionnaires and enterprise security reviews increasingly ask about backup immutability, restore testing, and recovery timelines. Weak answers raise premiums and slow deals. For a project record of a fall drill at a CPA firm, see [a backup restore test before tax season](/case-studies/backup-restore-test-tax-season/).
 
 If you operate in our service regions, see [managed IT services in Los Angeles](/managed-it-services-los-angeles/) and our [areas we serve](/locations/) for coverage context. Planning storage arrays or camera retention first? Try our free [RAID calculator](/tools/raid-calculator/) and [surveillance storage calculator](/tools/surveillance-storage-calculator/).
 

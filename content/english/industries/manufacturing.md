@@ -156,7 +156,7 @@ faq:
 
 Secure Techies provides **manufacturing IT services** for plants and industrial offices that need the business network solid and the production network left alone unless there is a written plan.
 
-We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park. Change windows follow your production calendar. If a patch could stop a line, it is scheduled, approved, and reversible.
+We run [infrastructure](/services/infrastructure/), [network security](/services/network-security/), and [backups](/services/backup-disaster-recovery/) from Canoga Park. Change windows follow your production calendar. If a patch could stop a line, it is scheduled, approved, and reversible. A worked standup is [co-managed IT after the internal admin left](/case-studies/co-managed-it-after-admin-left/).
 
 ### Who we work with
 

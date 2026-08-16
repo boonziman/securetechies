@@ -156,7 +156,7 @@ faq:
 
 Secure Techies provides **warehousing and logistics IT** for Southern California operators who cannot miss a pickup window. From Canoga Park we run [managed help desk](/services/managed-help-desk/), [infrastructure](/services/infrastructure/), and [mobile CCTV trailers](/services/mobile-cctv-trailers/) as one plan — office, docks, and yard.
 
-A warehouse is two businesses sharing a building. Headquarters has accounting and a WMS login. The dock has scanners, a weak access point, and a yard that goes dark after the last truck. Most MSPs only staff the first business.
+A warehouse is two businesses sharing a building. Headquarters has accounting and a WMS login. The dock has scanners, a weak access point, and a yard that goes dark after the last truck. Most MSPs only staff the first business. A worked yard project is [a mobile surveillance trailer on a warehouse yard](/case-studies/warehouse-mobile-surveillance-trailer/).
 
 ### Who we work with
 

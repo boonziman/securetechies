@@ -181,4 +181,4 @@ Common fixes, in order:
 
 You do not need a wireless engineer for a 15-person office. You need someone who will test isolation and write the one-page design. That is [network security](/services/network-security/) work, not a weekend YouTube session you forget to document.
 
-If you want that walk-through in your suite, [contact Secure Techies](/contact/). Bring the current Wi-Fi password. We will try to break it from the waiting room first.
+If you want that walk-through in your suite, [contact Secure Techies](/contact/). Bring the current Wi-Fi password. We will try to break it from the waiting room first. A restaurant version of that join test is [guest Wi-Fi that stopped at the register](/case-studies/restaurant-guest-wifi-isolation/).

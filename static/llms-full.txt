@@ -116,4 +116,9 @@ https://securetechie.com/tools/
 - CrowdStrike outage response: https://securetechie.com/case-studies/crowdstrike-outage-response/
 - IT risk assessment (financial services): https://securetechie.com/case-studies/financial-services-risk-assessment/
 - Microsoft 365 email migration: https://securetechie.com/case-studies/microsoft-365-email-migration/
+- Backup restore test before tax season (CPA firm): https://securetechie.com/case-studies/backup-restore-test-tax-season/. Inventory first. Restore intake mailbox and current-returns library to a test place. Time it. Split backup admin from daily Global Admin. Not a ransomware recovery. Not a continuity certification.
+- Microsoft Intune rollout (brokerage): https://securetechie.com/case-studies/microsoft-intune-rollout/. In-place enrollment. Windows Home upgraded before Autopilot. App protection on personal phones. Wipe test on a spare. Not antivirus. Not full MDM of BYOD.
+- Restaurant guest Wi-Fi isolation: https://securetechie.com/case-studies/restaurant-guest-wifi-isolation/. Join test first. Guest VLAN and deny-LAN. Cameras off guest. Second dining-room test. Not a PCI attestation.
+- Warehouse mobile surveillance trailer: https://securetechie.com/case-studies/warehouse-mobile-surveillance-trailer/. Far-fence gap. Solar trailer, no trench. Night test. Not a guard study. Not a claimed crime-rate drop.
+- Co-managed IT after admin left (manufacturing): https://securetechie.com/case-studies/co-managed-it-after-admin-left/. Revoke first. RACI. Help desk. Restore test. IT/OT line: no PLC work unless a later SOW says so.
 - Privacy: https://securetechie.com/privacy-policy/

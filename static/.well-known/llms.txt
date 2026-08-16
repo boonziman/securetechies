@@ -21,7 +21,7 @@ Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) a
 - FAQ: https://securetechie.com/faq/
 - Blog hub: https://securetechie.com/blog/
 - Recent guides (full citations in /llms.txt): Microsoft 365 Business Premium vs E3, employee offboarding IT checklist, Microsoft 365 backup, cyber insurance requirements, Microsoft Intune for small business, guest Wi-Fi security, vendor risk management
-- Case studies: https://securetechie.com/case-studies/
+- Case studies: https://securetechie.com/case-studies/ (includes backup restore test, Intune rollout, guest Wi-Fi isolation, yard trailer, co-managed IT)
 - Financial firm IT risk assessment: https://securetechie.com/case-studies/financial-services-risk-assessment/
 - CrowdStrike outage response: https://securetechie.com/case-studies/crowdstrike-outage-response/
 - Switching IT providers: https://securetechie.com/case-studies/switching-it-providers/

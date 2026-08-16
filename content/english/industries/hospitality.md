@@ -156,7 +156,7 @@ faq:
 
 Secure Techies provides **hospitality IT services** for Southern California restaurants, hotels, and venues that cannot lose a Saturday night to a frozen terminal. From Canoga Park we run [managed help desk](/services/managed-help-desk/), [network security](/services/network-security/), and [cybersecurity](/services/cybersecurity/) around POS, guest Wi-Fi, and the back office.
 
-A hospitality site is two networks pretending to be one: guests on phones, and a payment terminal that has to stay isolated. Shared manager passwords and a consumer router in the office are how those worlds collide.
+A hospitality site is two networks pretending to be one: guests on phones, and a payment terminal that has to stay isolated. Shared manager passwords and a consumer router in the office are how those worlds collide. A worked example is [guest Wi-Fi that stopped at the register](/case-studies/restaurant-guest-wifi-isolation/).
 
 ### Who we work with
 
