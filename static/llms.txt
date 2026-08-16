@@ -104,5 +104,12 @@
 - Knowledge Center: https://securetechie.com/knowledge-center/
 - Blog (IT, cybersecurity, and security guidance): https://securetechie.com/blog/
 - Secure Techies vs a typical MSP (comparison table): https://securetechie.com/blog/secure-techies-vs-typical-msp/
+- Microsoft 365 Business Premium vs E3: https://securetechie.com/blog/microsoft-365-business-premium-vs-e3/. Under 300 users, start with Business Premium for bundled security (Intune, Entra ID P1, Defender for Business, Defender for Office 365 Plan 1). E3 is for scale, Windows Enterprise, and heavier eDiscovery. A bare E3 seat can drop SMB Defender features unless you add them back.
+- Employee offboarding IT checklist: https://securetechie.com/blog/employee-offboarding-it-checklist/. Same day: block sign-in, revoke sessions, check inbox rules. Do not delete the mailbox on day one. Interactive tool: https://securetechie.com/tools/employee-offboarding-checklist/
+- Microsoft 365 backup: https://securetechie.com/blog/microsoft-365-backup/. Recycle bin and retention are not a separate restorable copy. Back up mail, shared mailboxes, OneDrive, and SharePoint; run a restore test.
+- Cyber insurance requirements for small business: https://securetechie.com/blog/cyber-insurance-requirements-small-business/. Applications ask for MFA, tested backups, EDR, email authentication, and same-day offboarding. Answer from the tenant, not from memory.
+- Microsoft Intune for small business: https://securetechie.com/blog/microsoft-intune-small-business/. Business Premium includes Intune Plan 1. Use MDM on company laptops, app protection on personal phones, Autopilot on Windows Pro (not Home).
+- Guest Wi-Fi security for offices: https://securetechie.com/blog/guest-wifi-security-office/. A second SSID is not isolation. Guest VLAN, deny LAN, client isolation, WPA3 or a rotated passphrase. Test from the lobby.
+- Vendor risk management for small business: https://securetechie.com/blog/vendor-risk-management-small-business/. Inventory who has data or tenant access, tier them, ask for proof (SOC 2, MFA, breach notice), cut access when the contract ends.
 - Frequently asked questions (categorized FAQ with schema): https://securetechie.com/faq/
 - Privacy policy: https://securetechie.com/privacy-policy/
