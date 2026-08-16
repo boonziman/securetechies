@@ -163,7 +163,7 @@ This case study records the join test, the VLAN, the deny rule, and the second t
 
 A restaurant is two businesses in one room: people on phones, and a terminal that takes cards. CISA's guidance is plain: [implement a guest Wi-Fi network that is separate from the main network](https://www.cisa.gov/news-events/news/securing-enterprise-wireless-networks), using multiple SSIDs or other isolation so organizational information is not on the visitor path.
 
-The owner thought they had already done that. The kit offered a Guest toggle. We joined from a table and landed in the same range as the POS.
+The owner thought they had already done that. The kit offered a Guest toggle. We joined from a table and landed in the same range as the POS. The mesh was handing out DHCP for both names. The firewall never saw two networks. A friendly SSID is a label. The subnet is the design.
 
 The [PCI DSS](https://www.pcisecuritystandards.org/standards/pci-dss/) standard expects the cardholder environment to be segmented from networks that do not need card data. We are not the QSA. We are the people who still find a terminal and a guest SSID on one flat LAN.
 
@@ -204,9 +204,9 @@ CIS puts the device and design work under [Network Infrastructure Management](ht
 
 We sat where a guest sits. We joined the Guest SSID. We wrote down the IP.
 
-It was the same range as a terminal. We opened the printer. We reached a camera. Two guest phones could ping each other. Client isolation was off.
+It was the same range as a terminal. We opened the printer. We reached a camera. We reached the register's management page on HTTP, which is how this page opens. Two guest phones could ping each other. Client isolation was off.
 
-That page of notes was the scope. Nobody argued with a screenshot from their own dining room.
+That page of notes was the scope. Nobody argued with a screenshot from their own dining room. The mesh "Guest" toggle had never created a second network. It had created a second name for the first one.
 
 NIST's [SP 800-153](https://csrc.nist.gov/publications/detail/sp/800-153/final) is the older, still-cited WLAN paper CISA points at. You do not need every federal checkbox. You do need a written design: which SSID is trusted, which is not, and what each one can reach.
 
@@ -236,7 +236,7 @@ Staff were told, once, in the walk-in: work devices use the staff SSID. Guest is
 
 ### What we did not rip out
 
-The access points could take a VLAN tag. Replacing them would have felt like progress and would have burned the week. We replaced the ISP gateway only because it could not do the deny rule without hair-pulling. That is a different sentence than "we sold a new wireless system."
+The access points could take a VLAN tag. Replacing them would have felt like progress and would have burned the week. We replaced the ISP gateway only because it sat in front of the real firewall, did NAT for everything, and could not pass VLANs without turning guest back into a bridge. The capable firewall stayed. The consumer box in front of it left. That is a different sentence than "we sold a new wireless system."
 
 Bandwidth caps are not security. We set one anyway. One visitor streaming a game should not stall a kitchen display. Inbound connections from the internet to guest IPs were already off. We left them off.
 
@@ -271,18 +271,46 @@ After the dust settled we sat at the same table.
 
 If any of the first four had failed, we were not finished. They did not fail.
 
-The [FTC small-business cybersecurity](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity) pages keep repeating the same idea in owner language: lock down the network you actually run. A mesh kit with a friendly name is not that.
-
-We pointed the owner at the public [guest Wi-Fi security](/blog/guest-wifi-security-office/) guide for the same checklist, and at [PCI DSS](/blog/pci-dss-compliance/) so they could see what a real assessment still expects. Isolation is a control. It is not a certificate.
-
-## What the packet contained
+The packet that left with the owner was short on purpose:
 
 1. **Before/after join notes.** IPs, what a guest could reach, what they could not after.
 2. **One-page design.** SSIDs, VLANs, firewall rules, who owns the passphrase, rotation date.
 3. **IoT list.** Cameras and the TV, and the only flows they are allowed.
-4. **Saturday runbook.** If guest dies during service, who to call, what not to "fix" by bridging VLANs.
+4. **Saturday runbook.** If guest dies during service, who to call, and what not to "fix" by bridging VLANs or parking a camera back on guest.
+
+The Saturday page is one paragraph. Call us. Do not plug the mesh back into the staff switch. Do not write the passphrase on the specials board. A well-meaning closer will do both of those things if you do not say them.
+
+The [FTC small-business cybersecurity](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity) pages keep repeating the same idea in owner language: lock down the network you actually run. A mesh kit with a friendly name is not that.
+
+We pointed the owner at the public [guest Wi-Fi security](/blog/guest-wifi-security-office/) guide for the same checklist, and at [PCI DSS](/blog/pci-dss-compliance/) so they could see what a real assessment still expects. Isolation is a control. It is not a certificate.
 
 [Zero trust](/blog/zero-trust-security/) at this size is not a platform. It is "do not trust a device because it is in the dining room."
+
+## What we verified before Saturday
+
+A VLAN with no second join test is still a story.
+
+| Gate | What "done" meant here |
+| --- | --- |
+| Guest IP | Different subnet from POS and staff |
+| Guest to POS / printer / office PC | Fail from a dining-room phone |
+| Guest to guest | Client isolation on. Two phones cannot ping each other |
+| Staff path | Printer and a test card sale still work |
+| Cameras | On IoT, talking only to the NVR, not parked on guest |
+| Name | Same guest SSID. New key. No password on the wall |
+
+What they had that they did not have on day one:
+
+- A deny-LAN rule the owner could see
+- A dining-room test written down
+- Cameras off the visitor path
+- A paragraph for the processor that did not say "PCI compliant"
+
+What they still did not have, and should not claim:
+
+- A QSA letter
+- A new POS vendor
+- A captive-portal marketing list
 
 ## Lessons we would repeat
 

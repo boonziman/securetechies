@@ -207,7 +207,9 @@ That list prevented the usual failure: restoring the wrong mailbox and calling i
 
 We also asked the partners, before they saw the console, what they thought was protected. Most named "email" and "the server." Almost nobody named the shared intake box or the OneDrive folder a senior manager used as a working directory.
 
-### The restore day
+Seasonal staff made the list longer than a 22-person headcount. Prep season brings contract preparers who land mail and working files in accounts that look temporary and are not. Those mailboxes were either in the policy or they were a hole. We wrote each one down. The tax application itself stayed out of scope on purpose. It is a vendor-hosted product. We do not restore a software vendor's cloud. We restore the mail and libraries the firm actually owns.
+
+### Week 2: the restore day
 
 We did not restore in place. Microsoft's [restore guidance](https://learn.microsoft.com/en-us/microsoft-365/backup/backup-restore-data) is explicit about destinations. Exchange and OneDrive can land in a new folder (Recovered Items plus a timestamp) instead of overwriting live items. SharePoint can restore to a new site URL instead of rolling the production site back. We used those non-destructive options so a drill could not wreck current returns.
 
@@ -218,9 +220,15 @@ Two objects:
 | Shared intake mailbox | Client mail and organizer PDFs land here | New Recovered Items folder in that mailbox, not an in-place overwrite |
 | Current-returns SharePoint library | This year's work, not the archive dump | New site URL, not a rollback of the live library |
 
-We started a clock when the restore job was approved. We stopped it when a named partner could open a known message and a known folder in the recovered location. The number went in the packet. A six-hour restore is still a plan. A restore nobody has tried is a rumor.
+A partner sat with us. We picked a known organizer message from the fall and a known client folder by name, not "whatever is at the top of the list." We started a clock when the restore job was approved in the backup console. We stopped it when that partner could open both items in the recovered location and say, out loud, that they were the right ones.
+
+We compared what came back to what the live mailbox and library still showed. The point was not a marketing percentage. The point was whether the copy had the work, and whether anyone in the room knew which console to open. The time went in the packet. A six-hour restore is still a plan. A restore nobody has tried is a rumor.
 
 NIST [SP 800-34](https://csrc.nist.gov/publications/detail/sp/800-34/rev-1/final) is the old contingency-planning paper and it is still right: know what you must get back, and in what order. We did not write a federal plan. We wrote two objects and a sentence the partners could say in a partners' meeting.
+
+### Week 3: readout
+
+The readout was a partners' meeting, not a PDF drop. We put the coverage list, the clock, and the missing objects on one page. Insurance answers got rewritten from that page the same week: what is copied, when it was last restored, who can delete the copy. Memory left the form.
 
 ## What the green jobs hid
 
@@ -230,11 +238,13 @@ We are not going to invent a "recovery time improved 47 percent" slide. The usef
 
 **OneDrive was informal.** A manager's personal-looking OneDrive held current work because "it was faster than the library." That account was not in the backup policy. Recycle bin would have helped for a few days. It would not have helped after a bad empty.
 
-**Native undo was being sold as backup.** Exchange has a [Recoverable Items folder](https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder). SharePoint has first- and second-stage recycle bins. Those are useful. They are not an isolated copy. We walked the partners through the difference the same way we do in the [Microsoft 365 backup](/blog/microsoft-365-backup/) guide: dumpster diving is not a product.
+**Native undo was being sold as backup.** Exchange has a [Recoverable Items folder](https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder). SharePoint has first- and second-stage recycle bins. Those are useful. They are not an isolated copy. Someone in the room thought Microsoft kept mail for a year because "we have retention." We wrote the actual windows next to the product retention so the two sentences could not be confused. Dumpster diving is not a product. The same walkthrough lives in the [Microsoft 365 backup](/blog/microsoft-365-backup/) guide.
 
 **The same key opened mail and the backup.** Daily Global Admin could change backup policy and delete restore points. CISA [Cross-Sector Cybersecurity Performance Goals](https://www.cisa.gov/cross-sector-cybersecurity-performance-goals) put tested backups next to identity for a reason. A stolen admin is also a stolen undo button if you never split the role.
 
 **The closet still mattered.** A small file share held prior-year PDFs "until we finish the move." It had a job. It did not have a restore anyone could describe. The UPS on the floor had never been tested either. That was a side note, not the headline, and we wrote it down anyway.
+
+**Prior-year libraries lived on a different SharePoint site.** Partners talked about "the archive" as if it were one library. It was a second site the backup policy had never listed. A drill of current returns would have passed and left last year's work as a hope.
 
 ### Chat versus files
 
@@ -272,17 +282,46 @@ A useful restore packet is short enough to read in a partners' meeting.
 
 We kept screenshots in an appendix and adjectives out of the summary. Insurers want both. Partners only have time for the first.
 
+## What we verified before we called it done
+
+The drill used the same definition of done the partners would have to repeat to an insurer.
+
+| Gate | What "done" meant here |
+| --- | --- |
+| Inventory | User mailboxes, intake and billing, current-returns library, informal OneDrive, prior-year site, leftover file share |
+| Destination | Exchange to a Recovered Items folder, SharePoint to a new site URL, not an in-place overwrite |
+| Clock | Start at approve, stop when a named partner opened a known message and a known folder |
+| Admin split | Daily Global Admin could not delete restore points alone |
+| Next drill | Calendar invite before January, with an owner |
+
+What they had that they did not have on day one:
+
+- Proof two objects would come back, with a time attached
+- Intake and billing in the policy
+- A written RPO sentence a partner could say out loud
+- A next date that was not a wish
+
+What they still did not have, and should not claim:
+
+- A ransomware recovery
+- Forever retention on every Teams chat
+- A substitute for the next calendar drill
+
 ## Lessons we would repeat
 
 **Do not restore the easy mailbox.** If the drill uses the owner's inbox, you will miss the box that prints money.
 
-**Restore to a test place.** A rollback of production is how a drill becomes an incident.
+**Do not restore in place.** A Recovered Items folder or a new site URL is a drill. A rollback of production is an incident.
 
 **Write the non-goals down.** If you do not say "this is not a ransomware recovery," someone will read the packet as if it were.
 
 **Split the admin.** A backup the same Global Admin can wipe is a second copy with one lock.
 
 **Put the next drill on a calendar.** [Managed help desk](/services/managed-help-desk/) can own the invite. A PDF will not.
+
+**Ask what they think is protected before you open the console.** The gap between "email and the server" and the shared intake box is usually the whole project.
+
+**Restore something a partner can recognize by name.** A random folder proves the button works. A known organizer message proves the copy has the work.
 
 ## Planning your own restore test
 

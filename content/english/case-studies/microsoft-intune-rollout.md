@@ -177,6 +177,8 @@ Two facts set the date:
 1. Another coordinator was starting in six weeks. The next laptop could not be another Best Buy consumer box.
 2. Agents would not spend a Saturday in the office for imaging.
 
+The leftover laptop was a separate sentence. Intune could not wipe it. We reset the account, revoked sessions, and pulled the mailbox off any phone that still had Outlook. Hardware recovery was a manager conversation, not a console click. That is why this project existed. Offboarding without enrollment is identity work plus a hope that the person brings the PC back.
+
 We had no leftover Autopilot hashes. We treated the fleet as unknown until we had an edition list.
 
 ## What this engagement was, and was not
@@ -218,9 +220,9 @@ We did not promise Autopilot on those machines until Pro was licensed. New purch
 
 ### Weeks 3 to 6: enroll in place
 
-Existing company PCs used Company Portal and automatic MDM enrollment. Agents stayed where they already worked. We scheduled a 30-minute remote session per person, not a shipping crate.
+Existing company PCs used Company Portal and automatic MDM enrollment. Agents stayed where they already worked. We scheduled a 30-minute remote session per person, not a shipping crate. Entra join, not a leftover on-prem domain. This brokerage did not have a domain controller to hybrid-join, and we did not invent one.
 
-New laptops used Autopilot. Unbox, plug in, sign in, wait. The hardware hash was registered before the box left the vendor. Autopilot Reset was the path when a laptop changed hands.
+New laptops used Autopilot. Unbox, plug in, sign in, wait. The hardware hash had to exist in the tenant before the first power-on or OOBE sits there looking broken. For the units already on order we pulled hashes from the vendor packing list where we could, and from the out-of-box screen when we could not. Autopilot Reset was the path when a laptop changed hands, so the next coordinator would not inherit the last person's local profile.
 
 Personal phones never enrolled. [App protection policies](https://learn.microsoft.com/en-us/intune/app-management/protection/overview) wrapped Outlook, Teams, and OneDrive: PIN, no copy into personal WhatsApp, selective wipe on exit. The photos stayed on the phone. The offer letter did not.
 
@@ -233,6 +235,8 @@ The first wave was ten people: operations, two transaction coordinators, and a h
 **The transaction tool.** The brokerage's deal platform is a vendor product. We do not support the MLS or the transaction system itself. What we do is keep the Windows and browser path healthy. One agent had a helper app that only installed with a local-admin USB stick. That helper was the reason three laptops still had leftover local admin from the last vendor. We either found a supported install or we documented the exception with an owner and a review date. We did not leave local admin "so printing works."
 
 **The Home PC that was "kind of company."** One notebook had been bought by an agent and later reimbursed. Nobody could say who owned it. We treated it as personal until the broker put it on the asset list in writing. Intune does not resolve a property dispute.
+
+**Company Portal that would not finish.** Two agents hit the enrollment screen and sat there. One was still on Home. One had a personal Microsoft account signed into Windows as the device owner. We fixed the edition and the device owner, then enrolled. A stuck portal is usually an identity problem, not a reason to ship the laptop to Canoga Park.
 
 Communication mattered more than a configuration profile. We sent one note: what we would see on a company laptop, what we would not see on a personal phone, and how long the grace period lasted. Agents who only used a personal phone never opened Company Portal. That was correct.
 
@@ -256,7 +260,13 @@ We gave a two-week grace on the company-PC rule so listings did not stop mid-wee
 
 The wipe test used a spare, not a production agent laptop. Wipe, not retire. Time on the clock. Role required. Steps written next to the offboarding ticket. The next leaver would not be the first time anyone clicked the button.
 
-Weeks 7 and 8 were boring on purpose. We watched check-in, chased the two laptops that had not enrolled, and sat with operations while they ran Autopilot on the new coordinator's PC. The interesting work was already done. The useful work was making sure the next hire did not restart the Best Buy cycle.
+### Weeks 7 and 8: grace, then enforce
+
+Those two weeks were boring on purpose. We watched check-in. We chased the two company laptops that had not enrolled. One owner was on vacation. One had ignored the note. Neither was a reason to leave Conditional Access in report-only.
+
+We sat with operations while they unboxed the new coordinator's PC. Autopilot, not a Best Buy consumer image. The interesting work was already done. The useful work was making sure the next hire did not restart the cycle.
+
+A home PC that never enrolled simply stopped getting the mailbox when the grace ended. That was the design. Agents who lived in Outlook on a personal phone kept working through the protected apps. We said that out loud so nobody treated a blocked personal Windows login as an outage.
 
 NAR and industry groups keep repeating wire-fraud hygiene because the inbox is still where money moves. This project did not replace that habit. A managed laptop and a protected Outlook app make the [call-back rule](/blog/business-email-compromise/) easier to keep. They do not replace it. We said that in the readout so nobody thought Intune was a fraud product.
 
@@ -269,6 +279,32 @@ NAR and industry groups keep repeating wire-fraud hygiene because the inbox is s
 5. **Admin list** for the Intune console, short on purpose.
 
 We pointed the broker at the public [Microsoft Intune for small business](/blog/microsoft-intune-small-business/) guide for the same 90-day shape, and at [MFA](/blog/mfa-multi-factor-authentication/) because a compliant device without MFA is still a password away from trouble.
+
+## What we verified before we called it a rollout
+
+Buying the license was never the gate. These were:
+
+| Gate | What "done" meant here |
+| --- | --- |
+| Inventory | Company versus personal, Home versus Pro, who actually owned the machine |
+| Edition | Company Home boxes upgraded, or left out of Autopilot on purpose |
+| Enrollment | Company Windows in Company Portal or Autopilot, check-in seen in the console |
+| Phones | App protection on Outlook, Teams, and OneDrive. No full MDM on personal iPhones |
+| Access | Compliant company PC required for mail and SharePoint after the grace period |
+| Wipe | Spare laptop wiped, time and role written next to offboarding |
+
+What they had that they did not have on day one:
+
+- A device list both operations and the broker would sign
+- A wipe that reached a company laptop
+- A written phone deal agents could read
+- New PCs ordered as Windows 11 Pro, with Autopilot in the unbox
+
+What they still did not have, and should not claim:
+
+- Antivirus "because Intune is on"
+- Management of every personal phone in the building
+- A substitute for the call-back rule on a wire
 
 ## Lessons we would repeat
 
@@ -283,6 +319,10 @@ We pointed the broker at the public [Microsoft Intune for small business](/blog/
 **Treat the console as a high-value system.** Least privilege. MFA. Watch who can push apps.
 
 **Buy Pro the next time, not the next incident.** The cheapest consumer laptop is expensive when Autopilot fails in week three and a new coordinator is already sitting in the lobby.
+
+**Decide ownership on paper.** A reimbursed personal notebook is not a company device until the broker says it is. Enrollment will not settle that argument.
+
+**Offboard the account the same day even if the laptop is gone.** Reset, revoke, pull the mailbox. Then start the Intune project so the next leaver is a console click.
 
 ## Planning your own Intune rollout
 

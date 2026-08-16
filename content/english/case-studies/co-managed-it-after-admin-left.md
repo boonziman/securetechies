@@ -211,7 +211,7 @@ Same-day work followed the [employee offboarding](/blog/employee-offboarding-it-
 
 We did not convert the mailbox on day one. Counsel had not been asked. The coordinator got access. License reclaim waited.
 
-Leftover Global Admin was the ugly find. Two accounts. One was the leaver. One was a personal Microsoft account that had been "temporary" in 2022. Both lost the role.
+Leftover Global Admin was the ugly find. Two accounts. One was the leaver. One was a personal Microsoft account that had been "temporary" in 2022 and still received MFA prompts on someone's phone. Both lost the role. Daily mail and privileged admin are not the same job. We left two people who are not the shipping desk with the role, MFA on, and a note that a personal Microsoft account is never "temporary" once it can reset the tenant.
 
 ### Weeks 2 and 3: inventory and the line
 
@@ -252,6 +252,8 @@ That page is the product. A 40-page governance PDF is how co-managed dies.
 
 **The closet and the floor were friendlier than anyone wanted.** A couple of OEM PCs sat on office DHCP. We did not yank them during a shift. We labeled them and put isolation on the 30-day list with the controls vendor in the room.
 
+**The firewall still had an any-any leftover.** Someone had opened it "so the copier could scan" and never closed it. That is how a plant office becomes a path onto something it should not see. We wrote the rule down, named an owner, and scheduled the change for a window the coordinator would approve. We did not "clean it up" at 2 p.m. on a production day.
+
 **After-hours was a cell phone.** That is not a help desk. It is a favor. We put hours and escalation in writing.
 
 None of this required a plant-floor specialist. It required a standup that did not pretend we were one.
@@ -268,6 +270,8 @@ Change windows were written next to the production calendar. Patch Tuesday for o
 
 Microsoft 365 licenses were a mess of departed seasonal staff. We cleaned what we could prove. We did not delete mailboxes to "save money" on day four. That lesson is in the offboarding study for a reason.
 
+The first after-hours call was a shipping printer, not a line-down. Someone still reached for the old admin's cell, got voicemail, and then used the number we had put on the break-room sheet. That is the whole product. If the sheet is not on the wall, co-managed is a slide.
+
 ## What the packet contained
 
 1. **Revoke record.** What we disabled, what we rotated, what we left on hold.
@@ -277,6 +281,32 @@ Microsoft 365 licenses were a mess of departed seasonal staff. We cleaned what w
 5. **30-day list.** OEM PCs, leftover guests, a firewall rule that still said any-any.
 
 We pointed leadership at [how to switch IT providers](/blog/how-to-switch-it-providers/) only to say this was not that project. They were not leaving a vendor. They were adding a desk. The [switching providers](/case-studies/switching-it-providers/) study is the other shape.
+
+## What we verified before we called the standup done
+
+A help desk logo is not a standup. These were:
+
+| Gate | What "done" meant here |
+| --- | --- |
+| Revoke | Leaver blocked, sessions revoked, notebook secrets rotated |
+| Identity | Leftover personal Global Admin removed. Two people who are not daily email |
+| Scope | Business systems listed. PLCs and OEM cell PCs listed as out of scope |
+| Tickets | Real printer, MFA, and mailbox tickets closed on the new path |
+| Restore | One mailbox and one file share restored without overwriting production |
+| RACI | One page the coordinator, plant lead, and our desk would sign |
+
+What they had that they did not have on day one:
+
+- A ticket path that was not a personal cell
+- A map of what we touch and what the controls vendor owns
+- Proof of a restore
+- A 30-day list for leftover guests, OEM PCs, and an any-any leftover
+
+What they still did not have, and should not claim:
+
+- A replacement for the coordinator
+- Ownership of the floor
+- A certification
 
 ## Lessons we would repeat
 

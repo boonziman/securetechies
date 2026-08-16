@@ -174,7 +174,7 @@ Two facts set the date:
 
 We had no leftover site plan that matched the fence. We walked it.
 
-The lease made the trench conversation worse, not better. A permanent pole is an improvement the landlord has to bless. A hitch on gravel is equipment the operator can move when the lease says so. That distinction is why the trailer won the meeting. It is also why we wrote "this is not a substitute for a pole if you later want a fixed view" into the packet. Temporary and permanent are both honest words. Mixing them is how someone sues a drawing. We would rather lose a romantic sentence than own a pole we never installed. Say hitch when it is a hitch. Say pole only when you later fund a real pole in writing with the site landlord.
+The lease made the trench conversation worse, not better. A permanent pole is an improvement the landlord has to bless. A hitch on gravel is equipment the operator can move when the lease says so. That is why the trailer won the meeting. We wrote the other sentence into the packet too: this is not a substitute for a pole if they later want a fixed view. Say hitch when it is a hitch.
 
 ## What this engagement was, and was not
 
@@ -214,9 +214,9 @@ We also asked who currently gets a call at 1 a.m. The answer was "the recording.
 
 The unit is solar. It does not need a warehouse circuit. It does not need a trench. That is the product fact. Placement is still a job.
 
-We waited for a quiet window so a trailer on a hitch was not in a pickup lane. Mast up. Solar clear of the building shadow. Cameras aimed at the fence and the trailer row, not at the neighbor's yard.
+We waited for a quiet window so a trailer on a hitch was not in a pickup lane. Mast up. Solar clear of the building shadow at the hours the panel has to work, not only at noon. August sun is generous. We still marked a winter re-check on the calendar so a low sun and a taller stack of trailers would not quietly starve the battery. Cameras aimed at the fence and the trailer row, not at the neighbor's yard.
 
-Uplink was cellular on purpose. The warehouse Wi-Fi already had enough opinions. The trailer should not die because someone reset a dock access point.
+Uplink was cellular on purpose. The warehouse Wi-Fi already had enough opinions. The trailer should not die because someone reset a dock access point. We confirmed a signal at the parking spot before we called the unit placed. A pretty mast with one bar is a recording that stops at midnight.
 
 DHS [If You See Something, Say Something](https://www.dhs.gov/see-something-say-something) is a public habit, not a camera spec. The useful version here is smaller: if the monitor sees a person on the gravel after hours, a named human gets a call. Not a shared inbox. Not "we'll check in the morning."
 
@@ -225,6 +225,8 @@ DHS [If You See Something, Say Something](https://www.dhs.gov/see-something-say-
 A placement without a night walk is a brochure.
 
 After dark we walked the fence on purpose. We confirmed the picture, the infrared, and that an alert actually reached the on-call. Two-way audio was tested once so the operator knew what a hail sounded like. They chose to keep hails for confirmed presence, not for every raccoon.
+
+The first night always teaches you what the yard thinks is motion. Headlights on the street. Dust. A cat. We sat with the operator and tightened the zone so the far fence and the trailer row were the trip, not the whole county. A phone tree that rings for wildlife will get silenced by week two. That is worse than no trailer.
 
 Retention was written down: how many days, who can export, and that the office PC is not the only copy. A stolen office computer should not be the only place last night lived.
 
@@ -262,6 +264,32 @@ The public [mobile surveillance trailers guide](/blog/mobile-surveillance-traile
 
 [Parking-lot camera](/blog/parking-lot-security-cameras/) work is a cousin. A warehouse yard is not a retail lot. Trucks and a fence are the geometry. We did not copy a shopping-center layout onto gravel.
 
+## What we verified before we left the yard
+
+A mast in a photo is not a placement.
+
+| Gate | What "done" meant here |
+| --- | --- |
+| Sight lines | Far fence and trailer row covered. Dock left to building cameras |
+| Power and uplink | Solar clear of the building shadow. Cellular, not dock Wi-Fi |
+| Aim | Operator gravel only. Not the street, not the neighbor |
+| Night test | Walk after dark. Picture, infrared, alert to the named on-call |
+| Hail | Two-way audio tested once. Used for confirmed presence, not wildlife |
+| Retention | Days kept, who can export, copy not only on the office PC |
+
+What they had that they did not have on day one:
+
+- Eyes on the gravel after the last truck
+- A phone tree that was not "check the recording in the morning"
+- A night-test note with a time and a name
+- A re-aim rule when the trailer row moves
+
+What they still did not have, and should not claim:
+
+- A posted guard
+- A theft-rate graph
+- Coverage of the whole county from one mast
+
 ## Lessons we would repeat
 
 **Walk at dusk.** A noon site walk lies about shadows and headlights.
@@ -277,6 +305,10 @@ The public [mobile surveillance trailers guide](/blog/mobile-surveillance-traile
 **Cellular on purpose.** The dock Wi-Fi already had enough opinions. A trailer that dies when someone resets an access point is not a perimeter.
 
 **Write the re-aim.** Yards change. A hitch is wasted if nobody is allowed to move the unit when the trailer row shifts.
+
+**Tune the zone or the phone goes off.** A trailer that cries wolf will be ignored. Fence and trailer row. Not headlights on the street.
+
+**Mark a winter sun check.** A panel that works in August can sit in a building shadow in January. The battery does not send a polite reminder.
 
 ## Planning your own yard placement
 
