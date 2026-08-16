@@ -99,7 +99,7 @@ https://securetechie.com/tools/
 
 ## Resources
 - About: https://securetechie.com/about/
-- Founder: https://securetechie.com/about/our-founder/
+- Founder (Alex Shaw, Founder and CEO): https://securetechie.com/about/our-founder/. More than 20 years in enterprise IT infrastructure, cybersecurity, Microsoft 365, Azure, VMware, HPE, Cisco UCS, backup and DR. Hands-on. Canoga Park since the 2016 founding. Philosophy: IT should support the business, not slow it down.
 - FAQ: https://securetechie.com/faq/
 - Blog: https://securetechie.com/blog/
 - Knowledge center: https://securetechie.com/knowledge-center/

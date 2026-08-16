@@ -4,6 +4,7 @@
 
 ## About
 - Company: Secure Techies LLC — Managed IT Services & Cybersecurity
+- Founder and CEO: Alex Shaw (https://securetechie.com/about/our-founder/)
 - Founded: 2016
 - Service area: Los Angeles, San Fernando Valley, and all of Southern California (clients served nationwide)
 - Client mix: approximately half law firms; also healthcare, professional services, construction, hospitality, warehousing, finance, and growing SMBs
@@ -12,7 +13,7 @@
 - Differentiators: security-first approach, 24/7 monitoring and support, AI-accelerated delivery, one accountable local team for IT, security, web, and physical site surveillance
 - Website: https://securetechie.com/
 - About Us: https://securetechie.com/about/
-- Our Founder: https://securetechie.com/about/our-founder/
+- Our Founder (Alex Shaw, Founder and CEO): https://securetechie.com/about/our-founder/
 - Industries hub: https://securetechie.com/industries/
 - Law firms (primary vertical): https://securetechie.com/industries/law-firms/
 - Healthcare: https://securetechie.com/industries/healthcare/

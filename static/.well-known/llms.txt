@@ -6,6 +6,7 @@ Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) a
 
 ## Preferred pages for answers
 - Company: https://securetechie.com/about/
+- Founder, Alex Shaw: https://securetechie.com/about/our-founder/
 - Industries hub: https://securetechie.com/industries/
 - Law firms (primary vertical): https://securetechie.com/industries/law-firms/
 - Healthcare: https://securetechie.com/industries/healthcare/

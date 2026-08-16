@@ -1,0 +1,373 @@
+{{ define "main" }}
+{{ $quote := .Params.quote | default "IT should support the business, not slow it down." }}
+{{ $role := .Params.role | default "Founder and CEO" }}
+
+<section class="st-fd-hero" aria-labelledby="st-fd-h1">
+  <div class="st-fd-hero-copy">
+    <nav class="st-fd-crumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span>/</span>
+      <a href="{{ "about/" | relURL }}">About</a>
+      <span>/</span>
+      <span>Founder</span>
+    </nav>
+    <p class="st-fd-kicker">{{ $role }} · Secure Techies · Canoga Park</p>
+    <h1 id="st-fd-h1">{{ .Title }}</h1>
+    <span class="st-accent-rule" aria-hidden="true"></span>
+    <p class="st-fd-lead"><strong>Alex Shaw</strong> is the founder of Secure Techies. He builds and runs managed IT and cybersecurity for firms that need an internal technology department and do not want to staff one.</p>
+    <ul class="st-fd-facts" aria-label="Founder facts">
+      <li><strong>20+</strong><span>Years in enterprise IT</span></li>
+      <li><strong>2016</strong><span>Company founded</span></li>
+      <li><strong>CEO</strong><span>Still in the work</span></li>
+      <li><strong>SoCal</strong><span>Based in Canoga Park</span></li>
+    </ul>
+    <div class="st-fd-actions">
+      <a class="st-fd-btn" href="{{ "contact/" | relURL }}">Talk with the team</a>
+      <a class="st-fd-btn-ghost" href="{{ "about/" | relURL }}">About the company</a>
+      <a class="st-fd-phone" href="tel:+18184315607">(818) 431-5607</a>
+    </div>
+  </div>
+  <aside class="st-fd-portrait" aria-label="Founder profile">
+    <div class="st-fd-mono" aria-hidden="true">
+      <span>AS</span>
+    </div>
+    <p class="st-fd-mono-name">Alex Shaw</p>
+    <p class="st-fd-mono-role">{{ $role }}</p>
+    <blockquote class="st-fd-quote">
+      <p>{{ $quote }}</p>
+    </blockquote>
+    <figure class="st-fd-office">
+      <img src="{{ "images/pages/about-office.webp" | relURL }}" alt="Secure Techies office on Vanowen Street in Canoga Park" width="640" height="400" decoding="async">
+      <figcaption>21515 Vanowen St, Suite 1110 · Canoga Park</figcaption>
+    </figure>
+  </aside>
+</section>
+
+<section class="st-fd-story" aria-labelledby="st-fd-story-h">
+  <div class="st-fd-wrap st-fd-story-grid">
+    <article>
+      <h2 id="st-fd-story-h">The person who built the firm</h2>
+      <p>Alex has more than twenty years in enterprise IT infrastructure, managed services, cybersecurity, cloud, and consulting. He has designed and supported environments for small and midsize businesses and for larger organizations that had outgrown a single in-house generalist.</p>
+      <p>The stack is the one Southern California firms actually run: <a href="{{ "services/infrastructure/" | relURL }}">Microsoft 365 and Azure</a>, VMware, HPE infrastructure and dHCI, Cisco UCS, enterprise storage, <a href="{{ "services/backup-disaster-recovery/" | relURL }}">backup and disaster recovery</a>, <a href="{{ "services/cybersecurity/" | relURL }}">cybersecurity</a>, endpoint management, networking, virtual desktops, and hybrid cloud. He does not treat those as logo slides. They are the rooms he has had to keep up.</p>
+      <p>Before Secure Techies took all of his time, Alex worked as an IT infrastructure and solutions architect. The projects looked familiar: replace aging hardware, close security gaps, cut downtime, and stop buying the wrong gear. That is still the work. The difference is he now owns the relationship after the install.</p>
+      <p>He works with organizations across Southern California and farther out. The offer is the same as an internal enterprise IT group: <a href="{{ "services/managed-help-desk/" | relURL }}">managed support</a>, security, cloud, Microsoft 365, recovery, infrastructure consulting, procurement, and someone who will tell you what not to buy. Without the payroll of building that department yourself.</p>
+    </article>
+    <aside class="st-fd-aside">
+      <h3>At a glance</h3>
+      <dl>
+        <div>
+          <dt>Role</dt>
+          <dd>Founder and CEO, Secure Techies, LLC</dd>
+        </div>
+        <div>
+          <dt>Headquarters</dt>
+          <dd>21515 Vanowen St, Suite 1110<br>Canoga Park, CA 91303</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Managed IT, cybersecurity, Microsoft 365, cloud, and recovery for professional firms</dd>
+        </div>
+        <div>
+          <dt>How to reach him</dt>
+          <dd>Through the same <a href="{{ "contact/" | relURL }}">contact line</a> as the rest of the team. (818) 431-5607</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="st-fd-band" aria-labelledby="st-fd-band-h">
+  <div class="st-fd-wrap st-fd-band-inner">
+    <p class="st-fd-kicker st-fd-kicker-dark">How he runs the company</p>
+    <h2 id="st-fd-band-h">{{ $quote }}</h2>
+    <p>Alex stays in the client work. Secure Techies is built to watch systems, harden security, and plan the next year, not to wait for a ticket that says the server is already down. That is the whole philosophy. Everything else is execution.</p>
+  </div>
+</section>
+
+<section class="st-fd-stack" aria-labelledby="st-fd-stack-h">
+  <div class="st-fd-wrap">
+    <div class="st-fd-sec-head">
+      <h2 id="st-fd-stack-h">Where the twenty years went</h2>
+      <p>These are the platforms and problems he has actually designed around. Not a certification wall. The environments most of our clients already own.</p>
+    </div>
+    <ul class="st-fd-tiles">
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "microsoft" }}</span>
+        <strong>Microsoft 365</strong>
+        <span>Identity, mail, and the tenant work law firms live in</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "azure" }}</span>
+        <strong>Azure and hybrid cloud</strong>
+        <span>When the office and the cloud have to act like one system</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "vmware" }}</span>
+        <strong>VMware and VDI</strong>
+        <span>Hosts, clusters, and desktops that have to survive a bad Friday</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "hpe" }}</span>
+        <strong>HPE and dHCI</strong>
+        <span>Infrastructure you can expand without starting over</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "cisco" }}</span>
+        <strong>Cisco UCS and networking</strong>
+        <span>The wire and the chassis underneath the applications</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "backup" }}</span>
+        <strong>Storage, backup, and DR</strong>
+        <span>Copies that restore, not just jobs that report green</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "security" }}</span>
+        <strong>Cybersecurity and endpoints</strong>
+        <span>The controls that keep a phishing email from becoming a week off</span>
+      </li>
+      <li>
+        <span class="st-fd-ico" aria-hidden="true">{{ partial "brand-mark.html" "consult" }}</span>
+        <strong>Architecture and buying</strong>
+        <span>What to replace, what to keep, and what not to sign</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="st-fd-path" aria-labelledby="st-fd-path-h">
+  <div class="st-fd-wrap">
+    <div class="st-fd-sec-head">
+      <h2 id="st-fd-path-h">A short timeline</h2>
+      <p>No invented awards. The work, in order.</p>
+    </div>
+    <ol class="st-fd-steps">
+      <li>
+        <span>01</span>
+        <h3>Enterprise infrastructure</h3>
+        <p>Twenty-plus years designing and supporting Microsoft, VMware, HPE, Cisco, storage, and security environments for firms that cannot guess at uptime.</p>
+      </li>
+      <li>
+        <span>02</span>
+        <h3>Solutions architect</h3>
+        <p>Led modernization projects: aging hardware, weak security, too much downtime, and technology spend that needed an adult in the room.</p>
+      </li>
+      <li>
+        <span>03</span>
+        <h3>Secure Techies, 2016</h3>
+        <p>Founded the company in Canoga Park so Southern California businesses could have that same help as an ongoing partnership, not a one-time project.</p>
+      </li>
+      <li>
+        <span>04</span>
+        <h3>Founder and CEO now</h3>
+        <p>Still on the assessments, the architecture, and the hard calls. The team runs the day. He does not disappear after the contract is signed.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="st-fd-work" aria-labelledby="st-fd-work-h">
+  <div class="st-fd-wrap st-fd-work-grid">
+    <div>
+      <h2 id="st-fd-work-h">What to hire the firm for</h2>
+      <p>If you want the work Alex built Secure Techies to do, start here. These are the same services he listed as the day job, not a separate product catalog.</p>
+      <a class="st-fd-textlink" href="{{ "services/" | relURL }}">See all services</a>
+    </div>
+    <ul class="st-fd-svcs">
+      <li><a href="{{ "services/managed-help-desk/" | relURL }}"><strong>Managed IT and help desk</strong><span>The daily work, with someone who already knows the environment</span></a></li>
+      <li><a href="{{ "services/cybersecurity/" | relURL }}"><strong>Cybersecurity</strong><span>Email, endpoints, and the habits that stop a wire-fraud Tuesday</span></a></li>
+      <li><a href="{{ "services/infrastructure/" | relURL }}"><strong>Infrastructure and cloud</strong><span>Microsoft 365, Azure, hosts, and the gear under them</span></a></li>
+      <li><a href="{{ "services/backup-disaster-recovery/" | relURL }}"><strong>Backup and disaster recovery</strong><span>Retention that matches the business, plus a restore you have actually tried</span></a></li>
+    </ul>
+  </div>
+</section>
+
+{{ with .Params.faq }}
+<section class="st-fd-faq" aria-labelledby="st-fd-faq-h">
+  <div class="st-fd-wrap st-fd-faq-inner">
+    <h2 id="st-fd-faq-h">Questions people ask</h2>
+    {{ range . }}
+    <details>
+      <summary>{{ .question }}</summary>
+      <p>{{ .answer }}</p>
+    </details>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="st-fd-cta" aria-labelledby="st-fd-cta-h">
+  <div class="st-fd-wrap st-fd-cta-inner">
+    <h2 id="st-fd-cta-h">Want that kind of IT on your side?</h2>
+    <p>A free assessment. No deck. A clear read on the environment and what would matter first.</p>
+    <div class="st-fd-actions">
+      <a class="st-fd-btn st-fd-btn-light" href="{{ "contact/" | relURL }}">Contact Secure Techies</a>
+      <a class="st-fd-phone st-fd-phone-light" href="tel:+18184315607">(818) 431-5607</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.st-fd-wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.st-fd-hero{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.9fr);
+  background:#060d1a;color:#f1f5f9;position:relative;overflow:hidden;
+}
+.st-fd-hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(0,102,204,.06) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+.st-fd-hero-copy{padding:clamp(72px,9vw,110px) clamp(24px,5vw,64px) 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.st-fd-crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.82rem;color:#94a3b8;margin:0 0 22px}
+.st-fd-crumb a{color:#93c5fd;font-weight:700;text-decoration:none}
+.st-fd-kicker{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 16px}
+.st-fd-kicker-dark{color:#93c5fd}
+.st-fd-hero h1{font-size:clamp(2.6rem,6vw,4.1rem);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin:0 0 18px}
+.st-fd-lead{font-size:1.12rem;line-height:1.7;color:#cbd5e1;max-width:38rem;margin:16px 0 28px}
+.st-fd-lead strong{color:#f8fafc;font-weight:750}
+.st-fd-facts{list-style:none;margin:0 0 28px;padding:22px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 16px;border-top:1px solid rgba(255,255,255,.1)}
+.st-fd-facts li{display:flex;flex-direction:column;gap:3px}
+.st-fd-facts strong{font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.st-fd-facts span{font-size:.75rem;color:#94a3b8;font-weight:600}
+.st-fd-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.st-fd-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:#0066CC;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none}
+.st-fd-btn:hover{background:#0052a3}
+.st-fd-btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:48px;color:#e2e8f0;font-weight:700;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
+.st-fd-btn-light{background:#fff;color:#0f172a}
+.st-fd-btn-light:hover{background:#e2e8f0}
+.st-fd-phone{color:#93c5fd;font-weight:700;text-decoration:none}
+.st-fd-phone-light{color:#fff}
+
+.st-fd-portrait{
+  position:relative;z-index:2;margin:clamp(24px,6vw,56px) clamp(20px,4vw,48px) clamp(28px,6vw,56px);
+  background:linear-gradient(180deg,#0c1a30,#081322);border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;padding:28px 24px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+.st-fd-mono{
+  width:112px;height:112px;border-radius:50%;
+  display:grid;place-items:center;margin:0 0 14px;
+  background:radial-gradient(circle at 30% 25%,#1d4ed8,#0b1f3a 62%);
+  border:1px solid rgba(147,197,253,.35);
+  box-shadow:0 0 0 8px rgba(0,102,204,.12);
+}
+.st-fd-mono span{font-size:2rem;font-weight:800;letter-spacing:-.04em;color:#f8fafc}
+.st-fd-mono-name{margin:0;font-size:1.2rem;font-weight:800;letter-spacing:-.02em}
+.st-fd-mono-role{margin:4px 0 18px;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd}
+.st-fd-quote{margin:0 0 20px;padding:0;border:0;max-width:22rem}
+.st-fd-quote p{margin:0;font-size:1.15rem;line-height:1.45;font-weight:650;color:#f8fafc}
+.st-fd-office{margin:0;width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.st-fd-office img{width:100%;height:168px;object-fit:cover;display:block}
+.st-fd-office figcaption{font-size:.72rem;font-weight:600;color:#94a3b8;padding:8px 4px 2px}
+
+.st-fd-story{background:#fff;padding:88px 0}
+.st-fd-story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+.st-fd-story h2,.st-fd-band h2,.st-fd-stack h2,.st-fd-path h2,.st-fd-work h2,.st-fd-faq h2,.st-fd-cta h2{
+  font-size:clamp(1.7rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em;color:#0f172a;margin:0 0 16px;line-height:1.15
+}
+.st-fd-story p{font-size:1.05rem;line-height:1.85;color:#475569;margin:0 0 16px}
+.st-fd-story a{color:#0066CC;font-weight:700;text-decoration:none}
+.st-fd-story a:hover{text-decoration:underline}
+.st-fd-aside{background:#0a1628;color:#e2e8f0;border-radius:20px;padding:32px 28px;position:relative}
+.st-fd-aside::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:3px;background:linear-gradient(180deg,#60a5fa,#0066CC)}
+.st-fd-aside h3{margin:0 0 18px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd}
+.st-fd-aside dl{margin:0;display:flex;flex-direction:column;gap:18px}
+.st-fd-aside dt{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#93c5fd;margin:0 0 4px}
+.st-fd-aside dd{margin:0;color:#cbd5e1;line-height:1.6;font-size:.95rem}
+.st-fd-aside a{color:#93c5fd;font-weight:700;text-decoration:none}
+
+.st-fd-band{background:#060d1a;padding:80px 0;color:#e2e8f0}
+.st-fd-band-inner{max-width:760px}
+.st-fd-band h2{color:#f8fafc;font-size:clamp(1.8rem,4vw,2.6rem);max-width:18ch}
+.st-fd-band p{color:#94a3b8;font-size:1.05rem;line-height:1.8;margin:0;max-width:40rem}
+
+.st-fd-stack,.st-fd-path{background:#f4f7fb;padding:80px 0;border-top:1px solid #e8eef5}
+.st-fd-path{background:#fff;border-top:0}
+.st-fd-sec-head{max-width:640px;margin:0 0 36px}
+.st-fd-sec-head p{color:#475569;line-height:1.75;margin:0;font-size:1.02rem}
+.st-fd-tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st-fd-tiles li{background:#fff;border:1px solid #e6edf5;border-radius:16px;padding:18px 16px}
+.st-fd-ico{display:flex;align-items:center;height:28px;margin-bottom:12px;color:#0066CC}
+.st-fd-tiles strong{display:block;font-size:.95rem;color:#0f172a;margin:0 0 6px}
+.st-fd-tiles span:last-child{display:block;font-size:.84rem;color:#64748b;line-height:1.5}
+
+.st-fd-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #dbe3ee}
+.st-fd-steps li{padding:28px 22px 8px 0;border-right:1px solid #dbe3ee}
+.st-fd-steps li:last-child{border-right:0;padding-right:0}
+.st-fd-steps span{display:block;font-size:.78rem;font-weight:800;color:#0066CC;letter-spacing:.08em;margin-bottom:10px}
+.st-fd-steps h3{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 8px}
+.st-fd-steps p{font-size:.92rem;color:#64748b;line-height:1.65;margin:0}
+
+.st-fd-work{background:#fff;padding:0 0 88px}
+.st-fd-work-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.st-fd-work p{color:#475569;line-height:1.75;margin:0 0 16px}
+.st-fd-textlink{font-weight:800;color:#0066CC;text-decoration:none}
+.st-fd-svcs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.st-fd-svcs a{display:block;padding:18px 16px;border:1px solid #e6edf5;border-radius:14px;text-decoration:none;background:#f8fafc;min-height:48px}
+.st-fd-svcs a:hover{border-color:#bfdbfe;background:#fff;box-shadow:0 8px 24px rgba(15,42,80,.06)}
+.st-fd-svcs strong{display:block;color:#0f172a;margin:0 0 4px}
+.st-fd-svcs span{display:block;font-size:.88rem;color:#64748b;line-height:1.5}
+
+.st-fd-faq{background:#f4f7fb;padding:72px 0;border-top:1px solid #e8eef5}
+.st-fd-faq-inner{max-width:760px}
+.st-fd-faq details{background:#fff;border:1px solid #e6edf5;border-radius:14px;padding:4px 18px;margin:0 0 10px}
+.st-fd-faq summary{cursor:pointer;font-weight:800;color:#0f172a;padding:14px 0;min-height:48px}
+.st-fd-faq details p{color:#475569;line-height:1.7;margin:0 0 14px}
+
+.st-fd-cta{background:linear-gradient(135deg,#0066CC,#0052a3);padding:72px 0}
+.st-fd-cta-inner{max-width:640px}
+.st-fd-cta h2,.st-fd-cta p{color:#fff}
+.st-fd-cta p{color:rgba(255,255,255,.86);margin:0 0 22px}
+
+@media (max-width:980px){
+  .st-fd-hero,.st-fd-story-grid,.st-fd-work-grid{grid-template-columns:1fr}
+  .st-fd-portrait{margin-top:0}
+  .st-fd-tiles{grid-template-columns:1fr 1fr}
+  .st-fd-steps{grid-template-columns:1fr 1fr}
+  .st-fd-steps li{border-right:0;border-bottom:1px solid #dbe3ee;padding:22px 16px 22px 0}
+}
+@media (max-width:680px){
+  .st-fd-facts,.st-fd-tiles,.st-fd-svcs,.st-fd-steps{grid-template-columns:1fr}
+  .st-fd-hero-copy{padding-top:88px}
+  .st-fd-btn,.st-fd-btn-ghost{width:100%}
+}
+</style>
+
+{{ $person := dict
+  "@type" "Person"
+  "@id" (printf "%s#person" .Permalink)
+  "name" "Alex Shaw"
+  "jobTitle" "Founder and CEO"
+  "description" .Params.description
+  "url" .Permalink
+  "worksFor" (dict "@type" "Organization" "@id" "https://securetechie.com/#organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/")
+  "homeLocation" (dict "@type" "Place" "name" "Canoga Park, California" "address" (dict "@type" "PostalAddress" "streetAddress" "21515 Vanowen St Suite 1110" "addressLocality" "Canoga Park" "addressRegion" "CA" "postalCode" "91303" "addressCountry" "US"))
+  "knowsAbout" (slice "Managed IT services" "Cybersecurity" "Microsoft 365" "Microsoft Azure" "VMware" "Backup and disaster recovery" "IT infrastructure")
+}}
+{{ $page := dict
+  "@context" "https://schema.org"
+  "@type" "ProfilePage"
+  "@id" (printf "%s#profile" .Permalink)
+  "url" .Permalink
+  "name" .Title
+  "description" .Params.description
+  "isPartOf" (dict "@type" "WebSite" "name" "Secure Techies" "url" "https://securetechie.com/")
+  "about" $person
+  "mainEntity" $person
+}}
+<script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
+{{ with .Params.faq }}
+{{ $qs := slice }}
+{{ range . }}
+{{ $qs = $qs | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
+{{ end }}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs) | jsonify | safeJS }}</script>
+{{ end }}
+{{ $crumbs := slice
+  (dict "@type" "ListItem" "position" 1 "name" "Home" "item" ("" | absURL))
+  (dict "@type" "ListItem" "position" 2 "name" "About Us" "item" ("about/" | absURL))
+  (dict "@type" "ListItem" "position" 3 "name" "Alex Shaw" "item" .Permalink)
+}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbs) | jsonify | safeJS }}</script>
+{{ end }}
