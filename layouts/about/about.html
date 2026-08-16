@@ -272,7 +272,7 @@
 .st-au-hero{position:relative}
 .st-au-hero-copy{padding:clamp(72px,10vw,120px) clamp(24px,5vw,64px) 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .st-au-kicker{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 18px}
-.st-au-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 20px}
+.st-au-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 20px;color:#f8fafc}
 .st-au-lead{font-size:1.12rem;line-height:1.7;color:#cbd5e1;max-width:38rem;margin:0 0 28px}
 .st-au-facts{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 16px;border-top:1px solid rgba(255,255,255,.1);padding-top:22px}
 .st-au-facts li{display:flex;flex-direction:column;gap:2px}
@@ -308,10 +308,9 @@
 .st-au-process{background:#f4f7fb;padding:80px 0;border-top:1px solid #e8eef5}
 .st-au-process-head{max-width:640px;margin:0 0 36px}
 .st-au-process-head p,.st-au-split-head p,.st-au-why-intro p,.st-au-area p,.st-au-founder p,.st-au-cta p{color:#475569;line-height:1.75;margin:0 0 16px;font-size:1.02rem}
-.st-au-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #dbe3ee}
-.st-au-steps li{padding:28px 22px 8px 0;border-right:1px solid #dbe3ee}
-.st-au-steps li:last-child{border-right:0;padding-right:0}
-.st-au-steps span{display:block;font-size:.78rem;font-weight:800;color:#0066CC;letter-spacing:.08em;margin-bottom:10px}
+.st-au-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;border:0}
+.st-au-steps li{padding:22px 20px;border:1px solid #e6edf5;border-radius:18px;background:#fff;box-shadow:0 12px 30px rgba(15,42,80,.05)}
+.st-au-steps span{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#eff6ff;font-size:.8rem;font-weight:800;color:#0066CC;letter-spacing:.04em;margin-bottom:14px}
 .st-au-steps h3,.st-au-why-list h3,.st-au-svc-list h3,.st-au-ind h3,.st-au-founder h2{font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 8px}
 .st-au-steps p{font-size:.92rem;color:#64748b;line-height:1.65;margin:0}
 
@@ -332,7 +331,7 @@
 .st-au-why-list p{margin:0;color:#64748b;line-height:1.65;font-size:.95rem}
 
 .st-au-ind{background:#060d1a;padding:80px 0}
-.st-au-ind h2,.st-au-ind .st-au-split-head p{color:#e2e8f0}
+.st-au-ind h2,.st-au-ind .st-au-split-head p{color:#e2e8f0!important}
 .st-au-ind .st-au-split-head p{color:#94a3b8}
 .st-au-ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .st-au-ind-feat{grid-column:span 2;grid-row:span 2;background:#0d1f3c;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px}
@@ -354,7 +353,7 @@
 
 .st-au-cta{background:linear-gradient(135deg,#0066CC,#0052a3);padding:72px 0}
 .st-au-cta-inner{max-width:640px}
-.st-au-cta h2,.st-au-cta p{color:#fff}
+.st-au-cta h2,.st-au-cta p{color:#fff!important}
 .st-au-cta p{color:rgba(255,255,255,.86)}
 
 @media (max-width:980px){
@@ -363,7 +362,6 @@
   .st-au-hero-media{min-height:340px}
   .st-au-photo-inset{left:16px;bottom:48px}
   .st-au-steps{grid-template-columns:1fr 1fr}
-  .st-au-steps li{border-right:0;border-bottom:1px solid #dbe3ee;padding:22px 16px 22px 0}
   .st-au-svc-list,.st-au-why-list,.st-au-ind-grid{grid-template-columns:1fr 1fr}
   .st-au-ind-feat{grid-column:span 2;grid-row:auto}
 }

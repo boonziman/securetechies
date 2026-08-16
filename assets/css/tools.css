@@ -54,7 +54,7 @@
 .st-tools-hero h1 {
   font-size: clamp(2.1rem, 5vw, 3.1rem);
   font-weight: 800;
-  color: #f1f5f9;
+  color: #f8fafc !important;
   line-height: 1.12;
   letter-spacing: -0.03em;
   margin: 0 0 18px;
