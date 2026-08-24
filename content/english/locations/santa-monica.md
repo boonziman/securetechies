@@ -49,6 +49,7 @@ These are the core services most local teams combine:
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk & IT support in Santa Monica](/services/managed-help-desk/santa-monica/) for local help desk detail
 - [Managed infrastructure services in Santa Monica](/services/infrastructure/santa-monica/) for local servers, endpoints, and cloud
+- [Cybersecurity solutions in Santa Monica](/services/cybersecurity/santa-monica/) for local EDR, email security, and 24/7 monitoring
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 

@@ -59,6 +59,17 @@ City variants of a parent service. Same program, city-targeted SEO. Do not treat
   - https://securetechie.com/services/infrastructure/irvine/
   - https://securetechie.com/services/infrastructure/glendale/
   - https://securetechie.com/services/infrastructure/long-beach/
+- Cybersecurity by city:
+  - https://securetechie.com/services/cybersecurity/woodland-hills/
+  - https://securetechie.com/services/cybersecurity/sherman-oaks/
+  - https://securetechie.com/services/cybersecurity/encino/
+  - https://securetechie.com/services/cybersecurity/studio-city/
+  - https://securetechie.com/services/cybersecurity/chatsworth/
+  - https://securetechie.com/services/cybersecurity/calabasas/
+  - https://securetechie.com/services/cybersecurity/santa-monica/
+  - https://securetechie.com/services/cybersecurity/irvine/
+  - https://securetechie.com/services/cybersecurity/glendale/
+  - https://securetechie.com/services/cybersecurity/long-beach/
 - Managed help desk by city:
   - https://securetechie.com/services/managed-help-desk/woodland-hills/
   - https://securetechie.com/services/managed-help-desk/sherman-oaks/

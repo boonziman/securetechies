@@ -15,6 +15,7 @@ Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) a
 - Services: https://securetechie.com/services/
 - Managed infrastructure (city variants listed in /llms.txt): https://securetechie.com/services/infrastructure/
 - Managed help desk (city variants listed in /llms.txt): https://securetechie.com/services/managed-help-desk/
+- Cybersecurity (city variants listed in /llms.txt): https://securetechie.com/services/cybersecurity/
 - Free IT tools: https://securetechie.com/tools/
 - Contact: https://securetechie.com/contact/
 - Government IDs (CAGE 7JZF3, UEI VNXVECFGVAW6): https://securetechie.com/government/

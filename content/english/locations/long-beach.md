@@ -49,6 +49,7 @@ These are the core services most local teams combine:
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk & IT support in Long Beach](/services/managed-help-desk/long-beach/) for local help desk detail
 - [Managed infrastructure services in Long Beach](/services/infrastructure/long-beach/) for local servers, endpoints, and cloud
+- [Cybersecurity solutions in Long Beach](/services/cybersecurity/long-beach/) for local EDR, email security, and 24/7 monitoring
 - [Mobile CCTV trailers](/services/mobile-cctv-trailers/) for temporary site surveillance
 
 Browse [all services](/services/) or our full [locations directory](/locations/).

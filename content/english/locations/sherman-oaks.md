@@ -49,6 +49,7 @@ These are the core services most local teams combine:
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk & IT support in Sherman Oaks](/services/managed-help-desk/sherman-oaks/) for local help desk detail
 - [Managed infrastructure services in Sherman Oaks](/services/infrastructure/sherman-oaks/) for local servers, endpoints, and cloud
+- [Cybersecurity solutions in Sherman Oaks](/services/cybersecurity/sherman-oaks/) for local EDR, email security, and 24/7 monitoring
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 

@@ -49,6 +49,7 @@ These are the core services most local teams combine:
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk & IT support in Irvine](/services/managed-help-desk/irvine/) for local help desk detail
 - [Managed infrastructure services in Irvine](/services/infrastructure/irvine/) for local servers, endpoints, and cloud
+- [Cybersecurity solutions in Irvine](/services/cybersecurity/irvine/) for local EDR, email security, and 24/7 monitoring
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 

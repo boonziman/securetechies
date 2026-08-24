@@ -61,6 +61,16 @@
 - [Backup & Disaster Recovery](https://securetechie.com/services/backup-disaster-recovery/): Cloud backup, business continuity planning, and rapid recovery.
 - [Compliance & Security Audits](https://securetechie.com/services/compliance-security-audits/): HIPAA, GDPR, CMMC, and SOC 2 assessments, gap analysis, policy development, and security training.
 - [Cybersecurity](https://securetechie.com/services/cybersecurity/): EDR/XDR endpoint protection, email security, dark web monitoring, zero trust, penetration testing, and 24/7 SIEM/SOC.
+  - Woodland Hills: https://securetechie.com/services/cybersecurity/woodland-hills/
+  - Sherman Oaks: https://securetechie.com/services/cybersecurity/sherman-oaks/
+  - Encino: https://securetechie.com/services/cybersecurity/encino/
+  - Studio City: https://securetechie.com/services/cybersecurity/studio-city/
+  - Chatsworth: https://securetechie.com/services/cybersecurity/chatsworth/
+  - Calabasas: https://securetechie.com/services/cybersecurity/calabasas/
+  - Santa Monica: https://securetechie.com/services/cybersecurity/santa-monica/
+  - Irvine: https://securetechie.com/services/cybersecurity/irvine/
+  - Glendale: https://securetechie.com/services/cybersecurity/glendale/
+  - Long Beach: https://securetechie.com/services/cybersecurity/long-beach/
 - [Web Development & Digital Solutions](https://securetechie.com/services/web-development/): Secure, high-converting websites, landing pages, AI tools, SEO content, and custom web apps.
 
 ## Locations

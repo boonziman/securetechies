@@ -49,6 +49,7 @@ These are the core services most local teams combine:
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for tested recovery
 - [Managed help desk & IT support in Woodland Hills](/services/managed-help-desk/woodland-hills/) for local help desk detail
 - [Managed infrastructure services in Woodland Hills](/services/infrastructure/woodland-hills/) for local servers, endpoints, and cloud
+- [Cybersecurity solutions in Woodland Hills](/services/cybersecurity/woodland-hills/) for local EDR, email security, and 24/7 monitoring
 
 Browse [all services](/services/) or our full [locations directory](/locations/).
 
