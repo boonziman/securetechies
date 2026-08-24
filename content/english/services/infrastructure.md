@@ -100,7 +100,7 @@ Moving offices, adopting Microsoft 365, consolidating vendors, or preparing for 
 
 ### Leaders tired of surprise IT bills
 
-Break-fix pricing rewards failure. Every emergency becomes an invoice. Managed infrastructure flips the model: predictable cost, proactive work, and fewer emergencies. For local context on how these engagements work, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/). Sizing a new cluster? Start with our free [VM host calculator](/tools/vm-calculator/) and [RAID calculator](/tools/raid-calculator/).
+Break-fix pricing rewards failure. Every emergency becomes an invoice. Managed infrastructure flips the model: predictable cost, proactive work, and fewer emergencies. For local context on how these engagements work, explore [managed IT services in Los Angeles](/managed-it-services-los-angeles/). Sizing a new cluster? Start with our free [VM host calculator](/tools/vm-calculator/) and [RAID calculator](/tools/raid-calculator/). Pricing a small cloud stack? Use the [Azure cost calculator](/tools/azure-cost-calculator/) or the [AWS cost calculator](/tools/aws-cost-calculator/).
 
 ## Problems Managed Infrastructure Solves
 

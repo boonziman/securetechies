@@ -163,7 +163,7 @@ A standard engagement covers:
 
 - [Managed help desk](/services/managed-help-desk/) for staff and the people who only work Tuesdays
 - Microsoft 365 so board mailboxes do not live forever
-- [Cybersecurity](/services/cybersecurity/): MFA, least privilege, encryption, email filtering
+- [Cybersecurity](/services/cybersecurity/): MFA, least privilege, encryption, email filtering. See how we [rolled out Microsoft 365 MFA at a nonprofit](/case-studies/microsoft-365-mfa-rollout/) without locking the board out of email.
 - Identity and devices around Bloomerang, Salesforce, or similar — application support stays with the vendor
 - Volunteer offboarding when the shift or term ends
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) that has been restored, with a sentence the board can hear

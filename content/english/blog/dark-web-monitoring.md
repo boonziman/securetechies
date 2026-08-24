@@ -94,7 +94,7 @@ The first company has no monitoring. The exposed credentials sit on the dark web
 
 The second company runs dark web monitoring alongside MFA and a password manager. When the same credentials surface, the monitoring service flags them within days. IT forces a password reset on that account, confirms MFA is active, and the exposure is closed before anyone can use it. Even if an attacker had tried the old password in the meantime, MFA would have stopped them cold. The leak that cost the first company dearly was a five-minute task at the second.
 
-Same exposure, same innocent origin, opposite outcomes. The difference was knowing — and being set up to act the moment they knew.
+Same exposure, same innocent origin, opposite outcomes. The difference was knowing, and being set up to act the moment they knew. For a project record of that response, see [dark web credentials we could actually reset](/case-studies/dark-web-credential-alert/).
 
 ## Where monitoring fits in a real security program
 

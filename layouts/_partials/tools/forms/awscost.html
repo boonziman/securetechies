@@ -1,0 +1,114 @@
+<form id="st-aws-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Workload</div>
+  <div id="aws-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="aws-region">Region</label>
+      <select class="st-tool-select" id="aws-region">
+        <option value="1" selected>US East (N. Virginia) list baseline</option>
+        <option value="1">US West (Oregon)</option>
+        <option value="1.12">EU (Ireland) (~+12%)</option>
+        <option value="1.25">Asia Pacific (Singapore) (~+25%)</option>
+      </select>
+      <div class="st-tool-hint">Multiplier vs us-east-1 general-purpose On-Demand.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="aws-size">EC2 instance</label>
+      <select class="st-tool-select" id="aws-size">
+        <option value="t3s">t3.small (2 vCPU, 2 GiB, burstable)</option>
+        <option value="t3m">t3.medium (2 vCPU, 4 GiB, burstable)</option>
+        <option value="t3l">t3.large (2 vCPU, 8 GiB, burstable)</option>
+        <option value="m5l" selected>m5.large (2 vCPU, 8 GiB)</option>
+        <option value="m5x">m5.xlarge (4 vCPU, 16 GiB)</option>
+        <option value="r5l">r5.large (2 vCPU, 16 GiB)</option>
+        <option value="r5x">r5.xlarge (4 vCPU, 32 GiB)</option>
+      </select>
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="aws-os">Operating system</label>
+      <select class="st-tool-select" id="aws-os">
+        <option value="linux" selected>Linux (Amazon Linux / Ubuntu)</option>
+        <option value="windows">Windows Server (license included)</option>
+      </select>
+    </div>
+    <div class="st-tool-field">
+      <label for="aws-count">Instance count</label>
+      <input class="st-tool-input" id="aws-count" type="number" min="0" step="1" value="2">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="aws-hours">Hours running / month</label>
+      <input class="st-tool-input" id="aws-hours" type="number" min="0" max="744" step="1" value="730">
+      <div class="st-tool-hint">730 is always-on. Stopped instances still keep EBS.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="aws-commit">Compute pricing</label>
+      <select class="st-tool-select" id="aws-commit">
+        <option value="1" selected>On-Demand</option>
+        <option value="0.73">1-year no-upfront class (~27% off compute)</option>
+      </select>
+      <div class="st-tool-hint">Discount applies to EC2 compute only, not EBS, S3, or transfer.</div>
+    </div>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:12px">Storage and network</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="aws-ebs">gp3 EBS per instance (GB)</label>
+      <input class="st-tool-input" id="aws-ebs" type="number" min="0" step="1" value="30">
+      <div class="st-tool-hint">$0.08/GB-month us-east-1. Root volume bills while it exists.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="aws-s3">S3 Standard (GB)</label>
+      <input class="st-tool-input" id="aws-s3" type="number" min="0" step="10" value="200">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="aws-egress">Internet data transfer out (GB / month)</label>
+      <input class="st-tool-input" id="aws-egress" type="number" min="0" step="10" value="250">
+      <div class="st-tool-hint">First 100 GB/month free across AWS. Then $0.09/GB.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="aws-pip">Public IPv4 addresses</label>
+      <input class="st-tool-input" id="aws-pip" type="number" min="0" step="1" value="1">
+      <div class="st-tool-hint">In-use and idle Elastic IPs are charged.</div>
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="aws-rds">RDS MySQL/PostgreSQL (optional, single-AZ)</label>
+    <select class="st-tool-select" id="aws-rds">
+      <option value="0" selected>None</option>
+      <option value="12.41">db.t3.micro</option>
+      <option value="24.82">db.t3.small</option>
+      <option value="49.64">db.t3.medium</option>
+    </select>
+    <div class="st-tool-hint">On-Demand monthly at 730 hours. Multi-AZ is roughly 2× and is not in this list.</div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Estimated AWS spend</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label" id="aws-month-label">Estimated month (list)</div>
+    <div class="st-tool-metric-value" id="aws-month">—</div>
+    <div class="st-tool-metric-sub">Annualized ×12: <strong id="aws-year">—</strong></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">EC2 compute</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-compute">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">EBS gp3</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-ebs">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">S3 Standard</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-s3">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Data transfer out</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-egress">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Public IPv4</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-ip">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">RDS</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="aws-br-rds">—</div></div>
+  </div>
+  <p class="st-tool-note" id="aws-note"></p>
+  <p class="st-tool-disclaimer">Planning estimate from published us-east-1 On-Demand list rates (August 2026), then a region multiplier. Not an AWS quote, EDP, or private-pricing deal. Confirm in the AWS Pricing Calculator before you buy.</p>
+</div>

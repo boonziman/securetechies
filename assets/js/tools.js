@@ -1997,6 +1997,231 @@
     run();
   }
 
+  /* ============================================================
+     Azure cost estimator
+     East US retail PAYG list (Azure Retail Prices API, Aug 2026):
+       B2s  Linux 0.0416 / Windows 0.0496  $/hr
+       B4ms Linux 0.166  / Windows 0.182
+       D2s v5 Linux 0.096 / Windows 0.188
+       D4s v5 Linux 0.192 / Windows 0.376
+       D8s v5 Linux 0.384 / Windows 0.752
+       E4s v5 Linux 0.252 / Windows 0.436
+       E8s v5 Linux 0.504 / Windows 0.872
+     Disks $/month LRS: E10 9.60, P10 19.71, P15 38.01, P30 135.17
+     Blob Hot LRS $0.0184/GB-month
+     Egress: first 100 GB free, then $0.087/GB
+     Standard public IPv4 $0.005/hr
+     SQL S0/S2/S3: $14.72 / $73.61 / $147.22 per month (DTU daily × 30.4167)
+     1-year savings: 0.69 on compute only (~31%, Microsoft Dsv5 published band)
+     Region: multiplier vs East US D2s v5 Linux
+     monthHours typically 730
+     compute = count * hours * rate * commit * region
+     disks   = count * diskMonth * region   (billed while allocated)
+     blob    = gb * 0.0184 * region
+     egress  = max(0, gb-100) * 0.087
+     ip      = pip * 730 * 0.005 * region  (IP resource, not VM hours)
+     sql     = monthly * region
+     total   = sum
+     ============================================================ */
+  function initAzureCost(root) {
+    var form = $("#st-az-form", root);
+    if (!form) return;
+
+    var VM = {
+      b2s: { linux: 0.0416, windows: 0.0496, label: "B2s" },
+      b4ms: { linux: 0.166, windows: 0.182, label: "B4ms" },
+      d2s: { linux: 0.096, windows: 0.188, label: "D2s v5" },
+      d4s: { linux: 0.192, windows: 0.376, label: "D4s v5" },
+      d8s: { linux: 0.384, windows: 0.752, label: "D8s v5" },
+      e4s: { linux: 0.252, windows: 0.436, label: "E4s v5" },
+      e8s: { linux: 0.504, windows: 0.872, label: "E8s v5" }
+    };
+    var DISK = { e10: 9.6, p10: 19.71, p15: 38.01, p30: 135.17 };
+    var BLOB = 0.0184;
+    var EGRESS = 0.087;
+    var EGRESS_FREE = 100;
+    var PIP_HR = 0.005;
+
+    function money(n) {
+      if (!isFinite(n)) return "—";
+      return "$" + n.toLocaleString(undefined, { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+    }
+
+    function calc() {
+      var region = Math.max(0.5, num($("#az-region", root), 1));
+      var sizeKey = ($("#az-size", root) && $("#az-size", root).value) || "d2s";
+      var os = ($("#az-os", root) && $("#az-os", root).value) || "linux";
+      var count = Math.max(0, int($("#az-count", root), 0));
+      var hours = Math.max(0, Math.min(744, num($("#az-hours", root), 0)));
+      var commit = num($("#az-commit", root), 1);
+      if (commit <= 0) commit = 1;
+      var diskKey = ($("#az-disk", root) && $("#az-disk", root).value) || "p10";
+      var blobGb = Math.max(0, num($("#az-blob", root), 0));
+      var egressGb = Math.max(0, num($("#az-egress", root), 0));
+      var pip = Math.max(0, int($("#az-pip", root), 0));
+      var sql = Math.max(0, num($("#az-sql", root), 0));
+      var spec = VM[sizeKey] || VM.d2s;
+      var rate = os === "windows" ? spec.windows : spec.linux;
+      var diskMo = DISK[diskKey] != null ? DISK[diskKey] : DISK.p10;
+
+      showErr("az-error", "");
+      if (count <= 0 && blobGb <= 0 && sql <= 0 && pip <= 0) {
+        showErr("az-error", "Add at least one VM, some blob storage, a public IP, or a SQL SKU.");
+      }
+
+      var compute = count * hours * rate * commit * region;
+      var disks = count * diskMo * region;
+      var blob = blobGb * BLOB * region;
+      var egress = Math.max(0, egressGb - EGRESS_FREE) * EGRESS;
+      var ip = pip * 730 * PIP_HR * region;
+      var sqlCost = sql * region;
+      var month = compute + disks + blob + egress + ip + sqlCost;
+
+      setText("az-month-label", commit < 1 ? "Estimated month (1-year compute factor)" : "Estimated month (list)");
+      setText("az-month", money(month));
+      setText("az-year", money(month * 12));
+      setText("az-br-compute", money(compute));
+      setText("az-br-disk", money(disks));
+      setText("az-br-blob", money(blob));
+      setText("az-br-egress", money(egress));
+      setText("az-br-ip", money(ip));
+      setText("az-br-sql", money(sqlCost));
+
+      var bits = [];
+      if (count > 0) {
+        bits.push(count + "× " + spec.label + " " + (os === "windows" ? "Windows" : "Linux") + " × " + hours + " h.");
+      }
+      if (hours < 700 && count > 0) {
+        bits.push("OS disks and public IPs still bill if the VM is deallocated.");
+      }
+      if (commit < 1) {
+        bits.push("1-year savings applied to compute only.");
+      }
+      if (region !== 1) {
+        bits.push("Region multiplier " + region + "× vs East US.");
+      }
+      if (egressGb <= EGRESS_FREE) {
+        bits.push("Egress is inside the first 100 GB free band.");
+      }
+      setText("az-note", bits.join(" "));
+    }
+
+    bindForm(form, calc);
+    calc();
+  }
+
+  /* ============================================================
+     AWS cost estimator
+     us-east-1 On-Demand Linux (AWS public list / t3 & m5 pages, Aug 2026):
+       t3.small  0.0209, t3.medium 0.0418, t3.large 0.0835
+       m5.large  0.096,  m5.xlarge 0.192
+       r5.large  0.126,  r5.xlarge 0.252
+     Windows = Linux + $0.046 per vCPU-hour (AWS Optimize CPUs Windows AMI note)
+     EBS gp3 $0.08/GB-month (AWS EBS example region)
+     S3 Standard first 50 TB $0.023/GB-month
+     DTO: first 100 GB free, then $0.09/GB
+     Public IPv4 $0.005/hr (in-use and idle)
+     RDS single-AZ monthly at 730h: micro 12.41, small 24.82, medium 49.64
+     1-year factor 0.73 on compute only (~27% no-upfront reserved-class band)
+     Region multiplier vs us-east-1
+     compute = count * hours * rate * commit * region
+     ebs     = count * gb * 0.08 * region
+     s3      = gb * 0.023 * region
+     egress  = max(0, gb-100) * 0.09
+     ip      = pip * 730 * 0.005 * region  (address exists all month)
+     rds     = monthly * region
+     ============================================================ */
+  function initAwsCost(root) {
+    var form = $("#st-aws-form", root);
+    if (!form) return;
+
+    var EC2 = {
+      t3s: { linux: 0.0209, vcpu: 2, label: "t3.small" },
+      t3m: { linux: 0.0418, vcpu: 2, label: "t3.medium" },
+      t3l: { linux: 0.0835, vcpu: 2, label: "t3.large" },
+      m5l: { linux: 0.096, vcpu: 2, label: "m5.large" },
+      m5x: { linux: 0.192, vcpu: 4, label: "m5.xlarge" },
+      r5l: { linux: 0.126, vcpu: 2, label: "r5.large" },
+      r5x: { linux: 0.252, vcpu: 4, label: "r5.xlarge" }
+    };
+    var WIN_VCPU = 0.046;
+    var GP3 = 0.08;
+    var S3 = 0.023;
+    var DTO = 0.09;
+    var DTO_FREE = 100;
+    var PIP_HR = 0.005;
+
+    function money(n) {
+      if (!isFinite(n)) return "—";
+      return "$" + n.toLocaleString(undefined, { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+    }
+
+    function calc() {
+      var region = Math.max(0.5, num($("#aws-region", root), 1));
+      var sizeKey = ($("#aws-size", root) && $("#aws-size", root).value) || "m5l";
+      var os = ($("#aws-os", root) && $("#aws-os", root).value) || "linux";
+      var count = Math.max(0, int($("#aws-count", root), 0));
+      var hours = Math.max(0, Math.min(744, num($("#aws-hours", root), 0)));
+      var commit = num($("#aws-commit", root), 1);
+      if (commit <= 0) commit = 1;
+      var ebsGb = Math.max(0, num($("#aws-ebs", root), 0));
+      var s3Gb = Math.max(0, num($("#aws-s3", root), 0));
+      var egressGb = Math.max(0, num($("#aws-egress", root), 0));
+      var pip = Math.max(0, int($("#aws-pip", root), 0));
+      var rds = Math.max(0, num($("#aws-rds", root), 0));
+      var spec = EC2[sizeKey] || EC2.m5l;
+      var rate = spec.linux;
+      if (os === "windows") rate = spec.linux + WIN_VCPU * spec.vcpu;
+
+      showErr("aws-error", "");
+      if (count <= 0 && s3Gb <= 0 && rds <= 0 && pip <= 0) {
+        showErr("aws-error", "Add at least one instance, some S3, a public IP, or RDS.");
+      }
+
+      var compute = count * hours * rate * commit * region;
+      var ebs = count * ebsGb * GP3 * region;
+      var s3 = s3Gb * S3 * region;
+      var egress = Math.max(0, egressGb - DTO_FREE) * DTO;
+      var ip = pip * 730 * PIP_HR * region;
+      var rdsCost = rds * region;
+      var month = compute + ebs + s3 + egress + ip + rdsCost;
+
+      setText("aws-month-label", commit < 1 ? "Estimated month (1-year compute factor)" : "Estimated month (list)");
+      setText("aws-month", money(month));
+      setText("aws-year", money(month * 12));
+      setText("aws-br-compute", money(compute));
+      setText("aws-br-ebs", money(ebs));
+      setText("aws-br-s3", money(s3));
+      setText("aws-br-egress", money(egress));
+      setText("aws-br-ip", money(ip));
+      setText("aws-br-rds", money(rdsCost));
+
+      var bits = [];
+      if (count > 0) {
+        bits.push(count + "× " + spec.label + " " + (os === "windows" ? "Windows" : "Linux") + " × " + hours + " h.");
+      }
+      if (/^t3/.test(sizeKey) && count > 0) {
+        bits.push("T3 burst credits are not billed here. Unlimited mode can add CPU-credit charges if you pin the CPU.");
+      }
+      if (hours < 700 && count > 0) {
+        bits.push("EBS and public IPv4 still bill if the instance is stopped.");
+      }
+      if (commit < 1) {
+        bits.push("1-year factor applied to EC2 compute only.");
+      }
+      if (region !== 1) {
+        bits.push("Region multiplier " + region + "× vs us-east-1.");
+      }
+      if (egressGb <= DTO_FREE) {
+        bits.push("Data transfer is inside the first 100 GB free band.");
+      }
+      setText("aws-note", bits.join(" "));
+    }
+
+    bindForm(form, calc);
+    calc();
+  }
+
   function boot() {
     var root = document.querySelector("[data-tool]") || document;
     var id = (root.getAttribute && root.getAttribute("data-tool")) || "";
@@ -2016,6 +2241,8 @@
     if (id === "offboard") initOffboard(root);
     if (id === "hash") initHash(root);
     if (id === "backup") initBackup(root);
+    if (id === "azurecost") initAzureCost(root);
+    if (id === "awscost") initAwsCost(root);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

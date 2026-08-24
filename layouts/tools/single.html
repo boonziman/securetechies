@@ -40,6 +40,8 @@
     {{ else if eq $tool "offboard" }}{{ partial "tools/forms/offboard.html" . }}
     {{ else if eq $tool "hash" }}{{ partial "tools/forms/hash.html" . }}
     {{ else if eq $tool "backup" }}{{ partial "tools/forms/backup.html" . }}
+    {{ else if eq $tool "azurecost" }}{{ partial "tools/forms/azurecost.html" . }}
+    {{ else if eq $tool "awscost" }}{{ partial "tools/forms/awscost.html" . }}
     {{ end }}
   </div>
   <div class="st-tool-continue">

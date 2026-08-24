@@ -164,7 +164,7 @@ A standard engagement covers:
 - [Managed help desk](/services/managed-help-desk/) that treats after-hours as normal
 - Shared storage and RAID sized for the restore window you actually need — start with the [RAID calculator](/tools/raid-calculator/)
 - Time-boxed freelancer accounts and same-week offboard
-- Microsoft 365 that does not leak unreleased work
+- Microsoft 365 that does not leak unreleased work. See [SharePoint oversharing cleanup for a media agency](/case-studies/sharepoint-external-sharing-cleanup/) for Anyone links, guests, and a producer rule.
 - [Cybersecurity](/services/cybersecurity/): MFA, encryption, email filtering
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) tested on yesterday’s timeline, not a sample folder
 - A studio network that is not guest Wi-Fi

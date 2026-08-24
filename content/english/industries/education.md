@@ -167,7 +167,7 @@ A standard engagement covers:
 - Faculty laptop standards: patching, encryption, a replace-when-it-dies process
 - Lab imaging as a project before the year starts, not an every-Tuesday surprise
 - [Backup and disaster recovery](/services/backup-disaster-recovery/) for the SIS environment, mail, and files, with restore tests
-- [Cybersecurity](/services/cybersecurity/) sized for a campus, not a bank
+- [Cybersecurity](/services/cybersecurity/) sized for a campus, not a bank. See [a two-week business firewall cleanup](/case-studies/business-firewall-cleanup/) for how staff and student paths should actually split.
 - Change windows in the breaks. Opening week is not a maintenance window
 - On-site from Canoga Park
 

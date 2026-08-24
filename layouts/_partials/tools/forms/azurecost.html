@@ -1,0 +1,123 @@
+<form id="st-az-form" class="st-tool-panel" autocomplete="off">
+  <div class="st-tool-panel-title">Workload</div>
+  <div id="az-error" class="st-tool-error" hidden></div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="az-region">Region</label>
+      <select class="st-tool-select" id="az-region">
+        <option value="1" selected>East US (list baseline)</option>
+        <option value="1">East US 2</option>
+        <option value="1">West US 2</option>
+        <option value="1.125">Central US (~+13%)</option>
+        <option value="1.115">North Europe (~+12%)</option>
+        <option value="1.198">West Europe (~+20%)</option>
+        <option value="1.25">Southeast Asia (~+25%)</option>
+      </select>
+      <div class="st-tool-hint">Multiplier vs East US D2s v5 Linux list.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="az-size">VM size</label>
+      <select class="st-tool-select" id="az-size">
+        <option value="b2s">B2s (2 vCPU, 4 GiB)</option>
+        <option value="b4ms">B4ms (4 vCPU, 16 GiB)</option>
+        <option value="d2s" selected>D2s v5 (2 vCPU, 8 GiB)</option>
+        <option value="d4s">D4s v5 (4 vCPU, 16 GiB)</option>
+        <option value="d8s">D8s v5 (8 vCPU, 32 GiB)</option>
+        <option value="e4s">E4s v5 (4 vCPU, 32 GiB)</option>
+        <option value="e8s">E8s v5 (8 vCPU, 64 GiB)</option>
+      </select>
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="az-os">Operating system</label>
+      <select class="st-tool-select" id="az-os">
+        <option value="linux" selected>Linux (Ubuntu / similar)</option>
+        <option value="windows">Windows Server (pay-as-you-go license)</option>
+      </select>
+    </div>
+    <div class="st-tool-field">
+      <label for="az-count">VM count</label>
+      <input class="st-tool-input" id="az-count" type="number" min="0" step="1" value="2">
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="az-hours">Hours running / month</label>
+      <input class="st-tool-input" id="az-hours" type="number" min="0" max="744" step="1" value="730">
+      <div class="st-tool-hint">730 is always-on (Azure's typical month). 160 is ~8 hours × 20 days.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="az-commit">Compute pricing</label>
+      <select class="st-tool-select" id="az-commit">
+        <option value="1" selected>Pay as you go</option>
+        <option value="0.69">1-year savings plan (~31% off compute)</option>
+      </select>
+      <div class="st-tool-hint">Discount applies to VM compute only, not disks or egress.</div>
+    </div>
+  </div>
+
+  <div class="st-tool-panel-title" style="margin-top:12px">Storage and network</div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="az-disk">OS disk per VM</label>
+      <select class="st-tool-select" id="az-disk">
+        <option value="e10">Standard SSD E10 (128 GB)</option>
+        <option value="p10" selected>Premium SSD P10 (128 GB)</option>
+        <option value="p15">Premium SSD P15 (256 GB)</option>
+        <option value="p30">Premium SSD P30 (1 TB)</option>
+      </select>
+      <div class="st-tool-hint">Disks bill while allocated, even after you deallocate the VM.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="az-blob">Extra blob storage (GB)</label>
+      <input class="st-tool-input" id="az-blob" type="number" min="0" step="10" value="200">
+      <div class="st-tool-hint">Hot LRS list. File shares and GRS cost more.</div>
+    </div>
+  </div>
+  <div class="st-tool-grid-2">
+    <div class="st-tool-field">
+      <label for="az-egress">Internet egress (GB / month)</label>
+      <input class="st-tool-input" id="az-egress" type="number" min="0" step="10" value="250">
+      <div class="st-tool-hint">First 100 GB/month is free. Then US list $0.087/GB.</div>
+    </div>
+    <div class="st-tool-field">
+      <label for="az-pip">Standard public IPv4</label>
+      <input class="st-tool-input" id="az-pip" type="number" min="0" step="1" value="1">
+      <div class="st-tool-hint">Billed while the IP resource exists, not only while the VM runs.</div>
+    </div>
+  </div>
+  <div class="st-tool-field">
+    <label for="az-sql">Azure SQL Database (optional)</label>
+    <select class="st-tool-select" id="az-sql">
+      <option value="0" selected>None</option>
+      <option value="14.72">S0 (10 DTU)</option>
+      <option value="73.61">S2 (50 DTU)</option>
+      <option value="147.22">S3 (100 DTU)</option>
+    </select>
+    <div class="st-tool-hint">Billed while the database exists, not by VM hours.</div>
+  </div>
+</form>
+
+<div class="st-tool-panel st-tool-panel--results">
+  <div class="st-tool-panel-title">Estimated Azure spend</div>
+  <div class="st-tool-metric st-tool-metric--hero">
+    <div class="st-tool-metric-label" id="az-month-label">Estimated month (list)</div>
+    <div class="st-tool-metric-value" id="az-month">—</div>
+    <div class="st-tool-metric-sub">Annualized ×12: <strong id="az-year">—</strong></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">VM compute</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-compute">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">OS disks</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-disk">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Blob</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-blob">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Egress</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-egress">—</div></div>
+  </div>
+  <div class="st-tool-metrics-row">
+    <div class="st-tool-metric"><div class="st-tool-metric-label">Public IP</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-ip">—</div></div>
+    <div class="st-tool-metric"><div class="st-tool-metric-label">SQL Database</div><div class="st-tool-metric-value" style="font-size:1.05rem" id="az-br-sql">—</div></div>
+  </div>
+  <p class="st-tool-note" id="az-note"></p>
+  <p class="st-tool-disclaimer">Planning estimate from published retail list rates (East US baseline, August 2026), then a region multiplier. Not a Microsoft quote, EA, or CSP price. Confirm in the official Azure pricing calculator before you buy.</p>
+</div>

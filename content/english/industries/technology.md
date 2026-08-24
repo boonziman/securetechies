@@ -151,7 +151,7 @@ faq:
 
 Secure Techies provides **technology and startup IT** for companies that need an employee environment that will survive a customer’s security review.
 
-We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side. The same people should not own production Kubernetes and the CEO’s stolen laptop.
+We are not here to rewrite your product. We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), and [SOC 2-oriented evidence](/services/compliance-security-audits/) on the corporate side. The same people should not own production Kubernetes and the CEO’s stolen laptop. For a project record of treating a monitoring hit as live work, see [dark web credentials we could actually reset](/case-studies/dark-web-credential-alert/).
 
 ### Who we work with
 

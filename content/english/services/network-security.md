@@ -310,6 +310,6 @@ Threats do not sleep. Misconfigurations do not fix themselves. Continuous protec
 
 ## Secure Your Network Before the Incident Forces the Decision
 
-If remote access feels fragile, if you cannot produce a current network diagram, if guest Wi-Fi shares space with production systems, or if your last firewall review was "when we installed it," it is time to redesign with intent.
+If remote access feels fragile, if you cannot produce a current network diagram, if guest Wi-Fi shares space with production systems, or if your last firewall review was "when we installed it," it is time to redesign with intent. For a project record of a rule-base cleanup, see [a two-week business firewall cleanup](/case-studies/business-firewall-cleanup/).
 
 [Secure your network today](/contact/) and get a clear assessment, a practical architecture plan, and a partner who will keep the design honest as your business grows.

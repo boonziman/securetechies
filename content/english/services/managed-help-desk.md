@@ -97,7 +97,7 @@ Support works best when it is paired with solid [managed infrastructure](/servic
 
 ### Companies that have outgrown "ask the tech-savvy employee"
 
-Every office has that person. It is unfair to them and unsafe for the business. Formal support removes shadow IT ownership and creates accountability.
+Every office has that person. It is unfair to them and unsafe for the business. Formal support removes shadow IT ownership and creates accountability. For a project record of that shift, see [managed help desk coverage when the office manager was IT](/case-studies/help-desk-office-manager/).
 
 ### Growing teams with high onboarding volume
 

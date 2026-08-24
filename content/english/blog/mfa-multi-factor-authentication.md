@@ -100,7 +100,7 @@ The technology is the easy part. The hard part is people, and a clumsy rollout c
 - **Start with willing groups.** Roll out to IT and leadership first, work out the kinks, then expand. Early success stories make the rest of the company comfortable.
 - **Use "remember this device."** Modern MFA doesn't prompt every single login — it trusts known devices for a set period, so daily friction is minimal.
 - **Have a recovery plan.** Decide in advance what happens when someone loses or replaces their phone. Backup codes and a clear reset process prevent lockout panic.
-- **Make it mandatory, with a deadline.** Optional security is ignored security. Set a firm date, support people up to it, then enforce it.
+- **Make it mandatory, with a deadline.** Optional security is ignored security. Set a firm date, support people up to it, then enforce it. For a project record of that sequence, see our [Microsoft 365 MFA rollout case study](/case-studies/microsoft-365-mfa-rollout/).
 
 Done this way, the grumbling lasts about a week and then it simply becomes how everyone logs in. We've watched skeptical teams go from eye-rolling to not noticing it at all, and not one of them has ever asked to turn it back off.
 

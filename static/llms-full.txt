@@ -108,6 +108,8 @@ https://securetechie.com/tools/
 - Employee offboarding checklist: https://securetechie.com/tools/employee-offboarding-checklist/
 - SHA-256 file checksum: https://securetechie.com/tools/sha256-file-checksum/
 - Backup retention calculator: https://securetechie.com/tools/backup-retention-calculator/
+- Azure cost calculator: https://securetechie.com/tools/azure-cost-calculator/. East US PAYG list Aug 2026. Compute hours, disks monthly, blob Hot LRS, egress after 100 GB free, Standard PIP, optional SQL S0/S2/S3. 1-year factor on compute only. Not EA/CSP/Hybrid Benefit.
+- AWS cost calculator: https://securetechie.com/tools/aws-cost-calculator/. us-east-1 On-Demand Aug 2026. EC2 hours, gp3 GB-month, S3 Standard, DTO after 100 GB free, public IPv4, optional single-AZ RDS. Windows = Linux + $0.046/vCPU-hr. 1-year factor on compute only. Not EDP/Spot/Multi-AZ.
 
 ## Resources
 - About: https://securetechie.com/about/
@@ -121,6 +123,13 @@ https://securetechie.com/tools/
 - Microsoft Intune for small business: https://securetechie.com/blog/microsoft-intune-small-business/. Cloud MDM/MAM included as Intune Plan 1 in Business Premium. Autopilot needs Windows Pro or higher. App protection policies can wrap Outlook/Teams on personal phones without full enrollment. Treat the Intune admin center as a high-value system.
 - Guest Wi-Fi security for offices: https://securetechie.com/blog/guest-wifi-security-office/. CISA: separate guest Wi-Fi from the main network. SSID plus VLAN plus firewall deny plus client isolation. Do not park IoT or POS on guest. Proof is a guest-join test that cannot reach printers or the staff subnet.
 - Vendor risk management for small business: https://securetechie.com/blog/vendor-risk-management-small-business/. CIS Control 15 Service Provider Management. Spreadsheet program: inventory, high/medium/low, SOC 2 or equivalent for high-risk, contract breach-notice and exit clauses, quarterly Entra OAuth review. Not a GRC-platform pitch.
+- Manual penetration testing vs automated scans: https://securetechie.com/blog/manual-penetration-testing-vs-automated/. Nessus/Qualys/Burp for known issues. Manual for logic, APIs, chaining. PCI: a scan is not a pen test.
+- Security assessment and pen testing process: https://securetechie.com/blog/security-assessment-penetration-testing-process/. New platform: infrastructure review, API tests (OWASP API Top 10), scans, manual exploit, ranked report, retest.
+- Cloud infrastructure data compliance: https://securetechie.com/blog/cloud-infrastructure-data-compliance/. GDPR is transfer tools, not mandatory EU disks. CCPA is not CA hosting. Pin region, segment, encrypt, vendor SOC is not your SOC, backups can be a transfer.
+- Unified cybersecurity platform: https://securetechie.com/blog/unified-cybersecurity-platform/. Hub for endpoint, identity, email, cloud, tickets. Alert fatigue, silos, slow response. Consolidation first. MSP, not a UCP vendor.
+- Security as a big data problem: https://securetechie.com/blog/security-big-data-problem/. Four V's plus veracity. Splunk/Sentinel/CrowdStrike as examples, not invented millions. Identity, email, endpoint first. CISA Logging Made Easy is a no-cost option, not an owner.
+- Cybersecurity SaaS UI design: https://securetechie.com/blog/cybersecurity-saas-ui-design/. Four-step client process: research, wireframes, iterate, build to spec. NN/g testing, heuristics, WCAG. We do not build SOC SaaS.
+- SIEM detection and response (SDR): https://securetechie.com/blog/siem-detection-response-alert-fatigue/. Client label for SIEM+detect+respond. Not a formal standard. Correlation, playbooks, named after-hours. Visibility requires the feeds.
 - Knowledge center: https://securetechie.com/knowledge-center/
 - Case studies hub: https://securetechie.com/case-studies/
 - Fake wire instruction close call: https://securetechie.com/case-studies/wire-fraud-email-close-call/
@@ -133,4 +142,9 @@ https://securetechie.com/tools/
 - Restaurant guest Wi-Fi isolation: https://securetechie.com/case-studies/restaurant-guest-wifi-isolation/. Join test first. Guest VLAN and deny-LAN. Cameras off guest. Second dining-room test. Not a PCI attestation.
 - Warehouse mobile surveillance trailer: https://securetechie.com/case-studies/warehouse-mobile-surveillance-trailer/. Far-fence gap. Solar trailer, no trench. Night test. Not a guard study. Not a claimed crime-rate drop.
 - Co-managed IT after admin left (manufacturing): https://securetechie.com/case-studies/co-managed-it-after-admin-left/. Revoke first. RACI. Help desk. Restore test. IT/OT line: no PLC work unless a later SOW says so.
+- Microsoft 365 MFA rollout (nonprofit): https://securetechie.com/case-studies/microsoft-365-mfa-rollout/. Shared finance mailbox, Authenticator, grace then enforce. Not FIDO for every volunteer on day one.
+- Business firewall cleanup (education): https://securetechie.com/case-studies/business-firewall-cleanup/. Rule dump, any-any leftover, unused VPN, staff vs student path, weekend test. Not a CIPA seal.
+- SharePoint external sharing cleanup (media agency): https://securetechie.com/case-studies/sharepoint-external-sharing-cleanup/. Anyone links off, stale guests, finance vs campaign sliders. Not a DAM.
+- Dark web credential alert (technology): https://securetechie.com/case-studies/dark-web-credential-alert/. Three work emails in a dump. Reset, session revoke, MFA, stale guest cut, one-page watch. Not a forensic package. Not an invented save count.
+- Managed help desk when the office manager was IT (small business): https://securetechie.com/case-studies/help-desk-office-manager/. Four-week standup. SSPR, shared mailboxes, ticket path, joiner/leaver. Not co-managed. Not an invented ticket-time percentage.
 - Privacy: https://securetechie.com/privacy-policy/

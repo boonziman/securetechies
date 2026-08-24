@@ -29,7 +29,7 @@ The phrase gets thrown around loosely, so let's be precise. Real 24/7 support ha
 
 **The monitoring.** This is the part people underrate. Around-the-clock automated monitoring watches your systems constantly and [catches problems as they emerge](https://www.nist.gov/cyberframework), often resolving them before anyone's awake to notice. A disk filling up, a service crashing, a security alarm, many of these get handled in the small hours so they never become your morning emergency.
 
-Together they form a safety net that never sleeps. The monitoring prevents most fires. The help desk puts out the ones that need hands. You want both, and a strong [managed help desk](/services/managed-help-desk/) delivers them as one service.
+Together they form a safety net that never sleeps. The monitoring prevents most fires. The help desk puts out the ones that need hands. You want both, and a strong [managed help desk](/services/managed-help-desk/) delivers them as one service. For a project record of standing that desk up when the office manager was still the after-hours number, see [managed help desk coverage when the office manager was IT](/case-studies/help-desk-office-manager/).
 
 ![IT technician monitoring systems at a 24/7 support workstation](/images/blog/247-it-support-2.webp "IT technician monitoring systems at a 24/7 support workstation")
 

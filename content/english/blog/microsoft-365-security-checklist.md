@@ -87,7 +87,7 @@ Email remains the front door for [business email compromise](/blog/business-emai
 - [ ] Unmanaged device access limited for high-sensitivity content if licenses allow.
 - [ ] Periodic review of sites with broad "everyone" permissions.
 
-Data loss in Microsoft 365 is often accidental oversharing, not Hollywood hacking. Tighten defaults, then open exceptions with owners and expiration dates.
+Data loss in Microsoft 365 is often accidental oversharing, not Hollywood hacking. Tighten defaults, then open exceptions with owners and expiration dates. For a project record of that cleanup, see [SharePoint oversharing cleanup for a media agency](/case-studies/sharepoint-external-sharing-cleanup/).
 
 ## 5. Devices, sessions, and endpoint trust
 

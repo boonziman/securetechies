@@ -155,7 +155,7 @@ faq:
 
 Secure Techies provides **small business IT services** for Southern California teams that have outgrown “my cousin looks at it.” We run [help desk](/services/managed-help-desk/), [cybersecurity](/services/cybersecurity/), [infrastructure](/services/infrastructure/), and [backups](/services/backup-disaster-recovery/) as one plan.
 
-The “IT person” model usually breaks around 15 employees. One staffer cannot cover after-hours, security, vendors, and the printer. Break-fix turns every outage into a surprise invoice. Managed IT turns that into a monthly plan.
+The “IT person” model usually breaks around 15 employees. One staffer cannot cover after-hours, security, vendors, and the printer. Break-fix turns every outage into a surprise invoice. Managed IT turns that into a monthly plan. For a project record of taking tickets off an office manager who had become Global Admin, see [managed help desk coverage when the office manager was IT](/case-studies/help-desk-office-manager/).
 
 ### Who we work with
 
