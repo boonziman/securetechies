@@ -530,6 +530,7 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
 .st-l-final-phone span { border-bottom: 2px solid rgba(74, 222, 128, 0.4); }
 
 .st-l-form-card {
+  position: relative;
   background: #ffffff; border-radius: 22px; padding: 36px 32px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
 }
@@ -537,6 +538,18 @@ html.js .st-landing-body .st-l-hero-visual.st-reveal-right {
 .st-l-form-head h3 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
 .st-l-form-head p { font-size: 0.88rem; color: #64748b; margin: 0; }
 .st-l-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+/* Honeypot: off-canvas, not display:none (autofill fills display:none inputs). */
+.st-l-hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .st-l-field { margin-bottom: 14px; }
 .st-l-field label { display: block; font-size: 0.76rem; font-weight: 700; color: #374151; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
 .st-l-field label .req { color: #ef4444; }

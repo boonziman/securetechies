@@ -1,26 +1,37 @@
-{{/* Compact Netlify lead form — reused in hero and final CTA sections. */}}
+{{/* Shared Netlify lead form. Hero and footer MUST use this same partial so
+     both copies have identical fields. Two forms with the same name but
+     different fields made Netlify keep one schema and drop or hide the other. */}}
 {{ $p := .Params }}
 {{ $final := .final | default $p.final }}
-{{/* Netlify Forms: notifications must go to info@SecureTechie.com (Netlify dashboard) */}}
-<form name="{{ $p.form_name | default "landing-lead" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ $p.form_action | default "/thank-you/" | relURL }}" class="st-l-form-inline">
+{{ $id := .id_prefix | default "lead" }}
+{{ $title := .page_title | default $p.title }}
+<form name="{{ $p.form_name | default "landing-lead" }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ $p.form_action | default "/thank-you/" | relURL }}" class="st-l-form-inline" autocomplete="on">
   <input type="hidden" name="form-name" value="{{ $p.form_name | default "landing-lead" }}" />
   <input type="hidden" name="recipient" value="info@SecureTechie.com" />
-  <input type="hidden" name="landing-page" value="{{ $p.title | default $.Title }}" />
-  <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+  <input type="hidden" name="landing-page" value="{{ $title }}" />
+  {{/* Honeypot: clip off-screen. display:none lets Chrome autofill it, and
+       Netlify then silently discards the lead (not even in Spam). */}}
+  <p class="st-l-hp" aria-hidden="true">
+    <label>Leave blank <input name="bot-field" type="text" tabindex="-1" autocomplete="off" /></label>
+  </p>
   <div class="st-l-form-row">
-    <div class="st-l-field"><label for="{{ .id_prefix }}-name">Full Name <span class="req">*</span></label><input id="{{ .id_prefix }}-name" name="name" type="text" placeholder="John Smith" required aria-required="true" class="st-l-input" /></div>
-    <div class="st-l-field"><label for="{{ .id_prefix }}-company">Company <span class="req">*</span></label><input id="{{ .id_prefix }}-company" name="company" type="text" placeholder="Your Company" required aria-required="true" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ $id }}-name">Full Name <span class="req">*</span></label><input id="{{ $id }}-name" name="name" type="text" placeholder="John Smith" required aria-required="true" autocomplete="name" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ $id }}-company">Company <span class="req">*</span></label><input id="{{ $id }}-company" name="company" type="text" placeholder="Your Company" required aria-required="true" autocomplete="organization" class="st-l-input" /></div>
   </div>
   <div class="st-l-form-row">
-    <div class="st-l-field"><label for="{{ .id_prefix }}-email">Email <span class="req">*</span></label><input id="{{ .id_prefix }}-email" name="email" type="email" placeholder="john@company.com" required aria-required="true" class="st-l-input" /></div>
-    <div class="st-l-field"><label for="{{ .id_prefix }}-phone">Phone <span class="req">*</span></label><input id="{{ .id_prefix }}-phone" name="phone" type="tel" placeholder="(818) 555-0123" required aria-required="true" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ $id }}-email">Email <span class="req">*</span></label><input id="{{ $id }}-email" name="email" type="email" placeholder="john@company.com" required aria-required="true" autocomplete="email" class="st-l-input" /></div>
+    <div class="st-l-field"><label for="{{ $id }}-phone">Phone <span class="req">*</span></label><input id="{{ $id }}-phone" name="phone" type="tel" placeholder="(818) 555-0123" required aria-required="true" autocomplete="tel" class="st-l-input" /></div>
   </div>
   <div class="st-l-field">
-    <label for="{{ .id_prefix }}-service">{{ $p.form_service_label | default "Service You Need" }}</label>
-    <select id="{{ .id_prefix }}-service" name="service" class="st-l-input">
+    <label for="{{ $id }}-service">{{ $p.form_service_label | default "Service You Need" }}</label>
+    <select id="{{ $id }}-service" name="service" class="st-l-input">
       <option value="">Select a service...</option>
       {{ range ($p.form_services | default (slice "Managed IT Services" "Cybersecurity" "MSP Transition" "Cloud Solutions" "Mobile CCTV Trailers" "Compliance & Audits" "Help Desk Support" "Other")) }}<option value="{{ . | urlize }}">{{ . }}</option>{{ end }}
     </select>
+  </div>
+  <div class="st-l-field">
+    <label for="{{ $id }}-message">{{ $p.form_message_label | default "What's frustrating you about your current setup? (optional)" }}</label>
+    <textarea id="{{ $id }}-message" name="message" rows="3" placeholder="Tell us briefly..." class="st-l-input"></textarea>
   </div>
   <button type="submit" class="st-l-form-btn">
     {{ .form_btn | default ($final.form_btn | default "Schedule a Free IT Assessment") }}
