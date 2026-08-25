@@ -138,7 +138,7 @@ faq:
     - question: "Can you help a firm meet cyber-insurance and client security questionnaires?"
       answer: "Yes. Most questionnaires ask about MFA, backups, encryption, endpoint protection, and who is on call. We map the live environment to those questions and fix the gaps before you send the form back."
     - question: "How fast can you respond if email goes down during a filing deadline?"
-      answer: "Critical outages jump the queue. Average response on standard tickets is under two hours; business-stopping mail or document issues are treated as urgent. Call (818) 431-5607."
+      answer: "Critical outages jump the queue. Average response on standard tickets is under two hours; business-stopping mail or document issues are treated as urgent. Call (818) 450-5384."
     - question: "Do you work with firms that already have an IT person?"
       answer: "Often. Co-managed IT is common: we take after-hours, security, and overflow while an internal lead stays strategic. Read more in our notes on [law firm IT support](/blog/law-firm-it-support/)."
     - question: "Where do you provide on-site legal IT support?"
@@ -200,7 +200,7 @@ If the answers are vague, keep shopping. Our notes on [law firm IT support](/blo
 
 Pricing depends on attorney and staff count, locations, and how much security work is in scope. Planning ranges for professional firms are on the [FAQ](/faq/). We quote after a free assessment so the number matches your stack.
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

@@ -180,7 +180,7 @@ A breach at a nonprofit is a donor-trust story, not only an IT story. The plan i
 
 We do not pretend nonprofit IT is free. We scope to what you need this year, which is usually the real savings. Ask during the free assessment.
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

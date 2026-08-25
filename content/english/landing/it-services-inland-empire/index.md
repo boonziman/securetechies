@@ -28,8 +28,8 @@ hide_footer: true
 hide_logo_link: true
 hero_form: true
 draft: false
-contact_phone: "(818) 797-9771"
-contact_phone_raw: "+18187979771"
+contact_phone: "(818) 450-5384"
+contact_phone_raw: "+18184505384"
 form_name: "managed-it-services-inland-empire-lead"
 form_action: "/thank-you/"
 form_service_label: "What do you need most?"
@@ -77,7 +77,7 @@ hero:
   lead: "Secure Techies delivers proactive managed IT services, cybersecurity protection, cloud management, help desk support, and outsourced IT solutions that help businesses reduce downtime, improve security, and scale with confidence."
   cta_text: "Schedule a Free IT Assessment"
   cta_secondary_text: "Speak With an IT Specialist"
-  cta_secondary_href: "tel:+18187979771"
+  cta_secondary_href: "tel:+18184505384"
   cta_anchor: "#st-landing-hero-form"
   sticky_cta: "Schedule a Free IT Assessment"
   rating_value: "5.0"
@@ -166,8 +166,8 @@ services:
   heading: "Complete Managed IT Services for <span class=\"st-l-hl\">Growing Businesses</span>"
   sub: "One accountable Inland Empire IT support company covering every layer of your technology — from help desk to cybersecurity to cloud."
   footnote: "We also build <b>fast, secure business websites and custom web apps</b> through our web development &amp; design services — ask us when we talk."
-  cta: "Call Now — (818) 797-9771"
-  cta_href: "tel:+18187979771"
+  cta: "Call Now — (818) 450-5384"
+  cta_href: "tel:+18184505384"
   items:
     - title: "Managed IT Services"
       text: "Proactive monitoring, patching, and maintenance that keeps your systems healthy — so your team spends less time waiting on fixes and more time serving customers."
@@ -328,7 +328,7 @@ stats:
       sub: "And counting"
 reviews:
   eyebrow: "Client testimonials"
-  heading: "Inland Empire Businesses That Trust Secure Techies"
+  heading: "Businesses That Trust Secure Techies"
   sub: "Real, verified reviews from the Secure Techies Google Business Profile."
   rating_value: "5.0"
   rating_count: "35"

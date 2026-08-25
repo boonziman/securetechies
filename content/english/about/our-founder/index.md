@@ -19,5 +19,5 @@ faq:
   - question: "Where is Alex Shaw based?"
     answer: "Canoga Park, in the San Fernando Valley. He works with organizations across Southern California and supports clients farther out when the engagement does not depend on a weekly truck roll."
   - question: "How do I reach Secure Techies leadership?"
-    answer: "Call (818) 431-5607 or use the contact page. There is no separate executive switchboard. The same team that runs the environments answers."
+    answer: "Call (818) 450-5384 or use the contact page. There is no separate executive switchboard. The same team that runs the environments answers."
 ---

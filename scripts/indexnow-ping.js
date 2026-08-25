@@ -56,6 +56,7 @@ const PRIORITY_PATHS = [
   "/services/web-development/",
   "/managed-it-services/",
   "/managed-it-services-los-angeles/",
+  "/managed-it-services-inland-empire/",
   "/contact/",
   "/tools/",
   "/locations/",

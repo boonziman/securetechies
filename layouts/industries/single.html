@@ -45,7 +45,7 @@
       <p class="st-indp-lead">{{ $p.hero_subtitle }}</p>
       <div class="st-indp-actions">
         <a class="st-indp-btn" href="{{ "contact/" | relURL }}">Free assessment</a>
-        <a class="st-indp-phone" href="tel:+18184315607">(818) 431-5607</a>
+        <a class="st-indp-phone" href="tel:+18184505384">(818) 450-5384</a>
       </div>
     </div>
     <div class="st-indp-hero-media">
@@ -290,14 +290,14 @@
       <p>A free assessment from the Canoga Park team. We will tell you what we would fix first.</p>
       <div class="st-indp-actions">
         <a class="st-indp-btn st-indp-btn-light" href="{{ "contact/" | relURL }}">Contact us</a>
-        <a class="st-indp-phone st-indp-phone-light" href="tel:+18184315607">(818) 431-5607</a>
+        <a class="st-indp-phone st-indp-phone-light" href="tel:+18184505384">(818) 450-5384</a>
       </div>
     </div>
   </section>
 </article>
 
 {{ $addr := dict "@type" "PostalAddress" "streetAddress" "21515 Vanowen St Suite 1110" "addressLocality" "Canoga Park" "addressRegion" "CA" "postalCode" "91303" "addressCountry" "US" }}
-{{ $provider := dict "@type" "Organization" "@id" "https://securetechie.com/#organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "telephone" "+1-818-431-5607" "address" $addr }}
+{{ $provider := dict "@type" "Organization" "@id" "https://securetechie.com/#organization" "name" "Secure Techies, LLC" "url" "https://securetechie.com/" "telephone" "+1-818-450-5384" "address" $addr }}
 {{ $service := dict "@context" "https://schema.org" "@type" "Service" "@id" (printf "%s#service" .Permalink) "name" .Title "serviceType" ($p.service_type | default .Title) "description" .Params.description "url" .Permalink "inLanguage" "en-US" "image" ($p.hero_image | absURL) "provider" $provider "areaServed" (slice (dict "@type" "AdministrativeArea" "name" "Los Angeles County") (dict "@type" "AdministrativeArea" "name" "Southern California")) "audience" (dict "@type" "BusinessAudience" "audienceType" ($p.audience | default $p.short_name)) }}
 <script type="application/ld+json">{{ $service | jsonify | safeJS }}</script>
 {{ with $p.faq }}

@@ -141,7 +141,7 @@ faq:
     - question: "Do you help with PCI DSS?"
       answer: "We implement segmentation, access control, and evidence a QSA can use. We do not “certify PCI.” Formal attestation stays with your assessor. See [compliance services](/services/compliance-security-audits/)."
     - question: "How fast can you respond during dinner service?"
-      answer: "Service-stopping POS or network issues jump the queue. Call (818) 431-5607."
+      answer: "Service-stopping POS or network issues jump the queue. Call (818) 450-5384."
     - question: "Do you work with hotel groups and multi-unit restaurants?"
       answer: "Yes. The pattern is the same: one standard across sites, local on-site when hardware fails."
     - question: "Can you put cameras on a parking lot or loading dock?"
@@ -187,7 +187,7 @@ Headquarters is in Canoga Park. On-site across Los Angeles County and Southern C
 
 Pricing depends on locations, terminals, and whether cameras are in scope. We quote after a free assessment.
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

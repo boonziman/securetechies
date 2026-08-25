@@ -30,8 +30,8 @@ custom_script = ""
 # copyright
 copyright = "© 2026 Secure Techies, LLC. All rights reserved."
 # contact phone (used by landing pages and CTAs)
-contact_phone = "(818) 431-5607"
-contact_phone_raw = "+18184315607"
+contact_phone = "(818) 450-5384"
+contact_phone_raw = "+18184505384"
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader

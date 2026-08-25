@@ -1,6 +1,6 @@
 # Secure Techies
 
-> Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2016, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. We provide proactive, security-first technology management, 24/7 support, and rapidly deployable mobile video surveillance for small and mid-size businesses across Los Angeles, the San Fernando Valley, and all of Southern California. Phone: (818) 431-5607. Email: info@SecureTechie.com.
+> Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2016, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. We provide proactive, security-first technology management, 24/7 support, and rapidly deployable mobile video surveillance for small and mid-size businesses across Los Angeles, the San Fernando Valley, and all of Southern California. Phone: (818) 450-5384. Email: info@SecureTechie.com.
 
 ## About
 - Company: Secure Techies LLC — Managed IT Services & Cybersecurity
@@ -84,6 +84,7 @@
 - [Managed IT Services](https://securetechie.com/managed-it-services/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses.
 - [Managed IT Services Los Angeles](https://securetechie.com/managed-it-services-los-angeles/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Los Angeles.
 - [Managed IT Services Denver](https://securetechie.com/managed-it-services-denver/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Denver and the Front Range.
+- [Managed IT Services Inland Empire](https://securetechie.com/managed-it-services-inland-empire/): Proactive managed IT, cybersecurity, cloud management, and help desk support for small businesses in Rancho Cucamonga, Ontario, Fontana, Riverside, and the Inland Empire.
 
 ## Free IT Tools
 - Tools hub: https://securetechie.com/tools/

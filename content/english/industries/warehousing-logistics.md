@@ -187,7 +187,7 @@ Headquarters is in Canoga Park. On-site across Southern California. Remote for m
 
 Pricing depends on office headcount, buildings, and whether cameras are in scope. We quote after a walkthrough.
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

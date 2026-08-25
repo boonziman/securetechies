@@ -140,7 +140,7 @@ faq:
     - question: "Where do you support accounting firms?"
       answer: "On-site across Southern California from Canoga Park, remote nationwide."
     - question: "What happens if tax software will not print at 10 p.m. in April?"
-      answer: "That ticket jumps the queue. We treat filing-window outages as urgent. Call (818) 431-5607."
+      answer: "That ticket jumps the queue. We treat filing-window outages as urgent. Call (818) 450-5384."
     - question: "Do you onboard seasonal staff?"
       answer: "Yes. We set up accounts, devices, and MFA in December and revoke access when the season ends."
     - question: "How much does CPA firm IT support cost?"
@@ -182,7 +182,7 @@ On-site across Southern California from Canoga Park. Remote nationwide.
 
 Pricing depends on staff count, locations, and how much security work is in scope. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

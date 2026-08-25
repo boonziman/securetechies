@@ -20,8 +20,8 @@ hide_header: true
 hide_footer: true
 hide_logo_link: true
 draft: false
-contact_phone: "(818) 797-9771"
-contact_phone_raw: "+18187979771"
+contact_phone: "(818) 450-5384"
+contact_phone_raw: "+18184505384"
 
 # Netlify form
 form_name: "m365-security-lead"

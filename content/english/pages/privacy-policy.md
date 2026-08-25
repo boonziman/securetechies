@@ -57,7 +57,7 @@ If you have questions about this Privacy Policy or wish to exercise your rights,
 **Secure Techies, LLC**  
 21515 Vanowen St Suite 1110, 
 Canoga Park, CA 91303  
-Phone: [(818) 431-5607](tel:+18184315607)  
+Phone: [(818) 450-5384](tel:+18184505384)  
 Email: [info@SecureTechie.com](mailto:info@SecureTechie.com)
 
 #### Changes to This Policy

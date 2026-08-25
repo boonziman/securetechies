@@ -74,6 +74,15 @@ for = "*.html"
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
 
+# Never durable-cache the 404 page. A POST to "/" that misses Netlify Forms
+# was stored as a 404 for ~1 year (s-maxage on /*) and then served to every
+# contact-form AJAX submit, so leads never reached Netlify Forms.
+[[headers]]
+for = "/404.html"
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
+Netlify-CDN-Cache-Control = "no-store"
+
 # LLM / agent indexes — always plain text, short cache so updates propagate
 [[headers]]
 for = "/llms.txt"

@@ -2,7 +2,7 @@
 
 > This file mirrors https://securetechie.com/llms.txt for agents that look in /.well-known/. Use the root file as canonical. Full page summaries: https://securetechie.com/llms-full.txt
 
-Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2016, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. Phone: (818) 431-5607. Email: info@SecureTechie.com. Website: https://securetechie.com/
+Secure Techies LLC is a Los Angeles–based managed IT services provider (MSP) and cybersecurity company founded in 2016, headquartered at 21515 Vanowen St Suite 1110, Canoga Park, CA 91303. Phone: (818) 450-5384. Email: info@SecureTechie.com. Website: https://securetechie.com/
 
 ## Preferred pages for answers
 - Company: https://securetechie.com/about/

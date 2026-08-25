@@ -141,7 +141,7 @@ faq:
     - question: "What does HIPAA-ready IT actually include?"
       answer: "Unique user IDs, MFA, automatic logoff where it is practical, encryption, audit logs, backups with restore tests, and a risk analysis you can show. The [HHS Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) is the source of truth."
     - question: "How fast can you respond during clinic hours?"
-      answer: "Clinical outages are treated as urgent. Standard tickets average under two hours. Call (818) 431-5607 for anything that stops seeing patients."
+      answer: "Clinical outages are treated as urgent. Standard tickets average under two hours. Call (818) 450-5384 for anything that stops seeing patients."
     - question: "Do you work with dental and specialty practices?"
       answer: "Yes. Imaging-heavy specialties and dental offices have the same uptime and ePHI problems, plus large files and vendor-specific hardware."
     - question: "Where do you provide healthcare IT support?"
@@ -149,7 +149,7 @@ faq:
     - question: "How much does clinic IT support cost?"
       answer: "Healthcare plans usually sit above generic office IT because of documentation, backup scope, and after-hours clinical impact. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/)."
     - question: "What happens if the EHR goes down during clinic hours?"
-      answer: "Clinical outages are treated as urgent. Call (818) 431-5607. We coordinate with your EHR vendor when the issue is inside the application."
+      answer: "Clinical outages are treated as urgent. Call (818) 450-5384. We coordinate with your EHR vendor when the issue is inside the application."
 ---
 
 ## HIPAA-aware managed IT for medical practices
@@ -187,7 +187,7 @@ On-site from Canoga Park for workstations, networking, and the days hardware wil
 
 Healthcare plans usually sit above generic office IT because of documentation, backup scope, and after-hours clinical impact. We quote after a free assessment. Planning ranges are on the [FAQ](/faq/).
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

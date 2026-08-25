@@ -146,7 +146,7 @@ faq:
     - question: "What is included in a typical monthly plan?"
       answer: "Help desk, Microsoft 365 administration, MFA and email security, endpoint protection, patching, backups with restore tests, and the office network. Projects such as moves and migrations are quoted separately."
     - question: "How fast do you respond?"
-      answer: "Average response on standard tickets is under two hours. Business-stopping outages jump the queue. Call (818) 431-5607."
+      answer: "Average response on standard tickets is under two hours. Business-stopping outages jump the queue. Call (818) 450-5384."
     - question: "Can you take over from our current vendor?"
       answer: "Yes. We map access, mail, backups, and vendors first, then cut over in a window you approve."
 ---
@@ -185,7 +185,7 @@ Break-fix means you pay when things are already on fire. A managed plan means so
 
 Typical managed plans for small professional firms often land around $100–$250 per user per month, depending on devices and security scope. We quote after a free assessment so the number matches your stack. More on the [FAQ](/faq/).
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

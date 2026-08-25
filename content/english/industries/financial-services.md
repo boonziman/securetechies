@@ -188,7 +188,7 @@ Canoga Park headquarters. On-site across Southern California. Remote when that i
 
 Pricing depends on headcount, locations, and how much security and questionnaire work is in scope. We quote after a free assessment. Planning ranges for professional firms are on the [FAQ](/faq/).
 
-Call (818) 431-5607 or [contact us](/contact/).
+Call (818) 450-5384 or [contact us](/contact/).
 
 ### Related reading
 

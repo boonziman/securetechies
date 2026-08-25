@@ -71,8 +71,11 @@
           </div>
         </div>
 
-        {{/* Netlify Forms: set form notification email to info@SecureTechie.com in Netlify → Forms → contact → Notifications */}}
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "thank-you" | relURL }}" style="margin-top:28px">
+        {{/* Netlify Forms: submissions land in the Netlify dashboard. Email is NOT sent from the hidden
+             recipient field — add a Form notification in Netlify → Forms → [form] → Notifications
+             to info@SecureTechie.com. Do not POST AJAX to "/" — durable CDN cache has served a
+             year-long 404 for POST / and swallows the lead. Post to the thank-you action instead. */}}
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ "/thank-you/" | relURL }}" style="margin-top:28px">
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="recipient" value="info@SecureTechie.com" />
           <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -182,13 +185,13 @@
         <div style="background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.03)">
           <h3 style="font-size:1.15rem;font-weight:800;color:#0f172a;margin-bottom:24px">Contact Information</h3>
           <div style="display:flex;flex-direction:column;gap:22px">
-            <a href="tel:+18184315607" style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 16px;background:#f8fafc;border-radius:14px;transition:all 0.2s" class="st-contact-link">
+            <a href="tel:+18184505384" style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 16px;background:#f8fafc;border-radius:14px;transition:all 0.2s" class="st-contact-link">
               <div style="width:42px;height:42px;background:linear-gradient(135deg,#0066CC,#3b82f6);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                 <svg style="width:20px;height:20px;color:#fff" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
               <div>
                 <div style="font-size:0.78rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px">Phone</div>
-                <div style="font-size:0.95rem;color:#0066CC;font-weight:700">(818) 431-5607</div>
+                <div style="font-size:0.95rem;color:#0066CC;font-weight:700">(818) 450-5384</div>
               </div>
             </a>
             <a href="mailto:info@SecureTechie.com" style="display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 16px;background:#f8fafc;border-radius:14px;transition:all 0.2s" class="st-contact-link">
@@ -317,7 +320,7 @@
   "alternateName": "Secure Techies",
   "description": "Expert managed IT services, cybersecurity, cloud solutions, and 24/7 support for businesses in Southern California.",
   "url": "https://securetechie.com/",
-  "telephone": "+1-818-431-5607",
+  "telephone": "+1-818-450-5384",
   "email": "info@SecureTechie.com",
   "image": "https://securetechie.com/images/logo.png",
   "logo": {
@@ -483,10 +486,23 @@
     if(isLocal){ form.reset(); done(); openModal(); return; }
 
     var body = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body })
+    // POST to the form action (/thank-you/), not to "/". A durable-cached 404 on
+    // POST / was swallowing every AJAX lead and only then falling through to
+    // native submit. /thank-you/ is the Netlify success path and is not cached
+    // for POST.
+    var endpoint = form.getAttribute('action') || '/thank-you/';
+    fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body })
       .then(function(res){
         if(!res.ok) throw new Error('Submission failed');
         form.reset(); done(); openModal();
+        // Same conversion events as /thank-you/. AJAX success never loads that
+        // page, so fire them here or Google Ads will miss the contact lead.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', lead_source: 'contact_page', value: 1 });
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { lead_source: 'contact_page', value: 1, currency: 'USD' });
+          gtag('event', 'conversion', { send_to: 'AW-1005225620/j77hCJSxsrccEJSNqt8D' });
+        }
       })
       .catch(function(){
         // Never lose a lead: fall back to a native submit
